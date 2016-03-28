@@ -3,7 +3,7 @@ package LHCb;
 import org.simgrid.msg.Msg;
 import org.simgrid.msg.NativeException;
 
-public class MasterSlave {
+public class MasterProcessor {
 
 	/* This only contains the launcher. If you do nothing more than than you can run
 	 *   java simgrid.msg.Msg
