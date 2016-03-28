@@ -1,0 +1,80 @@
+<?xml version='1.0'?>
+ <!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid.dtd">
+  <platform version="3">
+  <AS id="AS0" routing="Full">
+    <host id="Collider" power="137.333Mf"/>
+    <host id="Tier0" power="137.333Mf"/>
+    <host id="Tier1_1" power="42.917Mf"/>
+    <host id="Tier1_2" power="98.095Mf"/>
+    <host id="Tier1_3" power="42.917Mf"/>
+    <host id="Tier1_4" power="76.296Mf"/>
+    <host id="Tier1_5" power="76.296Mf"/>
+    <host id="Tier1_6" power="171.667Mf"/>
+    <host id="Tier1_7" power="171.667Mf"/>
+    <host id="Tier1_8" power="171.667Mf"/>
+    <host id="Tier1_9" power="171.667Mf"/>
+    <host id="Tier1_10" power="171.667Mf"/>
+    <host id="Tier1_11" power="171.667Mf"/>
+    <host id="Tier1_12" power="171.667Mf"/>
+    <host id="Tier1_13" power="171.667Mf"/>
+
+    <link id="0_0" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_1" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_2" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_3" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_4" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_5" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_6" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_7" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_8" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_9" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_10" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_11" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_12" bandwidth="3.430125MBps" latency="4.669142ms"/>
+    <link id="0_13" bandwidth="3.430125MBps" latency="4.669142ms"/>
+
+    <route src="Collider" dst="Tier0">
+      <link_ctn id="0_0"/>
+    </route>
+    <route src="Tier0" dst="Tier1_1">
+      <link_ctn id="0_1"/>
+    </route>
+    <route src="Tier0" dst="Tier1_2">
+      <link_ctn id="0_2"/>
+    </route>
+    <route src="Tier0" dst="Tier1_3">
+      <link_ctn id="0_3"/>
+    </route>
+    <route src="Tier0" dst="Tier1_4">
+      <link_ctn id="0_4"/>
+    </route>
+    <route src="Tier0" dst="Tier1_5">
+      <link_ctn id="0_5"/>
+    </route>
+    <route src="Tier0" dst="Tier1_6">
+      <link_ctn id="0_6"/>
+    </route>
+    <route src="Tier0" dst="Tier1_7">
+      <link_ctn id="0_7"/>
+    </route>
+    <route src="Tier0" dst="Tier1_8">
+      <link_ctn id="0_8"/>
+    </route>
+    <route src="Tier0" dst="Tier1_9">
+      <link_ctn id="0_9"/>
+    </route>
+    <route src="Tier0" dst="Tier1_10">
+      <link_ctn id="0_10"/>
+    </route>
+    <route src="Tier0" dst="Tier1_11">
+      <link_ctn id="0_11"/>
+    </route>
+    <route src="Tier0" dst="Tier1_12">
+      <link_ctn id="0_12"/>
+    </route>
+    <route src="Tier0" dst="Tier1_13">
+      <link_ctn id="0_13"/>
+    </route>
+
+  </AS>
+</platform>
