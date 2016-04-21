@@ -1,0 +1,56 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+  <process host="Tier0" function="LHCb.Scheduler">
+      <argument value="0"/>  <!-- Input mailbox -->
+      <argument value="1"/>  <!-- First output mailbox -->
+      <argument value="7"/>  <!-- Last output mailbox -->
+  </process>
+  <process host="Tier1_1" function="LHCb.Tier1" >
+     <argument value="1"/>  <!-- Input mailbox -->
+  </process>
+  <process host="Tier1_2" function="LHCb.Tier1">
+     <argument value="2"/>  <!-- Input mailbox -->
+  </process>
+  <process host="Tier1_3" function="LHCb.Tier1">
+     <argument value="3"/>  <!-- Input mailbox -->
+  </process>
+  <process host="Tier1_4" function="LHCb.Tier1">
+     <argument value="4"/>  <!-- Input mailbox -->
+  </process>
+  <process host="Tier1_5" function="LHCb.Tier1">
+     <argument value="5"/>  <!-- Input mailbox -->
+  </process>
+  <process host="Tier1_6" function="LHCb.Tier1">
+     <argument value="6"/>  <!-- Input mailbox -->
+  </process>
+    <process host="Tier1_7" function="LHCb.Tier1">
+     <argument value="7"/>  <!-- Input mailbox -->
+  </process>
+
+    <process host="Tier0" function="LHCb.Schdeuler2">
+     <argument value="0"/>
+  </process>
+
+  <process host="Tier1_1" function="LHCb.SenderDownloader">
+     <argument value="1"/>
+  </process>
+  <process host="Tier1_2" function="LHCb.SenderDownloader">
+     <argument value="2"/>
+  </process>
+  <process host="Tier1_3" function="LHCb.SenderDownloader">
+     <argument value="3"/>
+  </process>
+  <process host="Tier1_4" function="LHCb.SenderDownloader">
+     <argument value="4"/>
+  </process>
+  <process host="Tier1_5" function="LHCb.SenderDownloader">
+     <argument value="5"/>
+  </process>
+  <process host="Tier1_6" function="LHCb.SenderDownloader">
+     <argument value="6"/>
+  </process>
+    <process host="Tier1_7" function="LHCb.SenderDownloader">
+     <argument value="7"/>
+  </process>
+</platform>

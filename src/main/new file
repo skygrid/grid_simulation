@@ -1,0 +1,7 @@
+mvn install:install-file -Dfile=</home/ken/Downloads/simgrid.jar> -DgroupId=<LHCb> -DartifactId=<Sim2Sim> -Dversion=<3.12> -Dpackaging=<jar> -DgeneratePom=true
+mvn install:install-file -Dfile=<simgrid.jar> -DgroupId=<LHCb> -DartifactId=<Sim2Sim> -Dversion=<3.12> -Dpackaging=<jar> -DgeneratePom=true
+mvn install:install-file -Dfile=simgrid.jar -DgroupId=LHCb -DartifactId=Sim2Sim -Dversion=3.12 -Dpackaging=jar -DgeneratePom=true
+mvn install "-Dmyproperty=/home/ken/IdeaProjects/Sim2Sim/src/main/java/LHCb/platform.xml /home/ken/IdeaProjects/Sim2Sim/src/main/java/LHCb/masterslaveDeployment.xml --cfg=tracing:yes  --cfg=tracing/filename:simulation.trace --cfg=tracing/platform:yes"
+
+
+mvn exec:java -Dexec.mainClass="LHCb.Masterslave" -Dexec.args="/home/ken/IdeaProjects/Sim2Sim/src/main/java/LHCb/platform.xml /home/ken/IdeaProjects/Sim2Sim/src/main/java/LHCb/masterslaveDeployment.xml --cfg=tracing:yes  --cfg=tracing/filename:simulation.trace --cfg=tracing/platform:yes"
