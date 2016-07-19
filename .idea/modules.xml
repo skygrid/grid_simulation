@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/grid_simulation.iml" filepath="$PROJECT_DIR$/grid_simulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CSim2Sim.iml" filepath="$PROJECT_DIR$/.idea/CSim2Sim.iml" />
     </modules>
   </component>
 </project>

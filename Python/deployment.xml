@@ -1,0 +1,212 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+
+	<process host="Tier0" function="scheduler">
+		<argument value="0"/>  <!-- Input mailbox -->
+		<argument value="1"/>  <!-- Input mailbox -->
+		<argument value="7"/>  <!-- Input mailbox -->
+		</process>
+
+	<process host="Tier1_1" function="dispatcher">
+		<argument value="1"/>
+		<argument value="3"/>
+	</process>
+
+	<process host="Tier1_1_1" function="tier1">
+		<argument value="1"/>
+		<argument value="1"/>
+	</process>
+
+	<process host="Tier1_1_2" function="tier1">
+		<argument value="1"/>
+		<argument value="2"/>
+	</process>
+
+	<process host="Tier1_1_3" function="tier1">
+		<argument value="1"/>
+		<argument value="3"/>
+	</process>
+
+
+
+
+	<process host="Tier1_2" function="dispatcher">
+		<argument value="2"/>
+		<argument value="5"/>
+	</process>
+
+	<process host="Tier1_2_1" function="tier1">
+		<argument value="2"/>
+		<argument value="1"/>
+	</process>
+
+	<process host="Tier1_2_2" function="tier1">
+		<argument value="2"/>
+		<argument value="2"/>
+	</process>
+
+	<process host="Tier1_2_3" function="tier1">
+		<argument value="2"/>
+		<argument value="3"/>
+	</process>
+
+	<process host="Tier1_2_4" function="tier1">
+		<argument value="2"/>
+		<argument value="4"/>
+	</process>
+
+	<process host="Tier1_2_5" function="tier1">
+		<argument value="2"/>
+		<argument value="5"/>
+	</process>
+
+
+
+
+	<process host="Tier1_3" function="dispatcher">
+		<argument value="3"/>
+		<argument value="5"/>
+	</process>
+
+	<process host="Tier1_3_1" function="tier1">
+		<argument value="3"/>
+		<argument value="1"/>
+	</process>
+
+	<process host="Tier1_3_2" function="tier1">
+		<argument value="3"/>
+		<argument value="2"/>
+	</process>
+
+	<process host="Tier1_3_3" function="tier1">
+		<argument value="3"/>
+		<argument value="3"/>
+	</process>
+
+	<process host="Tier1_3_4" function="tier1">
+		<argument value="3"/>
+		<argument value="4"/>
+	</process>
+
+	<process host="Tier1_3_5" function="tier1">
+		<argument value="3"/>
+		<argument value="5"/>
+	</process>
+
+
+
+
+	<process host="Tier1_4" function="dispatcher">
+		<argument value="4"/>
+		<argument value="4"/>
+	</process>
+
+	<process host="Tier1_4_1" function="tier1">
+		<argument value="4"/>
+		<argument value="1"/>
+	</process>
+
+	<process host="Tier1_4_2" function="tier1">
+		<argument value="4"/>
+		<argument value="2"/>
+	</process>
+
+	<process host="Tier1_4_3" function="tier1">
+		<argument value="4"/>
+		<argument value="3"/>
+	</process>
+
+	<process host="Tier1_4_4" function="tier1">
+		<argument value="4"/>
+		<argument value="4"/>
+	</process>
+
+
+
+
+	<process host="Tier1_5" function="dispatcher">
+		<argument value="5"/>
+		<argument value="5"/>
+	</process>
+
+	<process host="Tier1_5_1" function="tier1">
+		<argument value="5"/>
+		<argument value="1"/>
+	</process>
+
+	<process host="Tier1_5_2" function="tier1">
+		<argument value="5"/>
+		<argument value="2"/>
+	</process>
+
+	<process host="Tier1_5_3" function="tier1">
+		<argument value="5"/>
+		<argument value="3"/>
+	</process>
+
+	<process host="Tier1_5_4" function="tier1">
+		<argument value="5"/>
+		<argument value="4"/>
+	</process>
+
+	<process host="Tier1_5_5" function="tier1">
+		<argument value="5"/>
+		<argument value="5"/>
+	</process>
+
+
+
+
+	<process host="Tier1_6" function="dispatcher">
+		<argument value="6"/>
+		<argument value="3"/>
+	</process>
+
+	<process host="Tier1_6_1" function="tier1">
+		<argument value="6"/>
+		<argument value="1"/>
+	</process>
+
+	<process host="Tier1_6_2" function="tier1">
+		<argument value="6"/>
+		<argument value="2"/>
+	</process>
+
+	<process host="Tier1_6_3" function="tier1">
+		<argument value="6"/>
+		<argument value="3"/>
+	</process>
+
+
+
+
+	<process host="Tier1_7" function="dispatcher">
+		<argument value="7"/>
+		<argument value="4"/>
+	</process>
+
+	<process host="Tier1_7_1" function="tier1">
+		<argument value="7"/>
+		<argument value="1"/>
+	</process>
+
+	<process host="Tier1_7_2" function="tier1">
+		<argument value="7"/>
+		<argument value="2"/>
+	</process>
+
+	<process host="Tier1_7_3" function="tier1">
+		<argument value="7"/>
+		<argument value="3"/>
+	</process>
+
+	<process host="Tier1_7_4" function="tier1">
+		<argument value="7"/>
+		<argument value="4"/>
+	</process>
+
+
+
+
+</platform>
