@@ -49,6 +49,9 @@ int data_replicator(int argc, char* argv[]){
         MSG_process_create("up3", uploader, data3, MSG_host_self());
     }
 
+    //Clear memory
+    xbt_free(replica);
+    MSG_process_kill(MSG_process_self());
     return 0;
 }
 
@@ -74,6 +77,12 @@ int uploader(int argc, char* argv[]){
         XBT_INFO("Transfer fail occurred", "%s");
     }
     MSG_file_close(file);
+
+    // Clear memory
+    memset(curFilePath, 0, 255);
+    memset(pathAtDest, 0, 255);
+    xbt_free(data);
+    MSG_process_kill(MSG_process_self());
     return 0;
 
 }
