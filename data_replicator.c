@@ -2,71 +2,69 @@
 // Created by ken on 28.07.16.
 //
 #include <simgrid/msg.h>
+#include "messages.h"
+
 XBT_LOG_NEW_DEFAULT_CATEGORY(tier2, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
 
 int data_replicator(int argc, char* argv[]){
-    int replica_number = (int) xbt_str_parse_int(argv[5], "Error parsing replicas");
+    replicatorDataPtr replica = MSG_process_get_data(MSG_process_self());
+    int replica_number = replica->replicaAmount;
 
     if (replica_number == 1){
-        char** argx1 = xbt_new(char*, 3);
-        argx1[0] = argv[0]; // filename
-        argx1[1] = argv[1]; // destination
-        argx1[2] = argv[4]; // current host
+        uploadDataPtr data1 = xbt_new(uploadData, 1);
+        data1->filename = replica->fileName;
+        data1->dest = replica->outLoc1;
 
-        MSG_process_create_with_arguments("up1", uploader, NULL, MSG_host_self(), 3, argx1);
+        MSG_process_create("up1", uploader, data1, MSG_host_self());
 
     } else if (replica_number == 2){
-        char** argx1 = xbt_new(char*, 3);
-        argx1[0] = argv[0]; // filename
-        argx1[1] = argv[1]; // destination
-        argx1[2] = argv[4]; // current host
+        uploadDataPtr data1 = xbt_new(uploadData, 1);
+        data1->filename = replica->fileName;
+        data1->dest = replica->outLoc1;
 
-        char** argx2 = xbt_new(char*, 3);
-        argx2[0] = argv[0]; // filename
-        argx2[1] = argv[2]; // destination
-        argx2[2] = argv[4]; // current host
+        uploadDataPtr data2 = xbt_new(uploadData, 1);
+        data2->filename = replica->fileName;
+        data2->dest = replica->outLoc2;
 
-
-        MSG_process_create_with_arguments("up1", uploader, NULL, MSG_host_self(), 3, argx1);
-        MSG_process_create_with_arguments("up2", uploader, NULL, MSG_host_self(), 3, argx2);
+        MSG_process_create("up1", uploader, data1, MSG_host_self());
+        MSG_process_create("up2", uploader, data2, MSG_host_self());
 
     } else if (replica_number == 3){
+        uploadDataPtr data1 = xbt_new(uploadData, 1);
+        data1->filename = replica->fileName;
+        data1->dest = replica->outLoc1;
 
-        char** argx1 = xbt_new(char*, 3);
-        argx1[0] = argv[0]; // filename
-        argx1[1] = argv[1]; // destination
-        argx1[2] = argv[4]; // current host
+        uploadDataPtr data2 = xbt_new(uploadData, 1);
+        data2->filename = replica->fileName;
+        data2->dest = replica->outLoc2;
 
-        char** argx2 = xbt_new(char*, 3);
-        argx2[0] = argv[0]; // filename
-        argx2[1] = argv[2]; // destination
-        argx2[2] = argv[4]; // current host
+        uploadDataPtr data3 = xbt_new(uploadData, 1);
+        data3->filename = replica->fileName;
+        data3->dest = replica->outLoc3;
 
-        char** argx3 = xbt_new(char*, 3);
-        argx3[0] = argv[0]; // filename
-        argx3[1] = argv[3]; // destination
-        argx3[2] = argv[4]; // current host
-
-        MSG_process_create_with_arguments("up1", uploader, NULL, MSG_host_self(), 3, argx1);
-        MSG_process_create_with_arguments("up2", uploader, NULL, MSG_host_self(), 3, argx2);
-        MSG_process_create_with_arguments("up3", uploader, NULL, MSG_host_self(), 3, argx3);
+        MSG_process_create("up1", uploader, data1, MSG_host_self());
+        MSG_process_create("up2", uploader, data2, MSG_host_self());
+        MSG_process_create("up3", uploader, data3, MSG_host_self());
     }
 
     return 0;
 }
 
 int uploader(int argc, char* argv[]){
-    char path[30];
-    char filePath[30];
+    char curFilePath[50];
+    char pathAtDest[50];
 
-    sprintf(filePath, "%s/%s", argv[2], argv[0]);
-    msg_file_t file = MSG_file_open(filePath, NULL);
-    msg_host_t dest = MSG_host_by_name(argv[1]);
+    uploadDataPtr data = MSG_process_get_data(MSG_process_self());
 
-    sprintf(path, "%s/%s", argv[1], argv[0]);
-    msg_error_t a = MSG_file_rcopy(file, dest, path);
+    sprintf(curFilePath, "%s/%s", MSG_host_get_name(MSG_host_self()), data->filename);
+    sprintf(pathAtDest, "%s/%s", data->dest, data->filename);
+
+    msg_file_t file = MSG_file_open(curFilePath, NULL);
+    msg_host_t dest = MSG_host_by_name(data->dest);
+
+    msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
 
     if (a == MSG_OK){
         XBT_INFO("Creating replica completed", "%s");

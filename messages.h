@@ -75,6 +75,11 @@ typedef struct{
     char* outLoc3;
 }replicatorData, *replicatorDataPtr;
 
+typedef struct {
+    char* filename;
+    char* dest;
+}uploadData, *uploadDataPtr;
+
 
 typedef struct{
     int jobAmount;

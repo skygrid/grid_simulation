@@ -42,6 +42,15 @@ int executor(int argc, char* argv[]){
     outFile = MSG_file_open(outputFilePath, NULL);
     MSG_file_write(outFile, (sg_size_t) jobInfo->outputFileSize);
 
+    //Launch replicas creator
+    replicatorDataPtr replica = xbt_new(replicatorData, 1);
+    replica->fileName = jobInfo->outputName;
+    replica->currentLoc = (char*) MSG_host_get_name(MSG_host_self());
+    replica->outLoc1 = jobInfo->outputHost1;
+    replica->outLoc2 = jobInfo->outputHost2;
+    replica->outLoc3 = jobInfo->outputHost3;
+
+
     MSG_file_close(file);
     MSG_file_close(outFile);
 
