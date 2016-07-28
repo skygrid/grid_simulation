@@ -50,11 +50,12 @@ int executor(int argc, char* argv[]){
     replica->outLoc2 = jobInfo->outputHost2;
     replica->outLoc3 = jobInfo->outputHost3;
 
-
+    //Clear memory
     MSG_file_close(file);
     MSG_file_close(outFile);
-
-
-
+    memset(inputFilePath, 0, 80);
+    memset(outputFilePath, 0, 80);
+    xbt_free(jobInfo);
+    MSG_process_kill(MSG_process_self());
     return 0;
 }
