@@ -3,7 +3,6 @@
 //
 #include <simgrid/msg.h>
 #include "messages.h"
-#include "tier_sender_downloader.h"
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(dispatcher, "messsages specific for dispatching");
 
