@@ -3,7 +3,7 @@
 //
 #include <simgrid/msg.h>
 #include "messages.h"
-#include "data_replicator.h"
+#include "myfunc_list.h"
 
 #define number 5
 

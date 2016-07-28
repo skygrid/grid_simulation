@@ -220,5 +220,54 @@ int scheduler(int argc, char* argv[]){
     }
 
     return 0;
-
 }
+
+int kotok(){
+    int i; jobPtr j1;
+    jobPtr* jobBatchData = xbt_new(jobPtr , 10);
+    for (i = 0; i < 10; ++i) {
+        jobBatchData[i] = j1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
