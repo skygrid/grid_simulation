@@ -21,7 +21,7 @@ int tier1(int argc, char *argv[]){
 
     sprintf(mailbox, "Tier1_%i_%i", num, id);
 
-    //At first moment nodes go to dispatcher
+    //At first moment nodes get to dispatcher
     sprintf(dispatcher_mail, "dispatcher1_%i_TS", num);
     msg_task_t first_task = MSG_task_create("Firstrequest", 0, MESSAGES_SIZE, NULL);
     XBT_INFO("Send a pilot message to dispatcher");
@@ -96,28 +96,6 @@ int tier1(int argc, char *argv[]){
 
                         MSG_task_destroy(task);
                         task = NULL;
-                    }
-                    break;
-
-                case DOWNLOADED:
-
-                    XBT_INFO("Download data of %s from %s", MSG_task_get_name(task), sg_host_get_name(MSG_task_get_source(task)));
-                    XBT_INFO("Start to execute %s", MSG_task_get_name(task));
-                    errcode = MSG_task_execute(task);
-                    if (errcode == MSG_OK){
-                        XBT_INFO("Finished to execute %s", MSG_task_get_name(task));
-                        MSG_task_destroy(task);
-                        task = NULL;
-                        XBT_INFO("Send a pilot message to dispatcher");
-                        MSG_task_send(MSG_task_create("Request", 0, MESSAGES_SIZE, NULL), dispatcher_mail);
-                    }
-                    else if (errcode == MSG_HOST_FAILURE){
-                        XBT_INFO("Gloups. The cpu on which I'm running just turned off!. See you!");
-                        MSG_task_destroy(task);
-                        task = NULL;
-                    } else{
-                        XBT_INFO("Hey ?! What's up ? ");
-                        xbt_die("Unexpected behavior");
                     }
                     break;
             }

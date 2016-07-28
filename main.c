@@ -17,6 +17,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this m
 
 int main(int argc, char *argv[]){
     MSG_init(&argc, argv);
+    MSG_config("host/model", "ptask_L07");
 
     MSG_create_environment(argv[1]);
 

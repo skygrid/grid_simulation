@@ -192,13 +192,27 @@ int scheduler(int argc, char* argv[]){
         // matching procedure; sending to dispatcher
         sprintf(destination, "%s_%s", MSG_host_get_name(MSG_task_get_source(task)), "ST");
         xbt_dynar_t dynar = MSG_task_get_data(task);
-        XBT_INFO("kokoko");
-        xbt_dynar_sort(dynar, comparator);
+        //xbt_dynar_sort(dynar, comparator);
 
         xbt_dict_t map = match_task(&dynar);
         XBT_INFO("Start send after matching to %s", destination);
-        MSG_task_dsend(MSG_task_create("", 0, MESSAGES_SIZE, map), destination, NULL);
+        msg_task_t taskB = MSG_task_create("", 0, MESSAGES_SIZE, map);
+        msg_error_t a = MSG_task_send(taskB, destination);
 
+        if (a == MSG_OK){
+            XBT_INFO("Send completed");
+        }
+        else if (a == MSG_HOST_FAILURE){
+            XBT_INFO("Problems with host");
+            free(map);
+            MSG_task_destroy(taskB);
+            return 0;
+        }
+        else if (a == MSG_TRANSFER_FAILURE){
+            XBT_INFO("Mmh. Something went wrong with '%s'. Nevermind. Let's keep going!", mailbox);
+            free(map);
+            MSG_task_destroy(taskB);
+        }
         MSG_task_destroy(task);
         task = NULL;
         map = NULL;

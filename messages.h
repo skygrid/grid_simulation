@@ -13,10 +13,17 @@
 #define MESSAGES_SIZE 1
 
 typedef enum {
-    MONTE_CARLO,
-    INSTRUCTION,
-    GIVEMEDATA,
-    DOWNLOADED
+    DATARECONSTRUCTION,
+    DATASTRIPPING,
+    MCMERGE,
+    MCRECONSTRUCTION,
+    MCSIMULATION,
+    MERGE,
+    TURBO,
+    WGPRODUCTION,
+    TEST,
+    UNKNOWN,
+    USER
 } message_type;
 
 typedef struct s_message{
@@ -40,5 +47,38 @@ msg_task_t send_data(const char *name, double flops_amount, double size);
 
 void task_message_free(void *);
 int task_message_size(message_type type);
+
+
+typedef struct{
+    char* name;
+    message_type type;
+    double compSize;
+    double commSize;
+    char* inputFileName;
+    int locationInputNum;
+    msg_host_t* locationInputHosts;
+    char* outputNumber;
+    char * outputHost1;
+    char * outputHost2;
+    char * outputHost3;
+    char* downloadSite;
+    char* outputName;
+    double outputFileSize;
+}job, *jobPtr;
+
+typedef struct{
+    int replicaAmount;
+    char* fileName;
+    char* currentLoc;
+    char* outLoc1;
+    char* outLoc2;
+    char* outLoc3;
+}replicatorData, *replicatorDataPtr;
+
+
+typedef struct{
+    int jobAmount;
+    jobPtr jobArray;
+}jobBatch, *jobBatchPtr;
 
 #endif //CSIM2SIM_MESSAGES_H

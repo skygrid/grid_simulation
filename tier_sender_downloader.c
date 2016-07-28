@@ -5,7 +5,7 @@
 #include "messages.h"
 #include "tier_sender_downloader.h"
 
-XBT_LOG_NEW_DEFAULT_CATEGORY(sender_downloader, "messsages specific for sending and downloading");
+XBT_LOG_NEW_DEFAULT_CATEGORY(sender_downloader, "messages specific for sending and downloading");
 
 int tier_sender_downloader(int argc, char *argv[]){
 
