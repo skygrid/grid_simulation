@@ -7,10 +7,7 @@
 
 #include <simgrid/msg.h>
 
-#define MESSAGES_SIZE_INSTRUCTION 1
-#define MESSAGES_SIZE_GIVEMEDATA 1
-#define MESSAGES_SIZE_FINALIZE 1
-#define MESSAGES_SIZE 1
+#define MESSAGES_SIZE 100000
 
 typedef enum {
     DATARECONSTRUCTION,
@@ -24,33 +21,30 @@ typedef enum {
     TEST,
     UNKNOWN,
     USER
-} message_type;
-
-
-msg_task_t task_message_new(char *name, message_type type, const char *downloadfrom, double size);
-msg_task_t give_me_data(const char *name, double flops_amount, double size);
-msg_task_t send_data(const char *name, double flops_amount, double size);
-
-void task_message_free(void *);
-int task_message_size(message_type type);
+} jobType;
 
 
 typedef struct{
     char* name;
-    message_type type;
+    jobType type;
+    char* typeChar;
     double compSize;
-    double commSize;
     char* inputFileName;
-    int locationInputNum;
-    msg_host_t* locationInputHosts;
-    char* outputNumber;
+    double inputSize;
+    int NRep;
+    char* dataLocHost1;
+    char* dataLocHost2;
+    char* dataLocHost3;
+    int outputNumber;
     char * outputHost1;
     char * outputHost2;
     char * outputHost3;
     char* downloadSite;
     char* outputName;
     double outputFileSize;
+    char* storageType;
 }job, *jobPtr;
+
 
 typedef struct{
     int replicaAmount;
@@ -61,19 +55,16 @@ typedef struct{
     char* outLoc3;
 }replicatorData, *replicatorDataPtr;
 
+
 typedef struct {
     char* filename;
     char* dest;
 }uploadData, *uploadDataPtr;
 
+
 typedef struct {
     long coreAmount; // Number of requested jobs
 }jobBatchRequest, *jobBatchRequestPtr;
 
-
-typedef struct{
-    int jobAmount;
-    jobPtr jobArray;
-}jobBatch, *jobBatchPtr;
 
 #endif //CSIM2SIM_MESSAGES_H
