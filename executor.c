@@ -8,9 +8,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(dispatcher, "messages specific for executor");
 int hostFailAmount = 0;
 
 int executor(int argc, char* argv[]){
-    /** argc is always 1
-     * argv in jobPtr
-    */
+
     msg_file_t file, outFile;
     msg_task_t task;
     sg_size_t inputSize, outputSize;
@@ -58,4 +56,12 @@ int executor(int argc, char* argv[]){
     xbt_free(jobInfo);
     MSG_process_kill(MSG_process_self());
     return 0;
+}
+
+void plusOneActiveCore(){
+
+}
+
+void minusOneActiveCore(){
+
 }

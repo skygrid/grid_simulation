@@ -174,7 +174,7 @@ int scheduler(int argc, char* argv[]){
     char mailbox[30];
     char destination[50];
     msg_task_t task = NULL;
-    int id = xbt_str_parse_int(argv[1], "Invalid argument %s");
+    int id = (int) xbt_str_parse_int(argv[1], "Invalid argument %s");
     sprintf(mailbox, "scheduler");
 
     while (1){
