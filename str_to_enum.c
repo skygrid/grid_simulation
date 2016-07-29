@@ -2,6 +2,9 @@
 // Created by ken on 29.07.16.
 //
 
+#include "messages.h"
+char* typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
+                    "MCSIMULATION", "TEST", NULL};
 jobType charToEnum(char *sval)
 {
     jobType result=USER;

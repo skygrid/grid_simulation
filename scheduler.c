@@ -5,6 +5,7 @@
 #include <simgrid/msg.h>
 #include <csvparser.h>
 #include "messages.h"
+#include "myfunc_list.h"
 
 #define QUEUE_SIZE 100000
 
