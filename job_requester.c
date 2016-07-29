@@ -4,9 +4,9 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 
-XBT_LOG_NEW_DEFAULT_CATEGORY(core_monitoring, "messsages specific for cm");
+XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
-long core_monitoring(){
+int job_requester(){
     msg_task_t task;
     double timeout = 10.0;
     long freeCoreAmount;
