@@ -1,6 +1,5 @@
 *.py[cod]
 *~
-.idea
 target/
 JobDescriptor/output
 dependency-reduced-pom.xml
@@ -72,3 +71,8 @@ hs_err_pid*
 # Configs used
 worker.cfg
 tokenmanager.cfg
+
+*.iws
+workspace.xml
+tasks.xml
+
