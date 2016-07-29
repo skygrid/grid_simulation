@@ -7,5 +7,5 @@
 
 int data_replicator(int argc, char* argv[]);
 int executor(int argc, char* argv[]);
-
+int core_monitoring();
 #endif //CSIM2SIM_MYFUNC_LIST_H

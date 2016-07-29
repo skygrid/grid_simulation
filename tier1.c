@@ -7,9 +7,12 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 // Created by ken on 29.07.16.
 //
 
-int busyCoreAmount;
-
 int tier1(int argc, char* argv[]){
+
+}
+
+
+int tier1_executor(int argc, char* argv[]){
     int i;
     msg_task_t task;
     char* tierMailbox = argv[1];
@@ -33,7 +36,6 @@ int tier1(int argc, char* argv[]){
             MSG_process_create(tierMailbox, executor, jobPtrBatchData[i], MSG_host_self());
         }
     }
-
     return 0;
 }
 

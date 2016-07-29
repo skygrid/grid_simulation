@@ -67,7 +67,7 @@ typedef struct {
 }uploadData, *uploadDataPtr;
 
 typedef struct {
-    int coreAmount; // Number of requested jobs
+    long coreAmount; // Number of requested jobs
 }jobBatchRequest, *jobBatchRequestPtr;
 
 

@@ -66,20 +66,20 @@ int executor(int argc, char* argv[]){
 
 void plusOneActiveCore(){
     char kot[50];
-    int number;
-    number = (int) xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
+    long number;
+    number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number++;
-    sprintf(kot, "%d", number);
+    sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
     memset(kot, 0, 50);
 }
 
 void minusOneActiveCore(){
     char kot[50];
-    int number;
-    number = (int) xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
+    long number;
+    number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number--;
-    sprintf(kot, "%d", number);
+    sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
     memset(kot, 0, 50);
 }
