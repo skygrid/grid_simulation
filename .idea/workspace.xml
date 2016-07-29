@@ -15,8 +15,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messages.h" afterPath="$PROJECT_DIR$/messages.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myfunc_list.h" afterPath="$PROJECT_DIR$/myfunc_list.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/str_to_enum.c" afterPath="$PROJECT_DIR$/str_to_enum.c" />
     </list>
@@ -50,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="174">
+              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
               <folding>
                 <element signature="e#38#62#0" expanded="true" />
               </folding>
@@ -65,8 +63,8 @@
       <file leaf-file-name="str_to_enum.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/str_to_enum.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="216">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -92,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myfunc_list.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myfunc_list.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myfunc_list.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -157,9 +155,9 @@
         <option value="$PROJECT_DIR$/job_requester.c" />
         <option value="$PROJECT_DIR$/tier1.c" />
         <option value="$PROJECT_DIR$/myfunc_list.h" />
-        <option value="$PROJECT_DIR$/scheduler.c" />
         <option value="$PROJECT_DIR$/messages.h" />
         <option value="$PROJECT_DIR$/str_to_enum.c" />
+        <option value="$PROJECT_DIR$/scheduler.c" />
       </list>
     </option>
   </component>
@@ -494,12 +492,12 @@
       <workItem from="1469784059789" duration="7596000" />
       <workItem from="1469806119566" duration="2501000" />
       <workItem from="1469816413328" duration="227000" />
-      <workItem from="1469818609692" duration="1331000" />
+      <workItem from="1469818609692" duration="3804000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66412000" />
+    <option name="totallyTimeSpent" value="68885000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -864,36 +862,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job_requester.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#38#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/str_to_enum.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/messages.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job_requester.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -903,6 +883,24 @@
         <state relative-caret-position="180">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/str_to_enum.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+          <folding>
+            <element signature="e#38#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
