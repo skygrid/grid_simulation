@@ -14,6 +14,7 @@ int tier1(int argc, char* argv[]){
     msg_task_t task;
     char* tierMailbox = argv[1];
     int coreAmount = (int) xbt_str_parse_int(argv[2], "Invalid argument %s");
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), NULL);
 
     while (1){
         msg_error_t a = MSG_task_receive(&task, tierMailbox);
@@ -35,3 +36,5 @@ int tier1(int argc, char* argv[]){
 
     return 0;
 }
+
+

@@ -66,6 +66,10 @@ typedef struct {
     char* dest;
 }uploadData, *uploadDataPtr;
 
+typedef struct {
+    int coreAmount; // Number of requested jobs
+}jobBatchRequest, *jobBatchRequestPtr;
+
 
 typedef struct{
     int jobAmount;

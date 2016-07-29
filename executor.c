@@ -6,6 +6,8 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(dispatcher, "messages specific for executor");
 
 int hostFailAmount = 0;
+void plusOneActiveCore();
+void minusOneActiveCore();
 
 int executor(int argc, char* argv[]){
 
@@ -24,7 +26,11 @@ int executor(int argc, char* argv[]){
 
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name, jobInfo->compSize, 0, NULL);
+    plusOneActiveCore();
     msg_error_t a = MSG_task_execute(task);
+    minusOneActiveCore();
+
+    //Anomalies
     if (a == MSG_OK){
         XBT_INFO("%s has successfully executed", jobInfo->name);
         MSG_task_destroy(task);
@@ -59,9 +65,21 @@ int executor(int argc, char* argv[]){
 }
 
 void plusOneActiveCore(){
-
+    char kot[50];
+    int number;
+    number = (int) xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
+    number++;
+    sprintf(kot, "%d", number);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
+    memset(kot, 0, 50);
 }
 
 void minusOneActiveCore(){
-
+    char kot[50];
+    int number;
+    number = (int) xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
+    number--;
+    sprintf(kot, "%d", number);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
+    memset(kot, 0, 50);
 }
