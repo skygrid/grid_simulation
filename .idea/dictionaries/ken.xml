@@ -2,6 +2,8 @@
   <dictionary name="ken">
     <words>
       <w>argx</w>
+      <w>bconnection</w>
+      <w>bwrite</w>
       <w>datareconstruction</w>
       <w>datastripping</w>
       <w>dest</w>

@@ -22,13 +22,12 @@ int scheduler(int argc, char* argv[]){
     char mailbox[30];
     msg_task_t task = NULL;
     sprintf(mailbox, "scheduler");
-    int id = (int) xbt_str_parse_int(argv[1], "Invalid argument %s");
 
     while (1){
         int res = MSG_task_receive(&task, mailbox);
-
         // Anomalies
         if (res == MSG_OK){
+            XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
         }else if (res == MSG_TRANSFER_FAILURE){
             MSG_task_destroy(task);
             task = NULL;
@@ -44,22 +43,25 @@ int scheduler(int argc, char* argv[]){
         jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
         jobPtr* batch = matcher(batchRequest->coreAmount);
 
-        msg_error_t res1 = MSG_task_send(MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch),
-                                         MSG_host_get_name(MSG_task_get_source(task)));
+        msg_task_t taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
+        msg_error_t res1 = MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)));
 
         // Anomalies
         if (res1 == MSG_OK){
+            XBT_INFO("Send jobs after matching %s", MSG_host_get_name(MSG_task_get_source(task)));
         }else if (res1 == MSG_TRANSFER_FAILURE){
-            MSG_task_destroy(task);
-            task = NULL;
+            MSG_task_destroy(taskB);
+            taskB = NULL;
         } else if (res1 == MSG_HOST_FAILURE){
-            MSG_task_destroy(task);
-            task = NULL;
+            MSG_task_destroy(taskB);
+            taskB = NULL;
         }
         if(!strcmp(MSG_task_get_name(task), "finalize")){
             MSG_task_destroy(task);
             break;
         }
+        task = NULL;
+        taskB = NULL;
     }
 }
 

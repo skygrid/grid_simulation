@@ -11,10 +11,9 @@ int job_requester(){
     double timeout = 10.0;
     long freeCoreAmount;
     long fullCoreAmount = MSG_host_get_core_number(MSG_host_self());
-    MSG_process_sleep(timeout);
 
     while (1){
-        freeCoreAmount = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
+        freeCoreAmount = fullCoreAmount - xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
         if (freeCoreAmount > fullCoreAmount / 2){
             jobBatchRequestPtr jobRequest = xbt_new(jobBatchRequest, 1);
             jobRequest->coreAmount = freeCoreAmount;

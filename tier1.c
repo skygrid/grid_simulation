@@ -6,7 +6,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 //
 // Created by ken on 29.07.16.
 //
-int tier1_executor(int argc, char* argv[]);
+int executorLauncher(int argc, char* argv[]);
 int job_requester(int argc, char* argv[]);
 
 // MAIN TIER1 FUNCTION
@@ -16,24 +16,23 @@ int tier1(int argc, char* argv[]){
     argx[0] = tierMailbox;
 
     // LAUNCH PROCESS
-    MSG_process_create_with_arguments("tier1_executor", tier1_executor, NULL, MSG_host_self(), 1, argx);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), NULL);
+    MSG_process_create("tier1_executor", executorLauncher, argx, MSG_host_self());
     MSG_process_create("job_requester", job_requester, NULL, MSG_host_self());
 
     //clear memory
-    free(*argx);
+    //free(*argx);
     return 0;
 }
 
 
-int tier1_executor(int argc, char* argv[]){
+int executorLauncher(int argc, char* argv[]){
     int i;
     msg_task_t task;
-    char* tierMailbox = argv[0];
-    int coreAmount = (int) xbt_str_parse_int(argv[2], "Invalid argument %s");
-    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), NULL);
+    char* tierMailbox = ((char**) MSG_process_get_data(MSG_process_self()))[0];
 
     while (1){
-        msg_error_t a = MSG_task_receive(&task, tierMailbox);
+        msg_error_t a = MSG_task_receive(&(task), tierMailbox);
         if (a == MSG_OK){
             XBT_INFO("Successfully receive task");
         }
@@ -48,6 +47,7 @@ int tier1_executor(int argc, char* argv[]){
         for (i = 0; i < jobAmount; ++i) {
             MSG_process_create(tierMailbox, executor, jobPtrBatchData[i], MSG_host_self());
         }
+        task = NULL;
     }
     return 0;
 }

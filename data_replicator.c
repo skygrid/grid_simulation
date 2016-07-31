@@ -16,6 +16,7 @@ int data_replicator(int argc, char* argv[]){
         uploadDataPtr data1 = xbt_new(uploadData, 1);
         data1->filename = replica->fileName;
         data1->dest = replica->outLoc1;
+        data1->storageType = replica->storageType;
 
         MSG_process_create("up1", uploader, data1, MSG_host_self());
 
@@ -23,10 +24,12 @@ int data_replicator(int argc, char* argv[]){
         uploadDataPtr data1 = xbt_new(uploadData, 1);
         data1->filename = replica->fileName;
         data1->dest = replica->outLoc1;
+        data1->storageType = replica->storageType;
 
         uploadDataPtr data2 = xbt_new(uploadData, 1);
         data2->filename = replica->fileName;
         data2->dest = replica->outLoc2;
+        data2->storageType = replica->storageType;
 
         MSG_process_create("up1", uploader, data1, MSG_host_self());
         MSG_process_create("up2", uploader, data2, MSG_host_self());
@@ -35,14 +38,17 @@ int data_replicator(int argc, char* argv[]){
         uploadDataPtr data1 = xbt_new(uploadData, 1);
         data1->filename = replica->fileName;
         data1->dest = replica->outLoc1;
+        data1->storageType = replica->storageType;
 
         uploadDataPtr data2 = xbt_new(uploadData, 1);
         data2->filename = replica->fileName;
         data2->dest = replica->outLoc2;
+        data1->storageType = replica->storageType;
 
         uploadDataPtr data3 = xbt_new(uploadData, 1);
         data3->filename = replica->fileName;
         data3->dest = replica->outLoc3;
+        data3->storageType = replica->storageType;
 
         MSG_process_create("up1", uploader, data1, MSG_host_self());
         MSG_process_create("up2", uploader, data2, MSG_host_self());
@@ -61,8 +67,8 @@ int uploader(int argc, char* argv[]){
 
     uploadDataPtr data = MSG_process_get_data(MSG_process_self());
 
-    sprintf(curFilePath, "%s/%s", MSG_host_get_name(MSG_host_self()), data->filename);
-    sprintf(pathAtDest, "%s/%s", data->dest, data->filename);
+    sprintf(curFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), data->storageType, data->filename);
+    sprintf(pathAtDest, "%s%s/%s", data->dest, data->storageType, data->filename);
 
     msg_file_t file = MSG_file_open(curFilePath, NULL);
     msg_host_t dest = MSG_host_by_name(data->dest);

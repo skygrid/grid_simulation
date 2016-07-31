@@ -51,6 +51,7 @@ typedef struct{
     int replicaAmount;
     char* fileName;
     char* currentLoc;
+    char* storageType;
     char* outLoc1;
     char* outLoc2;
     char* outLoc3;
@@ -60,6 +61,7 @@ typedef struct{
 typedef struct {
     char* filename;
     char* dest;
+    char* storageType;
 }uploadData, *uploadDataPtr;
 
 

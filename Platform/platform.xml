@@ -3,213 +3,213 @@
 <platform version="4">
 
 	<AS id="AS_BIG" routing="Full">
-		<storage_type id="single_HDD0" size="7600TiB" model="linear_no_lat"
-				content="CERN_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD0" size="7600TB" model="linear_no_lat"
+				content="Content/CERN_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD1" size="3150TiB" model="linear_no_lat"
-				content="CNAF_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD1" size="3150TB" model="linear_no_lat"
+				content="Content/CNAF_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD2" size="2500TiB" model="linear_no_lat"
-				content="GRIDKA_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD2" size="2500TB" model="linear_no_lat"
+				content="Content/GRIDKA_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD3" size="2230TiB" model="linear_no_lat"
-				content="IN2P3_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD3" size="2230TB" model="linear_no_lat"
+				content="Content/IN2P3_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD4" size="969TiB" model="linear_no_lat"
-				content="PIC_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD4" size="969TB" model="linear_no_lat"
+				content="Content/PIC_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD5" size="4050TiB" model="linear_no_lat"
-				content="RAL_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD5" size="4050TB" model="linear_no_lat"
+				content="Content/RAL_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD6" size="1743TiB" model="linear_no_lat"
-				content="SARA_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD6" size="1743TB" model="linear_no_lat"
+				content="Content/SARA_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD7" size="1260TiB" model="linear_no_lat"
-				content="RRCKI_content_online.txt" content_type="txt_unix">
+		<storage_type id="single_HDD7" size="1260TB" model="linear_no_lat"
+				content="Content/RRCKI_content_online.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD0" size="20600TiB" model="linear_no_lat"
-				content="CERN_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD0" size="20600TB" model="linear_no_lat"
+				content="Content/CERN_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD1" size="7578TiB" model="linear_no_lat"
-				content="CNAF_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD1" size="7578TB" model="linear_no_lat"
+				content="Content/CNAF_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD2" size="4300TiB" model="linear_no_lat"
-				content="GRIDKA_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD2" size="4300TB" model="linear_no_lat"
+				content="Content/GRIDKA_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD3" size="4360TiB" model="linear_no_lat"
-				content="IN2P3_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD3" size="4360TB" model="linear_no_lat"
+				content="Content/IN2P3_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD4" size="1677TiB" model="linear_no_lat"
-				content="PIC_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD4" size="1677TB" model="linear_no_lat"
+				content="Content/PIC_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD5" size="12630TiB" model="linear_no_lat"
-				content="RAL_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD5" size="12630TB" model="linear_no_lat"
+				content="Content/RAL_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD6" size="3019TiB" model="linear_no_lat"
-				content="SARA_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD6" size="3019TB" model="linear_no_lat"
+				content="Content/SARA_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD7" size="1677TiB" model="linear_no_lat"
-				content="RRCKI_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="NEARLINE_HDD7" size="1677TB" model="linear_no_lat"
+				content="Content/RRCKI_content_nearline.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
 		<!-- STORAGES_TYPES OF TIER2 LAYER-->
-		<storage_type id="T2_HDD1" size="300TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD1" size="300TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD2" size="300TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD2" size="300TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD3" size="2TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD3" size="2TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD4" size="2TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD4" size="2TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD5" size="8TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD5" size="8TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD6" size="0TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD6" size="1TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD7" size="240TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD7" size="240TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD8" size="1TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD8" size="1TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD9" size="360TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD9" size="360TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD10" size="65TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD10" size="65TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD11" size="1TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD11" size="1TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD12" size="540TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD12" size="540TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD13" size="300TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD13" size="300TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD14" size="300TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD14" size="300TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD15" size="1TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD15" size="1TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
-		<storage_type id="T2_HDD16" size="300TiB" model="linear_no_lat">
+		<storage_type id="T2_HDD16" size="300TB" model="linear_no_lat">
 			<model_prop id="Bwrite" value="30MBps"/>
 			<model_prop id="Bread" value="100MBps"/>
-			<model_prop id="BConnection" value="120MBps"/>
+			<model_prop id="Bconnection" value="120MBps"/>
 		</storage_type>
 
 		<storage id="STORAGE_CERN" typeId="single_HDD0" attach="CERN"/>
@@ -230,22 +230,22 @@
 		<storage id="NEARLINE_SARA" typeId="NEARLINE_HDD6" attach="SARA"/>
 		<storage id="NEARLINE_RRCKI" typeId="NEARLINE_HDD7" attach="RRCKI"/>
 
-		<storage id="T2_1" typeId="T2_HDD0" attach="T2_1"/>
-		<storage id="T2_2" typeId="T2_HDD1" attach="T2_2"/>
-		<storage id="T2_3" typeId="T2_HDD2" attach="T2_3"/>
-		<storage id="T2_4" typeId="T2_HDD3" attach="T2_4"/>
-		<storage id="T2_5" typeId="T2_HDD4" attach="T2_5"/>
-		<storage id="T2_6" typeId="T2_HDD5" attach="T2_6"/>
-		<storage id="T2_7" typeId="T2_HDD6" attach="T2_7"/>
-		<storage id="T2_8" typeId="T2_HDD7" attach="T2_8"/>
-		<storage id="T2_9" typeId="T2_HDD8" attach="T2_9"/>
-		<storage id="T2_10" typeId="T2_HDD9" attach="T2_10"/>
-		<storage id="T2_11" typeId="T2_HDD10" attach="T2_11"/>
-		<storage id="T2_12" typeId="T2_HDD11" attach="T2_12"/>
-		<storage id="T2_13" typeId="T2_HDD12" attach="T2_13"/>
-		<storage id="T2_14" typeId="T2_HDD13" attach="T2_14"/>
-		<storage id="T2_15" typeId="T2_HDD14" attach="T2_15"/>
-		<storage id="T2_16" typeId="T2_HDD15" attach="T2_16"/>
+		<storage id="T2_1" typeId="T2_HDD1" attach="T2_1"/>
+		<storage id="T2_2" typeId="T2_HDD2" attach="T2_2"/>
+		<storage id="T2_3" typeId="T2_HDD3" attach="T2_3"/>
+		<storage id="T2_4" typeId="T2_HDD4" attach="T2_4"/>
+		<storage id="T2_5" typeId="T2_HDD5" attach="T2_5"/>
+		<storage id="T2_6" typeId="T2_HDD6" attach="T2_6"/>
+		<storage id="T2_7" typeId="T2_HDD7" attach="T2_7"/>
+		<storage id="T2_8" typeId="T2_HDD8" attach="T2_8"/>
+		<storage id="T2_9" typeId="T2_HDD9" attach="T2_9"/>
+		<storage id="T2_10" typeId="T2_HDD10" attach="T2_10"/>
+		<storage id="T2_11" typeId="T2_HDD11" attach="T2_11"/>
+		<storage id="T2_12" typeId="T2_HDD12" attach="T2_12"/>
+		<storage id="T2_13" typeId="T2_HDD13" attach="T2_13"/>
+		<storage id="T2_14" typeId="T2_HDD14" attach="T2_14"/>
+		<storage id="T2_15" typeId="T2_HDD15" attach="T2_15"/>
+		<storage id="T2_16" typeId="T2_HDD16" attach="T2_16"/>
 
 		<host id="CERN" speed="1Gf" core="510">
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
@@ -399,109 +399,9 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 
-		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="CERN-PIC-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="CERN-RAL-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="CERN-SARA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="2GBps" latency="0.0ms"/>
-
-		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
-
-		<!--routes between CERN and TIER1-->
-		<route src="CERN" dst="CNAF"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
-		<route src="CERN" dst="GRIDKA"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
-		<route src="CERN" dst="IN2P3"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
-		<route src="CERN" dst="PIC"><link_ctn id="CERN-PIC-LHCOPN-001"/></route>
-		<route src="CERN" dst="RAL"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
-		<route src="CERN" dst="SARA"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
-		<route src="CERN" dst="RRCKI"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
-		<!--routes between TIER1-TIER1-->
-
-		<!--DIRECT 3 ROUTES-->
-		<route src="CNAF" dst="GRIDKA"><link_ctn id="CNAF-GRIDKA-LHCOPN-001"/></route>
-		<route src="GRIDKA" dst="IN2P3"><link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/></route>
-		<route src="GRIDKA" dst="SARA"><link_ctn id="GRIDKA-SARA-LHCOPN-001"/></route>
-		<!--3 ROUTES THRU GRIDKA-->
-		<route src="CNAF" dst="IN2P3">
-			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
-			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
-		</route>
-		<route src="CNAF" dst="SARA">
-			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
-			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
-		</route>
-		<route src="IN2P3" dst="SARA">
-			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
-			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
-		</route>
-		<!--ROUTES THRU CERN-->
-		<route src="CNAF" dst="PIC">
-			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
-			<link_ctn id="CERN-PIC-LHCOPN-001"/>
-		</route>
-		<route src="CNAF" dst="RAL">
-			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
-			<link_ctn id="CERN-RAL-LHCOPN-001"/>
-		</route>
-		<route src="CNAF" dst="RRCKI">
-			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
-			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
-		</route>
-		<route src="GRIDKA" dst="PIC">
-			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
-			<link_ctn id="CERN-PIC-LHCOPN-001"/>
-		</route>
-		<route src="GRIDKA" dst="RAL">
-			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
-			<link_ctn id="CERN-RAL-LHCOPN-001"/>
-		</route>
-		<route src="GRIDKA" dst="RRCKI">
-			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
-			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
-		</route>
-		<route src="IN2P3" dst="PIC">
-			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
-			<link_ctn id="CERN-PIC-LHCOPN-001"/>
-		</route>
-		<route src="IN2P3" dst="RAL">
-			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
-			<link_ctn id="CERN-RAL-LHCOPN-001"/>
-		</route>
-		<route src="IN2P3" dst="RRCKI">
-			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
-			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
-		</route>
-		<route src="PIC" dst="RAL">
-			<link_ctn id="CERN-PIC-LHCOPN-001"/>
-			<link_ctn id="CERN-RAL-LHCOPN-001"/>
-		</route>
-		<route src="PIC" dst="SARA">
-			<link_ctn id="CERN-PIC-LHCOPN-001"/>
-			<link_ctn id="CERN-SARA-LHCOPN-001"/>
-		</route>
-		<route src="PIC" dst="RRCKI">
-			<link_ctn id="CERN-PIC-LHCOPN-001"/>
-			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
-		</route>
-		<route src="RAL" dst="SARA">
-			<link_ctn id="CERN-RAL-LHCOPN-001"/>
-			<link_ctn id="CERN-SARA-LHCOPN-001"/>
-		</route>
-		<route src="RAL" dst="RRCKI">
-			<link_ctn id="CERN-RAL-LHCOPN-001"/>
-			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
-		</route>
-		<route src="SARA" dst="RRCKI">
-			<link_ctn id="CERN-SARA-LHCOPN-001"/>
-			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
-		</route>
 
 		<host id="T2_1" speed="1Gf" core="40">
-			<mount storageId="T2_HDD1" name="T2_1/"/>
+			<mount storageId="T2_1" name="T2_1/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -521,7 +421,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_2" speed="1Gf" core="68">
-			<mount storageId="T2_HDD2" name="T2_2/"/>
+			<mount storageId="T2_2" name="T2_2/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -541,7 +441,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_3" speed="1Gf" core="51">
-			<mount storageId="T2_HDD3" name="T2_3/"/>
+			<mount storageId="T2_3" name="T2_3/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -561,7 +461,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_4" speed="1Gf" core="20">
-			<mount storageId="T2_HDD4" name="T2_4/"/>
+			<mount storageId="T2_4" name="T2_4/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -581,7 +481,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_5" speed="1Gf" core="45">
-			<mount storageId="T2_HDD5" name="T2_5/"/>
+			<mount storageId="T2_5" name="T2_5/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -601,7 +501,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_6" speed="1Gf" core="158">
-			<mount storageId="T2_HDD6" name="T2_6/"/>
+			<mount storageId="T2_6" name="T2_6/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -621,7 +521,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_7" speed="1Gf" core="55">
-			<mount storageId="T2_HDD7" name="T2_7/"/>
+			<mount storageId="T2_7" name="T2_7/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -641,7 +541,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_8" speed="1Gf" core="39">
-			<mount storageId="T2_HDD8" name="T2_8/"/>
+			<mount storageId="T2_8" name="T2_8/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -661,7 +561,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_9" speed="1Gf" core="63">
-			<mount storageId="T2_HDD9" name="T2_9/"/>
+			<mount storageId="T2_9" name="T2_9/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -681,7 +581,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_10" speed="1Gf" core="8">
-			<mount storageId="T2_HDD10" name="T2_10/"/>
+			<mount storageId="T2_10" name="T2_10/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -701,7 +601,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_11" speed="1Gf" core="52">
-			<mount storageId="T2_HDD11" name="T2_11/"/>
+			<mount storageId="T2_11" name="T2_11/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -721,7 +621,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_12" speed="1Gf" core="100">
-			<mount storageId="T2_HDD12" name="T2_12/"/>
+			<mount storageId="T2_12" name="T2_12/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -741,7 +641,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_13" speed="1Gf" core="22">
-			<mount storageId="T2_HDD13" name="T2_13/"/>
+			<mount storageId="T2_13" name="T2_13/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -761,7 +661,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_14" speed="1Gf" core="75">
-			<mount storageId="T2_HDD14" name="T2_14/"/>
+			<mount storageId="T2_14" name="T2_14/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -781,7 +681,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_15" speed="1Gf" core="19">
-			<mount storageId="T2_HDD15" name="T2_15/"/>
+			<mount storageId="T2_15" name="T2_15/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -801,7 +701,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
 		<host id="T2_16" speed="1Gf" core="67">
-			<mount storageId="T2_HDD16" name="T2_16/"/>
+			<mount storageId="T2_16" name="T2_16/"/>
 
 			<mount storageId="STORAGE_CERN" name="CERN0/"/>
 			<mount storageId="NEARLINE_CERN" name="CERN1/"/>
@@ -820,6 +720,18 @@
 			<mount storageId="STORAGE_RRCKI" name="RRCKI0/"/>
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1/"/>
 		</host>
+		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-PIC-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-RAL-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-SARA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="2GBps" latency="0.0ms"/>
+
+		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+
 
 
 		<!--LINKS between CERN and TIER2-->
@@ -956,6 +868,94 @@
 		<link id="SARA_16_T2" bandwidth="10MBps" latency="0.0ms"/>
 		<link id="RRCKI_16_T2" bandwidth="10MBps" latency="0.0ms"/>
 
+		<!--routes between TIER1-TIER1-->
+
+		<!--DIRECT 3 ROUTES-->
+		<route src="CNAF" dst="GRIDKA"><link_ctn id="CNAF-GRIDKA-LHCOPN-001"/></route>
+		<route src="GRIDKA" dst="IN2P3"><link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/></route>
+		<route src="GRIDKA" dst="SARA"><link_ctn id="GRIDKA-SARA-LHCOPN-001"/></route>
+		<!--3 ROUTES THRU GRIDKA-->
+		<route src="CNAF" dst="IN2P3">
+			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
+		</route>
+		<route src="CNAF" dst="SARA">
+			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="SARA">
+			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
+			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
+		</route>
+		<!--ROUTES THRU CERN-->
+		<route src="CNAF" dst="PIC">
+			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+		</route>
+		<route src="CNAF" dst="RAL">
+			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="CNAF" dst="RRCKI">
+			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="GRIDKA" dst="PIC">
+			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+		</route>
+		<route src="GRIDKA" dst="RAL">
+			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="GRIDKA" dst="RRCKI">
+			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="PIC">
+			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="RAL">
+			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="RRCKI">
+			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="PIC" dst="RAL">
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="PIC" dst="SARA">
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+			<link_ctn id="CERN-SARA-LHCOPN-001"/>
+		</route>
+		<route src="PIC" dst="RRCKI">
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="RAL" dst="SARA">
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+			<link_ctn id="CERN-SARA-LHCOPN-001"/>
+		</route>
+		<route src="RAL" dst="RRCKI">
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="SARA" dst="RRCKI">
+			<link_ctn id="CERN-SARA-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<!--routes between CERN and TIER1-->
+		<route src="CERN" dst="CNAF"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
+		<route src="CERN" dst="GRIDKA"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
+		<route src="CERN" dst="IN2P3"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
+		<route src="CERN" dst="PIC"><link_ctn id="CERN-PIC-LHCOPN-001"/></route>
+		<route src="CERN" dst="RAL"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
+		<route src="CERN" dst="SARA"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
+		<route src="CERN" dst="RRCKI"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
 
 
 		<!--routes between CERN and TIER2-->

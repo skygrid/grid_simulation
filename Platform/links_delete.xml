@@ -1,0 +1,79 @@
+
+<!--DIRECT 3 ROUTES-->
+<route src="CNAF" dst="GRIDKA"><link_ctn id="CNAF-GRIDKA-LHCOPN-001"/></route>
+<route src="GRIDKA" dst="IN2P3"><link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/></route>
+<route src="GRIDKA" dst="SARA"><link_ctn id="GRIDKA-SARA-LHCOPN-001"/></route>
+<!--3 ROUTES THRU GRIDKA-->
+<route src="CNAF" dst="IN2P3">
+	<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
+	<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
+</route>
+<route src="CNAF" dst="SARA">
+	<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
+	<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
+</route>
+<route src="IN2P3" dst="SARA">
+	<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
+	<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
+</route>
+<!--ROUTES THRU CERN-->
+<route src="CNAF" dst="PIC">
+	<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+	<link_ctn id="CERN-PIC-LHCOPN-001"/>
+</route>
+<route src="CNAF" dst="RAL">
+	<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+	<link_ctn id="CERN-RAL-LHCOPN-001"/>
+</route>
+<route src="CNAF" dst="RRCKI">
+	<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+	<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+</route>
+<route src="GRIDKA" dst="PIC">
+	<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+	<link_ctn id="CERN-PIC-LHCOPN-001"/>
+</route>
+<route src="GRIDKA" dst="RAL">
+	<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+	<link_ctn id="CERN-RAL-LHCOPN-001"/>
+</route>
+<route src="GRIDKA" dst="RRCKI">
+	<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+	<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+</route>
+<route src="IN2P3" dst="PIC">
+	<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+	<link_ctn id="CERN-PIC-LHCOPN-001"/>
+</route>
+<route src="IN2P3" dst="RAL">
+	<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+	<link_ctn id="CERN-RAL-LHCOPN-001"/>
+</route>
+<route src="IN2P3" dst="RRCKI">
+	<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+	<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+</route>
+<route src="PIC" dst="RAL">
+	<link_ctn id="CERN-PIC-LHCOPN-001"/>
+	<link_ctn id="CERN-RAL-LHCOPN-001"/>
+</route>
+<route src="PIC" dst="SARA">
+	<link_ctn id="CERN-PIC-LHCOPN-001"/>
+	<link_ctn id="CERN-SARA-LHCOPN-001"/>
+</route>
+<route src="PIC" dst="RRCKI">
+	<link_ctn id="CERN-PIC-LHCOPN-001"/>
+	<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+</route>
+<route src="RAL" dst="SARA">
+	<link_ctn id="CERN-RAL-LHCOPN-001"/>
+	<link_ctn id="CERN-SARA-LHCOPN-001"/>
+</route>
+<route src="RAL" dst="RRCKI">
+	<link_ctn id="CERN-RAL-LHCOPN-001"/>
+	<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+</route>
+<route src="SARA" dst="RRCKI">
+	<link_ctn id="CERN-SARA-LHCOPN-001"/>
+	<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+</route>

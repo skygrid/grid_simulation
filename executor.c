@@ -20,8 +20,8 @@ int executor(int argc, char* argv[]){
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
     char inputFilePath[80];
     char outputFilePath[80];
-    sprintf(inputFilePath, "%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->inputFileName);
-    sprintf(outputFilePath, "%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->outputName);
+    sprintf(inputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->inputFileName);
+    sprintf(outputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->outputName);
 
     file = MSG_file_open(inputFilePath, NULL);
     inputSize = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
@@ -56,6 +56,7 @@ int executor(int argc, char* argv[]){
     replica->outLoc1 = jobInfo->outputHost1;
     replica->outLoc2 = jobInfo->outputHost2;
     replica->outLoc3 = jobInfo->outputHost3;
+    replica->storageType = jobInfo->storageType;
     MSG_process_create("dataRep", data_replicator, replica, MSG_host_self());
 
     //Clear memory

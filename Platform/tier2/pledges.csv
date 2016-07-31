@@ -1,0 +1,147 @@
+Country,Federation,Pledge Type,ALICE,% of Req.,ATLAS,% of Req.,CMS,% of Req.,LHCb,% of Req.,SUM,% of Req.
+Australia,University of Melbourne,CPU (HEP-SPEC06),,,11500,2%,,,,,11500,2%
+Australia,University of Melbourne,Disk (Tbytes),,,1180,2%,,,,,1180,2%
+Austria,Austrian Tier-2 Federation,CPU (HEP-SPEC06),,,1857,0%,10000,1%,,,11857,1%
+Austria,Austrian Tier-2 Federation,Disk (Tbytes),,,120,0%,500,1%,,,620,1%
+Belgium,Belgian Tier-2 Federation,CPU (HEP-SPEC06),,,,,32000,5%,,,32000,5%
+Belgium,Belgian Tier-2 Federation,Disk (Tbytes),,,,,2950,8%,,,2950,8%
+Brazil,SPRACE Sao Paulo,CPU (HEP-SPEC06),,,,,25200,4%,,,25200,4%
+Brazil,SPRACE Sao Paulo,Disk (Tbytes),,,,,1450,4%,,,1450,4%
+Canada,Canada-East Federation,CPU (HEP-SPEC06),,,14150,3%,,,,,14150,3%
+Canada,Canada-East Federation,Disk (Tbytes),,,1800,3%,,,,,1800,3%
+Canada,Canada-West Federation,CPU (HEP-SPEC06),,,14150,3%,,,,,14150,3%
+Canada,Canada-West Federation,Disk (Tbytes),,,1800,3%,,,,,1800,3%
+China,IHEP Beijing,CPU (HEP-SPEC06),,,5780,1%,5780,1%,,,11560,1%
+China,IHEP Beijing,Disk (Tbytes),,,400,1%,540,1%,,,940,1%
+Czech Republic,FZU AS Prague,CPU (HEP-SPEC06),5000,2%,15000,3%,,,,,20000,2%
+Czech Republic,FZU AS Prague,Disk (Tbytes),1400,5%,1800,3%,,,,,3200,3%
+Estonia,NICPB Tallinn,CPU (HEP-SPEC06),,,,,51000,7%,,,51000,7%
+Estonia,NICPB Tallinn,Disk (Tbytes),,,,,1200,3%,,,1200,3%
+Finland,NDGF/HIP Tier2,CPU (HEP-SPEC06),,,,,8000,1%,,,8000,1%
+Finland,NDGF/HIP Tier2,Disk (Tbytes),,,,,630,2%,,,630,2%
+France,CC-IN2P3 AF,CPU (HEP-SPEC06),,,,,7730,1%,,,7730,1%
+France,CC-IN2P3 AF,Disk (Tbytes),,,,,510,1%,,,510,1%
+France,CPPM Marseille,CPU (HEP-SPEC06),,,8000,1%,,,4000,5%,12000,2%
+France,CPPM Marseille,Disk (Tbytes),,,900,1%,,,300,11%,1200,2%
+France,GRIF Paris,CPU (HEP-SPEC06),7797,3%,19244,3%,19460,3%,6838,8%,53339,3%
+France,GRIF Paris,Disk (Tbytes),858,3%,2448,3%,1056,3%,300,11%,4662,3%
+France,IPHC Strasbourg,CPU (HEP-SPEC06),4000,2%,,,16000,2%,,,20000,2%
+France,IPHC Strasbourg,Disk (Tbytes),290,1%,,,880,2%,,,1170,2%
+France,LAPP Annecy,CPU (HEP-SPEC06),,,12500,2%,,,5100,6%,17600,3%
+France,LAPP Annecy,Disk (Tbytes),,,1500,2%,,,2,0%,1502,2%
+France,LPC Clermont-Ferrand,CPU (HEP-SPEC06),4430,2%,10556,2%,,,2014,2%,17000,2%
+France,LPC Clermont-Ferrand,Disk (Tbytes),300,1%,1100,2%,,,2,0%,1402,1%
+France,LPSC Grenoble,CPU (HEP-SPEC06),2646,1%,7811,1%,,,,,10457,1%
+France,LPSC Grenoble,Disk (Tbytes),291,1%,719,1%,,,,,1010,1%
+France,SUBATECH Nantes,CPU (HEP-SPEC06),4500,2%,,,,,,,4500,2%
+France,SUBATECH Nantes,Disk (Tbytes),800,3%,,,,,,,800,3%
+Germany,ATLAS Federation DESY,CPU (HEP-SPEC06),,,25000,4%,,,,,25000,4%
+Germany,ATLAS Federation DESY,Disk (Tbytes),,,2400,3%,,,,,2400,3%
+Germany,ATLAS Federation FR/W,CPU (HEP-SPEC06),,,18866,3%,,,,,18866,3%
+Germany,ATLAS Federation FR/W,Disk (Tbytes),,,2400,3%,,,,,2400,3%
+Germany,ATLAS Federation HH/Goe,CPU (HEP-SPEC06),,,9433,2%,,,,,9433,2%
+Germany,ATLAS Federation HH/Goe,Disk (Tbytes),,,1200,2%,,,,,1200,2%
+Germany,ATLAS Federation Munich,CPU (HEP-SPEC06),,,18860,3%,,,,,18860,3%
+Germany,ATLAS Federation Munich,Disk (Tbytes),,,2400,3%,,,,,2400,3%
+Germany,CMS Federation DESY RWTH Aachen,CPU (HEP-SPEC06),,,,,51000,7%,,,51000,7%
+Germany,CMS Federation DESY RWTH Aachen,Disk (Tbytes),,,,,3000,8%,,,3000,8%
+Germany,GSI Darmstadt,CPU (HEP-SPEC06),16000,7%,,,,,,,16000,7%
+Germany,GSI Darmstadt,Disk (Tbytes),1800,7%,,,,,,,1800,7%
+Germany,LHCb Federation DESY,CPU (HEP-SPEC06),,,,,,,4500,6%,4500,6%
+Germany,LHCb Federation DESY,Disk (Tbytes),,,,,,,8,0%,8,0%
+Greece,GRID LAB KAVALA Institute of Technology,CPU (HEP-SPEC06),,,0,0%,0,0%,,,0,0%
+Greece,GRID LAB KAVALA Institute of Technology,Disk (Tbytes),,,0,0%,0,0%,,,0,0%
+Greece,HEP Laboratory University of Ioannina,CPU (HEP-SPEC06),,,,,1870,0%,,,1870,0%
+Greece,HEP Laboratory University of Ioannina,Disk (Tbytes),,,,,200,1%,,,200,1%
+Hungary,HGCC Federation,CPU (HEP-SPEC06),4400,2%,,,8800,1%,,,13200,1%
+Hungary,HGCC Federation,Disk (Tbytes),500,2%,,,500,1%,,,1000,2%
+India,TIFR Mumbai,CPU (HEP-SPEC06),,,,,12288,2%,,,12288,2%
+India,TIFR Mumbai,Disk (Tbytes),,,,,1980,5%,,,1980,5%
+India,VECC/SINP Kolkata,CPU (HEP-SPEC06),23000,10%,,,,,,,23000,10%
+India,VECC/SINP Kolkata,Disk (Tbytes),240,1%,,,,,,,240,1%
+Israel,IL-HEP Tier-2 Federation,CPU (HEP-SPEC06),,,8000,1%,,,,,8000,1%
+Israel,IL-HEP Tier-2 Federation,Disk (Tbytes),,,1200,2%,,,,,1200,2%
+Italy,INFN T2 Federation,CPU (HEP-SPEC06),43845,19%,50940,9%,84000,12%,15800,20%,194585,12%
+Italy,INFN T2 Federation,Disk (Tbytes),4829,19%,5040,7%,4560,12%,0,0%,14429,10%
+Japan,ICEPP Tokyo,CPU (HEP-SPEC06),,,28000,5%,,,,,28000,5%
+Japan,ICEPP Tokyo,Disk (Tbytes),,,3200,4%,,,,,3200,4%
+Latin America,Latin America Federation,CPU (HEP-SPEC06),27500,12%,5200,1%,7600,1%,5530,7%,45830,3%
+Latin America,Latin America Federation,Disk (Tbytes),200,1%,220,0%,700,2%,240,9%,1360,1%
+Malaysia,University of Malaya,CPU (HEP-SPEC06),,,,,45000,6%,,,45000,6%
+Malaysia,University of Malaya,Disk (Tbytes),,,,,600,2%,,,600,2%
+Mexico,UNAM,CPU (HEP-SPEC06),4900,2%,,,,,,,4900,2%
+Mexico,UNAM,Disk (Tbytes),570,2%,,,,,,,570,2%
+Pakistan,Pakistan ALICE Federation,CPU (HEP-SPEC06),2500,1%,,,,,,,2500,1%
+Pakistan,Pakistan ALICE Federation,Disk (Tbytes),500,2%,,,,,,,500,2%
+Pakistan,Pakistan Tier-2 Federation,CPU (HEP-SPEC06),,,,,6365,1%,,,6365,1%
+Pakistan,Pakistan Tier-2 Federation,Disk (Tbytes),,,,,330,1%,,,330,1%
+Poland,Polish Tier-2 Federation,CPU (HEP-SPEC06),5400,2%,7300,1%,6400,1%,3900,5%,23000,1%
+Poland,Polish Tier-2 Federation,Disk (Tbytes),370,1%,500,1%,360,1%,,,1230,1%
+Portugal,LIP Tier-2 Federation,CPU (HEP-SPEC06),0,0%,3000,1%,3000,0%,0,0%,6000,0%
+Portugal,LIP Tier-2 Federation,Disk (Tbytes),0,0%,190,0%,170,0%,0,0%,360,0%
+Republic of Korea,CHEP of KNU Daegu,CPU (HEP-SPEC06),,,,,9200,1%,,,9200,1%
+Republic of Korea,CHEP of KNU Daegu,Disk (Tbytes),,,,,810,2%,,,810,2%
+Romania,Romanian Tier-2 Federation,CPU (HEP-SPEC06),17800,8%,20350,4%,,,6300,8%,44450,5%
+Romania,Romanian Tier-2 Federation,Disk (Tbytes),1280,5%,1420,2%,,,360,13%,3060,3%
+Russian Federation,Russian Data-Intensive GRID,CPU (HEP-SPEC06),21679,9%,31662,6%,24362,3%,899,1%,78602,5%
+Russian Federation,Russian Data-Intensive GRID,Disk (Tbytes),1568,6%,2290,3%,1762,5%,65,2%,5685,4%
+Slovakia,Slovak Tier2 Federation,CPU (HEP-SPEC06),5800,2%,5800,1%,,,,,11600,1%
+Slovakia,Slovak Tier2 Federation,Disk (Tbytes),400,2%,400,1%,,,,,800,1%
+Slovenia,SiGNET,CPU (HEP-SPEC06),,,25000,4%,,,,,25000,4%
+Slovenia,SiGNET,Disk (Tbytes),,,2000,3%,,,,,2000,3%
+South Africa,CHPC Tier2,CPU (HEP-SPEC06),6000,3%,,,,,,,6000,3%
+South Africa,CHPC Tier2,Disk (Tbytes),100,0%,,,,,,,100,0%
+Spain,ATLAS Federation,CPU (HEP-SPEC06),,,28300,5%,,,,,28300,5%
+Spain,ATLAS Federation,Disk (Tbytes),,,3600,5%,,,,,3600,5%
+Spain,CMS Federation,CPU (HEP-SPEC06),,,,,35000,5%,,,35000,5%
+Spain,CMS Federation,Disk (Tbytes),,,,,2000,5%,,,2000,5%
+Spain,LHCb Federation,CPU (HEP-SPEC06),,,,,,,5265,7%,5265,7%
+Spain,LHCb Federation,Disk (Tbytes),,,,,,,1,0%,1,0%
+Sweden,SNIC Tier-2,CPU (HEP-SPEC06),2820,1%,5050,1%,,,,,7870,1%
+Sweden,SNIC Tier-2,Disk (Tbytes),400,2%,520,1%,,,,,920,1%
+Switzerland,CHIPP,CPU (HEP-SPEC06),,,24500,4%,14500,2%,10000,12%,49000,4%
+Switzerland,CHIPP,Disk (Tbytes),,,1380,2%,1030,3%,540,19%,2950,3%
+Taiwan,Taiwan Analysis Facility Federation,CPU (HEP-SPEC06),,,4000,1%,0,0%,,,4000,0%
+Taiwan,Taiwan Analysis Facility Federation,Disk (Tbytes),,,500,1%,0,0%,,,500,0%
+Taiwan,Taiwan CMS Federation,CPU (HEP-SPEC06),,,,,5000,1%,,,5000,1%
+Taiwan,Taiwan CMS Federation,Disk (Tbytes),,,,,384,1%,,,384,1%
+Thailand,National e-Science Infrastructure Consortium,CPU (HEP-SPEC06),1400,1%,,,4700,1%,,,6100,1%
+Thailand,National e-Science Infrastructure Consortium,Disk (Tbytes),100,0%,,,300,1%,,,400,1%
+Turkey,Turkish Tier-2 Federation,CPU (HEP-SPEC06),,,5100,1%,4700,1%,,,9800,1%
+Turkey,Turkish Tier-2 Federation,Disk (Tbytes),,,550,1%,350,1%,,,900,1%
+UK,London Tier 2,CPU (HEP-SPEC06),0,0%,15305,3%,24710,4%,2273,3%,42288,3%
+UK,London Tier 2,Disk (Tbytes),0,0%,1949,3%,1341,4%,300,11%,3590,3%
+UK,NorthGrid,CPU (HEP-SPEC06),0,0%,20038,4%,0,0%,7577,9%,27615,2%
+UK,NorthGrid,Disk (Tbytes),0,0%,2552,4%,0,0%,300,11%,2852,2%
+UK,ScotGrid,CPU (HEP-SPEC06),0,0%,11620,2%,0,0%,1903,2%,13523,1%
+UK,ScotGrid,Disk (Tbytes),0,0%,1480,2%,0,0%,1,0%,1481,1%
+UK,SouthGrid,CPU (HEP-SPEC06),4740,2%,9637,2%,10290,1%,6727,8%,31394,2%
+UK,SouthGrid,Disk (Tbytes),522,2%,1227,2%,559,1%,300,11%,2608,2%
+USA,Caltech CMS T2,CPU (HEP-SPEC06),,,,,25000,4%,,,25000,4%
+USA,Caltech CMS T2,Disk (Tbytes),,,,,1360,4%,,,1360,4%
+USA,Florida CMS T2,CPU (HEP-SPEC06),,,,,25000,4%,,,25000,4%
+USA,Florida CMS T2,Disk (Tbytes),,,,,1360,4%,,,1360,4%
+USA,Great Lakes ATLAS T2,CPU (HEP-SPEC06),,,24000,4%,,,,,24000,4%
+USA,Great Lakes ATLAS T2,Disk (Tbytes),,,3000,4%,,,,,3000,4%
+USA,LBNL ALICE Berkeley CA,CPU (HEP-SPEC06),12000,5%,,,,,,,12000,5%
+USA,LBNL ALICE Berkeley CA,Disk (Tbytes),1000,4%,,,,,,,1000,4%
+USA,MIT CMS T2,CPU (HEP-SPEC06),,,,,25000,4%,,,25000,4%
+USA,MIT CMS T2,Disk (Tbytes),,,,,1360,4%,,,1360,4%
+USA,Midwest ATLAS T2,CPU (HEP-SPEC06),,,36000,6%,,,,,36000,6%
+USA,Midwest ATLAS T2,Disk (Tbytes),,,4500,6%,,,,,4500,6%
+USA,Nebraska CMS T2,CPU (HEP-SPEC06),,,,,25000,4%,,,25000,4%
+USA,Nebraska CMS T2,Disk (Tbytes),,,,,1360,4%,,,1360,4%
+USA,Northeast ATLAS T2,CPU (HEP-SPEC06),,,24000,4%,,,,,24000,4%
+USA,Northeast ATLAS T2,Disk (Tbytes),,,3000,4%,,,,,3000,4%
+USA,Purdue CMS T2,CPU (HEP-SPEC06),,,,,25000,4%,,,25000,4%
+USA,Purdue CMS T2,Disk (Tbytes),,,,,1360,4%,,,1360,4%
+USA,SLAC ATLAS T2,CPU (HEP-SPEC06),,,24000,4%,,,,,24000,4%
+USA,SLAC ATLAS T2,Disk (Tbytes),,,3000,4%,,,,,3000,4%
+USA,Southwest ATLAS T2,CPU (HEP-SPEC06),,,24000,4%,,,,,24000,4%
+USA,Southwest ATLAS T2,Disk (Tbytes),,,3000,4%,,,,,3000,4%
+USA,U. Wisconsin CMS T2,CPU (HEP-SPEC06),,,,,25000,4%,,,25000,4%
+USA,U. Wisconsin CMS T2,Disk (Tbytes),,,,,1360,4%,,,1360,4%
+USA,UC San Diego CMS T2,CPU (HEP-SPEC06),,,,,25000,4%,,,25000,4%
+USA,UC San Diego CMS T2,Disk (Tbytes),,,,,1360,4%,,,1360,4%
+Ukraine,Ukrainian Tier-2 Federation,CPU (HEP-SPEC06),3000,1%,,,7500,1%,,,10500,1%
+Ukraine,Ukrainian Tier-2 Federation,Disk (Tbytes),200,1%,,,650,2%,,,850,1%
