@@ -3,6 +3,8 @@
 //
 #include <simgrid/msg.h>
 #include "messages.h"
+#include "myfunc_list.h"
+
 XBT_LOG_NEW_DEFAULT_CATEGORY(dispatcher, "messages specific for executor");
 
 int hostFailAmount = 0;
@@ -22,7 +24,7 @@ int executor(int argc, char* argv[]){
     sprintf(outputFilePath, "%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->outputName);
 
     file = MSG_file_open(inputFilePath, NULL);
-    inputSize = MSG_file_read(file, (sg_size_t) jobInfo->commSize);
+    inputSize = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
 
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name, jobInfo->compSize, 0, NULL);
@@ -49,10 +51,12 @@ int executor(int argc, char* argv[]){
     //Launch replicas creator
     replicatorDataPtr replica = xbt_new(replicatorData, 1);
     replica->fileName = jobInfo->outputName;
+    replica->replicaAmount = jobInfo->outputNumber;
     replica->currentLoc = (char*) MSG_host_get_name(MSG_host_self());
     replica->outLoc1 = jobInfo->outputHost1;
     replica->outLoc2 = jobInfo->outputHost2;
     replica->outLoc3 = jobInfo->outputHost3;
+    MSG_process_create("dataRep", data_replicator, replica, MSG_host_self());
 
     //Clear memory
     MSG_file_close(file);

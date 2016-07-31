@@ -8,21 +8,16 @@
 
 int scheduler(int argc, char *argv[]);
 int tier1(int argc, char *argv[]);
-int dispatcher(int argc, char *argv[]);
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this msg example");
 
 
-
-
 int main(int argc, char *argv[]){
     MSG_init(&argc, argv);
-    MSG_config("host/model", "ptask_L07");
 
     MSG_create_environment(argv[1]);
 
     MSG_function_register("scheduler", scheduler);
-    MSG_function_register("dispatcher", dispatcher);
     MSG_function_register("tier1", tier1);
     MSG_launch_application(argv[2]);
 

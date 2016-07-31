@@ -9,6 +9,7 @@
 
 #define QUEUE_SIZE 1000000
 jobPtr* matcher(long amountRequestedJob);
+int input();
 
 long currentJobInQueue = 0;
 jobPtr* jobQueue;
@@ -16,6 +17,7 @@ jobPtr* jobQueue;
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
 int scheduler(int argc, char* argv[]){
+
     input();
     char mailbox[30];
     msg_task_t task = NULL;
@@ -58,8 +60,6 @@ int scheduler(int argc, char* argv[]){
             MSG_task_destroy(task);
             break;
         }
-
-
     }
 }
 
@@ -108,45 +108,6 @@ int input(){
     CsvParser_destroy(csvparser);
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

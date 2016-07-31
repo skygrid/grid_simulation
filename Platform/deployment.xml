@@ -1,0 +1,125 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+
+	<process host="CERN" function="scheduler">
+		<argument value="CERN"/>  <!-- Input mailbox -->
+	</process>
+
+	<process host="CERN" function="tier1">
+		<argument value="CERNT"/>
+		<argument value="510"/>
+	</process>
+
+	<process host="CNAF" function="tier1">
+		<argument value="CNAF"/>
+		<argument value="280"/>
+	</process>
+
+	<process host="GRIDKA" function="tier1">
+		<argument value="GRIDKA"/>
+		<argument value="244"/>
+	</process>
+
+	<process host="IN2P3" function="tier1">
+		<argument value="IN2P3"/>
+		<argument value="230"/>
+	</process>
+
+	<process host="PIC" function="tier1">
+		<argument value="PIC"/>
+		<argument value="94"/>
+	</process>
+
+	<process host="RAL" function="tier1">
+		<argument value="RAL"/>
+		<argument value="468"/>
+	</process>
+
+	<process host="SARA" function="tier1">
+		<argument value="SARA"/>
+		<argument value="170"/>
+	</process>
+
+	<process host="RRCKI" function="tier1">
+		<argument value="RRCKI"/>
+		<argument value="164"/>
+	</process>
+
+
+	<process host="T2_1" function="tier1">
+		<argument value="T2_1"/>
+		<argument value="68"/>
+	</process>
+
+	<process host="T2_2" function="tier1">
+		<argument value="T2_2"/>
+		<argument value="51"/>
+	</process>
+
+	<process host="T2_3" function="tier1">
+		<argument value="T2_3"/>
+		<argument value="20"/>
+	</process>
+
+	<process host="T2_4" function="tier1">
+		<argument value="T2_4"/>
+		<argument value="45"/>
+	</process>
+
+	<process host="T2_5" function="tier1">
+		<argument value="T2_5"/>
+		<argument value="158"/>
+	</process>
+
+	<process host="T2_6" function="tier1">
+		<argument value="T2_6"/>
+		<argument value="55"/>
+	</process>
+
+	<process host="T2_7" function="tier1">
+		<argument value="T2_7"/>
+		<argument value="39"/>
+	</process>
+
+	<process host="T2_8" function="tier1">
+		<argument value="T2_8"/>
+		<argument value="63"/>
+	</process>
+
+	<process host="T2_9" function="tier1">
+		<argument value="T2_9"/>
+		<argument value="8"/>
+	</process>
+
+	<process host="T2_10" function="tier1">
+		<argument value="T2_10"/>
+		<argument value="52"/>
+	</process>
+
+	<process host="T2_11" function="tier1">
+		<argument value="T2_11"/>
+		<argument value="100"/>
+	</process>
+
+	<process host="T2_12" function="tier1">
+		<argument value="T2_12"/>
+		<argument value="22"/>
+	</process>
+
+	<process host="T2_13" function="tier1">
+		<argument value="T2_13"/>
+		<argument value="75"/>
+	</process>
+
+	<process host="T2_14" function="tier1">
+		<argument value="T2_14"/>
+		<argument value="19"/>
+	</process>
+
+	<process host="T2_15" function="tier1">
+		<argument value="T2_15"/>
+		<argument value="67"/>
+	</process>
+
+</platform>
