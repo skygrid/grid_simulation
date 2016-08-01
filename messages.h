@@ -55,11 +55,13 @@ typedef struct{
     char* outLoc1;
     char* outLoc2;
     char* outLoc3;
+    double size;
 }replicatorData, *replicatorDataPtr;
 
 
 typedef struct {
     char* filename;
+    int numberOfReplica;
     char* dest;
     char* storageType;
     double size;

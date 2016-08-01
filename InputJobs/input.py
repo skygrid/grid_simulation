@@ -42,13 +42,13 @@ for i in range(job_amount):
         NREpIn = 0
     else:
         if NREpIn == 1:
-            location_str = ", ".join(Locations[:prob_array_input[i]]) + ",0,0"
+            location_str = ",".join(Locations[:prob_array_input[i]]) + ",0,0"
         elif NREpIn == 2:
-            location_str = ", ".join(Locations[:prob_array_input[i]]) + ",0"
+            location_str = ",".join(Locations[:prob_array_input[i]]) + ",0"
         else:
-            location_str = ", ".join(Locations[:prob_array_input[i]])
+            location_str = ",".join(Locations[:prob_array_input[i]])
     random.shuffle(Locations)
-    output_locations = ", ".join(Locations[:3])
+    output_locations = ",".join(Locations[:3])
     string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(cpu_size) + "," + input_file_name + "," + str(data_size) + "," + str(NREpIn) + "," + str(random.randint(0,1)) + "," + location_str + "," + output_file_name + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations+ "\n"
     f.write(string)
 
