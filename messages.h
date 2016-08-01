@@ -62,6 +62,7 @@ typedef struct {
     char* filename;
     char* dest;
     char* storageType;
+    double size;
 }uploadData, *uploadDataPtr;
 
 

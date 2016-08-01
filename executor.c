@@ -5,7 +5,7 @@
 #include "messages.h"
 #include "myfunc_list.h"
 
-XBT_LOG_NEW_DEFAULT_CATEGORY(dispatcher, "messages specific for executor");
+XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int hostFailAmount = 0;
 void plusOneActiveCore();
@@ -46,7 +46,7 @@ int executor(int argc, char* argv[]){
 
     //Write output to file
     outFile = MSG_file_open(outputFilePath, NULL);
-    MSG_file_write(outFile, (sg_size_t) jobInfo->outputFileSize);
+    MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
 
     //Launch replicas creator
     replicatorDataPtr replica = xbt_new(replicatorData, 1);
@@ -57,14 +57,17 @@ int executor(int argc, char* argv[]){
     replica->outLoc2 = jobInfo->outputHost2;
     replica->outLoc3 = jobInfo->outputHost3;
     replica->storageType = jobInfo->storageType;
-    MSG_process_create("dataRep", data_replicator, replica, MSG_host_self());
 
     //Clear memory
     MSG_file_close(file);
     MSG_file_close(outFile);
+
+    MSG_process_create("dataRep", data_replicator, replica, MSG_host_self());
+
     memset(inputFilePath, 0, 80);
     memset(outputFilePath, 0, 80);
-    xbt_free(jobInfo);
+    //xbt_free(jobInfo);
+    XBT_INFO("xxx");
     MSG_process_kill(MSG_process_self());
     return 0;
 }

@@ -41,9 +41,10 @@ int scheduler(int argc, char* argv[]){
         }
 
         jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
-        jobPtr* batch = matcher(batchRequest->coreAmount);
+        // !!!!!111
+        jobPtr* batch = matcher(1);
 
-        msg_task_t taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
+        msg_task_t taskB = MSG_task_create("", 1, MESSAGES_SIZE, batch);
         msg_error_t res1 = MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)));
 
         // Anomalies
