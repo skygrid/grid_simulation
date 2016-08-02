@@ -6,10 +6,13 @@
 		<argument value="scheduler"/>  <!-- Input mailbox -->
 	</process>
 
+	<process host="CERN" function="tier1">
+		<argument value="CERN"/>
+		<argument value="510"/>
+	</process>
 
 	<process host="CNAF" function="tier1">
 		<argument value="CNAF"/>
 		<argument value="280"/>
 	</process>
-
 </platform>

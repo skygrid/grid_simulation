@@ -7,6 +7,6 @@
 
 int data_replicator(int argc, char* argv[]);
 int executor(int argc, char* argv[]);
-int job_requester(int argc, char* argv[]);
+int job_requester();
 jobType charToEnum(char *sval);
 #endif //CSIM2SIM_MYFUNC_LIST_H

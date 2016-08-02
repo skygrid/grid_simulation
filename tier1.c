@@ -20,8 +20,6 @@ int tier1(int argc, char* argv[]){
     MSG_process_create("tier1_executor", executorLauncher, argx, MSG_host_self());
     MSG_process_create("job_requester", job_requester, NULL, MSG_host_self());
 
-    //clear memory
-    //free(*argx);
     return 0;
 }
 
@@ -29,10 +27,9 @@ int tier1(int argc, char* argv[]){
 int executorLauncher(){
     int i;
     msg_task_t task;
-    char* tierMailbox = ((char**) MSG_process_get_data(MSG_process_self()))[0];
+    char* tierMailbox = strdup(((char**) MSG_process_get_data(MSG_process_self()))[0]);
 
     while (1){
-        XBT_INFO("!!!!!!!!!!!");
         int a = MSG_task_receive(&task, tierMailbox);
         if (a == MSG_OK){
             XBT_INFO("Successfully receive task");
@@ -46,7 +43,7 @@ int executorLauncher(){
 
         //LAUNCH PROCESS TO EXECUTE TASKS
         for (i = 0; i < jobAmount; ++i) {
-            MSG_process_create(tierMailbox, executor, jobPtrBatchData[i], MSG_host_self());
+            MSG_process_create("executor", executor, jobPtrBatchData[i], MSG_host_self());
         }
         xbt_free(jobPtrBatchData);
         MSG_task_destroy(task);

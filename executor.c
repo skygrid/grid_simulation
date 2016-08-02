@@ -23,8 +23,10 @@ int executor(int argc, char* argv[]){
     sprintf(inputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->inputFileName);
     sprintf(outputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->outputName);
 
+    XBT_INFO("%f", MSG_get_clock());
     file = MSG_file_open(inputFilePath, NULL);
     inputSize = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+    XBT_INFO("%f", MSG_get_clock());
 
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name, jobInfo->compSize, 0, NULL);
@@ -47,6 +49,8 @@ int executor(int argc, char* argv[]){
     //Write output to file
     outFile = MSG_file_open(outputFilePath, NULL);
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
+    MSG_file_close(file);
+    MSG_file_close(outFile);
 
     //Launch replicas creator
     replicatorDataPtr replica = xbt_new(replicatorData, 1);
@@ -60,8 +64,6 @@ int executor(int argc, char* argv[]){
     replica->size = jobInfo->outputFileSize;
 
     //Clear memory
-    MSG_file_close(file);
-    MSG_file_close(outFile);
 
     MSG_process_create("dataRep", data_replicator, replica, MSG_host_self());
 

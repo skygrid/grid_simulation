@@ -95,16 +95,16 @@ f.write("\t<AS id=\"AS_BIG\" routing=\"Full\">\n")
 for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t<storage_type id=" + quo + "single_HDD" + str(i) + quo + " size=" + quo + str(LIST_ONLINE_STORAGE[i]) + "TB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
     f.write("\t\t\t\tcontent=" + quo + "Content/" + str(LIST_CONTENT[i]) + "_online.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "30MBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "100MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "300MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "120MBps" + quo + "/>\n")
     f.write("\t\t</storage_type>\n\n")
 
 for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t<storage_type id=" + quo + "NEARLINE_HDD" + str(i) + quo + " size=" + quo + str(LIST_NEARLINE_STORAGE[i]) + "TB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
     f.write("\t\t\t\tcontent=" + quo + "Content/" + str(LIST_CONTENT[i]) + "_nearline.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "30MBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "100MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "300MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "120MBps" + quo + "/>\n")
     f.write("\t\t</storage_type>\n\n")
 
@@ -112,8 +112,8 @@ for i in range(len(LIST_ONLINE_STORAGE)):
 f.write("\t\t<!-- STORAGES_TYPES OF TIER2 LAYER-->\n")
 for i in range(len(STORAGE_TIER2)):
     f.write("\t\t<storage_type id=" + quo + "T2_HDD" + str(i+1) + quo + " size=" + quo + str(STORAGE_TIER2[i]) + quo + " model=" + quo + "linear_no_lat" + quo + ">\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "30MBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "100MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "300MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "120MBps" + quo + "/>\n")
     f.write("\t\t</storage_type>\n\n")
 

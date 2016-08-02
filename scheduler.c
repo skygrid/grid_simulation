@@ -65,7 +65,7 @@ int scheduler(int argc, char* argv[]){
         xbt_free(batchRequest);
         MSG_task_destroy(task);
         task = NULL;
-        taskB = NULL;
+        //taskB = NULL;
     }
 }
 
@@ -75,6 +75,7 @@ jobPtr* matcher(long amountRequestedJob){
     for (long i = currentJobInQueue; i < (currentJobInQueue+amountRequestedJob); ++i) {
         jobBatch[i-currentJobInQueue] = jobQueue[i];
     }
+    currentJobInQueue += amountRequestedJob;
     return jobBatch;
 }
 
