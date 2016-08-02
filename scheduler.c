@@ -7,7 +7,7 @@
 #include "messages.h"
 #include "myfunc_list.h"
 
-#define QUEUE_SIZE 100000
+#define QUEUE_SIZE 1500
 jobPtr* matcher(long amountRequestedJob);
 int input();
 
@@ -68,13 +68,14 @@ int scheduler(int argc, char* argv[]){
 }
 jobPtr* matcher(long amountRequestedJob){
 
-    if (currentJobInQueue >= QUEUE_SIZE){
+    if (currentJobInQueue + amountRequestedJob >= QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
         MSG_process_kill(MSG_process_self());
     }
 
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
     for (long i = currentJobInQueue; i < (currentJobInQueue+amountRequestedJob); ++i) {
+        jobQueue[i]->startSchedulClock = MSG_get_clock();
         jobBatch[i-currentJobInQueue] = jobQueue[i];
     }
     currentJobInQueue += amountRequestedJob;
@@ -82,6 +83,7 @@ jobPtr* matcher(long amountRequestedJob){
 }
 
 int input(){
+    clearFile();
     int i = 0;
     jobQueue = xbt_new(jobPtr, QUEUE_SIZE);
 
@@ -110,6 +112,7 @@ int input(){
         jobX->outputHost1 = strdup((char*) rowFields[13]);
         jobX->outputHost2 = strdup((char*) rowFields[14]);
         jobX->outputHost3 = strdup((char*) rowFields[15]);
+        jobX->startClock = 0;
         jobQueue[i] = jobX;
         CsvParser_destroy_row(row);
         i++;

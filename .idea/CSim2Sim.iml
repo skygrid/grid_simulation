@@ -5,14 +5,13 @@
       <sourceFolder url="file://$MODULE_DIR$/str_to_enum.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/scheduler.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tier1.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/data_replicator.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/job_requester.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/messages.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/myfunc_list.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tier1.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/data_replicator.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/executor.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/writeToFile.c" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

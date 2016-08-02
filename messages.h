@@ -44,6 +44,11 @@ typedef struct{
     char* outputName;
     double outputFileSize;
     char* storageType;
+
+    double startClock;
+    double startSchedulClock;
+    double stExecClock;
+    double endExecClock;
 }job, *jobPtr;
 
 

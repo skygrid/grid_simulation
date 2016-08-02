@@ -2,7 +2,7 @@ import pandas as pd
 import random
 from scipy import stats
 
-job_amount = 100000
+job_amount = 1500
 
 Locations = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 

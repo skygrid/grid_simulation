@@ -6,7 +6,8 @@
 #define CSIM2SIM_MYFUNC_LIST_H
 
 int data_replicator(int argc, char* argv[]);
-int executor(int argc, char* argv[]);
 int job_requester();
 jobType charToEnum(char *sval);
+int writeToFile(jobPtr jobInfo);
+int clearFile();
 #endif //CSIM2SIM_MYFUNC_LIST_H
