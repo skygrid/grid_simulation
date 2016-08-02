@@ -2,23 +2,25 @@ import pandas as pd
 import random
 from scipy import stats
 
+job_amount = 100000
+
 Locations = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 
 xk = (3, 2, 1)  # Amount of locations data has
 pk = (0.7, 0.2, 0.1)  # Probabilities that data has such amount of data
 custm = stats.rv_discrete(name='custm', values=(xk, pk))
-prob_array_input = custm.rvs(size=1005)
-prob_array_output = custm.rvs(size=1005)
+prob_array_input = custm.rvs(size=job_amount)
+prob_array_output = custm.rvs(size=job_amount)
 
 types = ["USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN", "MCSIMULATION", "TEST"]
 int_types = range(0,12)
 types_pk = (0.061, 0.175, 0.061, 0.005, 0.205, 0.046, 0.006, 0.025, 0.0, 0.0, 0.393, 0.023)
 types_custmx = stats.rv_discrete(name='custm', values=(int_types, types_pk))
-types_custm = types_custmx.rvs(size=1005)
+types_custm = types_custmx.rvs(size=job_amount)
 
-job_amount = 1000
 
-f = open("input.csv", "w")
+
+f = open("../input.csv", "w")
 f.write("Name, Type, Flops-Size, InputFileName, InputSize, NRep, Storage_T, Location1, Location2, Location3, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3\n")
 
 

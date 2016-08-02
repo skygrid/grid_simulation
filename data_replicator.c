@@ -2,9 +2,7 @@
 // Created by ken on 28.07.16.
 //
 #include <simgrid/msg.h>
-#include <stdio.h>
 #include "messages.h"
-long numberofopenedfiles2;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
@@ -78,7 +76,6 @@ int uploader(int argc, char* argv[]){
     sprintf(pathAtDest, "%s%s/%s", data->dest, data->storageType, data->filename);
 
     file = MSG_file_open(curFilePath, NULL);
-    numberofopenedfiles2++;
     msg_host_t dest = MSG_host_by_name(data->dest);
 
     msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
@@ -93,7 +90,7 @@ int uploader(int argc, char* argv[]){
         MSG_file_close(file);
         XBT_INFO("Transfer fail occurred", "%s");
     }
-    numberofopenedfiles2--;
+
     // Clear memory
     memset(curFilePath, '\0', 255);
     memset(pathAtDest, '\0', 255);

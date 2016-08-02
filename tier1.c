@@ -16,6 +16,7 @@ int tier1(int argc, char* argv[]){
     argx[0] = tierMailbox;
 
     // LAUNCH PROCESS
+    msg_sem_t sem = MSG_sem_init(1);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), NULL);
     MSG_process_create("tier1_executor", executorLauncher, argx, MSG_host_self());
     MSG_process_create("job_requester", job_requester, NULL, MSG_host_self());
@@ -37,7 +38,7 @@ int executorLauncher(){
             MSG_task_destroy(task);
             break;
         }
-        int jobAmount = 1;// (int) MSG_task_get_flops_amount(task);
+        int jobAmount = (int) MSG_task_get_flops_amount(task);
         jobPtr* jobPtrBatchData = MSG_task_get_data(task);
         XBT_INFO("Successfully receive %s", jobPtrBatchData[0]->name);
         //LAUNCH PROCESS TO EXECUTE TASKS

@@ -7,7 +7,7 @@
 #include "messages.h"
 #include "myfunc_list.h"
 
-#define QUEUE_SIZE 1000
+#define QUEUE_SIZE 100000
 jobPtr* matcher(long amountRequestedJob);
 int input();
 
@@ -42,9 +42,8 @@ int scheduler(int argc, char* argv[]){
         }
 
         jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
-        // !!!!!111
-        jobPtr* batch = matcher(1);
-        taskB = MSG_task_create("", 1.0, MESSAGES_SIZE, batch);
+        jobPtr* batch = matcher(batchRequest->coreAmount);
+        taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
         msg_error_t res1 = MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)));
 
         // Anomalies
