@@ -10,7 +10,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 int hostFailAmount = 0;
 void plusOneActiveCore();
 void minusOneActiveCore();
-
+long numberofopenedfiles;
 int executor(int argc, char* argv[]){
 
     msg_file_t file, outFile;
@@ -23,10 +23,9 @@ int executor(int argc, char* argv[]){
     sprintf(inputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->inputFileName);
     sprintf(outputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->outputName);
 
-    XBT_INFO("%f", MSG_get_clock());
+    numberofopenedfiles++;
     file = MSG_file_open(inputFilePath, NULL);
     inputSize = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
-    XBT_INFO("%f", MSG_get_clock());
 
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name, jobInfo->compSize, 0, NULL);
@@ -48,28 +47,20 @@ int executor(int argc, char* argv[]){
 
     //Write output to file
     outFile = MSG_file_open(outputFilePath, NULL);
+    numberofopenedfiles++;
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
     MSG_file_close(file);
     MSG_file_close(outFile);
 
-    //Launch replicas creator
-    replicatorDataPtr replica = xbt_new(replicatorData, 1);
-    replica->fileName = jobInfo->outputName;
-    replica->replicaAmount = jobInfo->outputNumber;
-    replica->currentLoc = (char*) MSG_host_get_name(MSG_host_self());
-    replica->outLoc1 = jobInfo->outputHost1;
-    replica->outLoc2 = jobInfo->outputHost2;
-    replica->outLoc3 = jobInfo->outputHost3;
-    replica->storageType = jobInfo->storageType;
-    replica->size = jobInfo->outputFileSize;
+    numberofopenedfiles--;
+    numberofopenedfiles--;
 
-    //Clear memory
 
-    MSG_process_create("dataRep", data_replicator, replica, MSG_host_self());
+    MSG_process_create("dataRep", data_replicator, jobInfo, MSG_host_self());
 
-    memset(inputFilePath, 0, 80);
-    memset(outputFilePath, 0, 80);
-    //xbt_free(jobInfo);
+    memset(inputFilePath, '\0', 80);
+    memset(outputFilePath, '\0', 80);
+    //XBT_INFO("EXE number of openfiles is %lu", numberofopenedfiles);
     MSG_process_kill(MSG_process_self());
     return 0;
 }
@@ -81,7 +72,7 @@ void plusOneActiveCore(){
     number++;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
-    memset(kot, 0, 50);
+    memset(kot, '\0', 50);
 }
 
 void minusOneActiveCore(){
@@ -91,5 +82,5 @@ void minusOneActiveCore(){
     number--;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
-    memset(kot, 0, 50);
+    memset(kot, '\0', 50);
 }

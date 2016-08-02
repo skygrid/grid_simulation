@@ -5,211 +5,211 @@
 	<AS id="AS_BIG" routing="Full">
 		<storage_type id="single_HDD0" size="7600TB" model="linear_no_lat"
 				content="Content/CERN_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="single_HDD1" size="3150TB" model="linear_no_lat"
 				content="Content/CNAF_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="single_HDD2" size="2500TB" model="linear_no_lat"
 				content="Content/GRIDKA_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="single_HDD3" size="2230TB" model="linear_no_lat"
 				content="Content/IN2P3_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="single_HDD4" size="969TB" model="linear_no_lat"
 				content="Content/PIC_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="single_HDD5" size="4050TB" model="linear_no_lat"
 				content="Content/RAL_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="single_HDD6" size="1743TB" model="linear_no_lat"
 				content="Content/SARA_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="single_HDD7" size="1260TB" model="linear_no_lat"
 				content="Content/RRCKI_content_online.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD0" size="20600TB" model="linear_no_lat"
 				content="Content/CERN_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD1" size="7578TB" model="linear_no_lat"
 				content="Content/CNAF_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD2" size="4300TB" model="linear_no_lat"
 				content="Content/GRIDKA_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD3" size="4360TB" model="linear_no_lat"
 				content="Content/IN2P3_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD4" size="1677TB" model="linear_no_lat"
 				content="Content/PIC_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD5" size="12630TB" model="linear_no_lat"
 				content="Content/RAL_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD6" size="3019TB" model="linear_no_lat"
 				content="Content/SARA_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD7" size="1677TB" model="linear_no_lat"
 				content="Content/RRCKI_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<!-- STORAGES_TYPES OF TIER2 LAYER-->
 		<storage_type id="T2_HDD1" size="300TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD2" size="300TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD3" size="2TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD4" size="2TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD5" size="8TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD6" size="1TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD7" size="240TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD8" size="1TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD9" size="360TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD10" size="65TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD11" size="1TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD12" size="540TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD13" size="300TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD14" size="300TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD15" size="1TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage_type id="T2_HDD16" size="300TB" model="linear_no_lat">
-			<model_prop id="Bwrite" value="300MBps"/>
-			<model_prop id="Bread" value="500MBps"/>
-			<model_prop id="Bconnection" value="120MBps"/>
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
 		<storage id="STORAGE_CERN" typeId="single_HDD0" attach="CERN"/>

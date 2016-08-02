@@ -4,19 +4,20 @@
 #include <simgrid/msg.h>
 #include <stdio.h>
 #include "messages.h"
+long numberofopenedfiles2;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
 
 int data_replicator(int argc, char* argv[]){
-    replicatorDataPtr replica = MSG_process_get_data(MSG_process_self());
-    int replica_number = replica->replicaAmount;
+    jobPtr replica = MSG_process_get_data(MSG_process_self());
+    int replica_number = replica->outputNumber;
 
     if (replica_number == 1){
         uploadDataPtr data1 = xbt_new(uploadData, 1);
-        data1->filename = xbt_strdup(replica->fileName);
-        data1->dest = xbt_strdup(replica->outLoc1);
+        data1->filename = xbt_strdup(replica->outputName);
+        data1->dest = xbt_strdup(replica->outputHost1);
         data1->storageType = xbt_strdup(replica->storageType);
         data1->numberOfReplica = 1;
 
@@ -24,14 +25,14 @@ int data_replicator(int argc, char* argv[]){
 
     } else if (replica_number == 2){
         uploadDataPtr data1 = xbt_new(uploadData, 1);
-        data1->filename = xbt_strdup(replica->fileName);
-        data1->dest = xbt_strdup(replica->outLoc1);
+        data1->filename = xbt_strdup(replica->outputName);
+        data1->dest = xbt_strdup(replica->outputHost1);
         data1->storageType = xbt_strdup(replica->storageType);
         data1->numberOfReplica = 1;
 
         uploadDataPtr data2 = xbt_new(uploadData, 1);
-        data2->filename = xbt_strdup(replica->fileName);
-        data2->dest = xbt_strdup(replica->outLoc2);
+        data2->filename = xbt_strdup(replica->outputName);
+        data2->dest = xbt_strdup(replica->outputHost2);
         data2->storageType = xbt_strdup(replica->storageType);
         data2->numberOfReplica = 2;
 
@@ -40,20 +41,20 @@ int data_replicator(int argc, char* argv[]){
 
     } else if (replica_number == 3){
         uploadDataPtr data1 = xbt_new(uploadData, 1);
-        data1->filename = xbt_strdup(replica->fileName);
-        data1->dest = xbt_strdup(replica->outLoc1);
+        data1->filename = xbt_strdup(replica->outputName);
+        data1->dest = xbt_strdup(replica->outputHost1);
         data1->storageType = xbt_strdup(replica->storageType);
         data1->numberOfReplica = 1;
 
         uploadDataPtr data2 = xbt_new(uploadData, 1);
-        data2->filename = xbt_strdup(replica->fileName);
-        data2->dest = xbt_strdup(replica->outLoc2);
+        data2->filename = xbt_strdup(replica->outputName);
+        data2->dest = xbt_strdup(replica->outputHost2);
         data2->storageType = xbt_strdup(replica->storageType);
         data2->numberOfReplica = 2;
 
         uploadDataPtr data3 = xbt_new(uploadData, 1);
-        data3->filename = xbt_strdup(replica->fileName);
-        data3->dest = xbt_strdup(replica->outLoc3);
+        data3->filename = xbt_strdup(replica->outputName);
+        data3->dest = xbt_strdup(replica->outputHost3);
         data3->storageType = xbt_strdup(replica->storageType);
         data3->numberOfReplica = 3;
 
@@ -61,9 +62,7 @@ int data_replicator(int argc, char* argv[]){
         MSG_process_create("up2", uploader, data2, MSG_host_self());
         MSG_process_create("up3", uploader, data3, MSG_host_self());
     }
-
-    //Clear memory
-    //xbt_free(replica);
+    xbt_free(replica);
     MSG_process_kill(MSG_process_self());
     return 0;
 }
@@ -79,6 +78,7 @@ int uploader(int argc, char* argv[]){
     sprintf(pathAtDest, "%s%s/%s", data->dest, data->storageType, data->filename);
 
     file = MSG_file_open(curFilePath, NULL);
+    numberofopenedfiles2++;
     msg_host_t dest = MSG_host_by_name(data->dest);
 
     msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
@@ -93,11 +93,12 @@ int uploader(int argc, char* argv[]){
         MSG_file_close(file);
         XBT_INFO("Transfer fail occurred", "%s");
     }
-
+    numberofopenedfiles2--;
     // Clear memory
-    memset(curFilePath, 0, 255);
-    memset(pathAtDest, 0, 255);
-    //xbt_free(data);
+    memset(curFilePath, '\0', 255);
+    memset(pathAtDest, '\0', 255);
+    xbt_free(data);
+    //XBT_INFO("DT number of openfiles is %lu", numberofopenedfiles2);
     MSG_process_kill(MSG_process_self());
     return 0;
 

@@ -7,7 +7,7 @@
 #include "messages.h"
 #include "myfunc_list.h"
 
-#define QUEUE_SIZE 10000
+#define QUEUE_SIZE 1000
 jobPtr* matcher(long amountRequestedJob);
 int input();
 
@@ -49,7 +49,7 @@ int scheduler(int argc, char* argv[]){
 
         // Anomalies
         if (res1 == MSG_OK){
-            XBT_INFO("Send jobs after matching %s", MSG_host_get_name(MSG_task_get_source(task)));
+            XBT_INFO("Send %s after matching %s", batch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
         }else if (res1 == MSG_TRANSFER_FAILURE){
             MSG_task_destroy(taskB);
             taskB = NULL;
@@ -65,11 +65,14 @@ int scheduler(int argc, char* argv[]){
         xbt_free(batchRequest);
         MSG_task_destroy(task);
         task = NULL;
-        //taskB = NULL;
     }
 }
-
 jobPtr* matcher(long amountRequestedJob){
+
+    if (currentJobInQueue >= QUEUE_SIZE){
+        XBT_INFO("QUEUE is run out");
+        MSG_process_kill(MSG_process_self());
+    }
 
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
     for (long i = currentJobInQueue; i < (currentJobInQueue+amountRequestedJob); ++i) {

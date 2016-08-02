@@ -32,7 +32,6 @@ int executorLauncher(){
     while (1){
         int a = MSG_task_receive(&task, tierMailbox);
         if (a == MSG_OK){
-            XBT_INFO("Successfully receive task");
         }
         if(!strcmp(MSG_task_get_name(task), "finalize")){
             MSG_task_destroy(task);
@@ -40,12 +39,11 @@ int executorLauncher(){
         }
         int jobAmount = 1;// (int) MSG_task_get_flops_amount(task);
         jobPtr* jobPtrBatchData = MSG_task_get_data(task);
-
+        XBT_INFO("Successfully receive %s", jobPtrBatchData[0]->name);
         //LAUNCH PROCESS TO EXECUTE TASKS
         for (i = 0; i < jobAmount; ++i) {
             MSG_process_create("executor", executor, jobPtrBatchData[i], MSG_host_self());
         }
-        xbt_free(jobPtrBatchData);
         MSG_task_destroy(task);
         task = NULL;
     }
