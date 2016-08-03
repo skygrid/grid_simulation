@@ -133,19 +133,19 @@ for i in range(len(NAMES_TIER2)):
 
 # DEFINING TIER0
 f.write("\n")
-f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0]/10) + "\">\n")
+f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0]/10)  + "\">\n")
 for j in range(len(LIST_STORAGE_STRING)):
-    f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[j] + "0/" + q + "/>\n")
-    f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[j] +"1/" + q + "/>\n")
+    f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
+    f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] +"0" + q + "/>\n")
 f.write("\t\t</host>\n")
 
 for i in range(NUMBER_OF_TIERS):
-    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/10) + "\">\n")
+    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/10)  + "\"" + " state_file=\"Failures/Failure/h_" + str(i) + "\" >\n")
     # MOUNT TIERS STORAGE
     f.write("\n")
     for j in range(len(LIST_STORAGE_STRING)):
-        f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[j] + "0/" + q + "/>\n")
-        f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[j] + "1/" + q + "/>\n")
+        f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
+        f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "0" + q + "/>\n")
     f.write("\t\t</host>\n")
 f.write("\n")
 
@@ -158,21 +158,21 @@ f.write("\n")
 f.write("\n")
 for i in range(len(NAMES_TIER2)):
     f.write("\t\t<host id=" + q + "T2_" + str(i+1) + q + " speed=" + q + "1Gf" + q + " core=\"" + str(int(float(CPU_TIER2[i]))) +  "\">\n")
-    f.write("\t\t\t<mount storageId=" + q + "T2_" + str(i+1) + q + " name=" + q + "T2_" + str(i+1) + "/" + q + "/>\n\n")
+    f.write("\t\t\t<mount storageId=" + q + "T2_" + str(i+1) + q + " name=" + q + "T2_" + str(i+1) + "" + q + "/>\n\n")
     for j in range(len(LIST_STORAGE_STRING)):
         f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[
-            j] + "0/" + q + "/>\n")
+            j] + "0" + q + "/>\n")
         f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[
-            j] + "1/" + q + "/>\n")
+            j] + "1" + q + "/>\n")
 
 
     f.write("\t\t</host>\n")
 
 for i in range(NUMBER_OF_TIERS):
-    f.write("\t\t<link id=" + quo + str(LINK_NAMES10[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
+    f.write("\t\t<link id=" + quo + str(LINK_NAMES10[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " state_file=\"Failures/Failure/l_" + str(i) + "\"" +  " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.writelines("\n")
 for i in range(len(LINK_NAMES11)):
-    f.write("\t\t<link id=" + quo + str(LINK_NAMES11[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW11[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
+    f.write("\t\t<link id=" + quo + str(LINK_NAMES11[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW11[i]) + "Bps\"" + " state_file=\"Failures/Failure/l_" + str(i+7) + "\"" +  " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.write("\n")
 
 f.write("\n\n\t\t<!--LINKS between CERN and TIER2-->\n")
@@ -250,12 +250,12 @@ for i in range(0, len(LIST_OF_TIERS)):
     f.write("\t</process>\n")
     f.write("\n")
 f.write("\n")
-for i in range(1, len(NAMES_TIER2)):
+"""for i in range(1, len(NAMES_TIER2)):
     f.write("\t<process host=\"T2_" + str(i) + "\" function=\"tier1\">\n")
     f.write("\t\t<argument value=\"T2_" + str(i) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(int(float(CPU_TIER2[i])) / 1) + "\"/>\n")
     f.write("\t</process>\n")
-    f.write("\n")
+    f.write("\n")"""
 f.write("</platform>")
 f.close()
 

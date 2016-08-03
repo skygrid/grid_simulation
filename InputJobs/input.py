@@ -2,7 +2,7 @@ import pandas as pd
 import random
 from scipy import stats
 
-job_amount = 1500
+job_amount = 15000
 
 Locations = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 
@@ -40,7 +40,7 @@ for i in range(job_amount):
         out_size = 1 * 1073741824 # GB
         data_size = random.choice([1,2,3]) * 1073741824
     if types[types_custm[i]] == 'MCSIMULATION':
-        location_str = "0, 0, 0"
+        location_str = "0,0,0"
         NREpIn = 0
     else:
         if NREpIn == 1:

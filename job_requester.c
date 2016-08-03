@@ -15,11 +15,19 @@ int job_requester(){
     while (1){
         freeCoreAmount = fullCoreAmount - xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
         if (freeCoreAmount > fullCoreAmount / 2){
-            jobBatchRequestPtr jobRequest = xbt_new(jobBatchRequest, freeCoreAmount);
+            jobBatchRequestPtr jobRequest = xbt_new(jobBatchRequest, 1);
             jobRequest->coreAmount = freeCoreAmount;
 
             task = MSG_task_create("request", 0.0, MESSAGES_SIZE, jobRequest);
-            MSG_task_send(task, "scheduler");
+            msg_error_t a = MSG_task_send(task, "scheduler");
+            if (a == MSG_OK){
+            }else if (a == MSG_TRANSFER_FAILURE){
+                MSG_task_destroy(task);
+                task = NULL;
+            } else if (a == MSG_HOST_FAILURE){
+                MSG_task_destroy(task);
+                task = NULL;
+            }
         }
         MSG_process_sleep(timeout);
         if (freeCoreAmount > fullCoreAmount){

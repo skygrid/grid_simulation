@@ -45,6 +45,7 @@ typedef struct{
     double outputFileSize;
     char* storageType;
 
+    int scheduled;
     double startClock;
     double startSchedulClock;
     double stExecClock;

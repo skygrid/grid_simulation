@@ -3,6 +3,7 @@
 //
 #include <simgrid/msg.h>
 #include "messages.h"
+#include "myfunc_list.h"
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
@@ -71,31 +72,35 @@ int uploader(int argc, char* argv[]){
     msg_file_t file = NULL;
 
     uploadDataPtr data = MSG_process_get_data(MSG_process_self());
+    if (strcmp(MSG_host_get_name(MSG_host_self()), data->dest)) {
 
-    sprintf(curFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), data->storageType, data->filename);
-    sprintf(pathAtDest, "%s%s/%s", data->dest, data->storageType, data->filename);
+        sprintf(curFilePath, "/%s%s/%s", MSG_host_get_name(MSG_host_self()), data->storageType, data->filename);
+        sprintf(pathAtDest, "/%s%s/%s", data->dest, data->storageType, data->filename);
 
-    file = MSG_file_open(curFilePath, NULL);
-    msg_host_t dest = MSG_host_by_name(data->dest);
+        file = MSG_file_open(curFilePath, NULL);
+        msg_host_t dest = MSG_host_by_name(data->dest);
 
-    msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
+        msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
 
-    if (a == MSG_OK){
-        MSG_file_close(file);
-        XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
-    }else if (a == MSG_HOST_FAILURE){
-        MSG_file_close(file);
-        XBT_INFO("Host fail occurred", "%s");
-    } else if (a == MSG_TRANSFER_FAILURE){
-        MSG_file_close(file);
-        XBT_INFO("Transfer fail occurred", "%s");
+        if (a == MSG_OK) {
+            MSG_file_close(file);
+            //XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
+        } else if (a == MSG_HOST_FAILURE) {
+            writeAnomaly(MSG_get_clock());
+            MSG_file_close(file);
+            XBT_INFO("Host fail occurred", "%s");
+        } else if (a == MSG_TRANSFER_FAILURE) {
+            writeAnomaly(MSG_get_clock());
+            MSG_file_close(file);
+            XBT_INFO("Transfer fail occurred", "%s");
+        }
+
+        // Clear memory
+        memset(curFilePath, '\0', 255);
+        memset(pathAtDest, '\0', 255);
+        xbt_free(data);
+        //XBT_INFO("DT number of openfiles is %lu", numberofopenedfiles2);
     }
-
-    // Clear memory
-    memset(curFilePath, '\0', 255);
-    memset(pathAtDest, '\0', 255);
-    xbt_free(data);
-    //XBT_INFO("DT number of openfiles is %lu", numberofopenedfiles2);
     MSG_process_kill(MSG_process_self());
     return 0;
 

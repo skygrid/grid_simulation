@@ -10,4 +10,5 @@ int job_requester();
 jobType charToEnum(char *sval);
 int writeToFile(jobPtr jobInfo);
 int clearFile();
+int writeAnomaly(double clock);
 #endif //CSIM2SIM_MYFUNC_LIST_H

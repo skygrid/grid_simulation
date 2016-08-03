@@ -37,6 +37,14 @@ int executorLauncher(){
     while (1){
         int a = MSG_task_receive(&task, tierMailbox);
         if (a == MSG_OK){
+        } else if (a == MSG_HOST_FAILURE){
+            MSG_task_destroy(task);
+            task = NULL;
+            writeAnomaly(MSG_get_clock());
+        } else if (a == MSG_TRANSFER_FAILURE){
+            writeAnomaly(MSG_get_clock());
+            MSG_task_destroy(task);
+            task = NULL;
         }
         if(!strcmp(MSG_task_get_name(task), "finalize")){
             MSG_task_destroy(task);
@@ -68,36 +76,41 @@ int executor(int argc, char* argv[]){
     //find location of input file
     if (jobInfo->type != MCSIMULATION) {
         if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost1)) {
-            sprintf(inputFilePath, "%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType, jobInfo->inputFileName);
+            sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType, jobInfo->inputFileName);
         } else if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost2)) {
-            sprintf(inputFilePath, "%s%s/%s", jobInfo->dataLocHost2, jobInfo->storageType, jobInfo->inputFileName);
+            sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost2, jobInfo->storageType, jobInfo->inputFileName);
         } else if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost3)) {
-            sprintf(inputFilePath, "%s%s/%s", jobInfo->dataLocHost3, jobInfo->storageType, jobInfo->inputFileName);
+            sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost3, jobInfo->storageType, jobInfo->inputFileName);
         } else {
-            sprintf(inputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType,
+            //msg_host_t file
+            sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType,
                     jobInfo->inputFileName);
         }
         file = MSG_file_open(inputFilePath, NULL);
-        MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+        sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+        if (a == -1){
+            writeAnomaly(MSG_get_clock());
+        }
         MSG_file_close(file);
     }
-    sprintf(outputFilePath, "%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType,
+    sprintf(outputFilePath, "/%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType,
             jobInfo->outputName);
 
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name, jobInfo->compSize, 0, NULL);
     jobInfo->stExecClock = MSG_get_clock();
-    msg_error_t a = MSG_task_execute(task);
+    msg_error_t b = MSG_task_execute(task);
     jobInfo->endExecClock = MSG_get_clock();
     minusOneActiveCore();
 
 
     //Anomalies
-    if (a == MSG_OK){
+    if (b == MSG_OK){
         XBT_INFO("%s has successfully executed", jobInfo->name);
         MSG_task_destroy(task);
         task = NULL;
     }else{
+        writeAnomaly(MSG_get_clock());
         XBT_INFO("Error has occurred while executing %s", MSG_task_get_name(task));
         MSG_task_destroy(task);
         task = NULL;
