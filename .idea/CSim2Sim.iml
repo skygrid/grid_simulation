@@ -8,10 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/data_replicator.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/job_requester.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/messages.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/myfunc_list.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tier1.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/writeToFile.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/messages.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
