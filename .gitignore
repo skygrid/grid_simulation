@@ -1,5 +1,5 @@
 *.py[cod]
-*~
+*.~
 target/
 JobDescriptor/output
 dependency-reduced-pom.xml
