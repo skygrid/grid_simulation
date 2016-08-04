@@ -2,10 +2,13 @@
 // Created by ken on 24.05.16.
 //
 
+#include <stdio.h>
 #include <simgrid/msg.h>
 #include <csvparser.h>
 #include "messages.h"
 #include "myfunc_list.h"
+
+FILE* fp;
 
 #define QUEUE_SIZE 15000
 jobPtr* matcher(long amountRequestedJob);
@@ -46,8 +49,8 @@ int scheduler(int argc, char* argv[]){
 
         jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
 
-        //jobPtr* batch = matcher(batchRequest->coreAmount);
-        jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+        jobPtr* batch = matcher(batchRequest->coreAmount);
+        //jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
 
         taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
         msg_error_t res1 = MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)));
@@ -78,6 +81,7 @@ jobPtr* matcher(long amountRequestedJob){
 
     if (currentJobInQueue + amountRequestedJob >= QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
+        fclose(fp);
         MSG_process_kill(MSG_process_self());
     }
 
@@ -94,6 +98,7 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
     currentJobInQueue = 0;
     if (amountOfScheduledJobs + amountRequestedJob >= QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
+        fclose(fp);
         MSG_process_kill(MSG_process_self());
     }
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
@@ -144,6 +149,7 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
 }
 
 int input(){
+    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "a");
     clearFile();
     int i = 0;
     jobQueue = xbt_new(jobPtr, QUEUE_SIZE);

@@ -3,27 +3,21 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 #include "messages.h"
 
-int writeToFile(jobPtr jobInfo)
+int writeToFile(FILE* fpy, jobPtr jobInfo)
 {
-    FILE * fp;
-
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out_DAMx.txt", "a");
-    fprintf(fp, "%s,%f,%f,%f,%f\n", jobInfo->name, jobInfo->startClock, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock);
-    fclose(fp);
+    fprintf(fpy, "%s,%f,%f,%f,%f\n", jobInfo->name, jobInfo->startClock, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock);
     return(0);
 }
 
-int clearFile()
+int clearFile(FILE* fpy)
 {
     FILE * fp, *fp1;
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out_DAMx.txt", "w");
+    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "w");
     fprintf(fp, "%s", "JobName, Time start, time schedule, Time start Exec, Time End Exec");
     fclose(fp);
-
-    fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly_DAM.txt", "w");
+    fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "w");
     fclose(fp1);
 
     return(0);
@@ -32,7 +26,7 @@ int clearFile()
 int writeAnomaly(double clock)
 {
     FILE * fp;
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/anomaly_DAM.txt", "a");
+    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "a");
     fprintf(fp, "%f\n", clock);
     fclose(fp);
     return(0);

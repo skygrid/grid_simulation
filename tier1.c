@@ -1,11 +1,15 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 #include "myfunc_list.h"
+#include <stdio.h>
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 //
 // Created by ken on 29.07.16.
 //
+
+FILE* fp;
+
 int executorLauncher();
 int job_requester();
 int executor(int argc, char* argv[]);
@@ -125,7 +129,7 @@ int executor(int argc, char* argv[]){
 
     memset(inputFilePath, '\0', 80);
     memset(outputFilePath, '\0', 80);
-    writeToFile(jobInfo);
+    writeToFile(fp, jobInfo);
     MSG_process_kill(MSG_process_self());
     return 0;
 }

@@ -265,7 +265,7 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="CNAF" speed="1Gf" core="280" state_file="Failures/Failure/h_0" >
+		<host id="CNAF" speed="1Gf" core="280" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -284,7 +284,8 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="GRIDKA" speed="1Gf" core="244" state_file="Failures/Failure/h_1" >
+
+		<host id="GRIDKA" speed="1Gf" core="244" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -303,7 +304,8 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="IN2P3" speed="1Gf" core="230" state_file="Failures/Failure/h_2" >
+
+		<host id="IN2P3" speed="1Gf" core="230" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -322,7 +324,8 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="PIC" speed="1Gf" core="94" state_file="Failures/Failure/h_3" >
+
+		<host id="PIC" speed="1Gf" core="94" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -341,7 +344,8 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="RAL" speed="1Gf" core="468" state_file="Failures/Failure/h_4" >
+
+		<host id="RAL" speed="1Gf" core="468" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -360,7 +364,8 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="SARA" speed="1Gf" core="170" state_file="Failures/Failure/h_5" >
+
+		<host id="SARA" speed="1Gf" core="170" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -379,7 +384,8 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="RRCKI" speed="1Gf" core="164" state_file="Failures/Failure/h_6" >
+
+		<host id="RRCKI" speed="1Gf" core="164" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -398,6 +404,7 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
+
 
 
 		<host id="T2_1" speed="1Gf" core="40">
@@ -720,17 +727,17 @@
 			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
 		</host>
-		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_0" latency="0.0ms"/>
-		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_1" latency="0.0ms"/>
-		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_2" latency="0.0ms"/>
-		<link id="CERN-PIC-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_3" latency="0.0ms"/>
-		<link id="CERN-RAL-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_4" latency="0.0ms"/>
-		<link id="CERN-SARA-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_5" latency="0.0ms"/>
-		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="2GBps" state_file="Failures/Failure/l_6" latency="0.0ms"/>
+		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-PIC-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-RAL-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-SARA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="2GBps" latency="0.0ms"/>
 
-		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_7" latency="0.0ms"/>
-		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_8" latency="0.0ms"/>
-		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="10GBps" state_file="Failures/Failure/l_9" latency="0.0ms"/>
+		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
 
 
 
