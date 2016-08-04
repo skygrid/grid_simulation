@@ -8,6 +8,7 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
+msg_sem_t sem_link;
 
 int data_replicator(int argc, char* argv[]){
     jobPtr replica = MSG_process_get_data(MSG_process_self());
@@ -80,7 +81,15 @@ int uploader(int argc, char* argv[]){
         file = MSG_file_open(curFilePath, NULL);
         msg_host_t dest = MSG_host_by_name(data->dest);
 
+        MSG_sem_acquire(sem_link);
+        TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), data->dest, "UserAmount", 1);
+        MSG_sem_release(sem_link);
+
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
+
+        MSG_sem_acquire(sem_link);
+        TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), data->dest, "UserAmount", 1);
+        MSG_sem_release(sem_link);
 
         if (a == MSG_OK) {
             MSG_file_close(file);

@@ -8,6 +8,7 @@
 
 int scheduler(int argc, char *argv[]);
 int tier1(int argc, char *argv[]);
+int set_0_all_routes();
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this msg example");
 
@@ -16,6 +17,9 @@ int main(int argc, char *argv[]){
     MSG_init(&argc, argv);
 
     MSG_create_environment(argv[1]);
+
+    TRACE_link_variable_declare("UserAmount");
+    set_0_all_routes();
 
     MSG_function_register("scheduler", scheduler);
     MSG_function_register("tier1", tier1);

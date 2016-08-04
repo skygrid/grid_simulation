@@ -4,12 +4,15 @@
       <w>argx</w>
       <w>bconnection</w>
       <w>bwrite</w>
+      <w>cern</w>
+      <w>cnaf</w>
       <w>datareconstruction</w>
       <w>datastripping</w>
       <w>dest</w>
       <w>mcmerge</w>
       <w>mcreconstruction</w>
       <w>mcsimulation</w>
+      <w>rrcki</w>
       <w>schedul</w>
       <w>wgproduction</w>
     </words>

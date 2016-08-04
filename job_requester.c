@@ -3,6 +3,8 @@
 //
 #include <simgrid/msg.h>
 #include "messages.h"
+#include "myfunc_list.h"
+msg_sem_t sem_link;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
@@ -19,7 +21,18 @@ int job_requester(){
             jobRequest->coreAmount = freeCoreAmount;
 
             task = MSG_task_create("request", 0.0, MESSAGES_SIZE, jobRequest);
+
+
+            MSG_sem_acquire(sem_link);
+            TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), "CERN", "UserAmount", 1);
+            MSG_sem_release(sem_link);
+
             msg_error_t a = MSG_task_send(task, "scheduler");
+
+            MSG_sem_acquire(sem_link);
+            TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), "CERN", "UserAmount", 1);
+            MSG_sem_release(sem_link);
+
             if (a == MSG_OK){
             }else if (a == MSG_TRANSFER_FAILURE){
                 MSG_task_destroy(task);

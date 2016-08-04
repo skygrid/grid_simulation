@@ -8,13 +8,13 @@
 #include "messages.h"
 #include "myfunc_list.h"
 
-FILE* fp;
+FILE* fp; // global variables
+msg_sem_t sem_link;
 
 #define QUEUE_SIZE 15000
 jobPtr* matcher(long amountRequestedJob);
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
 int input();
-int writeAnomaly(double clock);
 long currentJobInQueue = 0;
 long amountOfScheduledJobs = 0;
 jobPtr* jobQueue;
@@ -23,7 +23,7 @@ int* jobQueueHelper;
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
 int scheduler(int argc, char* argv[]){
-
+    sem_link = MSG_sem_init(1);
     input();
     char mailbox[30];
     msg_task_t task = NULL;
@@ -53,7 +53,17 @@ int scheduler(int argc, char* argv[]){
         //jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
 
         taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
+
+        //Add new user to link
+        MSG_sem_acquire(sem_link);
+        TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)), "UserAmount", 1);
+        MSG_sem_release(sem_link);
+
         msg_error_t res1 = MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)));
+
+        MSG_sem_acquire(sem_link);
+        TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)), "UserAmount", 1);
+        MSG_sem_release(sem_link);
 
         // Anomalies
         if (res1 == MSG_OK){

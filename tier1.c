@@ -25,7 +25,7 @@ int tier1(int argc, char* argv[]){
 
     // LAUNCH PROCESS
     sem = MSG_sem_init(1);
-    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), NULL);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), xbt_free_f);
     MSG_process_create("tier1_executor", executorLauncher, argx, MSG_host_self());
     MSG_process_create("job_requester", job_requester, NULL, MSG_host_self());
 
@@ -90,12 +90,25 @@ int executor(int argc, char* argv[]){
             sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType,
                     jobInfo->inputFileName);
         }
+
+        MSG_sem_acquire(sem_link);
+        TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)), "UserAmount", 1);
+        MSG_sem_release(sem_link);
+
+
         file = MSG_file_open(inputFilePath, NULL);
         sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+
+        MSG_sem_acquire(sem_link);
+        TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)), "UserAmount", 1);
+        MSG_sem_release(sem_link);
+
         if (a == -1){
             writeAnomaly(MSG_get_clock());
+            MSG_file_close(file);
+
         }
-        MSG_file_close(file);
+
     }
     sprintf(outputFilePath, "/%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType,
             jobInfo->outputName);
@@ -141,7 +154,7 @@ void plusOneActiveCore(){
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number++;
     sprintf(kot, "%ld", number);
-    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
     //XBT_INFO("Active core amount is %s", MSG_host_get_property_value(MSG_host_self(), "activeCore"));
     memset(kot, '\0', 50);
     MSG_sem_release(sem);
@@ -154,7 +167,7 @@ void minusOneActiveCore(){
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number--;
     sprintf(kot, "%ld", number);
-    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), NULL);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
     //XBT_INFO("Active core amount is %s", MSG_host_get_property_value(MSG_host_self(), "activeCore"));
     memset(kot, '\0', 50);
     MSG_sem_release(sem);
