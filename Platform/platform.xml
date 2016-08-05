@@ -727,6 +727,7 @@
 			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
 			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
 		</host>
+<link id="loopback" bandwidth="498MBps" latency="0us" sharing_policy="FATPIPE"/>
 		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
 		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
 		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10GBps" latency="0.0ms"/>
@@ -955,6 +956,7 @@
 			<link_ctn id="CERN-SARA-LHCOPN-001"/>
 			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
 		</route>
+		<route src="CERN" dst="CERN"><link_ctn id="loopback"/></route>
 		<!--routes between CERN and TIER1-->
 		<route src="CERN" dst="CNAF"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
 		<route src="CERN" dst="GRIDKA"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>

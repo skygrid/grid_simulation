@@ -6,6 +6,7 @@
 #define CSIM2SIM_MYFUNC_LIST_H
 
 #include <stdio.h>
+#include "messages.h"
 extern FILE* fp;
 extern msg_sem_t sem_link;
 

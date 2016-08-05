@@ -23,7 +23,6 @@ int* jobQueueHelper;
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
 int scheduler(int argc, char* argv[]){
-    sem_link = MSG_sem_init(1);
     input();
     char mailbox[30];
     msg_task_t task = NULL;

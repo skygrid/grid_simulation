@@ -168,6 +168,7 @@ for i in range(len(NAMES_TIER2)):
 
     f.write("\t\t</host>\n")
 
+f.write("<link id=\"loopback\" bandwidth=\"498MBps\" latency=\"0us\" sharing_policy=\"FATPIPE\"/>\n")
 for i in range(NUMBER_OF_TIERS):
     f.write("\t\t<link id=" + quo + str(LINK_NAMES10[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.writelines("\n")
@@ -193,8 +194,17 @@ with open("links_delete.xml", "r") as mylinks:
     data = mylinks.read()
 f.write(data.replace("\n", "\n\t\t") + "\n")
 
+
+# CERN-CERN ROUTE
+
+
+f.write("\t\t<route src=\"CERN\" dst=\"CERN" + "\">")
+f.write("<link_ctn id=\"loopback" + "\"/>")
+f.write("</route>\n")
+
 # routs between AS and TIER1
 f.write("\t\t<!--routes between CERN and TIER1-->\n")
+
 for x in range(NUMBER_OF_TIERS):
 
     # routes between CERN and TIER1S

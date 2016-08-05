@@ -72,6 +72,7 @@ int executor(int argc, char* argv[]){
     msg_file_t file, outFile;
     msg_task_t task;
     sg_size_t inputSize, outputSize;
+    char* dest;
 
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
     char inputFilePath[80];
@@ -79,20 +80,25 @@ int executor(int argc, char* argv[]){
 
     //find location of input file
     if (jobInfo->type != MCSIMULATION) {
+
         if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost1)) {
             sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType, jobInfo->inputFileName);
+            dest = jobInfo->dataLocHost1;
         } else if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost2)) {
             sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost2, jobInfo->storageType, jobInfo->inputFileName);
+            dest = jobInfo->dataLocHost2;
         } else if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost3)) {
             sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost3, jobInfo->storageType, jobInfo->inputFileName);
+            dest = jobInfo->dataLocHost3;
         } else {
             //msg_host_t file
-            sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType,
-                    jobInfo->inputFileName);
+            sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType, jobInfo->inputFileName);
+            dest = jobInfo->dataLocHost1;
         }
 
+        
         MSG_sem_acquire(sem_link);
-        TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)), "UserAmount", 1);
+        TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), dest, "UserAmount", 1);
         MSG_sem_release(sem_link);
 
 
@@ -100,13 +106,34 @@ int executor(int argc, char* argv[]){
         sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
 
         MSG_sem_acquire(sem_link);
-        TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)), "UserAmount", 1);
+        TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), dest, "UserAmount", 1);
         MSG_sem_release(sem_link);
 
+        MSG_file_close(file);
+        //Handling anomalies
         if (a == -1){
             writeAnomaly(MSG_get_clock());
-            MSG_file_close(file);
+            char* reserv_loc[3] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3};
+            for (int i = 0; i < 3; ++i) {
+                if (reserv_loc[i] != dest & reserv_loc[i] != "0")
+                    sprintf(inputFilePath, "/%s%s/%s", reserv_loc[i], jobInfo->storageType, jobInfo->inputFileName);
 
+                    MSG_sem_acquire(sem_link);
+                    TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), reserv_loc[i], "UserAmount", 1);
+                    MSG_sem_release(sem_link);
+
+                    file = MSG_file_open(inputFilePath, NULL);
+                    sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+                    MSG_file_close(file);
+
+                    MSG_sem_acquire(sem_link);
+                    TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), reserv_loc[i], "UserAmount", 1);
+                    MSG_sem_release(sem_link);
+
+                    if (a == -1){
+                        writeAnomaly(MSG_get_clock());
+                    } else break;
+            }
         }
 
     }
