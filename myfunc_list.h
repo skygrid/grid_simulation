@@ -16,4 +16,11 @@ jobType charToEnum(char *sval);
 int writeToFile(FILE* fpx, jobPtr jobInfo);
 int clearFile();
 int writeAnomaly(double clock);
+int set_0_all_routes();
+
+int plusLinkCounter(const char* src, const char* dst);
+int minusLinkCounter(const char* src, const char* dst);
+
+int addActiveCoreT();
+int subActiveCoreT();
 #endif //CSIM2SIM_MYFUNC_LIST_H

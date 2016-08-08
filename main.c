@@ -4,21 +4,24 @@
 
 #include <simgrid/msg.h>
 #include "messages.h"
+#include "myfunc_list.h"
 
 
 int scheduler(int argc, char *argv[]);
 int tier1(int argc, char *argv[]);
-int set_0_all_routes();
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this msg example");
 
+FILE* fp;
 
 int main(int argc, char *argv[]){
     MSG_init(&argc, argv);
 
     MSG_create_environment(argv[1]);
 
-    TRACE_link_variable_declare("UserAmount");
+    TRACE_host_variable_declare("activeCore");
+    TRACE_link_variable_declare("directUserAmount");
+    TRACE_link_variable_declare("indirectUserAmount");
     set_0_all_routes();
 
     MSG_function_register("scheduler", scheduler);
@@ -28,6 +31,7 @@ int main(int argc, char *argv[]){
     msg_error_t res = MSG_main();
 
     XBT_INFO("Simulation time %g", MSG_get_clock());
+    fclose(fp);
 
     return res != MSG_OK;
 }

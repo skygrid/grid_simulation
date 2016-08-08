@@ -96,18 +96,13 @@ int executor(int argc, char* argv[]){
             dest = jobInfo->dataLocHost1;
         }
 
-        
-        MSG_sem_acquire(sem_link);
-        TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), dest, "UserAmount", 1);
-        MSG_sem_release(sem_link);
-
+        plusLinkCounter(dest, MSG_host_get_name(MSG_host_self()));
 
         file = MSG_file_open(inputFilePath, NULL);
         sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+        XBT_INFO("READ from %s  at %f, %s", dest, MSG_get_clock(), jobInfo->name);
 
-        MSG_sem_acquire(sem_link);
-        TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), dest, "UserAmount", 1);
-        MSG_sem_release(sem_link);
+        minusLinkCounter(dest, MSG_host_get_name(MSG_host_self()));
 
         MSG_file_close(file);
         //Handling anomalies
@@ -143,7 +138,9 @@ int executor(int argc, char* argv[]){
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name, jobInfo->compSize, 0, NULL);
     jobInfo->stExecClock = MSG_get_clock();
+    addActiveCoreT();
     msg_error_t b = MSG_task_execute(task);
+    subActiveCoreT();
     jobInfo->endExecClock = MSG_get_clock();
     minusOneActiveCore();
 
