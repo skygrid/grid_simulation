@@ -76,8 +76,8 @@ LINK_NAMES11.extend(["CNAF-GRIDKA-LHCOPN-001", "GRIDKA-IN2P3-LHCOPN-001", "GRIDK
 # BANDWIDTH OF LINKS
 LINK_NAMES10_BW10 = []
 LINK_NAMES10_BW11 = []
-LINK_NAMES10_BW10.extend(["10G", "10G", "10G", "10G", "10G", "10G", "2G"])
-LINK_NAMES10_BW11.extend(["10G", "10G", "10G"])
+LINK_NAMES10_BW10.extend(["1.0G", "1.0G", "1.0G", "1.0G", "1.0G", "1.0G", "0.2G"])
+LINK_NAMES10_BW11.extend(["1.0G", "1.0G", "1.0G"])
 
 LINK_INFO10 = dict(zip(LINK_NAMES10, LINK_NAMES10_BW10))
 LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
@@ -85,7 +85,7 @@ LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
 NAMES_TIER2, CPU_TIER2, STORAGE_TIER2 = np.loadtxt("tier2/tier2.csv", skiprows=1, dtype=(np.str), usecols=(0, 1, 2), delimiter=",", unpack=True)
 
 
-f = open("platform.xml", "w")
+f = open("platform_with_anom.xml", "w")
 f.write("<?xml version='1.0'?>\n")
 f.write("<!DOCTYPE platform SYSTEM \"http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd\">\n")
 f.write("<platform version=\"4\">\n")
@@ -140,13 +140,13 @@ for j in range(len(LIST_STORAGE_STRING)):
 f.write("\t\t</host>\n")
 
 for i in range(NUMBER_OF_TIERS):
-    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/10)  + "\"" + " state_file=\"Failures/Failure/h_" + str(i) + "\" >\n")
+    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/10) + "\" >\n")
     # MOUNT TIERS STORAGE
     f.write("\n")
     for j in range(len(LIST_STORAGE_STRING)):
         f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
         f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "0" + q + "/>\n")
-    f.write("\t\t</host>\n")
+    f.write("\t\t</host>\n\n")
 f.write("\n")
 
 ###################################################################
@@ -168,11 +168,21 @@ for i in range(len(NAMES_TIER2)):
 
     f.write("\t\t</host>\n")
 
-for i in range(NUMBER_OF_TIERS):
-    f.write("\t\t<link id=" + quo + str(LINK_NAMES10[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " state_file=\"Failures/Failure/l_" + str(i) + "\"" +  " latency=\"" + str(LATENCY) + "ms\"/>\n")
+
+##############################################################################
+#                                                                            #
+#   LINKS LINKS AND LINKS                                                    #
+#                                                                            #
+##############################################################################
+f.write("<link id=\"loopback\" bandwidth=\"498MBps\" latency=\"0us\" sharing_policy=\"FATPIPE\"/>\n")
+for i, link in enumerate(LINK_NAMES10):
+    if link in ["CERN-RAL-LHCOPN-001", "CERN-PIC-LHCOPN-001"]:
+        f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" bandwidth_file=\"" + link + ".bw\" />\n")
+        continue
+    f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" state_file=\"" + link + ".fail\" />\n")
 f.writelines("\n")
-for i in range(len(LINK_NAMES11)):
-    f.write("\t\t<link id=" + quo + str(LINK_NAMES11[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW11[i]) + "Bps\"" + " state_file=\"Failures/Failure/l_" + str(i+7) + "\"" +  " latency=\"" + str(LATENCY) + "ms\"/>\n")
+for i, link in enumerate(LINK_NAMES11):
+    f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" state_file=\"" + link + ".fail\" />\n")
 f.write("\n")
 
 f.write("\n\n\t\t<!--LINKS between CERN and TIER2-->\n")
@@ -193,8 +203,17 @@ with open("links_delete.xml", "r") as mylinks:
     data = mylinks.read()
 f.write(data.replace("\n", "\n\t\t") + "\n")
 
+
+# CERN-CERN ROUTE
+
+
+f.write("\t\t<route src=\"CERN\" dst=\"CERN" + "\">")
+f.write("<link_ctn id=\"loopback" + "\"/>")
+f.write("</route>\n")
+
 # routs between AS and TIER1
 f.write("\t\t<!--routes between CERN and TIER1-->\n")
+
 for x in range(NUMBER_OF_TIERS):
 
     # routes between CERN and TIER1S

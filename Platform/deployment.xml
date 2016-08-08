@@ -6,9 +6,45 @@
 		<argument value="scheduler"/>  <!-- Input mailbox -->
 	</process>
 
-	<process host="RRCKI" function="tier1">
-		<argument value="RRCKI"/>
+	<process host="CERN" function="tier1">
+		<argument value="CERN"/>
+		<argument value="510"/>
+	</process>
+
+	<process host="CNAF" function="tier1">
+		<argument value="CNAF"/>
 		<argument value="280"/>
 	</process>
+
+	<process host="GRIDKA" function="tier1">
+		<argument value="GRIDKA"/>
+		<argument value="244"/>
+	</process>
+
+	<process host="IN2P3" function="tier1">
+		<argument value="IN2P3"/>
+		<argument value="230"/>
+	</process>
+
+	<process host="PIC" function="tier1">
+		<argument value="PIC"/>
+		<argument value="94"/>
+	</process>
+
+	<process host="RAL" function="tier1">
+		<argument value="RAL"/>
+		<argument value="468"/>
+	</process>
+
+	<process host="SARA" function="tier1">
+		<argument value="SARA"/>
+		<argument value="170"/>
+	</process>
+
+	<process host="RRCKI" function="tier1">
+		<argument value="RRCKI"/>
+		<argument value="164"/>
+	</process>
+
 
 </platform>

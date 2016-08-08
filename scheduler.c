@@ -47,8 +47,8 @@ int scheduler(int argc, char* argv[]){
 
         jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
 
-        jobPtr* batch = matcher(batchRequest->coreAmount);
-        //jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+        //jobPtr* batch = matcher(batchRequest->coreAmount);
+        jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
 
         taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
 
@@ -106,8 +106,14 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
 
     long i = 0;
-
     while(i < amountRequestedJob){
+
+        if (currentJobInQueue >= QUEUE_SIZE){
+            XBT_INFO("QUEUE is run out");
+            MSG_process_kill(MSG_process_self());
+            break;
+        }
+
         if (jobQueueHelper[currentJobInQueue] == 0) {
             if (jobQueue[currentJobInQueue]->type == MCSIMULATION){
                 jobQueueHelper[currentJobInQueue] = 1;

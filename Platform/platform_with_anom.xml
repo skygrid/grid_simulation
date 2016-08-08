@@ -1,0 +1,1103 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+
+	<AS id="AS_BIG" routing="Full">
+		<storage_type id="single_HDD0" size="7600TB" model="linear_no_lat"
+				content="Content/CERN_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="single_HDD1" size="3150TB" model="linear_no_lat"
+				content="Content/CNAF_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="single_HDD2" size="2500TB" model="linear_no_lat"
+				content="Content/GRIDKA_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="single_HDD3" size="2230TB" model="linear_no_lat"
+				content="Content/IN2P3_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="single_HDD4" size="969TB" model="linear_no_lat"
+				content="Content/PIC_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="single_HDD5" size="4050TB" model="linear_no_lat"
+				content="Content/RAL_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="single_HDD6" size="1743TB" model="linear_no_lat"
+				content="Content/SARA_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="single_HDD7" size="1260TB" model="linear_no_lat"
+				content="Content/RRCKI_content_online.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD0" size="20600TB" model="linear_no_lat"
+				content="Content/CERN_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD1" size="7578TB" model="linear_no_lat"
+				content="Content/CNAF_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD2" size="4300TB" model="linear_no_lat"
+				content="Content/GRIDKA_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD3" size="4360TB" model="linear_no_lat"
+				content="Content/IN2P3_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD4" size="1677TB" model="linear_no_lat"
+				content="Content/PIC_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD5" size="12630TB" model="linear_no_lat"
+				content="Content/RAL_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD6" size="3019TB" model="linear_no_lat"
+				content="Content/SARA_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="NEARLINE_HDD7" size="1677TB" model="linear_no_lat"
+				content="Content/RRCKI_content_nearline.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<!-- STORAGES_TYPES OF TIER2 LAYER-->
+		<storage_type id="T2_HDD1" size="300TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD2" size="300TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD3" size="2TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD4" size="2TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD5" size="8TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD6" size="1TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD7" size="240TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD8" size="1TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD9" size="360TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD10" size="65TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD11" size="1TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD12" size="540TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD13" size="300TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD14" size="300TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD15" size="1TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage_type id="T2_HDD16" size="300TB" model="linear_no_lat">
+			<model_prop id="Bwrite" value="1GBps"/>
+			<model_prop id="Bread" value="5GBps"/>
+			<model_prop id="Bconnection" value="1.2GBps"/>
+		</storage_type>
+
+		<storage id="STORAGE_CERN" typeId="single_HDD0" attach="CERN"/>
+		<storage id="STORAGE_CNAF" typeId="single_HDD1" attach="CNAF"/>
+		<storage id="STORAGE_GRIDKA" typeId="single_HDD2" attach="GRIDKA"/>
+		<storage id="STORAGE_IN2P3" typeId="single_HDD3" attach="IN2P3"/>
+		<storage id="STORAGE_PIC" typeId="single_HDD4" attach="PIC"/>
+		<storage id="STORAGE_RAL" typeId="single_HDD5" attach="RAL"/>
+		<storage id="STORAGE_SARA" typeId="single_HDD6" attach="SARA"/>
+		<storage id="STORAGE_RRCKI" typeId="single_HDD7" attach="RRCKI"/>
+
+		<storage id="NEARLINE_CERN" typeId="NEARLINE_HDD0" attach="CERN"/>
+		<storage id="NEARLINE_CNAF" typeId="NEARLINE_HDD1" attach="CNAF"/>
+		<storage id="NEARLINE_GRIDKA" typeId="NEARLINE_HDD2" attach="GRIDKA"/>
+		<storage id="NEARLINE_IN2P3" typeId="NEARLINE_HDD3" attach="IN2P3"/>
+		<storage id="NEARLINE_PIC" typeId="NEARLINE_HDD4" attach="PIC"/>
+		<storage id="NEARLINE_RAL" typeId="NEARLINE_HDD5" attach="RAL"/>
+		<storage id="NEARLINE_SARA" typeId="NEARLINE_HDD6" attach="SARA"/>
+		<storage id="NEARLINE_RRCKI" typeId="NEARLINE_HDD7" attach="RRCKI"/>
+
+		<storage id="T2_1" typeId="T2_HDD1" attach="T2_1"/>
+		<storage id="T2_2" typeId="T2_HDD2" attach="T2_2"/>
+		<storage id="T2_3" typeId="T2_HDD3" attach="T2_3"/>
+		<storage id="T2_4" typeId="T2_HDD4" attach="T2_4"/>
+		<storage id="T2_5" typeId="T2_HDD5" attach="T2_5"/>
+		<storage id="T2_6" typeId="T2_HDD6" attach="T2_6"/>
+		<storage id="T2_7" typeId="T2_HDD7" attach="T2_7"/>
+		<storage id="T2_8" typeId="T2_HDD8" attach="T2_8"/>
+		<storage id="T2_9" typeId="T2_HDD9" attach="T2_9"/>
+		<storage id="T2_10" typeId="T2_HDD10" attach="T2_10"/>
+		<storage id="T2_11" typeId="T2_HDD11" attach="T2_11"/>
+		<storage id="T2_12" typeId="T2_HDD12" attach="T2_12"/>
+		<storage id="T2_13" typeId="T2_HDD13" attach="T2_13"/>
+		<storage id="T2_14" typeId="T2_HDD14" attach="T2_14"/>
+		<storage id="T2_15" typeId="T2_HDD15" attach="T2_15"/>
+		<storage id="T2_16" typeId="T2_HDD16" attach="T2_16"/>
+
+		<host id="CERN" speed="1Gf" core="510">
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+		<host id="CNAF" speed="1Gf" core="280" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+		<host id="GRIDKA" speed="1Gf" core="244" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+		<host id="IN2P3" speed="1Gf" core="230" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+		<host id="PIC" speed="1Gf" core="94" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+		<host id="RAL" speed="1Gf" core="468" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+		<host id="SARA" speed="1Gf" core="170" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+		<host id="RRCKI" speed="1Gf" core="164" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+
+
+		<host id="T2_1" speed="1Gf" core="40">
+			<mount storageId="T2_1" name="T2_1"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_2" speed="1Gf" core="68">
+			<mount storageId="T2_2" name="T2_2"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_3" speed="1Gf" core="51">
+			<mount storageId="T2_3" name="T2_3"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_4" speed="1Gf" core="20">
+			<mount storageId="T2_4" name="T2_4"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_5" speed="1Gf" core="45">
+			<mount storageId="T2_5" name="T2_5"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_6" speed="1Gf" core="158">
+			<mount storageId="T2_6" name="T2_6"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_7" speed="1Gf" core="55">
+			<mount storageId="T2_7" name="T2_7"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_8" speed="1Gf" core="39">
+			<mount storageId="T2_8" name="T2_8"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_9" speed="1Gf" core="63">
+			<mount storageId="T2_9" name="T2_9"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_10" speed="1Gf" core="8">
+			<mount storageId="T2_10" name="T2_10"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_11" speed="1Gf" core="52">
+			<mount storageId="T2_11" name="T2_11"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_12" speed="1Gf" core="100">
+			<mount storageId="T2_12" name="T2_12"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_13" speed="1Gf" core="22">
+			<mount storageId="T2_13" name="T2_13"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_14" speed="1Gf" core="75">
+			<mount storageId="T2_14" name="T2_14"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_15" speed="1Gf" core="19">
+			<mount storageId="T2_15" name="T2_15"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+		<host id="T2_16" speed="1Gf" core="67">
+			<mount storageId="T2_16" name="T2_16"/>
+
+			<mount storageId="STORAGE_CERN" name="CERN0"/>
+			<mount storageId="NEARLINE_CERN" name="CERN1"/>
+			<mount storageId="STORAGE_CNAF" name="CNAF0"/>
+			<mount storageId="NEARLINE_CNAF" name="CNAF1"/>
+			<mount storageId="STORAGE_GRIDKA" name="GRIDKA0"/>
+			<mount storageId="NEARLINE_GRIDKA" name="GRIDKA1"/>
+			<mount storageId="STORAGE_IN2P3" name="IN2P30"/>
+			<mount storageId="NEARLINE_IN2P3" name="IN2P31"/>
+			<mount storageId="STORAGE_PIC" name="PIC0"/>
+			<mount storageId="NEARLINE_PIC" name="PIC1"/>
+			<mount storageId="STORAGE_RAL" name="RAL0"/>
+			<mount storageId="NEARLINE_RAL" name="RAL1"/>
+			<mount storageId="STORAGE_SARA" name="SARA0"/>
+			<mount storageId="NEARLINE_SARA" name="SARA1"/>
+			<mount storageId="STORAGE_RRCKI" name="RRCKI0"/>
+			<mount storageId="NEARLINE_RRCKI" name="RRCKI1"/>
+		</host>
+<link id="loopback" bandwidth="498MBps" latency="0us" sharing_policy="FATPIPE"/>
+		<link id="CERN-CNAF-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-CNAF-LHCOPN-001.fail" />
+		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-GRIDKA-LHCOPN-001.fail" />
+		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-IN2P3-LHCOPN-001.fail" />
+		<link id="CERN-PIC-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-PIC-LHCOPN-001.fail" />
+		<link id="CERN-RAL-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" bandwidth_file="CERN-RAL-LHCOPN-001.bw" />
+		<link id="CERN-SARA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" bandwidth_file="CERN-SARA-LHCOPN-001.bw" />
+		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="0.2GBps" latency="0.0ms" state_file="CERN-RRCK1-LHCOPN-001.fail" />
+
+		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CNAF-GRIDKA-LHCOPN-001.fail" />
+		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="GRIDKA-IN2P3-LHCOPN-001.fail" />
+		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="GRIDKA-SARA-LHCOPN-001.fail" />
+
+
+
+		<!--LINKS between CERN and TIER2-->
+		<link id="CERN_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CERN_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+
+
+
+		<!--LINKS between TIER1S and TIER2S-->
+		<link id="CNAF_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_1_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_2_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_3_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_4_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_5_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_6_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_7_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_8_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_9_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_10_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_11_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_12_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_13_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_14_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_15_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="CNAF_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="GRIDKA_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="IN2P3_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="PIC_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RAL_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="SARA_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+		<link id="RRCKI_16_T2" bandwidth="10MBps" latency="0.0ms"/>
+
+		<!--routes between TIER1-TIER1-->
+
+		<!--DIRECT 3 ROUTES-->
+		<route src="CNAF" dst="GRIDKA"><link_ctn id="CNAF-GRIDKA-LHCOPN-001"/></route>
+		<route src="GRIDKA" dst="IN2P3"><link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/></route>
+		<route src="GRIDKA" dst="SARA"><link_ctn id="GRIDKA-SARA-LHCOPN-001"/></route>
+		<!--3 ROUTES THRU GRIDKA-->
+		<route src="CNAF" dst="IN2P3">
+			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
+		</route>
+		<route src="CNAF" dst="SARA">
+			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="SARA">
+			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
+			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
+		</route>
+		<!--ROUTES THRU CERN-->
+		<route src="CNAF" dst="PIC">
+			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+		</route>
+		<route src="CNAF" dst="RAL">
+			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="CNAF" dst="RRCKI">
+			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="GRIDKA" dst="PIC">
+			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+		</route>
+		<route src="GRIDKA" dst="RAL">
+			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="GRIDKA" dst="RRCKI">
+			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="PIC">
+			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="RAL">
+			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="IN2P3" dst="RRCKI">
+			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="PIC" dst="RAL">
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+		</route>
+		<route src="PIC" dst="SARA">
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+			<link_ctn id="CERN-SARA-LHCOPN-001"/>
+		</route>
+		<route src="PIC" dst="RRCKI">
+			<link_ctn id="CERN-PIC-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="RAL" dst="SARA">
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+			<link_ctn id="CERN-SARA-LHCOPN-001"/>
+		</route>
+		<route src="RAL" dst="RRCKI">
+			<link_ctn id="CERN-RAL-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="SARA" dst="RRCKI">
+			<link_ctn id="CERN-SARA-LHCOPN-001"/>
+			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
+		</route>
+		<route src="CERN" dst="CERN"><link_ctn id="loopback"/></route>
+		<!--routes between CERN and TIER1-->
+		<route src="CERN" dst="CNAF"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
+		<route src="CERN" dst="GRIDKA"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
+		<route src="CERN" dst="IN2P3"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
+		<route src="CERN" dst="PIC"><link_ctn id="CERN-PIC-LHCOPN-001"/></route>
+		<route src="CERN" dst="RAL"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
+		<route src="CERN" dst="SARA"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
+		<route src="CERN" dst="RRCKI"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
+
+
+		<!--routes between CERN and TIER2-->
+		<route src="CERN" dst="T2_1"><link_ctn id="CERN_1_T2"/></route>
+		<route src="CERN" dst="T2_2"><link_ctn id="CERN_2_T2"/></route>
+		<route src="CERN" dst="T2_3"><link_ctn id="CERN_3_T2"/></route>
+		<route src="CERN" dst="T2_4"><link_ctn id="CERN_4_T2"/></route>
+		<route src="CERN" dst="T2_5"><link_ctn id="CERN_5_T2"/></route>
+		<route src="CERN" dst="T2_6"><link_ctn id="CERN_6_T2"/></route>
+		<route src="CERN" dst="T2_7"><link_ctn id="CERN_7_T2"/></route>
+		<route src="CERN" dst="T2_8"><link_ctn id="CERN_8_T2"/></route>
+		<route src="CERN" dst="T2_9"><link_ctn id="CERN_9_T2"/></route>
+		<route src="CERN" dst="T2_10"><link_ctn id="CERN_10_T2"/></route>
+		<route src="CERN" dst="T2_11"><link_ctn id="CERN_11_T2"/></route>
+		<route src="CERN" dst="T2_12"><link_ctn id="CERN_12_T2"/></route>
+		<route src="CERN" dst="T2_13"><link_ctn id="CERN_13_T2"/></route>
+		<route src="CERN" dst="T2_14"><link_ctn id="CERN_14_T2"/></route>
+		<route src="CERN" dst="T2_15"><link_ctn id="CERN_15_T2"/></route>
+		<route src="CERN" dst="T2_16"><link_ctn id="CERN_16_T2"/></route>
+
+
+		<!--routes between TIER1s and TIER2-->
+		<route src="CNAF" dst="T2_1"><link_ctn id="CNAF_1_T2"/></route>
+		<route src="GRIDKA" dst="T2_1"><link_ctn id="GRIDKA_1_T2"/></route>
+		<route src="IN2P3" dst="T2_1"><link_ctn id="IN2P3_1_T2"/></route>
+		<route src="PIC" dst="T2_1"><link_ctn id="PIC_1_T2"/></route>
+		<route src="RAL" dst="T2_1"><link_ctn id="RAL_1_T2"/></route>
+		<route src="SARA" dst="T2_1"><link_ctn id="SARA_1_T2"/></route>
+		<route src="RRCKI" dst="T2_1"><link_ctn id="RRCKI_1_T2"/></route>
+		<route src="CNAF" dst="T2_2"><link_ctn id="CNAF_2_T2"/></route>
+		<route src="GRIDKA" dst="T2_2"><link_ctn id="GRIDKA_2_T2"/></route>
+		<route src="IN2P3" dst="T2_2"><link_ctn id="IN2P3_2_T2"/></route>
+		<route src="PIC" dst="T2_2"><link_ctn id="PIC_2_T2"/></route>
+		<route src="RAL" dst="T2_2"><link_ctn id="RAL_2_T2"/></route>
+		<route src="SARA" dst="T2_2"><link_ctn id="SARA_2_T2"/></route>
+		<route src="RRCKI" dst="T2_2"><link_ctn id="RRCKI_2_T2"/></route>
+		<route src="CNAF" dst="T2_3"><link_ctn id="CNAF_3_T2"/></route>
+		<route src="GRIDKA" dst="T2_3"><link_ctn id="GRIDKA_3_T2"/></route>
+		<route src="IN2P3" dst="T2_3"><link_ctn id="IN2P3_3_T2"/></route>
+		<route src="PIC" dst="T2_3"><link_ctn id="PIC_3_T2"/></route>
+		<route src="RAL" dst="T2_3"><link_ctn id="RAL_3_T2"/></route>
+		<route src="SARA" dst="T2_3"><link_ctn id="SARA_3_T2"/></route>
+		<route src="RRCKI" dst="T2_3"><link_ctn id="RRCKI_3_T2"/></route>
+		<route src="CNAF" dst="T2_4"><link_ctn id="CNAF_4_T2"/></route>
+		<route src="GRIDKA" dst="T2_4"><link_ctn id="GRIDKA_4_T2"/></route>
+		<route src="IN2P3" dst="T2_4"><link_ctn id="IN2P3_4_T2"/></route>
+		<route src="PIC" dst="T2_4"><link_ctn id="PIC_4_T2"/></route>
+		<route src="RAL" dst="T2_4"><link_ctn id="RAL_4_T2"/></route>
+		<route src="SARA" dst="T2_4"><link_ctn id="SARA_4_T2"/></route>
+		<route src="RRCKI" dst="T2_4"><link_ctn id="RRCKI_4_T2"/></route>
+		<route src="CNAF" dst="T2_5"><link_ctn id="CNAF_5_T2"/></route>
+		<route src="GRIDKA" dst="T2_5"><link_ctn id="GRIDKA_5_T2"/></route>
+		<route src="IN2P3" dst="T2_5"><link_ctn id="IN2P3_5_T2"/></route>
+		<route src="PIC" dst="T2_5"><link_ctn id="PIC_5_T2"/></route>
+		<route src="RAL" dst="T2_5"><link_ctn id="RAL_5_T2"/></route>
+		<route src="SARA" dst="T2_5"><link_ctn id="SARA_5_T2"/></route>
+		<route src="RRCKI" dst="T2_5"><link_ctn id="RRCKI_5_T2"/></route>
+		<route src="CNAF" dst="T2_6"><link_ctn id="CNAF_6_T2"/></route>
+		<route src="GRIDKA" dst="T2_6"><link_ctn id="GRIDKA_6_T2"/></route>
+		<route src="IN2P3" dst="T2_6"><link_ctn id="IN2P3_6_T2"/></route>
+		<route src="PIC" dst="T2_6"><link_ctn id="PIC_6_T2"/></route>
+		<route src="RAL" dst="T2_6"><link_ctn id="RAL_6_T2"/></route>
+		<route src="SARA" dst="T2_6"><link_ctn id="SARA_6_T2"/></route>
+		<route src="RRCKI" dst="T2_6"><link_ctn id="RRCKI_6_T2"/></route>
+		<route src="CNAF" dst="T2_7"><link_ctn id="CNAF_7_T2"/></route>
+		<route src="GRIDKA" dst="T2_7"><link_ctn id="GRIDKA_7_T2"/></route>
+		<route src="IN2P3" dst="T2_7"><link_ctn id="IN2P3_7_T2"/></route>
+		<route src="PIC" dst="T2_7"><link_ctn id="PIC_7_T2"/></route>
+		<route src="RAL" dst="T2_7"><link_ctn id="RAL_7_T2"/></route>
+		<route src="SARA" dst="T2_7"><link_ctn id="SARA_7_T2"/></route>
+		<route src="RRCKI" dst="T2_7"><link_ctn id="RRCKI_7_T2"/></route>
+		<route src="CNAF" dst="T2_8"><link_ctn id="CNAF_8_T2"/></route>
+		<route src="GRIDKA" dst="T2_8"><link_ctn id="GRIDKA_8_T2"/></route>
+		<route src="IN2P3" dst="T2_8"><link_ctn id="IN2P3_8_T2"/></route>
+		<route src="PIC" dst="T2_8"><link_ctn id="PIC_8_T2"/></route>
+		<route src="RAL" dst="T2_8"><link_ctn id="RAL_8_T2"/></route>
+		<route src="SARA" dst="T2_8"><link_ctn id="SARA_8_T2"/></route>
+		<route src="RRCKI" dst="T2_8"><link_ctn id="RRCKI_8_T2"/></route>
+		<route src="CNAF" dst="T2_9"><link_ctn id="CNAF_9_T2"/></route>
+		<route src="GRIDKA" dst="T2_9"><link_ctn id="GRIDKA_9_T2"/></route>
+		<route src="IN2P3" dst="T2_9"><link_ctn id="IN2P3_9_T2"/></route>
+		<route src="PIC" dst="T2_9"><link_ctn id="PIC_9_T2"/></route>
+		<route src="RAL" dst="T2_9"><link_ctn id="RAL_9_T2"/></route>
+		<route src="SARA" dst="T2_9"><link_ctn id="SARA_9_T2"/></route>
+		<route src="RRCKI" dst="T2_9"><link_ctn id="RRCKI_9_T2"/></route>
+		<route src="CNAF" dst="T2_10"><link_ctn id="CNAF_10_T2"/></route>
+		<route src="GRIDKA" dst="T2_10"><link_ctn id="GRIDKA_10_T2"/></route>
+		<route src="IN2P3" dst="T2_10"><link_ctn id="IN2P3_10_T2"/></route>
+		<route src="PIC" dst="T2_10"><link_ctn id="PIC_10_T2"/></route>
+		<route src="RAL" dst="T2_10"><link_ctn id="RAL_10_T2"/></route>
+		<route src="SARA" dst="T2_10"><link_ctn id="SARA_10_T2"/></route>
+		<route src="RRCKI" dst="T2_10"><link_ctn id="RRCKI_10_T2"/></route>
+		<route src="CNAF" dst="T2_11"><link_ctn id="CNAF_11_T2"/></route>
+		<route src="GRIDKA" dst="T2_11"><link_ctn id="GRIDKA_11_T2"/></route>
+		<route src="IN2P3" dst="T2_11"><link_ctn id="IN2P3_11_T2"/></route>
+		<route src="PIC" dst="T2_11"><link_ctn id="PIC_11_T2"/></route>
+		<route src="RAL" dst="T2_11"><link_ctn id="RAL_11_T2"/></route>
+		<route src="SARA" dst="T2_11"><link_ctn id="SARA_11_T2"/></route>
+		<route src="RRCKI" dst="T2_11"><link_ctn id="RRCKI_11_T2"/></route>
+		<route src="CNAF" dst="T2_12"><link_ctn id="CNAF_12_T2"/></route>
+		<route src="GRIDKA" dst="T2_12"><link_ctn id="GRIDKA_12_T2"/></route>
+		<route src="IN2P3" dst="T2_12"><link_ctn id="IN2P3_12_T2"/></route>
+		<route src="PIC" dst="T2_12"><link_ctn id="PIC_12_T2"/></route>
+		<route src="RAL" dst="T2_12"><link_ctn id="RAL_12_T2"/></route>
+		<route src="SARA" dst="T2_12"><link_ctn id="SARA_12_T2"/></route>
+		<route src="RRCKI" dst="T2_12"><link_ctn id="RRCKI_12_T2"/></route>
+		<route src="CNAF" dst="T2_13"><link_ctn id="CNAF_13_T2"/></route>
+		<route src="GRIDKA" dst="T2_13"><link_ctn id="GRIDKA_13_T2"/></route>
+		<route src="IN2P3" dst="T2_13"><link_ctn id="IN2P3_13_T2"/></route>
+		<route src="PIC" dst="T2_13"><link_ctn id="PIC_13_T2"/></route>
+		<route src="RAL" dst="T2_13"><link_ctn id="RAL_13_T2"/></route>
+		<route src="SARA" dst="T2_13"><link_ctn id="SARA_13_T2"/></route>
+		<route src="RRCKI" dst="T2_13"><link_ctn id="RRCKI_13_T2"/></route>
+		<route src="CNAF" dst="T2_14"><link_ctn id="CNAF_14_T2"/></route>
+		<route src="GRIDKA" dst="T2_14"><link_ctn id="GRIDKA_14_T2"/></route>
+		<route src="IN2P3" dst="T2_14"><link_ctn id="IN2P3_14_T2"/></route>
+		<route src="PIC" dst="T2_14"><link_ctn id="PIC_14_T2"/></route>
+		<route src="RAL" dst="T2_14"><link_ctn id="RAL_14_T2"/></route>
+		<route src="SARA" dst="T2_14"><link_ctn id="SARA_14_T2"/></route>
+		<route src="RRCKI" dst="T2_14"><link_ctn id="RRCKI_14_T2"/></route>
+		<route src="CNAF" dst="T2_15"><link_ctn id="CNAF_15_T2"/></route>
+		<route src="GRIDKA" dst="T2_15"><link_ctn id="GRIDKA_15_T2"/></route>
+		<route src="IN2P3" dst="T2_15"><link_ctn id="IN2P3_15_T2"/></route>
+		<route src="PIC" dst="T2_15"><link_ctn id="PIC_15_T2"/></route>
+		<route src="RAL" dst="T2_15"><link_ctn id="RAL_15_T2"/></route>
+		<route src="SARA" dst="T2_15"><link_ctn id="SARA_15_T2"/></route>
+		<route src="RRCKI" dst="T2_15"><link_ctn id="RRCKI_15_T2"/></route>
+		<route src="CNAF" dst="T2_16"><link_ctn id="CNAF_16_T2"/></route>
+		<route src="GRIDKA" dst="T2_16"><link_ctn id="GRIDKA_16_T2"/></route>
+		<route src="IN2P3" dst="T2_16"><link_ctn id="IN2P3_16_T2"/></route>
+		<route src="PIC" dst="T2_16"><link_ctn id="PIC_16_T2"/></route>
+		<route src="RAL" dst="T2_16"><link_ctn id="RAL_16_T2"/></route>
+		<route src="SARA" dst="T2_16"><link_ctn id="SARA_16_T2"/></route>
+		<route src="RRCKI" dst="T2_16"><link_ctn id="RRCKI_16_T2"/></route>
+	</AS>
+</platform>
