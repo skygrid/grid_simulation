@@ -50,6 +50,7 @@ typedef struct{
     double startSchedulClock;
     double stExecClock;
     double endExecClock;
+    int success;
 }job, *jobPtr;
 
 
