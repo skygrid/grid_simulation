@@ -16,8 +16,10 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
 int input();
 long currentJobInQueue = 0;
 long amountOfScheduledJobs = 0;
+
 jobPtr* jobQueue;
 int* jobQueueHelper;
+int* jobQueueReschedulingHelper;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
@@ -99,6 +101,8 @@ jobPtr* matcher(long amountRequestedJob){
 
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
     currentJobInQueue = 0;
+    jobQueueReschedulingHelper = xbt_new(int, amountRequestedJob);
+
     if (amountOfScheduledJobs + amountRequestedJob >= QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
         MSG_process_kill(MSG_process_self());
@@ -122,6 +126,7 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
+                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             }
             if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost1, host)) {
@@ -131,6 +136,7 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
+                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             } else if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost2, host)) {
                 jobQueueHelper[currentJobInQueue] = 1;
@@ -139,6 +145,7 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
+                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             } else if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost3, host)) {
                 jobQueueHelper[currentJobInQueue] = 1;
@@ -147,6 +154,7 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
+                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             }
             currentJobInQueue++;
