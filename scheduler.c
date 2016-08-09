@@ -68,7 +68,7 @@ int scheduler(int argc, char* argv[]){
             XBT_INFO("Send %s after matching %s", batch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
         }else if (res1 == MSG_TRANSFER_FAILURE){
             anomalyLinkTracer("CERN", MSG_host_get_name(MSG_task_get_source(task)));
-            rescheduling(&((int)batchRequest->coreAmount));
+            rescheduling(batchRequest->coreAmount);
             writeAnomaly(MSG_get_clock());
             MSG_task_destroy(taskB);
             taskB = NULL;

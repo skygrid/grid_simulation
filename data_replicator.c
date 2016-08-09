@@ -8,6 +8,7 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
+int anomalyLinkTracer(const char* src, const char* dst);
 msg_sem_t sem_link;
 
 int data_replicator(int argc, char* argv[]){
@@ -85,16 +86,12 @@ int uploader(int argc, char* argv[]){
 
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
 
-        minusLinkCounter(MSG_host_get_name(MSG_host_self()), data->dest);
-
         if (a == MSG_OK) {
+            minusLinkCounter(MSG_host_get_name(MSG_host_self()), data->dest);
             MSG_file_close(file);
-            //XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
-        } else if (a == MSG_HOST_FAILURE) {
-            writeAnomaly(MSG_get_clock());
-            MSG_file_close(file);
-            XBT_INFO("Host fail occurred", "%s");
-        } else if (a == MSG_TRANSFER_FAILURE) {
+            XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
+        }  else if (a == MSG_TRANSFER_FAILURE) {
+            anomalyLinkTracer(MSG_host_get_name(MSG_host_self()), data->dest);
             writeAnomaly(MSG_get_clock());
             MSG_file_close(file);
             XBT_INFO("Transfer fail occurred", "%s");

@@ -78,13 +78,15 @@ int executor(int argc, char* argv[]){
 
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
     char inputFilePath[80];
+    char copyFilePath[80];
     char outputFilePath[80];
-
+    sprintf(copyFilePath, "/%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->inputFileName);
     //find location of input file
     if (jobInfo->type != MCSIMULATION) {
 
         if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost1)) {
             sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType, jobInfo->inputFileName);
+
             dest = jobInfo->dataLocHost1;
         } else if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost2)) {
             sprintf(inputFilePath, "/%s%s/%s", jobInfo->dataLocHost2, jobInfo->storageType, jobInfo->inputFileName);
@@ -101,14 +103,15 @@ int executor(int argc, char* argv[]){
         plusLinkCounter(dest, MSG_host_get_name(MSG_host_self()));
 
         file = MSG_file_open(inputFilePath, NULL);
-        sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
-        XBT_INFO("READ from %s  at %f, %s", dest, MSG_get_clock(), jobInfo->name);
+        msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), copyFilePath);
+        //sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+        //XBT_INFO("READ from %s  at %f, %s", dest, MSG_get_clock(), jobInfo->name);
 
         minusLinkCounter(dest, MSG_host_get_name(MSG_host_self()));
 
         MSG_file_close(file);
         //Handling anomalies
-        if (a == -1){
+        if (error != MSG_OK){
             writeAnomaly(MSG_get_clock());
             char* reserv_loc[3] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3};
             for (int i = 0; i < 3; ++i) {
@@ -117,10 +120,11 @@ int executor(int argc, char* argv[]){
 
                     plusLinkCounter(reserv_loc[i], MSG_host_get_name(MSG_host_self()));
                     file = MSG_file_open(inputFilePath, NULL);
-                    sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
+                    msg_error_t err1 = MSG_file_rcopy(file, MSG_host_self(), copyFilePath);
+                    //sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
                     MSG_file_close(file);
 
-                    if (a == -1){
+                    if (err1 != MSG_OK){
                         anomalyLinkTracer(reserv_loc[i], MSG_host_get_name(MSG_host_self()));
                         writeAnomaly(MSG_get_clock());
                     } else{
@@ -142,6 +146,7 @@ int executor(int argc, char* argv[]){
     subActiveCoreT();
     jobInfo->endExecClock = MSG_get_clock();
     minusOneActiveCore();
+    jobInfo->success_or_anom = 1;
 
 
     //Anomalies
@@ -156,6 +161,8 @@ int executor(int argc, char* argv[]){
         task = NULL;
     }
 
+
+
     //Write output to file
     outFile = MSG_file_open(outputFilePath, NULL);
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
@@ -165,10 +172,22 @@ int executor(int argc, char* argv[]){
 
     memset(inputFilePath, '\0', 80);
     memset(outputFilePath, '\0', 80);
+    memset(copyFilePath, '\0', 80);
     writeToFile(fp, jobInfo);
     MSG_process_kill(MSG_process_self());
     return 0;
 }
+
+
+
+void my_on_exit(){
+    jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
+    jobInfo->success_or_anom = 0;
+    jobInfo->endExecClock = MSG_get_clock();
+    writeToFile(fp, jobInfo);
+}
+
+
 
 void plusOneActiveCore(){
     MSG_sem_acquire(sem);
