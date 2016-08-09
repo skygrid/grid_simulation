@@ -13,7 +13,10 @@ FILE* fp; // global variables
 #define QUEUE_SIZE 1500
 jobPtr* matcher(long amountRequestedJob);
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
+int rescheduling(int* failedReqJobs);
 int input();
+int anomalyLinkTracer(const char* src, const char* dst);
+
 long currentJobInQueue = 0;
 long amountOfScheduledJobs = 0;
 
@@ -49,8 +52,8 @@ int scheduler(int argc, char* argv[]){
 
         jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
 
-        //jobPtr* batch = matcher(batchRequest->coreAmount);
-        jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+        jobPtr* batch = matcher(batchRequest->coreAmount);
+        //jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
 
         taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
 
@@ -59,12 +62,13 @@ int scheduler(int argc, char* argv[]){
 
         msg_error_t res1 = MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)));
 
-        minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
-
         // Anomalies
         if (res1 == MSG_OK){
+            minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
             XBT_INFO("Send %s after matching %s", batch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
         }else if (res1 == MSG_TRANSFER_FAILURE){
+            anomalyLinkTracer("CERN", MSG_host_get_name(MSG_task_get_source(task)));
+            rescheduling(&((int)batchRequest->coreAmount));
             writeAnomaly(MSG_get_clock());
             MSG_task_destroy(taskB);
             taskB = NULL;

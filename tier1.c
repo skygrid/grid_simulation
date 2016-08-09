@@ -10,6 +10,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 
 FILE* fp;
 
+int anomalyLinkTracer(const char* src, const char* dst);
 int executorLauncher();
 int job_requester();
 int executor(int argc, char* argv[]);
@@ -114,21 +115,18 @@ int executor(int argc, char* argv[]){
                 if (reserv_loc[i] != dest & reserv_loc[i] != "0")
                     sprintf(inputFilePath, "/%s%s/%s", reserv_loc[i], jobInfo->storageType, jobInfo->inputFileName);
 
-                    MSG_sem_acquire(sem_link);
-                    TRACE_link_srcdst_variable_add(MSG_host_get_name(MSG_host_self()), reserv_loc[i], "UserAmount", 1);
-                    MSG_sem_release(sem_link);
-
+                    plusLinkCounter(reserv_loc[i], MSG_host_get_name(MSG_host_self()));
                     file = MSG_file_open(inputFilePath, NULL);
                     sg_size_t a = MSG_file_read(file, (sg_size_t) jobInfo->inputSize);
                     MSG_file_close(file);
 
-                    MSG_sem_acquire(sem_link);
-                    TRACE_link_srcdst_variable_sub(MSG_host_get_name(MSG_host_self()), reserv_loc[i], "UserAmount", 1);
-                    MSG_sem_release(sem_link);
-
                     if (a == -1){
+                        anomalyLinkTracer(reserv_loc[i], MSG_host_get_name(MSG_host_self()));
                         writeAnomaly(MSG_get_clock());
-                    } else break;
+                    } else{
+                        minusLinkCounter(reserv_loc[i], MSG_host_get_name(MSG_host_self()));
+                        break;
+                    }
             }
         }
 
@@ -180,7 +178,6 @@ void plusOneActiveCore(){
     number++;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
-    //XBT_INFO("Active core amount is %s", MSG_host_get_property_value(MSG_host_self(), "activeCore"));
     memset(kot, '\0', 50);
     MSG_sem_release(sem);
 }
@@ -193,7 +190,6 @@ void minusOneActiveCore(){
     number--;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
-    //XBT_INFO("Active core amount is %s", MSG_host_get_property_value(MSG_host_self(), "activeCore"));
     memset(kot, '\0', 50);
     MSG_sem_release(sem);
 }

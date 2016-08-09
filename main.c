@@ -9,6 +9,7 @@
 
 int scheduler(int argc, char *argv[]);
 int tier1(int argc, char *argv[]);
+int evil(int argc, char* argv[]);
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this msg example");
 
@@ -20,10 +21,12 @@ int main(int argc, char *argv[]){
     MSG_create_environment(argv[1]);
 
     TRACE_host_variable_declare("activeCore");
+    TRACE_host_variable_declare("corruptedCore");
     TRACE_link_variable_declare("directUserAmount");
     TRACE_link_variable_declare("indirectUserAmount");
     set_0_all_routes();
 
+    MSG_function_register("evil", evil);
     MSG_function_register("scheduler", scheduler);
     MSG_function_register("tier1", tier1);
     MSG_launch_application(argv[2]);

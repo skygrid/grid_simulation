@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 import numpy as np
+from random import randint
 
 quo, q = "\"", "\""
 
@@ -85,7 +86,7 @@ LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
 NAMES_TIER2, CPU_TIER2, STORAGE_TIER2 = np.loadtxt("tier2/tier2.csv", skiprows=1, dtype=(np.str), usecols=(0, 1, 2), delimiter=",", unpack=True)
 
 
-f = open("platform_with_anom.xml", "w")
+f = open("platform_anom.xml", "w")
 f.write("<?xml version='1.0'?>\n")
 f.write("<!DOCTYPE platform SYSTEM \"http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd\">\n")
 f.write("<platform version=\"4\">\n")
@@ -252,7 +253,7 @@ f.close()
 #                             DEPLOYMENT FILE                                   #
 #                             DEPLOYMENT FILE                                   #
 #################################################################################
-f = open("deployment.xml", "w")
+f = open("deployment_anom.xml", "w")
 f.write("<?xml version='1.0'?>\n")
 f.write("<!DOCTYPE platform SYSTEM \"http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd\">\n")
 f.write("<platform version=\"4\">\n")
@@ -269,6 +270,19 @@ for i in range(0, len(LIST_OF_TIERS)):
     f.write("\t</process>\n")
     f.write("\n")
 f.write("\n")
+
+for i in range(0, len(LIST_OF_TIERS)):
+    f.write("\t<process host=\"" + LIST_OF_TIERS[i] + "\" function=\"evil\">\n")
+    f.write("\t\t<argument value=\"" + str(randint(0, 50000)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(randint(30, 75)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(randint(100, 200)) + "\"/>\n")
+    f.write("\t</process>\n")
+    f.write("\n")
+f.write("\n")
+
+
+
+
 """for i in range(1, len(NAMES_TIER2)):
     f.write("\t<process host=\"T2_" + str(i) + "\" function=\"tier1\">\n")
     f.write("\t\t<argument value=\"T2_" + str(i) + "\"/>\n")

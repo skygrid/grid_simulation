@@ -58,6 +58,38 @@ int minusLinkCounter(const char* src, const char* dst){
 
 
 
+
+int anomalyLinkTracer(const char* src, const char* dst){
+    msg_task_t message1, message2;
+    MSG_sem_acquire(sem_link);
+    char* transit = NULL;
+    if (strcmp(src, dst)){
+        if (direct(src, dst)){
+            TRACE_link_srcdst_variable_set(src, dst, "directUserAmount", 0);
+            TRACE_link_srcdst_variable_set(src, dst, "indirectUserAmount", 0);
+        }else{
+            transit = find_transit(src, dst);
+            message1 = MSG_task_create("", 0, MESSAGES_SIZE, NULL);
+            msg_error_t err1 = MSG_task_send(message1, transit);
+            if (err1 == MSG_TRANSFER_FAILURE){
+                TRACE_link_srcdst_variable_set(src, transit, "directUserAmount", 0);
+                TRACE_link_srcdst_variable_set(src, transit, "indirectUserAmount", 0);
+            }else {
+                TRACE_link_srcdst_variable_set(transit, dst, "directUserAmount", 0);
+                TRACE_link_srcdst_variable_set(transit, dst, "indirectUserAmount", 0);
+            }
+        }
+
+    }
+
+
+
+    MSG_sem_release(sem_link);
+    return 0;
+}
+
+
+
 int direct(const char* src, const char* dst){
     if ((!strcmp(src, "CERN") || !strcmp(dst, "CERN")) || (!strcmp(src, "GRIDKA") &&  (!strcmp(dst, "CNAF") || !strcmp(dst, "IN2P3") || !strcmp(dst, "SARA"))) || ((!strcmp(src, "SARA") || !strcmp(src, "IN2P3") || !strcmp(src, "CNAF")) && !strcmp(dst, "GRIDKA"))){
         return 1;

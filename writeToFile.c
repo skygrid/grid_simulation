@@ -11,7 +11,7 @@ int writeToFile(FILE* fpy, jobPtr jobInfo)
     return(0);
 }
 
-int clearFile(FILE* fpy)
+int clearFile()
 {
     FILE * fp, *fp1;
     fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "w");

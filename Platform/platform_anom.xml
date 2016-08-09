@@ -731,9 +731,9 @@
 		<link id="CERN-CNAF-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-CNAF-LHCOPN-001.fail" />
 		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-GRIDKA-LHCOPN-001.fail" />
 		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-IN2P3-LHCOPN-001.fail" />
-		<link id="CERN-PIC-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-PIC-LHCOPN-001.fail" />
+		<link id="CERN-PIC-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" bandwidth_file="CERN-PIC-LHCOPN-001.bw" />
 		<link id="CERN-RAL-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" bandwidth_file="CERN-RAL-LHCOPN-001.bw" />
-		<link id="CERN-SARA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" bandwidth_file="CERN-SARA-LHCOPN-001.bw" />
+		<link id="CERN-SARA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CERN-SARA-LHCOPN-001.fail" />
 		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="0.2GBps" latency="0.0ms" state_file="CERN-RRCK1-LHCOPN-001.fail" />
 
 		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms" state_file="CNAF-GRIDKA-LHCOPN-001.fail" />

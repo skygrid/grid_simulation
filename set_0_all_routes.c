@@ -14,6 +14,7 @@ int set_0_all_routes(){
     for (int i = 0; i < 8; ++i) {
 
         TRACE_host_variable_set(hosts[i], "activeCore", 0);
+        TRACE_host_variable_set(hosts[i], "corruptedCore", 0);
 
         for (int j = i+1; j < 8; ++j) {
             MSG_sem_acquire(sem_link);
