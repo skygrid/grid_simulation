@@ -4,15 +4,18 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 #include "myfunc_list.h"
+#include "global_vabiables.h"
 msg_sem_t sem_link;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
+
+int fullCoreAmount;
 
 int job_requester(){
     msg_task_t task;
     double timeout = 20.0;
     long freeCoreAmount;
-    long fullCoreAmount = MSG_host_get_core_number(MSG_host_self());
+    fullCoreAmount = MSG_host_get_core_number(MSG_host_self());
 
     while (1){
         freeCoreAmount = fullCoreAmount - xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");

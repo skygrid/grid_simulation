@@ -26,6 +26,7 @@ int tier1(int argc, char* argv[]){
     // LAUNCH PROCESS
     sem = MSG_sem_init(1);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), xbt_free_f);
+    MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup("0"), xbt_free_f);
     MSG_process_create("tier1_executor", executorLauncher, argx, MSG_host_self());
     MSG_process_create("job_requester", job_requester, NULL, MSG_host_self());
 

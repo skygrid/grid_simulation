@@ -7,5 +7,5 @@
 #define CSIM2SIM_GLOBAL_VABIABLES_H
 
 #include <simgrid/msg.h>
-
+extern int fullCoreAmount;
 #endif //CSIM2SIM_GLOBAL_VABIABLES_H

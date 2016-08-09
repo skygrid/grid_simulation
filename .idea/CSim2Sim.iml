@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/main.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/messages.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/str_to_enum.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/angel.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/link_tracer.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/job_requester.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/scheduler.c" isTestSource="false" />
