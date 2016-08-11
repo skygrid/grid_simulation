@@ -10,19 +10,19 @@
 
 FILE* fp; // global variables
 
-#define QUEUE_SIZE 1500
+#define QUEUE_SIZE 280
 jobPtr* matcher(long amountRequestedJob);
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
-int rescheduling(int* failedReqJobs);
+int rescheduling(long failedReqJobs);
 int input();
 int anomalyLinkTracer(const char* src, const char* dst);
 
+double end;
 long currentJobInQueue = 0;
 long amountOfScheduledJobs = 0;
 
 jobPtr* jobQueue;
 int* jobQueueHelper;
-int* jobQueueReschedulingHelper;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
@@ -34,69 +34,62 @@ int scheduler(int argc, char* argv[]){
     sprintf(mailbox, "scheduler");
 
     while (1){
+
         int res = MSG_task_receive(&task, mailbox);
         // Anomalies
         if (res == MSG_OK){
             XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
+            jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
+
+            jobPtr* batch = matcher(batchRequest->coreAmount);
+            //jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+            taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
+            //Add new user to link
+            plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
+
+            switch(MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)))){
+                case MSG_OK:
+                    minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
+                    XBT_INFO("Send %s after matching %s", batch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
+                    break;
+                case MSG_TRANSFER_FAILURE:
+                    rescheduling(batchRequest->coreAmount);
+                    MSG_task_destroy(taskB);
+                    taskB = NULL;
+                    break;
+                case MSG_HOST_FAILURE:
+                    MSG_task_destroy(taskB);
+                    taskB = NULL;
+                    break;
+            }
+
+            if(!strcmp(MSG_task_get_name(task), "finalize")){
+                MSG_task_destroy(task);
+                break;
+            }
+            xbt_free(batchRequest);
+            MSG_task_destroy(task);
+            task = NULL;
+
         }else if (res == MSG_TRANSFER_FAILURE){
-            MSG_task_destroy(task);
-            task = NULL;
-        } else if (res == MSG_HOST_FAILURE){
-            MSG_task_destroy(task);
-            task = NULL;
+            XBT_INFO("transfer failure occur");
         }
-        if(!strcmp(MSG_task_get_name(task), "finalize")){
-            MSG_task_destroy(task);
-            break;
-        }
-
-        jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
-
-        jobPtr* batch = matcher(batchRequest->coreAmount);
-        //jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
-
-        taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
-
-        //Add new user to link
-        plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
-
-        msg_error_t res1 = MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)));
-
-        // Anomalies
-        if (res1 == MSG_OK){
-            minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
-            XBT_INFO("Send %s after matching %s", batch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
-        }else if (res1 == MSG_TRANSFER_FAILURE){
-            anomalyLinkTracer("CERN", MSG_host_get_name(MSG_task_get_source(task)));
-            rescheduling(batchRequest->coreAmount);
-            writeAnomaly(MSG_get_clock());
-            MSG_task_destroy(taskB);
-            taskB = NULL;
-        } else if (res1 == MSG_HOST_FAILURE){
-            writeAnomaly(MSG_get_clock());
-            MSG_task_destroy(taskB);
-            taskB = NULL;
-        }
-        if(!strcmp(MSG_task_get_name(task), "finalize")){
-            MSG_task_destroy(task);
-            break;
-        }
-
-        xbt_free(batchRequest);
-        MSG_task_destroy(task);
-        task = NULL;
     }
 }
 jobPtr* matcher(long amountRequestedJob){
 
     if (currentJobInQueue + amountRequestedJob > QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
+        end = MSG_get_clock() + 5000;
         MSG_process_kill(MSG_process_self());
     }
-    XBT_INFO("Amoint is %ld", amountRequestedJob);
+    XBT_INFO("Amount is %ld", amountRequestedJob);
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
     for (long i = currentJobInQueue; i < (currentJobInQueue+amountRequestedJob); ++i) {
         jobQueue[i]->startSchedulClock = MSG_get_clock();
+        jobQueue[i]->stExecClock = 0;
+        jobQueue[i]->endExecClock = 0;
+        jobQueue[i]->success_or_anom = 0;
         jobBatch[i-currentJobInQueue] = jobQueue[i];
     }
     currentJobInQueue += amountRequestedJob;
@@ -105,19 +98,19 @@ jobPtr* matcher(long amountRequestedJob){
 
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
     currentJobInQueue = 0;
-    jobQueueReschedulingHelper = xbt_new(int, amountRequestedJob);
 
     if (amountOfScheduledJobs + amountRequestedJob >= QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
+        end = MSG_get_clock() + 10000;
         MSG_process_kill(MSG_process_self());
     }
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
-
     long i = 0;
     while(i < amountRequestedJob){
 
         if (currentJobInQueue >= QUEUE_SIZE){
             XBT_INFO("QUEUE is run out");
+            end = MSG_get_clock() + 10000;
             MSG_process_kill(MSG_process_self());
             break;
         }
@@ -130,7 +123,6 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
-                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             }
             if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost1, host)) {
@@ -140,7 +132,6 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
-                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             } else if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost2, host)) {
                 jobQueueHelper[currentJobInQueue] = 1;
@@ -149,7 +140,6 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
-                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             } else if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost3, host)) {
                 jobQueueHelper[currentJobInQueue] = 1;
@@ -158,7 +148,6 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
-                jobQueueReschedulingHelper[i] = (int) currentJobInQueue;
                 continue;
             }
             currentJobInQueue++;
@@ -169,7 +158,8 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
 }
 
 int input(){
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "a");
+    end=1000000000;
+    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out2.txt", "a");
     clearFile();
     int i = 0;
     jobQueue = xbt_new(jobPtr, QUEUE_SIZE);
@@ -203,6 +193,7 @@ int input(){
         jobX->startClock = 0;
         jobX->scheduled = 0;
         jobQueue[i] = jobX;
+        //jobQueueHelper[i] = 0;
         CsvParser_destroy_row(row);
         i++;
     }

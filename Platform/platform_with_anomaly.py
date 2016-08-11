@@ -178,12 +178,12 @@ for i in range(len(NAMES_TIER2)):
 f.write("<link id=\"loopback\" bandwidth=\"498MBps\" latency=\"0us\" sharing_policy=\"FATPIPE\"/>\n")
 for i, link in enumerate(LINK_NAMES10):
     if link in ["CERN-RAL-LHCOPN-001", "CERN-PIC-LHCOPN-001"]:
-        f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" bandwidth_file=\"" + link + ".bw\" />\n")
+        f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" bandwidth_file=\"Failures/Failure/" + link + ".bw\" />\n")
         continue
-    f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" state_file=\"" + link + ".fail\" />\n")
+    f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" state_file=\"Failures/Failure/" + link + ".fail\" />\n")
 f.writelines("\n")
 for i, link in enumerate(LINK_NAMES11):
-    f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" state_file=\"" + link + ".fail\" />\n")
+    f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" state_file=\"Failures/Failure/" + link + ".fail\" />\n")
 f.write("\n")
 
 f.write("\n\n\t\t<!--LINKS between CERN and TIER2-->\n")

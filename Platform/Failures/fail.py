@@ -16,12 +16,12 @@ for i, link in enumerate(LINK_NAMES):
 		moment_break = random.randint(2000, 10000)
 		break_period = random.randint(40, 80)
 		f.write("PERIODICITY 1000000.0\n")
-		f.write("0.0 1\n")
+		f.write("0.0 1000000000\n")
 		if link == "CERN-PIC-LHCOPN-001":
-			x = 0.1
-		else:x = 1
+			x = 100000000
+		else:x = 1000000000
 		f.write(str(moment_break) + " " + str(x) + "\n")
-		f.write(str(moment_break + break_period) + " 1\n")
+		f.write(str(moment_break + break_period) + " 1000000000\n")
 		f.close()
 		continue
 

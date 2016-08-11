@@ -49,7 +49,6 @@ int minusLinkCounter(const char* src, const char* dst){
             TRACE_link_srcdst_variable_sub(src, transit, get_opposite_direction(get_direction(src, transit)), 0);
             TRACE_link_srcdst_variable_sub(transit, dst, get_opposite_direction(get_direction(transit, dst)), 0);
 
-
         }
     }
     MSG_sem_release(sem_link);
@@ -59,7 +58,7 @@ int minusLinkCounter(const char* src, const char* dst){
 
 
 
-int anomalyLinkTracer(const char* src, const char* dst){
+/*int anomalyLinkTracer(const char* src, const char* dst){
     msg_task_t message1, message2;
     MSG_sem_acquire(sem_link);
     char* transit = NULL;
@@ -86,7 +85,7 @@ int anomalyLinkTracer(const char* src, const char* dst){
 
     MSG_sem_release(sem_link);
     return 0;
-}
+}*/
 
 
 

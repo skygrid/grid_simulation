@@ -48,51 +48,51 @@
 
 
 	<process host="CERN" function="evil">
-		<argument value="1646"/>
-		<argument value="39"/>
-		<argument value="124"/>
+		<argument value="30574"/>
+		<argument value="73"/>
+		<argument value="194"/>
 	</process>
 
 	<process host="CNAF" function="evil">
-		<argument value="9742"/>
-		<argument value="66"/>
-		<argument value="189"/>
-	</process>
-
-	<process host="GRIDKA" function="evil">
-		<argument value="2438"/>
-		<argument value="47"/>
-		<argument value="142"/>
-	</process>
-
-	<process host="IN2P3" function="evil">
-		<argument value="8822"/>
-		<argument value="61"/>
-		<argument value="135"/>
-	</process>
-
-	<process host="PIC" function="evil">
-		<argument value="2226"/>
-		<argument value="68"/>
-		<argument value="132"/>
-	</process>
-
-	<process host="RAL" function="evil">
-		<argument value="7269"/>
-		<argument value="75"/>
-		<argument value="165"/>
-	</process>
-
-	<process host="SARA" function="evil">
-		<argument value="9291"/>
-		<argument value="53"/>
+		<argument value="16678"/>
+		<argument value="71"/>
 		<argument value="119"/>
 	</process>
 
+	<process host="GRIDKA" function="evil">
+		<argument value="47547"/>
+		<argument value="73"/>
+		<argument value="115"/>
+	</process>
+
+	<process host="IN2P3" function="evil">
+		<argument value="22048"/>
+		<argument value="52"/>
+		<argument value="144"/>
+	</process>
+
+	<process host="PIC" function="evil">
+		<argument value="32933"/>
+		<argument value="49"/>
+		<argument value="152"/>
+	</process>
+
+	<process host="RAL" function="evil">
+		<argument value="23517"/>
+		<argument value="55"/>
+		<argument value="197"/>
+	</process>
+
+	<process host="SARA" function="evil">
+		<argument value="22925"/>
+		<argument value="34"/>
+		<argument value="181"/>
+	</process>
+
 	<process host="RRCKI" function="evil">
-		<argument value="7009"/>
-		<argument value="45"/>
-		<argument value="103"/>
+		<argument value="42680"/>
+		<argument value="59"/>
+		<argument value="196"/>
 	</process>
 
 

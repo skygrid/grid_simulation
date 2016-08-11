@@ -6,86 +6,14 @@
 		<argument value="scheduler"/>  <!-- Input mailbox -->
 	</process>
 
-	<process host="CERN" function="tier1">
-		<argument value="CERN"/>
-		<argument value="510"/>
-	</process>
 
 	<process host="CNAF" function="tier1">
 		<argument value="CNAF"/>
 		<argument value="280"/>
 	</process>
 
-	<process host="GRIDKA" function="tier1">
-		<argument value="GRIDKA"/>
-		<argument value="244"/>
-	</process>
-
-	<process host="IN2P3" function="tier1">
-		<argument value="IN2P3"/>
-		<argument value="230"/>
-	</process>
-
-	<process host="PIC" function="tier1">
-		<argument value="PIC"/>
-		<argument value="94"/>
-	</process>
-
-	<process host="RAL" function="tier1">
-		<argument value="RAL"/>
-		<argument value="468"/>
-	</process>
-
-	<process host="SARA" function="tier1">
-		<argument value="SARA"/>
-		<argument value="170"/>
-	</process>
-
-	<process host="RRCKI" function="tier1">
-		<argument value="RRCKI"/>
-		<argument value="164"/>
-	</process>
 
 
-	<process host="CERN" function="evil">
-		<argument value="60"/>
-		<argument value="163"/>
-	</process>
-
-	<process host="CNAF" function="evil">
-		<argument value="37"/>
-		<argument value="101"/>
-	</process>
-
-	<process host="GRIDKA" function="evil">
-		<argument value="63"/>
-		<argument value="194"/>
-	</process>
-
-	<process host="IN2P3" function="evil">
-		<argument value="37"/>
-		<argument value="158"/>
-	</process>
-
-	<process host="PIC" function="evil">
-		<argument value="53"/>
-		<argument value="112"/>
-	</process>
-
-	<process host="RAL" function="evil">
-		<argument value="45"/>
-		<argument value="142"/>
-	</process>
-
-	<process host="SARA" function="evil">
-		<argument value="47"/>
-		<argument value="183"/>
-	</process>
-
-	<process host="RRCKI" function="evil">
-		<argument value="67"/>
-		<argument value="145"/>
-	</process>
 
 
 </platform>

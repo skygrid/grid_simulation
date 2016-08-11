@@ -8,15 +8,15 @@ int angel();
 
 
 int evil(int argc, char* argv[]){
-    double sleepTime = xbt_str_parse_double(argv[3], "error");
+    double sleepTime = xbt_str_parse_double(argv[1], "error");
     MSG_process_sleep(sleepTime);
-    int i;
+    int i = 0;
     int amountCorruptCore = (int) xbt_str_parse_int(argv[2], "error");
     double timeCorruption = xbt_str_parse_double(argv[3], "error");
     msg_process_t proc1, proc2;
     xbt_swag_t swag = MSG_host_get_process_list(MSG_host_self());
     xbt_swag_foreach_safe(proc1, proc2, swag){
-        if (i < amountCorruptCore){
+        if (i > amountCorruptCore){
             break;
         }
         if (!strcmp(MSG_process_get_name(proc1), "executor")){
