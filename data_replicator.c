@@ -76,7 +76,7 @@ int uploader(int argc, char* argv[]){
     if (strcmp(MSG_host_get_name(MSG_host_self()), data->dest)) {
 
         sprintf(curFilePath, "/%s%s/%s", MSG_host_get_name(MSG_host_self()), data->storageType, data->filename);
-        sprintf(pathAtDest, "/%s%s/%s", data->dest, data->storageType, data->filename);
+        sprintf(pathAtDest, "/%s/%s", data->dest, data->filename);
 
         file = MSG_file_open(curFilePath, NULL);
         msg_host_t dest = MSG_host_by_name(data->dest);

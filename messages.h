@@ -37,9 +37,12 @@ typedef struct{
     char* dataLocHost2;
     char* dataLocHost3;
     int outputNumber;
-    char * outputHost1;
-    char * outputHost2;
-    char * outputHost3;
+    char* outputHost1;
+    char* outputHost2;
+    char* outputHost3;
+    char* outputHost4;
+    char* outputHost5;
+    char* outputHost6;
     char* downloadSite;
     char* outputName;
     double outputFileSize;
@@ -50,8 +53,15 @@ typedef struct{
     double startSchedulClock;
     double stExecClock;
     double endExecClock;
-    int success_or_anom;
+    int successExecuted;
 }job, *jobPtr;
+
+
+typedef struct{
+    char* input_file_path;
+    char* copy_file_path;
+    char* destination_name;
+}dataInfo, *dataInfoPtr;
 
 
 typedef struct{

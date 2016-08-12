@@ -7,7 +7,7 @@
 
 int writeToFile(FILE* fpy, jobPtr jobInfo)
 {
-    fprintf(fpy, "%s,%d,%f,%f,%f,%f\n", jobInfo->name, jobInfo->success_or_anom, jobInfo->startClock, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock);
+    fprintf(fpy, "%s,%d,%f,%f,%f,%f\n", jobInfo->name, jobInfo->successExecuted, jobInfo->startClock, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock);
     return(0);
 }
 
