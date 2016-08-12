@@ -7,9 +7,10 @@
 void plusOneActiveCore();
 void minusOneActiveCore();
 void my_on_exit();
+msg_sem_t sem;
 
 
-XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messsages specific for executor");
+XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
     MSG_process_on_exit(my_on_exit, NULL);

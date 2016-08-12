@@ -15,7 +15,7 @@ int clearFile()
 {
     FILE * fp, *fp1;
     fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out2.txt", "w");
-    fprintf(fp, "%s", "JobName, Time start, time schedule, Time start Exec, Time End Exec\n");
+    fprintf(fp, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec\n");
     fclose(fp);
     fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "w");
     fclose(fp1);
