@@ -134,7 +134,7 @@
 		<storage id="NEARLINE_RRCKI" typeId="NEARLINE_HDD7" attach="RRCKI"/>
 
 
-		<host id="CERN" speed="1Gf" core="510">
+		<host id="CERN" speed="1Gf" core="51">
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
 			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
@@ -152,27 +152,7 @@
 			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
-		<host id="CNAF" speed="1Gf" core="280" >
-
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
-		</host>
-
-		<host id="GRIDKA" speed="1Gf" core="244" >
+		<host id="CNAF" speed="1Gf" core="28" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -192,7 +172,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
 
-		<host id="IN2P3" speed="1Gf" core="230" >
+		<host id="GRIDKA" speed="1Gf" core="24" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -212,7 +192,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
 
-		<host id="PIC" speed="1Gf" core="94" >
+		<host id="IN2P3" speed="1Gf" core="23" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -232,7 +212,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
 
-		<host id="RAL" speed="1Gf" core="468" >
+		<host id="PIC" speed="1Gf" core="9" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -252,7 +232,7 @@
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
 
-		<host id="SARA" speed="1Gf" core="170" >
+		<host id="RAL" speed="1Gf" core="46" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -272,7 +252,27 @@
 			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
 		</host>
 
-		<host id="RRCKI" speed="1Gf" core="164" >
+		<host id="SARA" speed="1Gf" core="17" >
+
+			<mount storageId="STORAGE_CERN" name="/CERN1"/>
+			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
+			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
+			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
+			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
+			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
+			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
+			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
+			<mount storageId="STORAGE_PIC" name="/PIC1"/>
+			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
+			<mount storageId="STORAGE_RAL" name="/RAL1"/>
+			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
+			<mount storageId="STORAGE_SARA" name="/SARA1"/>
+			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
+			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
+			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+		</host>
+
+		<host id="RRCKI" speed="1Gf" core="16" >
 
 			<mount storageId="STORAGE_CERN" name="/CERN1"/>
 			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
@@ -295,17 +295,17 @@
 
 
 <link id="loopback" bandwidth="498MBps" latency="0us" sharing_policy="FATPIPE"/>
-		<link id="CERN-CNAF-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="CERN-PIC-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="CERN-RAL-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="CERN-SARA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="0.2GBps" latency="0.0ms"/>
+		<link id="CERN-CNAF-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="CERN-PIC-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="CERN-RAL-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="CERN-SARA-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="0.02GBps" latency="0.0ms"/>
 
-		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
-		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="1.0GBps" latency="0.0ms"/>
+		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
+		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
 
 		<!--routes between TIER1-TIER1-->
 

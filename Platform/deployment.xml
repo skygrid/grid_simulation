@@ -6,14 +6,94 @@
 		<argument value="scheduler"/>  <!-- Input mailbox -->
 	</process>
 
+	<process host="CERN" function="tier1">
+		<argument value="CERN"/>
+		<argument value="510"/>
+	</process>
 
 	<process host="CNAF" function="tier1">
 		<argument value="CNAF"/>
 		<argument value="280"/>
 	</process>
 
+	<process host="GRIDKA" function="tier1">
+		<argument value="GRIDKA"/>
+		<argument value="244"/>
+	</process>
+
+	<process host="IN2P3" function="tier1">
+		<argument value="IN2P3"/>
+		<argument value="230"/>
+	</process>
+
+	<process host="PIC" function="tier1">
+		<argument value="PIC"/>
+		<argument value="94"/>
+	</process>
+
+	<process host="RAL" function="tier1">
+		<argument value="RAL"/>
+		<argument value="468"/>
+	</process>
+
+	<process host="SARA" function="tier1">
+		<argument value="SARA"/>
+		<argument value="170"/>
+	</process>
+
+	<process host="RRCKI" function="tier1">
+		<argument value="RRCKI"/>
+		<argument value="164"/>
+	</process>
 
 
+	<process host="CERN" function="evil">
+		<argument value="5839"/>
+		<argument value="41"/>
+		<argument value="188"/>
+	</process>
+
+	<process host="CNAF" function="evil">
+		<argument value="9593"/>
+		<argument value="53"/>
+		<argument value="107"/>
+	</process>
+
+	<process host="GRIDKA" function="evil">
+		<argument value="4902"/>
+		<argument value="52"/>
+		<argument value="160"/>
+	</process>
+
+	<process host="IN2P3" function="evil">
+		<argument value="1995"/>
+		<argument value="42"/>
+		<argument value="142"/>
+	</process>
+
+	<process host="PIC" function="evil">
+		<argument value="8405"/>
+		<argument value="69"/>
+		<argument value="174"/>
+	</process>
+
+	<process host="RAL" function="evil">
+		<argument value="9642"/>
+		<argument value="58"/>
+		<argument value="154"/>
+	</process>
+
+	<process host="SARA" function="evil">
+		<argument value="2434"/>
+		<argument value="49"/>
+		<argument value="131"/>
+	</process>
+
+	<process host="RRCKI" function="evil">
+		<argument value="9764"/>
+		<argument value="73"/>
+		<argument value="113"/>
+	</process>
 
 
 </platform>

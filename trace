@@ -1,5 +1,5 @@
 #This file was generated using SimGrid-3.13.90
-#[/home/ken/.CLion2016.2/system/cmake/generated/grid_simulation-4faf5bc8/4faf5bc8/Debug/CSim2Sim /home/ken/LHCb/grid_simulation/Platform/platform.xml /home/ken/LHCb/grid_simulation/Platform/deployment.xml --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:22000 ]
+#[/home/ken/.CLion2016.2/system/cmake/generated/grid_simulation-4faf5bc8/4faf5bc8/Debug0/CSim2Sim /home/ken/LHCb/grid_simulation/Platform/platform.xml /home/ken/LHCb/grid_simulation/Platform/deployment.xml --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:22000 ]
 %EventDef PajeDefineContainerType 0
 %       Alias string
 %       Type string
@@ -145,25 +145,25 @@
 8 0 2 8 1000000000.000000
 8 0 4 9 498000000.000000
 8 0 5 9 0.000000
-8 0 4 10 1000000000.000000
+8 0 4 10 100000000.000000
 8 0 5 10 0.000000
-8 0 4 11 1000000000.000000
+8 0 4 11 100000000.000000
 8 0 5 11 0.000000
-8 0 4 12 1000000000.000000
+8 0 4 12 100000000.000000
 8 0 5 12 0.000000
-8 0 4 13 1000000000.000000
+8 0 4 13 100000000.000000
 8 0 5 13 0.000000
-8 0 4 14 1000000000.000000
+8 0 4 14 100000000.000000
 8 0 5 14 0.000000
-8 0 4 15 1000000000.000000
+8 0 4 15 100000000.000000
 8 0 5 15 0.000000
-8 0 4 16 200000000.000000
+8 0 4 16 20000000.000000
 8 0 5 16 0.000000
-8 0 4 17 1000000000.000000
+8 0 4 17 100000000.000000
 8 0 5 17 0.000000
-8 0 4 18 1000000000.000000
+8 0 4 18 100000000.000000
 8 0 5 18 0.000000
-8 0 4 19 1000000000.000000
+8 0 4 19 100000000.000000
 8 0 5 19 0.000000
 15 0 6 0 topology 12 0
-16
+16 0 6 0 to

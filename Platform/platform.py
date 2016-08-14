@@ -76,8 +76,8 @@ LINK_NAMES11.extend(["CNAF-GRIDKA-LHCOPN-001", "GRIDKA-IN2P3-LHCOPN-001", "GRIDK
 # BANDWIDTH OF LINKS
 LINK_NAMES10_BW10 = []
 LINK_NAMES10_BW11 = []
-LINK_NAMES10_BW10.extend(["1.0G", "1.0G", "1.0G", "1.0G", "1.0G", "1.0G", "0.2G"])
-LINK_NAMES10_BW11.extend(["1.0G", "1.0G", "1.0G"])
+LINK_NAMES10_BW10.extend(["0.10G", "0.10G", "0.10G", "0.10G", "0.10G", "0.10G", "0.02G"])
+LINK_NAMES10_BW11.extend(["0.10G", "0.10G", "0.10G"])
 
 LINK_INFO10 = dict(zip(LINK_NAMES10, LINK_NAMES10_BW10))
 LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
@@ -124,14 +124,14 @@ f.write("\n")
 
 # DEFINING TIER0
 f.write("\n")
-f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0]/10)  + "\">\n")
+f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0]/100)  + "\">\n")
 for j in range(len(LIST_STORAGE_STRING)):
     f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
     f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] +"0" + q + "/>\n")
 f.write("\t\t</host>\n")
 
 for i in range(NUMBER_OF_TIERS):
-    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/10) + "\" >\n")
+    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/100) + "\" >\n")
     # MOUNT TIERS STORAGE
     f.write("\n")
     for j in range(len(LIST_STORAGE_STRING)):

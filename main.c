@@ -29,7 +29,6 @@ int main(int argc, char *argv[]){
     TRACE_link_variable_declare("indirectUserAmount");
     set_0_all_routes();
 
-    MSG_function_register("main_tracer", main_tracer);
     MSG_function_register("evil", evil);
     MSG_function_register("scheduler", scheduler);
     MSG_function_register("tier1", tier1);

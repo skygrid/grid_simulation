@@ -4,9 +4,17 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 #include "myfunc_list.h"
+
+dataInfoPtr get_input_file_path(jobPtr jobInfo);
+int copy_from_tape_to_disk(dataInfoPtr data_info);
+void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo);
+int task_executor(jobPtr jobInfo);
+
+
 void plusOneActiveCore();
 void minusOneActiveCore();
-void my_on_exit();
+int my_on_exit();
+
 msg_sem_t sem;
 
 
@@ -15,58 +23,133 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
     MSG_process_on_exit(my_on_exit, NULL);
+
+    dataInfoPtr dataInfo;
     plusOneActiveCore();
-    msg_file_t file, outFile;
-    msg_task_t task;
-    sg_size_t inputSize, outputSize;
-    char* dest;
 
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
-    char inputFilePath[80];
-    char copyFilePath[80];
-    char outputFilePath[80];
-    sprintf(copyFilePath, "/%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType, jobInfo->inputFileName);
-    //find location of input file
 
     switch (jobInfo->type){
         case MCSIMULATION:
             break;
         default:
+            dataInfo = get_input_file_path(jobInfo);
+            copy_from_tape_to_disk(dataInfo);
+            download_or_read_file(jobInfo, dataInfo);
+            break;
     }
+    task_executor(jobInfo);
 
-    if (jobInfo->type != MCSIMULATION) {
+    MSG_process_create("dataRep", data_replicator, jobInfo, MSG_host_self());
+    MSG_process_kill(MSG_process_self());
+    return 0;
+}
 
+dataInfoPtr get_input_file_path(jobPtr jobInfo){
+    /*Where should I download data
+     *return input_file_path and host_name (where data is located)
+     */
+    char* input_file_path = malloc(50);
+    char* copy_file_path = malloc(50);
+    char* copy_from_tape_to_disk_name = malloc(50);
+    char* dest;
+    char* storageType;
 
-        if (strcmp(dest, "none")){
-            // DOWNLOADING FILE FROM ANOTHER TIER
-            file = MSG_file_open(inputFilePath, NULL);
-            plusLinkCounter(dest, MSG_host_get_name(MSG_host_self()));
-            msg_error_t errorx = MSG_file_rcopy(file, MSG_host_self(), copyFilePath);
+    char *dataLocations[] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3, jobInfo->dataLocHost4};
+    char *storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4};
+    int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
 
-            if (errorx != MSG_OK){
-                minusLinkCounter(dest, MSG_host_get_name(MSG_host_self()));
-                minusOneActiveCore();
-                jobInfo->stExecClock = 0;
-                jobInfo->endExecClock = 0;
-                writeToFile(fp, jobInfo);
-                MSG_file_close(file);
-                MSG_process_kill(MSG_process_self());
-
-            }
-            minusLinkCounter(dest, MSG_host_get_name(MSG_host_self()));
-            msg_file_t d_file = MSG_file_open(copyFilePath, NULL);
-            MSG_file_read(d_file, (sg_size_t) jobInfo->inputSize);
-            MSG_file_close(file);
-            MSG_file_close(d_file);
+    // Checks does tier have data on the own storage
+    for (int i = 0; i < n; ++i) {
+        if (!strcmp(MSG_host_get_name(MSG_host_self()), dataLocations[i])){
+            sprintf(input_file_path, "/%s%s/%s", dataLocations[i], storageTypes[i], jobInfo->inputFileName);
+            sprintf(copy_from_tape_to_disk_name, "/%s1/%s", dataLocations[i], jobInfo->inputFileName);
+            dest = (char *) MSG_host_get_name(MSG_host_self());
+            storageType = storageTypes[i];
+            break;
         }
-        // IF I HAVE DATA
-        msg_file_t i_data = MSG_file_open(inputFilePath, NULL);
-        MSG_file_read(i_data, (sg_size_t) jobInfo->inputSize);
-        MSG_file_close(i_data);
-
+        // If tier doesn't have storage on the own
+        if (i == (n-1)){
+            dest = jobInfo->dataLocHost1;
+            storageType = jobInfo->storageType1;
+            sprintf(input_file_path, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType1, jobInfo->inputFileName);
+            sprintf(copy_from_tape_to_disk_name, "/%s1/%s", jobInfo->dataLocHost1, jobInfo->inputFileName);
+            sprintf(copy_file_path, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->inputFileName);
+        }
     }
-    sprintf(outputFilePath, "/%s%s/%s", MSG_host_get_name(MSG_host_self()), jobInfo->storageType,
-            jobInfo->outputName);
+
+    dataInfoPtr data_info = xbt_new(dataInfo, 1);
+    data_info->destination_name = dest;
+    data_info->input_file_path = input_file_path;
+    data_info->copy_from_tape_to_disk_name = copy_from_tape_to_disk_name;
+    data_info->copy_file_path = copy_file_path;
+    data_info->storage_type = storageType;
+
+    return data_info;
+}
+
+int copy_from_tape_to_disk(dataInfoPtr data_info){
+    msg_file_t file;
+
+    // Open, copy and close file    "0" means TAPE
+    if (!strcmp(data_info->storage_type, "0")){
+        file = MSG_file_open(data_info->input_file_path, NULL);
+        MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name), data_info->copy_from_tape_to_disk_name);
+        MSG_file_close(file);
+
+        // So we have new name of input file on the disk
+        sprintf(data_info->input_file_path, data_info->copy_from_tape_to_disk_name);
+    }
+
+    return 0;
+}
+
+
+void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
+    msg_file_t file;
+    if (strcmp(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()))){
+
+        // DOWNLOADING FILE FROM ANOTHER TIER
+        file = MSG_file_open(dataInfo->input_file_path, NULL);
+        plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
+        msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
+
+        if (error != MSG_OK){
+            minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
+            minusOneActiveCore();
+            jobInfo->stExecClock = 0;
+            jobInfo->endExecClock = 0;
+            writeToFile(fp, jobInfo);
+            MSG_file_close(file);
+            MSG_process_kill(MSG_process_self());
+        }
+        minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
+        msg_file_t d_file = MSG_file_open(dataInfo->copy_file_path, NULL);
+        MSG_file_read(d_file, (sg_size_t) jobInfo->inputSize);
+        MSG_file_close(file);
+        MSG_file_close(d_file);
+    }
+
+    //If I have data, I open and read it
+
+    msg_file_t i_data = MSG_file_open(dataInfo->input_file_path, NULL);
+    MSG_file_read(i_data, (sg_size_t) jobInfo->inputSize);
+    MSG_file_close(i_data);
+
+    // Clean data information about files
+    free(dataInfo->input_file_path);
+    free(dataInfo->copy_from_tape_to_disk_name);
+    free(dataInfo->copy_file_path);
+
+
+}
+
+int task_executor(jobPtr jobInfo){
+    char outputFilePath[50];
+    msg_task_t task;
+    msg_file_t outFile;
+
+    sprintf(outputFilePath, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->outputName);
 
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name, jobInfo->compSize, 0, NULL);
@@ -94,75 +177,8 @@ int executor(int argc, char* argv[]){
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
     MSG_file_close(outFile);
 
-    MSG_process_create("dataRep", data_replicator, jobInfo, MSG_host_self());
 
-    memset(inputFilePath, '\0', 80);
-    memset(outputFilePath, '\0', 80);
-    memset(copyFilePath, '\0', 80);
-    MSG_process_kill(MSG_process_self());
     return 0;
-}
-
-dataInfoPtr get_input_file_path(jobPtr jobInfo){
-    /*Where should I download data
-     *return input file name and host_name (where data is located)
-     */
-    char* input_file_path = malloc(50);
-    char* dest;
-    char* copy_file_path = malloc(50);
-
-    if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost1)) {
-        sprintf(input_file_path, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType, jobInfo->inputFileName);
-        dest = "self";
-    } else if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost2)) {
-        sprintf(input_file_path, "/%s%s/%s", jobInfo->dataLocHost2, jobInfo->storageType, jobInfo->inputFileName);
-        dest = "self";
-    } else if (!strcmp(MSG_host_get_name(MSG_host_self()), jobInfo->dataLocHost3)) {
-        sprintf(input_file_path, "/%s%s/%s", jobInfo->dataLocHost3, jobInfo->storageType, jobInfo->inputFileName);
-        dest = "self";
-    } else {
-        //msg_host_t file
-        dest = jobInfo->dataLocHost1;
-        sprintf(input_file_path, "/%s1/%s", jobInfo->dataLocHost1, jobInfo->inputFileName);
-        sprintf(copy_file_path, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->inputFileName);
-    }
-    dataInfoPtr data_info = xbt_new(dataInfo, 1);
-    data_info->destination_name = dest;
-    data_info->input_file_path = input_file_path;
-    data_info->copy_file_path = copy_file_path;
-
-    return data_info;
-}
-
-void
-
-
-void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
-    msg_file_t file;
-    if (strcmp(dataInfo->destination_name, "self")){
-
-        // DOWNLOADING FILE FROM ANOTHER TIER
-        file = MSG_file_open(dataInfo->input_file_path, NULL);
-        plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
-        msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
-
-        if (error != MSG_OK){
-            minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
-            minusOneActiveCore();
-            jobInfo->stExecClock = 0;
-            jobInfo->endExecClock = 0;
-            writeToFile(fp, jobInfo);
-            MSG_file_close(file);
-            MSG_process_kill(MSG_process_self());
-        }
-        minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
-        msg_file_t d_file = MSG_file_open(dataInfo->copy_file_path, NULL);
-        MSG_file_read(d_file, (sg_size_t) jobInfo->inputSize);
-        MSG_file_close(file);
-        MSG_file_close(d_file);
-    }
-
-
 }
 
 
@@ -191,7 +207,8 @@ void minusOneActiveCore(){
 }
 
 
-void my_on_exit(){
+int my_on_exit(){
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
     writeToFile(fp, jobInfo);
+    return 0;
 }

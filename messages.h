@@ -36,6 +36,13 @@ typedef struct{
     char* dataLocHost1;
     char* dataLocHost2;
     char* dataLocHost3;
+    char* dataLocHost4;
+
+    char* storageType1;
+    char* storageType2;
+    char* storageType3;
+    char* storageType4;
+
     int outputNumber;
     char* outputHost1;
     char* outputHost2;
@@ -46,7 +53,7 @@ typedef struct{
     char* downloadSite;
     char* outputName;
     double outputFileSize;
-    char* storageType;
+
 
     int scheduled;
     double startClock;
@@ -60,7 +67,9 @@ typedef struct{
 typedef struct{
     char* input_file_path;
     char* copy_file_path;
+    char* copy_from_tape_to_disk_name;
     char* destination_name;
+    char* storage_type;
 }dataInfo, *dataInfoPtr;
 
 

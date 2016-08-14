@@ -64,6 +64,7 @@ int executorLauncher(){
         }
 
     }
+    free(tierMailbox);
     return 0;
 }
 

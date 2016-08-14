@@ -35,19 +35,26 @@ int input(){
         jobX->inputFileName = strdup((char*) rowFields[3]);
         jobX->inputSize = xbt_str_parse_double(rowFields[4], "kotok2");
         jobX->NRep = (int) xbt_str_parse_double(rowFields[5], "kotok3");
-        jobX->storageType = strdup((char*) rowFields[6]);
-        jobX->dataLocHost1 = strdup((char*) rowFields[7]);
-        jobX->dataLocHost2 = strdup((char*) rowFields[8]);
-        jobX->dataLocHost3 = strdup((char*) rowFields[9]);
-        jobX->outputName = strdup((char*) rowFields[10]);
-        jobX->outputFileSize = xbt_str_parse_double(rowFields[11], "kotok4");
-        jobX->outputNumber = (int) xbt_str_parse_double(rowFields[12], "kotok5");
-        jobX->outputHost1 = strdup((char*) rowFields[13]);
-        jobX->outputHost2 = strdup((char*) rowFields[14]);
-        jobX->outputHost3 = strdup((char*) rowFields[15]);
-        jobX->outputHost4 = strdup((char*) rowFields[16]);
-        jobX->outputHost5 = strdup((char*) rowFields[17]);
-        jobX->outputHost6 = strdup((char*) rowFields[18]);
+
+        jobX->dataLocHost1 = strdup((char*) rowFields[6]);
+        jobX->dataLocHost2 = strdup((char*) rowFields[7]);
+        jobX->dataLocHost3 = strdup((char*) rowFields[8]);
+        jobX->dataLocHost4 = strdup((char*) rowFields[9]);
+
+        jobX->storageType1 = strdup((char*) rowFields[10]);
+        jobX->storageType2 = strdup((char*) rowFields[11]);
+        jobX->storageType3 = strdup((char*) rowFields[12]);
+        jobX->storageType4 = strdup((char*) rowFields[13]);
+
+        jobX->outputName = strdup((char*) rowFields[14]);
+        jobX->outputFileSize = xbt_str_parse_double(rowFields[15], "kotok4");
+        jobX->outputNumber = (int) xbt_str_parse_double(rowFields[16], "kotok5");
+        jobX->outputHost1 = strdup((char*) rowFields[17]);
+        jobX->outputHost2 = strdup((char*) rowFields[18]);
+        jobX->outputHost3 = strdup((char*) rowFields[19]);
+        jobX->outputHost4 = strdup((char*) rowFields[20]);
+        jobX->outputHost5 = strdup((char*) rowFields[21]);
+        jobX->outputHost6 = strdup((char*) rowFields[22]);
         jobX->successExecuted = 0;
         jobX->startClock = 0;
         jobX->scheduled = 0;

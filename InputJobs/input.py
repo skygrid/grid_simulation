@@ -1,4 +1,4 @@
-import pandas as pd
+import sys
 import random
 from scipy import stats
 
@@ -9,14 +9,15 @@ REPLICA DICTIONARY JobType:[At CERN1 yes or no\
                             Number of replicas at Tier1 tape]
 '''
 
-job_amount = 100
+job_amount = int(sys.argv[1])
+print job_amount
 
 Locations = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 Location_DISK = ["CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"]
 Location_TAPE = ["CNAF0", "GRIDKA0", "IN2P30", "PIC0", "RAL0", "SARA0", "RRCKI0"]
 NULL_REPLICA = [0, 0, 0, 0]
 
-xk = (3, 2, 1)  # Amount of locations data has
+xk = (4, 3, 2)  # Amount of locations data has
 pk = (0.7, 0.2, 0.1)  # Probabilities that data has such amount of data
 custm = stats.rv_discrete(name='custm', values=(xk, pk))
 prob_array_input = custm.rvs(size=job_amount)
@@ -35,8 +36,8 @@ types_custm = types_custmx.rvs(size=job_amount)
 
 
 
-f = open("../input.csv", "w")
-f.write("Name, Type, Flops-Size, InputFileName, InputSize, NRep, Storage_T, Location1, Location2, Location3, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6\n")
+f = open("input.csv", "w")
+f.write("Name, Type, Flops-Size, InputFileName, InputSize, NRep, Location1, Location2, Location3, Location4, Storage_T1, Storage_T2, Storage_T3, Storage_T4, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6\n")
 
 
 
@@ -51,15 +52,19 @@ for i in range(job_amount):
 
     NREpIn = prob_array_input[i]
     if types[types_custm[i]] == 'MCSIMULATION':
-        location_str = "0,0,0"
+        location_str = "0,0,0,0"
+        storage_types = "none,none,none,none"
         NREpIn = 0
     else:
-        if NREpIn == 1:
+        if NREpIn == 2:
             location_str = ",".join(Locations[:prob_array_input[i]]) + ",0,0"
-        elif NREpIn == 2:
+            storage_types = "1,0,none,none"
+        elif NREpIn == 3:
             location_str = ",".join(Locations[:prob_array_input[i]]) + ",0"
+            storage_types = "1,1,0,none"
         else:
             location_str = ",".join(Locations[:prob_array_input[i]])
+            storage_types = "1,1,1,0"
 
     random.shuffle(Location_DISK)
     random.shuffle(Location_TAPE)
@@ -68,13 +73,13 @@ for i in range(job_amount):
     if types[types_custm[i]] == "MERGE":
         output_locations = "CERN1,CERN0," + ",".join(Location_DISK[:3]) + "," + Location_TAPE[0]
     elif types[types_custm[i]] == "MCMERGE":
-        output_locations = "CERN1,CERN0," + ",".join(Location_DISK[:2]) + "," + Location_TAPE[0]
+        output_locations = "CERN1,CERN0," + ",".join(Location_DISK[:2]) + "," + Location_TAPE[0] + ",0"
     elif types[types_custm[i]] == "USER":
-        output_locations = "0,0," + ",".join(Location_DISK[:3]) + ",0"
+        output_locations = ",".join(Location_DISK[:3]) + ",0,0,0"
     else:
         output_locations= "0,0,0,0,0,0"
 
-    string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(cpu_size) + "," + input_file_name + "," + str(data_size) + "," + str(NREpIn) + "," + str(random.randint(0,1)) + "," + location_str + "," + output_file_name + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations+ "\n"
+    string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(cpu_size) + "," + input_file_name + "," + str(data_size) + "," + str(NREpIn) + "," + location_str + "," + storage_types + "," + output_file_name + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations+ "\n"
     f.write(string)
 
 f.close()

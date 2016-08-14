@@ -9,7 +9,7 @@
 
 FILE* fp; // global variables
 
-#define QUEUE_SIZE 280
+#define QUEUE_SIZE 1
 jobPtr* matcher(long amountRequestedJob);
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
 int rescheduling(long failedReqJobs);
@@ -33,7 +33,6 @@ int scheduler(int argc, char* argv[]){
     sprintf(mailbox, "scheduler");
 
     while (1){
-
         int res = MSG_task_receive(&task, mailbox);
         // Anomalies
         if (res == MSG_OK){
@@ -79,7 +78,10 @@ jobPtr* matcher(long amountRequestedJob){
 
     if (currentJobInQueue + amountRequestedJob > QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
-        end = MSG_get_clock() + 5000;
+
+        host
+
+
         MSG_process_kill(MSG_process_self());
     }
     XBT_INFO("Amount is %ld", amountRequestedJob);
@@ -88,7 +90,7 @@ jobPtr* matcher(long amountRequestedJob){
         jobQueue[i]->startSchedulClock = MSG_get_clock();
         jobQueue[i]->stExecClock = 0;
         jobQueue[i]->endExecClock = 0;
-        jobQueue[i]->success_or_anom = 0;
+        jobQueue[i]->successExecuted = 0;
         jobBatch[i-currentJobInQueue] = jobQueue[i];
     }
     currentJobInQueue += amountRequestedJob;
