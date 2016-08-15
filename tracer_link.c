@@ -33,6 +33,16 @@ int plusLinkCounter(const char* src, const char* dst){
     return 0;
 }
 
+int tracer_traffic(const char* src, const char* dst, double size){
+    TRACE_link_srcdst_variable_add(src, dst, "traffic", size);
+    return 0;
+}
+
+
+
+
+
+
 int minusLinkCounter(const char* src, const char* dst){
     MSG_sem_acquire(sem_link);
     /*char* transit = NULL;

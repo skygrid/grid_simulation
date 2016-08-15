@@ -23,6 +23,7 @@ int set_0_all_routes(){
         //Set all variables of links to initial value
         for (int j = i+1; j < 8; ++j) {
             MSG_sem_acquire(sem_link);
+            TRACE_link_srcdst_variable_set(hosts[i], hosts[j], "traffic", 0);
             TRACE_link_srcdst_variable_set(hosts[i], hosts[j], "directUserAmount", 0);
             TRACE_link_srcdst_variable_set(hosts[i], hosts[j], "indirectUserAmount", 0);
             MSG_sem_release(sem_link);

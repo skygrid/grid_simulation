@@ -50,6 +50,7 @@ int uploader(int argc, char* argv[]){
         plusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
 
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
+        tracer_traffic(MSG_host_get_name(MSG_host_self()), destHostName, (double) MSG_file_get_size(file));
 
         if (a == MSG_OK) {
             minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);

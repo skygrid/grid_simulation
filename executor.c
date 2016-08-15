@@ -20,7 +20,6 @@ msg_sem_t sem;
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
-    addActiveCoreT();
     MSG_process_on_exit(my_on_exit, NULL);
 
     dataInfoPtr dataInfo;
@@ -37,6 +36,7 @@ int executor(int argc, char* argv[]){
             download_or_read_file(jobInfo, dataInfo);
             break;
     }
+    addActiveCoreT();
     task_executor(jobInfo);
     subActiveCoreT();
     MSG_process_create("dataRep", data_replicator, jobInfo, MSG_host_self());
@@ -114,6 +114,8 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
         file = MSG_file_open(dataInfo->input_file_path, NULL);
         plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
+
+        tracer_traffic(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
 
         tracer_storage((char*)MSG_host_get_name(MSG_host_self()), dataInfo->storage_type);
 

@@ -36,6 +36,7 @@ int main(int argc, char *argv[]){
 
     TRACE_host_variable_declare("activeCore");
     TRACE_host_variable_declare("corruptedCore");
+    TRACE_link_variable_declare("traffic");
     TRACE_link_variable_declare("directUserAmount");
     TRACE_link_variable_declare("indirectUserAmount");
     set_0_all_routes();
