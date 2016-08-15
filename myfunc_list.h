@@ -23,4 +23,6 @@ int minusLinkCounter(const char* src, const char* dst);
 
 int addActiveCoreT();
 int subActiveCoreT();
+
+int tracer_storage(char* storage_name, char* storage_type);
 #endif //CSIM2SIM_MYFUNC_LIST_H

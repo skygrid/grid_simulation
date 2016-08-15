@@ -9,14 +9,13 @@
 
 FILE* fp; // global variables
 
-#define QUEUE_SIZE 1
+
+#define QUEUE_SIZE 10000
 jobPtr* matcher(long amountRequestedJob);
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
 int rescheduling(long failedReqJobs);
 int input();
-int anomalyLinkTracer(const char* src, const char* dst);
 
-double end;
 long currentJobInQueue = 0;
 long amountOfScheduledJobs = 0;
 
@@ -77,12 +76,8 @@ int scheduler(int argc, char* argv[]){
 jobPtr* matcher(long amountRequestedJob){
 
     if (currentJobInQueue + amountRequestedJob > QUEUE_SIZE){
-        XBT_INFO("QUEUE is run out");
-
-        host
-
-
         MSG_process_kill(MSG_process_self());
+        amountRequestedJob = QUEUE_SIZE - currentJobInQueue;
     }
     XBT_INFO("Amount is %ld", amountRequestedJob);
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
@@ -94,6 +89,9 @@ jobPtr* matcher(long amountRequestedJob){
         jobBatch[i-currentJobInQueue] = jobQueue[i];
     }
     currentJobInQueue += amountRequestedJob;
+    if (currentJobInQueue > QUEUE_SIZE){
+        XBT_INFO("QUEUE is run out");
+    }
     return jobBatch;
 }
 
@@ -102,16 +100,13 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
 
     if (amountOfScheduledJobs + amountRequestedJob >= QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
-        end = MSG_get_clock() + 10000;
         MSG_process_kill(MSG_process_self());
     }
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
     long i = 0;
     while(i < amountRequestedJob){
-
         if (currentJobInQueue >= QUEUE_SIZE){
             XBT_INFO("QUEUE is run out");
-            end = MSG_get_clock() + 10000;
             MSG_process_kill(MSG_process_self());
             break;
         }
@@ -126,35 +121,22 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 amountOfScheduledJobs++;
                 continue;
             }
-            if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost1, host)) {
-                jobQueueHelper[currentJobInQueue] = 1;
-                jobQueue[currentJobInQueue]->startSchedulClock = MSG_get_clock();
-                jobBatch[i] = jobQueue[currentJobInQueue];
-                i++;
-                currentJobInQueue++;
-                amountOfScheduledJobs++;
-                continue;
-            } else if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost2, host)) {
-                jobQueueHelper[currentJobInQueue] = 1;
-                jobQueue[currentJobInQueue]->startSchedulClock = MSG_get_clock();
-                jobBatch[i] = jobQueue[currentJobInQueue];
-                i++;
-                currentJobInQueue++;
-                amountOfScheduledJobs++;
-                continue;
-            } else if (!strcmp(jobQueue[currentJobInQueue]->dataLocHost3, host)) {
-                jobQueueHelper[currentJobInQueue] = 1;
-                jobQueue[currentJobInQueue]->startSchedulClock = MSG_get_clock();
-                jobBatch[i] = jobQueue[currentJobInQueue];
-                i++;
-                currentJobInQueue++;
-                amountOfScheduledJobs++;
-                continue;
+
+            char* dataLocations[] = {jobQueue[currentJobInQueue]->dataLocHost1, jobQueue[currentJobInQueue]->dataLocHost2, jobQueue[currentJobInQueue]->dataLocHost3, jobQueue[currentJobInQueue]->dataLocHost4};
+            int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
+            for (int j = 0; j < n; ++j) {
+                if (!strcmp(dataLocations[j], host)){
+                    jobQueueHelper[currentJobInQueue] = 1;
+                    jobQueue[currentJobInQueue]->startSchedulClock = MSG_get_clock();
+                    jobBatch[i] = jobQueue[currentJobInQueue];
+                    i++;
+                    amountOfScheduledJobs++;
+                    break;
+                }
             }
             currentJobInQueue++;
         }else currentJobInQueue++;
     }
-
     return jobBatch;
 }
 

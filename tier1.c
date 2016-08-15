@@ -1,7 +1,6 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 #include "myfunc_list.h"
-#include <stdio.h>
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 //

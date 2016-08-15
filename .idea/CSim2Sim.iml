@@ -19,9 +19,10 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/input.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/data_replicator.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/set_0_all_routes.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/evil.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/myfunc_list.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/set_0_all_routes.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/switch_off_all_hosts.c" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

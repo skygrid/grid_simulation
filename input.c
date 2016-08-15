@@ -4,17 +4,15 @@
 #include <simgrid/msg.h>
 #include <csvparser.h>
 #include "myfunc_list.h"
-#include "messages.h"
 
-#define QUEUE_SIZE 280
+#define QUEUE_SIZE 10000
 
-double end;
 jobPtr* jobQueue;
 int* jobQueueHelper;
 
 
 int input(){
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out2.txt", "a");
+    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "a");
     clearFile();
     int i = 0;
     jobQueue = xbt_new(jobPtr, QUEUE_SIZE);

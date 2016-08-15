@@ -13,7 +13,7 @@ msg_sem_t sem_link;
 
 int plusLinkCounter(const char* src, const char* dst){
     MSG_sem_acquire(sem_link);
-    char* transit = NULL;
+    /*char* transit = NULL;
     if (strcmp(src, dst)){
 
         if (direct(src, dst)){
@@ -28,14 +28,14 @@ int plusLinkCounter(const char* src, const char* dst){
             TRACE_link_srcdst_variable_add(transit, dst, get_opposite_direction(get_direction(transit, dst)), 0);
 
         }
-    }
+    }*/
     MSG_sem_release(sem_link);
     return 0;
 }
 
 int minusLinkCounter(const char* src, const char* dst){
     MSG_sem_acquire(sem_link);
-    char* transit = NULL;
+    /*char* transit = NULL;
     if (strcmp(src, dst)){
 
         if (direct(src, dst)){
@@ -50,7 +50,7 @@ int minusLinkCounter(const char* src, const char* dst){
             TRACE_link_srcdst_variable_sub(transit, dst, get_opposite_direction(get_direction(transit, dst)), 0);
 
         }
-    }
+    }*/
     MSG_sem_release(sem_link);
     return 0;
 }

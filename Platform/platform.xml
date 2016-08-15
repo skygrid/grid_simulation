@@ -115,181 +115,181 @@
 			<model_prop id="Bconnection" value="1.2GBps"/>
 		</storage_type>
 
-		<storage id="STORAGE_CERN" typeId="single_HDD0" attach="CERN"/>
-		<storage id="STORAGE_CNAF" typeId="single_HDD1" attach="CNAF"/>
-		<storage id="STORAGE_GRIDKA" typeId="single_HDD2" attach="GRIDKA"/>
-		<storage id="STORAGE_IN2P3" typeId="single_HDD3" attach="IN2P3"/>
-		<storage id="STORAGE_PIC" typeId="single_HDD4" attach="PIC"/>
-		<storage id="STORAGE_RAL" typeId="single_HDD5" attach="RAL"/>
-		<storage id="STORAGE_SARA" typeId="single_HDD6" attach="SARA"/>
-		<storage id="STORAGE_RRCKI" typeId="single_HDD7" attach="RRCKI"/>
+		<storage id="CERN1" typeId="single_HDD0" attach="CERN"/>
+		<storage id="CNAF1" typeId="single_HDD1" attach="CNAF"/>
+		<storage id="GRIDKA1" typeId="single_HDD2" attach="GRIDKA"/>
+		<storage id="IN2P31" typeId="single_HDD3" attach="IN2P3"/>
+		<storage id="PIC1" typeId="single_HDD4" attach="PIC"/>
+		<storage id="RAL1" typeId="single_HDD5" attach="RAL"/>
+		<storage id="SARA1" typeId="single_HDD6" attach="SARA"/>
+		<storage id="RRCKI1" typeId="single_HDD7" attach="RRCKI"/>
 
-		<storage id="NEARLINE_CERN" typeId="NEARLINE_HDD0" attach="CERN"/>
-		<storage id="NEARLINE_CNAF" typeId="NEARLINE_HDD1" attach="CNAF"/>
-		<storage id="NEARLINE_GRIDKA" typeId="NEARLINE_HDD2" attach="GRIDKA"/>
-		<storage id="NEARLINE_IN2P3" typeId="NEARLINE_HDD3" attach="IN2P3"/>
-		<storage id="NEARLINE_PIC" typeId="NEARLINE_HDD4" attach="PIC"/>
-		<storage id="NEARLINE_RAL" typeId="NEARLINE_HDD5" attach="RAL"/>
-		<storage id="NEARLINE_SARA" typeId="NEARLINE_HDD6" attach="SARA"/>
-		<storage id="NEARLINE_RRCKI" typeId="NEARLINE_HDD7" attach="RRCKI"/>
+		<storage id="CERN0" typeId="NEARLINE_HDD0" attach="CERN"/>
+		<storage id="CNAF0" typeId="NEARLINE_HDD1" attach="CNAF"/>
+		<storage id="GRIDKA0" typeId="NEARLINE_HDD2" attach="GRIDKA"/>
+		<storage id="IN2P30" typeId="NEARLINE_HDD3" attach="IN2P3"/>
+		<storage id="PIC0" typeId="NEARLINE_HDD4" attach="PIC"/>
+		<storage id="RAL0" typeId="NEARLINE_HDD5" attach="RAL"/>
+		<storage id="SARA0" typeId="NEARLINE_HDD6" attach="SARA"/>
+		<storage id="RRCKI0" typeId="NEARLINE_HDD7" attach="RRCKI"/>
 
 
 		<host id="CERN" speed="1Gf" core="51">
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 		<host id="CNAF" speed="1Gf" core="28" >
 
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 
 		<host id="GRIDKA" speed="1Gf" core="24" >
 
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 
 		<host id="IN2P3" speed="1Gf" core="23" >
 
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 
 		<host id="PIC" speed="1Gf" core="9" >
 
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 
 		<host id="RAL" speed="1Gf" core="46" >
 
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 
 		<host id="SARA" speed="1Gf" core="17" >
 
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 
 		<host id="RRCKI" speed="1Gf" core="16" >
 
-			<mount storageId="STORAGE_CERN" name="/CERN1"/>
-			<mount storageId="NEARLINE_CERN" name="/CERN0"/>
-			<mount storageId="STORAGE_CNAF" name="/CNAF1"/>
-			<mount storageId="NEARLINE_CNAF" name="/CNAF0"/>
-			<mount storageId="STORAGE_GRIDKA" name="/GRIDKA1"/>
-			<mount storageId="NEARLINE_GRIDKA" name="/GRIDKA0"/>
-			<mount storageId="STORAGE_IN2P3" name="/IN2P31"/>
-			<mount storageId="NEARLINE_IN2P3" name="/IN2P30"/>
-			<mount storageId="STORAGE_PIC" name="/PIC1"/>
-			<mount storageId="NEARLINE_PIC" name="/PIC0"/>
-			<mount storageId="STORAGE_RAL" name="/RAL1"/>
-			<mount storageId="NEARLINE_RAL" name="/RAL0"/>
-			<mount storageId="STORAGE_SARA" name="/SARA1"/>
-			<mount storageId="NEARLINE_SARA" name="/SARA0"/>
-			<mount storageId="STORAGE_RRCKI" name="/RRCKI1"/>
-			<mount storageId="NEARLINE_RRCKI" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN1"/>
+			<mount storageId="CERN0" name="/CERN0"/>
+			<mount storageId="CNAF1" name="/CNAF1"/>
+			<mount storageId="CNAF0" name="/CNAF0"/>
+			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
+			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
+			<mount storageId="IN2P31" name="/IN2P31"/>
+			<mount storageId="IN2P30" name="/IN2P30"/>
+			<mount storageId="PIC1" name="/PIC1"/>
+			<mount storageId="PIC0" name="/PIC0"/>
+			<mount storageId="RAL1" name="/RAL1"/>
+			<mount storageId="RAL0" name="/RAL0"/>
+			<mount storageId="SARA1" name="/SARA1"/>
+			<mount storageId="SARA0" name="/SARA0"/>
+			<mount storageId="RRCKI1" name="/RRCKI1"/>
+			<mount storageId="RRCKI0" name="/RRCKI0"/>
 		</host>
 
 

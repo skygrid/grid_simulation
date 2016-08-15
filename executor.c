@@ -17,11 +17,10 @@ int my_on_exit();
 
 msg_sem_t sem;
 
-
-
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
+    addActiveCoreT();
     MSG_process_on_exit(my_on_exit, NULL);
 
     dataInfoPtr dataInfo;
@@ -39,7 +38,7 @@ int executor(int argc, char* argv[]){
             break;
     }
     task_executor(jobInfo);
-
+    subActiveCoreT();
     MSG_process_create("dataRep", data_replicator, jobInfo, MSG_host_self());
     MSG_process_kill(MSG_process_self());
     return 0;
@@ -97,6 +96,8 @@ int copy_from_tape_to_disk(dataInfoPtr data_info){
         MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name), data_info->copy_from_tape_to_disk_name);
         MSG_file_close(file);
 
+        tracer_storage(data_info->destination_name, data_info->storage_type);
+
         // So we have new name of input file on the disk
         sprintf(data_info->input_file_path, data_info->copy_from_tape_to_disk_name);
     }
@@ -113,6 +114,8 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
         file = MSG_file_open(dataInfo->input_file_path, NULL);
         plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
+
+        tracer_storage((char*)MSG_host_get_name(MSG_host_self()), dataInfo->storage_type);
 
         if (error != MSG_OK){
             minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
@@ -140,6 +143,7 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
     free(dataInfo->input_file_path);
     free(dataInfo->copy_from_tape_to_disk_name);
     free(dataInfo->copy_file_path);
+    xbt_free(dataInfo);
 
 
 }

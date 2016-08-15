@@ -17,7 +17,7 @@ Location_DISK = ["CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"
 Location_TAPE = ["CNAF0", "GRIDKA0", "IN2P30", "PIC0", "RAL0", "SARA0", "RRCKI0"]
 NULL_REPLICA = [0, 0, 0, 0]
 
-xk = (4, 3, 2)  # Amount of locations data has
+xk = (3, 2, 1)  # Amount of locations data has
 pk = (0.7, 0.2, 0.1)  # Probabilities that data has such amount of data
 custm = stats.rv_discrete(name='custm', values=(xk, pk))
 prob_array_input = custm.rvs(size=job_amount)
@@ -47,7 +47,7 @@ for i in range(job_amount):
     output_file_name = "out_" + str(i) + "." + types[types_custm[i]]
     name = "Job" + str(i)
     cpu_size = 86400 * 10**9 * random.uniform(0.85*FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*FLOP_SIZE_BY_TYPE[types[types_custm[i]]])
-    data_size = random.uniform(0.85*INPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*INPUT_SIZE_BY_TYPE[types[types_custm[i]]])
+    data_size = 28 * random.uniform(0.85*INPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*INPUT_SIZE_BY_TYPE[types[types_custm[i]]])
     out_size = random.uniform(0.85*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]])
 
     NREpIn = prob_array_input[i]
@@ -56,15 +56,15 @@ for i in range(job_amount):
         storage_types = "none,none,none,none"
         NREpIn = 0
     else:
-        if NREpIn == 2:
+        if NREpIn == 1:
+            location_str = ",".join(Locations[:prob_array_input[i]]) + ",0,0,0"
+            storage_types = "1,none,none,none"
+        elif NREpIn == 2:
             location_str = ",".join(Locations[:prob_array_input[i]]) + ",0,0"
             storage_types = "1,0,none,none"
-        elif NREpIn == 3:
+        else:
             location_str = ",".join(Locations[:prob_array_input[i]]) + ",0"
             storage_types = "1,1,0,none"
-        else:
-            location_str = ",".join(Locations[:prob_array_input[i]])
-            storage_types = "1,1,1,0"
 
     random.shuffle(Location_DISK)
     random.shuffle(Location_TAPE)
