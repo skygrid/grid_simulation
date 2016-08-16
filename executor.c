@@ -115,11 +115,10 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
         plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
 
-        tracer_traffic(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
-
-        tracer_storage((char*)MSG_host_get_name(MSG_host_self()), dataInfo->storage_type);
-
-        if (error != MSG_OK){
+        if (error == MSG_OK){
+            tracer_traffic(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
+            tracer_storage((char*)MSG_host_get_name(MSG_host_self()), dataInfo->storage_type);
+        } else{
             minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
             minusOneActiveCore();
             jobInfo->stExecClock = 0;

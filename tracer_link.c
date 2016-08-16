@@ -34,17 +34,17 @@ int plusLinkCounter(const char* src, const char* dst){
 }
 
 int tracer_traffic(const char* src, const char* dst, double size){
+    MSG_sem_acquire(sem_link);
     TRACE_link_srcdst_variable_add(src, dst, "traffic", size);
+    MSG_sem_release(sem_link);
     return 0;
 }
 
 
-
-
-
-
 int minusLinkCounter(const char* src, const char* dst){
     MSG_sem_acquire(sem_link);
+
+
     /*char* transit = NULL;
     if (strcmp(src, dst)){
 

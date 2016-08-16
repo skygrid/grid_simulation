@@ -62,8 +62,8 @@ LIST_ONLINE_STORAGE.extend([STORAGE_CERN, STORAGE_CNAF, STORAGE_GRIDKA, STORAGE_
 LIST_NEARLINE_STORAGE.extend([NEARLINE_CERN, NEARLINE_CNAF, NEARLINE_GRIDKA, NEARLINE_IN2P3, NEARLINE_PIC, NEARLINE_RAL, NEARLINE_SARA, NEARLINE_RRCKI])
 LIST_CONTENT.extend([CERN_CONTENT, CNAF_CONTENT, GRIDKA_CONTENT, IN2P3_CONTENT, PIC_CONTENT, RAL_CONTENT, SARA_CONTENT, RRCKI_CONTENT])
 
-LIST_STORAGE_STRING = ["STORAGE_CERN", "STORAGE_CNAF", "STORAGE_GRIDKA", "STORAGE_IN2P3", "STORAGE_PIC", "STORAGE_RAL", "STORAGE_SARA", "STORAGE_RRCKI"]
-LIST_NEARLINE_STRING = ["NEARLINE_CERN", "NEARLINE_CNAF", "NEARLINE_GRIDKA", "NEARLINE_IN2P3", "NEARLINE_PIC", "NEARLINE_RAL", "NEARLINE_SARA", "NEARLINE_RRCKI"]
+LIST_STORAGE_STRING = ["CERN1", "CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"]
+LIST_NEARLINE_STRING = ["CERN0", "CNAF0", "GRIDKA0", "IN2P30", "PIC0", "RAL0", "SARA0", "RRCKI0"]
 LIST_OF_TIERS = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 LIST_OF_TIER1S = ["CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 
@@ -77,8 +77,8 @@ LINK_NAMES11.extend(["CNAF-GRIDKA-LHCOPN-001", "GRIDKA-IN2P3-LHCOPN-001", "GRIDK
 # BANDWIDTH OF LINKS
 LINK_NAMES10_BW10 = []
 LINK_NAMES10_BW11 = []
-LINK_NAMES10_BW10.extend(["1.0G", "1.0G", "1.0G", "1.0G", "1.0G", "1.0G", "0.2G"])
-LINK_NAMES10_BW11.extend(["1.0G", "1.0G", "1.0G"])
+LINK_NAMES10_BW10.extend(["0.10G", "0.10G", "0.10G", "0.10G", "0.10G", "0.10G", "0.02G"])
+LINK_NAMES10_BW11.extend(["0.10G", "0.10G", "0.10G"])
 
 LINK_INFO10 = dict(zip(LINK_NAMES10, LINK_NAMES10_BW10))
 LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
@@ -109,14 +109,6 @@ for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "1.2GBps" + quo + "/>\n")
     f.write("\t\t</storage_type>\n\n")
 
-# DEFINING STORAGES_TYPES OF TIER2 LAYER
-f.write("\t\t<!-- STORAGES_TYPES OF TIER2 LAYER-->\n")
-for i in range(len(STORAGE_TIER2)):
-    f.write("\t\t<storage_type id=" + quo + "T2_HDD" + str(i+1) + quo + " size=" + quo + str(STORAGE_TIER2[i]) + quo + " model=" + quo + "linear_no_lat" + quo + ">\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "1GBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "5GBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "1.2GBps" + quo + "/>\n")
-    f.write("\t\t</storage_type>\n\n")
 
 # DEFINING STORAGE OF TIER0, TIER1 AND TIER2
 for i in range(len(LIST_ONLINE_STORAGE)):
@@ -126,22 +118,19 @@ f.write("\n")
 for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t<storage id=" + quo + LIST_NEARLINE_STRING[i] + quo + " typeId=" + quo + "NEARLINE_HDD" + str(i) + quo + " attach=" + quo + str(LIST_OF_TIERS[i]) + quo + "/>\n")
 
-f.write("\n")
-for i in range(len(NAMES_TIER2)):
-    f.write("\t\t<storage id=" + quo + "T2_" + str(i+1) + quo + " typeId=" + quo + "T2_HDD" + str(i+1) + quo + " attach=" + quo + "T2_" + str(i+1) + quo + "/>\n")
 
 
 
 # DEFINING TIER0
 f.write("\n")
-f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0]/10)  + "\">\n")
+f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(int(CPU[0]/100))  + "\">\n")
 for j in range(len(LIST_STORAGE_STRING)):
     f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
     f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] +"0" + q + "/>\n")
 f.write("\t\t</host>\n")
 
 for i in range(NUMBER_OF_TIERS):
-    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/10) + "\" >\n")
+    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(int(CPU[i+1]/100)) + "\" >\n")
     # MOUNT TIERS STORAGE
     f.write("\n")
     for j in range(len(LIST_STORAGE_STRING)):
@@ -157,17 +146,6 @@ f.write("\n")
 
 
 f.write("\n")
-for i in range(len(NAMES_TIER2)):
-    f.write("\t\t<host id=" + q + "T2_" + str(i+1) + q + " speed=" + q + "1Gf" + q + " core=\"" + str(int(float(CPU_TIER2[i]))) +  "\">\n")
-    f.write("\t\t\t<mount storageId=" + q + "T2_" + str(i+1) + q + " name=" + q + "T2_" + str(i+1) + "" + q + "/>\n\n")
-    for j in range(len(LIST_STORAGE_STRING)):
-        f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[
-            j] + "0" + q + "/>\n")
-        f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q + LIST_OF_TIERS[
-            j] + "1" + q + "/>\n")
-
-
-    f.write("\t\t</host>\n")
 
 
 ##############################################################################
@@ -185,17 +163,6 @@ f.writelines("\n")
 for i, link in enumerate(LINK_NAMES11):
     f.write("\t\t<link id=" + quo + link + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\" state_file=\"Failures/Failure/" + link + ".fail\" />\n")
 f.write("\n")
-
-f.write("\n\n\t\t<!--LINKS between CERN and TIER2-->\n")
-for i in range(len(NAMES_TIER2)):
-    f.write("\t\t<link id=\"CERN_" + str(i+1) + "_T2" + quo + " bandwidth=\"10M" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
-f.writelines("\n")
-
-f.write("\n\n\t\t<!--LINKS between TIER1S and TIER2S-->\n")
-for i in range(len(NAMES_TIER2)):
-    for j in range(len(LIST_OF_TIER1S)):
-        f.write("\t\t<link id=" + quo + LIST_OF_TIER1S[j] + "_" + str(i+1) + "_T2" + quo + " bandwidth=\"10M" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
-f.writelines("\n")
 
 n = 0
 
@@ -222,24 +189,6 @@ for x in range(NUMBER_OF_TIERS):
     f.write("<link_ctn id=\"" + LINK_NAMES10[x] + "\"/>")
     f.write("</route>\n")
 
-
-
-# routes between CERN and TIER2
-f.write("\n\n\t\t<!--routes between CERN and TIER2-->\n")
-for x in range(len(NAMES_TIER2)):
-    f.write("\t\t<route src=\"CERN\" dst=\"T2_" + str(x+1) + "\">")
-    f.write("<link_ctn id=\"CERN_" + str(x+1) + "_T2" + "\"/>")
-    f.write("</route>\n")
-    #f.write("\n")
-
-# routes between TIER1s and TIER2s
-f.write("\n\n\t\t<!--routes between TIER1s and TIER2-->\n")
-for i in range(len(NAMES_TIER2)):
-    for j in range(len(LIST_OF_TIER1S)):
-        f.write("\t\t<route src=\"" + LIST_OF_TIER1S[j] + q + " dst=\"T2_" + str(i+1) + "\">")
-        f.write("<link_ctn id=\"" + LIST_OF_TIER1S[j] + "_" + str(i+1) + "_T2" + "\"/>")
-        f.write("</route>\n")
-        #f.write("\n")
 
 f.write("\t</AS>\n")
 f.write("</platform>\n")
@@ -271,24 +220,15 @@ for i in range(0, len(LIST_OF_TIERS)):
     f.write("\n")
 f.write("\n")
 
-for i in range(0, len(LIST_OF_TIERS)):
+"""for i in range(0, len(LIST_OF_TIERS)):
     f.write("\t<process host=\"" + LIST_OF_TIERS[i] + "\" function=\"evil\">\n")
     f.write("\t\t<argument value=\"" + str(randint(0, 50000)) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(randint(30, 75)) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(randint(100, 200)) + "\"/>\n")
     f.write("\t</process>\n")
     f.write("\n")
-f.write("\n")
+f.write("\n")"""
 
-
-
-
-"""for i in range(1, len(NAMES_TIER2)):
-    f.write("\t<process host=\"T2_" + str(i) + "\" function=\"tier1\">\n")
-    f.write("\t\t<argument value=\"T2_" + str(i) + "\"/>\n")
-    f.write("\t\t<argument value=\"" + str(int(float(CPU_TIER2[i])) / 1) + "\"/>\n")
-    f.write("\t</process>\n")
-    f.write("\n")"""
 f.write("</platform>")
 f.close()
 

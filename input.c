@@ -5,14 +5,14 @@
 #include <csvparser.h>
 #include "myfunc_list.h"
 
-#define QUEUE_SIZE 10000
+#define QUEUE_SIZE 100000
 
 jobPtr* jobQueue;
 int* jobQueueHelper;
 
 
 int input(){
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out2.txt", "a");
+    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "a");
     clearFile();
     int i = 0;
     jobQueue = xbt_new(jobPtr, QUEUE_SIZE);
