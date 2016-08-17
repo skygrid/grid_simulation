@@ -16,30 +16,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CNAF_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CNAF_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/IN2P3_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/IN2P3_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/PIC_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/PIC_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/PIC_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/PIC_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RAL_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/RAL_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/deployment_anom.xml" afterPath="$PROJECT_DIR$/Platform/deployment_anom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/platform_with_anomaly.py" afterPath="$PROJECT_DIR$/Platform/platform_with_anomaly.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/evil.c" afterPath="$PROJECT_DIR$/evil.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.c" afterPath="$PROJECT_DIR$/input.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.csv" afterPath="$PROJECT_DIR$/input.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myfunc_list.h" afterPath="$PROJECT_DIR$/myfunc_list.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tracer_host.c" afterPath="$PROJECT_DIR$/tracer_host.c" />
     </list>
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +38,7 @@
       <file leaf-file-name="input.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/input.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-360">
+            <state relative-caret-position="126">
               <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
@@ -72,7 +48,7 @@
       <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="720">
               <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
               <folding />
             </state>
@@ -82,7 +58,7 @@
       <file leaf-file-name="executor.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/executor.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="3636">
               <caret line="202" column="25" selection-start-line="202" selection-start-column="25" selection-end-line="202" selection-end-column="25" />
               <folding>
                 <element signature="e#37#61#0" expanded="true" />
@@ -116,7 +92,7 @@
       <file leaf-file-name="tier1.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tier1.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
+            <state relative-caret-position="162">
               <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding />
             </state>
@@ -126,7 +102,7 @@
       <file leaf-file-name="trace_host.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/trace_host.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="432">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
@@ -588,12 +564,13 @@
       <workItem from="1471289958208" duration="2071000" />
       <workItem from="1471344288660" duration="7725000" />
       <workItem from="1471431181841" duration="10254000" />
-      <workItem from="1471442709835" duration="2630000" />
+      <workItem from="1471442709835" duration="2928000" />
+      <workItem from="1471446826512" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="440654000" />
+    <option name="totallyTimeSpent" value="440966000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -606,28 +583,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="52" width="1366" height="716" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28667164" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28667164" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45423728" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50647247" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6618123" sideWeight="0.5026061" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9305085" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7779661" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21518987" sideWeight="0.34935898" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5436893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45423728" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9305085" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7181409" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5436893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -810,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,15 +943,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
-          <folding>
-            <element signature="e#38#62#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/executor.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="3636">
           <caret line="202" column="25" selection-start-line="202" selection-start-column="25" selection-end-line="202" selection-end-column="25" />
           <folding>
             <element signature="e#37#61#0" expanded="true" />
@@ -988,7 +958,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/input.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
+        <state relative-caret-position="126">
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding />
         </state>
@@ -996,7 +966,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tier1.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
+        <state relative-caret-position="162">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
@@ -1004,7 +974,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="720">
           <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
           <folding />
         </state>
@@ -1012,7 +982,7 @@
     </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/trace_host.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="432">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
