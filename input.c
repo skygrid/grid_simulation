@@ -9,10 +9,11 @@
 
 jobPtr* jobQueue;
 int* jobQueueHelper;
+char* path_to_output;
 
 
 int input(){
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "a");
+    fp = fopen (path_to_output, "a");
     clearFile();
     int i = 0;
     jobQueue = xbt_new(jobPtr, QUEUE_SIZE);

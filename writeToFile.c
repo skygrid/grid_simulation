@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include "messages.h"
 
+char* path_to_output;
+
 int writeToFile(FILE* fpy, jobPtr jobInfo)
 {
     fprintf(fpy, "%s,%d,%f,%f,%f,%f\n", jobInfo->name, jobInfo->successExecuted, jobInfo->startClock, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock);
@@ -14,7 +16,7 @@ int writeToFile(FILE* fpy, jobPtr jobInfo)
 int clearFile()
 {
     FILE * fp, *fp1;
-    fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/out.txt", "w");
+    fp = fopen (path_to_output, "w");
     fprintf(fp, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec\n");
     fclose(fp);
     fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "w");
