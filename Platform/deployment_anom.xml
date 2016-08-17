@@ -47,4 +47,9 @@
 	</process>
 
 
+	<process host="CERN" function="evil">
+		<argument value="2585432"/>
+		<argument value="19"/>
+		<argument value="82012"/>
+	</process>
 </platform>

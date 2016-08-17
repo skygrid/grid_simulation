@@ -220,14 +220,18 @@ for i in range(0, len(LIST_OF_TIERS)):
     f.write("\n")
 f.write("\n")
 
-"""for i in range(0, len(LIST_OF_TIERS)):
+for i in range(0, len(LIST_OF_TIERS)):
+    """ :When
+        :How many tiers
+        :Duration of the anomaly
+    """
     f.write("\t<process host=\"" + LIST_OF_TIERS[i] + "\" function=\"evil\">\n")
-    f.write("\t\t<argument value=\"" + str(randint(0, 50000)) + "\"/>\n")
-    f.write("\t\t<argument value=\"" + str(randint(30, 75)) + "\"/>\n")
-    f.write("\t\t<argument value=\"" + str(randint(100, 200)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(randint(0, 41 * 86400)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(randint(10, 25)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(randint(0, 2 * 86400)) + "\"/>\n")
     f.write("\t</process>\n")
     f.write("\n")
-f.write("\n")"""
+f.write("\n")
 
 f.write("</platform>")
 f.close()

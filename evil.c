@@ -2,9 +2,11 @@
 // Created by ken on 09.08.16.
 //
 #include <simgrid/msg.h>
+#include "myfunc_list.h"
 void plusOneCorruptedCore();
 void minusOneCorruptedCore();
 int angel();
+msg_sem_t sem_link;
 
 
 int evil(int argc, char* argv[]){
@@ -21,6 +23,7 @@ int evil(int argc, char* argv[]){
         }
         if (!strcmp(MSG_process_get_name(proc1), "executor")){
             MSG_process_kill(proc1);
+            addCorruptedCoreT();
             plusOneCorruptedCore();
             i++;
         }
@@ -34,14 +37,17 @@ int evil(int argc, char* argv[]){
 
 int angel(){
     int amountCorruptCore = (int) MSG_process_get_data(MSG_process_self());
-    for (int i = 0; i < amountCorruptCore; ++i) {
+    for (int i = 0; i <= amountCorruptCore; ++i) {
+        subCorruptedCoreT();
         minusOneCorruptedCore();
     }
     return 0;
 }
 
 
+
 void plusOneCorruptedCore(){
+    MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "corruptedCore"), "error");
@@ -49,9 +55,11 @@ void plusOneCorruptedCore(){
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup(kot), xbt_free_f);
     memset(kot, '\0', 50);
+    MSG_sem_release(sem_link);
 }
 
 void minusOneCorruptedCore(){
+    MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "corruptedCore"), "error");
@@ -59,5 +67,6 @@ void minusOneCorruptedCore(){
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup(kot), xbt_free_f);
     memset(kot, '\0', 50);
+    MSG_sem_release(sem_link);
 }
 

@@ -5,7 +5,7 @@
 #include <csvparser.h>
 #include "myfunc_list.h"
 
-#define QUEUE_SIZE 100000
+#define QUEUE_SIZE 10000
 
 jobPtr* jobQueue;
 int* jobQueueHelper;

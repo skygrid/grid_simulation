@@ -25,5 +25,8 @@ int tracer_traffic(const char* src, const char* dst, double size);
 int addActiveCoreT();
 int subActiveCoreT();
 
+int addCorruptedCoreT();
+int subCorruptedCoreT();
+
 int tracer_storage(char* storage_name, char* storage_type);
 #endif //CSIM2SIM_MYFUNC_LIST_H

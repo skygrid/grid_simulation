@@ -10,7 +10,7 @@
 FILE* fp; // global variables
 
 
-#define QUEUE_SIZE 100000
+#define QUEUE_SIZE 10000
 jobPtr* matcher(long amountRequestedJob);
 jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
 int rescheduling(long failedReqJobs);
@@ -38,8 +38,8 @@ int scheduler(int argc, char* argv[]){
             XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
             jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
 
-            jobPtr* batch = matcher(batchRequest->coreAmount);
-            //jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+            //jobPtr* batch = matcher(batchRequest->coreAmount);
+            jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
             taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
             //Add new user to link
             plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
