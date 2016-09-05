@@ -36,9 +36,7 @@ int executor(int argc, char* argv[]){
             download_or_read_file(jobInfo, dataInfo);
             break;
     }
-    addActiveCoreT();
     task_executor(jobInfo);
-    subActiveCoreT();
     MSG_process_create("dataRep", data_replicator, jobInfo, MSG_host_self());
     MSG_process_kill(MSG_process_self());
     return 0;

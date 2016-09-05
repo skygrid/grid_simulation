@@ -5,6 +5,10 @@
 #include "myfunc_list.h"
 void plusOneCorruptedCore();
 void minusOneCorruptedCore();
+
+void plusOneActiveCore();
+void minusOneActiveCore();
+
 int angel();
 msg_sem_t sem_link;
 
@@ -23,8 +27,13 @@ int evil(int argc, char* argv[]){
         }
         if (!strcmp(MSG_process_get_name(proc1), "executor")){
             MSG_process_kill(proc1);
+
+            //For tracing file
             addCorruptedCoreT();
+
+            // For internal usage
             plusOneCorruptedCore();
+            minusOneActiveCore();
             i++;
         }
     }
@@ -39,7 +48,9 @@ int angel(){
     int amountCorruptCore = (int) MSG_process_get_data(MSG_process_self());
     for (int i = 0; i <= amountCorruptCore; ++i) {
         subCorruptedCoreT();
+
         minusOneCorruptedCore();
+        plusOneActiveCore();
     }
     return 0;
 }
