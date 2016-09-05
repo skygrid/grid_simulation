@@ -14,13 +14,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CSim2Sim.iml" afterPath="$PROJECT_DIR$/.idea/CSim2Sim.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/evil.c" afterPath="$PROJECT_DIR$/evil.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executor.c" afterPath="$PROJECT_DIR$/executor.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
-    </list>
+    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="" />
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +36,8 @@
       <file leaf-file-name="delete.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/delete.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+            <state relative-caret-position="144">
+              <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -59,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trace_host.py" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/trace_host.py">
+      <file leaf-file-name="del.py" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+            <state relative-caret-position="390">
+              <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -124,12 +118,12 @@
         <option value="$PROJECT_DIR$/input.c" />
         <option value="$PROJECT_DIR$/Platform/deployment_anom.xml" />
         <option value="$PROJECT_DIR$/tracer_host.c" />
-        <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py" />
         <option value="$PROJECT_DIR$/executor.c" />
         <option value="$PROJECT_DIR$/evil.c" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/delete.py" />
         <option value="$PROJECT_DIR$/scheduler.c" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/trace_host.py" />
+        <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py" />
       </list>
     </option>
   </component>
@@ -141,9 +135,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="y" value="52" />
     <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="height" value="716" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -245,7 +239,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/Plots.ipynb" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -529,12 +523,12 @@
       <workItem from="1471442709835" duration="2928000" />
       <workItem from="1471446826512" duration="713000" />
       <workItem from="1472988771647" duration="8286000" />
-      <workItem from="1473066424860" duration="6360000" />
+      <workItem from="1473066424860" duration="10293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="456311000" />
+    <option name="totallyTimeSpent" value="460244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,7 +540,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="52" width="1366" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22040209" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
@@ -914,13 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/executor.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -963,22 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/delete.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/Plots.ipynb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1026">
@@ -991,6 +962,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/delete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
