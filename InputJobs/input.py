@@ -1,6 +1,7 @@
 import sys
 import random
 from scipy import stats
+import numpy as np
 
 '''
 REPLICA DICTIONARY JobType:[At CERN1 yes or no\
@@ -34,6 +35,8 @@ types_pk = (0.061, 0.175, 0.061, 0.005, 0.205, 0.046, 0.006, 0.025, 0.0, 0.0, 0.
 types_custmx = stats.rv_discrete(name='custm', values=(int_types, types_pk))
 types_custm = types_custmx.rvs(size=job_amount)
 
+# CPU, DATA-SIZE AND OUTPUT-SIZE
+
 
 
 f = open("input.csv", "w")
@@ -46,9 +49,13 @@ for i in range(job_amount):
     input_file_name = "inp_" + str(i) + "." + types[types_custm[i]]
     output_file_name = "out_" + str(i) + "." + types[types_custm[i]]
     name = "Job" + str(i)
-    cpu_size = 86400 * 10**9 * random.uniform(0.85*FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*FLOP_SIZE_BY_TYPE[types[types_custm[i]]])
-    data_size = 28 * random.uniform(0.85*INPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*INPUT_SIZE_BY_TYPE[types[types_custm[i]]])
-    out_size = random.uniform(0.85*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]])
+    cpu_size = 86400 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+    data_size = 28 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[i]]] else 0 
+    out_size = np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+
+    #cpu_size = 86400 * 10**9 * random.uniform(0.85*FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*FLOP_SIZE_BY_TYPE[types[types_custm[i]]])
+    #data_size = 28 * random.uniform(0.85*INPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*INPUT_SIZE_BY_TYPE[types[types_custm[i]]])
+    #out_size = random.uniform(0.85*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]])
 
     NREpIn = prob_array_input[i]
     if types[types_custm[i]] == 'MCSIMULATION':
