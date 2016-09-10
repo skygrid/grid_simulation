@@ -1,6 +1,6 @@
 import numpy as np
 
-inp_file, inp_size, loc1, loc2, loc3, loc4, stor1, stor2, stor3, stor4 = np.loadtxt('input.csv', skiprows=1, dtype=np.str, delimiter=',', usecols=(3,4,6,7,8,9,10,11,12,13), unpack=True, ndmin=2)
+inp_file, inp_size, loc1, loc2, loc3, loc4, stor1, stor2, stor3, stor4 = np.loadtxt('input.csv', skiprows=1, dtype=np.str, delimiter=',', usecols=(4,5,7,8,9,10,11,12,13,14), unpack=True, ndmin=2)
 
 FILE_NAMES = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "RRCKI", "SARA"]
 

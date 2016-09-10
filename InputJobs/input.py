@@ -13,6 +13,9 @@ REPLICA DICTIONARY JobType:[At CERN1 yes or no\
 job_amount = int(sys.argv[1])
 print job_amount
 
+# VARIABLE FOR POISSON DISTRIBUTION
+lyambda = 0.0031
+
 Locations = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 Location_DISK = ["CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"]
 Location_TAPE = ["CNAF0", "GRIDKA0", "IN2P30", "PIC0", "RAL0", "SARA0", "RRCKI0"]
@@ -35,12 +38,24 @@ types_pk = (0.061, 0.175, 0.061, 0.005, 0.205, 0.046, 0.006, 0.025, 0.0, 0.0, 0.
 types_custmx = stats.rv_discrete(name='custm', values=(int_types, types_pk))
 types_custm = types_custmx.rvs(size=job_amount)
 
+# TASKS COMES OVER A TIME
+times_array = (np.cumsum(stats.poisson.rvs(lyambda, size=job_amount))).astype(float) * 86400
+frequency, z = np.histogram(times_array)
+frequency = frequency[np.nonzero(frequency)]
+big_noize = []
+for item in frequency:
+	noize = np.sort(np.random.uniform(low=0, high=10000, size=item))
+	big_noize.append(noize)
+big_noize = np.hstack(np.array(big_noize))
+print len(big_noize)
+print len(times_array)
+times_array += big_noize
 # CPU, DATA-SIZE AND OUTPUT-SIZE
 
 
 
 f = open("input.csv", "w")
-f.write("Name, Type, Flops-Size, InputFileName, InputSize, NRep, Location1, Location2, Location3, Location4, Storage_T1, Storage_T2, Storage_T3, Storage_T4, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6\n")
+f.write("Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRep, Location1, Location2, Location3, Location4, Storage_T1, Storage_T2, Storage_T3, Storage_T4, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6\n")
 
 
 
@@ -86,7 +101,7 @@ for i in range(job_amount):
     else:
         output_locations= "0,0,0,0,0,0"
 
-    string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(cpu_size) + "," + input_file_name + "," + str(data_size) + "," + str(NREpIn) + "," + location_str + "," + storage_types + "," + output_file_name + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations+ "\n"
+    string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + input_file_name + "," + str(data_size) + "," + str(NREpIn) + "," + location_str + "," + storage_types + "," + output_file_name + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations+ "\n"
     f.write(string)
 
 f.close()

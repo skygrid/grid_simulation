@@ -10,9 +10,9 @@
 FILE* fp; // global variables
 
 
-#define QUEUE_SIZE 10000
-jobPtr* matcher(long amountRequestedJob);
-jobPtr* matcher_DAM(long amountRequestedJob, const char* host);
+#define QUEUE_SIZE 9999
+jobBatch_AmountPtr matcher(long amountRequestedJob);
+jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host);
 int rescheduling(long failedReqJobs);
 int input();
 
@@ -20,7 +20,7 @@ long currentJobInQueue = 0;
 long amountOfScheduledJobs = 0;
 
 jobPtr* jobQueue;
-int* jobQueueHelper;
+int jobQueueHelper[QUEUE_SIZE] = {0};
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
@@ -38,16 +38,16 @@ int scheduler(int argc, char* argv[]){
             XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
             jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
 
-            //jobPtr* batch = matcher(batchRequest->coreAmount);
-            jobPtr* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
-            taskB = MSG_task_create("", batchRequest->coreAmount, MESSAGES_SIZE, batch);
+            //jobBatch_AmountPtr batch = matcher(batchRequest->coreAmount);
+            jobBatch_AmountPtr batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+            taskB = MSG_task_create("", batch->jobsAmount, MESSAGES_SIZE, batch->jobBatch);
             //Add new user to link
             plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
 
             switch(MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)))){
                 case MSG_OK:
                     minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
-                    XBT_INFO("Send %s after matching %s", batch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
+                    XBT_INFO("Send %s after matching %s", batch->jobBatch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
                     break;
                 case MSG_TRANSFER_FAILURE:
                     rescheduling(batchRequest->coreAmount);
@@ -73,36 +73,74 @@ int scheduler(int argc, char* argv[]){
         }
     }
 }
-jobPtr* matcher(long amountRequestedJob){
+jobBatch_AmountPtr matcher(long amountRequestedJob){
+    double waiting_time = 50.;
+    int amount_of_scheduled_jobs = 0;
+    long cjiq = currentJobInQueue; // currentJobInQueue
 
     if (currentJobInQueue + amountRequestedJob > QUEUE_SIZE){
         MSG_process_kill(MSG_process_self());
         amountRequestedJob = QUEUE_SIZE - currentJobInQueue;
     }
     XBT_INFO("Amount is %ld", amountRequestedJob);
+
+    jobBatch_AmountPtr jobBatchInfoX = xbt_new(jobBatch_Amount, 1);
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
-    for (long i = currentJobInQueue; i < (currentJobInQueue+amountRequestedJob); ++i) {
+
+    // wait until job will be created in the queue
+    while (MSG_get_clock() < jobQueue[currentJobInQueue]->submissionTime){
+        if (MSG_get_clock() > jobQueue[currentJobInQueue]->submissionTime){
+            break;
+        }
+        MSG_process_sleep(waiting_time);
+    }
+
+    for (long i = currentJobInQueue; i < (cjiq+amountRequestedJob); ++i) {
         jobQueue[i]->startSchedulClock = MSG_get_clock();
         jobQueue[i]->stExecClock = 0;
         jobQueue[i]->endExecClock = 0;
         jobQueue[i]->successExecuted = 0;
-        jobBatch[i-currentJobInQueue] = jobQueue[i];
+        jobBatch[i-cjiq] = jobQueue[i];
+        amount_of_scheduled_jobs++;
+        currentJobInQueue++;
+
+        // if (i+1) job isn't created then we leave the scheduler
+        if (MSG_get_clock() < jobQueue[currentJobInQueue+1]->submissionTime){
+            jobBatchInfoX->jobBatch = jobBatch;
+            jobBatchInfoX->jobsAmount = amount_of_scheduled_jobs;
+            return jobBatchInfoX;
+        }
     }
-    currentJobInQueue += amountRequestedJob;
     if (currentJobInQueue > QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
     }
-    return jobBatch;
+
+    jobBatchInfoX->jobBatch = jobBatch;
+    jobBatchInfoX->jobsAmount = amount_of_scheduled_jobs;
+    return jobBatchInfoX;
 }
 
-jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
+jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host){
     currentJobInQueue = 0;
+
+    double waiting_time = 50.;
+    int amount_of_matched_jobs = 0;
+
 
     if (amountOfScheduledJobs + amountRequestedJob >= QUEUE_SIZE){
         XBT_INFO("QUEUE is run out");
         MSG_process_kill(MSG_process_self());
     }
+    jobBatch_AmountPtr jobBatchInfoX = xbt_new(jobBatch_Amount, 1);
     jobPtr* jobBatch = xbt_new(jobPtr, amountRequestedJob);
+
+    /*while (MSG_get_clock() < jobQueue[currentJobInQueue]->submissionTime){
+        if (MSG_get_clock() > jobQueue[currentJobInQueue]->submissionTime){
+            break;
+        }
+        MSG_process_sleep(waiting_time);
+    }*/
+
     long i = 0;
     while(i < amountRequestedJob){
         if (currentJobInQueue >= QUEUE_SIZE){
@@ -119,6 +157,15 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                 i++;
                 currentJobInQueue++;
                 amountOfScheduledJobs++;
+                amount_of_matched_jobs++;
+
+                if (MSG_get_clock() < jobQueue[currentJobInQueue+1]->submissionTime){
+                    jobBatchInfoX->jobBatch = jobBatch;
+                    jobBatchInfoX->jobsAmount = amount_of_matched_jobs;
+                    return jobBatchInfoX;
+                }
+
+
                 continue;
             }
 
@@ -131,13 +178,35 @@ jobPtr* matcher_DAM(long amountRequestedJob, const char* host){
                     jobBatch[i] = jobQueue[currentJobInQueue];
                     i++;
                     amountOfScheduledJobs++;
+                    amount_of_matched_jobs++;
+
+                    if (MSG_get_clock() < jobQueue[currentJobInQueue+1]->submissionTime){
+                        jobBatchInfoX->jobBatch = jobBatch;
+                        jobBatchInfoX->jobsAmount = amount_of_matched_jobs;
+                        return jobBatchInfoX;
+                    }
+
                     break;
                 }
             }
             currentJobInQueue++;
         }else currentJobInQueue++;
+        int k = 5;
     }
-    return jobBatch;
+
+
+    jobBatchInfoX->jobBatch = jobBatch;
+    jobBatchInfoX->jobsAmount = amount_of_matched_jobs;
+
+    return jobBatchInfoX;
+}
+
+
+int give_any_jobs(long amount_matched, long amount_requested){
+    long current_job_queue = 0;
+    long jobs = amount_requested - amount_matched;
+
+    while ()
 }
 
 

@@ -9,6 +9,7 @@
 
 #define MESSAGES_SIZE 100000
 
+
 typedef enum {
     USER,
     DATASTRIPPING,
@@ -27,6 +28,7 @@ typedef enum {
 
 typedef struct{
     char* name;
+    double submissionTime;
     jobType type;
     char* typeChar;
     double compSize;
@@ -97,6 +99,18 @@ typedef struct {
 typedef struct {
     long coreAmount; // Number of requested jobs
 }jobBatchRequest, *jobBatchRequestPtr;
+
+typedef struct {
+    jobPtr* jobBatch;
+    int jobsAmount;
+}jobBatch_Amount, *jobBatch_AmountPtr;
+
+struct node
+{
+    int key;
+    jobPtr jobX;
+    struct node *next;
+};
 
 
 #endif //CSIM2SIM_MESSAGES_H

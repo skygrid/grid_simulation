@@ -9,7 +9,7 @@ char* path_to_output;
 
 int writeToFile(FILE* fpy, jobPtr jobInfo)
 {
-    fprintf(fpy, "%s,%d,%f,%f,%f,%f\n", jobInfo->name, jobInfo->successExecuted, jobInfo->startClock, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock);
+    fprintf(fpy, "%s,%d,%f,%f,%f,%f\n", jobInfo->name, jobInfo->successExecuted, jobInfo->submissionTime, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock);
     return(0);
 }
 

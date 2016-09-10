@@ -15,6 +15,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/linked_list.c" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/cpu_time_by_jobtype.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/cputime_by_jobtype.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/input_by_type.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/input_by_type.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/inputfiles_by_jobtype.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/job_by_splittype.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/job_by_splitype.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/outputdata_by_jobtype.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/wall_time_by_type.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InputJobs/walltime_type.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CSim2Sim.iml" afterPath="$PROJECT_DIR$/.idea/CSim2Sim.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ken.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ken.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InputJobs/create_storage_content.py" afterPath="$PROJECT_DIR$/InputJobs/create_storage_content.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InputJobs/input.py" afterPath="$PROJECT_DIR$/InputJobs/input.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" />
@@ -32,9 +48,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plots/Plots.ipynb" afterPath="$PROJECT_DIR$/Plots/Plots.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/platform.xml" afterPath="$PROJECT_DIR$/Platform/platform.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.c" afterPath="$PROJECT_DIR$/input.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.csv" afterPath="$PROJECT_DIR$/input.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messages.h" afterPath="$PROJECT_DIR$/messages.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myfunc_list.h" afterPath="$PROJECT_DIR$/myfunc_list.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rescheduling.c" afterPath="$PROJECT_DIR$/rescheduling.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writeToFile.c" afterPath="$PROJECT_DIR$/writeToFile.c" />
     </list>
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,19 +78,55 @@
       <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+            <state relative-caret-position="182">
+              <caret line="201" column="1" selection-start-line="201" selection-start-column="1" selection-end-line="201" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="input.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="messages.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/messages.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1856">
+              <caret line="112" column="2" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myfunc_list.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myfunc_list.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+              <folding>
+                <element signature="e#101#119#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linked_list.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/linked_list.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+              <folding>
+                <element signature="e#38#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/input.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="326">
+              <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+              <folding>
+                <element signature="e#37#61#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/node.c" />
         <option value="$PROJECT_DIR$/tier2.cpp" />
         <option value="$PROJECT_DIR$/data_replicator.h" />
         <option value="$PROJECT_DIR$/dispatcher.c" />
@@ -101,12 +157,10 @@
         <option value="$PROJECT_DIR$/Platform/platform_anom.xml" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Storage/storage.py" />
         <option value="$PROJECT_DIR$/main_tracer.c" />
-        <option value="$PROJECT_DIR$/rescheduling.c" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Host/host.py" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/link_workload.py" />
         <option value="$PROJECT_DIR$/pileOfFailedTask.c" />
         <option value="$PROJECT_DIR$/copyFromTapeToDisk.c" />
-        <option value="$PROJECT_DIR$/messages.h" />
         <option value="$PROJECT_DIR$/InputJobs/create_storage_content.py" />
         <option value="$PROJECT_DIR$/switch_off_all_hosts.c" />
         <option value="$PROJECT_DIR$/InputJobs/input.py" />
@@ -121,10 +175,7 @@
         <option value="$PROJECT_DIR$/tracer_link.c" />
         <option value="$PROJECT_DIR$/data_replicator.c" />
         <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/writeToFile.c" />
         <option value="$PROJECT_DIR$/Platform/platform_with_anomaly.py" />
-        <option value="$PROJECT_DIR$/myfunc_list.h" />
-        <option value="$PROJECT_DIR$/input.c" />
         <option value="$PROJECT_DIR$/Platform/deployment_anom.xml" />
         <option value="$PROJECT_DIR$/tracer_host.c" />
         <option value="$PROJECT_DIR$/executor.c" />
@@ -132,7 +183,13 @@
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/delete.py" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/trace_host.py" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py" />
+        <option value="$PROJECT_DIR$/rescheduling.c" />
+        <option value="$PROJECT_DIR$/writeToFile.c" />
         <option value="$PROJECT_DIR$/scheduler.c" />
+        <option value="$PROJECT_DIR$/input.c" />
+        <option value="$PROJECT_DIR$/messages.h" />
+        <option value="$PROJECT_DIR$/linked_list.c" />
+        <option value="$PROJECT_DIR$/myfunc_list.h" />
       </list>
     </option>
   </component>
@@ -226,20 +283,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="grid_simulation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid_simulation" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid_simulation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Platform" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,7 +481,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="CSim2Sim" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/Platform/platform.xml /home/ken/LHCb/grid_simulation/Platform/deployment.xml /home/ken/PycharmProjects/GridAnalysis/out2.txt --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/PycharmProjects/GridAnalysis/Link_workload/trace_anom_host --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:22000" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CSim2Sim" TARGET_NAME="CSim2Sim" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CSim2Sim" RUN_TARGET_NAME="CSim2Sim">
+    <configuration default="false" name="CSim2Sim" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/Platform/platform.xml /home/ken/LHCb/grid_simulation/Platform/deployment.xml /home/ken/PycharmProjects/GridAnalysis/out.txt --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/PycharmProjects/GridAnalysis/Link_workload/trace_anom_host --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:22000" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CSim2Sim" TARGET_NAME="CSim2Sim" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CSim2Sim" RUN_TARGET_NAME="CSim2Sim">
       <envs />
       <method />
     </configuration>
@@ -534,11 +577,17 @@
       <workItem from="1472988771647" duration="8286000" />
       <workItem from="1473066424860" duration="10293000" />
       <workItem from="1473158262532" duration="2584000" />
+      <workItem from="1473256105716" duration="6722000" />
+      <workItem from="1473325713866" duration="20932000" />
+      <workItem from="1473409814368" duration="920000" />
+      <workItem from="1473452374476" duration="1518000" />
+      <workItem from="1473460239184" duration="1117000" />
+      <workItem from="1473505112324" duration="2914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462828000" />
+    <option name="totallyTimeSpent" value="496951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -555,46 +604,46 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22040209" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45084745" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50647247" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6618123" sideWeight="0.5026061" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.67118645" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7779661" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39661017" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21518987" sideWeight="0.34935898" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53898305" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44915253" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5813559" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7181409" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.71694916" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5084746" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45254236" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45084745" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50647247" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6618123" sideWeight="0.5026061" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9305085" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6694915" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7779661" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28667164" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22040209" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7181409" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21518987" sideWeight="0.34935898" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53898305" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57457626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -610,48 +659,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <condition expression="!strcmp(MSG_host_get_name(MSG_host_self()), &quot;CERN&quot;)" language="ObjectiveC" />
-          <url>file://$PROJECT_DIR$/job_requester.c</url>
-          <line>20</line>
-          <option name="timeStamp" value="405" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="406" />
+      <option name="time" value="425" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="MSG_get_clock() / 86400" language="ObjectiveC" />
+        <watch expression="MSG_get_clock()" language="ObjectiveC" />
         <watch expression="MSG_host_get_name(MSG_host_self())" language="ObjectiveC" />
-        <watch expression="freeCoreAmount" language="ObjectiveC" />
-        <watch expression="MSG_host_get_property_value(MSG_host_self(), &quot;activeCore&quot;)" />
-        <watch expression="MSG_host_get_property_value(MSG_host_self(), &quot;corruptedCore&quot;)" />
+        <watch expression="currentJobInQueue" language="ObjectiveC" />
+        <watch expression="jobBatch[14]-&gt;name" language="ObjectiveC" />
+        <watch expression="jobBatchInfoX-&gt;jobBatch[15]-&gt;name" language="ObjectiveC" />
+        <watch expression="jobQueueHelper" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/msg/msg_io.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="384" column="0" selection-start-line="384" selection-start-column="0" selection-end-line="384" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/simgrid/host.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/surf/surf_c_bindings.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/xbt/dict.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -691,13 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="30" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rescheduling.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -750,28 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/xbt/sysdep.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InputJobs/input.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/xbt/exception.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -783,13 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="64" column="95" selection-start-line="64" selection-start-column="95" selection-end-line="64" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/messages.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -828,13 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_replicator.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tracer_link.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -846,20 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/writeToFile.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myfunc_list.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -882,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,15 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-50">
           <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executor.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,19 +884,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job_requester.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tier1.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,7 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,25 +916,126 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job_requester.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/simix/smx_environment.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_replicator.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rescheduling.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/xbt/sysdep.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InputJobs/input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1078">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writeToFile.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executor.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/str_to_enum.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        <state relative-caret-position="182">
+          <caret line="201" column="1" selection-start-line="201" selection-start-column="1" selection-end-line="201" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/input.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="326">
+          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+          <folding>
+            <element signature="e#37#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/messages.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1856">
+          <caret line="112" column="2" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linked_list.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+          <folding>
+            <element signature="e#38#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myfunc_list.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding>
+            <element signature="e#101#119#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

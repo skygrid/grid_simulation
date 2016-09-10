@@ -29,4 +29,14 @@ int addCorruptedCoreT();
 int subCorruptedCoreT();
 
 int tracer_storage(char* storage_name, char* storage_type);
+
+//LINKED LIST FUNCTIONS
+extern struct node *head;
+extern struct node *end;
+
+void insertFirst(jobPtr jobX, int key);
+void insertLast(jobPtr jobX, int key);
+int length();
+int delete(int key);
+
 #endif //CSIM2SIM_MYFUNC_LIST_H

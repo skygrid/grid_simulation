@@ -301,7 +301,7 @@
 		<link id="CERN-PIC-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
 		<link id="CERN-RAL-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
 		<link id="CERN-SARA-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
-		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="0.02GBps" latency="0.0ms"/>
+		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
 
 		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
 		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="0.10GBps" latency="0.0ms"/>
