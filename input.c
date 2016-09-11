@@ -54,7 +54,7 @@ int input(){
         jobX->startClock = 0;
         jobX->scheduled = 0;
 
-        insertLast(jobX, i);
+        insertLast(jobX);
 
         CsvParser_destroy_row(row);
         i++;

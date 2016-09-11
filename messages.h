@@ -105,9 +105,7 @@ typedef struct {
     int jobsAmount;
 }jobBatch_Amount, *jobBatch_AmountPtr;
 
-struct node
-{
-    int key;
+struct node {
     jobPtr jobX;
     struct node *next;
 };

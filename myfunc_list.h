@@ -6,6 +6,7 @@
 #define CSIM2SIM_MYFUNC_LIST_H
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "messages.h"
 extern FILE* fp;
 extern msg_sem_t sem_link;
@@ -34,9 +35,9 @@ int tracer_storage(char* storage_name, char* storage_type);
 extern struct node *head;
 extern struct node *end;
 
-void insertFirst(jobPtr jobX, int key);
-void insertLast(jobPtr jobX, int key);
+void insertFirst(jobPtr jobX);
+void insertLast(jobPtr jobX);
 int length();
-int delete(int key);
+bool isEmpty();
 
 #endif //CSIM2SIM_MYFUNC_LIST_H
