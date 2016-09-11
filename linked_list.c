@@ -6,7 +6,7 @@
 #include "messages.h"
 #include "myfunc_list.h"
 
-
+XBT_LOG_NEW_DEFAULT_CATEGORY(ll, "messages specific for ll");
 
 struct node *head = NULL;
 struct node *end = NULL;
@@ -17,17 +17,17 @@ struct node *local_end = NULL;
 //display the list
 void printList()
 {
-    struct node *ptr = head;
-    printf("\n[ ");
+    struct node *ptr = local_head;
+    XBT_INFO("\n[ ");
 
     //start from the beginning
     while(ptr != NULL)
     {
-        printf("(%s)\n", ptr->jobX->name);
+        XBT_INFO("(%s)\n", ptr->jobX->name);
         ptr = ptr->next;
     }
 
-    printf(" ]");
+    XBT_INFO(" ]");
 }
 
 //insert link at the first location
@@ -120,6 +120,8 @@ int localLength() {
 }
 
 void delete_job_from_queue(struct node* loc_current, struct node* loc_previous, struct node* current, struct node* previous){
+    //XBT_INFO("I deleted job: %s", loc_current->jobX->name);
+
     if(current == head) {
         head = head->next;
     }else {
@@ -130,33 +132,35 @@ void delete_job_from_queue(struct node* loc_current, struct node* loc_previous, 
     } else{
         loc_previous->next = loc_current->next;
     }
-    free(current);
-    free(loc_current);
+    //free(current);
+    //free(loc_current);
 }
 
 struct node* create_current_queue(){
-    double waiting_time = 50.;
-    long jobs = 0;
 
     local_head = NULL;
     local_end = NULL;
+    struct node* current_job = NULL;
 
     // wait until job will be created in the queue
-    while (MSG_get_clock() < head->jobX->submissionTime){
-        if (MSG_get_clock() > head->jobX->submissionTime){
-            break;
-        }
-        MSG_process_sleep(waiting_time);
+    if (MSG_get_clock() > head->jobX->submissionTime){
+        current_job = head;
     }
-
-    struct node* current_job = head;
 
     while ((current_job) && current_job->jobX->submissionTime < MSG_get_clock()){
         localInsertLast(current_job->jobX);
         current_job = current_job->next;
-        jobs++;
     }
 
     return local_head;
+}
+
+void free_local_queue(){
+    int length = 0;
+    struct node *current;
+
+    for(current = local_head; current != NULL; current = current->next) {
+        free(current);
+    }
 }
 

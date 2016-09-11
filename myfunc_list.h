@@ -55,4 +55,7 @@ void delete_job_from_queue(struct node* loc_current, struct node* loc_previous, 
 jobBatch_AmountPtr matcher(long amountRequestedJob);
 jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host);
 
+void free_local_queue();
+void printList();
+
 #endif //CSIM2SIM_MYFUNC_LIST_H

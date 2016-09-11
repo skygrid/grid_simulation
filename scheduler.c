@@ -23,8 +23,8 @@ int scheduler(int argc, char* argv[]){
             XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
             jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
 
-            jobBatch_AmountPtr batch = matcher(batchRequest->coreAmount);
-            //jobBatch_AmountPtr batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+            //jobBatch_AmountPtr batch = matcher(batchRequest->coreAmount);
+            jobBatch_AmountPtr batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
             taskB = MSG_task_create("", batch->jobsAmount, MESSAGES_SIZE, batch->jobBatch);
             //Add new user to link
             plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
@@ -32,7 +32,7 @@ int scheduler(int argc, char* argv[]){
             switch(MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)))){
                 case MSG_OK:
                     minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
-                    XBT_INFO("Send %s after matching %s", batch->jobBatch[0]->name, MSG_host_get_name(MSG_task_get_source(task)));
+                    XBT_INFO("Send %d jobs after matching to %s", batch->jobsAmount ,MSG_host_get_name(MSG_task_get_source(task)));
                     break;
                 case MSG_TRANSFER_FAILURE:
                     //rescheduling(batchRequest->coreAmount);
