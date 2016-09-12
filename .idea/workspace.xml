@@ -14,15 +14,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp.c" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plots/.ipynb_checkpoints/Plots-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Plots/.ipynb_checkpoints/Plots-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plots/Plots.ipynb" afterPath="$PROJECT_DIR$/Plots/Plots.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executor.c" afterPath="$PROJECT_DIR$/executor.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messages.h" afterPath="$PROJECT_DIR$/messages.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writeToFile.c" afterPath="$PROJECT_DIR$/writeToFile.c" />
-    </list>
+    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="" />
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -587,12 +579,12 @@
       <workItem from="1473589217323" duration="12020000" />
       <workItem from="1473618770156" duration="6291000" />
       <workItem from="1473632166442" duration="95000" />
-      <workItem from="1473632888326" duration="9650000" />
+      <workItem from="1473632888326" duration="10239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="540506000" />
+    <option name="totallyTimeSpent" value="541095000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
