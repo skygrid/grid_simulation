@@ -23,7 +23,7 @@ int data_replicator(int argc, char* argv[]){
         MSG_process_create("upload", uploader, data, MSG_host_self());
     }
     MSG_process_sleep(0.9);
-    //xbt_free(replica); // ATTENTION !!!!!!!!!
+    xbt_free(replica); // ATTENTION !!!!!!!!!
     MSG_process_kill(MSG_process_self());
     return 0;
 }

@@ -132,8 +132,8 @@ void delete_job_from_queue(struct node* loc_current, struct node* loc_previous, 
     } else{
         loc_previous->next = loc_current->next;
     }
-    //free(current);
-    //free(loc_current);
+    free(current);
+    free(loc_current);
 }
 
 struct node* create_current_queue(){
