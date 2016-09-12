@@ -63,6 +63,7 @@ typedef struct{
     double stExecClock;
     double endExecClock;
     int successExecuted;
+    const char* tier;
 }job, *jobPtr;
 
 

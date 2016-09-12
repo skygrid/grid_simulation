@@ -163,6 +163,7 @@ int task_executor(jobPtr jobInfo){
     jobInfo->endExecClock = MSG_get_clock();
     minusOneActiveCore();
     jobInfo->successExecuted = 1;
+    jobInfo->tier = MSG_host_get_name(MSG_host_self());
 
     //Anomalies of tier host
     if (b == MSG_OK){
