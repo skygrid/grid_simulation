@@ -23,6 +23,7 @@ int writeAnomaly(double clock);
 int set_0_all_routes();
 
 int declare_trace_variables();
+long dataset_number(char* host_name, char* storage_type);
 
 int plusLinkCounter(const char* src, const char* dst);
 int minusLinkCounter(const char* src, const char* dst);
@@ -34,6 +35,9 @@ int subActiveCoreT();
 int addCorruptedCoreT();
 int subCorruptedCoreT();
 
+int addDatasetAmountT(const char* host_name, char* type);
+void cumulativeInputPerSiteT(const char* host_name, double size);
+void cumulativeOutputPerSiteT(const char* host_name, double size);
 int tracer_storage(char* storage_name, char* storage_type);
 
 //LINKED LIST FUNCTIONS

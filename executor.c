@@ -94,7 +94,10 @@ int copy_from_tape_to_disk(dataInfoPtr data_info){
         MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name), data_info->copy_from_tape_to_disk_name);
         MSG_file_close(file);
 
+        // trace storage and dataset amount to disk space
         tracer_storage(data_info->destination_name, data_info->storage_type);
+        addDatasetAmountT(data_info->destination_name, "1");
+
 
         // So we have new name of input file on the disk
         sprintf(data_info->input_file_path, data_info->copy_from_tape_to_disk_name);
@@ -112,6 +115,10 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
         file = MSG_file_open(dataInfo->input_file_path, NULL);
         plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
+
+        //tracing number of dataset
+        addDatasetAmountT(MSG_host_get_name(MSG_host_self()), "1");
+        cumulativeInputPerSiteT(MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
 
         if (error == MSG_OK){
             tracer_traffic(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
@@ -181,6 +188,8 @@ int task_executor(jobPtr jobInfo){
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
     MSG_file_close(outFile);
 
+    // tracing
+    addDatasetAmountT(MSG_host_get_name(MSG_host_self()), "1");
 
     return 0;
 }

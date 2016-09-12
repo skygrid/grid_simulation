@@ -17,31 +17,53 @@ int tracer_storage(char* storage_name_1, char* storage_type){
     return 0;
 }
 
-int cumulativeInputPerSiteT(){
+void cumulativeInputPerSiteT(const char* host_name, double size){
     MSG_sem_acquire(sem_link);
-
-
+    TRACE_host_variable_add(host_name, "inputData", size);
     MSG_sem_release(sem_link);
-    return 0;
+    return;
 }
 
-int cumulativeOutputPerSiteT(){
+void cumulativeOutputPerSiteT(const char* host_name, double size){
     MSG_sem_acquire(sem_link);
+    TRACE_host_variable_add(host_name, "outputData", size);
     MSG_sem_release(sem_link);
-    return 0;
+    return;
 }
 
-int numberDatasetOnDiskT(int type){
+int addDatasetAmountT(const char* host_name, char* type){
     MSG_sem_acquire(sem_link);
     // O -- Tape
-    if (type == 0){
-
+    if (!strcmp(type, "0")){
+        TRACE_host_variable_add(host_name, "datasetOnTape", 1);
     }else{
-        TRACE_host_variable_set(MSG_host_get_name(MSG_host_self()));
+        TRACE_host_variable_add(host_name, "datasetOnDisk", 1);
     }
 
     MSG_sem_release(sem_link);
     return 0;
+}
+
+// Returns a number of dataset on a given storage
+long dataset_number(char* host_name, char* storage_type){
+
+    char* storage_name = malloc(15);
+    sprintf(storage_name, "%s%s", host_name, storage_type);
+    msg_storage_t st = MSG_storage_get_by_name(storage_name);
+
+    xbt_dict_cursor_t cursor = NULL;
+    char *key;
+    double data;
+    long amount = 0;
+
+    xbt_dict_t storage_content = MSG_storage_get_content(st);
+    xbt_dict_foreach(storage_content, cursor, key, data){
+        amount++;
+    }
+    free(storage_name);
+    xbt_free(storage_content);
+    return amount;
+
 }
 
 

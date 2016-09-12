@@ -51,6 +51,10 @@ int uploader(int argc, char* argv[]){
 
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
 
+        //trace number of datasets and output traffic from site
+        addDatasetAmountT(destHostName, &data->dest[strlen(data->dest)-1]);
+        cumulativeOutputPerSiteT(MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
+
         if (a == MSG_OK) {
             tracer_traffic(MSG_host_get_name(MSG_host_self()), destHostName, (double) MSG_file_get_size(file));
             minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);

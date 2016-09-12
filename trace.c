@@ -70,6 +70,9 @@ int set_0_all_routes(){
             msg_storage_t storage = MSG_storage_get_by_name(storage_variable);
             TRACE_host_variable_set("CERN", storage_variable, MSG_storage_get_used_size(storage));
         }
+
+        TRACE_host_variable_set(hosts[i], "datasetOnDisk", dataset_number(hosts[i], "1"));
+        TRACE_host_variable_set(hosts[i], "datasetOnTape", dataset_number(hosts[i], "0"));
     }
 
     return 0;
