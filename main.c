@@ -4,6 +4,7 @@
 
 #include <simgrid/msg.h>
 #include "messages.h"
+#include "myfunc_list.h"
 
 int scheduler(int argc, char *argv[]);
 int tier1(int argc, char *argv[]);
@@ -20,6 +21,8 @@ int main(int argc, char *argv[]){
     MSG_init(&argc, argv);
 
     MSG_create_environment(argv[1]);
+
+    declare_trace_variables();
 
     MSG_function_register("evil", evil);
     MSG_function_register("scheduler", scheduler);

@@ -22,6 +22,8 @@ int clearFile();
 int writeAnomaly(double clock);
 int set_0_all_routes();
 
+int declare_trace_variables();
+
 int plusLinkCounter(const char* src, const char* dst);
 int minusLinkCounter(const char* src, const char* dst);
 int tracer_traffic(const char* src, const char* dst, double size);

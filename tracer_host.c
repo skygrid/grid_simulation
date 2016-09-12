@@ -41,8 +41,3 @@ int subCorruptedCoreT(){
     return 0;
 }
 
-int cumulativeInputSiteT(){
-    MSG_sem_acquire(sem_link);
-    MSG_sem_release(sem_link);
-    return 0;
-}
