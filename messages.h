@@ -111,5 +111,11 @@ struct node {
     struct node *next;
 };
 
+typedef struct {
+    int number_used;
+    double last_used_time;
+
+}fileData, *fileDataPtr;
+
 
 #endif //CSIM2SIM_MESSAGES_H
