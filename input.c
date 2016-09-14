@@ -6,8 +6,11 @@
 #include "myfunc_list.h"
 #include "messages.h"
 
+jobType charToEnum(char *sval);
 char* path_to_output;
 
+char* typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
+                    "MCSIMULATION", "TEST", NULL};
 
 int input(){
     fp = fopen (path_to_output, "a");
@@ -61,4 +64,13 @@ int input(){
     }
     CsvParser_destroy(csvparser);
     return 0;
+}
+
+jobType charToEnum(char *sval)
+{
+    jobType result=USER;
+    int i=0;
+    for (i=0; typesStr[i]!=NULL; ++i, ++result)
+        if (0==strcasecmp(sval, typesStr[i])) return result;
+    return UNKNOWN;
 }
