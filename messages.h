@@ -113,8 +113,7 @@ struct node {
 
 typedef struct {
     int number_used;
-    double last_used_time;
-
+    xbt_dynar_t *all_using_clock;
 }fileData, *fileDataPtr;
 
 

@@ -9,6 +9,7 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo);
 int copy_from_tape_to_disk(dataInfoPtr data_info);
 void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo);
 int task_executor(jobPtr jobInfo);
+void file_usage_counter(msg_file_t *filePtr);
 
 
 void plusOneActiveCore();
@@ -91,9 +92,11 @@ int copy_from_tape_to_disk(dataInfoPtr data_info){
     // Open, copy and close file    "0" means TAPE
     if (!strcmp(data_info->storage_type, "0")){
         file = MSG_file_open(data_info->input_file_path, NULL);
+
+        file_usage_counter(&file);
+
         MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name), data_info->copy_from_tape_to_disk_name);
         MSG_file_close(file);
-
         // trace storage and dataset amount to disk space
         tracer_storage(data_info->destination_name, data_info->storage_type);
         addDatasetAmountT(data_info->destination_name, "1");
@@ -108,11 +111,15 @@ int copy_from_tape_to_disk(dataInfoPtr data_info){
 
 
 void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
+    double clock = MSG_get_clock();
     msg_file_t file;
     if (strcmp(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()))){
 
         // DOWNLOADING FILE FROM ANOTHER TIER
         file = MSG_file_open(dataInfo->input_file_path, NULL);
+        file_usage_counter(&file);
+
+
         plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
 
@@ -134,7 +141,9 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
         }
         minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_file_t d_file = MSG_file_open(dataInfo->copy_file_path, NULL);
+        file_usage_counter(&d_file);
         MSG_file_read(d_file, (sg_size_t) jobInfo->inputSize);
+
         MSG_file_close(file);
         MSG_file_close(d_file);
     }
@@ -142,6 +151,7 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
     //If I have data, I open and read it
 
     msg_file_t i_data = MSG_file_open(dataInfo->input_file_path, NULL);
+    file_usage_counter(&i_data);
     MSG_file_read(i_data, (sg_size_t) jobInfo->inputSize);
     MSG_file_close(i_data);
 
@@ -224,4 +234,15 @@ int my_on_exit(){
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
     writeToFile(fp, jobInfo);
     return 0;
+}
+
+
+void file_usage_counter(msg_file_t* filePtr){
+    double clock = MSG_get_clock();
+
+    fileDataPtr file_label = MSG_file_get_data(*filePtr);
+    file_label->number_used += 1;
+    xbt_dynar_push_as(*(file_label->all_using_clock), double, clock);
+
+    return;
 }
