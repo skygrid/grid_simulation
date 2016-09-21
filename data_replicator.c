@@ -14,7 +14,8 @@ int data_replicator(int argc, char* argv[]){
     jobPtr replica = MSG_process_get_data(MSG_process_self());
     int replica_number = replica->outputNumber;
 
-    char* outputLocations[] = {replica->outputHost1, replica->outputHost2, replica->outputHost3, replica->outputHost4, replica->outputHost5, replica->outputHost6};
+    char* outputLocations[] = {replica->outputHost1, replica->outputHost2, replica->outputHost3, replica->outputHost4, replica->outputHost5,
+                               replica->outputHost6, replica->outputHost7, replica->outputHost8, replica->outputHost9, replica->outputHost10};
 
     for (int i = 0; i < replica_number; ++i) {
         uploadDataPtr data = xbt_new(uploadData, 1);

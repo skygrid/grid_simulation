@@ -19,13 +19,7 @@ lyambda = 0.0031
 Locations = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 Location_DISK = ["CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"]
 Location_TAPE = ["CNAF0", "GRIDKA0", "IN2P30", "PIC0", "RAL0", "SARA0", "RRCKI0"]
-NULL_REPLICA = [0, 0, 0, 0]
-
-xk = (3, 2, 1)  # Amount of locations data has
-pk = (0.7, 0.2, 0.1)  # Probabilities that data has such amount of data
-custm = stats.rv_discrete(name='custm', values=(xk, pk))
-prob_array_input = custm.rvs(size=job_amount)
-prob_array_output = custm.rvs(size=job_amount)
+NULL_REPLICA = "1,1,1,1,1,1,1,1,CERN0,+"
 
 types = ["MCSIMULATION", "USER", "DATASTRIPPING", "DATARECONSTRUCTION", "MERGE", "WGPRODUCTION", "MCRECONSTRUCTION", "TURBO", "MCStripping", "MCMERGE"]
 FLOP_SIZE_BY_TYPE = {"USER":0.34, "DATASTRIPPING":0.24, "MERGE":0.07, "MCStripping":0.03, "DATARECONSTRUCTION":0.56, "TURBO":0.03,  "MCRECONSTRUCTION":0.55, "WGPRODUCTION":0.22, "MCMERGE":0.17, "MCSIMULATION":1.07}
@@ -35,23 +29,23 @@ REPLICA_BY_TYPE = {"USER":[0, 0, 3, 0], "DATASTRIPPING":NULL_REPLICA, "MERGE":[1
 
 int_types = range(0, 10)
 types_pk = (0.507, 0.196, 0.108, 0.096, 0.058, 0.015, 0.005, 0.005, 0.004, 0.004)
-types_custmx = stats.rv_discrete(name='custm', values=(int_types, types_pk))
-types_custm = types_custmx.rvs(size=job_amount)
-
+types_custm = stats.rv_discrete(name='custm', values=(int_types, types_pk)).rvs(size=job_amount)
+mc_indexes = np.where(types_custm == 0)
 
 
 xtimes_array = np.arange(0, job_amount, 1)
-inp_array = np.zeros(job_amount).astype(dtype="str")
-out_array = np.arange(0, job_amount, 1).astype(dtype="str")
+xtimes_array = np.delete(xtimes_array, mc_indexes)
+inp_array = np.zeros(job_amount).astype(dtype="|S64")
+out_array = np.arange(0, job_amount, 1).astype(dtype="|S64")
 
-LOCATION_STR = np.zeros(job_amount).astype(dtype="str")
-STORAGE_TYPES = np.zeros(job_amount).astype(dtype="str")
-NREPIN = np.zeros(job_amount).astype(dtype="str")
-BYTE_SIZE = np.zeros(job_amount).astype(dtype="str")
+LOCATION_STR = np.zeros(job_amount).astype(dtype="|S64")
+STORAGE_TYPES = np.zeros(job_amount).astype(dtype="|S64")
+NREPIN = np.zeros(job_amount).astype(dtype="|S64")
+BYTE_SIZE = np.zeros(job_amount).astype(dtype="|S64")
 
 
 def my_func():
-	for i in xtimes_array:
+	for i in range(len(xtimes_array)):
 		# MC or Reconst
 		if (types_custm[i] == 0) | (types_custm[i] == 3):
 			depth = 3
@@ -75,11 +69,11 @@ def fill_array(dataset_name, depth):
 		return
 	if len(xtimes_array) == 0:
 		return "x"
-	mu = 20
-	sigma = 10
-	z = 10
+	mu = random.randint(20, 40)
+	sigma = random.randint(20, 40)
+	z = random.randint(20, 60)
 
-	amount_dataset = stats.binom.rvs(7, p=0.3)
+	amount_dataset = stats.binom.rvs(random.randint(10, 20), p=0.3)
 
 	if len(xtimes_array) <= amount_dataset:
 		amount_dataset = len(xtimes_array)
@@ -95,29 +89,16 @@ def fill_array(dataset_name, depth):
 	inp_indexes = np.sort(np.random.choice(xtimes_array[:z], size=amount_dataset, replace=False, p=prob))
 	xtimes_array = np.setdiff1d(xtimes_array, inp_indexes)
 
+	random.shuffle(Locations)
 	for item in inp_indexes:
-		random.shuffle(Locations)
 		data_size = 28 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[item]]] else 0
 		inp_array[item] = dataset_name
 		out_array[item] = "out_dataset" + "_" + str(item)
 		
-		NREpIn = prob_array_input[item]
-		if types[types_custm[item]] == 'MCSIMULATION':
-		    location_str = "0,0,0,0"
-		    storage_types = "none,none,none,none"
-		    NREpIn = 0
-		else:
-		    if NREpIn == 1:
-		        location_str = ",".join(Locations[:prob_array_input[item]]) + ",0,0,0"
-		        storage_types = "1,none,none,none"
-		    elif NREpIn == 2:
-		        location_str = ",".join(Locations[:prob_array_input[item]]) + ",0,0"
-		        storage_types = "1,0,none,none"
-		    else:
-		        location_str = ",".join(Locations[:prob_array_input[item]]) + ",0"
-		        storage_types = "1,1,0,none"
-		
-		
+		NREpIn = 10
+		location_str = ",".join(Locations) + ",CERN," + str(Locations[0])
+		storage_types = "1,1,1,1,1,1,1,1,0,0"
+
 		LOCATION_STR[item] = location_str
 		STORAGE_TYPES[item] = storage_types
 		NREPIN[item] = NREpIn
@@ -144,34 +125,36 @@ times_array += big_noize
 
 
 f = open("input.csv", "w")
-f.write("Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRep, Location1, Location2, Location3, Location4, Storage_T1, Storage_T2, Storage_T3, Storage_T4, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6\n")
+f.write("Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRep, Location1, Location2, Location3, Location4, Location5, Location6, Location7, Location8, Location9, Location10, Storage_T1, Storage_T2, Storage_T3, Storage_T4, Storage_T5, Storage_T6, Storage_T7, Storage_T8, Storage_T9, Storage_T10, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6, OutLoc7, OutLoc7, OutLoc9, OutLoc10\n")
 
 
 
 for i in range(job_amount):
-    name = "Job" + str(i)
-    cpu_size = 86400 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0] 
-    out_size = np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+	name = "Job" + str(i)
+	cpu_size = 86400 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+	out_size = np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
 
-    #cpu_size = 86400 * 10**9 * random.uniform(0.85*FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*FLOP_SIZE_BY_TYPE[types[types_custm[i]]])
-    #data_size = 28 * random.uniform(0.85*INPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*INPUT_SIZE_BY_TYPE[types[types_custm[i]]])
-    #out_size = random.uniform(0.85*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]])
+	random.shuffle(Location_DISK)
+	random.shuffle(Location_TAPE)
 
-    random.shuffle(Location_DISK)
-    random.shuffle(Location_TAPE)
+	if types[types_custm[i]] == "MCSIMULATION":
+		dataset_name = "none"
+		locs = "0,0,0,0,0,0,0,0,0,0"
+		storage_types = "none,none,none,none,none,none,none,none,none,none"
+		byte_size = 0
+		out_dataset = "mc_out_data" + str(i)
+		nrepin = 0
+	else:
+		dataset_name = inp_array[i]
+		locs = LOCATION_STR[i]
+		storage_types = STORAGE_TYPES[i]
+		byte_size = BYTE_SIZE[i]
+		out_dataset = out_array[i]
+		nrepin = NREPIN[i]
 
-    NREpOut = sum(REPLICA_BY_TYPE[types[types_custm[i]]])
-    if types[types_custm[i]] == "MERGE":
-        output_locations = "CERN1,CERN0," + ",".join(Location_DISK[:3]) + "," + Location_TAPE[0]
-    elif types[types_custm[i]] == "MCMERGE":
-        output_locations = "CERN1,CERN0," + ",".join(Location_DISK[:2]) + "," + Location_TAPE[0] + ",0"
-    elif types[types_custm[i]] == "USER":
-        output_locations = ",".join(Location_DISK[:3]) + ",0,0,0"
-    else:
-        output_locations= "0,0,0,0,0,0"
-
-    string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + inp_array[i] + "," + BYTE_SIZE[i] + "," + NREPIN[i] + "," + LOCATION_STR[i] + "," + STORAGE_TYPES[i] + "," + out_array[i] + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations+ "\n"
-    f.write(string)
+	NREpOut = 10
+	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + ",".join(Location_DISK) + ",CERN1,CERN0,+" + "\n"
+	f.write(string)
 
 f.close()
 

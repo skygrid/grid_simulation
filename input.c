@@ -67,7 +67,7 @@ int input(){
         jobX->outputHost6 = strdup((char*) rowFields[35]);
         jobX->outputHost7 = strdup((char*) rowFields[36]);
         jobX->outputHost8 = strdup((char*) rowFields[37]);
-        jobX->outputHost8 = strdup((char*) rowFields[38]);
+        jobX->outputHost9 = strdup((char*) rowFields[38]);
         jobX->outputHost10 = strdup((char*) rowFields[39]);
         jobX->successExecuted = 0;
         jobX->startClock = 0;
