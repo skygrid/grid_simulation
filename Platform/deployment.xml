@@ -46,10 +46,4 @@
 		<argument value="164"/>
 	</process>
 
-
-	<process host="CERN" function="delete_unpop_file">
-		<argument value="86400"/>
-	</process>
-
-
 </platform>

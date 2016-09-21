@@ -9,7 +9,7 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo);
 int copy_from_tape_to_disk(dataInfoPtr data_info);
 void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo);
 int task_executor(jobPtr jobInfo);
-void file_usage_counter(msg_file_t *filePtr);
+void file_usage_counter(char* filename);
 
 
 void plusOneActiveCore();
@@ -53,8 +53,14 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo){
     char* dest;
     char* storageType;
 
-    char *dataLocations[] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3, jobInfo->dataLocHost4};
-    char *storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4};
+    char* dataLocations[] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3, jobInfo->dataLocHost4,
+                             jobInfo->dataLocHost5, jobInfo->dataLocHost6, jobInfo->dataLocHost7, jobInfo->dataLocHost8,
+                             jobInfo->dataLocHost9, jobInfo->dataLocHost10};
+    char* storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4,
+                            jobInfo->storageType5, jobInfo->storageType6, jobInfo->storageType7, jobInfo->storageType8,
+                            jobInfo->storageType9, jobInfo->storageType10};
+
+
     int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
 
     // Checks does tier have data on the own storage
@@ -75,14 +81,12 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo){
             sprintf(copy_file_path, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->inputFileName);
         }
     }
-
     dataInfoPtr data_info = xbt_new(dataInfo, 1);
     data_info->destination_name = dest;
     data_info->input_file_path = input_file_path;
     data_info->copy_from_tape_to_disk_name = copy_from_tape_to_disk_name;
     data_info->copy_file_path = copy_file_path;
     data_info->storage_type = storageType;
-
     return data_info;
 }
 
@@ -93,9 +97,10 @@ int copy_from_tape_to_disk(dataInfoPtr data_info){
     if (!strcmp(data_info->storage_type, "0")){
         file = MSG_file_open(data_info->input_file_path, NULL);
 
-        file_usage_counter(&file);
+        file_usage_counter(data_info->input_file_path);
 
         MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name), data_info->copy_from_tape_to_disk_name);
+        create_file_label(data_info->copy_from_tape_to_disk_name);
         MSG_file_close(file);
         // trace storage and dataset amount to disk space
         tracer_storage(data_info->destination_name, data_info->storage_type);
@@ -117,11 +122,11 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
 
         // DOWNLOADING FILE FROM ANOTHER TIER
         file = MSG_file_open(dataInfo->input_file_path, NULL);
-        file_usage_counter(&file);
-
+        file_usage_counter(dataInfo->input_file_path);
 
         plusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path);
+        create_file_label(dataInfo->copy_file_path);
 
         //tracing number of dataset
         addDatasetAmountT(MSG_host_get_name(MSG_host_self()), "1");
@@ -141,7 +146,7 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
         }
         minusLinkCounter(dataInfo->destination_name, MSG_host_get_name(MSG_host_self()));
         msg_file_t d_file = MSG_file_open(dataInfo->copy_file_path, NULL);
-        file_usage_counter(&d_file);
+        file_usage_counter(dataInfo->copy_file_path);
         MSG_file_read(d_file, (sg_size_t) jobInfo->inputSize);
 
         MSG_file_close(file);
@@ -151,7 +156,7 @@ void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo){
     //If I have data, I open and read it
 
     msg_file_t i_data = MSG_file_open(dataInfo->input_file_path, NULL);
-    file_usage_counter(&i_data);
+    file_usage_counter(dataInfo->input_file_path);
     MSG_file_read(i_data, (sg_size_t) jobInfo->inputSize);
     MSG_file_close(i_data);
 
@@ -196,10 +201,12 @@ int task_executor(jobPtr jobInfo){
     //Write output to file
     outFile = MSG_file_open(outputFilePath, NULL);
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
+    create_file_label(outputFilePath);
     MSG_file_close(outFile);
 
     // tracing
     addDatasetAmountT(MSG_host_get_name(MSG_host_self()), "1");
+    tracer_storage(MSG_host_get_name(MSG_host_self()), "1");
 
     return 0;
 }
@@ -237,12 +244,12 @@ int my_on_exit(){
 }
 
 
-void file_usage_counter(msg_file_t* filePtr){
+void file_usage_counter(char* filename){
+    return;
     double clock = MSG_get_clock();
-
-    fileDataPtr file_label = MSG_file_get_data(*filePtr);
-    file_label->number_used += 1;
-    xbt_dynar_push_as(*(file_label->all_using_clock), double, clock);
-
+    fileDataPtr data = xbt_dict_get(dict, filename);
+    data->number_used += 1;
+    data->used = "1";
+    xbt_dynar_push_as(data->all_using_clock, double, clock);
     return;
 }

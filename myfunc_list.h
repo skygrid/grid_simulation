@@ -13,6 +13,7 @@ int input();
 
 extern FILE* fp;
 extern msg_sem_t sem_link;
+extern xbt_dict_t dict;
 
 int data_replicator(int argc, char* argv[]);
 int job_requester();
@@ -62,5 +63,9 @@ jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host);
 
 void free_local_queue();
 void printList();
+
+
+int initialize_file_labels();
+int create_file_label(char* filename);
 
 #endif //CSIM2SIM_MYFUNC_LIST_H

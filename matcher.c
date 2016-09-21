@@ -80,10 +80,16 @@ jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host){
             continue;
         }
 
-        char* dataLocations[] = {local_current->jobX->dataLocHost1, local_current->jobX->dataLocHost2, local_current->jobX->dataLocHost3, local_current->jobX->dataLocHost4};
+        char* dataLocations[] = {local_current->jobX->dataLocHost1, local_current->jobX->dataLocHost2, local_current->jobX->dataLocHost3, local_current->jobX->dataLocHost4,
+                                 local_current->jobX->dataLocHost5, local_current->jobX->dataLocHost6, local_current->jobX->dataLocHost7, local_current->jobX->dataLocHost8,
+                                 local_current->jobX->dataLocHost9, local_current->jobX->dataLocHost10};
+        char* storage_types[] = {local_current->jobX->storageType1, local_current->jobX->storageType2, local_current->jobX->storageType3, local_current->jobX->storageType4,
+                                 local_current->jobX->storageType5, local_current->jobX->storageType6, local_current->jobX->storageType7, local_current->jobX->storageType8,
+                                 local_current->jobX->storageType9, local_current->jobX->storageType10};
+
         int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
         for (int j = 0; j < n; ++j) {
-            if (!strcmp(dataLocations[j], host)){
+            if ((!strcmp(dataLocations[j], host)) & (!strcmp(storage_types[j], "1"))){
                 k = 5;
                 local_current->jobX->startSchedulClock = MSG_get_clock();
                 jobBatch[amount_of_matched_jobs] = local_current->jobX;

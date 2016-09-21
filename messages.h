@@ -39,11 +39,23 @@ typedef struct{
     char* dataLocHost2;
     char* dataLocHost3;
     char* dataLocHost4;
+    char* dataLocHost5;
+    char* dataLocHost6;
+    char* dataLocHost7;
+    char* dataLocHost8;
+    char* dataLocHost9;
+    char* dataLocHost10;
 
     char* storageType1;
     char* storageType2;
     char* storageType3;
     char* storageType4;
+    char* storageType5;
+    char* storageType6;
+    char* storageType7;
+    char* storageType8;
+    char* storageType9;
+    char* storageType10;
 
     int outputNumber;
     char* outputHost1;
@@ -52,6 +64,12 @@ typedef struct{
     char* outputHost4;
     char* outputHost5;
     char* outputHost6;
+    char* outputHost7;
+    char* outputHost8;
+    char* outputHost9;
+    char* outputHost10;
+
+
     char* downloadSite;
     char* outputName;
     double outputFileSize;
@@ -113,7 +131,8 @@ struct node {
 
 typedef struct {
     int number_used;
-    xbt_dynar_t *all_using_clock;
+    char* used;
+    xbt_dynar_t all_using_clock;
 }fileData, *fileDataPtr;
 
 

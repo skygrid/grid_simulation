@@ -33,11 +33,28 @@ int uploader(int argc, char* argv[]){
     char *curFilePath = malloc(50);
     char *pathAtDest = malloc(50);
     char *destHostName = malloc(15);
+    char *stor_type = malloc(1);
 
     uploadDataPtr data = MSG_process_get_data(MSG_process_self());
 
-    destHostName = strdup(data->dest);
-    destHostName[strlen(destHostName)-1] = '\0';
+    //Copy to own tape
+    if (!strcmp(data->dest, "+")){
+        sprintf(curFilePath, "/%s1/%s", MSG_host_get_name(MSG_host_self()), data->filename);
+        sprintf(pathAtDest, "/%s0/%s", MSG_host_get_name(MSG_host_self()), data->filename);
+        file = MSG_file_open(curFilePath, NULL);
+        MSG_file_rcopy(file, MSG_host_self(), pathAtDest);
+
+        sprintf(destHostName, "%s", (char*) MSG_host_get_name(MSG_host_self()));
+        sprintf(stor_type, "%s", "0");
+
+        addDatasetAmountT(MSG_host_get_name(MSG_host_self()), "0");
+        cumulativeOutputPerSiteT(MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
+
+    }else{
+        destHostName = strdup(data->dest);
+        destHostName[strlen(destHostName)-1] = '\0';
+        strcpy(stor_type, &(data->dest)[strlen(data->dest)-1]);
+    }
 
     if (strcmp(MSG_host_get_name(MSG_host_self()), destHostName)) {
 
@@ -50,6 +67,7 @@ int uploader(int argc, char* argv[]){
         plusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
 
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest);
+        create_file_label(pathAtDest);
 
         //trace number of datasets and output traffic from site
         addDatasetAmountT(destHostName, &data->dest[strlen(data->dest)-1]);
@@ -63,15 +81,11 @@ int uploader(int argc, char* argv[]){
         }  else {
             minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
             MSG_file_close(file);
-            XBT_INFO("Transfer fail occurred", "%s");
+            XBT_INFO("Transfer fail occurred");
         }
     }
 
     //trace storage
-
-    char *stor_type = malloc(1);
-    strcpy(stor_type, &(data->dest)[strlen(data->dest)-1]);
-
     tracer_storage(destHostName, stor_type);
     //clearing memory
 
