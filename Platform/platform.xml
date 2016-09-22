@@ -61,58 +61,58 @@
 
 		<storage_type id="NEARLINE_HDD0" size="20600TB" model="linear_no_lat"
 				content="Content/CERN_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD1" size="7578TB" model="linear_no_lat"
 				content="Content/CNAF_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD2" size="4300TB" model="linear_no_lat"
 				content="Content/GRIDKA_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD3" size="4360TB" model="linear_no_lat"
 				content="Content/IN2P3_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD4" size="1677TB" model="linear_no_lat"
 				content="Content/PIC_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD5" size="12630TB" model="linear_no_lat"
 				content="Content/RAL_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD6" size="3019TB" model="linear_no_lat"
 				content="Content/SARA_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage_type id="NEARLINE_HDD7" size="1677TB" model="linear_no_lat"
 				content="Content/RRCKI_content_nearline.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="1GBps"/>
-			<model_prop id="Bread" value="5GBps"/>
-			<model_prop id="Bconnection" value="1.2GBps"/>
+			<model_prop id="Bwrite" value="0.01GBps"/>
+			<model_prop id="Bread" value="0.05GBps"/>
+			<model_prop id="Bconnection" value="0.012GBps"/>
 		</storage_type>
 
 		<storage id="CERN1" typeId="single_HDD0" attach="CERN"/>

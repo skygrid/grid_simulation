@@ -7,6 +7,32 @@
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
+void check_files_availability(jobPtr jobInfo){
+    char* input_file_path = malloc(50);
+    msg_file_t file;
+
+    char** dataLocations[] = {&jobInfo->dataLocHost1, &jobInfo->dataLocHost2, &jobInfo->dataLocHost3, &jobInfo->dataLocHost4,
+                             &jobInfo->dataLocHost5, &jobInfo->dataLocHost6, &jobInfo->dataLocHost7, &jobInfo->dataLocHost8,
+                             &jobInfo->dataLocHost9, &jobInfo->dataLocHost10};
+    char* storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4,
+                            jobInfo->storageType5, jobInfo->storageType6, jobInfo->storageType7, jobInfo->storageType8,
+                            jobInfo->storageType9, jobInfo->storageType10};
+
+    int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
+
+    for (int i = 0; i < n; ++i) {
+        if (!strcmp(*dataLocations[i], "0")){
+            continue;
+        }
+        sprintf(input_file_path, "/%s%s/%s", *dataLocations[i], storageTypes[i], jobInfo->inputFileName);
+        file = MSG_file_open(input_file_path, NULL);
+        if (MSG_file_get_size(file) == 0){
+            *dataLocations[i] = "0";
+        }
+
+    }
+}
+
 jobBatch_AmountPtr matcher(long amountRequestedJob){
     int amount_of_matched_jobs = 0;
 
@@ -30,6 +56,10 @@ jobBatch_AmountPtr matcher(long amountRequestedJob){
         local_current->jobX->stExecClock = 0;
         local_current->jobX->endExecClock = 0;
         local_current->jobX->successExecuted = 0;
+
+        //check file availability
+        check_files_availability(local_current->jobX);
+
         jobBatch[amount_of_matched_jobs] = local_current->jobX;
         amount_of_matched_jobs++;
 

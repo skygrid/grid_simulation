@@ -36,6 +36,7 @@ int addCorruptedCoreT();
 int subCorruptedCoreT();
 
 int addDatasetAmountT(const char* host_name, char* type);
+int minusDatasetAmountT(char* host_name, char* type);
 void cumulativeInputPerSiteT(const char* host_name, double size);
 void cumulativeOutputPerSiteT(const char* host_name, double size);
 int tracer_storage(char* storage_name, char* storage_type);
@@ -67,5 +68,6 @@ void printList();
 
 int initialize_file_labels();
 int create_file_label(char* filename);
+void file_usage_counter(char* filename);
 
 #endif //CSIM2SIM_MYFUNC_LIST_H

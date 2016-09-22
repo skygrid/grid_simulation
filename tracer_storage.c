@@ -44,6 +44,19 @@ int addDatasetAmountT(const char* host_name, char* type){
     return 0;
 }
 
+int minusDatasetAmountT(char* host_name, char* type){
+    MSG_sem_acquire(sem_link);
+    // O -- Tape
+    if (!strcmp(type, "0")){
+        TRACE_host_variable_sub(host_name, "datasetOnTape", 1);
+    }else{
+        TRACE_host_variable_sub(host_name, "datasetOnDisk", 1);
+    }
+    free(host_name);
+    MSG_sem_release(sem_link);
+
+}
+
 // Returns a number of dataset on a given storage
 long dataset_number(char* host_name, char* storage_type){
 
@@ -61,7 +74,7 @@ long dataset_number(char* host_name, char* storage_type){
         amount++;
     }
     free(storage_name);
-    xbt_free(storage_content);
+    xbt_dict_free(storage_content);
     return amount;
 
 }

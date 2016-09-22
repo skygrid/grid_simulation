@@ -78,7 +78,7 @@ int uploader(int argc, char* argv[]){
             tracer_traffic(MSG_host_get_name(MSG_host_self()), destHostName, (double) MSG_file_get_size(file));
             minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
             MSG_file_close(file);
-            XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
+            //XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
         }  else {
             minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
             MSG_file_close(file);

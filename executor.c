@@ -9,7 +9,6 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo);
 int copy_from_tape_to_disk(dataInfoPtr data_info);
 void download_or_read_file(jobPtr jobInfo, dataInfoPtr dataInfo);
 int task_executor(jobPtr jobInfo);
-void file_usage_counter(char* filename);
 
 
 void plusOneActiveCore();
@@ -72,13 +71,18 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo){
             storageType = storageTypes[i];
             break;
         }
-        // If tier doesn't have storage on the own
+        // If tier doesn't have storage on the own, find available data on another tier
         if (i == (n-1)){
-            dest = jobInfo->dataLocHost1;
-            storageType = jobInfo->storageType1;
-            sprintf(input_file_path, "/%s%s/%s", jobInfo->dataLocHost1, jobInfo->storageType1, jobInfo->inputFileName);
-            sprintf(copy_from_tape_to_disk_name, "/%s1/%s", jobInfo->dataLocHost1, jobInfo->inputFileName);
-            sprintf(copy_file_path, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->inputFileName);
+            for (int j = 0; j < n; ++j) {
+                if (strcmp(dataLocations[j], "0")){
+                    dest = dataLocations[j];
+                    storageType = storageTypes[j];
+                    sprintf(input_file_path, "/%s%s/%s", dest, storageType, jobInfo->inputFileName);
+                    sprintf(copy_from_tape_to_disk_name, "/%s1/%s", dest, jobInfo->inputFileName);
+                    sprintf(copy_file_path, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->inputFileName);
+                }
+
+            }
         }
     }
     dataInfoPtr data_info = xbt_new(dataInfo, 1);
@@ -241,15 +245,4 @@ int my_on_exit(){
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
     writeToFile(fp, jobInfo);
     return 0;
-}
-
-
-void file_usage_counter(char* filename){
-    return;
-    double clock = MSG_get_clock();
-    fileDataPtr data = xbt_dict_get(dict, filename);
-    data->number_used += 1;
-    data->used = "1";
-    xbt_dynar_push_as(data->all_using_clock, double, clock);
-    return;
 }
