@@ -81,7 +81,6 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo){
                     sprintf(copy_from_tape_to_disk_name, "/%s1/%s", dest, jobInfo->inputFileName);
                     sprintf(copy_file_path, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->inputFileName);
                 }
-
             }
         }
     }

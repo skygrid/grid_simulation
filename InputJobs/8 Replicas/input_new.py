@@ -132,7 +132,7 @@ f.write("Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRe
 for i in range(job_amount):
 	name = "Job" + str(i)
 	cpu_size = 8640 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
-	out_size = 0.5*np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+	out_size = np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
 
 	random.shuffle(Location_DISK)
 	random.shuffle(Location_TAPE)

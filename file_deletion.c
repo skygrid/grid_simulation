@@ -20,6 +20,8 @@ int initialize_file_labels(){
 
     dict = xbt_dict_new();
     xbt_dynar_t storages = MSG_storages_as_dynar();
+
+
     xbt_dynar_foreach(storages, cur, st){
         storage_name = (char*) MSG_storage_get_name(st);
 
@@ -97,26 +99,24 @@ int delete_unpopular_file(int argc, char* argv[]){
     msg_file_t file;
     while (TRUE){
         MSG_process_sleep(sleep_time);
-        double delete_time = 6*86400;
+        double delete_time = 5*86400;
 
         double current_time = MSG_get_clock();
         char* filename;
-        size_t data_size;
+        fileDataPtr data;
 
         xbt_dict_cursor_t cursor = NULL;
 
-        xbt_dict_foreach(dict, cursor, filename, data_size){
-
-            fileDataPtr data = xbt_dict_get(dict, filename);
+        xbt_dict_foreach(dict, cursor, filename, data){
             double last_used_time = xbt_dynar_getlast_as(data->all_using_clock, double);
 
             if (NULL == data->used) continue;
 
             if ((last_used_time + delete_time) < current_time){
-                XBT_INFO("delete &s", filename);
+                XBT_INFO("delete %s", filename);
                 file = MSG_file_open(filename, NULL);
-                MSG_file_unlink(file);
                 minusDatasetAmountT(find_host(filename), "1");
+                MSG_file_unlink(file);
                 xbt_dict_remove(dict, filename);
             }
         }

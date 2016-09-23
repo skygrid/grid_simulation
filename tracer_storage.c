@@ -6,6 +6,8 @@
 
 FILE* storage_fp;
 
+XBT_LOG_NEW_DEFAULT_CATEGORY(dataset, "messages specific for dataset");
+
 int tracer_storage(char* hostname, char* storage_type){
     char* storage_name = malloc(15);
     sprintf(storage_name, "%s%s", hostname, storage_type);
@@ -32,12 +34,15 @@ void cumulativeOutputPerSiteT(const char* host_name, double size){
 }
 
 int addDatasetAmountT(const char* host_name, char* type){
+
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!strcmp(type, "0")){
-        TRACE_host_variable_add(host_name, "datasetOnTape", 1);
+        //TRACE_host_variable_add(host_name, "datasetOnTape", 1);
+        TRACE_host_variable_set(host_name, "datasetOnTape", dataset_number(host_name, "0"));
     }else{
-        TRACE_host_variable_add(host_name, "datasetOnDisk", 1);
+        //TRACE_host_variable_add(host_name, "datasetOnDisk", 1);
+        TRACE_host_variable_set(host_name, "datasetOnDisk", dataset_number(host_name, "1"));
     }
 
     MSG_sem_release(sem_link);
@@ -48,12 +53,15 @@ int minusDatasetAmountT(char* host_name, char* type){
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!strcmp(type, "0")){
-        TRACE_host_variable_sub(host_name, "datasetOnTape", 1);
+        TRACE_host_variable_set(host_name, "datasetOnTape", dataset_number(host_name, "0"));
+        //TRACE_host_variable_sub(host_name, "datasetOnTape", 1);
     }else{
-        TRACE_host_variable_sub(host_name, "datasetOnDisk", 1);
+        TRACE_host_variable_set(host_name, "datasetOnDisk", dataset_number(host_name, "1"));
+        //TRACE_host_variable_sub(host_name, "datasetOnDisk", 1);
     }
     free(host_name);
     MSG_sem_release(sem_link);
+    return 0;
 
 }
 
@@ -74,7 +82,8 @@ long dataset_number(char* host_name, char* storage_type){
         amount++;
     }
     free(storage_name);
-    xbt_dict_free(storage_content);
+    xbt_dict_free(&storage_content);
+    xbt_dict_cursor_free(&cursor);
     return amount;
 
 }

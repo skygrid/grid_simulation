@@ -15,7 +15,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/unpopular_file_deletion.c" afterPath="$PROJECT_DIR$/file_deletion.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CSim2Sim.iml" afterPath="$PROJECT_DIR$/.idea/CSim2Sim.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py" afterPath="$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" />
@@ -33,17 +36,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/deployment.xml" afterPath="$PROJECT_DIR$/Platform/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/platform.xml" afterPath="$PROJECT_DIR$/Platform/platform.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/Plots.ipynb" afterPath="$PROJECT_DIR$/Results/Plots.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_replicator.c" afterPath="$PROJECT_DIR$/data_replicator.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executor.c" afterPath="$PROJECT_DIR$/executor.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.csv" afterPath="$PROJECT_DIR$/input.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matcher.c" afterPath="$PROJECT_DIR$/matcher.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myfunc_list.h" afterPath="$PROJECT_DIR$/myfunc_list.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trace.c" afterPath="$PROJECT_DIR$/trace.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tracer_storage.c" afterPath="$PROJECT_DIR$/tracer_storage.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unpopular_file_deletion.c" afterPath="$PROJECT_DIR$/unpopular_file_deletion.c" />
     </list>
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,47 +63,26 @@
       <file leaf-file-name="data_replicator.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_replicator.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+            <state relative-caret-position="322">
+              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="executor.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="executor.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/executor.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+            <state relative-caret-position="353">
+              <caret line="107" column="57" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
               <folding>
                 <element signature="e#37#61#0" expanded="true" />
-                <element signature="e#6743#8049#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="matcher.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matcher.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unpopular_file_deletion.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/unpopular_file_deletion.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
-              <folding>
-                <element signature="e#38#62#0" expanded="true" />
-                <element signature="e#216#1422#0" expanded="true" />
-                <element signature="e#1424#1782#0" expanded="true" />
-                <element signature="e#1784#2258#0" expanded="true" />
-                <element signature="e#2260#2492#0" expanded="true" />
+                <element signature="e#1108#3650#0" expanded="true" />
+                <element signature="e#4526#6740#0" expanded="true" />
+                <element signature="e#6742#8048#0" expanded="true" />
+                <element signature="e#8051#8433#0" expanded="true" />
+                <element signature="e#8435#8818#0" expanded="true" />
+                <element signature="e#8821#8947#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,13 +91,27 @@
       <file leaf-file-name="tracer_storage.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tracer_storage.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="340">
+              <caret line="55" column="74" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="74" />
               <folding>
-                <element signature="e#107#444#0" expanded="true" />
-                <element signature="e#852#1179#0" expanded="true" />
-                <element signature="e#1181#1511#0" expanded="true" />
-                <element signature="e#1513#2098#0" expanded="true" />
+                <element signature="e#37#61#0" expanded="true" />
+                <element signature="e#180#517#0" expanded="true" />
+                <element signature="e#519#719#0" expanded="true" />
+                <element signature="e#721#923#0" expanded="true" />
+                <element signature="e#925#1443#0" expanded="true" />
+                <element signature="e#1981#2602#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trace.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trace.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+              <folding>
+                <element signature="e#90#1042#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,7 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/writeAnomaly.c" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/clear_trace.py" />
         <option value="$PROJECT_DIR$/Failures/fail.py" />
         <option value="$PROJECT_DIR$/global_vabiables.h" />
@@ -175,17 +164,18 @@
         <option value="$PROJECT_DIR$/messages.h" />
         <option value="$PROJECT_DIR$/input.c" />
         <option value="$PROJECT_DIR$/scheduler.c" />
-        <option value="$PROJECT_DIR$/Platform/deployment.xml" />
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/matcher.c" />
         <option value="$PROJECT_DIR$/data_replicator.c" />
-        <option value="$PROJECT_DIR$/trace.c" />
-        <option value="$PROJECT_DIR$/tracer_storage.c" />
         <option value="$PROJECT_DIR$/myfunc_list.h" />
         <option value="$PROJECT_DIR$/Platform/platform.xml" />
         <option value="$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py" />
-        <option value="$PROJECT_DIR$/executor.c" />
         <option value="$PROJECT_DIR$/unpopular_file_deletion.c" />
+        <option value="$PROJECT_DIR$/Platform/deployment.xml" />
+        <option value="$PROJECT_DIR$/trace.c" />
+        <option value="$PROJECT_DIR$/file_deletion.c" />
+        <option value="$PROJECT_DIR$/tracer_storage.c" />
+        <option value="$PROJECT_DIR$/executor.c" />
       </list>
     </option>
   </component>
@@ -197,9 +187,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="52" />
-    <option name="width" value="1356" />
-    <option name="height" value="686" />
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -605,12 +595,13 @@
       <workItem from="1474365590760" duration="20085000" />
       <workItem from="1474394486895" duration="8391000" />
       <workItem from="1474458834968" duration="17871000" />
-      <workItem from="1474540049767" duration="16529000" />
+      <workItem from="1474540049767" duration="20251000" />
+      <workItem from="1474626186092" duration="15866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="661744000" />
+    <option name="totallyTimeSpent" value="681332000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,21 +613,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1356" height="686" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22055514" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22040209" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58576053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50535715" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6618123" sideWeight="0.5026061" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10194175" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.741433" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.475" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74642855" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.512945" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21518987" sideWeight="0.34935898" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.81964284" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46763754" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -660,14 +651,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="528" />
+      <option name="time" value="547" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="MSG_get_clock()" language="ObjectiveC" />
-        <watch expression="last_used_time" language="ObjectiveC" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/input.csv">
@@ -834,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/xbt/dict.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/xbt/lib.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -877,19 +856,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="32" column="70" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/xbt/exception.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,14 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trace.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -941,53 +901,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="e#418#1073#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
-          <folding>
-            <element signature="e#3101#4417#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/xbt/xbt_main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
+        <state relative-caret-position="444">
           <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tracer_storage.c">
+    <entry file="file://$PROJECT_DIR$/Platform/deployment.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
-          <folding>
-            <element signature="e#107#444#0" expanded="true" />
-            <element signature="e#852#1179#0" expanded="true" />
-            <element signature="e#1181#1511#0" expanded="true" />
-            <element signature="e#1513#2098#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_replicator.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+        <state relative-caret-position="36">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executor.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
-          <folding>
-            <element signature="e#37#61#0" expanded="true" />
-            <element signature="e#6743#8049#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -999,24 +943,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platform/deployment.xml">
+    <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/xbt/dict.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+        <state relative-caret-position="80">
+          <caret line="415" column="0" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unpopular_file_deletion.c">
+    <entry file="file://$PROJECT_DIR$/file_deletion.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        <state relative-caret-position="306">
+          <caret line="117" column="62" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
           <folding>
             <element signature="e#38#62#0" expanded="true" />
-            <element signature="e#216#1422#0" expanded="true" />
-            <element signature="e#1424#1782#0" expanded="true" />
-            <element signature="e#1784#2258#0" expanded="true" />
-            <element signature="e#2260#2492#0" expanded="true" />
+            <element signature="e#216#1424#0" expanded="true" />
+            <element signature="e#1426#1784#0" expanded="true" />
+            <element signature="e#1786#2260#0" expanded="true" />
+            <element signature="e#2262#2494#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trace.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+          <folding>
+            <element signature="e#90#1042#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tracer_storage.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="55" column="74" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="74" />
+          <folding>
+            <element signature="e#37#61#0" expanded="true" />
+            <element signature="e#180#517#0" expanded="true" />
+            <element signature="e#519#719#0" expanded="true" />
+            <element signature="e#721#923#0" expanded="true" />
+            <element signature="e#925#1443#0" expanded="true" />
+            <element signature="e#1981#2602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_replicator.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executor.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="107" column="57" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
+          <folding>
+            <element signature="e#37#61#0" expanded="true" />
+            <element signature="e#1108#3650#0" expanded="true" />
+            <element signature="e#4526#6740#0" expanded="true" />
+            <element signature="e#6742#8048#0" expanded="true" />
+            <element signature="e#8051#8433#0" expanded="true" />
+            <element signature="e#8435#8818#0" expanded="true" />
+            <element signature="e#8821#8947#0" expanded="true" />
           </folding>
         </state>
       </provider>
