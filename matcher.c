@@ -109,6 +109,7 @@ jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host){
 
             continue;
         }
+        check_files_availability(local_current->jobX);
 
         char* dataLocations[] = {local_current->jobX->dataLocHost1, local_current->jobX->dataLocHost2, local_current->jobX->dataLocHost3, local_current->jobX->dataLocHost4,
                                  local_current->jobX->dataLocHost5, local_current->jobX->dataLocHost6, local_current->jobX->dataLocHost7, local_current->jobX->dataLocHost8,

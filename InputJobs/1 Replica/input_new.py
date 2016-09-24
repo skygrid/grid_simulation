@@ -31,10 +31,11 @@ int_types = range(0, 10)
 types_pk = (0.507, 0.196, 0.108, 0.096, 0.058, 0.015, 0.005, 0.005, 0.004, 0.004)
 types_custmx = stats.rv_discrete(name='custm', values=(int_types, types_pk))
 types_custm = types_custmx.rvs(size=job_amount)
-
+mc_indexes = np.where(types_custm == 0)
 
 
 xtimes_array = np.arange(0, job_amount, 1)
+xtimes_array = np.delete(xtimes_array, mc_indexes)
 inp_array = np.zeros(job_amount).astype(dtype="|S64")
 out_array = np.arange(0, job_amount, 1).astype(dtype="|S64")
 
@@ -69,11 +70,11 @@ def fill_array(dataset_name, depth):
 		return
 	if len(xtimes_array) == 0:
 		return "x"
-	mu = 20
-	sigma = 10
-	z = 10
+	mu = random.randint(20, 40)
+	sigma = random.randint(20, 40)
+	z = random.randint(20, 60)
 
-	amount_dataset = stats.binom.rvs(7, p=0.3)
+	amount_dataset = stats.binom.rvs(random.randint(10,20), p=0.3)
 
 	if len(xtimes_array) <= amount_dataset:
 		amount_dataset = len(xtimes_array)
@@ -91,7 +92,7 @@ def fill_array(dataset_name, depth):
 
 	random.shuffle(Locations)
 	for item in inp_indexes:
-		data_size = 28 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[item]]] else 0
+		data_size = 2.8 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[item]]] else 0
 		inp_array[item] = dataset_name
 		out_array[item] = "out_dataset" + "_" + str(item)
 		
@@ -135,21 +136,31 @@ f.write("Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRe
 
 
 for i in range(job_amount):
-    name = "Job" + str(i)
-    cpu_size = 86400 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0] 
-    out_size = np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+	name = "Job" + str(i)
+	cpu_size = 8640 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+	out_size = np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
 
-    random.shuffle(Location_DISK)
-    random.shuffle(Location_TAPE)
+	random.shuffle(Location_DISK)
+	random.shuffle(Location_TAPE)
 
-    if types[types_custm[i]] == "MCSIMULATION":
-        dataset_name = "none"
-    else:
-        dataset_name = inp_array[i]
+	if types[types_custm[i]] == "MCSIMULATION":
+		dataset_name = "none"
+		locs = "0,0,0,0,0,0,0,0,0,0"
+		storage_types = "none,none,none,none,none,none,none,none,none,none"
+		byte_size = 0
+		out_dataset = "mc_out_data" + str(i)
+		nrepin = 0
+	else:
+		dataset_name = inp_array[i]
+		locs = LOCATION_STR[i]
+		storage_types = STORAGE_TYPES[i]
+		byte_size = BYTE_SIZE[i]
+		out_dataset = out_array[i]
+		nrepin = NREPIN[i]
 
-    NREpOut = 1
-    string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + BYTE_SIZE[i] + "," + NREPIN[i] + "," + LOCATION_STR[i] + "," + STORAGE_TYPES[i] + "," + out_array[i] + "," + str(out_size) + "," + str(NREpOut) + "," + NULL_REPLICA + "\n"
-    f.write(string)
+	NREpOut = 1
+	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + ",".join(Location_DISK) + ",CERN1,CERN0,+" + "\n"
+	f.write(string)
 
 f.close()
 
