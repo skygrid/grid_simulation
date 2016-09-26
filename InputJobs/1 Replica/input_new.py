@@ -14,7 +14,7 @@ job_amount = int(sys.argv[1])
 print job_amount
 
 # VARIABLE FOR POISSON DISTRIBUTION
-lyambda = 0.0031
+lyambda = 0.0015
 
 Locations = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
 Location_DISK = ["CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"]
@@ -92,7 +92,7 @@ def fill_array(dataset_name, depth):
 
 	random.shuffle(Locations)
 	if len(inp_indexes) > 0:
-		data_size = 11.2 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]] else 0
+		data_size = 7.19 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]] else 0
 
 		for item in inp_indexes:
 			inp_array[item] = dataset_name
@@ -157,7 +157,7 @@ for i in range(job_amount):
 		nrepin = NREPIN[i]
 
 	NREpOut = 1
-	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + ",".join(Location_DISK) + ",CERN1,CERN0,+" + "\n"
+	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + ",+,0,0,0,0,0,0,0,0,0" + "\n"
 	f.write(string)
 
 f.close()
