@@ -14,40 +14,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/trace_DAM.csv" afterPath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/trace_DAM.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CNAF_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CNAF_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/IN2P3_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/IN2P3_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/PIC_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/PIC_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/PIC_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/PIC_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RAL_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/RAL_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.csv" afterPath="$PROJECT_DIR$/input.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/job_requester.c" afterPath="$PROJECT_DIR$/job_requester.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/out_DAM.txt" afterPath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/out_DAM.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/trace_DAM.csv" afterPath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/trace_DAM.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/out_DAM.txt" afterPath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/out_DAM.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/out_DAM.txt" afterPath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/out_DAM.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/trace_DAM.csv" afterPath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/trace_DAM.csv" />
-    </list>
+    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="" />
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -636,12 +603,12 @@
       <workItem from="1474458834968" duration="17871000" />
       <workItem from="1474540049767" duration="20251000" />
       <workItem from="1474626186092" duration="17224000" />
-      <workItem from="1474888674125" duration="7919000" />
+      <workItem from="1474888674125" duration="8517000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="690609000" />
+    <option name="totallyTimeSpent" value="691207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
