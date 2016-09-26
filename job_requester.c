@@ -18,7 +18,7 @@ int job_requester(){
     while (1){
         freeCoreAmount = fullCoreAmount - xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error") -
                 xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "corruptedCore"), "error");
-        if (freeCoreAmount > 4){
+        if (freeCoreAmount > 0){
             jobBatchRequestPtr jobRequest = xbt_new(jobBatchRequest, 1);
             jobRequest->coreAmount = freeCoreAmount;
 
