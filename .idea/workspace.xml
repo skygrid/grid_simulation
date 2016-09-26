@@ -14,7 +14,27 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="" />
+    <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/InputJobs/Diff_replicas/input.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CERN_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CNAF_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/CNAF_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/GRIDKA_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/IN2P3_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/IN2P3_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/PIC_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/PIC_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/PIC_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/PIC_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RAL_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/RAL_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RRCKI_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_online.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.csv" afterPath="$PROJECT_DIR$/input.csv" />
+    </list>
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,38 +53,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="input_new.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InputJobs/1 Replica/input_new.py">
+      <file leaf-file-name="input.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InputJobs/Diff_replicas/input.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
+            <state relative-caret-position="360">
+              <caret line="102" column="102" selection-start-line="102" selection-start-column="102" selection-end-line="102" selection-end-column="102" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#2688#3084#0" expanded="true" />
+                <element signature="e#2732#3128#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input_new.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InputJobs/Normal Replication/input_new.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#2950#3346#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input_new.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -72,19 +69,11 @@
       <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="72">
               <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="job_requester.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/job_requester.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-              <folding />
+              <folding>
+                <element signature="e#38#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/global_vabiables.h" />
-        <option value="$PROJECT_DIR$/angel.c" />
         <option value="$PROJECT_DIR$/host_tracer.c" />
         <option value="$PROJECT_DIR$/link_tracer.c" />
         <option value="$PROJECT_DIR$/Platform/platform_anom.xml" />
@@ -147,6 +134,8 @@
         <option value="$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py" />
         <option value="$PROJECT_DIR$/InputJobs/1 Replica/input_new.py" />
         <option value="$PROJECT_DIR$/job_requester.c" />
+        <option value="$PROJECT_DIR$/InputJobs/Diff_replicas/2input.py" />
+        <option value="$PROJECT_DIR$/InputJobs/Diff_replicas/input.py" />
         <option value="$PROJECT_DIR$/scheduler.c" />
       </list>
     </option>
@@ -259,34 +248,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid_simulation" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid_simulation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simgridoutput" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid_simulation" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid_simulation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InputJobs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -294,7 +255,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.CSim2Sim">
@@ -482,7 +443,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="CSim2Sim" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/Platform/platform.xml /home/ken/LHCb/grid_simulation/Platform/deployment.xml /home/ken/LHCb/grid_simulation/simgridoutput/Normal-nonrem/out_DAM.txt --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/simgridoutput/Normal-nonrem/trace_DAM --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CSim2Sim" TARGET_NAME="CSim2Sim" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CSim2Sim" RUN_TARGET_NAME="CSim2Sim">
+    <configuration default="false" name="CSim2Sim" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/Platform/platform.xml /home/ken/LHCb/grid_simulation/Platform/deployment.xml /home/ken/LHCb/grid_simulation/simgridoutput/6replica/out_DAM.txt --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/simgridoutput/6replica/trace_DAM --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CSim2Sim" TARGET_NAME="CSim2Sim" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CSim2Sim" RUN_TARGET_NAME="CSim2Sim">
       <envs />
       <method />
     </configuration>
@@ -603,12 +564,12 @@
       <workItem from="1474458834968" duration="17871000" />
       <workItem from="1474540049767" duration="20251000" />
       <workItem from="1474626186092" duration="17224000" />
-      <workItem from="1474888674125" duration="8517000" />
+      <workItem from="1474888674125" duration="16929000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="691207000" />
+    <option name="totallyTimeSpent" value="699619000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,7 +592,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.741433" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6456311" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.81391585" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6699029" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21518987" sideWeight="0.34935898" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46763754" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -663,13 +624,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Platform/platform_with_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="229" column="57" selection-start-line="229" selection-start-column="57" selection-end-line="229" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pileOfFailedTask.c" />
     <entry file="file://$PROJECT_DIR$/Platform/deployment_anom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -955,10 +909,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py">
+    <entry file="file://$PROJECT_DIR$/job_requester.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+        <state relative-caret-position="113">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -974,10 +928,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InputJobs/1 Replica/input_new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
+        <state relative-caret-position="54">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#2688#3084#0" expanded="true" />
@@ -985,19 +947,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/job_requester.c">
+    <entry file="file://$PROJECT_DIR$/InputJobs/Diff_replicas/input.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="102" column="102" selection-start-line="102" selection-start-column="102" selection-end-line="102" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#2732#3128#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="72">
           <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding />
+          <folding>
+            <element signature="e#38#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
