@@ -8,6 +8,7 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
 void check_files_availability(jobPtr jobInfo){
+    return;
     char* input_file_path = malloc(50);
     msg_file_t file;
 
@@ -58,7 +59,7 @@ jobBatch_AmountPtr matcher(long amountRequestedJob){
         local_current->jobX->successExecuted = 0;
 
         //check file availability
-        check_files_availability(local_current->jobX);
+        //check_files_availability(local_current->jobX);
 
         jobBatch[amount_of_matched_jobs] = local_current->jobX;
         amount_of_matched_jobs++;
@@ -109,7 +110,7 @@ jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host){
 
             continue;
         }
-        check_files_availability(local_current->jobX);
+        //check_files_availability(local_current->jobX);
 
         char* dataLocations[] = {local_current->jobX->dataLocHost1, local_current->jobX->dataLocHost2, local_current->jobX->dataLocHost3, local_current->jobX->dataLocHost4,
                                  local_current->jobX->dataLocHost5, local_current->jobX->dataLocHost6, local_current->jobX->dataLocHost7, local_current->jobX->dataLocHost8,

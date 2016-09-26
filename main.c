@@ -29,8 +29,8 @@ int main(int argc, char *argv[]){
     MSG_function_register("scheduler", scheduler);
     MSG_function_register("tier1", tier1);
 
-    MSG_function_register("initialize", initialize_file_labels);
-    MSG_function_register("delete_unpop_file", delete_unpopular_file);
+    //MSG_function_register("initialize", initialize_file_labels);
+    //MSG_function_register("delete_unpop_file", delete_unpopular_file);
     MSG_launch_application(argv[2]);
     path_to_output = argv[3];
 

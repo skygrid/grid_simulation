@@ -90,21 +90,23 @@ def fill_array(dataset_name, depth):
 	xtimes_array = np.setdiff1d(xtimes_array, inp_indexes)
 
 	random.shuffle(Locations)
-	for item in inp_indexes:
-		data_size = 2.8 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[item]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[item]]] else 0
-		inp_array[item] = dataset_name
-		out_array[item] = "out_dataset" + "_" + str(item)
-		
-		NREpIn = 10
-		location_str = ",".join(Locations) + ",CERN," + str(Locations[0])
-		storage_types = "1,1,1,1,1,1,1,1,0,0"
+	if len(inp_indexes) > 0:
+		data_size = 11.2 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]] else 0
 
-		LOCATION_STR[item] = location_str
-		STORAGE_TYPES[item] = storage_types
-		NREPIN[item] = NREpIn
-		BYTE_SIZE[item] = data_size
-		
-		#fill_array(out_array[item], depth)
+		for item in inp_indexes:
+			inp_array[item] = dataset_name
+			out_array[item] = "out_dataset" + "_" + str(item)
+
+			NREpIn = 10
+			location_str = ",".join(Locations) + ",CERN," + str(Locations[0])
+			storage_types = "1,1,1,1,1,1,1,1,0,0"
+
+			LOCATION_STR[item] = location_str
+			STORAGE_TYPES[item] = storage_types
+			NREPIN[item] = NREpIn
+			BYTE_SIZE[item] = data_size
+
+			#fill_array(out_array[item], depth)
 
 
 my_func()
@@ -131,7 +133,7 @@ f.write("Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRe
 
 for i in range(job_amount):
 	name = "Job" + str(i)
-	cpu_size = 8640 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
+	cpu_size = 86400 * 10**9 * np.random.normal(FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 0.15 * FLOP_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
 	out_size = np.random.normal(OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 0.15*OUTPUT_SIZE_BY_TYPE[types[types_custm[i]]], 1)[0]
 
 	random.shuffle(Location_DISK)

@@ -25,7 +25,6 @@ int input(){
         const char **rowFields = CsvParser_getFields(row);
         jobPtr jobX = xbt_new(job, 1);
 
-        //Parsing
         jobX->name = strdup((char*) rowFields[0]);
         jobX->type = charToEnum((char*) rowFields[1]);
         jobX->submissionTime = xbt_str_parse_double(rowFields[2], "kotok1");

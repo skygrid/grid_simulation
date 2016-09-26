@@ -38,11 +38,11 @@ int addDatasetAmountT(const char* host_name, char* type){
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!strcmp(type, "0")){
-        //TRACE_host_variable_add(host_name, "datasetOnTape", 1);
-        TRACE_host_variable_set(host_name, "datasetOnTape", dataset_number(host_name, "0"));
+        TRACE_host_variable_add(host_name, "datasetOnTape", 1);
+        //TRACE_host_variable_set(host_name, "datasetOnTape", dataset_number(host_name, "0"));
     }else{
-        //TRACE_host_variable_add(host_name, "datasetOnDisk", 1);
-        TRACE_host_variable_set(host_name, "datasetOnDisk", dataset_number(host_name, "1"));
+        TRACE_host_variable_add(host_name, "datasetOnDisk", 1);
+        //TRACE_host_variable_set(host_name, "datasetOnDisk", dataset_number(host_name, "1"));
     }
 
     MSG_sem_release(sem_link);
@@ -53,11 +53,11 @@ int minusDatasetAmountT(char* host_name, char* type){
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!strcmp(type, "0")){
-        TRACE_host_variable_set(host_name, "datasetOnTape", dataset_number(host_name, "0"));
-        //TRACE_host_variable_sub(host_name, "datasetOnTape", 1);
+        TRACE_host_variable_sub(host_name, "datasetOnTape", 1);
+        //TRACE_host_variable_set(host_name, "datasetOnTape", dataset_number(host_name, "0"));
     }else{
-        TRACE_host_variable_set(host_name, "datasetOnDisk", dataset_number(host_name, "1"));
-        //TRACE_host_variable_sub(host_name, "datasetOnDisk", 1);
+        TRACE_host_variable_sub(host_name, "datasetOnDisk", 1);
+        //TRACE_host_variable_set(host_name, "datasetOnDisk", dataset_number(host_name, "1"));
     }
     free(host_name);
     MSG_sem_release(sem_link);

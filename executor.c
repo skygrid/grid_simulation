@@ -26,7 +26,6 @@ int executor(int argc, char* argv[]){
     plusOneActiveCore();
 
     jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
-
     switch (jobInfo->type){
         case MCSIMULATION:
             break;
@@ -64,7 +63,7 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo){
 
     // Checks does tier have data on the own storage
     for (int i = 0; i < n; ++i) {
-        if (!strcmp(MSG_host_get_name(MSG_host_self()), dataLocations[i])){
+        if (!strcmp(MSG_host_get_name(MSG_host_self()), dataLocations[i]) & !strcmp(storageTypes[i], "1")){
             sprintf(input_file_path, "/%s%s/%s", dataLocations[i], storageTypes[i], jobInfo->inputFileName);
             sprintf(copy_from_tape_to_disk_name, "/%s1/%s", dataLocations[i], jobInfo->inputFileName);
             dest = (char *) MSG_host_get_name(MSG_host_self());

@@ -46,7 +46,7 @@ int executorLauncher(){
             }
             int jobAmount = (int) MSG_task_get_flops_amount(task);
             jobPtr* jobPtrBatchData = MSG_task_get_data(task);
-            XBT_INFO("Successfully receive jobBatch");
+            //XBT_INFO("Successfully receive jobBatch");
 
             //LAUNCH PROCESS TO EXECUTE TASKS
             for (i = 0; i < jobAmount; ++i) {

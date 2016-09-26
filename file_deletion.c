@@ -54,6 +54,7 @@ int initialize_file_labels(){
 }
 
 int create_file_label(char* filename){
+    return 0;
     double clock = MSG_get_clock();
 
     xbt_dynar_t dynar = xbt_dynar_new(sizeof(double), NULL);
@@ -68,6 +69,7 @@ int create_file_label(char* filename){
 }
 
 void file_usage_counter(char* filename){
+    return;
     char* type = malloc(30);
     int len = (int) strcspn(filename, "10");
     sprintf(type, "%s", filename+len);

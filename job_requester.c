@@ -10,7 +10,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
 int job_requester(){
     msg_task_t task;
-    double timeout = 50.0;
+    double timeout = 1000;
     long freeCoreAmount;
     int fullCoreAmount = MSG_host_get_core_number(MSG_host_self());
     MSG_process_sleep(0.01);

@@ -20,7 +20,7 @@ int scheduler(int argc, char* argv[]){
         int res = MSG_task_receive(&task, mailbox);
         // Anomalies
         if (res == MSG_OK){
-            XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
+            //XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
             jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
 
             jobBatch_AmountPtr batch = matcher(batchRequest->coreAmount);
@@ -32,7 +32,7 @@ int scheduler(int argc, char* argv[]){
             switch(MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)))){
                 case MSG_OK:
                     minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
-                    XBT_INFO("Send %d jobs after matching to %s", batch->jobsAmount ,MSG_host_get_name(MSG_task_get_source(task)));
+                    //XBT_INFO("Send %d jobs after matching to %s", batch->jobsAmount ,MSG_host_get_name(MSG_task_get_source(task)));
                     break;
                 case MSG_TRANSFER_FAILURE:
                     //rescheduling(batchRequest->coreAmount);
