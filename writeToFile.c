@@ -4,12 +4,13 @@
 
 #include <stdio.h>
 #include "messages.h"
+#define str(x) #x
 
 char* path_to_output;
 
 int writeToFile(FILE* fpy, jobPtr jobInfo)
 {
-    fprintf(fpy, "%s,%d,%f,%f,%f,%f,%s\n", jobInfo->name, jobInfo->successExecuted, jobInfo->submissionTime, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock, jobInfo->tier);
+    fprintf(fpy, "%s,%d,%f,%f,%f,%f,%s,%s\n", jobInfo->name, jobInfo->successExecuted, jobInfo->submissionTime, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock, jobInfo->tier, str(jobInfo->type));
     return(0);
 }
 
@@ -17,7 +18,7 @@ int clearFile()
 {
     FILE * fp, *fp1;
     fp = fopen (path_to_output, "w");
-    fprintf(fp, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec, Tier\n");
+    fprintf(fp, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec, Tier, Type\n");
     fclose(fp);
     fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "w");
     fclose(fp1);
