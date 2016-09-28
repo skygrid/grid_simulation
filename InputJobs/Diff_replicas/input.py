@@ -23,14 +23,15 @@ Location_DISK = ["CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"
 Location_TAPE = ["CNAF0", "GRIDKA0", "IN2P30", "PIC0", "RAL0", "SARA0", "RRCKI0"]
 NULL_REPLICA = "1,1,1,1,1,1,1,1,CERN0,+"
 
-types = ["MCSIMULATION", "USER", "DATASTRIPPING", "DATARECONSTRUCTION", "MERGE", "WGPRODUCTION", "MCRECONSTRUCTION", "TURBO", "MCStripping", "MCMERGE"]
-FLOP_SIZE_BY_TYPE = {"USER":0.34, "DATASTRIPPING":0.24, "MERGE":0.07, "MCStripping":0.03, "DATARECONSTRUCTION":0.56, "TURBO":0.03,  "MCRECONSTRUCTION":0.55, "WGPRODUCTION":0.22, "MCMERGE":0.17, "MCSIMULATION":1.07}
+types = ["MCSIMULATION", "USER", "DATASTRIPPING", "DATARECONSTRUCTION", "MERGE", "MCRECONSTRUCTION", "TURBO", "MCStripping", "MCMERGE"]
+FLOP_SIZE_BY_TYPE = {"USER":0.056, "DATASTRIPPING":0.000776, "MERGE":0.000170, "MCStripping":0.000121, "DATARECONSTRUCTION":0.0406, "TURBO":0.00029,  "MCRECONSTRUCTION":0.004147, "WGPRODUCTION":0.22, "MCMERGE":0.000088, "MCSIMULATION":0.3789}
+#INPUT_SIZE_BY_TYPE = {"USER":31710*10**6, "DATASTRIPPING":4273*10**6, "MERGE":2072*10**6, "MCStripping":9897*10**6, "DATARECONSTRUCTION":2887*10**6, "TURBO":2788*10**6,  "MCRECONSTRUCTION":4429*10**6, "WGPRODUCTION":10**9, "MCMERGE":3857*10**6, "UNKNOWN":0, "MCSIMULATION":0, "TEST":0.1*10**9}
 INPUT_SIZE_BY_TYPE = {"USER":31710*10**6, "DATASTRIPPING":4273*10**6, "MERGE":2072*10**6, "MCStripping":9897*10**6, "DATARECONSTRUCTION":2887*10**6, "TURBO":2788*10**6,  "MCRECONSTRUCTION":4429*10**6, "WGPRODUCTION":10**9, "MCMERGE":3857*10**6, "UNKNOWN":0, "MCSIMULATION":0, "TEST":0.1*10**9}
 OUTPUT_SIZE_BY_TYPE = {"USER":79*10**6, "DATASTRIPPING":1.5*10**9, "MERGE":5*10**9, "MCStripping":1.5*10**9, "DATARECONSTRUCTION":2*10**9, "TURBO":1*10**9,  "MCRECONSTRUCTION":2*10**9, "WGPRODUCTION":1*10**9, "MCMERGE":5*10**9, "UNKNOWN":0, "MCSIMULATION":0.5*10**9, "TEST":0.1*10**9}
 REPLICA_BY_TYPE = {"USER":[0, 0, 3, 0], "DATASTRIPPING":NULL_REPLICA, "MERGE":[1, 1, 3, 1], "MCStripping":NULL_REPLICA, "DATARECONSTRUCTION":NULL_REPLICA, "TURBO":NULL_REPLICA,  "MCRECONSTRUCTION":NULL_REPLICA, "WGPRODUCTION":NULL_REPLICA, "MCMERGE":[1, 1, 2, 1], "UNKNOWN":NULL_REPLICA, "MCSIMULATION":NULL_REPLICA, "TEST":NULL_REPLICA}
 
-int_types = range(0, 10)
-types_pk = (0.507, 0.196, 0.108, 0.096, 0.058, 0.015, 0.005, 0.005, 0.004, 0.004)
+int_types = range(0, 9)
+types_pk = (0.564, 0.264, 0.004, 0.123, 0.003, 0.012, 0.019, 0.007, 0.0008)
 types_custm = stats.rv_discrete(name='custm', values=(int_types, types_pk)).rvs(size=job_amount)
 mc_indexes = np.where(types_custm == 0)
 
@@ -158,7 +159,9 @@ for i in range(job_amount):
 
 	NREpOut = replica_amount + 2  # 1 for tape
 	output_locations = "CERN1,CERN0," + ",".join(Location_DISK[:(replica_amount-1)]) + ",+,"  + ",".join(["0"] * (8-replica_amount))
-	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations + "\n"
+
+	time_submit = 0 #times_array[i]
+	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(time_submit) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations + "\n"
 	f.write(string)
 
 f.close()

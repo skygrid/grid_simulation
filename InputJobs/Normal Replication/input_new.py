@@ -29,13 +29,15 @@ prob_array_output = custm.rvs(size=job_amount)
 
 
 types = ["MCSIMULATION", "USER", "DATASTRIPPING", "DATARECONSTRUCTION", "MERGE", "WGPRODUCTION", "MCRECONSTRUCTION", "TURBO", "MCStripping", "MCMERGE"]
-FLOP_SIZE_BY_TYPE = {"USER":0.34, "DATASTRIPPING":0.24, "MERGE":0.07, "MCStripping":0.03, "DATARECONSTRUCTION":0.56, "TURBO":0.03,  "MCRECONSTRUCTION":0.55, "WGPRODUCTION":0.22, "MCMERGE":0.17, "MCSIMULATION":1.07}
-INPUT_SIZE_BY_TYPE = {"USER":31710*10**6, "DATASTRIPPING":4273*10**6, "MERGE":2072*10**6, "MCStripping":9897*10**6, "DATARECONSTRUCTION":2887*10**6, "TURBO":2788*10**6,  "MCRECONSTRUCTION":4429*10**6, "WGPRODUCTION":10**9, "MCMERGE":3857*10**6, "UNKNOWN":0, "MCSIMULATION":0, "TEST":0.1*10**9}
-OUTPUT_SIZE_BY_TYPE = {"USER":79*10**6, "DATASTRIPPING":1.5*10**9, "MERGE":5*10**9, "MCStripping":1.5*10**9, "DATARECONSTRUCTION":2*10**9, "TURBO":1*10**9,  "MCRECONSTRUCTION":2*10**9, "WGPRODUCTION":1*10**9, "MCMERGE":5*10**9, "UNKNOWN":0, "MCSIMULATION":0.5*10**9, "TEST":0.1*10**9}
+
+FLOP_SIZE_BY_TYPE = {"USER":0.056, "DATASTRIPPING":0.000776, "MERGE":0.000170, "MCStripping":0.000121, "DATARECONSTRUCTION":0.0406, "TURBO":0.00029,  "MCRECONSTRUCTION":0.004147, "WGPRODUCTION":0.22, "MCMERGE":0.000088, "MCSIMULATION":0.3789}
+
+INPUT_SIZE_BY_TYPE = {"USER":31710*10**6, "DATASTRIPPING":4273*10**6, "MERGE":2072*10**6, "MCStripping":1*10**9, "DATARECONSTRUCTION":2887*10**6, "TURBO":1*10**9,  "MCRECONSTRUCTION":4429*10**6, "WGPRODUCTION":10**9, "MCMERGE":3857*10**6, "UNKNOWN":0, "MCSIMULATION":0, "TEST":0.1*10**9}
+OUTPUT_SIZE_BY_TYPE = {"USER":79*10**6, "DATASTRIPPING":1*10**9, "MERGE":5*10**9, "MCStripping":1*10**9, "DATARECONSTRUCTION":1*10**9, "TURBO":1*10**9,  "MCRECONSTRUCTION":1*10**9, "WGPRODUCTION":1*10**9, "MCMERGE":5*10**9, "UNKNOWN":0, "MCSIMULATION":0.5*10**8, "TEST":0.1*10**9}
 REPLICA_BY_TYPE = {"USER":[0, 0, 3, 0], "DATASTRIPPING":NULL_REPLICA, "MERGE":[1, 1, 3, 1], "MCStripping":NULL_REPLICA, "DATARECONSTRUCTION":NULL_REPLICA, "TURBO":NULL_REPLICA,  "MCRECONSTRUCTION":NULL_REPLICA, "WGPRODUCTION":NULL_REPLICA, "MCMERGE":[1, 1, 2, 1], "UNKNOWN":NULL_REPLICA, "MCSIMULATION":NULL_REPLICA, "TEST":NULL_REPLICA}
 
-int_types = range(0, 10)
-types_pk = (0.507, 0.196, 0.108, 0.096, 0.058, 0.015, 0.005, 0.005, 0.004, 0.004)
+int_types = range(0, 9)
+types_pk = (0.564, 0.264, 0.004, 0.123, 0.003, 0.012, 0.019, 0.007, 0.0008)
 types_custmx = stats.rv_discrete(name='custm', values=(int_types, types_pk))
 types_custm = types_custmx.rvs(size=job_amount)
 mc_indexes = np.where(types_custm == 0)
@@ -99,7 +101,7 @@ def fill_array(dataset_name, depth):
 
 	random.shuffle(Locations)
 	if len(inp_indexes) > 0:
-		data_size = 1 * np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]] else 0
+		data_size = np.random.normal(INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 0.15*INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]], 1)[0] if INPUT_SIZE_BY_TYPE[types[types_custm[inp_indexes[0]]]] else 0
 		NREpIn = prob_array_input[inp_indexes[0]]
 
 		if NREpIn == 2:
@@ -134,7 +136,7 @@ frequency, z = np.histogram(times_array)
 frequency = frequency[np.nonzero(frequency)]
 big_noize = []
 for item in frequency:
-	noize = np.sort(np.random.uniform(low=0, high=10000, size=item))
+	noize = np.sort(np.random.uniform(low=0, high=500, size=item))
 	big_noize.append(noize)
 big_noize = np.hstack(np.array(big_noize))
 print len(big_noize)
@@ -181,7 +183,8 @@ for i in range(job_amount):
 	else:
 		output_locations= "0,0,0,0,0,0,0,0,0,0"
 
-	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations + "\n"
+	time_submit = times_array[i]
+	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(time_submit) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations + "\n"
 	f.write(string)
 f.close()
 
