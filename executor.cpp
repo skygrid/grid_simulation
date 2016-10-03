@@ -14,13 +14,13 @@ int task_executor(jobPtr jobInfo);
 void plusOneActiveCore();
 void minusOneActiveCore();
 
-void my_on_exit(int argc, char* argv[]);
+int my_on_exit(void* ignored1, void *ignored2);
 
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
-    //MSG_process_on_exit(my_on_exit, NULL);
+    MSG_process_on_exit(my_on_exit, NULL);
 
     dataInfoPtr dataInfo;
     plusOneActiveCore();
@@ -239,8 +239,8 @@ void minusOneActiveCore(){
 }
 
 
-void my_on_exit(int argc, char* argv[]){
+int my_on_exit(void* ignored1, void *ignored2){
     jobPtr jobInfo = (jobPtr) MSG_process_get_data(MSG_process_self());
     writeToFile(fp, jobInfo);
-    return;
+    return 0;
 }
