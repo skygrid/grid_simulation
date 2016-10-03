@@ -9,7 +9,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
 void check_files_availability(jobPtr jobInfo){
     return;
-    char* input_file_path = malloc(50);
+    char* input_file_path = (char*) malloc(50);
     msg_file_t file;
 
     char** dataLocations[] = {&jobInfo->dataLocHost1, &jobInfo->dataLocHost2, &jobInfo->dataLocHost3, &jobInfo->dataLocHost4,

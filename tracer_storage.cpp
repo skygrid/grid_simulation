@@ -4,12 +4,11 @@
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
 
-FILE* storage_fp;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(dataset, "messages specific for dataset");
 
 int tracer_storage(char* hostname, char* storage_type){
-    char* storage_name = malloc(15);
+    char* storage_name = (char*) malloc(15);
     sprintf(storage_name, "%s%s", hostname, storage_type);
     msg_storage_t st = MSG_storage_get_by_name(storage_name);
 
@@ -68,7 +67,7 @@ int minusDatasetAmountT(char* host_name, char* type){
 // Returns a number of dataset on a given storage
 long dataset_number(char* host_name, char* storage_type){
 
-    char* storage_name = malloc(15);
+    char* storage_name = (char*) malloc(15);
     sprintf(storage_name, "%s%s", host_name, storage_type);
     msg_storage_t st = MSG_storage_get_by_name(storage_name);
 

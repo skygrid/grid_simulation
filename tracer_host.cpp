@@ -5,7 +5,6 @@
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
 
-msg_sem_t sem_link;
 
 int addActiveCoreT(){
     MSG_sem_acquire(sem_link);

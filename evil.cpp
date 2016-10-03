@@ -3,26 +3,26 @@
 //
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
+
 void plusOneCorruptedCore();
 void minusOneCorruptedCore();
 
 void plusOneActiveCore();
 void minusOneActiveCore();
 
-int angel();
-msg_sem_t sem_link;
+int angel(int argc, char* argv[]);
 
 
 int evil(int argc, char* argv[]){
     double sleepTime = xbt_str_parse_double(argv[1], "error");
     MSG_process_sleep(sleepTime);
     int i = 0;
-    int amountCorruptCore = (int) xbt_str_parse_int(argv[2], "error");
+    int* amountCorruptCore = (int*) xbt_str_parse_int(argv[2], "error");
     double timeCorruption = xbt_str_parse_double(argv[3], "error");
     msg_process_t proc1, proc2;
     xbt_swag_t swag = MSG_host_get_process_list(MSG_host_self());
     xbt_swag_foreach_safe(proc1, proc2, swag){
-        if (i > amountCorruptCore){
+        if (i > *amountCorruptCore){
             break;
         }
         if (!strcmp(MSG_process_get_name(proc1), "executor")){
@@ -44,9 +44,9 @@ int evil(int argc, char* argv[]){
     return 0;
 }
 
-int angel(){
-    int amountCorruptCore = (int) MSG_process_get_data(MSG_process_self());
-    for (int i = 0; i <= amountCorruptCore; ++i) {
+int angel(int argc, char* argv[]){
+    int* amountCorruptCore = (int*) MSG_process_get_data(MSG_process_self());
+    for (int i = 0; i <= *amountCorruptCore; ++i) {
         subCorruptedCoreT();
 
         minusOneCorruptedCore();

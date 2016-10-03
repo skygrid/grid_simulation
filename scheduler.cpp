@@ -21,7 +21,7 @@ int scheduler(int argc, char* argv[]){
         // Anomalies
         if (res == MSG_OK){
             //XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
-            jobBatchRequestPtr batchRequest = MSG_task_get_data(task);
+            jobBatchRequestPtr batchRequest = (jobBatchRequestPtr) MSG_task_get_data(task);
 
             jobBatch_AmountPtr batch = matcher(batchRequest->coreAmount);
             //jobBatch_AmountPtr batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));

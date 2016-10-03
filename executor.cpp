@@ -13,19 +13,19 @@ int task_executor(jobPtr jobInfo);
 
 void plusOneActiveCore();
 void minusOneActiveCore();
-int my_on_exit();
 
-msg_sem_t sem;
+void my_on_exit(int argc, char* argv[]);
+
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
-    MSG_process_on_exit(my_on_exit, NULL);
+    //MSG_process_on_exit(my_on_exit, NULL);
 
     dataInfoPtr dataInfo;
     plusOneActiveCore();
 
-    jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
+    jobPtr jobInfo = (jobPtr) MSG_process_get_data(MSG_process_self());
     switch (jobInfo->type){
         case MCSIMULATION:
             break;
@@ -45,9 +45,9 @@ dataInfoPtr get_input_file_path(jobPtr jobInfo){
     /*Where should I download data
      *return input_file_path and host_name (where data is located)
      */
-    char* input_file_path = malloc(50);
-    char* copy_file_path = malloc(50);
-    char* copy_from_tape_to_disk_name = malloc(50);
+    char* input_file_path = (char*) malloc(50);
+    char* copy_file_path = (char*) malloc(50);
+    char* copy_from_tape_to_disk_name = (char*) malloc(50);
     char* dest;
     char* storageType;
 
@@ -208,7 +208,7 @@ int task_executor(jobPtr jobInfo){
 
     // tracing
     addDatasetAmountT(MSG_host_get_name(MSG_host_self()), "1");
-    tracer_storage(MSG_host_get_name(MSG_host_self()), "1");
+    tracer_storage((char*)MSG_host_get_name(MSG_host_self()), "1");
 
     return 0;
 }
@@ -239,8 +239,8 @@ void minusOneActiveCore(){
 }
 
 
-int my_on_exit(){
-    jobPtr jobInfo = MSG_process_get_data(MSG_process_self());
+void my_on_exit(int argc, char* argv[]){
+    jobPtr jobInfo = (jobPtr) MSG_process_get_data(MSG_process_self());
     writeToFile(fp, jobInfo);
-    return 0;
+    return;
 }

@@ -5,9 +5,10 @@
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
 
+msg_sem_t sem_link;
 
 int declare_trace_variables(){
-    char* variable_name = malloc(10);
+    char* variable_name = (char*) malloc(10);
     char* hosts[8] = {"CERN", "CNAF", "IN2P3", "RRCKI", "PIC", "RAL", "GRIDKA", "SARA"};
 
     //Declare storage variables for tracing
@@ -38,7 +39,7 @@ int declare_trace_variables(){
 long x = 0;
 int set_0_all_routes(){
 
-    char* storage_variable = malloc(15);
+    char* storage_variable = (char*) malloc(15);
 
     sem_link = MSG_sem_init(1);
     char* hosts[8] = {"CERN", "CNAF", "IN2P3", "RRCKI", "PIC", "RAL", "GRIDKA", "SARA"};

@@ -7,10 +7,9 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 // Created by ken on 29.07.16.
 //
 
-FILE* fp;
 
-int executorLauncher();
-int job_requester();
+int executorLauncher(int argc, char* argv[]);
+int job_requester(int argc, char* argv[]);
 int executor(int argc, char* argv[]);
 msg_sem_t sem;
 
@@ -31,7 +30,7 @@ int tier1(int argc, char* argv[]){
 }
 
 
-int executorLauncher(){
+int executorLauncher(int agrc, char* argv[]){
     int i;
     msg_task_t task;
     char* tierMailbox = strdup(((char**) MSG_process_get_data(MSG_process_self()))[0]);
@@ -45,7 +44,7 @@ int executorLauncher(){
                 break;
             }
             int jobAmount = (int) MSG_task_get_flops_amount(task);
-            jobPtr* jobPtrBatchData = MSG_task_get_data(task);
+            jobPtr* jobPtrBatchData = (jobPtr*) MSG_task_get_data(task);
             //XBT_INFO("Successfully receive jobBatch");
 
             //LAUNCH PROCESS TO EXECUTE TASKS

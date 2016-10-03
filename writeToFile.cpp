@@ -4,9 +4,9 @@
 
 #include <stdio.h>
 #include "messages.h"
+#include "myfunc_list.h"
 #define str(x) #x
 
-char* path_to_output;
 
 int writeToFile(FILE* fpy, jobPtr jobInfo)
 {

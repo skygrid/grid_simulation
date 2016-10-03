@@ -8,7 +8,7 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
 
-int job_requester(){
+int job_requester(int argc, char* argv[]){
     msg_task_t task;
     double timeout = 1000;
     long freeCoreAmount;

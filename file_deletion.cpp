@@ -33,7 +33,7 @@ int initialize_file_labels(){
 
 
         xbt_dict_foreach(storage_content, cursor, local_name, data_size){
-            char *filename = malloc(40);
+            char *filename = (char*) malloc(40);
             sprintf(filename, "/%s%s", storage_name, local_name);
 
             fileDataPtr data = xbt_new(fileData, 1);
@@ -70,7 +70,7 @@ int create_file_label(char* filename){
 
 void file_usage_counter(char* filename){
     return;
-    char* type = malloc(30);
+    char* type = (char*) malloc(30);
     int len = (int) strcspn(filename, "10");
     sprintf(type, "%s", filename+len);
     type[1] = '\0';
@@ -78,7 +78,7 @@ void file_usage_counter(char* filename){
         return;
     } else{
         double clock = MSG_get_clock();
-        fileDataPtr data = xbt_dict_get(dict, filename);
+        fileDataPtr data = (fileDataPtr) xbt_dict_get(dict, filename);
         data->number_used += 1;
         data->used = "1";
         xbt_dynar_push_as(data->all_using_clock, double, clock);
@@ -88,7 +88,7 @@ void file_usage_counter(char* filename){
 
 char* find_host(char* filename){
     size_t sz = strlen(filename);
-    char *x = malloc(sz);
+    char *x = (char*) malloc(sz);
     snprintf(x, sz, filename + 1);
     const char* t = "10";
     int len = (int) strcspn(filename, t);

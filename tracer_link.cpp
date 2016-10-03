@@ -9,7 +9,6 @@ char* find_transit(const char* src, const char* dst);
 int direct(const char* src, const char* dst);
 char* get_opposite_direction(char* direction);
 
-msg_sem_t sem_link;
 
 int plusLinkCounter(const char* src, const char* dst){
     MSG_sem_acquire(sem_link);

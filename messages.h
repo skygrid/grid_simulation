@@ -22,7 +22,8 @@ typedef enum {
     MCMERGE,
     UNKNOWN,
     MCSIMULATION,
-    TEST
+    TEST,
+    LAST
 } jobType;
 
 

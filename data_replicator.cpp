@@ -8,10 +8,9 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
-msg_sem_t sem_link;
 
 int data_replicator(int argc, char* argv[]){
-    jobPtr replica = MSG_process_get_data(MSG_process_self());
+    jobPtr replica = (jobPtr) MSG_process_get_data(MSG_process_self());
     int replica_number = replica->outputNumber;
 
     char* outputLocations[] = {replica->outputHost1, replica->outputHost2, replica->outputHost3, replica->outputHost4, replica->outputHost5,
@@ -31,12 +30,12 @@ int data_replicator(int argc, char* argv[]){
 
 int uploader(int argc, char* argv[]){
     msg_file_t file = NULL;
-    char *curFilePath = malloc(50);
-    char *pathAtDest = malloc(50);
-    char *destHostName = malloc(15);
-    char *stor_type = malloc(1);
+    char *curFilePath = (char*) malloc(50);
+    char *pathAtDest = (char*) malloc(50);
+    char *destHostName = (char*) malloc(15);
+    char *stor_type = (char*) malloc(1);
 
-    uploadDataPtr data = MSG_process_get_data(MSG_process_self());
+    uploadDataPtr data = (uploadDataPtr) MSG_process_get_data(MSG_process_self());
 
     //Copy to own tape
     if (!strcmp(data->dest, "+")){

@@ -7,7 +7,6 @@
 #include "messages.h"
 
 jobType charToEnum(char *sval);
-char* path_to_output;
 
 char* typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
                     "MCSIMULATION", "TEST", NULL};
@@ -81,11 +80,16 @@ int input(){
     return 0;
 }
 
+
+
 jobType charToEnum(char *sval)
 {
-    jobType result=USER;
-    int i=0;
-    for (i=0; typesStr[i]!=NULL; ++i, ++result)
-        if (0==strcasecmp(sval, typesStr[i])) return result;
+    //jobType result=USER;
+    //int i=0;
+    for (int enumInt = USER; enumInt != LAST; enumInt++)
+        if (0==strcasecmp(sval, typesStr[enumInt])){
+            jobType type = static_cast<jobType>(enumInt);
+            return type;
+        }
     return UNKNOWN;
 }
