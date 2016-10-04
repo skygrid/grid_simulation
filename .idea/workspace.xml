@@ -15,34 +15,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeFiles/CSim2Sim.dir/data_replicator.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/CSim2Sim.dir/data_replicator.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeFiles/CSim2Sim.dir/writeToFile.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/CSim2Sim.dir/writeToFile.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSim2Sim" afterPath="$PROJECT_DIR$/CSim2Sim" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cloud/cloud.py" afterPath="$PROJECT_DIR$/Cloud/cloud.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InputJobs/1Replica/input_new.py" afterPath="$PROJECT_DIR$/InputJobs/1Replica/input_new.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InputJobs/Diff_replicas/input.py" afterPath="$PROJECT_DIR$/InputJobs/Diff_replicas/input.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/CNAF_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/IN2P3_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" afterPath="$PROJECT_DIR$/Platform/Content/RAL_content_online.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" afterPath="$PROJECT_DIR$/Platform/Content/SARA_content_nearline.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_replicator.cpp" afterPath="$PROJECT_DIR$/data_replicator.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.csv" afterPath="$PROJECT_DIR$/input.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/1replica-nonrem/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/2replica/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/2replica/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/2replica/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/2replica/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/3replica/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/3replica/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/3replica/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/3replica/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/4replica/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/4replica/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/4replica/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/4replica/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/5replica/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/5replica/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/5replica/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/5replica/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/6replica/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/6replica/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/6replica/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/6replica/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/trace.csv" afterPath="$PROJECT_DIR$/simgridoutput/7replica-nonrem/trace.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/out.txt" afterPath="$PROJECT_DIR$/simgridoutput/Normal-nonrem/out.txt" />
     </list>
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,41 +35,7 @@
     <favorites_list name="CSim2Sim" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_replicator.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_replicator.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="126" column="14" selection-start-line="126" selection-start-column="14" selection-end-line="126" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input_new.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InputJobs/1Replica/input_new.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1037">
-              <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
-              <folding>
-                <element signature="e#2737#3133#0" expanded="true" />
-                <element signature="e#3174#4579#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cloud.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Cloud/cloud.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -151,9 +91,9 @@
         <option value="$PROJECT_DIR$/cloud.py" />
         <option value="$PROJECT_DIR$/writeToFile.cpp" />
         <option value="$PROJECT_DIR$/data_replicator.cpp" />
-        <option value="$PROJECT_DIR$/InputJobs/1Replica/input_new.py" />
         <option value="$PROJECT_DIR$/InputJobs/Diff_replicas/input.py" />
         <option value="$PROJECT_DIR$/Cloud/cloud.py" />
+        <option value="$PROJECT_DIR$/InputJobs/1Replica/input_new.py" />
       </list>
     </option>
   </component>
@@ -262,6 +202,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="grid_simulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid_simulation" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid_simulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simgridoutput" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid_simulation" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid_simulation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InputJobs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -594,12 +562,12 @@
       <workItem from="1475267908908" duration="25000" />
       <workItem from="1475272707692" duration="266000" />
       <workItem from="1475491479639" duration="16002000" />
-      <workItem from="1475575401619" duration="11925000" />
+      <workItem from="1475575401619" duration="12934000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="748481000" />
+    <option name="totallyTimeSpent" value="749490000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,9 +580,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21965748" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21965748" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27831715" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48381877" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -676,13 +644,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/simgrid-master/src/simix/smx_environment.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rescheduling.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -971,16 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="159" column="81" selection-start-line="159" selection-start-column="81" selection-end-line="159" selection-end-column="81" />
-          <folding>
-            <element signature="e#3148#4522#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cloud.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -999,25 +950,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InputJobs/Diff_replicas/input.py">
+    <entry file="file://$PROJECT_DIR$/Cloud/cloud.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding>
-            <element signature="e#3081#3477#0" expanded="true" />
-            <element signature="e#3518#4986#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InputJobs/Normal-Replication/input_new.py">
+    <entry file="file://$PROJECT_DIR$/InputJobs/8 Replicas/input_new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#3313#3709#0" expanded="true" />
-            <element signature="e#3750#5549#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1582">
+          <caret line="159" column="81" selection-start-line="159" selection-start-column="81" selection-end-line="159" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,19 +976,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/InputJobs/1Replica/input_new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1037">
-          <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+        <state relative-caret-position="169">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding>
-            <element signature="e#2737#3133#0" expanded="true" />
-            <element signature="e#3174#4579#0" expanded="true" />
+            <element signature="e#2982#3378#0" expanded="true" />
+            <element signature="e#3419#4824#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cloud/cloud.py">
+    <entry file="file://$PROJECT_DIR$/InputJobs/Normal-Replication/input_new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="151">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding>
+            <element signature="e#3313#3709#0" expanded="true" />
+            <element signature="e#3750#5549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InputJobs/Diff_replicas/input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#3081#3477#0" expanded="true" />
+            <element signature="e#3518#4986#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simgridoutput/clear_trace.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
