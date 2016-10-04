@@ -1,6 +1,2 @@
 Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRep, Location1, Location2, Location3, Location4, Location5, Location6, Location7, Location8, Location9, Location10, Storage_T1, Storage_T2, Storage_T3, Storage_T4, Storage_T5, Storage_T6, Storage_T7, Storage_T8, Storage_T9, Storage_T10, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6, OutLoc7, OutLoc7, OutLoc9, OutLoc10
-Job0,DATARECONSTRUCTION,0,3.50530428184e+12,dataset0,3773880448.92,4,IN2P3,RAL,CNAF,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_0,996079203.643,0,0,0,0,0,0,0,0,0,0,0
-Job1,MCSIMULATION,0,2.60200176246e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data1,53916494.344,0,0,0,0,0,0,0,0,0,0,0
-Job2,MCSIMULATION,0,3.25112806492e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data2,52854188.1338,0,0,0,0,0,0,0,0,0,0,0
-Job3,USER,0,4.40678615723e+12,dataset0,3773880448.92,4,IN2P3,RAL,CNAF,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_3,74559501.6973,3,CNAF1,RAL1,RRCKI1,0,0,0,0,0,0,0
-Job4,USER,0,4.9465811886e+12,dataset0,3773880448.92,4,IN2P3,RAL,CNAF,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_4,76304997.0255,3,PIC1,GRIDKA1,IN2P31,0,0,0,0,0,0,0
+Job0,MCSIMULATION,0,3.29312172598e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data0,473344491.482,10,CERN1,CERN0,RAL1,RRCKI1,CNAF1,SARA1,GRIDKA1,PIC1,IN2P31,+,
