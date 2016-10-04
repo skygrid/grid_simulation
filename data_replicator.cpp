@@ -8,6 +8,8 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
+int free_job_memory(jobPtr job);
+int clear_uploader_data(uploadDataPtr data);
 
 int data_replicator(int argc, char* argv[]){
     jobPtr replica = (jobPtr) MSG_process_get_data(MSG_process_self());
@@ -23,8 +25,53 @@ int data_replicator(int argc, char* argv[]){
         MSG_process_create("upload", uploader, data, MSG_host_self());
     }
     MSG_process_sleep(0.9);
-    xbt_free(replica); // ATTENTION !!!!!!!!!
+    free_job_memory(replica);
     MSG_process_kill(MSG_process_self());
+    return 0;
+}
+
+int free_job_memory(jobPtr job){
+    free(job->name);
+    //free(&job->submissionTime);
+    //free(&job->compSize);
+    free(job->inputFileName);
+    free(job->outputName);
+
+    free(job->dataLocHost1);
+    free(job->dataLocHost2);
+    free(job->dataLocHost3);
+    free(job->dataLocHost4);
+    free(job->dataLocHost5);
+    free(job->dataLocHost6);
+    free(job->dataLocHost7);
+    free(job->dataLocHost8);
+    free(job->dataLocHost9);
+    free(job->dataLocHost10);
+
+    free(job->outputHost1);
+    free(job->outputHost2);
+    free(job->outputHost3);
+    free(job->outputHost4);
+    free(job->outputHost5);
+    free(job->outputHost6);
+    free(job->outputHost7);
+    free(job->outputHost8);
+    free(job->outputHost9);
+    free(job->outputHost10);
+    free(job->storageType1);
+    free(job->storageType2);
+    free(job->storageType3);
+    free(job->storageType4);
+    free(job->storageType5);
+    free(job->storageType6);
+    free(job->storageType7);
+    free(job->storageType8);
+    free(job->storageType9);
+    free(job->storageType10);
+
+    //free((char*)job->tier);
+
+    free(job);
     return 0;
 }
 
@@ -77,7 +124,7 @@ int uploader(int argc, char* argv[]){
             tracer_traffic(MSG_host_get_name(MSG_host_self()), destHostName, (double) MSG_file_get_size(file));
             minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
             MSG_file_close(file);
-            //XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
+            XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
         }  else {
             minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
             MSG_file_close(file);
@@ -87,18 +134,22 @@ int uploader(int argc, char* argv[]){
 
     //trace storage
     tracer_storage(destHostName, stor_type);
+
     //clearing memory
-
     free(stor_type);
-
     free(curFilePath);
     free(pathAtDest);
     free(destHostName);
 
-    free(data->dest);
-    free(data->filename);
-    xbt_free(data);
+    clear_uploader_data(data);
     MSG_process_kill(MSG_process_self());
     return 0;
 
+}
+
+int clear_uploader_data(uploadDataPtr data){
+    free(data->dest);
+    free(data->filename);
+    free(data);
+    return 0;
 }

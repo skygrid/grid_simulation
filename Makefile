@@ -123,464 +123,464 @@ CSim2Sim/fast:
 	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/build
 .PHONY : CSim2Sim/fast
 
-data_replicator.o: data_replicator.c.o
+data_replicator.o: data_replicator.cpp.o
 
 .PHONY : data_replicator.o
 
 # target to build an object file
-data_replicator.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/data_replicator.c.o
-.PHONY : data_replicator.c.o
+data_replicator.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/data_replicator.cpp.o
+.PHONY : data_replicator.cpp.o
 
-data_replicator.i: data_replicator.c.i
+data_replicator.i: data_replicator.cpp.i
 
 .PHONY : data_replicator.i
 
 # target to preprocess a source file
-data_replicator.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/data_replicator.c.i
-.PHONY : data_replicator.c.i
+data_replicator.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/data_replicator.cpp.i
+.PHONY : data_replicator.cpp.i
 
-data_replicator.s: data_replicator.c.s
+data_replicator.s: data_replicator.cpp.s
 
 .PHONY : data_replicator.s
 
 # target to generate assembly for a file
-data_replicator.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/data_replicator.c.s
-.PHONY : data_replicator.c.s
+data_replicator.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/data_replicator.cpp.s
+.PHONY : data_replicator.cpp.s
 
-evil.o: evil.c.o
+evil.o: evil.cpp.o
 
 .PHONY : evil.o
 
 # target to build an object file
-evil.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/evil.c.o
-.PHONY : evil.c.o
+evil.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/evil.cpp.o
+.PHONY : evil.cpp.o
 
-evil.i: evil.c.i
+evil.i: evil.cpp.i
 
 .PHONY : evil.i
 
 # target to preprocess a source file
-evil.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/evil.c.i
-.PHONY : evil.c.i
+evil.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/evil.cpp.i
+.PHONY : evil.cpp.i
 
-evil.s: evil.c.s
+evil.s: evil.cpp.s
 
 .PHONY : evil.s
 
 # target to generate assembly for a file
-evil.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/evil.c.s
-.PHONY : evil.c.s
+evil.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/evil.cpp.s
+.PHONY : evil.cpp.s
 
-executor.o: executor.c.o
+executor.o: executor.cpp.o
 
 .PHONY : executor.o
 
 # target to build an object file
-executor.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/executor.c.o
-.PHONY : executor.c.o
+executor.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/executor.cpp.o
+.PHONY : executor.cpp.o
 
-executor.i: executor.c.i
+executor.i: executor.cpp.i
 
 .PHONY : executor.i
 
 # target to preprocess a source file
-executor.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/executor.c.i
-.PHONY : executor.c.i
+executor.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/executor.cpp.i
+.PHONY : executor.cpp.i
 
-executor.s: executor.c.s
+executor.s: executor.cpp.s
 
 .PHONY : executor.s
 
 # target to generate assembly for a file
-executor.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/executor.c.s
-.PHONY : executor.c.s
+executor.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/executor.cpp.s
+.PHONY : executor.cpp.s
 
-file_deletion.o: file_deletion.c.o
+file_deletion.o: file_deletion.cpp.o
 
 .PHONY : file_deletion.o
 
 # target to build an object file
-file_deletion.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/file_deletion.c.o
-.PHONY : file_deletion.c.o
+file_deletion.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/file_deletion.cpp.o
+.PHONY : file_deletion.cpp.o
 
-file_deletion.i: file_deletion.c.i
+file_deletion.i: file_deletion.cpp.i
 
 .PHONY : file_deletion.i
 
 # target to preprocess a source file
-file_deletion.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/file_deletion.c.i
-.PHONY : file_deletion.c.i
+file_deletion.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/file_deletion.cpp.i
+.PHONY : file_deletion.cpp.i
 
-file_deletion.s: file_deletion.c.s
+file_deletion.s: file_deletion.cpp.s
 
 .PHONY : file_deletion.s
 
 # target to generate assembly for a file
-file_deletion.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/file_deletion.c.s
-.PHONY : file_deletion.c.s
+file_deletion.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/file_deletion.cpp.s
+.PHONY : file_deletion.cpp.s
 
-input.o: input.c.o
+input.o: input.cpp.o
 
 .PHONY : input.o
 
 # target to build an object file
-input.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/input.c.o
-.PHONY : input.c.o
+input.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/input.cpp.o
+.PHONY : input.cpp.o
 
-input.i: input.c.i
+input.i: input.cpp.i
 
 .PHONY : input.i
 
 # target to preprocess a source file
-input.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/input.c.i
-.PHONY : input.c.i
+input.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/input.cpp.i
+.PHONY : input.cpp.i
 
-input.s: input.c.s
+input.s: input.cpp.s
 
 .PHONY : input.s
 
 # target to generate assembly for a file
-input.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/input.c.s
-.PHONY : input.c.s
+input.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/input.cpp.s
+.PHONY : input.cpp.s
 
-job_requester.o: job_requester.c.o
+job_requester.o: job_requester.cpp.o
 
 .PHONY : job_requester.o
 
 # target to build an object file
-job_requester.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/job_requester.c.o
-.PHONY : job_requester.c.o
+job_requester.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/job_requester.cpp.o
+.PHONY : job_requester.cpp.o
 
-job_requester.i: job_requester.c.i
+job_requester.i: job_requester.cpp.i
 
 .PHONY : job_requester.i
 
 # target to preprocess a source file
-job_requester.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/job_requester.c.i
-.PHONY : job_requester.c.i
+job_requester.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/job_requester.cpp.i
+.PHONY : job_requester.cpp.i
 
-job_requester.s: job_requester.c.s
+job_requester.s: job_requester.cpp.s
 
 .PHONY : job_requester.s
 
 # target to generate assembly for a file
-job_requester.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/job_requester.c.s
-.PHONY : job_requester.c.s
+job_requester.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/job_requester.cpp.s
+.PHONY : job_requester.cpp.s
 
-linked_list.o: linked_list.c.o
+linked_list.o: linked_list.cpp.o
 
 .PHONY : linked_list.o
 
 # target to build an object file
-linked_list.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/linked_list.c.o
-.PHONY : linked_list.c.o
+linked_list.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/linked_list.cpp.o
+.PHONY : linked_list.cpp.o
 
-linked_list.i: linked_list.c.i
+linked_list.i: linked_list.cpp.i
 
 .PHONY : linked_list.i
 
 # target to preprocess a source file
-linked_list.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/linked_list.c.i
-.PHONY : linked_list.c.i
+linked_list.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/linked_list.cpp.i
+.PHONY : linked_list.cpp.i
 
-linked_list.s: linked_list.c.s
+linked_list.s: linked_list.cpp.s
 
 .PHONY : linked_list.s
 
 # target to generate assembly for a file
-linked_list.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/linked_list.c.s
-.PHONY : linked_list.c.s
+linked_list.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/linked_list.cpp.s
+.PHONY : linked_list.cpp.s
 
-main.o: main.c.o
+main.o: main.cpp.o
 
 .PHONY : main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/main.c.o
-.PHONY : main.c.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.c.i
+main.i: main.cpp.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/main.cpp.s
+.PHONY : main.cpp.s
 
-matcher.o: matcher.c.o
+matcher.o: matcher.cpp.o
 
 .PHONY : matcher.o
 
 # target to build an object file
-matcher.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/matcher.c.o
-.PHONY : matcher.c.o
+matcher.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/matcher.cpp.o
+.PHONY : matcher.cpp.o
 
-matcher.i: matcher.c.i
+matcher.i: matcher.cpp.i
 
 .PHONY : matcher.i
 
 # target to preprocess a source file
-matcher.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/matcher.c.i
-.PHONY : matcher.c.i
+matcher.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/matcher.cpp.i
+.PHONY : matcher.cpp.i
 
-matcher.s: matcher.c.s
+matcher.s: matcher.cpp.s
 
 .PHONY : matcher.s
 
 # target to generate assembly for a file
-matcher.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/matcher.c.s
-.PHONY : matcher.c.s
+matcher.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/matcher.cpp.s
+.PHONY : matcher.cpp.s
 
-rescheduling.o: rescheduling.c.o
+rescheduling.o: rescheduling.cpp.o
 
 .PHONY : rescheduling.o
 
 # target to build an object file
-rescheduling.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/rescheduling.c.o
-.PHONY : rescheduling.c.o
+rescheduling.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/rescheduling.cpp.o
+.PHONY : rescheduling.cpp.o
 
-rescheduling.i: rescheduling.c.i
+rescheduling.i: rescheduling.cpp.i
 
 .PHONY : rescheduling.i
 
 # target to preprocess a source file
-rescheduling.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/rescheduling.c.i
-.PHONY : rescheduling.c.i
+rescheduling.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/rescheduling.cpp.i
+.PHONY : rescheduling.cpp.i
 
-rescheduling.s: rescheduling.c.s
+rescheduling.s: rescheduling.cpp.s
 
 .PHONY : rescheduling.s
 
 # target to generate assembly for a file
-rescheduling.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/rescheduling.c.s
-.PHONY : rescheduling.c.s
+rescheduling.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/rescheduling.cpp.s
+.PHONY : rescheduling.cpp.s
 
-scheduler.o: scheduler.c.o
+scheduler.o: scheduler.cpp.o
 
 .PHONY : scheduler.o
 
 # target to build an object file
-scheduler.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/scheduler.c.o
-.PHONY : scheduler.c.o
+scheduler.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/scheduler.cpp.o
+.PHONY : scheduler.cpp.o
 
-scheduler.i: scheduler.c.i
+scheduler.i: scheduler.cpp.i
 
 .PHONY : scheduler.i
 
 # target to preprocess a source file
-scheduler.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/scheduler.c.i
-.PHONY : scheduler.c.i
+scheduler.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/scheduler.cpp.i
+.PHONY : scheduler.cpp.i
 
-scheduler.s: scheduler.c.s
+scheduler.s: scheduler.cpp.s
 
 .PHONY : scheduler.s
 
 # target to generate assembly for a file
-scheduler.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/scheduler.c.s
-.PHONY : scheduler.c.s
+scheduler.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/scheduler.cpp.s
+.PHONY : scheduler.cpp.s
 
-tier1.o: tier1.c.o
+tier1.o: tier1.cpp.o
 
 .PHONY : tier1.o
 
 # target to build an object file
-tier1.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tier1.c.o
-.PHONY : tier1.c.o
+tier1.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tier1.cpp.o
+.PHONY : tier1.cpp.o
 
-tier1.i: tier1.c.i
+tier1.i: tier1.cpp.i
 
 .PHONY : tier1.i
 
 # target to preprocess a source file
-tier1.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tier1.c.i
-.PHONY : tier1.c.i
+tier1.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tier1.cpp.i
+.PHONY : tier1.cpp.i
 
-tier1.s: tier1.c.s
+tier1.s: tier1.cpp.s
 
 .PHONY : tier1.s
 
 # target to generate assembly for a file
-tier1.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tier1.c.s
-.PHONY : tier1.c.s
+tier1.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tier1.cpp.s
+.PHONY : tier1.cpp.s
 
-trace.o: trace.c.o
+trace.o: trace.cpp.o
 
 .PHONY : trace.o
 
 # target to build an object file
-trace.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/trace.c.o
-.PHONY : trace.c.o
+trace.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/trace.cpp.o
+.PHONY : trace.cpp.o
 
-trace.i: trace.c.i
+trace.i: trace.cpp.i
 
 .PHONY : trace.i
 
 # target to preprocess a source file
-trace.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/trace.c.i
-.PHONY : trace.c.i
+trace.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/trace.cpp.i
+.PHONY : trace.cpp.i
 
-trace.s: trace.c.s
+trace.s: trace.cpp.s
 
 .PHONY : trace.s
 
 # target to generate assembly for a file
-trace.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/trace.c.s
-.PHONY : trace.c.s
+trace.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/trace.cpp.s
+.PHONY : trace.cpp.s
 
-tracer_host.o: tracer_host.c.o
+tracer_host.o: tracer_host.cpp.o
 
 .PHONY : tracer_host.o
 
 # target to build an object file
-tracer_host.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_host.c.o
-.PHONY : tracer_host.c.o
+tracer_host.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_host.cpp.o
+.PHONY : tracer_host.cpp.o
 
-tracer_host.i: tracer_host.c.i
+tracer_host.i: tracer_host.cpp.i
 
 .PHONY : tracer_host.i
 
 # target to preprocess a source file
-tracer_host.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_host.c.i
-.PHONY : tracer_host.c.i
+tracer_host.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_host.cpp.i
+.PHONY : tracer_host.cpp.i
 
-tracer_host.s: tracer_host.c.s
+tracer_host.s: tracer_host.cpp.s
 
 .PHONY : tracer_host.s
 
 # target to generate assembly for a file
-tracer_host.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_host.c.s
-.PHONY : tracer_host.c.s
+tracer_host.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_host.cpp.s
+.PHONY : tracer_host.cpp.s
 
-tracer_link.o: tracer_link.c.o
+tracer_link.o: tracer_link.cpp.o
 
 .PHONY : tracer_link.o
 
 # target to build an object file
-tracer_link.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_link.c.o
-.PHONY : tracer_link.c.o
+tracer_link.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_link.cpp.o
+.PHONY : tracer_link.cpp.o
 
-tracer_link.i: tracer_link.c.i
+tracer_link.i: tracer_link.cpp.i
 
 .PHONY : tracer_link.i
 
 # target to preprocess a source file
-tracer_link.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_link.c.i
-.PHONY : tracer_link.c.i
+tracer_link.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_link.cpp.i
+.PHONY : tracer_link.cpp.i
 
-tracer_link.s: tracer_link.c.s
+tracer_link.s: tracer_link.cpp.s
 
 .PHONY : tracer_link.s
 
 # target to generate assembly for a file
-tracer_link.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_link.c.s
-.PHONY : tracer_link.c.s
+tracer_link.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_link.cpp.s
+.PHONY : tracer_link.cpp.s
 
-tracer_storage.o: tracer_storage.c.o
+tracer_storage.o: tracer_storage.cpp.o
 
 .PHONY : tracer_storage.o
 
 # target to build an object file
-tracer_storage.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_storage.c.o
-.PHONY : tracer_storage.c.o
+tracer_storage.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_storage.cpp.o
+.PHONY : tracer_storage.cpp.o
 
-tracer_storage.i: tracer_storage.c.i
+tracer_storage.i: tracer_storage.cpp.i
 
 .PHONY : tracer_storage.i
 
 # target to preprocess a source file
-tracer_storage.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_storage.c.i
-.PHONY : tracer_storage.c.i
+tracer_storage.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_storage.cpp.i
+.PHONY : tracer_storage.cpp.i
 
-tracer_storage.s: tracer_storage.c.s
+tracer_storage.s: tracer_storage.cpp.s
 
 .PHONY : tracer_storage.s
 
 # target to generate assembly for a file
-tracer_storage.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_storage.c.s
-.PHONY : tracer_storage.c.s
+tracer_storage.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/tracer_storage.cpp.s
+.PHONY : tracer_storage.cpp.s
 
-writeToFile.o: writeToFile.c.o
+writeToFile.o: writeToFile.cpp.o
 
 .PHONY : writeToFile.o
 
 # target to build an object file
-writeToFile.c.o:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/writeToFile.c.o
-.PHONY : writeToFile.c.o
+writeToFile.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/writeToFile.cpp.o
+.PHONY : writeToFile.cpp.o
 
-writeToFile.i: writeToFile.c.i
+writeToFile.i: writeToFile.cpp.i
 
 .PHONY : writeToFile.i
 
 # target to preprocess a source file
-writeToFile.c.i:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/writeToFile.c.i
-.PHONY : writeToFile.c.i
+writeToFile.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/writeToFile.cpp.i
+.PHONY : writeToFile.cpp.i
 
-writeToFile.s: writeToFile.c.s
+writeToFile.s: writeToFile.cpp.s
 
 .PHONY : writeToFile.s
 
 # target to generate assembly for a file
-writeToFile.c.s:
-	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/writeToFile.c.s
-.PHONY : writeToFile.c.s
+writeToFile.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/writeToFile.cpp.s
+.PHONY : writeToFile.cpp.s
 
 # Help Target
 help:

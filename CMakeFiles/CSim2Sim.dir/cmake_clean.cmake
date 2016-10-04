@@ -1,26 +1,26 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CSim2Sim.dir/main.c.o"
-  "CMakeFiles/CSim2Sim.dir/scheduler.c.o"
-  "CMakeFiles/CSim2Sim.dir/data_replicator.c.o"
-  "CMakeFiles/CSim2Sim.dir/tier1.c.o"
-  "CMakeFiles/CSim2Sim.dir/job_requester.c.o"
-  "CMakeFiles/CSim2Sim.dir/writeToFile.c.o"
-  "CMakeFiles/CSim2Sim.dir/tracer_link.c.o"
-  "CMakeFiles/CSim2Sim.dir/tracer_host.c.o"
-  "CMakeFiles/CSim2Sim.dir/evil.c.o"
-  "CMakeFiles/CSim2Sim.dir/rescheduling.c.o"
-  "CMakeFiles/CSim2Sim.dir/tracer_storage.c.o"
-  "CMakeFiles/CSim2Sim.dir/executor.c.o"
-  "CMakeFiles/CSim2Sim.dir/input.c.o"
-  "CMakeFiles/CSim2Sim.dir/linked_list.c.o"
-  "CMakeFiles/CSim2Sim.dir/matcher.c.o"
-  "CMakeFiles/CSim2Sim.dir/trace.c.o"
-  "CMakeFiles/CSim2Sim.dir/file_deletion.c.o"
+  "CMakeFiles/CSim2Sim.dir/main.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/scheduler.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/data_replicator.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/tier1.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/job_requester.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/writeToFile.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/tracer_link.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/tracer_host.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/evil.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/rescheduling.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/tracer_storage.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/executor.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/input.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/linked_list.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/matcher.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/trace.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/file_deletion.cpp.o"
   "CSim2Sim.pdb"
   "CSim2Sim"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang CXX)
   include(CMakeFiles/CSim2Sim.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

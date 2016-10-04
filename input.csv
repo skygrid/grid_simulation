@@ -1,21 +1,6 @@
 Name, Type, TimeOfSubmission, Flops-Size, InputFileName, InputSize, NRep, Location1, Location2, Location3, Location4, Location5, Location6, Location7, Location8, Location9, Location10, Storage_T1, Storage_T2, Storage_T3, Storage_T4, Storage_T5, Storage_T6, Storage_T7, Storage_T8, Storage_T9, Storage_T10, OutPut-Name, Output-Size, NRepOut, OutLoc1, OutLoc2, OutLoc3, OutLoc4, OutLoc5, OutLoc6, OutLoc7, OutLoc7, OutLoc9, OutLoc10
-Job0,MCSIMULATION,0,4.15610947043e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data0,52078126.4512,0,0,0,0,0,0,0,0,0,0,0
-Job1,USER,0,4.92174061532e+12,dataset1,32091752535.3,3,RAL,RRCKI,PIC,0,0,0,0,0,0,0,1,1,0,none,none,none,none,none,none,none,out_dataset_1,73028896.5418,3,IN2P31,GRIDKA1,RRCKI1,0,0,0,0,0,0,0
-Job2,USER,0,4.57541766701e+12,dataset0,29838716147.2,4,CNAF,RAL,RRCKI,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_2,66651751.7271,3,IN2P31,CNAF1,SARA1,0,0,0,0,0,0,0
-Job3,MCSIMULATION,0,4.56880337837e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data3,52402442.6161,0,0,0,0,0,0,0,0,0,0,0
-Job4,MCSIMULATION,0,2.68779515623e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data4,56000269.2761,0,0,0,0,0,0,0,0,0,0,0
-Job5,USER,0,4.12589266937e+12,dataset0,29838716147.2,4,CNAF,RAL,RRCKI,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_5,90117780.493,3,GRIDKA1,PIC1,CNAF1,0,0,0,0,0,0,0
-Job6,MCSIMULATION,0,2.29163215753e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data6,51453073.9597,0,0,0,0,0,0,0,0,0,0,0
-Job7,USER,0,4.6380659433e+12,dataset0,29838716147.2,4,CNAF,RAL,RRCKI,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_7,56144715.0151,3,GRIDKA1,RAL1,RRCKI1,0,0,0,0,0,0,0
-Job8,MCSIMULATION,0,3.04773628396e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data8,57276356.3172,0,0,0,0,0,0,0,0,0,0,0
-Job9,MCSIMULATION,0,3.85826547041e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data9,52791837.0382,0,0,0,0,0,0,0,0,0,0,0
-Job10,MCSIMULATION,0,2.87944691058e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data10,46274561.9847,0,0,0,0,0,0,0,0,0,0,0
-Job11,USER,0,4.46069071687e+12,dataset0,29838716147.2,4,CNAF,RAL,RRCKI,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_11,72661761.9742,3,CNAF1,RRCKI1,RAL1,0,0,0,0,0,0,0
-Job12,USER,0,4.34227460207e+12,dataset0,29838716147.2,4,CNAF,RAL,RRCKI,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_12,82304562.6519,3,RAL1,GRIDKA1,IN2P31,0,0,0,0,0,0,0
-Job13,USER,0,4.69731824854e+12,dataset1,32091752535.3,3,RAL,RRCKI,PIC,0,0,0,0,0,0,0,1,1,0,none,none,none,none,none,none,none,out_dataset_13,73374210.8814,3,IN2P31,CNAF1,RRCKI1,0,0,0,0,0,0,0
-Job14,MCSIMULATION,0,3.70749954535e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data14,44953579.23,0,0,0,0,0,0,0,0,0,0,0
-Job15,MCSIMULATION,0,3.3011751362e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data15,47849691.2991,0,0,0,0,0,0,0,0,0,0,0
-Job16,MCSIMULATION,0,3.25651493938e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data16,64093933.2787,0,0,0,0,0,0,0,0,0,0,0
-Job17,DATARECONSTRUCTION,0,3.56609871892e+12,dataset0,29838716147.2,4,CNAF,RAL,RRCKI,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_17,983555055.181,0,0,0,0,0,0,0,0,0,0,0
-Job18,MCSIMULATION,0,3.39528191161e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data18,40222491.4168,0,0,0,0,0,0,0,0,0,0,0
-Job19,MCSIMULATION,0,2.2711931768e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data19,39173728.9728,0,0,0,0,0,0,0,0,0,0,0
+Job0,DATARECONSTRUCTION,0,3.50530428184e+12,dataset0,3773880448.92,4,IN2P3,RAL,CNAF,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_0,996079203.643,0,0,0,0,0,0,0,0,0,0,0
+Job1,MCSIMULATION,0,2.60200176246e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data1,53916494.344,0,0,0,0,0,0,0,0,0,0,0
+Job2,MCSIMULATION,0,3.25112806492e+13,none,0,0,0,0,0,0,0,0,0,0,0,0,none,none,none,none,none,none,none,none,none,none,mc_out_data2,52854188.1338,0,0,0,0,0,0,0,0,0,0,0
+Job3,USER,0,4.40678615723e+12,dataset0,3773880448.92,4,IN2P3,RAL,CNAF,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_3,74559501.6973,3,CNAF1,RAL1,RRCKI1,0,0,0,0,0,0,0
+Job4,USER,0,4.9465811886e+12,dataset0,3773880448.92,4,IN2P3,RAL,CNAF,SARA,0,0,0,0,0,0,1,1,1,0,none,none,none,none,none,none,out_dataset_4,76304997.0255,3,PIC1,GRIDKA1,IN2P31,0,0,0,0,0,0,0
