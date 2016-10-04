@@ -1,7 +1,7 @@
 import sys, os, re
 x = str(sys.argv[1]) + ".cs"
 zz = x[:(x.find("/")+1)]
-os.system("pj_dump " + str(sys.argv[1]) + " > " + x)
+os.system("./pj_dump " + str(sys.argv[1]) + " > " + x)
 ff = open(zz + sys.argv[1][(x.find("/")+1):] + ".csv", "w")
 with open(x) as f:
     for line in f:

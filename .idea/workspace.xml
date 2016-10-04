@@ -16,7 +16,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd27f5f-2289-4f64-a5e8-694713361912" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InputJobs/1Replica/input_new.py" afterPath="$PROJECT_DIR$/InputJobs/1Replica/input_new.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simgridoutput/clear_trace.py" afterPath="$PROJECT_DIR$/simgridoutput/clear_trace.py" />
     </list>
     <ignored path="CSim2Sim.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +35,18 @@
     <favorites_list name="CSim2Sim" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="clear_trace.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simgridoutput/clear_trace.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/evil.c" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/delete.py" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/trace_host.py" />
         <option value="$USER_HOME$/PycharmProjects/GridAnalysis/Link_workload/del.py" />
@@ -94,6 +104,7 @@
         <option value="$PROJECT_DIR$/InputJobs/Diff_replicas/input.py" />
         <option value="$PROJECT_DIR$/Cloud/cloud.py" />
         <option value="$PROJECT_DIR$/InputJobs/1Replica/input_new.py" />
+        <option value="$PROJECT_DIR$/simgridoutput/clear_trace.py" />
       </list>
     </option>
   </component>
@@ -562,12 +573,12 @@
       <workItem from="1475267908908" duration="25000" />
       <workItem from="1475272707692" duration="266000" />
       <workItem from="1475491479639" duration="16002000" />
-      <workItem from="1475575401619" duration="12934000" />
+      <workItem from="1475575401619" duration="13131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="749490000" />
+    <option name="totallyTimeSpent" value="749687000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -580,9 +591,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21965748" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21965748" sideWeight="0.650641" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27831715" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48381877" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1009,8 +1020,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simgridoutput/clear_trace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="54">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding />
         </state>
       </provider>
