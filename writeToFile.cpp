@@ -22,18 +22,18 @@ int clearFile()
     fp = fopen (path_to_output, "w");
     fprintf(fp, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec, Tier, Type\n");
     fclose(fp);
-    fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "w");
-    fclose(fp1);
+    //fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "w");
+    //fclose(fp1);
 
     return(0);
 }
 
 int writeAnomaly(double clock)
 {
-    FILE * fp;
+    /*FILE * fp;
     fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "a");
     fprintf(fp, "%f\n", clock);
-    fclose(fp);
+    fclose(fp);*/
     return(0);
 }
 
