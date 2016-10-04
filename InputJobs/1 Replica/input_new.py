@@ -28,7 +28,8 @@ OUTPUT_SIZE_BY_TYPE = {"USER":79*10**6, "DATASTRIPPING":1.5*10**9, "MERGE":5*10*
 REPLICA_BY_TYPE = {"USER":[0, 0, 3, 0], "DATASTRIPPING":NULL_REPLICA, "MERGE":[1, 1, 3, 1], "MCStripping":NULL_REPLICA, "DATARECONSTRUCTION":NULL_REPLICA, "TURBO":NULL_REPLICA,  "MCRECONSTRUCTION":NULL_REPLICA, "WGPRODUCTION":NULL_REPLICA, "MCMERGE":[1, 1, 2, 1], "UNKNOWN":NULL_REPLICA, "MCSIMULATION":NULL_REPLICA, "TEST":NULL_REPLICA}
 
 int_types = range(0, 10)
-types_pk = (0.507, 0.196, 0.108, 0.096, 0.058, 0.015, 0.005, 0.005, 0.004, 0.004)
+types_pk = np.array(0.507, 0.196, 0.108, 0.096, 0.058, 0.015, 0.005, 0.005, 0.004, 0.004)
+types_pk = types_pk / np.sum(types_pk)
 types_custmx = stats.rv_discrete(name='custm', values=(int_types, types_pk))
 types_custm = types_custmx.rvs(size=job_amount)
 mc_indexes = np.where(types_custm == 0)
@@ -157,8 +158,8 @@ for i in range(job_amount):
 		nrepin = NREPIN[i]
 
 	NREpOut = 1
-	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(times_array[i]) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + ",+,0,0,0,0,0,0,0,0,0" + "\n"
+	time_submit = 0 #times_array[i]
+	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(time_submit) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + ",+,0,0,0,0,0,0,0,0,0" + "\n"
 	f.write(string)
 
 f.close()
-
