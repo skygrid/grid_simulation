@@ -6,9 +6,12 @@
 #define CSIM2SIM_MESSAGES_H
 
 #include <simgrid/msg.h>
-
+#include <string>
+#include <list>
 #define MESSAGES_SIZE 100000
+using namespace std;
 
+extern list<Job*> global_queue;
 
 typedef enum {
     USER,
@@ -27,52 +30,53 @@ typedef enum {
 } jobType;
 
 
-typedef struct{
-    char* name;
+class Job{
+public:
+    string name;
     double submissionTime;
     jobType type;
-    char* typeChar;
+    string typeChar;
     double compSize;
-    char* inputFileName;
+    string inputFileName;
     double inputSize;
     int NRep;
-    char* dataLocHost1;
-    char* dataLocHost2;
-    char* dataLocHost3;
-    char* dataLocHost4;
-    char* dataLocHost5;
-    char* dataLocHost6;
-    char* dataLocHost7;
-    char* dataLocHost8;
-    char* dataLocHost9;
-    char* dataLocHost10;
+    string dataLocHost1;
+    string dataLocHost2;
+    string dataLocHost3;
+    string dataLocHost4;
+    string dataLocHost5;
+    string dataLocHost6;
+    string dataLocHost7;
+    string dataLocHost8;
+    string dataLocHost9;
+    string dataLocHost10;
 
-    char* storageType1;
-    char* storageType2;
-    char* storageType3;
-    char* storageType4;
-    char* storageType5;
-    char* storageType6;
-    char* storageType7;
-    char* storageType8;
-    char* storageType9;
-    char* storageType10;
+    string storageType1;
+    string storageType2;
+    string storageType3;
+    string storageType4;
+    string storageType5;
+    string storageType6;
+    string storageType7;
+    string storageType8;
+    string storageType9;
+    string storageType10;
 
     int outputNumber;
-    char* outputHost1;
-    char* outputHost2;
-    char* outputHost3;
-    char* outputHost4;
-    char* outputHost5;
-    char* outputHost6;
-    char* outputHost7;
-    char* outputHost8;
-    char* outputHost9;
-    char* outputHost10;
+    string outputHost1;
+    string outputHost2;
+    string outputHost3;
+    string outputHost4;
+    string outputHost5;
+    string outputHost6;
+    string outputHost7;
+    string outputHost8;
+    string outputHost9;
+    string outputHost10;
 
 
     char* downloadSite;
-    char* outputName;
+    string outputName;
     double outputFileSize;
 
 
@@ -83,37 +87,42 @@ typedef struct{
     double endExecClock;
     int successExecuted;
     const char* tier;
-}job, *jobPtr;
 
 
-typedef struct{
-    char* input_file_path;
-    char* copy_file_path;
-    char* copy_from_tape_to_disk_name;
-    char* destination_name;
-    char* storage_type;
-}dataInfo, *dataInfoPtr;
+};
 
+class DataInfo{
+public:
+    string input_file_path;
+    string copy_file_path;
+    string copy_from_tape_to_disk_name;
+    string destination_name;
+    string storage_type;
+    DataInfo(){};
 
-typedef struct{
+};
+
+class ReplicatorData{
+public:
     int replicaAmount;
-    char* fileName;
-    char* currentLoc;
-    char* storageType;
-    char* outLoc1;
-    char* outLoc2;
-    char* outLoc3;
+    string fileName;
+    string currentLoc;
+    string storageType;
+    string outLoc1;
+    string outLoc2;
+    string outLoc3;
     double size;
-}replicatorData, *replicatorDataPtr;
+};
 
-
-typedef struct {
-    char* filename;
+class UploadData{
+    string filename;
     int numberOfReplica;
-    char* dest;
-    char* storageType;
+    string dest;
+    string storageType;
     double size;
-}uploadData, *uploadDataPtr;
+};
+
+
 
 
 typedef struct {
@@ -130,11 +139,13 @@ struct node {
     struct node *next;
 };
 
-typedef struct {
+class FileData{
+public:
     int number_used;
-    char* used;
+    string used;
     xbt_dynar_t all_using_clock;
-}fileData, *fileDataPtr;
+};
+
 
 
 #endif //CSIM2SIM_MESSAGES_H

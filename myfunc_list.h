@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "messages.h"
+#include <vector>
+#include <string>
+using namespace std;
 
 int input();
 
@@ -45,26 +48,12 @@ void cumulativeInputPerSiteT(const char* host_name, double size);
 void cumulativeOutputPerSiteT(const char* host_name, double size);
 int tracer_storage(char* storage_name, char* storage_type);
 
-//LINKED LIST FUNCTIONS
-extern struct node *head;
-extern struct node *end;
-extern struct node *local_head;
-extern struct node *local_end;
 
-void insertFirst(jobPtr jobX);
-void insertLast(jobPtr jobX);
-int length();
-bool isEmpty();
-
-void localInsertFirst(jobPtr jobX);
-void localInsertLast(jobPtr jobX);
-int localLength();
-
-struct node* create_current_queue();
+list<Job*>* create_current_queue();
 void delete_job_from_queue(struct node* loc_current, struct node* loc_previous, struct node* current, struct node* previous);
 
-jobBatch_AmountPtr matcher(long amountRequestedJob);
-jobBatch_AmountPtr matcher_DAM(long amountRequestedJob, const char* host);
+vector<Job*>* matcher(long amountRequestedJob);
+vector<Job*>* matcher_DAM(long amountRequestedJob, const string host);
 
 void free_local_queue();
 void printList();
