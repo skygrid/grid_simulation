@@ -60,6 +60,14 @@ messages.h
 myfunc_list.h
 /home/ken/LHCb/grid_simulation/myfunc_list.h
 
+/home/ken/LHCb/grid_simulation/killer.cpp
+simgrid/msg.h
+-
+string
+-
+myfunc_list.h
+/home/ken/LHCb/grid_simulation/myfunc_list.h
+
 /home/ken/LHCb/grid_simulation/linked_list.cpp
 vector
 -
@@ -137,6 +145,8 @@ vector
 -
 
 /home/ken/LHCb/grid_simulation/trace.cpp
+string
+-
 simgrid/msg.h
 -
 myfunc_list.h

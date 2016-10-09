@@ -25,6 +25,10 @@ CMakeFiles/CSim2Sim.dir/job_requester.cpp.o
  /home/ken/LHCb/grid_simulation/job_requester.cpp
  /home/ken/LHCb/grid_simulation/messages.h
  /home/ken/LHCb/grid_simulation/myfunc_list.h
+CMakeFiles/CSim2Sim.dir/killer.cpp.o
+ /home/ken/LHCb/grid_simulation/killer.cpp
+ /home/ken/LHCb/grid_simulation/messages.h
+ /home/ken/LHCb/grid_simulation/myfunc_list.h
 CMakeFiles/CSim2Sim.dir/linked_list.cpp.o
  /home/ken/LHCb/grid_simulation/linked_list.cpp
  /home/ken/LHCb/grid_simulation/messages.h

@@ -12,16 +12,19 @@ int killer(int argc, char* argv[]){
     string hosts[8] = {"CERN", "CNAF", "IN2P3", "RRCKI", "PIC", "RAL", "GRIDKA", "SARA"};
     double timeout = 1000;
     msg_task_t task = NULL;
+    msg_task_t scheduler_task = NULL;
 
     while (TRUE){
         if (global_queue.empty()){
             MSG_process_sleep(100.);
 
-            for (int i = 0; i < hosts->length(); ++i) {
+            for (int i = 0; i < 8; ++i) {
                 task = MSG_task_create("finalize", 0, MESSAGES_SIZE, NULL);
                 MSG_task_send(task, hosts[i].c_str());
-                XBT_INFO("Send to: %s", hosts[i].c_str());
             }
+
+            scheduler_task = MSG_task_create("finalize", 0, MESSAGES_SIZE, NULL);
+            MSG_task_send(scheduler_task, "scheduler");
 
             break;
         }

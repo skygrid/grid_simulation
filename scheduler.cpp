@@ -23,6 +23,12 @@ int scheduler(int argc, char* argv[]){
         int res = MSG_task_receive(&task, mailbox);
         // Anomalies
         if (res == MSG_OK){
+
+            if(!strcmp(MSG_task_get_name(task), "finalize")){
+                MSG_task_destroy(task);
+                break;
+            }
+
             //XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
             JobBatchRequest* batchRequest = (JobBatchRequest*) MSG_task_get_data(task);
 
@@ -35,6 +41,7 @@ int scheduler(int argc, char* argv[]){
 
             switch(MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)))){
                 case MSG_OK:
+                    MSG_sem_release(sem_requester);
                     minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
                     //XBT_INFO("Send %d jobs after matching to %s", batch->jobsAmount ,MSG_host_get_name(MSG_task_get_source(task)));
                     break;
@@ -49,10 +56,6 @@ int scheduler(int argc, char* argv[]){
                     break;
             }
 
-            if(!strcmp(MSG_task_get_name(task), "finalize")){
-                MSG_task_destroy(task);
-                break;
-            }
             MSG_task_destroy(task);
             task = NULL;
 

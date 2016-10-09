@@ -13,7 +13,7 @@ int delete_unpopular_file(int argc, char* argv[]);
 int killer(int argc, char* argv[]);
 
 FILE* fp;
-FILE* storage_fp;
+msg_sem_t sem_requester;
 
 char* path_to_output;
 
@@ -25,6 +25,8 @@ int main(int argc, char *argv[]){
     MSG_create_environment(argv[1]);
 
     declare_trace_variables();
+
+    sem_requester = MSG_sem_init(1);
 
     MSG_function_register("evil", evil);
     MSG_function_register("scheduler", scheduler);
@@ -38,8 +40,11 @@ int main(int argc, char *argv[]){
 
     msg_error_t res = MSG_main();
     XBT_INFO("Simulation time %g", MSG_get_clock());
-    MSG_process_killall(-1);
+
     fclose(fp);
-    fclose(storage_fp);
+    MSG_sem_destroy(sem_requester);
+    MSG_sem_destroy(sem_link);
+    MSG_sem_destroy(sem);
+
     return res != MSG_OK;
 }

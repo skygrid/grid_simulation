@@ -18,6 +18,14 @@ int job_requester(int argc, char* argv[]){
     while (1){
         freeCoreAmount = fullCoreAmount - xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error") -
                 xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "corruptedCore"), "error");
+
+        MSG_sem_acquire(sem_requester);
+        if (global_queue.empty()){
+            MSG_process_sleep(20.0);
+            MSG_sem_release(sem_requester);
+            break;
+        }
+
         if (freeCoreAmount > 0){
             JobBatchRequest* jobRequest = new JobBatchRequest();
             jobRequest->coreAmount = freeCoreAmount;
@@ -26,7 +34,9 @@ int job_requester(int argc, char* argv[]){
 
             plusLinkCounter(MSG_host_get_name(MSG_host_self()), "CERN");
 
-            switch(MSG_task_send(task, "scheduler")){
+            msg_error_t err = MSG_task_send(task, "scheduler");
+
+            switch(err){
                 case MSG_OK:
                     minusLinkCounter(MSG_host_get_name(MSG_host_self()), "CERN");
                     break;
@@ -41,10 +51,8 @@ int job_requester(int argc, char* argv[]){
                     break;
             }
         }
+
         MSG_process_sleep(timeout);
-        if (freeCoreAmount > fullCoreAmount){
-            break;
-        }
     }
     return 0;
 }

@@ -285,6 +285,33 @@ job_requester.cpp.s:
 	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/job_requester.cpp.s
 .PHONY : job_requester.cpp.s
 
+killer.o: killer.cpp.o
+
+.PHONY : killer.o
+
+# target to build an object file
+killer.cpp.o:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/killer.cpp.o
+.PHONY : killer.cpp.o
+
+killer.i: killer.cpp.i
+
+.PHONY : killer.i
+
+# target to preprocess a source file
+killer.cpp.i:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/killer.cpp.i
+.PHONY : killer.cpp.i
+
+killer.s: killer.cpp.s
+
+.PHONY : killer.s
+
+# target to generate assembly for a file
+killer.cpp.s:
+	$(MAKE) -f CMakeFiles/CSim2Sim.dir/build.make CMakeFiles/CSim2Sim.dir/killer.cpp.s
+.PHONY : killer.cpp.s
+
 linked_list.o: linked_list.cpp.o
 
 .PHONY : linked_list.o
@@ -609,6 +636,9 @@ help:
 	@echo "... job_requester.o"
 	@echo "... job_requester.i"
 	@echo "... job_requester.s"
+	@echo "... killer.o"
+	@echo "... killer.i"
+	@echo "... killer.s"
 	@echo "... linked_list.o"
 	@echo "... linked_list.i"
 	@echo "... linked_list.s"

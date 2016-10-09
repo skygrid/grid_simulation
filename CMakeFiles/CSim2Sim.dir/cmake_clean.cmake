@@ -16,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CSim2Sim.dir/matcher.cpp.o"
   "CMakeFiles/CSim2Sim.dir/trace.cpp.o"
   "CMakeFiles/CSim2Sim.dir/file_deletion.cpp.o"
+  "CMakeFiles/CSim2Sim.dir/killer.cpp.o"
   "CSim2Sim.pdb"
   "CSim2Sim"
 )

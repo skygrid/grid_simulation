@@ -19,10 +19,10 @@ extern list<Job*> global_queue;
 extern FILE* fp;
 extern msg_sem_t sem_link;
 extern msg_sem_t sem;
+extern msg_sem_t sem_requester;
 extern xbt_dict_t dict;
 
 extern char* path_to_output;
-extern FILE* storage_fp;
 
 int data_replicator(int argc, char* argv[]);
 int job_requester();
