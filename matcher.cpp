@@ -42,7 +42,7 @@ vector<Job*>* matcher(long amountRequestedJob){
     int amount_of_matched_jobs = 0;
 
     if (global_queue.empty()){
-        MSG_process_kill(MSG_process_self());
+        //MSG_process_kill(MSG_process_self());
     }
 
     vector<Job*>* jobBatch = new vector<Job*>;

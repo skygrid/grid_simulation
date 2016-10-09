@@ -21,7 +21,6 @@ int job_requester(int argc, char* argv[]){
 
         MSG_sem_acquire(sem_requester);
         if (global_queue.empty()){
-            MSG_process_sleep(20.0);
             MSG_sem_release(sem_requester);
             break;
         }
@@ -33,7 +32,7 @@ int job_requester(int argc, char* argv[]){
             task = MSG_task_create("request", 0.0, MESSAGES_SIZE, jobRequest);
 
             plusLinkCounter(MSG_host_get_name(MSG_host_self()), "CERN");
-
+            XBT_INFO("xx");
             msg_error_t err = MSG_task_send(task, "scheduler");
 
             switch(err){

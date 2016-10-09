@@ -25,10 +25,19 @@ int killer(int argc, char* argv[]){
 
             scheduler_task = MSG_task_create("finalize", 0, MESSAGES_SIZE, NULL);
             MSG_task_send(scheduler_task, "scheduler");
-
             break;
         }
         MSG_process_sleep(timeout);
     }
+    return 0;
+}
+
+int die_or_not(){
+    MSG_sem_acquire(sem_requester);
+    if (global_queue.empty()){
+        MSG_process_kill(MSG_process_self());
+        MSG_sem_release(sem_requester);
+    }
+    MSG_sem_release(sem_requester);
     return 0;
 }

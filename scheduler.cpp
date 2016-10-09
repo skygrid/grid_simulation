@@ -20,11 +20,13 @@ int scheduler(int argc, char* argv[]){
     sprintf(mailbox, "scheduler");
 
     while (1){
+
+
         int res = MSG_task_receive(&task, mailbox);
         // Anomalies
         if (res == MSG_OK){
 
-            if(!strcmp(MSG_task_get_name(task), "finalize")){
+            if (!strcmp(MSG_task_get_name(task), "finalize")){
                 MSG_task_destroy(task);
                 break;
             }
