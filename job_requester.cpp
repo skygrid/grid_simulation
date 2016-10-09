@@ -51,6 +51,7 @@ int job_requester(int argc, char* argv[]){
                     break;
             }
         }
+        MSG_sem_release(sem_requester);
 
         MSG_process_sleep(timeout);
     }

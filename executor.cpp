@@ -169,17 +169,16 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
     MSG_file_read(i_data, (sg_size_t) jobInfo->inputSize);
     MSG_file_close(i_data);
 
-    // Clean data information about files
     delete dataInfo;
 }
 
 int task_executor(Job* jobInfo){
-    char outputFilePath[50];
+    string host_name = string(MSG_host_get_name(MSG_host_self()));
+    string outputFilePath;
     msg_task_t task;
     msg_file_t outFile;
-    string host_name = MSG_host_get_name(MSG_host_self());
 
-    sprintf(outputFilePath, "/%s1/%s", MSG_host_get_name(MSG_host_self()), jobInfo->outputName);
+    outputFilePath = "/" + host_name + "1" + "/" + jobInfo->outputName;
 
     // CREATING AND EXECUTION OF TASK
     task = MSG_task_create(jobInfo->name.c_str(), jobInfo->compSize, 0, NULL);
@@ -204,9 +203,9 @@ int task_executor(Job* jobInfo){
     }
 
     //Write output to file
-    outFile = MSG_file_open(outputFilePath, NULL);
+    outFile = MSG_file_open(outputFilePath.c_str(), NULL);
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
-    create_file_label(outputFilePath);
+    create_file_label(outputFilePath.c_str());
     MSG_file_close(outFile);
 
     // tracing
