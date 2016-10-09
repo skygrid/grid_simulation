@@ -10,10 +10,12 @@
 #include "messages.h"
 #include <vector>
 #include <string>
+
 using namespace std;
 
 int input();
 
+extern list<Job*> global_queue;
 extern FILE* fp;
 extern msg_sem_t sem_link;
 extern msg_sem_t sem;
@@ -24,17 +26,17 @@ extern FILE* storage_fp;
 
 int data_replicator(int argc, char* argv[]);
 int job_requester();
-int writeToFile(FILE* fpx, jobPtr jobInfo);
+int writeToFile(FILE* fpx, Job* jobInfo);
 int clearFile();
 int writeAnomaly(double clock);
 int set_0_all_routes();
 
 int declare_trace_variables();
-long dataset_number(char* host_name, char* storage_type);
+long dataset_number(string host_name, string storage_type);
 
-int plusLinkCounter(const char* src, const char* dst);
-int minusLinkCounter(const char* src, const char* dst);
-int tracer_traffic(const char* src, const char* dst, double size);
+int plusLinkCounter(string src, string dst);
+int minusLinkCounter(string src, string dst);
+int tracer_traffic(string src, string dst, double size);
 
 int addActiveCoreT();
 int subActiveCoreT();
@@ -42,15 +44,14 @@ int subActiveCoreT();
 int addCorruptedCoreT();
 int subCorruptedCoreT();
 
-int addDatasetAmountT(const char* host_name, char* type);
-int minusDatasetAmountT(char* host_name, char* type);
-void cumulativeInputPerSiteT(const char* host_name, double size);
-void cumulativeOutputPerSiteT(const char* host_name, double size);
-int tracer_storage(char* storage_name, char* storage_type);
+int addDatasetAmountT(string host_name, string type);
+int minusDatasetAmountT(string host_name, string type);
+void cumulativeInputPerSiteT(string host_name, double size);
+void cumulativeOutputPerSiteT(string host_name, double size);
+int tracer_storage(string storage_name, string storage_type);
 
 
 list<Job*>* create_current_queue();
-void delete_job_from_queue(struct node* loc_current, struct node* loc_previous, struct node* current, struct node* previous);
 
 vector<Job*>* matcher(long amountRequestedJob);
 vector<Job*>* matcher_DAM(long amountRequestedJob, const string host);
@@ -60,7 +61,7 @@ void printList();
 
 
 int initialize_file_labels();
-int create_file_label(char* filename);
-void file_usage_counter(char* filename);
+int create_file_label(const char* filename);
+void file_usage_counter(const char* filename);
 
 #endif //CSIM2SIM_MYFUNC_LIST_H

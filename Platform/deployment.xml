@@ -46,6 +46,9 @@
 		<argument value="164"/>
 	</process>
 
+	<process host="CERN" function="killer">
+	</process>
+
 	<!--<process host="CERN" function="initialize">
 	</process>
 

@@ -10,7 +10,7 @@ int direct(const char* src, const char* dst);
 char* get_opposite_direction(char* direction);
 
 
-int plusLinkCounter(const char* src, const char* dst){
+int plusLinkCounter(string src, string dst){
     MSG_sem_acquire(sem_link);
     /*char* transit = NULL;
     if (strcmp(src, dst)){
@@ -32,15 +32,15 @@ int plusLinkCounter(const char* src, const char* dst){
     return 0;
 }
 
-int tracer_traffic(const char* src, const char* dst, double size){
+int tracer_traffic(string src, string dst, double size){
     MSG_sem_acquire(sem_link);
-    TRACE_link_srcdst_variable_add(src, dst, "traffic", size);
+    TRACE_link_srcdst_variable_add(src.c_str(), dst.c_str(), "traffic", size);
     MSG_sem_release(sem_link);
     return 0;
 }
 
 
-int minusLinkCounter(const char* src, const char* dst){
+int minusLinkCounter(string src, string dst){
     MSG_sem_acquire(sem_link);
 
 

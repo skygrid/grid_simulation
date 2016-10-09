@@ -119,7 +119,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
     // If there are no more matched jobs, but job queue still exists
     long remained_jobs = amountRequestedJob - amount_of_matched_jobs;
     if ((remained_jobs > 0) && (local_queue->size() > 0)){
-        remained_jobs = (remained_jobs < localLength()) ? remained_jobs : (remained_jobs - localLength());
+        remained_jobs = (remained_jobs < local_queue->size()) ? remained_jobs : (remained_jobs - local_queue->size());
 
         vector<Job*>* batch = matcher(remained_jobs);
 
@@ -130,7 +130,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
         }
         delete batch;
     }
-
+    delete local_queue;
     return jobBatch;
 }
 

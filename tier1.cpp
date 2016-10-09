@@ -1,6 +1,7 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 #include "myfunc_list.h"
+#include <vector>
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 //
@@ -15,15 +16,12 @@ msg_sem_t sem;
 
 // MAIN TIER1 FUNCTION
 int tier1(int argc, char* argv[]){
-    char* tierMailbox = argv[1];
-    char** argx = xbt_new(char*, 1);
-    argx[0] = tierMailbox;
 
     // LAUNCH PROCESS
     sem = MSG_sem_init(1);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), xbt_free_f);
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup("0"), xbt_free_f);
-    MSG_process_create("tier1_executor", executorLauncher, argx, MSG_host_self());
+    MSG_process_create("tier1_executor", executorLauncher, NULL, MSG_host_self());
     MSG_process_create("job_requester", job_requester, NULL, MSG_host_self());
 
     return 0;
@@ -31,9 +29,8 @@ int tier1(int argc, char* argv[]){
 
 
 int executorLauncher(int agrc, char* argv[]){
-    int i;
-    msg_task_t task;
-    char* tierMailbox = strdup(((char**) MSG_process_get_data(MSG_process_self()))[0]);
+    msg_task_t task = NULL;
+    const char* tierMailbox = MSG_host_get_name(MSG_host_self());
 
     while (1){
         int a = MSG_task_receive(&task, tierMailbox);
@@ -44,15 +41,16 @@ int executorLauncher(int agrc, char* argv[]){
                 break;
             }
             int jobAmount = (int) MSG_task_get_flops_amount(task);
-            jobPtr* jobPtrBatchData = (jobPtr*) MSG_task_get_data(task);
+            vector<Job*>* jobBatch = (vector<Job*>*) MSG_task_get_data(task);
             //XBT_INFO("Successfully receive jobBatch");
 
             //LAUNCH PROCESS TO EXECUTE TASKS
-            for (i = 0; i < jobAmount; ++i) {
-                MSG_process_create("executor", executor, jobPtrBatchData[i], MSG_host_self());
+            for (unsigned long i = 0; i < jobAmount; ++i) {
+                MSG_process_create("executor", executor, jobBatch->at(i), MSG_host_self());
             }
 
             MSG_task_destroy(task);
+            delete jobBatch;
             task = NULL;
         } else if (a == MSG_HOST_FAILURE){
             task = NULL;
@@ -62,7 +60,7 @@ int executorLauncher(int agrc, char* argv[]){
         }
 
     }
-    free(tierMailbox);
+
     return 0;
 }
 

@@ -11,7 +11,6 @@
 #define MESSAGES_SIZE 100000
 using namespace std;
 
-extern list<Job*> global_queue;
 
 typedef enum {
     USER,
@@ -35,7 +34,6 @@ public:
     string name;
     double submissionTime;
     jobType type;
-    string typeChar;
     double compSize;
     string inputFileName;
     double inputSize;
@@ -86,7 +84,7 @@ public:
     double stExecClock;
     double endExecClock;
     int successExecuted;
-    const char* tier;
+    string tier;
 
 
 };
@@ -115,6 +113,7 @@ public:
 };
 
 class UploadData{
+public:
     string filename;
     int numberOfReplica;
     string dest;
@@ -124,19 +123,10 @@ class UploadData{
 
 
 
-
-typedef struct {
-    long coreAmount; // Number of requested jobs
-}jobBatchRequest, *jobBatchRequestPtr;
-
-typedef struct {
-    jobPtr* jobBatch;
-    int jobsAmount;
-}jobBatch_Amount, *jobBatch_AmountPtr;
-
-struct node {
-    jobPtr jobX;
-    struct node *next;
+class JobBatchRequest{
+public:
+    long coreAmount;
+    JobBatchRequest(){}
 };
 
 class FileData{

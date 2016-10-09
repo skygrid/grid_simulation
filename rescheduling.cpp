@@ -6,7 +6,7 @@
 
 long currentJobInQueue;
 int* jobQueueReschedulingHelper;
-jobPtr* jobQueueHelperx;
+Job* jobQueueHelperx;
 
 int rescheduling(long failedReqJobs){
     currentJobInQueue -= failedReqJobs;
@@ -15,7 +15,7 @@ int rescheduling(long failedReqJobs){
 
 int rescheduling_DAM(int failedReqJobs){
     for (int i = 0; i < failedReqJobs; ++i) {
-        jobQueueHelperx[jobQueueReschedulingHelper[i]] = 0;
+        //jobQueueHelperx[jobQueueReschedulingHelper[i]] = 0;
     }
     return 0;
 }

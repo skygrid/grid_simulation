@@ -7,11 +7,13 @@
 #include "messages.h"
 #include <string>
 #include <boost/algorithm/string.hpp>
+using namespace std;
 
-jobType charToEnum(char *sval);
+jobType charToEnum(string sval);
+list<Job*> global_queue;
 
-char* typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
-                    "MCSIMULATION", "TEST", NULL};
+string typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
+                    "MCSIMULATION", "TEST"};
 
 int input(){
     fp = fopen (path_to_output, "a");
@@ -26,7 +28,7 @@ int input(){
         const char **rowFields = CsvParser_getFields(row);
         Job* jobX = new Job();
         jobX->name = rowFields[0];
-        jobX->type = charToEnum((char*) rowFields[1]);
+        jobX->type = charToEnum(string(rowFields[1]));
         jobX->submissionTime = xbt_str_parse_double(rowFields[2], "kotok1");
         jobX->compSize = xbt_str_parse_double(rowFields[3], "kotok4");
         jobX->inputFileName = rowFields[4];
@@ -84,8 +86,7 @@ int input(){
 
 jobType charToEnum(string sval)
 {
-    //jobType result=USER;
-    //int i=0;
+
     for (int enumInt = USER; enumInt != LAST; enumInt++)
         if (boost::iequals(sval, typesStr[enumInt])){
             jobType type = static_cast<jobType>(enumInt);

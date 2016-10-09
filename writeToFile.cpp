@@ -8,11 +8,11 @@
 #define str(x) #x
 
 
-int writeToFile(FILE* fpy, jobPtr jobInfo)
+int writeToFile(FILE* fpy, Job* jobInfo)
 {
     const char* typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
                         "MCSIMULATION", "TEST", NULL};
-    fprintf(fpy, "%s,%d,%f,%f,%f,%f,%s,%s\n", jobInfo->name, jobInfo->successExecuted, jobInfo->submissionTime, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock, jobInfo->tier, typesStr[jobInfo->type]);
+    fprintf(fpy, "%s,%d,%f,%f,%f,%f,%s,%s\n", jobInfo->name.c_str(), jobInfo->successExecuted, jobInfo->submissionTime, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock, jobInfo->tier.c_str(), typesStr[jobInfo->type]);
     return(0);
 }
 

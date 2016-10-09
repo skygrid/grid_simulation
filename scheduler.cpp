@@ -6,6 +6,9 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 #include "myfunc_list.h"
+#include <vector>
+
+using namespace std;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
@@ -21,11 +24,12 @@ int scheduler(int argc, char* argv[]){
         // Anomalies
         if (res == MSG_OK){
             //XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
-            jobBatchRequestPtr batchRequest = (jobBatchRequestPtr) MSG_task_get_data(task);
+            JobBatchRequest* batchRequest = (JobBatchRequest*) MSG_task_get_data(task);
 
-            jobBatch_AmountPtr batch = matcher(batchRequest->coreAmount);
-            //jobBatch_AmountPtr batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
-            taskB = MSG_task_create("", batch->jobsAmount, MESSAGES_SIZE, batch->jobBatch);
+            vector<Job*>* batch = matcher(batchRequest->coreAmount);
+            //vector<Job*>* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+
+            taskB = MSG_task_create("", batch->size(), MESSAGES_SIZE, batch);
             //Add new user to link
             plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
 
@@ -49,9 +53,10 @@ int scheduler(int argc, char* argv[]){
                 MSG_task_destroy(task);
                 break;
             }
-            xbt_free(batchRequest);
             MSG_task_destroy(task);
             task = NULL;
+
+            delete batchRequest;
 
         }else if (res == MSG_TRANSFER_FAILURE){
             XBT_INFO("transfer failure occur");

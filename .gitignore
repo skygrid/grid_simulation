@@ -3,7 +3,7 @@ target/
 JobDescriptor/output
 dependency-reduced-pom.xml
 Results/.ipynb_checkpoints/
-
+.*
 *.class
 
 # C extensions

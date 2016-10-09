@@ -10,6 +10,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(delete_unpopular_file, "messages specific for delet
 xbt_dict_t dict;
 
 int initialize_file_labels(){
+    /*
 
     unsigned int cur;
     char* local_name;
@@ -49,11 +50,12 @@ int initialize_file_labels(){
         xbt_dict_cursor_free(&cursor);
         xbt_dict_free(&storage_content);
     }
-
+    */
     return 0;
 }
 
-int create_file_label(char* filename){
+int create_file_label(const char* filename){
+    /*
     return 0;
     double clock = MSG_get_clock();
 
@@ -64,11 +66,12 @@ int create_file_label(char* filename){
     data->number_used = 0;
     data->all_using_clock = dynar;
     xbt_dict_set(dict, filename, data, xbt_free_f);
-
+    */
     return 0;
 }
 
-void file_usage_counter(char* filename){
+void file_usage_counter(const char* filename){
+    /*
     return;
     char* type = (char*) malloc(30);
     int len = (int) strcspn(filename, "10");
@@ -83,7 +86,7 @@ void file_usage_counter(char* filename){
         data->used = "1";
         xbt_dynar_push_as(data->all_using_clock, double, clock);
         return;
-    }
+    }*/
 }
 
 char* find_host(char* filename){
@@ -97,6 +100,7 @@ char* find_host(char* filename){
 }
 
 int delete_unpopular_file(int argc, char* argv[]){
+    /*
     double sleep_time = xbt_str_parse_double(argv[1], "error");
     msg_file_t file;
     while (TRUE){
@@ -128,5 +132,5 @@ int delete_unpopular_file(int argc, char* argv[]){
             break;
         }
     }
-    return 0;
+    return 0;*/
 }
