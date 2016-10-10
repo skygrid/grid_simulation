@@ -193,7 +193,7 @@ int task_executor(Job* jobInfo){
 
     //Anomalies of tier host
     if (b == MSG_OK){
-        XBT_INFO("%s has successfully executed", jobInfo->name.c_str());
+        //XBT_INFO("%s has successfully executed", jobInfo->name.c_str());
         MSG_task_destroy(task);
         task = NULL;
     }else{
@@ -217,25 +217,25 @@ int task_executor(Job* jobInfo){
 
 
 void plusOneActiveCore(){
-    MSG_sem_acquire(sem);
+    MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number++;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
-    MSG_sem_release(sem);
+    MSG_sem_release(sem_link);
 }
 
 void minusOneActiveCore(){
-    MSG_sem_acquire(sem);
+    MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number--;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
-    MSG_sem_release(sem);
+    MSG_sem_release(sem_link);
 }
 
 

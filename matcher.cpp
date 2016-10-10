@@ -41,9 +41,6 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 vector<Job*>* matcher(long amountRequestedJob){
     int amount_of_matched_jobs = 0;
 
-    if (global_queue.empty()){
-        //MSG_process_kill(MSG_process_self());
-    }
 
     vector<Job*>* jobBatch = new vector<Job*>;
     std::list<Job*>* local_queue = create_current_queue();
@@ -71,10 +68,6 @@ vector<Job*>* matcher(long amountRequestedJob){
 vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
 
     int amount_of_matched_jobs = 0;
-
-    if (global_queue.empty()){
-        MSG_process_kill(MSG_process_self());
-    }
 
     vector<Job*>* jobBatch = new vector<Job*>;
     std::list<Job*>* local_queue = create_current_queue();

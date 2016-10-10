@@ -44,7 +44,6 @@ int main(int argc, char *argv[]){
     fclose(fp);
     MSG_sem_destroy(sem_requester);
     MSG_sem_destroy(sem_link);
-    MSG_sem_destroy(sem);
 
     return res != MSG_OK;
 }

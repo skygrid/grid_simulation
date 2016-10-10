@@ -26,13 +26,12 @@ int job_requester(int argc, char* argv[]){
         }
 
         if (freeCoreAmount > 0){
-            JobBatchRequest* jobRequest = new JobBatchRequest();
+            JobBatchRequest* jobRequest = new JobBatchRequest;
             jobRequest->coreAmount = freeCoreAmount;
 
             task = MSG_task_create("request", 0.0, MESSAGES_SIZE, jobRequest);
 
             plusLinkCounter(MSG_host_get_name(MSG_host_self()), "CERN");
-            XBT_INFO("xx");
             msg_error_t err = MSG_task_send(task, "scheduler");
 
             switch(err){
@@ -49,8 +48,7 @@ int job_requester(int argc, char* argv[]){
                     task = NULL;
                     break;
             }
-        }
-        MSG_sem_release(sem_requester);
+        }else MSG_sem_release(sem_requester);
 
         MSG_process_sleep(timeout);
     }

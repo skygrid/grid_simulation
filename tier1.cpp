@@ -12,13 +12,12 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(tier1, "messsages specific for tier1");
 int executorLauncher(int argc, char* argv[]);
 int job_requester(int argc, char* argv[]);
 int executor(int argc, char* argv[]);
-msg_sem_t sem;
+
 
 // MAIN TIER1 FUNCTION
 int tier1(int argc, char* argv[]){
 
     // LAUNCH PROCESS
-    sem = MSG_sem_init(1);
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), xbt_free_f);
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup("0"), xbt_free_f);
     MSG_process_create("tier1_executor", executorLauncher, NULL, MSG_host_self());
