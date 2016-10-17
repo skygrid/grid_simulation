@@ -4,12 +4,11 @@
 #include <simgrid/msg.h>
 #include "messages.h"
 
-long currentJobInQueue;
 int* jobQueueReschedulingHelper;
 Job* jobQueueHelperx;
 
 int rescheduling(long failedReqJobs){
-    currentJobInQueue -= failedReqJobs;
+    //currentJobInQueue -= failedReqJobs;
     return 0;
 }
 

@@ -20,7 +20,7 @@ int my_on_exit(void* ignored1, void *ignored2);
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
-    MSG_process_on_exit(my_on_exit, NULL);
+    //MSG_process_on_exit(my_on_exit, NULL);
 
     plusOneActiveCore();
 
@@ -37,7 +37,7 @@ int executor(int argc, char* argv[]){
     task_executor(job);
     MSG_process_sleep(5);
     MSG_process_create("dataRep", data_replicator, job, MSG_host_self());
-    MSG_process_kill(MSG_process_self());
+    //MSG_process_kill(MSG_process_self());
     return 0;
 }
 

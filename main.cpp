@@ -45,5 +45,5 @@ int main(int argc, char *argv[]){
     MSG_sem_destroy(sem_requester);
     MSG_sem_destroy(sem_link);
 
-    return res != MSG_OK;
+    //return res != MSG_OK;
 }
