@@ -9,6 +9,8 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
 
 int job_requester(int argc, char* argv[]){
+    string host_name = MSG_host_get_name(MSG_host_self());
+    string CERN = "CERN";
     msg_task_t task = NULL;
     double timeout = 1000;
     long freeCoreAmount;
@@ -31,15 +33,15 @@ int job_requester(int argc, char* argv[]){
 
             task = MSG_task_create("request", 0.0, MESSAGES_SIZE, jobRequest);
 
-            plusLinkCounter(MSG_host_get_name(MSG_host_self()), "CERN");
+            plusLinkCounter(host_name, CERN);
             msg_error_t err = MSG_task_send(task, "scheduler");
 
             switch(err){
                 case MSG_OK:
-                    minusLinkCounter(MSG_host_get_name(MSG_host_self()), "CERN");
+                    minusLinkCounter(host_name, CERN);
                     break;
                 case MSG_TRANSFER_FAILURE:
-                    minusLinkCounter(MSG_host_get_name(MSG_host_self()), "CERN");
+                    minusLinkCounter(host_name, CERN);
                     MSG_task_destroy(task);
                     task = NULL;
                     break;

@@ -39,12 +39,12 @@ int scheduler(int argc, char* argv[]){
 
             taskB = MSG_task_create("", batch->size(), MESSAGES_SIZE, batch);
             //Add new user to link
-            plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
+            //plusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
 
             switch(MSG_task_send(taskB, MSG_host_get_name(MSG_task_get_source(task)))){
                 case MSG_OK:
                     MSG_sem_release(sem_requester);
-                    minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
+                    //minusLinkCounter(MSG_host_get_name(MSG_host_self()), MSG_host_get_name(MSG_task_get_source(task)));
                     //XBT_INFO("Send %d jobs after matching to %s", batch->jobsAmount ,MSG_host_get_name(MSG_task_get_source(task)));
                     break;
                 case MSG_TRANSFER_FAILURE:

@@ -57,7 +57,7 @@ int uploader(int argc, char* argv[]){
         stor_type = "0";
 
         addDatasetAmountT(host_name, "0");
-        cumulativeOutputPerSiteT(MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
+        cumulativeOutputPerSiteT(host_name, (double) MSG_file_get_size(file));
 
     }else{
         destHostName = data->dest;
@@ -73,22 +73,22 @@ int uploader(int argc, char* argv[]){
         file = MSG_file_open(curFilePath.c_str(), NULL);
         msg_host_t dest = MSG_host_by_name(destHostName.c_str());
 
-        plusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
+        //plusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
 
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest.c_str());
-        create_file_label(pathAtDest.c_str());
+        create_file_label(pathAtDest);
 
         //trace number of datasets and output traffic from site
         addDatasetAmountT(destHostName, stor_type);
-        cumulativeOutputPerSiteT(MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
+        cumulativeOutputPerSiteT(host_name, (double) MSG_file_get_size(file));
 
         if (a == MSG_OK) {
-            tracer_traffic(MSG_host_get_name(MSG_host_self()), destHostName, (double) MSG_file_get_size(file));
-            minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
+            tracer_traffic(host_name, destHostName, (double) MSG_file_get_size(file));
+            minusLinkCounter(host_name, destHostName);
             MSG_file_close(file);
             //XBT_INFO("Creating replica completed at %s", MSG_host_get_name(dest));
         }  else {
-            minusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
+            minusLinkCounter(host_name, destHostName);
             MSG_file_close(file);
             XBT_INFO("Transfer fail occurred");
         }

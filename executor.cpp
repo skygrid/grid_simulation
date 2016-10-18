@@ -105,14 +105,14 @@ int copy_from_tape_to_disk(DataInfo* data_info){
     if (!data_info->storage_type.compare("0")){
         file = MSG_file_open(data_info->input_file_path.c_str(), NULL);
 
-        file_usage_counter(data_info->input_file_path.c_str());
+        file_usage_counter(data_info->input_file_path);
 
         MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name.c_str()), data_info->copy_from_tape_to_disk_name.c_str());
-        create_file_label(data_info->copy_from_tape_to_disk_name.c_str());
+        create_file_label(data_info->copy_from_tape_to_disk_name);
         MSG_file_close(file);
         // trace storage and dataset amount to disk space
-        tracer_storage(data_info->destination_name.c_str(), data_info->storage_type.c_str());
-        addDatasetAmountT(data_info->destination_name.c_str(), "1");
+        tracer_storage(data_info->destination_name, data_info->storage_type.c_str());
+        addDatasetAmountT(data_info->destination_name, "1");
 
 
         // So we have new name of input file on the disk
@@ -131,21 +131,21 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
 
         // DOWNLOADING FILE FROM ANOTHER TIER
         file = MSG_file_open(dataInfo->input_file_path.c_str(), NULL);
-        file_usage_counter(dataInfo->input_file_path.c_str());
+        file_usage_counter(dataInfo->input_file_path);
 
-        plusLinkCounter(dataInfo->destination_name.c_str(), MSG_host_get_name(MSG_host_self()));
+        plusLinkCounter(dataInfo->destination_name, host_name);
         msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path.c_str());
-        create_file_label(dataInfo->copy_file_path.c_str());
+        create_file_label(dataInfo->copy_file_path);
 
         //tracing number of dataset
-        addDatasetAmountT(MSG_host_get_name(MSG_host_self()), "1");
-        cumulativeInputPerSiteT(MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
+        addDatasetAmountT(host_name, "1");
+        cumulativeInputPerSiteT(host_name, (double) MSG_file_get_size(file));
 
         if (error == MSG_OK){
-            tracer_traffic(dataInfo->destination_name.c_str(), MSG_host_get_name(MSG_host_self()), (double) MSG_file_get_size(file));
-            tracer_storage((char*)MSG_host_get_name(MSG_host_self()), dataInfo->storage_type.c_str());
+            tracer_traffic(dataInfo->destination_name, host_name, (double) MSG_file_get_size(file));
+            tracer_storage(host_name, dataInfo->storage_type.c_str());
         } else{
-            minusLinkCounter(dataInfo->destination_name.c_str(), MSG_host_get_name(MSG_host_self()));
+            minusLinkCounter(dataInfo->destination_name, host_name);
             minusOneActiveCore();
             jobInfo->stExecClock = 0;
             jobInfo->endExecClock = 0;
@@ -153,9 +153,9 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
             MSG_file_close(file);
             MSG_process_kill(MSG_process_self());
         }
-        minusLinkCounter(dataInfo->destination_name.c_str(), MSG_host_get_name(MSG_host_self()));
+        minusLinkCounter(dataInfo->destination_name, host_name);
         msg_file_t d_file = MSG_file_open(dataInfo->copy_file_path.c_str(), NULL);
-        file_usage_counter(dataInfo->copy_file_path.c_str());
+        file_usage_counter(dataInfo->copy_file_path);
         MSG_file_read(d_file, (sg_size_t) jobInfo->inputSize);
 
         MSG_file_close(file);
@@ -165,7 +165,7 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
     //If I have data, I open and read it
 
     msg_file_t i_data = MSG_file_open(dataInfo->input_file_path.c_str(), NULL);
-    file_usage_counter(dataInfo->input_file_path.c_str());
+    file_usage_counter(dataInfo->input_file_path);
     MSG_file_read(i_data, (sg_size_t) jobInfo->inputSize);
     MSG_file_close(i_data);
 
@@ -205,7 +205,7 @@ int task_executor(Job* jobInfo){
     //Write output to file
     outFile = MSG_file_open(outputFilePath.c_str(), NULL);
     MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
-    create_file_label(outputFilePath.c_str());
+    create_file_label(outputFilePath);
     MSG_file_close(outFile);
 
     // tracing

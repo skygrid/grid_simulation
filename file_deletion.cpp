@@ -3,14 +3,16 @@
 //
 
 #include <simgrid/msg.h>
+#include <string>
+#include <vector>
 #include "myfunc_list.h"
 #include "messages.h"
 
+map<string, FileData*> name_node;
+
 XBT_LOG_NEW_DEFAULT_CATEGORY(delete_unpopular_file, "messages specific for deletion");
-xbt_dict_t dict;
 
 int initialize_file_labels(){
-    /*
 
     unsigned int cur;
     char* local_name;
@@ -19,7 +21,6 @@ int initialize_file_labels(){
     char* storage_name;
     double clock = MSG_get_clock();
 
-    dict = xbt_dict_new();
     xbt_dynar_t storages = MSG_storages_as_dynar();
 
 
@@ -34,103 +35,83 @@ int initialize_file_labels(){
 
 
         xbt_dict_foreach(storage_content, cursor, local_name, data_size){
-            char *filename = (char*) malloc(40);
-            sprintf(filename, "/%s%s", storage_name, local_name);
+            string filename = (string) storage_name + (string) local_name;
 
-            fileDataPtr data = xbt_new(fileData, 1);
-            xbt_dynar_t dynar = xbt_dynar_new(sizeof(double), NULL); // !!!!
-            xbt_dynar_push_as(dynar, double, clock);
-            data->number_used = 0;
-            data->all_using_clock = dynar;
+            FileData* fileData = new FileData();
+            vector<double> vec_clock;
+            vec_clock.push_back(MSG_get_clock());
+            fileData->number_used = 0;
+            fileData->clocks = vec_clock;
 
-            xbt_dict_set(dict, filename, data, xbt_free_f);
-            free(filename);
+            name_node.insert(make_pair(filename, fileData));
         }
-
         xbt_dict_cursor_free(&cursor);
         xbt_dict_free(&storage_content);
     }
-    */
+
+    xbt_dynar_free(&storages);
+
     return 0;
 }
 
-int create_file_label(const char* filename){
-    /*
+int create_file_label(string& filename){
     return 0;
-    double clock = MSG_get_clock();
-
-    xbt_dynar_t dynar = xbt_dynar_new(sizeof(double), NULL);
-    xbt_dynar_push_as(dynar, double, clock);
-
-    fileDataPtr data = xbt_new(fileData, 1);
-    data->number_used = 0;
-    data->all_using_clock = dynar;
-    xbt_dict_set(dict, filename, data, xbt_free_f);
-    */
+    /*When new file created*/
+    FileData *fileData = new FileData;
+    fileData->number_used = 0;
+    vector<double> vec_clock;
+    vec_clock.push_back(MSG_get_clock());
+    fileData->clocks = vec_clock;
+    name_node.insert(make_pair(filename, fileData));
     return 0;
 }
 
-void file_usage_counter(const char* filename){
-    /*
+void file_usage_counter(string& filename){
     return;
-    char* type = (char*) malloc(30);
-    int len = (int) strcspn(filename, "10");
-    sprintf(type, "%s", filename+len);
-    type[1] = '\0';
-    if (!strcmp(type, "0")){
+    /* When file is been using*/
+    string type;
+    unsigned long len = (int) strcspn(filename.c_str(), "10");
+    type = filename.at(len);
+    if (!type.compare("0")){
         return;
     } else{
-        double clock = MSG_get_clock();
-        fileDataPtr data = (fileDataPtr) xbt_dict_get(dict, filename);
-        data->number_used += 1;
-        data->used = "1";
-        xbt_dynar_push_as(data->all_using_clock, double, clock);
+        FileData* fileData = name_node[filename];
+        fileData->number_used += 1;
+        fileData->used = "1";
+        fileData->clocks.push_back(MSG_get_clock());
         return;
-    }*/
+    }
 }
 
-char* find_host(char* filename){
-    size_t sz = strlen(filename);
-    char *x = (char*) malloc(sz);
-    snprintf(x, sz, filename + 1);
-    const char* t = "10";
-    int len = (int) strcspn(filename, t);
-    x[len-1] = '\0';
-    return x;
-}
 
 int delete_unpopular_file(int argc, char* argv[]){
-    /*
+
     double sleep_time = xbt_str_parse_double(argv[1], "error");
-    msg_file_t file;
     while (TRUE){
         MSG_process_sleep(sleep_time);
         double delete_time = 5*86400;
+        string filename;
 
         double current_time = MSG_get_clock();
-        char* filename;
-        fileDataPtr data;
 
-        xbt_dict_cursor_t cursor = NULL;
-
-        xbt_dict_foreach(dict, cursor, filename, data){
-            double last_used_time = xbt_dynar_getlast_as(data->all_using_clock, double);
-
-            if (NULL == data->used) continue;
-
-            if ((last_used_time + delete_time) < current_time){
-                XBT_INFO("delete %s", filename);
-                file = MSG_file_open(filename, NULL);
-                minusDatasetAmountT(find_host(filename), "1");
+        for (auto &file_map: name_node) {
+            if ( (file_map.second->clocks.back()) && (current_time - file_map.second->clocks.back()) > delete_time){
+                filename = file_map.first;
+                msg_file_t file = MSG_file_open(filename.c_str(), NULL);
+                //unlink file
                 MSG_file_unlink(file);
-                xbt_dict_remove(dict, filename);
+                string host_name = filename.substr(1, strcspn(filename.c_str(), "10") -1);
+                minusDatasetAmountT(host_name, "1");
+
+                //delete data
+                delete file_map.second;
+                name_node.erase(filename);
             }
         }
 
-        xbt_dict_cursor_free(&cursor);
-        if (length() == 0){
+        if (global_queue.size() == 0){
             break;
         }
     }
-    return 0;*/
+    return 0;
 }

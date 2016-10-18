@@ -8,7 +8,7 @@
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(dataset, "messages specific for dataset");
 
-int tracer_storage(string hostname, string storage_type){
+int tracer_storage(string& hostname, string storage_type){
     string storage_name = hostname + storage_type;
     msg_storage_t st = MSG_storage_get_by_name(storage_name.c_str());
 
@@ -17,21 +17,21 @@ int tracer_storage(string hostname, string storage_type){
     return 0;
 }
 
-void cumulativeInputPerSiteT(string host_name, double size){
+void cumulativeInputPerSiteT(string& host_name, double size){
     MSG_sem_acquire(sem_link);
     TRACE_host_variable_add(host_name.c_str(), "inputData", size);
     MSG_sem_release(sem_link);
     return;
 }
 
-void cumulativeOutputPerSiteT(string host_name, double size){
+void cumulativeOutputPerSiteT(string& host_name, double size){
     MSG_sem_acquire(sem_link);
     TRACE_host_variable_add(host_name.c_str(), "outputData", size);
     MSG_sem_release(sem_link);
     return;
 }
 
-int addDatasetAmountT(string host_name, string type){
+int addDatasetAmountT(string& host_name, string type){
 
     MSG_sem_acquire(sem_link);
     // O -- Tape
@@ -47,7 +47,7 @@ int addDatasetAmountT(string host_name, string type){
     return 0;
 }
 
-int minusDatasetAmountT(string host_name, string type){
+int minusDatasetAmountT(string& host_name, string type){
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!type.compare("0")){
@@ -63,7 +63,7 @@ int minusDatasetAmountT(string host_name, string type){
 }
 
 // Returns a number of dataset on a given storage
-long dataset_number(string host_name, string storage_type){
+long dataset_number(string& host_name, string storage_type){
 
     string storage_name = host_name + storage_type;
     msg_storage_t st = MSG_storage_get_by_name(storage_name.c_str());

@@ -8,6 +8,8 @@
 #include <simgrid/msg.h>
 #include <string>
 #include <list>
+#include <vector>
+
 #define MESSAGES_SIZE 100000
 using namespace std;
 
@@ -133,7 +135,7 @@ class FileData{
 public:
     int number_used;
     string used;
-    xbt_dynar_t all_using_clock;
+    vector<double> clocks;
 };
 
 

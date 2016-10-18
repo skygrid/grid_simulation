@@ -10,7 +10,7 @@ int direct(const char* src, const char* dst);
 char* get_opposite_direction(char* direction);
 
 
-int plusLinkCounter(string src, string dst){
+int plusLinkCounter(string& src, string& dst){
     MSG_sem_acquire(sem_link);
     /*char* transit = NULL;
     if (strcmp(src, dst)){
@@ -32,7 +32,7 @@ int plusLinkCounter(string src, string dst){
     return 0;
 }
 
-int tracer_traffic(string src, string dst, double size){
+int tracer_traffic(string& src, string& dst, double size){
     MSG_sem_acquire(sem_link);
     TRACE_link_srcdst_variable_add(src.c_str(), dst.c_str(), "traffic", size);
     MSG_sem_release(sem_link);
@@ -40,7 +40,7 @@ int tracer_traffic(string src, string dst, double size){
 }
 
 
-int minusLinkCounter(string src, string dst){
+int minusLinkCounter(string& src, string& dst){
     MSG_sem_acquire(sem_link);
 
 
@@ -97,18 +97,18 @@ int minusLinkCounter(string src, string dst){
 }*/
 
 
-
-int direct(const char* src, const char* dst){
+/*
+int direct(string& src, string& dst){
     if ((!strcmp(src, "CERN") || !strcmp(dst, "CERN")) || (!strcmp(src, "GRIDKA") &&  (!strcmp(dst, "CNAF") || !strcmp(dst, "IN2P3") || !strcmp(dst, "SARA"))) || ((!strcmp(src, "SARA") || !strcmp(src, "IN2P3") || !strcmp(src, "CNAF")) && !strcmp(dst, "GRIDKA"))){
         return 1;
     }
     return 0;
 }
 
-char* get_direction(const char* src, const char* dst){
+char* get_direction(string& src, string& dst){
     char* direction;
 
-    if ((!strcmp(src, "CERN") || (!strcmp(src, "GRIDKA") &&  (!strcmp(dst, "CNAF") || !strcmp(dst, "IN2P3") || !strcmp(dst, "SARA"))))){
+    if ((!src.compare("CERN") || (!strcmp(src, "GRIDKA") &&  (!strcmp(dst, "CNAF") || !strcmp(dst, "IN2P3") || !strcmp(dst, "SARA"))))){
         direction = "directUserAmount";
     }
     else if (!strcmp(dst, "CERN")  || ((!strcmp(src, "SARA") || !strcmp(src, "IN2P3") || !strcmp(src, "CNAF")) && !strcmp(dst, "GRIDKA"))){
@@ -119,9 +119,9 @@ char* get_direction(const char* src, const char* dst){
 }
 
 
-char* find_transit(const char* src, const char* dst){
-    char* transit;
-    if ((!strcmp(src,  "IN2P3") || !strcmp(src, "SARA") || !strcmp(src, "CNAF")) && (!strcmp(dst, "IN2P3") || !strcmp(dst, "SARA") || !strcmp(dst, "CNAF"))){
+string find_transit(string& src, string& dst){
+    string transit;
+    if ((!src.compare("IN2P3") || !strcmp(src, "SARA") || !strcmp(src, "CNAF")) && (!strcmp(dst, "IN2P3") || !strcmp(dst, "SARA") || !strcmp(dst, "CNAF"))){
         transit = "GRIDKA";
     } else{
         transit = "CERN";
@@ -129,12 +129,12 @@ char* find_transit(const char* src, const char* dst){
     return transit;
 }
 
-char* get_opposite_direction(char* direction){
-    char* opposit_dir = NULL;
-    if (!strcmp(direction, "directUserAmount")){
+string get_opposite_direction(string& direction){
+    string opposit_dir;
+    if (!direction.compare("directUserAmount")){
         opposit_dir = "indirectUserAmount";
     } else{
         opposit_dir = "directUserAmount";
     }
     return opposit_dir;
-}
+}*/
