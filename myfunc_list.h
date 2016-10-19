@@ -21,6 +21,7 @@ extern FILE* fp;
 extern msg_sem_t sem_link;
 extern msg_sem_t sem_requester;
 extern map<string, FileData*> name_node;
+extern string current_model;
 
 extern char* path_to_output;
 

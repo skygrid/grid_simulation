@@ -3,6 +3,7 @@
 //
 
 #include <simgrid/msg.h>
+#include <chrono>
 #include "messages.h"
 #include "myfunc_list.h"
 
@@ -16,10 +17,14 @@ FILE* fp;
 msg_sem_t sem_requester;
 
 char* path_to_output;
+string current_model;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this msg example");
 
 int main(int argc, char *argv[]){
+
+    auto t1 = std::chrono::high_resolution_clock::now();
+
     MSG_init(&argc, argv);
 
     MSG_create_environment(argv[1]);
@@ -37,6 +42,7 @@ int main(int argc, char *argv[]){
     //MSG_function_register("delete_unpop_file", delete_unpopular_file);
     MSG_launch_application(argv[2]);
     path_to_output = argv[3];
+    current_model = argv[4];
 
     msg_error_t res = MSG_main();
     XBT_INFO("Simulation time %g", MSG_get_clock());
@@ -45,5 +51,7 @@ int main(int argc, char *argv[]){
     MSG_sem_destroy(sem_requester);
     MSG_sem_destroy(sem_link);
 
-    //return res != MSG_OK;
+    auto t2 = std::chrono::high_resolution_clock::now();
+    XBT_INFO("Real time of simulation: %d milliseconds", std::chrono::duration_cast<std::chrono::milliseconds>(t2-t1).count());
+    return res != MSG_OK;
 }

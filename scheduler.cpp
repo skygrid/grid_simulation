@@ -14,15 +14,11 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
 int scheduler(int argc, char* argv[]){
     input();
-    char mailbox[30];
-    msg_task_t task = NULL;
-    msg_task_t taskB = NULL;
-    sprintf(mailbox, "scheduler");
+    string mailbox = "scheduler";
+    msg_task_t task = NULL; msg_task_t taskB = NULL;
 
     while (1){
-
-
-        int res = MSG_task_receive(&task, mailbox);
+        int res = MSG_task_receive(&task, mailbox.c_str());
         // Anomalies
         if (res == MSG_OK){
 
@@ -33,9 +29,12 @@ int scheduler(int argc, char* argv[]){
 
             //XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
             JobBatchRequest* batchRequest = (JobBatchRequest*) MSG_task_get_data(task);
-
-            vector<Job*>* batch = matcher(batchRequest->coreAmount);
-            //vector<Job*>* batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+            vector<Job*>* batch;
+            if (!current_model.compare("simple")){
+                batch = matcher(batchRequest->coreAmount);
+            }else {
+                batch = matcher_DAM(batchRequest->coreAmount, MSG_host_get_name(MSG_task_get_source(task)));
+            }
 
             taskB = MSG_task_create("", batch->size(), MESSAGES_SIZE, batch);
             //Add new user to link
