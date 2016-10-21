@@ -11,7 +11,7 @@ using namespace std;
 XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
 
-/*void check_files_availability(Job* jobInfo){
+void check_files_availability(Job* jobInfo){
     return;
     char* input_file_path = (char*) malloc(50);
     msg_file_t file;
@@ -36,7 +36,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
         }
 
     }
-}*/
+}
 
 vector<Job*>* matcher(long amountRequestedJob){
     int amount_of_matched_jobs = 0;

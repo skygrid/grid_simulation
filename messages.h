@@ -135,7 +135,11 @@ class FileData{
 public:
     int number_used;
     string used;
-    vector<double> clocks;
+    vector<double>* clocks;
+
+    ~FileData(){
+        delete clocks;
+    }
 };
 
 

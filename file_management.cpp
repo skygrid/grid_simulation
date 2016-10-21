@@ -36,14 +36,7 @@ int initialize_file_labels(){
 
         xbt_dict_foreach(storage_content, cursor, local_name, data_size){
             string filename = (string) storage_name + (string) local_name;
-
-            FileData* fileData = new FileData();
-            vector<double> vec_clock;
-            vec_clock.push_back(MSG_get_clock());
-            fileData->number_used = 0;
-            fileData->clocks = vec_clock;
-
-            name_node.insert(make_pair(filename, fileData));
+            create_file_label(filename);
         }
         xbt_dict_cursor_free(&cursor);
         xbt_dict_free(&storage_content);
@@ -54,21 +47,20 @@ int initialize_file_labels(){
     return 0;
 }
 
+/*When new file created*/
 int create_file_label(string& filename){
-    return 0;
-    /*When new file created*/
     FileData *fileData = new FileData;
     fileData->number_used = 0;
-    vector<double> vec_clock;
-    vec_clock.push_back(MSG_get_clock());
+    fileData->used = "0";
+    vector<double> *vec_clock = new vector<double>;
+    vec_clock->push_back(MSG_get_clock());
     fileData->clocks = vec_clock;
     name_node.insert(make_pair(filename, fileData));
     return 0;
 }
 
+/* When file is used by someone*/
 void file_usage_counter(string& filename){
-    return;
-    /* When file is been using*/
     string type;
     unsigned long len = (int) strcspn(filename.c_str(), "10");
     type = filename.at(len);
@@ -78,7 +70,7 @@ void file_usage_counter(string& filename){
         FileData* fileData = name_node[filename];
         fileData->number_used += 1;
         fileData->used = "1";
-        fileData->clocks.push_back(MSG_get_clock());
+        fileData->clocks->push_back(MSG_get_clock());
         return;
     }
 }
@@ -95,7 +87,7 @@ int delete_unpopular_file(int argc, char* argv[]){
         double current_time = MSG_get_clock();
 
         for (auto &file_map: name_node) {
-            if ( (file_map.second->clocks.back()) && (current_time - file_map.second->clocks.back()) > delete_time){
+            if ( (file_map.second->clocks->back()) && (current_time - file_map.second->clocks->back()) > delete_time){
                 filename = file_map.first;
                 msg_file_t file = MSG_file_open(filename.c_str(), NULL);
                 //unlink file

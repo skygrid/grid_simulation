@@ -52,6 +52,12 @@ int main(int argc, char *argv[]){
     MSG_sem_destroy(sem_link);
 
     auto t2 = std::chrono::high_resolution_clock::now();
-    XBT_INFO("Real time of simulation: %d milliseconds", std::chrono::duration_cast<std::chrono::milliseconds>(t2-t1).count());
+    XBT_INFO("Real time of simulation: %d seconds", std::chrono::duration_cast<std::chrono::seconds>(t2-t1).count());
+
+    // Clear info of name node
+    for (auto& file: name_node) {
+        delete file.second;
+    }
+
     return res != MSG_OK;
 }
