@@ -12,29 +12,29 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
 
 void check_files_availability(Job* jobInfo){
-    return;
-    char* input_file_path = (char*) malloc(50);
+    string input_file_path;
     msg_file_t file;
 
-    char** dataLocations[] = {&jobInfo->dataLocHost1, &jobInfo->dataLocHost2, &jobInfo->dataLocHost3, &jobInfo->dataLocHost4,
-                             &jobInfo->dataLocHost5, &jobInfo->dataLocHost6, &jobInfo->dataLocHost7, &jobInfo->dataLocHost8,
-                             &jobInfo->dataLocHost9, &jobInfo->dataLocHost10};
-    char* storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4,
+    string dataLocations[] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3, jobInfo->dataLocHost4,
+                             jobInfo->dataLocHost5, jobInfo->dataLocHost6, jobInfo->dataLocHost7, jobInfo->dataLocHost8,
+                             jobInfo->dataLocHost9, jobInfo->dataLocHost10};
+    string storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4,
                             jobInfo->storageType5, jobInfo->storageType6, jobInfo->storageType7, jobInfo->storageType8,
                             jobInfo->storageType9, jobInfo->storageType10};
 
     int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
 
     for (int i = 0; i < n; ++i) {
-        if (!strcmp(*dataLocations[i], "0")){
+        if (!dataLocations[i].compare("0")){
             continue;
         }
-        sprintf(input_file_path, "/%s%s/%s", *dataLocations[i], storageTypes[i], jobInfo->inputFileName);
-        file = MSG_file_open(input_file_path, NULL);
-        if (MSG_file_get_size(file) == 0){
-            *dataLocations[i] = "0";
-        }
 
+        input_file_path = "/" + dataLocations[i] + storageTypes[i] + "/" + jobInfo->inputFileName;
+        file = MSG_file_open(input_file_path.c_str(), NULL);
+        if (MSG_file_get_size(file) == 0){
+            dataLocations[i] = "0";
+        }
+        MSG_file_close(file);
     }
 }
 
@@ -78,6 +78,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
 
 
     for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ; ++i) {
+        check_files_availability(*i);
         if ((*i)->type == MCSIMULATION){
             (*i)->startSchedulClock = MSG_get_clock();
             (*i)->successExecuted = 0;

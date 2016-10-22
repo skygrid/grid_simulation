@@ -49,11 +49,11 @@
 	<process host="CERN" function="killer">
 	</process>
 
-	<!--<process host="CERN" function="initialize">
+	<process host="CERN" function="initialize">
 	</process>
 
 	<process host="CERN" function="delete_unpop_file">
 		<argument value="518400"/>
-	</process>-->
+	</process>
 
 </platform>
