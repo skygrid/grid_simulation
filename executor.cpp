@@ -76,7 +76,7 @@ DataInfo* get_input_file_path(Job* jobInfo){
         // If tier doesn't have storage on the own, find available data on another tier
         if (i == (n-1)){
             for (int j = 0; j < n; ++j) {
-                if (storageTypes[j].compare("0")){
+                if (!dataLocations->compare("0") && storageTypes[j].compare("0")){
                     storageType = storageTypes[j];
                     dest = dataLocations[j];
 
@@ -84,6 +84,21 @@ DataInfo* get_input_file_path(Job* jobInfo){
                     copy_file_path = "/" + host_name + "1" + "/" + jobInfo->inputFileName;
                     copy_from_tape_to_disk_name = "/" + dest + "1" + "/" + jobInfo->inputFileName;
                     break;
+                }
+
+                // Find input data at tape
+                if (j == (n-1)){
+                    for (int k = 0; k < n; ++k) {
+                        if (!dataLocations[k].compare("0")){
+                            storageType = storageTypes[k];
+                            dest = dataLocations[k];
+
+                            input_file_path = "/" + dest + storageType + "/" + jobInfo->inputFileName;
+                            copy_file_path = "/" + host_name + "1" + "/" + jobInfo->inputFileName;
+                            copy_from_tape_to_disk_name = "/" + dest + "1" + "/" + jobInfo->inputFileName;
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -97,6 +112,8 @@ DataInfo* get_input_file_path(Job* jobInfo){
     data_info->storage_type = storageType;
     return data_info;
 }
+
+
 
 int copy_from_tape_to_disk(DataInfo* data_info){
     msg_file_t file;

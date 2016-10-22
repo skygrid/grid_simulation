@@ -50,6 +50,7 @@
 	</process>
 
 	<process host="CERN" function="initialize">
+		<argument value="518400"/>
 	</process>
 
 	<process host="CERN" function="delete_unpop_file">

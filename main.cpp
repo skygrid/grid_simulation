@@ -10,6 +10,7 @@
 int scheduler(int argc, char *argv[]);
 int tier1(int argc, char *argv[]);
 int evil(int argc, char* argv[]);
+int initialize_file_labels(int argc, char* argv[]);
 int delete_unpopular_file(int argc, char* argv[]);
 int killer(int argc, char* argv[]);
 

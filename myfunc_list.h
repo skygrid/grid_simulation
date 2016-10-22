@@ -57,7 +57,6 @@ vector<Job*>* matcher(long amountRequestedJob);
 vector<Job*>* matcher_DAM(long amountRequestedJob, const string host);
 
 
-int initialize_file_labels();
 int create_file_label(string& filename);
 void file_usage_counter(string& filename);
 

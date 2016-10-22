@@ -12,17 +12,14 @@ map<string, FileData*> name_node;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(delete_unpopular_file, "messages specific for deletion");
 
-int initialize_file_labels(){
-
+int initialize_file_labels(int argc, char* argv[]){
     unsigned int cur;
     char* local_name;
     size_t data_size;
     msg_storage_t st;
     char* storage_name;
-    double clock = MSG_get_clock();
 
     xbt_dynar_t storages = MSG_storages_as_dynar();
-
 
     xbt_dynar_foreach(storages, cur, st){
         storage_name = (char*) MSG_storage_get_name(st);
@@ -31,11 +28,14 @@ int initialize_file_labels(){
         xbt_dict_cursor_t cursor = NULL;
 
         // break if tape
-        if (storage_name[strlen(storage_name)-1] == '0') continue;
+        if (storage_name[strlen(storage_name)-1] == '0'){
+            xbt_dict_free(&storage_content);
+            continue;
+        }
 
 
         xbt_dict_foreach(storage_content, cursor, local_name, data_size){
-            string filename = (string) storage_name + (string) local_name;
+            string filename = "/" + (string) storage_name + (string) local_name;
             create_file_label(filename);
         }
         xbt_dict_cursor_free(&cursor);
@@ -77,7 +77,6 @@ void file_usage_counter(string& filename){
 
 
 int delete_unpopular_file(int argc, char* argv[]){
-
     double sleep_time = xbt_str_parse_double(argv[1], "error");
     while (TRUE){
         MSG_process_sleep(sleep_time);
