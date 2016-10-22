@@ -13,6 +13,7 @@ int evil(int argc, char* argv[]);
 int initialize_file_labels(int argc, char* argv[]);
 int delete_unpopular_file(int argc, char* argv[]);
 int killer(int argc, char* argv[]);
+int tracer(int argc, char* argv[]);
 
 FILE* fp;
 msg_sem_t sem_requester;
@@ -38,6 +39,7 @@ int main(int argc, char *argv[]){
     MSG_function_register("scheduler", scheduler);
     MSG_function_register("tier1", tier1);
     MSG_function_register("killer", killer);
+    MSG_function_register("tracer", tracer);
 
     MSG_function_register("initialize", initialize_file_labels);
     MSG_function_register("delete_unpop_file", delete_unpopular_file);

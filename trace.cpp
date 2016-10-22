@@ -79,3 +79,34 @@ int set_0_all_routes(){
     return 0;
 }
 
+int tracer(int argc, char* argv[]){
+    double day = 86400;
+    msg_storage_t storage;
+    unsigned int cursor;
+    xbt_dynar_t storages = MSG_storages_as_dynar();
+
+    while (global_queue.size() > 0){
+
+        xbt_dynar_foreach(storages, cursor, storage){
+            string host_name = MSG_storage_get_host(storage);
+            string st_name = MSG_storage_get_name(storage);
+            xbt_dict_t storage_content = MSG_storage_get_content(storage);
+
+            if (st_name.back() == '1'){
+                TRACE_host_variable_set(host_name.c_str(), "datasetOnDisk", xbt_dict_size(storage_content));
+            }else{
+                TRACE_host_variable_set(host_name.c_str(), "datasetOnTape", xbt_dict_size(storage_content));
+            }
+
+            TRACE_host_variable_set("CERN", st_name.c_str(), MSG_storage_get_used_size(storage));
+            xbt_dict_free(&storage_content);
+
+        }
+
+        MSG_process_sleep(day);
+    }
+    xbt_dynar_free(&storages);
+
+
+    return 0;
+}

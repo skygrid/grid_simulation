@@ -76,7 +76,7 @@ DataInfo* get_input_file_path(Job* jobInfo){
         // If tier doesn't have storage on the own, find available data on another tier
         if (i == (n-1)){
             for (int j = 0; j < n; ++j) {
-                if (!dataLocations->compare("0") && storageTypes[j].compare("0")){
+                if (dataLocations[j].compare("0") && storageTypes[j].compare("0")){
                     storageType = storageTypes[j];
                     dest = dataLocations[j];
 
@@ -89,7 +89,7 @@ DataInfo* get_input_file_path(Job* jobInfo){
                 // Find input data at tape
                 if (j == (n-1)){
                     for (int k = 0; k < n; ++k) {
-                        if (!dataLocations[k].compare("0")){
+                        if (dataLocations[k].compare("0")){
                             storageType = storageTypes[k];
                             dest = dataLocations[k];
 
