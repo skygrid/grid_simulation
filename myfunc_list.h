@@ -60,4 +60,6 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host);
 int create_file_label(string& filename);
 void file_usage_counter(string& filename);
 
+void check_files_availability(Job* jobInfo);
+
 #endif //CSIM2SIM_MYFUNC_LIST_H

@@ -48,19 +48,24 @@ int main(int argc, char *argv[]){
     current_model = argv[4];
 
     msg_error_t res = MSG_main();
-    XBT_INFO("Simulation time %g", MSG_get_clock());
+    XBT_INFO("Simulation time %f", MSG_get_clock());
 
     fclose(fp);
     MSG_sem_destroy(sem_requester);
     MSG_sem_destroy(sem_link);
 
+    // Clear info of name node
+
+    std::map<string, FileData*>::iterator file_itr = name_node.begin();
+    while (file_itr != name_node.end()){
+        delete (*file_itr).second;
+        name_node.erase(file_itr);
+        file_itr++;
+    }
+
     auto t2 = std::chrono::high_resolution_clock::now();
     XBT_INFO("Real time of simulation: %d seconds", std::chrono::duration_cast<std::chrono::seconds>(t2-t1).count());
 
-    // Clear info of name node
-    for (auto& file: name_node) {
-        delete file.second;
-    }
 
     return res != MSG_OK;
 }

@@ -46,6 +46,7 @@ DataInfo* get_input_file_path(Job* jobInfo){
     /*Where should I download data
      *return input_file_path and host_name (where data is located)
      */
+    check_files_availability(jobInfo);
     string host_name = string(MSG_host_get_name(MSG_host_self()));
 
     string input_file_path;
@@ -128,8 +129,8 @@ int copy_from_tape_to_disk(DataInfo* data_info){
         create_file_label(data_info->copy_from_tape_to_disk_name);
         MSG_file_close(file);
         // trace storage and dataset amount to disk space
-        tracer_storage(data_info->destination_name, data_info->storage_type.c_str());
-        addDatasetAmountT(data_info->destination_name, "1");
+        // tracer_storage(data_info->destination_name, data_info->storage_type.c_str());
+        // addDatasetAmountT(data_info->destination_name, "1");
 
 
         // So we have new name of input file on the disk
@@ -155,12 +156,12 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
         create_file_label(dataInfo->copy_file_path);
 
         //tracing number of dataset
-        addDatasetAmountT(host_name, "1");
+        //addDatasetAmountT(host_name, "1");
         cumulativeInputPerSiteT(host_name, (double) MSG_file_get_size(file));
 
         if (error == MSG_OK){
             tracer_traffic(dataInfo->destination_name, host_name, (double) MSG_file_get_size(file));
-            tracer_storage(host_name, dataInfo->storage_type.c_str());
+            //tracer_storage(host_name, dataInfo->storage_type.c_str());
         } else{
             minusLinkCounter(dataInfo->destination_name, host_name);
             minusOneActiveCore();
@@ -189,6 +190,7 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
     delete dataInfo;
 }
 
+
 int task_executor(Job* jobInfo){
     string host_name = string(MSG_host_get_name(MSG_host_self()));
     string outputFilePath;
@@ -210,7 +212,7 @@ int task_executor(Job* jobInfo){
 
     //Anomalies of tier host
     if (b == MSG_OK){
-        //XBT_INFO("%s has successfully executed", jobInfo->name.c_str());
+        XBT_INFO("%s has successfully executed", jobInfo->name.c_str());
         MSG_task_destroy(task);
         task = NULL;
     }else{
@@ -226,9 +228,10 @@ int task_executor(Job* jobInfo){
     MSG_file_close(outFile);
 
     // tracing
-    addDatasetAmountT(host_name, "1");
-    tracer_storage(host_name, "1");
+    //addDatasetAmountT(host_name, "1");
+    //tracer_storage(host_name, "1");
 
+    writeToFile(fp, jobInfo);
     return 0;
 }
 
@@ -261,3 +264,4 @@ int my_on_exit(void* ignored1, void *ignored2){
     writeToFile(fp, jobInfo);
     return 0;
 }
+

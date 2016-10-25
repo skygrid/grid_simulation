@@ -56,7 +56,7 @@ int uploader(int argc, char* argv[]){
         destHostName = host_name;
         stor_type = "0";
 
-        addDatasetAmountT(host_name, "0");
+        //addDatasetAmountT(host_name, "0");
         cumulativeOutputPerSiteT(host_name, (double) MSG_file_get_size(file));
 
     }else{
@@ -79,7 +79,7 @@ int uploader(int argc, char* argv[]){
         create_file_label(pathAtDest);
 
         //trace number of datasets and output traffic from site
-        addDatasetAmountT(destHostName, stor_type);
+        //addDatasetAmountT(destHostName, stor_type);
         cumulativeOutputPerSiteT(host_name, (double) MSG_file_get_size(file));
 
         if (a == MSG_OK) {
@@ -95,7 +95,7 @@ int uploader(int argc, char* argv[]){
     }
 
     //trace storage
-    tracer_storage(destHostName, stor_type);
+    //tracer_storage(destHostName, stor_type);
 
     //clearing memory
     delete data;

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 import random
 from scipy import stats
@@ -87,9 +88,9 @@ def fill_array(dataset_name, depth):
 		return "x"
 	mu = random.randint(20, 40)
 	sigma = random.randint(20, 40)
-	z = random.randint(20, 60)
+	z = random.randint(1*365*800, 1.5*365*800) # до какого слота может быть выбрана правая граница
 
-	amount_dataset = stats.binom.rvs(random.randint(10,20), p=0.3)
+	amount_dataset = stats.binom.rvs(random.randint(110, 130), p=0.3)
 
 	if len(xtimes_array) <= amount_dataset:
 		amount_dataset = len(xtimes_array)

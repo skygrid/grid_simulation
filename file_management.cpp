@@ -33,7 +33,6 @@ int initialize_file_labels(int argc, char* argv[]){
             continue;
         }
 
-
         xbt_dict_foreach(storage_content, cursor, local_name, data_size){
             string filename = "/" + (string) storage_name + (string) local_name;
             create_file_label(filename);
@@ -49,6 +48,8 @@ int initialize_file_labels(int argc, char* argv[]){
 
 /*When new file created*/
 int create_file_label(string& filename){
+    if (name_node.find(filename) != name_node.end())
+        return 0;
     FileData *fileData = new FileData;
     fileData->number_used = 0;
     fileData->used = "0";
@@ -78,28 +79,29 @@ void file_usage_counter(string& filename){
 
 int delete_unpopular_file(int argc, char* argv[]){
     double sleep_time = xbt_str_parse_double(argv[1], "error");
+    sleep_time = 30 * 86400;
+    double delete_time = 365*86400;
     while (TRUE){
-        MSG_process_sleep(sleep_time);
-        double delete_time = 5*86400;
-        string filename;
 
+        MSG_process_sleep(sleep_time/5);
+        string filename;
         double current_time = MSG_get_clock();
 
         for (auto &file_map: name_node) {
-            if ( (file_map.second->clocks->back()) && (current_time - file_map.second->clocks->back()) > delete_time){
+            if ( (!file_map.second->clocks->back()) && (current_time - file_map.second->clocks->back()) >= delete_time){
                 filename = file_map.first;
                 msg_file_t file = MSG_file_open(filename.c_str(), NULL);
+
                 //unlink file
                 MSG_file_unlink(file);
                 string host_name = filename.substr(1, strcspn(filename.c_str(), "10") -1);
-                minusDatasetAmountT(host_name, "1");
+                //minusDatasetAmountT(host_name, "1");
 
                 //delete data
                 delete file_map.second;
                 name_node.erase(filename);
             }
         }
-
         if (global_queue.size() == 0){
             break;
         }

@@ -15,24 +15,27 @@ void check_files_availability(Job* jobInfo){
     string input_file_path;
     msg_file_t file;
 
-    string dataLocations[] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3, jobInfo->dataLocHost4,
-                             jobInfo->dataLocHost5, jobInfo->dataLocHost6, jobInfo->dataLocHost7, jobInfo->dataLocHost8,
-                             jobInfo->dataLocHost9, jobInfo->dataLocHost10};
-    string storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4,
-                            jobInfo->storageType5, jobInfo->storageType6, jobInfo->storageType7, jobInfo->storageType8,
-                            jobInfo->storageType9, jobInfo->storageType10};
+    string* dataLocations[] = {&jobInfo->dataLocHost1, &jobInfo->dataLocHost2, &jobInfo->dataLocHost3, &jobInfo->dataLocHost4,
+                               &jobInfo->dataLocHost5, &jobInfo->dataLocHost6, &jobInfo->dataLocHost7, &jobInfo->dataLocHost8,
+                               &jobInfo->dataLocHost9, &jobInfo->dataLocHost10};
+    string* storageTypes[] = {&jobInfo->storageType1, &jobInfo->storageType2, &jobInfo->storageType3, &jobInfo->storageType4,
+                             &jobInfo->storageType5, &jobInfo->storageType6, &jobInfo->storageType7, &jobInfo->storageType8,
+                             &jobInfo->storageType9, &jobInfo->storageType10};
 
     int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
 
     for (int i = 0; i < n; ++i) {
-        if (!dataLocations[i].compare("0")){
+        if (!(*dataLocations[i]).compare("0")){
             continue;
         }
 
-        input_file_path = "/" + dataLocations[i] + storageTypes[i] + "/" + jobInfo->inputFileName;
+        input_file_path = "/" + *dataLocations[i] + *storageTypes[i] + "/" + jobInfo->inputFileName;
+        if (!input_file_path.compare("/CNAF1/dataset66")){
+            XBT_INFO("sigein");
+        }
         file = MSG_file_open(input_file_path.c_str(), NULL);
         if (MSG_file_get_size(file) == 0){
-            dataLocations[i] = "0";
+            *dataLocations[i] = "0";
         }
         MSG_file_close(file);
     }

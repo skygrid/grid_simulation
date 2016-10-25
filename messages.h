@@ -9,6 +9,7 @@
 #include <string>
 #include <list>
 #include <vector>
+#include <iostream>
 
 #define MESSAGES_SIZE 100000
 using namespace std;
