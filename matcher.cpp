@@ -42,17 +42,19 @@ void check_files_availability(Job* jobInfo){
 }
 
 vector<Job*>* matcher(long amountRequestedJob){
+
     int amount_of_matched_jobs = 0;
 
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = create_current_queue();
+    std::list<Job*>* local_queue = &global_queue;//create_current_queue();
 
     if (local_queue->size() < amountRequestedJob){
         amountRequestedJob = local_queue->size();
     }
 
-    for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ; ++i) {
+    for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ;) {
+        XBT_INFO("%f", (*(i++))->compSize);
         (*i)->startSchedulClock = MSG_get_clock();
         (*i)->stExecClock = 0;
         (*i)->endExecClock = 0;
@@ -61,10 +63,9 @@ vector<Job*>* matcher(long amountRequestedJob){
         jobBatch->push_back(*i);
         amount_of_matched_jobs++;
 
-        global_queue.remove(*i);
-
+        i = global_queue.erase(i);
     }
-    delete local_queue;
+    //delete local_queue;
     return jobBatch;
 }
 
