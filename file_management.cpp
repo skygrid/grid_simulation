@@ -8,11 +8,12 @@
 #include "myfunc_list.h"
 #include "messages.h"
 
-map<string, FileData*> name_node;
+map<string, FileData*>* name_node;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(delete_unpopular_file, "messages specific for deletion");
 
 int initialize_file_labels(int argc, char* argv[]){
+    name_node = new map<string, FileData*>;
     unsigned int cur;
     char* local_name;
     size_t data_size;
@@ -48,7 +49,7 @@ int initialize_file_labels(int argc, char* argv[]){
 
 /*When new file created*/
 int create_file_label(string& filename){
-    if (name_node.find(filename) != name_node.end())
+    if (name_node->find(filename) != name_node->end())
         return 0;
     FileData *fileData = new FileData;
     fileData->number_used = 0;
@@ -56,7 +57,7 @@ int create_file_label(string& filename){
     vector<double> *vec_clock = new vector<double>;
     vec_clock->push_back(MSG_get_clock());
     fileData->clocks = vec_clock;
-    name_node.insert(make_pair(filename, fileData));
+    name_node->insert(make_pair(filename, fileData));
     return 0;
 }
 
@@ -68,7 +69,7 @@ void file_usage_counter(string& filename){
     if (!type.compare("0")){
         return;
     } else{
-        FileData* fileData = name_node[filename];
+        FileData* fileData = (*name_node)[filename];
         fileData->number_used += 1;
         fileData->used = "1";
         fileData->clocks->push_back(MSG_get_clock());
@@ -87,7 +88,7 @@ int delete_unpopular_file(int argc, char* argv[]){
         string filename;
         double current_time = MSG_get_clock();
 
-        for (auto &file_map: name_node) {
+        for (auto &file_map: *name_node) {
             if ( (!file_map.second->clocks->back()) && (current_time - file_map.second->clocks->back()) >= delete_time){
                 filename = file_map.first;
                 msg_file_t file = MSG_file_open(filename.c_str(), NULL);
@@ -99,7 +100,7 @@ int delete_unpopular_file(int argc, char* argv[]){
 
                 //delete data
                 delete file_map.second;
-                name_node.erase(filename);
+                name_node->erase(filename);
             }
         }
         if (global_queue->size() == 0){

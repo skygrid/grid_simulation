@@ -127,7 +127,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
         }
         delete batch;
     }
-    delete local_queue;
+    //delete local_queue;
     return jobBatch;
 }
 
