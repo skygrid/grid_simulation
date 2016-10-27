@@ -16,7 +16,7 @@ using namespace std;
 
 int input();
 
-extern list<Job*> global_queue;
+extern list<Job*>* global_queue;
 extern FILE* fp;
 extern msg_sem_t sem_link;
 extern msg_sem_t sem_requester;

@@ -85,7 +85,7 @@ int tracer(int argc, char* argv[]){
     unsigned int cursor;
     xbt_dynar_t storages = MSG_storages_as_dynar();
 
-    while (global_queue.size() > 0){
+    while (!global_queue->empty()){
 
         xbt_dynar_foreach(storages, cursor, storage){
             string host_name = MSG_storage_get_host(storage);

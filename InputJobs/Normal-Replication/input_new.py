@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys
+import sys, os
 import random
 from scipy import stats
 import numpy as np
@@ -194,3 +194,4 @@ for i in range(job_amount):
 	string = "Job" + str(i) + "," + types[types_custm[i]] + "," + str(time_submit) + "," + str(cpu_size) + "," + dataset_name + "," + str(byte_size) + "," + str(nrepin) + "," + locs + "," + storage_types + "," + out_dataset + "," + str(out_size) + "," + str(NREpOut) + "," + output_locations + "\n"
 	f.write(string)
 f.close()
+os.system("sudo python InputJobs/create_storage_content.py")

@@ -79,8 +79,8 @@ void file_usage_counter(string& filename){
 
 int delete_unpopular_file(int argc, char* argv[]){
     double sleep_time = xbt_str_parse_double(argv[1], "error");
-    sleep_time = 1 * 86400;
-    double delete_time = 0*86400;
+    sleep_time = 15 * 86400;
+    double delete_time = 365 * 86400;
     while (TRUE){
 
         MSG_process_sleep(sleep_time/5);
@@ -102,7 +102,7 @@ int delete_unpopular_file(int argc, char* argv[]){
                 name_node.erase(filename);
             }
         }
-        if (global_queue.size() == 0){
+        if (global_queue->size() == 0){
             break;
         }
     }

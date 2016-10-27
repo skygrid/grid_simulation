@@ -10,12 +10,13 @@
 using namespace std;
 
 jobType charToEnum(string sval);
-list<Job*> global_queue;
+list<Job*>* global_queue;
 
 string typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
                     "MCSIMULATION", "TEST"};
 
 int input(){
+    global_queue = new std::list<Job*>;
     fp = fopen (path_to_output, "a");
     clearFile();
     int i = 0;
@@ -74,7 +75,7 @@ int input(){
         jobX->startClock = 0;
         jobX->scheduled = 0;
 
-        global_queue.push_back(jobX);
+        global_queue->push_back(jobX);
 
         CsvParser_destroy_row(row);
         i++;

@@ -22,7 +22,7 @@ int job_requester(int argc, char* argv[]){
                 xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "corruptedCore"), "error");
 
         MSG_sem_acquire(sem_requester);
-        if (global_queue.empty()){
+        if (global_queue->empty()){
             MSG_sem_release(sem_requester);
             break;
         }

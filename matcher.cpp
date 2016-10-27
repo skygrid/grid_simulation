@@ -47,14 +47,13 @@ vector<Job*>* matcher(long amountRequestedJob){
 
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = &global_queue;//create_current_queue();
+    std::list<Job*>* local_queue = global_queue;//create_current_queue();
 
     if (local_queue->size() < amountRequestedJob){
         amountRequestedJob = local_queue->size();
     }
 
     for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ;) {
-        XBT_INFO("%f", (*(i++))->compSize);
         (*i)->startSchedulClock = MSG_get_clock();
         (*i)->stExecClock = 0;
         (*i)->endExecClock = 0;
@@ -63,7 +62,7 @@ vector<Job*>* matcher(long amountRequestedJob){
         jobBatch->push_back(*i);
         amount_of_matched_jobs++;
 
-        i = global_queue.erase(i);
+        i = global_queue->erase(i);
     }
     //delete local_queue;
     return jobBatch;
@@ -74,14 +73,14 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
     int amount_of_matched_jobs = 0;
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = create_current_queue();
+    std::list<Job*>* local_queue = global_queue;//create_current_queue();
 
     if (amountRequestedJob > local_queue->size()){
         amountRequestedJob = local_queue->size();
     }
 
 
-    for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ; ++i) {
+    for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ;) {
         check_files_availability(*i);
         if ((*i)->type == MCSIMULATION){
             (*i)->startSchedulClock = MSG_get_clock();
@@ -89,7 +88,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
             amount_of_matched_jobs++;
             jobBatch->push_back(*i);
 
-            global_queue.remove(*i);
+            i = global_queue->erase(i);
             continue;
         }
         string dataLocations[] = {(*i)->dataLocHost1, (*i)->dataLocHost2, (*i)->dataLocHost3, (*i)->dataLocHost4,
@@ -107,7 +106,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
                 jobBatch->push_back(*i);
 
                 amount_of_matched_jobs++;
-                global_queue.remove(*i);
+                i = global_queue->erase(i);
                 break;
             }
         }
@@ -136,7 +135,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
 list<Job*>* create_current_queue(){
     std::list<Job*>* local_queue = new list<Job*>;
 
-    for (auto it = global_queue.begin(); it != global_queue.end(); ++it) {
+    for (auto it = global_queue->begin(); it != global_queue->end(); ++it) {
         if ((*it) && ((*it)->submissionTime < MSG_get_clock())){
             local_queue->push_back(*it);
         }else break;
