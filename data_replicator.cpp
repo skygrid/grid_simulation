@@ -56,8 +56,8 @@ int uploader(int argc, char* argv[]){
         destHostName = host_name;
         stor_type = "0";
 
-        //addDatasetAmountT(host_name, "0");
-        cumulativeOutputPerSiteT(host_name, (double) MSG_file_get_size(file));
+        // tracing
+        dataset_number_change(destHostName+"0", 1);
 
     }else{
         destHostName = data->dest;
@@ -76,11 +76,11 @@ int uploader(int argc, char* argv[]){
         //plusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
 
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest.c_str());
-        create_file_label(pathAtDest);
+        if (!atoi(stor_type.c_str())) create_file_label(pathAtDest);
 
         //trace number of datasets and output traffic from site
-        //addDatasetAmountT(destHostName, stor_type);
-        cumulativeOutputPerSiteT(host_name, (double) MSG_file_get_size(file));
+        dataset_number_change(destHostName + stor_type, 1);
+        cumulative_output_per_site(host_name, (double) MSG_file_get_size(file));
 
         if (a == MSG_OK) {
             tracer_traffic(host_name, destHostName, (double) MSG_file_get_size(file));
@@ -94,10 +94,6 @@ int uploader(int argc, char* argv[]){
         }
     }
 
-    //trace storage
-    //tracer_storage(destHostName, stor_type);
-
-    //clearing memory
     delete data;
 
     return 0;

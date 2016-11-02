@@ -5,6 +5,8 @@
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
 
+map<std::string, double > cumulative_input_site;
+map<std::string, double > cumulative_output_site;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(dataset, "messages specific for dataset");
 
@@ -17,19 +19,39 @@ int tracer_storage(string& hostname, string storage_type){
     return 0;
 }
 
-void cumulativeInputPerSiteT(string& host_name, double size){
+void cumulative_input_per_site(const string& host_name, double size){
     MSG_sem_acquire(sem_link);
-    TRACE_host_variable_add(host_name.c_str(), "inputData", size);
+    cumulative_input_site[host_name] += size;
     MSG_sem_release(sem_link);
     return;
 }
 
-void cumulativeOutputPerSiteT(string& host_name, double size){
+void cumulative_output_per_site(const string& host_name, double size){
     MSG_sem_acquire(sem_link);
-    TRACE_host_variable_add(host_name.c_str(), "outputData", size);
+    cumulative_output_site[host_name] += size;
     MSG_sem_release(sem_link);
     return;
 }
+
+void dataset_number_change(const string& storage_name, int change){
+    /*
+     * -1 delete file
+     * +1 add file*/
+    MSG_sem_acquire(sem_link);
+    switch (change){
+        case 1:
+            storage_number_map[storage_name]++;
+            break;
+        case -1:
+            storage_number_map[storage_name]--;
+            break;
+        default:
+            break;
+    }
+    MSG_sem_release(sem_link);
+    return;
+}
+
 
 int addDatasetAmountT(string& host_name, string type){
 

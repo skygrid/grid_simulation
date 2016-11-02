@@ -16,6 +16,12 @@ using namespace std;
 
 int input();
 
+extern map<std::string, long> storage_number_map; // name of storage and amount of files st_num_map;
+extern map<std::string, double > cumulative_input_site;
+extern map<std::string, double > cumulative_output_site;
+
+void dataset_number_change(const string& storage_name, int change);
+
 extern list<Job*>* global_queue;
 extern map<string, FileData*>* name_node;
 extern FILE* fp;
@@ -47,8 +53,8 @@ int subCorruptedCoreT();
 
 int addDatasetAmountT(string& host_name, string type);
 int minusDatasetAmountT(string& host_name, string type);
-void cumulativeInputPerSiteT(string& host_name, double size);
-void cumulativeOutputPerSiteT(string& host_name, double size);
+void cumulative_input_per_site(const string& host_name, double size);
+void cumulative_output_per_site(const string& host_name, double size);
 int tracer_storage(string& storage_name, string storage_type);
 
 list<Job*>* create_current_queue();

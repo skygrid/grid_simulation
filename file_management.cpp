@@ -9,6 +9,7 @@
 #include "messages.h"
 
 map<string, FileData*>* name_node;
+map<std::string, long> storage_number_map;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(delete_unpopular_file, "messages specific for deletion");
 
@@ -26,6 +27,10 @@ int initialize_file_labels(int argc, char* argv[]){
         storage_name = (char*) MSG_storage_get_name(st);
 
         xbt_dict_t storage_content = MSG_storage_get_content(st);
+
+        // Find how many datasets are stored on each storage
+        storage_number_map[(string) storage_name] = xbt_dict_size(storage_content);
+
         xbt_dict_cursor_t cursor = NULL;
 
         // break if tape
@@ -80,30 +85,31 @@ void file_usage_counter(string& filename){
 
 int delete_unpopular_file(int argc, char* argv[]){
     double sleep_time = xbt_str_parse_double(argv[1], "error");
+
     sleep_time = 15 * 86400;
     double delete_time = 365 * 86400;
     while (TRUE){
 
-        MSG_process_sleep(sleep_time/5);
+        MSG_process_sleep(sleep_time);
         string filename;
         double current_time = MSG_get_clock();
 
         for (auto &file_map: *name_node) {
-            if ( (!file_map.second->clocks->back()) && (current_time - file_map.second->clocks->back()) >= delete_time){
+            if ( (!file_map.second->clocks->back()) && (current_time - file_map.second->clocks->back()) >= delete_time && !file_map.second->used.compare("1")){
                 filename = file_map.first;
                 msg_file_t file = MSG_file_open(filename.c_str(), NULL);
 
                 //unlink file
                 MSG_file_unlink(file);
                 string host_name = filename.substr(1, strcspn(filename.c_str(), "10") -1);
-                //minusDatasetAmountT(host_name, "1");
+                dataset_number_change(host_name + "1", -1);
 
                 //delete data
                 delete file_map.second;
                 name_node->erase(filename);
             }
         }
-        if (global_queue->size() == 0){
+        if (global_queue->empty()){
             break;
         }
     }

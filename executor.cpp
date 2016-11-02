@@ -16,6 +16,8 @@ void minusOneActiveCore();
 
 int my_on_exit(void* ignored1, void *ignored2);
 
+extern map<std::string, double> cumulative_input_site;
+extern map<std::string, double> cumulative_output_site;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
@@ -128,9 +130,11 @@ int copy_from_tape_to_disk(DataInfo* data_info){
         MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name.c_str()), data_info->copy_from_tape_to_disk_name.c_str());
         create_file_label(data_info->copy_from_tape_to_disk_name);
         MSG_file_close(file);
+
         // trace storage and dataset amount to disk space
         // tracer_storage(data_info->destination_name, data_info->storage_type.c_str());
-        // addDatasetAmountT(data_info->destination_name, "1");
+        string storage_name = data_info->destination_name + "1";
+        dataset_number_change(storage_name, 1);
 
 
         // So we have new name of input file on the disk
@@ -143,6 +147,7 @@ int copy_from_tape_to_disk(DataInfo* data_info){
 
 void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
     string host_name = MSG_host_get_name(MSG_host_self());
+    string storage_name = host_name + "1";
     double clock = MSG_get_clock();
     msg_file_t file;
     if (dataInfo->destination_name.compare(host_name)){
@@ -156,8 +161,8 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
         create_file_label(dataInfo->copy_file_path);
 
         //tracing number of dataset
-        //addDatasetAmountT(host_name, "1");
-        cumulativeInputPerSiteT(host_name, (double) MSG_file_get_size(file));
+        dataset_number_change(storage_name, 1);
+        cumulative_input_per_site(host_name, (double) MSG_file_get_size(file));
 
         if (error == MSG_OK){
             tracer_traffic(dataInfo->destination_name, host_name, (double) MSG_file_get_size(file));
@@ -193,6 +198,7 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
 
 int task_executor(Job* jobInfo){
     string host_name = string(MSG_host_get_name(MSG_host_self()));
+    string storage_name = host_name + "1";
     string outputFilePath;
     msg_task_t task;
     msg_file_t outFile;
@@ -227,9 +233,8 @@ int task_executor(Job* jobInfo){
     create_file_label(outputFilePath);
     MSG_file_close(outFile);
 
-    // tracing
-    //addDatasetAmountT(host_name, "1");
-    //tracer_storage(host_name, "1");
+    // tracing: one new file
+    dataset_number_change(storage_name, 1);
 
     writeToFile(fp, jobInfo);
     return 0;

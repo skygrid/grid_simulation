@@ -5,6 +5,7 @@
 #include "messages.h"
 #include "myfunc_list.h"
 
+using namespace std;
 XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
 

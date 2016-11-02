@@ -81,32 +81,30 @@ int set_0_all_routes(){
 
 int tracer(int argc, char* argv[]){
     double day = 86400;
-    msg_storage_t storage;
-    unsigned int cursor;
-    xbt_dynar_t storages = MSG_storages_as_dynar();
 
     while (!global_queue->empty()){
 
-        xbt_dynar_foreach(storages, cursor, storage){
-            string host_name = MSG_storage_get_host(storage);
-            string st_name = MSG_storage_get_name(storage);
-            xbt_dict_t storage_content = MSG_storage_get_content(storage);
+        for(auto& storage_name: storage_number_map){
 
-            if (st_name.back() == '1'){
-                TRACE_host_variable_set(host_name.c_str(), "datasetOnDisk", xbt_dict_size(storage_content));
+            const char* hostname = storage_name.first.substr(0, storage_name.first.size()-1).c_str();
+            if (storage_name.first.back() == '1'){
+                TRACE_host_variable_set(hostname, "datasetOnDisk", storage_name.second);
             }else{
-                TRACE_host_variable_set(host_name.c_str(), "datasetOnTape", xbt_dict_size(storage_content));
+                TRACE_host_variable_set(hostname, "datasetOnTape", storage_name.second);
             }
+        }
 
-            TRACE_host_variable_set("CERN", st_name.c_str(), MSG_storage_get_used_size(storage));
-            xbt_dict_free(&storage_content);
+        for (auto& hostname_map: cumulative_input_site) {
+            TRACE_host_variable_set(hostname_map.first.c_str(), "inputData", hostname_map.second);
+        }
 
+        for (auto& hostname_map: cumulative_output_site) {
+            TRACE_host_variable_set(hostname_map.first.c_str(), "outputData", hostname_map.second);
         }
 
         MSG_process_sleep(day);
     }
-    xbt_dynar_free(&storages);
-
 
     return 0;
 }
+

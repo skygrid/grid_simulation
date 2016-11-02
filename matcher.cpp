@@ -47,7 +47,7 @@ vector<Job*>* matcher(long amountRequestedJob){
 
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = global_queue;//create_current_queue();
+    std::list<Job*>* local_queue = global_queue; // create_current_queue();
 
     if (local_queue->size() < amountRequestedJob){
         amountRequestedJob = local_queue->size();
@@ -73,14 +73,15 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
     int amount_of_matched_jobs = 0;
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = global_queue;//create_current_queue();
+    std::list<Job*>* local_queue = global_queue;        //create_current_queue();
 
     if (amountRequestedJob > local_queue->size()){
         amountRequestedJob = local_queue->size();
     }
 
 
-    for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ;) {
+    for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob;) {
+        auto current_i = i;
         check_files_availability(*i);
         if ((*i)->type == MCSIMULATION){
             (*i)->startSchedulClock = MSG_get_clock();
@@ -110,12 +111,13 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
                 break;
             }
         }
+        if (current_i == i) i++;
 
     }
 
     // If there are no more matched jobs, but job queue still exists
     long remained_jobs = amountRequestedJob - amount_of_matched_jobs;
-    if ((remained_jobs > 0) && (local_queue->size() > 0)){
+    if ((remained_jobs > 0) && !local_queue->empty()){
         remained_jobs = (remained_jobs < local_queue->size()) ? remained_jobs : (remained_jobs - local_queue->size());
 
         vector<Job*>* batch = matcher(remained_jobs);
