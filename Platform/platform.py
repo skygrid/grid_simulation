@@ -115,7 +115,7 @@ for i in range(len(LIST_ONLINE_STORAGE)):
 
 f.write("\n")
 for i in range(len(LIST_ONLINE_STORAGE)):
-    f.write("\t\t<storage id=" + quo + LIST_NEARLINE_STRING[i] + quo + " typeId=" + quo + "NEARLINE_HDD" + str(i) + quo + " attach=" + quo + str(LIST_OF_TIERS[i]) + quo + "/>\n")
+    f.write("\t\t<storage id=" + quo + LIST_NEARLINE_STRING[i] + quo + " typeId=" + quo + "NEARLINE_HDD" пu+ str(i) + quo + " attach=" + quo + str(LIST_OF_TIERS[i]) + quo + "/>\n")
 
 f.write("\n")
 
