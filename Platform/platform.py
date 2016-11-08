@@ -8,17 +8,17 @@ NUMBER_OF_TIERS = 7
 LATENCY = 0.0
 
 
-#  CPU OF TIERS BENCHMARK / 10
-CERN_CPU = 5100
-CNAF_CPU = 2808
-GRIDKA_CPU = 2440
-IN2P3_CPU = 2300
-PIC_CPU = 949
-RAL_CPU = 4680
-SARA_CPU = 1708
-RRCKI_CPU = 1640
+#  CPU OF TIERS BENCHMARK 
+CERN_CPU = 51000
+CNAF_CPU = 28080
+GRIDKA_CPU = 24400
+IN2P3_CPU = 23000
+PIC_CPU = 9490
+RAL_CPU = 46800
+SARA_CPU = 17080
+RRCKI_CPU = 16400
 
-CPU = [5100, 2808, 2440, 2300, 949, 4680, 1708, 1640]
+CPU = [51000, 28080, 24400, 23000, 9490, 46800, 17080, 16400]
 
 # ONLINE STORAGE OF TIER1 TheraByte
 STORAGE_CERN = 7600  # GB
@@ -76,8 +76,8 @@ LINK_NAMES11.extend(["CNAF-GRIDKA-LHCOPN-001", "GRIDKA-IN2P3-LHCOPN-001", "GRIDK
 # BANDWIDTH OF LINKS
 LINK_NAMES10_BW10 = []
 LINK_NAMES10_BW11 = []
-LINK_NAMES10_BW10.extend(["0.10G", "0.10G", "0.10G", "0.10G", "0.10G", "0.10G", "0.02G"])
-LINK_NAMES10_BW11.extend(["0.10G", "0.10G", "0.10G"])
+LINK_NAMES10_BW10.extend(["10G", "10G", "10G", "10G", "10G", "10G", "10G"])
+LINK_NAMES10_BW11.extend(["10G", "10G", "10G"])
 
 LINK_INFO10 = dict(zip(LINK_NAMES10, LINK_NAMES10_BW10))
 LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
@@ -95,17 +95,17 @@ f.write("\t<AS id=\"AS_BIG\" routing=\"Full\">\n")
 for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t<storage_type id=" + quo + "single_HDD" + str(i) + quo + " size=" + quo + str(LIST_ONLINE_STORAGE[i]) + "TB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
     f.write("\t\t\t\tcontent=" + quo + "Content/" + str(LIST_CONTENT[i]) + "_online.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "1GBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "5GBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "1.2GBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "1000000000.2GBps" + quo + "/>\n")
     f.write("\t\t</storage_type>\n\n")
 
 for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t<storage_type id=" + quo + "NEARLINE_HDD" + str(i) + quo + " size=" + quo + str(LIST_NEARLINE_STORAGE[i]) + "TB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
     f.write("\t\t\t\tcontent=" + quo + "Content/" + str(LIST_CONTENT[i]) + "_nearline.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "1GBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "5GBps" + quo + "/>\n")
-    f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "1.2GBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "100000000000.2GBps" + quo + "/>\n")
     f.write("\t\t</storage_type>\n\n")
 
 
@@ -124,14 +124,14 @@ f.write("\n")
 
 # DEFINING TIER0
 f.write("\n")
-f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0]/100)  + "\">\n")
+f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0])  + "\">\n")
 for j in range(len(LIST_STORAGE_STRING)):
     f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
     f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] +"0" + q + "/>\n")
 f.write("\t\t</host>\n")
 
 for i in range(NUMBER_OF_TIERS):
-    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]/100) + "\" >\n")
+    f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]) + "\" >\n")
     # MOUNT TIERS STORAGE
     f.write("\n")
     for j in range(len(LIST_STORAGE_STRING)):
@@ -209,7 +209,7 @@ f.write("\n")
 for i in range(0, len(LIST_OF_TIERS)):
     f.write("\t<process host=\"" + LIST_OF_TIERS[i] + "\" function=\"tier1\">\n")
     f.write("\t\t<argument value=\"" + LIST_OF_TIERS[i] + "\"/>\n")
-    f.write("\t\t<argument value=\"" + str(int(CPU[i] / 10)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(int(CPU[i] )) + "\"/>\n")
     f.write("\t</process>\n")
     f.write("\n")
 f.write("\n")
