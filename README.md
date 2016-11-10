@@ -31,5 +31,5 @@ Topology of grid (cores, links and storages infrastructure) is contained in __Pl
 
 ## Also
 
-You could check [presentation](https://github.com/skygrid/grid_simulation/blob/master/Results/work.pdf) about LHCb simulation and
-main current results in [jupyter notebook](https://github.com/skygrid/grid_simulation/blob/master/Results/Plots.ipynb).
+You could check [presentation](https://github.com/skygrid/grid_simulation/blob/master/results/work.pdf) about LHCb simulation and
+main current results in [jupyter notebook](https://github.com/skygrid/grid_simulation/blob/master/results/Plots.ipynb).
