@@ -1,0 +1,504 @@
+#This file was generated using SimGrid-3.13.90
+#[/home/ken/LHCb/grid_simulation/Debug/CSim2Sim /home/ken/LHCb/grid_simulation/Platform/platform.xml /home/ken/LHCb/grid_simulation/Platform/deployment.xml /home/ken/LHCb/grid_simulation/Trash/out.txt simple --cfg=contexts/nthreads:4 --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/Trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000 ]
+%EventDef PajeDefineContainerType 0
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineVariableType 1
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeDefineStateType 2
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEventType 3
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineLinkType 4
+%       Alias string
+%       Type string
+%       StartContainerType string
+%       EndContainerType string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEntityValue 5
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeCreateContainer 6
+%       Time date
+%       Alias string
+%       Type string
+%       Container string
+%       Name string
+%EndEventDef
+%EventDef PajeDestroyContainer 7
+%       Time date
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeSetVariable 8
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeAddVariable 9
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSubVariable 10
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSetState 11
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePushState 12
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePopState 13
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeResetState 14
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeStartLink 15
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       StartContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeEndLink 16
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       EndContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeNewEvent 17
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+0 1 0 HOST
+6 0 1 1 0 "CERN"
+1 2 1 power "1 1 1"
+6 0 2 1 0 "CNAF"
+6 0 3 1 0 "GRIDKA"
+6 0 4 1 0 "IN2P3"
+6 0 5 1 0 "PIC"
+6 0 6 1 0 "RAL"
+6 0 7 1 0 "SARA"
+6 0 8 1 0 "RRCKI"
+0 3 0 LINK
+6 0 9 3 0 "loopback"
+1 4 3 bandwidth "1 1 1"
+1 5 3 latency "1 1 1"
+6 0 10 3 0 "CERN-CNAF-LHCOPN-001"
+6 0 11 3 0 "CERN-GRIDKA-LHCOPN-001"
+6 0 12 3 0 "CERN-IN2P3-LHCOPN-001"
+6 0 13 3 0 "CERN-PIC-LHCOPN-001"
+6 0 14 3 0 "CERN-RAL-LHCOPN-001"
+6 0 15 3 0 "CERN-SARA-LHCOPN-001"
+6 0 16 3 0 "CERN-RRCK1-LHCOPN-001"
+6 0 17 3 0 "CNAF-GRIDKA-LHCOPN-001"
+6 0 18 3 0 "GRIDKA-IN2P3-LHCOPN-001"
+6 0 19 3 0 "GRIDKA-SARA-LHCOPN-001"
+4 6 0 3 1 0-LINK3-HOST1
+4 7 0 3 3 0-LINK3-LINK3
+4 8 0 1 3 0-HOST1-LINK3
+8 0 2 1 1000000000.000000
+8 0 2 2 1000000000.000000
+8 0 2 3 1000000000.000000
+8 0 2 4 1000000000.000000
+8 0 2 5 1000000000.000000
+8 0 2 6 1000000000.000000
+8 0 2 7 1000000000.000000
+8 0 2 8 1000000000.000000
+8 0 4 9 498000000.000000
+8 0 5 9 0.000000
+8 0 4 10 12500000.000000
+8 0 5 10 0.000000
+8 0 4 11 12500000.000000
+8 0 5 11 0.000000
+8 0 4 12 12500000.000000
+8 0 5 12 0.000000
+8 0 4 13 12500000.000000
+8 0 5 13 0.000000
+8 0 4 14 12500000.000000
+8 0 5 14 0.000000
+8 0 4 15 12500000.000000
+8 0 5 15 0.000000
+8 0 4 16 12500000.000000
+8 0 5 16 0.000000
+8 0 4 17 12500000.000000
+8 0 5 17 0.000000
+8 0 4 18 12500000.000000
+8 0 5 18 0.000000
+8 0 4 19 12500000.000000
+8 0 5 19 0.000000
+15 0 6 0 topology 12 0
+16 0 6 0 topology 4 0
+15 0 7 0 topology 11 1
+16 0 7 0 topology 16 1
+15 0 8 0 topology 2 2
+16 0 8 0 topology 17 2
+15 0 7 0 topology 17 3
+16 0 7 0 topology 18 3
+15 0 6 0 topology 16 4
+16 0 6 0 topology 8 4
+15 0 7 0 topology 10 5
+16 0 7 0 topology 16 5
+15 0 6 0 topology 18 6
+16 0 6 0 topology 4 6
+15 0 8 0 topology 3 7
+16 0 8 0 topology 19 7
+15 0 7 0 topology 13 8
+16 0 7 0 topology 16 8
+15 0 8 0 topology 1 9
+16 0 8 0 topology 13 9
+15 0 7 0 topology 12 10
+16 0 7 0 topology 13 10
+15 0 7 0 topology 15 11
+16 0 7 0 topology 16 11
+15 0 7 0 topology 12 12
+16 0 7 0 topology 14 12
+15 0 8 0 topology 1 13
+16 0 8 0 topology 12 13
+15 0 7 0 topology 17 14
+16 0 7 0 topology 19 14
+15 0 6 0 topology 13 15
+16 0 6 0 topology 5 15
+15 0 7 0 topology 10 16
+16 0 7 0 topology 13 16
+15 0 8 0 topology 1 17
+16 0 8 0 topology 10 17
+15 0 6 0 topology 11 18
+16 0 6 0 topology 3 18
+15 0 7 0 topology 14 19
+16 0 7 0 topology 16 19
+15 0 8 0 topology 1 20
+16 0 8 0 topology 14 20
+15 0 6 0 topology 15 21
+16 0 6 0 topology 7 21
+15 0 8 0 topology 1 22
+16 0 8 0 topology 15 22
+15 0 6 0 topology 10 23
+16 0 6 0 topology 2 23
+15 0 6 0 topology 17 24
+16 0 6 0 topology 3 24
+15 0 7 0 topology 11 25
+16 0 7 0 topology 14 25
+15 0 6 0 topology 19 26
+16 0 6 0 topology 7 26
+15 0 7 0 topology 10 27
+16 0 7 0 topology 14 27
+15 0 7 0 topology 13 28
+16 0 7 0 topology 14 28
+15 0 7 0 topology 13 29
+16 0 7 0 topology 15 29
+15 0 7 0 topology 11 30
+16 0 7 0 topology 13 30
+15 0 7 0 topology 12 31
+16 0 7 0 topology 16 31
+15 0 8 0 topology 1 32
+16 0 8 0 topology 11 32
+15 0 6 0 topology 14 33
+16 0 6 0 topology 6 33
+15 0 8 0 topology 3 34
+16 0 8 0 topology 18 34
+15 0 7 0 topology 14 35
+16 0 7 0 topology 15 35
+15 0 8 0 topology 1 36
+16 0 8 0 topology 16 36
+15 0 7 0 topology 18 37
+16 0 7 0 topology 19 37
+1 9 1 CERN0 "1 1 1"
+1 10 1 CERN1 "1 1 1"
+1 11 1 CNAF0 "1 1 1"
+1 12 1 CNAF1 "1 1 1"
+1 13 1 IN2P30 "1 1 1"
+1 14 1 IN2P31 "1 1 1"
+1 15 1 RRCKI0 "1 1 1"
+1 16 1 RRCKI1 "1 1 1"
+1 17 1 PIC0 "1 1 1"
+1 18 1 PIC1 "1 1 1"
+1 19 1 RAL0 "1 1 1"
+1 20 1 RAL1 "1 1 1"
+1 21 1 GRIDKA0 "1 1 1"
+1 22 1 GRIDKA1 "1 1 1"
+1 23 1 SARA0 "1 1 1"
+1 24 1 SARA1 "1 1 1"
+1 25 1 activeCore "1 1 1"
+1 26 1 corruptedCore "1 1 1"
+1 27 3 traffic "1 1 1"
+1 28 3 directUserAmount "1 1 1"
+1 29 3 indirectUserAmount "1 1 1"
+1 30 1 inputData "1 1 1"
+1 31 1 outputData "1 1 1"
+1 32 1 datasetOnDisk "1 1 1"
+1 33 1 datasetOnTape "1 1 1"
+8 0 28 9 0.000000
+8 0 29 9 0.000000
+8 0 25 1 0.000000
+8 0 26 1 0.000000
+8 0 30 1 0.000000
+8 0 31 1 0.000000
+8 0 32 1 0.000000
+8 0 33 1 0.000000
+8 0 27 10 0.000000
+8 0 28 10 0.000000
+8 0 29 10 0.000000
+8 0 27 12 0.000000
+8 0 28 12 0.000000
+8 0 29 12 0.000000
+8 0 27 16 0.000000
+8 0 28 16 0.000000
+8 0 29 16 0.000000
+8 0 27 13 0.000000
+8 0 28 13 0.000000
+8 0 29 13 0.000000
+8 0 27 14 0.000000
+8 0 28 14 0.000000
+8 0 29 14 0.000000
+8 0 27 11 0.000000
+8 0 28 11 0.000000
+8 0 29 11 0.000000
+8 0 27 15 0.000000
+8 0 28 15 0.000000
+8 0 29 15 0.000000
+8 0 9 1 0.000000
+8 0 10 1 0.000000
+8 0 32 1 0.000000
+8 0 33 1 0.000000
+8 0 25 2 0.000000
+8 0 26 2 0.000000
+8 0 30 2 0.000000
+8 0 31 2 0.000000
+8 0 32 2 0.000000
+8 0 33 2 0.000000
+8 0 27 17 0.000000
+8 0 27 18 0.000000
+8 0 28 17 0.000000
+8 0 28 18 0.000000
+8 0 29 17 0.000000
+8 0 29 18 0.000000
+8 0 27 10 0.000000
+8 0 27 16 0.000000
+8 0 28 10 0.000000
+8 0 28 16 0.000000
+8 0 29 10 0.000000
+8 0 29 16 0.000000
+8 0 27 10 0.000000
+8 0 27 13 0.000000
+8 0 28 10 0.000000
+8 0 28 13 0.000000
+8 0 29 10 0.000000
+8 0 29 13 0.000000
+8 0 27 10 0.000000
+8 0 27 14 0.000000
+8 0 28 10 0.000000
+8 0 28 14 0.000000
+8 0 29 10 0.000000
+8 0 29 14 0.000000
+8 0 27 17 0.000000
+8 0 28 17 0.000000
+8 0 29 17 0.000000
+8 0 27 17 0.000000
+8 0 27 19 0.000000
+8 0 28 17 0.000000
+8 0 28 19 0.000000
+8 0 29 17 0.000000
+8 0 29 19 0.000000
+8 0 11 1 0.000000
+8 0 12 1 0.000000
+8 0 32 2 0.000000
+8 0 33 2 0.000000
+8 0 25 4 0.000000
+8 0 26 4 0.000000
+8 0 30 4 0.000000
+8 0 31 4 0.000000
+8 0 32 4 0.000000
+8 0 33 4 0.000000
+8 0 27 12 0.000000
+8 0 27 16 0.000000
+8 0 28 12 0.000000
+8 0 28 16 0.000000
+8 0 29 12 0.000000
+8 0 29 16 0.000000
+8 0 27 12 0.000000
+8 0 27 13 0.000000
+8 0 28 12 0.000000
+8 0 28 13 0.000000
+8 0 29 12 0.000000
+8 0 29 13 0.000000
+8 0 27 12 0.000000
+8 0 27 14 0.000000
+8 0 28 12 0.000000
+8 0 28 14 0.000000
+8 0 29 12 0.000000
+8 0 29 14 0.000000
+8 0 27 18 0.000000
+8 0 28 18 0.000000
+8 0 29 18 0.000000
+8 0 27 18 0.000000
+8 0 27 19 0.000000
+8 0 28 18 0.000000
+8 0 28 19 0.000000
+8 0 29 18 0.000000
+8 0 29 19 0.000000
+8 0 13 1 0.000000
+8 0 14 1 36456650327.000000
+8 0 32 4 1.000000
+8 0 33 4 0.000000
+8 0 25 8 0.000000
+8 0 26 8 0.000000
+8 0 30 8 0.000000
+8 0 31 8 0.000000
+8 0 32 8 0.000000
+8 0 33 8 0.000000
+8 0 27 16 0.000000
+8 0 27 13 0.000000
+8 0 28 16 0.000000
+8 0 28 13 0.000000
+8 0 29 16 0.000000
+8 0 29 13 0.000000
+8 0 27 16 0.000000
+8 0 27 14 0.000000
+8 0 28 16 0.000000
+8 0 28 14 0.000000
+8 0 29 16 0.000000
+8 0 29 14 0.000000
+8 0 27 16 0.000000
+8 0 27 11 0.000000
+8 0 28 16 0.000000
+8 0 28 11 0.000000
+8 0 29 16 0.000000
+8 0 29 11 0.000000
+8 0 27 16 0.000000
+8 0 27 15 0.000000
+8 0 28 16 0.000000
+8 0 28 15 0.000000
+8 0 29 16 0.000000
+8 0 29 15 0.000000
+8 0 15 1 24305581309.000000
+8 0 16 1 0.000000
+8 0 32 8 0.000000
+8 0 33 8 1.000000
+8 0 25 5 0.000000
+8 0 26 5 0.000000
+8 0 30 5 0.000000
+8 0 31 5 0.000000
+8 0 32 5 0.000000
+8 0 33 5 0.000000
+8 0 27 13 0.000000
+8 0 27 14 0.000000
+8 0 28 13 0.000000
+8 0 28 14 0.000000
+8 0 29 13 0.000000
+8 0 29 14 0.000000
+8 0 27 13 0.000000
+8 0 27 11 0.000000
+8 0 28 13 0.000000
+8 0 28 11 0.000000
+8 0 29 13 0.000000
+8 0 29 11 0.000000
+8 0 27 13 0.000000
+8 0 27 15 0.000000
+8 0 28 13 0.000000
+8 0 28 15 0.000000
+8 0 29 13 0.000000
+8 0 29 15 0.000000
+8 0 17 1 36456650327.000000
+8 0 18 1 24305581309.000000
+8 0 32 5 1.000000
+8 0 33 5 1.000000
+8 0 25 6 0.000000
+8 0 26 6 0.000000
+8 0 30 6 0.000000
+8 0 31 6 0.000000
+8 0 32 6 0.000000
+8 0 33 6 0.000000
+8 0 27 14 0.000000
+8 0 27 11 0.000000
+8 0 28 14 0.000000
+8 0 28 11 0.000000
+8 0 29 14 0.000000
+8 0 29 11 0.000000
+8 0 27 14 0.000000
+8 0 27 15 0.000000
+8 0 28 14 0.000000
+8 0 28 15 0.000000
+8 0 29 14 0.000000
+8 0 29 15 0.000000
+8 0 19 1 0.000000
+8 0 20 1 36456650327.000000
+8 0 32 6 1.000000
+8 0 33 6 0.000000
+8 0 25 3 0.000000
+8 0 26 3 0.000000
+8 0 30 3 0.000000
+8 0 31 3 0.000000
+8 0 32 3 0.000000
+8 0 33 3 0.000000
+8 0 27 19 0.000000
+8 0 28 19 0.000000
+8 0 29 19 0.000000
+8 0 21 1 0.000000
+8 0 22 1 24305581309.000000
+8 0 32 3 1.000000
+8 0 33 3 0.000000
+8 0 25 7 0.000000
+8 0 26 7 0.000000
+8 0 30 7 0.000000
+8 0 31 7 0.000000
+8 0 32 7 0.000000
+8 0 33 7 0.000000
+8 0 23 1 0.000000
+8 0 24 1 60762231636.000000
+8 0 32 7 2.000000
+8 0 33 7 0.000000
+8 0 33 1 0.000000
+8 0 32 1 0.000000
+8 0 33 2 0.000000
+8 0 32 2 0.000000
+8 0 33 3 0.000000
+8 0 32 3 1.000000
+8 0 33 4 0.000000
+8 0 32 4 1.000000
+8 0 33 5 1.000000
+8 0 32 5 1.000000
+8 0 33 6 0.000000
+8 0 32 6 1.000000
+8 0 33 8 1.000000
+8 0 32 8 0.000000
+8 0 33 7 0.000000
+8 0 32 7 2.000000

@@ -223,6 +223,23 @@ for i in range(0, len(LIST_OF_TIERS)):
     f.write("\n")
 f.write("\n")
 
+# Additional processes for killing process, data popularity and tracing
+f.write("<process host=\"CERN\" function=\"killer\">")
+f.write("</process>")
+
+f.write("<process host=\"CERN\" function=\"initialize\">")
+f.write("<argument value="518400"/>")
+f.write("</process>")
+
+f.write("<process host=\"CERN\" function=\"delete_unpop_file\">")
+f.write("<argument value="518400"/>")
+f.write("</process>")
+
+f.write("<process host=\"CERN\" function=\"tracer\">")
+f.write("<argument value="518400"/>")
+f.write("</process>")
+
+
 """for i in range(1, len(NAMES_TIER2)):
     f.write("\t<process host=\"T2_" + str(i) + "\" function=\"tier1\">\n")
     f.write("\t\t<argument value=\"T2_" + str(i) + "\"/>\n")
@@ -230,6 +247,10 @@ f.write("\n")
     f.write("\t</process>\n")
     f.write("\n")"""
 f.write("</platform>")
+
+
+
+
 f.close()
 
 

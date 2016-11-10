@@ -146,6 +146,7 @@ int copy_from_tape_to_disk(DataInfo* data_info){
 
 
 void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
+
     string host_name = MSG_host_get_name(MSG_host_self());
     string storage_name = host_name + "1";
     double clock = MSG_get_clock();
@@ -154,6 +155,8 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
 
         // DOWNLOADING FILE FROM ANOTHER TIER
         file = MSG_file_open(dataInfo->input_file_path.c_str(), NULL);
+        XBT_INFO("%s  %zd", dataInfo->input_file_path.c_str(), MSG_file_get_size(file));
+
         file_usage_counter(dataInfo->input_file_path);
 
         plusLinkCounter(dataInfo->destination_name, host_name);
