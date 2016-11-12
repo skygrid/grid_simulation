@@ -10,7 +10,7 @@
 ## Vendor Conventions ##
 
 ##
-- results/Plots.ipynb
+- (^|/)results/Plots.ipynb
 
 # Caches
 - (^|/)cache/
