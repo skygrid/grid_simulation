@@ -214,30 +214,30 @@ for i in range(0, len(LIST_OF_TIERS)):
     f.write("\n")
 f.write("\n")
 
-for i in range(0, len(LIST_OF_TIERS)):
+"""for i in range(0, len(LIST_OF_TIERS)):
     f.write("\t<process host=\"" + LIST_OF_TIERS[i] + "\" function=\"evil\">\n")
     f.write("\t\t<argument value=\"" + str(randint(0, 10000)) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(randint(30, 75)) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(randint(100, 200)) + "\"/>\n")
     f.write("\t</process>\n")
     f.write("\n")
-f.write("\n")
+f.write("\n\n")"""
 
 # Additional processes for killing process, data popularity and tracing
-f.write("<process host=\"CERN\" function=\"killer\">")
-f.write("</process>")
+f.write("\t\t<process host=\"CERN\" function=\"killer\">\n")
+f.write("\t\t</process>\n\n")
 
-f.write("<process host=\"CERN\" function=\"initialize\">")
-f.write("<argument value=\"518400\"/>")
-f.write("</process>")
+f.write("\t\t<process host=\"CERN\" function=\"initialize\">\n")
+f.write("\t\t\t<argument value=\"518400\"/>\n")
+f.write("\t\t</process>\n\n")
 
-f.write("<process host=\"CERN\" function=\"delete_unpop_file\">")
-f.write("<argument value=\"518400\"/>")
-f.write("</process>")
+f.write("\t\t<process host=\"CERN\" function=\"delete_unpop_file\">\n")
+f.write("\t\t\t<argument value=\"518400\"/>\n")
+f.write("\t\t</process>\n\n")
 
-f.write("<process host=\"CERN\" function=\"tracer\">")
-f.write("<argument value=\"518400\"/>")
-f.write("</process>")
+f.write("\t\t<process host=\"CERN\" function=\"tracer\">\n")
+f.write("\t\t\t<argument value=\"518400\"/>\n")
+f.write("\t\t</process>\n")
 
 
 """for i in range(1, len(NAMES_TIER2)):
