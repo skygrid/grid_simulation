@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 import numpy as np
+import sys
 from random import randint
+
+ratio = float(sys.argv[1])
+
 quo, q = "\"", "\""
 
 NUMBER_OF_TIERS = 7
@@ -18,7 +22,7 @@ RAL_CPU = 4680
 SARA_CPU = 1708
 RRCKI_CPU = 1640
 
-CPU = [5100, 2808, 2440, 2300, 949, 4680, 1708, 1640]
+CPU = np.array([5100, 2808, 2440, 2300, 949, 4680, 1708, 1640]) / ratio
 
 # ONLINE STORAGE OF TIER1 TheraByte
 STORAGE_CERN = 7600  # GB
@@ -74,10 +78,11 @@ LINK_NAMES10.extend(["CERN-CNAF-LHCOPN-001", "CERN-GRIDKA-LHCOPN-001",  "CERN-IN
 LINK_NAMES11.extend(["CNAF-GRIDKA-LHCOPN-001", "GRIDKA-IN2P3-LHCOPN-001", "GRIDKA-SARA-LHCOPN-001"])
 
 # BANDWIDTH OF LINKS
+bandwidth = 10. / ratio
 LINK_NAMES10_BW10 = []
 LINK_NAMES10_BW11 = []
-LINK_NAMES10_BW10.extend(["10G", "10G", "10G", "10G", "10G", "10G", "10G"])
-LINK_NAMES10_BW11.extend(["10G", "10G", "10G"])
+LINK_NAMES10_BW10.extend([str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G"])
+LINK_NAMES10_BW11.extend([str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G"])
 
 LINK_INFO10 = dict(zip(LINK_NAMES10, LINK_NAMES10_BW10))
 LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
@@ -220,7 +225,7 @@ f.write("\n")
     f.write("\t\t<argument value=\"" + str(randint(30, 75)) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(randint(100, 200)) + "\"/>\n")
     f.write("\t</process>\n")
-    f.write("\n")
+    f.write("\n")vim
 f.write("\n\n")"""
 
 # Additional processes for killing process, data popularity and tracing

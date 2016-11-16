@@ -1,5 +1,7 @@
 # LHCb grid simulation
 
+## Current build status
+
 ## Goals and problems 
 Developing smarter algorithms for
 

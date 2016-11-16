@@ -7,4 +7,5 @@ set(SOURCE_FILES src/main.cpp src/messages.h src/scheduler.cpp src/data_replicat
 add_executable(CSim2Sim ${SOURCE_FILES})
 
 target_link_libraries(CSim2Sim csvparser)
-target_link_libraries(CSim2Sim simgrid)
+find_library(LIB_SIMGRID NAMES simgrid libsimgrid.so libprofiler.so.V123)
+target_link_libraries(CSim2Sim ${LIB_SIMGRID})

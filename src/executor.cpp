@@ -155,7 +155,6 @@ void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
 
         // DOWNLOADING FILE FROM ANOTHER TIER
         file = MSG_file_open(dataInfo->input_file_path.c_str(), NULL);
-        XBT_INFO("%s  %zd", dataInfo->input_file_path.c_str(), MSG_file_get_size(file));
 
         file_usage_counter(dataInfo->input_file_path);
 
