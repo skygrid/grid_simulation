@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+language: cpp
+
+matrix:
+  include:
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - git
+            - cmake
+            - libboost-dev
+            - libboost-all-dev
+            - g++-5
+      env: COMPILER=g++-5
+
+before_install:
+  - sudo apt-get install -y doxygen
+  - git clone https://github.com/simgrid/simgrid.git
+  - cd simgrid
+  - sudo cmake -Denable_documentation=OFF -Denable_coverage=OFF -Denable_java=OFF -Denable_model-checking=OFF -Denable_lua=OFF -Denable_compile_optimizations=OFF -Denable_smpi=OFF -Denable_smpi_MPICH3_testsuite=OFF -Denable_compile_warnings=OFF .
+  - sudo make
+  - sudo make install
+  - cd ..
+
+script:
+  - mkdir build
+  - cd build
+  - sudo cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && sudo make
+  - ./run.sh
