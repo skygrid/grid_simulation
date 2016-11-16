@@ -11,6 +11,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - git
+            - unzip
             - cmake
             - libboost-dev
             - libboost-all-dev
@@ -24,6 +25,13 @@ before_install:
   - sudo cmake -Denable_documentation=OFF -Denable_coverage=OFF -Denable_java=OFF -Denable_model-checking=OFF -Denable_lua=OFF -Denable_compile_optimizations=OFF -Denable_smpi=OFF -Denable_smpi_MPICH3_testsuite=OFF -Denable_compile_warnings=OFF .
   - sudo make
   - sudo make install
+  - cd ..
+  
+  - wget -O csvparser.zip https://sourceforge.net/projects/cccsvparser/files/2016-03-28/CsvParser_2016_03_28.zip/download
+  - unzip csvparser.zip
+  - cd CsvParser
+  - mkdir lib
+  - gcc -Iinclude src/csvparser.c -fPIC -shared -o lib/libcsvparser.so
   - cd ..
 
 script:
