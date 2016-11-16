@@ -33,6 +33,7 @@ before_install:
   - mkdir lib
   - gcc -Iinclude src/csvparser.c -fPIC -shared -o lib/libcsvparser.so
   - sudo cp lib/libcsvparser.so /usr/lib
+  - sudo cp include/csvparser.h /usr/include
   - cd ..
 
 script:
