@@ -40,4 +40,4 @@ script:
   - mkdir build
   - cd build
   - sudo cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && sudo make
-  - ./run.sh
+  - ../run.sh
