@@ -37,7 +37,5 @@ before_install:
   - cd ..
 
 script:
-  - mkdir build
-  - cd build
-  - sudo cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && sudo make
-  - sudo ../run.sh
+  - sudo cmake -DCMAKE_CXX_COMPILER=$COMPILER . && sudo make
+  - sudo ./run.sh
