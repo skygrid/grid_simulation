@@ -39,7 +39,7 @@ before_install:
 
 install:
   - sudo apt install -y lcov
-  - gem install coverall-lcov
+  - gem install coveralls-lcov
 
 script:
   - sudo cmake -DCMAKE_CXX_COMPILER=$COMPILER . && sudo make
