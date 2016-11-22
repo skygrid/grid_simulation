@@ -8,57 +8,134 @@
 
 	<process host="CERN" function="tier1">
 		<argument value="CERN"/>
-		<argument value="51"/>
+		<argument value="5100"/>
 	</process>
 
 	<process host="CNAF" function="tier1">
 		<argument value="CNAF"/>
-		<argument value="28"/>
+		<argument value="2808"/>
 	</process>
 
 	<process host="GRIDKA" function="tier1">
 		<argument value="GRIDKA"/>
-		<argument value="24"/>
+		<argument value="2440"/>
 	</process>
 
 	<process host="IN2P3" function="tier1">
 		<argument value="IN2P3"/>
-		<argument value="23"/>
+		<argument value="2300"/>
 	</process>
 
 	<process host="PIC" function="tier1">
 		<argument value="PIC"/>
-		<argument value="9"/>
+		<argument value="949"/>
 	</process>
 
 	<process host="RAL" function="tier1">
 		<argument value="RAL"/>
-		<argument value="46"/>
+		<argument value="4680"/>
 	</process>
 
 	<process host="SARA" function="tier1">
 		<argument value="SARA"/>
-		<argument value="17"/>
+		<argument value="1708"/>
 	</process>
 
 	<process host="RRCKI" function="tier1">
 		<argument value="RRCKI"/>
-		<argument value="16"/>
+		<argument value="1640"/>
 	</process>
 
 
-		<process host="CERN" function="killer">
-		</process>
+	<process host="CERN" function="killer">
+	</process>
 
-		<process host="CERN" function="initialize">
-			<argument value="518400"/>
-		</process>
+	<process host="CERN" function="initialize">
+		<argument value="518400"/>
+	</process>
 
-		<process host="CERN" function="delete_unpop_file">
-			<argument value="518400"/>
-		</process>
+	<process host="CERN" function="delete_unpop_file">
+		<argument value="518400"/>
+	</process>
 
-		<process host="CERN" function="tracer">
-			<argument value="518400"/>
-		</process>
+	<process host="CERN" function="tracer">
+		<argument value="518400"/>
+	</process>
+
+
+	<process host="T2_1" function="tier1">
+		<argument value="T2_1"/>
+		<argument value="6838"/>
+	</process>
+
+	<process host="T2_2" function="tier1">
+		<argument value="T2_2"/>
+		<argument value="5100"/>
+	</process>
+
+	<process host="T2_3" function="tier1">
+		<argument value="T2_3"/>
+		<argument value="2014"/>
+	</process>
+
+	<process host="T2_4" function="tier1">
+		<argument value="T2_4"/>
+		<argument value="4500"/>
+	</process>
+
+	<process host="T2_5" function="tier1">
+		<argument value="T2_5"/>
+		<argument value="15800"/>
+	</process>
+
+	<process host="T2_6" function="tier1">
+		<argument value="T2_6"/>
+		<argument value="5530"/>
+	</process>
+
+	<process host="T2_7" function="tier1">
+		<argument value="T2_7"/>
+		<argument value="3900"/>
+	</process>
+
+	<process host="T2_8" function="tier1">
+		<argument value="T2_8"/>
+		<argument value="6300"/>
+	</process>
+
+	<process host="T2_9" function="tier1">
+		<argument value="T2_9"/>
+		<argument value="899"/>
+	</process>
+
+	<process host="T2_10" function="tier1">
+		<argument value="T2_10"/>
+		<argument value="5265"/>
+	</process>
+
+	<process host="T2_11" function="tier1">
+		<argument value="T2_11"/>
+		<argument value="10000"/>
+	</process>
+
+	<process host="T2_12" function="tier1">
+		<argument value="T2_12"/>
+		<argument value="2273"/>
+	</process>
+
+	<process host="T2_13" function="tier1">
+		<argument value="T2_13"/>
+		<argument value="7577"/>
+	</process>
+
+	<process host="T2_14" function="tier1">
+		<argument value="T2_14"/>
+		<argument value="1903"/>
+	</process>
+
+	<process host="T2_15" function="tier1">
+		<argument value="T2_15"/>
+		<argument value="6727"/>
+	</process>
+
 </platform>

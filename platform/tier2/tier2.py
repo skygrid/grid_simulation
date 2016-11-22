@@ -12,6 +12,6 @@ array = LHCb[indexes]
 
 for i in range(len(indexes[0])):
     f.write(str(nameU[indexes][i]) + ",")
-    f.write(str(float(LHCb[indexes][i])/100) + ",")
+    f.write(str(int(LHCb[indexes][i])) + ",")
     f.write(str(LHCb[indexes[0]+1][i]) + "TB" + "\n")
 f.close()

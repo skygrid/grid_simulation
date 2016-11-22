@@ -22,7 +22,7 @@ RAL_CPU = 4680
 SARA_CPU = 1708
 RRCKI_CPU = 1640
 
-CPU = np.array([5100, 2808, 2440, 2300, 949, 4680, 1708, 1640]) / ratio
+CPU = np.array([5100, 2808, 2440, 2300, 949, 4680, 1708, 1640])  / ratio
 
 # ONLINE STORAGE OF TIER1 TheraByte
 STORAGE_CERN = 7600  # GB
@@ -60,6 +60,8 @@ RRCKI_CONTENT = "RRCKI_content"
 LIST_ONLINE_STORAGE = []
 LIST_NEARLINE_STORAGE = []
 LIST_CONTENT = []
+LIST_CONTENT_TIER2 = []
+
 
 LIST_ONLINE_STORAGE.extend([STORAGE_CERN, STORAGE_CNAF, STORAGE_GRIDKA, STORAGE_IN2P3, STORAGE_PIC, STORAGE_RAL, STORAGE_SARA, STORAGE_RRCKI])
 LIST_NEARLINE_STORAGE.extend([NEARLINE_CERN, NEARLINE_CNAF, NEARLINE_GRIDKA, NEARLINE_IN2P3, NEARLINE_PIC, NEARLINE_RAL, NEARLINE_SARA, NEARLINE_RRCKI])
@@ -78,7 +80,7 @@ LINK_NAMES10.extend(["CERN-CNAF-LHCOPN-001", "CERN-GRIDKA-LHCOPN-001",  "CERN-IN
 LINK_NAMES11.extend(["CNAF-GRIDKA-LHCOPN-001", "GRIDKA-IN2P3-LHCOPN-001", "GRIDKA-SARA-LHCOPN-001"])
 
 # BANDWIDTH OF LINKS
-bandwidth = 10. / ratio
+bandwidth = 10.  / ratio
 LINK_NAMES10_BW10 = []
 LINK_NAMES10_BW11 = []
 LINK_NAMES10_BW10.extend([str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)+"G"])
@@ -89,6 +91,8 @@ LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
 
 NAMES_TIER2, CPU_TIER2, STORAGE_TIER2 = np.loadtxt("tier2/tier2.csv", skiprows=1, dtype=(np.str), usecols=(0, 1, 2), delimiter=",", unpack=True)
 
+for i in range(len(NAMES_TIER2)):
+	LIST_CONTENT_TIER2.append("tier2-" + str(i) + ".txt")
 
 f = open("platform.xml", "w")
 f.write("<?xml version='1.0'?>\n")
@@ -99,7 +103,7 @@ f.write("\t<AS id=\"AS_BIG\" routing=\"Full\">\n")
 
 for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t<storage_type id=" + quo + "single_HDD" + str(i) + quo + " size=" + quo + str(LIST_ONLINE_STORAGE[i]) + "TB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
-    f.write("\t\t\t\tcontent=" + quo + "Content/" + str(LIST_CONTENT[i]) + "_online.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
+    f.write("\t\t\t\tcontent=" + quo + "Content/Tier1/" + str(LIST_CONTENT[i]) + "_online.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "1000000000.2GBps" + quo + "/>\n")
@@ -107,11 +111,22 @@ for i in range(len(LIST_ONLINE_STORAGE)):
 
 for i in range(len(LIST_ONLINE_STORAGE)):
     f.write("\t\t<storage_type id=" + quo + "NEARLINE_HDD" + str(i) + quo + " size=" + quo + str(LIST_NEARLINE_STORAGE[i]) + "TB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
-    f.write("\t\t\t\tcontent=" + quo + "Content/" + str(LIST_CONTENT[i]) + "_nearline.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
+    f.write("\t\t\t\tcontent=" + quo + "Content/Tier1/" + str(LIST_CONTENT[i]) + "_nearline.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "100000000000.2GBps" + quo + "/>\n")
     f.write("\t\t</storage_type>\n\n")
+
+f.write("\n")
+f.write("\t\t<!--Storages types of tier2 storages-->\n")
+for i in range(len(NAMES_TIER2)):
+    f.write("\t\t<storage_type id=" + quo + "TIER2_HDD" + str(i) + quo + " size=" + quo + str(STORAGE_TIER2[i]) + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
+    f.write("\t\t\t\tcontent=" + quo + "Content/Tier2/" + str(LIST_CONTENT_TIER2[i]) + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
+    f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "100000000000.2GBps" + quo + "/>\n")
+    f.write("\t\t</storage_type>\n\n")
+
 
 
 # DEFINING STORAGE OF TIER0, TIER1 AND TIER2
@@ -124,7 +139,10 @@ for i in range(len(LIST_ONLINE_STORAGE)):
 
 f.write("\n")
 
+for i in range(len(NAMES_TIER2)):
+    f.write("\t\t<storage id=" + quo + "Tier2-" + str(i) + quo + " typeId=" + quo + "TIER2_HDD"+ str(i) + quo + " attach=" + quo + "Tier2-" + str(i) + quo + "/>\n")
 
+f.write("\n")
 
 
 # DEFINING TIER0
@@ -134,6 +152,7 @@ for j in range(len(LIST_STORAGE_STRING)):
     f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
     f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] +"0" + q + "/>\n")
 f.write("\t\t</host>\n")
+# DEFINING TIER1s
 
 for i in range(NUMBER_OF_TIERS):
     f.write("\t\t<host id=\"" + LIST_OF_TIER1S[i] + "\" speed=\"1Gf\" core=\"" + str(CPU[i+1]) + "\" >\n")
@@ -143,17 +162,28 @@ for i in range(NUMBER_OF_TIERS):
         f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
         f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "0" + q + "/>\n")
     f.write("\t\t</host>\n\n")
-f.write("\n")
+f.write("\n\n")
 
 ###################################################################
 #                  DEFINING THE LAYER                             #
 #                     OF TIER2                                    #
 ###################################################################
+f.write("<!--DEFINING THE LAYER OF TIER2 -->\n")
 
+for i in range(len(NAMES_TIER2)):
+    f.write("\t\t<host id=\"" + "Tier2-" + str(i)  + "\" speed=\"1Gf\" core=\"" + str((CPU_TIER2[i])) + "\">\n")
+    # MOUNT TIERS STORAGE
+    # f.write("\n")
+    f.write("\t\t\t<mount storageId=" + q + "Tier2-" + str(i) + q + " name=" + q+ "/" + "Tier2-" + str(i) + q + "/>\n")
+    f.write("\t\t</host>\n\n")
+f.write("\n")
+
+
+#####################################################################################################################################
 
 f.write("\n")
 
-f.write("<link id=\"loopback\" bandwidth=\"498MBps\" latency=\"0us\" sharing_policy=\"FATPIPE\"/>\n")
+f.write("\t\t<link id=\"loopback\" bandwidth=\"498MBps\" latency=\"0us\" sharing_policy=\"FATPIPE\"/>\n")
 for i in range(NUMBER_OF_TIERS):
     f.write("\t\t<link id=" + quo + str(LINK_NAMES10[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW10[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.writelines("\n")
@@ -161,21 +191,26 @@ for i in range(len(LINK_NAMES11)):
     f.write("\t\t<link id=" + quo + str(LINK_NAMES11[i]) + quo + " bandwidth=\"" + str(LINK_NAMES10_BW11[i]) + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.write("\n")
 
+#TIER0-TIER2 LINKS
 
+f.write("\t\t<!--TIER0-TIER2 LINKS-->\n")
+for i in range(len(NAMES_TIER2)):
+	f.write("\t\t<link id=" + quo + "0-Tier" + str(i) + quo + " bandwidth=\"10G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
+f.write("")
+	
+#######################################################################################################################################
 n = 0
 
 f.write("\t\t<!--routes between TIER1-TIER1-->\n")
 with open("links_delete.xml", "r") as mylinks:
     data = mylinks.read()
-f.write(data.replace("\n", "\n\t\t") + "\n")
+f.write(data.replace("\n", "\n\t\t") + "\n\n")
 
 
 # CERN-CERN ROUTE
-
-
 f.write("\t\t<route src=\"CERN\" dst=\"CERN" + "\">")
 f.write("<link_ctn id=\"loopback" + "\"/>")
-f.write("</route>\n")
+f.write("</route>\n\n")
 
 # routs between AS and TIER1
 f.write("\t\t<!--routes between CERN and TIER1-->\n")
@@ -186,8 +221,16 @@ for x in range(NUMBER_OF_TIERS):
     f.write("\t\t<route src=\"CERN\" dst=\"" + LIST_OF_TIER1S[x] + "\">")
     f.write("<link_ctn id=\"" + LINK_NAMES10[x] + "\"/>")
     f.write("</route>\n")
+f.write("\n")
 
-
+# TIER0-TIER2 ROUTES
+f.write("\t\t<!--CERN-TIER2 ROUTES-->\n")
+for i in range(len(NAMES_TIER2)):
+	f.write("\t\t<route src=\"CERN\" dst=\"" + "Tier2-" + str(i) + "\">")
+	f.write("<link_ctn id=\"" + "0-Tier2" + str(i) + "\"/>")
+	f.write("</route>\n")
+f.write("\n")
+##################################################################################
 
 f.write("\t</AS>\n")
 f.write("</platform>\n")
@@ -229,34 +272,30 @@ f.write("\n")
 f.write("\n\n")"""
 
 # Additional processes for killing process, data popularity and tracing
-f.write("\t\t<process host=\"CERN\" function=\"killer\">\n")
-f.write("\t\t</process>\n\n")
+f.write("\t<process host=\"CERN\" function=\"killer\">\n")
+f.write("\t</process>\n\n")
 
-f.write("\t\t<process host=\"CERN\" function=\"initialize\">\n")
-f.write("\t\t\t<argument value=\"518400\"/>\n")
-f.write("\t\t</process>\n\n")
+f.write("\t<process host=\"CERN\" function=\"initialize\">\n")
+f.write("\t\t<argument value=\"518400\"/>\n")
+f.write("\t</process>\n\n")
 
-f.write("\t\t<process host=\"CERN\" function=\"delete_unpop_file\">\n")
-f.write("\t\t\t<argument value=\"518400\"/>\n")
-f.write("\t\t</process>\n\n")
+f.write("\t<process host=\"CERN\" function=\"delete_unpop_file\">\n")
+f.write("\t\t<argument value=\"518400\"/>\n")
+f.write("\t</process>\n\n")
 
-f.write("\t\t<process host=\"CERN\" function=\"tracer\">\n")
-f.write("\t\t\t<argument value=\"518400\"/>\n")
-f.write("\t\t</process>\n")
+f.write("\t<process host=\"CERN\" function=\"tracer\">\n")
+f.write("\t\t<argument value=\"518400\"/>\n")
+f.write("\t</process>\n\n\n")
+####################################################################################
 
 
-"""for i in range(1, len(NAMES_TIER2)):
+# TIER2 processes 
+for i in range(1, len(NAMES_TIER2)):
     f.write("\t<process host=\"T2_" + str(i) + "\" function=\"tier1\">\n")
     f.write("\t\t<argument value=\"T2_" + str(i) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(int(float(CPU_TIER2[i])) / 1) + "\"/>\n")
     f.write("\t</process>\n")
-    f.write("\n")"""
+    f.write("\n")
 f.write("</platform>")
-
-
-
-
+#####################################################################################
 f.close()
-
-
-

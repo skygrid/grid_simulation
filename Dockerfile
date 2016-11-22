@@ -1,3 +1,11 @@
+#################################################
+# Dockerfile to build LHCb-simulation container #
+# Based on Ubuntu xenial                        #  
+#################################################
+
 FROM ubuntu:16.04
-MAINTAINER Kate Smith <ksmith@example.com>
-RUN apt-get update && apt-get install -y git cmake build-essentials
+MAINTAINER Kenenbek Arzymatov <kenenbek@gmail.com>
+RUN apt-get update 
+RUN apt-get install -y git cmake build-essential libboost-dev
+RUN mkdir -p ~/LHCb/grid_simulation
+
