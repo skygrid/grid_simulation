@@ -195,7 +195,7 @@ f.write("\n")
 
 f.write("\t\t<!--TIER0-TIER2 LINKS-->\n")
 for i in range(1, len(NAMES_TIER2)+1):
-	f.write("\t\t<link id=" + quo + "0-Tier" + str(i) + quo + " bandwidth=\"10G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
+	f.write("\t\t<link id=" + quo + "0-Tier2_" + str(i) + quo + " bandwidth=\"10G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.write("")
 	
 #######################################################################################################################################
@@ -227,7 +227,7 @@ f.write("\n")
 f.write("\t\t<!--CERN-TIER2 ROUTES-->\n")
 for i in range(1, len(NAMES_TIER2)+1):
 	f.write("\t\t<route src=\"CERN\" dst=\"" + "Tier2_" + str(i) + "\">")
-	f.write("<link_ctn id=\"" + "0-Tier2" + str(i) + "\"/>")
+	f.write("<link_ctn id=\"" + "0-Tier2_" + str(i) + "\"/>")
 	f.write("</route>\n")
 f.write("\n")
 ##################################################################################
@@ -290,10 +290,10 @@ f.write("\t</process>\n\n\n")
 
 
 # TIER2 processes 
-for i in range(1, len(NAMES_TIER2)):
+for i in range(1, len(NAMES_TIER2)+1):
     f.write("\t<process host=\"Tier2_" + str(i) + "\" function=\"tier1\">\n")
     f.write("\t\t<argument value=\"Tier2_" + str(i) + "\"/>\n")
-    f.write("\t\t<argument value=\"" + str(int(float(CPU_TIER2[i])) / 1) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(int(float(CPU_TIER2[i-1])) / 1) + "\"/>\n")
     f.write("\t</process>\n")
     f.write("\n")
 f.write("</platform>")

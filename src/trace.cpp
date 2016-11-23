@@ -80,6 +80,7 @@ int set_0_all_routes(){
 }
 
 int tracer(int argc, char* argv[]){
+    return 0;
     double day = 86400;
 
     while (!global_queue->empty()){

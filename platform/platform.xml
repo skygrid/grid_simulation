@@ -506,22 +506,22 @@
 		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
 
 		<!--TIER0-TIER2 LINKS-->
-		<link id="0-Tier1" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier3" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier4" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier5" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier6" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier7" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier8" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier9" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier10" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier11" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier12" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier13" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier14" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier15" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier16" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_1" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_2" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_3" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_4" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_5" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_6" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_7" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_8" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_9" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_10" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_11" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_12" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_13" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_14" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_15" bandwidth="10GBps" latency="0.0ms"/>
+		<link id="0-Tier2_16" bandwidth="10GBps" latency="0.0ms"/>
 		<!--routes between TIER1-TIER1-->
 
 		<!--DIRECT 3 ROUTES-->
@@ -615,22 +615,22 @@
 		<route src="CERN" dst="RRCKI"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
 
 		<!--CERN-TIER2 ROUTES-->
-		<route src="CERN" dst="Tier2_1"><link_ctn id="0-Tier21"/></route>
-		<route src="CERN" dst="Tier2_2"><link_ctn id="0-Tier22"/></route>
-		<route src="CERN" dst="Tier2_3"><link_ctn id="0-Tier23"/></route>
-		<route src="CERN" dst="Tier2_4"><link_ctn id="0-Tier24"/></route>
-		<route src="CERN" dst="Tier2_5"><link_ctn id="0-Tier25"/></route>
-		<route src="CERN" dst="Tier2_6"><link_ctn id="0-Tier26"/></route>
-		<route src="CERN" dst="Tier2_7"><link_ctn id="0-Tier27"/></route>
-		<route src="CERN" dst="Tier2_8"><link_ctn id="0-Tier28"/></route>
-		<route src="CERN" dst="Tier2_9"><link_ctn id="0-Tier29"/></route>
-		<route src="CERN" dst="Tier2_10"><link_ctn id="0-Tier210"/></route>
-		<route src="CERN" dst="Tier2_11"><link_ctn id="0-Tier211"/></route>
-		<route src="CERN" dst="Tier2_12"><link_ctn id="0-Tier212"/></route>
-		<route src="CERN" dst="Tier2_13"><link_ctn id="0-Tier213"/></route>
-		<route src="CERN" dst="Tier2_14"><link_ctn id="0-Tier214"/></route>
-		<route src="CERN" dst="Tier2_15"><link_ctn id="0-Tier215"/></route>
-		<route src="CERN" dst="Tier2_16"><link_ctn id="0-Tier216"/></route>
+		<route src="CERN" dst="Tier2_1"><link_ctn id="0-Tier2_1"/></route>
+		<route src="CERN" dst="Tier2_2"><link_ctn id="0-Tier2_2"/></route>
+		<route src="CERN" dst="Tier2_3"><link_ctn id="0-Tier2_3"/></route>
+		<route src="CERN" dst="Tier2_4"><link_ctn id="0-Tier2_4"/></route>
+		<route src="CERN" dst="Tier2_5"><link_ctn id="0-Tier2_5"/></route>
+		<route src="CERN" dst="Tier2_6"><link_ctn id="0-Tier2_6"/></route>
+		<route src="CERN" dst="Tier2_7"><link_ctn id="0-Tier2_7"/></route>
+		<route src="CERN" dst="Tier2_8"><link_ctn id="0-Tier2_8"/></route>
+		<route src="CERN" dst="Tier2_9"><link_ctn id="0-Tier2_9"/></route>
+		<route src="CERN" dst="Tier2_10"><link_ctn id="0-Tier2_10"/></route>
+		<route src="CERN" dst="Tier2_11"><link_ctn id="0-Tier2_11"/></route>
+		<route src="CERN" dst="Tier2_12"><link_ctn id="0-Tier2_12"/></route>
+		<route src="CERN" dst="Tier2_13"><link_ctn id="0-Tier2_13"/></route>
+		<route src="CERN" dst="Tier2_14"><link_ctn id="0-Tier2_14"/></route>
+		<route src="CERN" dst="Tier2_15"><link_ctn id="0-Tier2_15"/></route>
+		<route src="CERN" dst="Tier2_16"><link_ctn id="0-Tier2_16"/></route>
 
 	</AS>
 </platform>
