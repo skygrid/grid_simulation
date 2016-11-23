@@ -22,7 +22,7 @@ RAL_CPU = 4680
 SARA_CPU = 1708
 RRCKI_CPU = 1640
 
-CPU = np.array([5100, 2808, 2440, 2300, 949, 4680, 1708, 1640])  / ratio
+CPU = map(int, np.array([5100, 2808, 2440, 2300, 949, 4680, 1708, 1640])  / ratio)
 
 # ONLINE STORAGE OF TIER1 TheraByte
 STORAGE_CERN = 7600  # GB
@@ -91,8 +91,8 @@ LINK_INFO11 = dict(zip(LINK_NAMES11, LINK_NAMES10_BW11))
 
 NAMES_TIER2, CPU_TIER2, STORAGE_TIER2 = np.loadtxt("tier2/tier2.csv", skiprows=1, dtype=(np.str), usecols=(0, 1, 2), delimiter=",", unpack=True)
 
-for i in range(len(NAMES_TIER2)):
-	LIST_CONTENT_TIER2.append("tier2-" + str(i) + ".txt")
+for i in range(1, len(NAMES_TIER2)+1):
+	LIST_CONTENT_TIER2.append("Tier2_" + str(i) + ".txt")
 
 f = open("platform.xml", "w")
 f.write("<?xml version='1.0'?>\n")
@@ -119,9 +119,9 @@ for i in range(len(LIST_ONLINE_STORAGE)):
 
 f.write("\n")
 f.write("\t\t<!--Storages types of tier2 storages-->\n")
-for i in range(len(NAMES_TIER2)):
-    f.write("\t\t<storage_type id=" + quo + "TIER2_HDD" + str(i) + quo + " size=" + quo + str(STORAGE_TIER2[i]) + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
-    f.write("\t\t\t\tcontent=" + quo + "Content/Tier2/" + str(LIST_CONTENT_TIER2[i]) + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
+for i in range(1, len(NAMES_TIER2)+1):
+    f.write("\t\t<storage_type id=" + quo + "TIER2_HDD" + str(i) + quo + " size=" + quo + str(STORAGE_TIER2[i-1]) + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
+    f.write("\t\t\t\tcontent=" + quo + "Content/Tier2/" + str(LIST_CONTENT_TIER2[i-1]) + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "100000000000.2GBps" + quo + "/>\n")
@@ -139,8 +139,8 @@ for i in range(len(LIST_ONLINE_STORAGE)):
 
 f.write("\n")
 
-for i in range(len(NAMES_TIER2)):
-    f.write("\t\t<storage id=" + quo + "Tier2-" + str(i) + quo + " typeId=" + quo + "TIER2_HDD"+ str(i) + quo + " attach=" + quo + "Tier2-" + str(i) + quo + "/>\n")
+for i in range(1, len(NAMES_TIER2)+1):
+    f.write("\t\t<storage id=" + quo + "Tier2_" + str(i) + quo + " typeId=" + quo + "TIER2_HDD"+ str(i) + quo + " attach=" + quo + "Tier2_" + str(i) + quo + "/>\n")
 
 f.write("\n")
 
@@ -170,11 +170,11 @@ f.write("\n\n")
 ###################################################################
 f.write("<!--DEFINING THE LAYER OF TIER2 -->\n")
 
-for i in range(len(NAMES_TIER2)):
-    f.write("\t\t<host id=\"" + "Tier2-" + str(i)  + "\" speed=\"1Gf\" core=\"" + str((CPU_TIER2[i])) + "\">\n")
+for i in range(1, len(NAMES_TIER2)+1):
+    f.write("\t\t<host id=\"" + "Tier2_" + str(i)  + "\" speed=\"1Gf\" core=\"" + str((CPU_TIER2[i-1])) + "\">\n")
     # MOUNT TIERS STORAGE
     # f.write("\n")
-    f.write("\t\t\t<mount storageId=" + q + "Tier2-" + str(i) + q + " name=" + q+ "/" + "Tier2-" + str(i) + q + "/>\n")
+    f.write("\t\t\t<mount storageId=" + q + "Tier2_" + str(i) + q + " name=" + q+ "/" + "Tier2_" + str(i) + q + "/>\n")
     f.write("\t\t</host>\n\n")
 f.write("\n")
 
@@ -194,7 +194,7 @@ f.write("\n")
 #TIER0-TIER2 LINKS
 
 f.write("\t\t<!--TIER0-TIER2 LINKS-->\n")
-for i in range(len(NAMES_TIER2)):
+for i in range(1, len(NAMES_TIER2)+1):
 	f.write("\t\t<link id=" + quo + "0-Tier" + str(i) + quo + " bandwidth=\"10G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.write("")
 	
@@ -225,8 +225,8 @@ f.write("\n")
 
 # TIER0-TIER2 ROUTES
 f.write("\t\t<!--CERN-TIER2 ROUTES-->\n")
-for i in range(len(NAMES_TIER2)):
-	f.write("\t\t<route src=\"CERN\" dst=\"" + "Tier2-" + str(i) + "\">")
+for i in range(1, len(NAMES_TIER2)+1):
+	f.write("\t\t<route src=\"CERN\" dst=\"" + "Tier2_" + str(i) + "\">")
 	f.write("<link_ctn id=\"" + "0-Tier2" + str(i) + "\"/>")
 	f.write("</route>\n")
 f.write("\n")
@@ -291,8 +291,8 @@ f.write("\t</process>\n\n\n")
 
 # TIER2 processes 
 for i in range(1, len(NAMES_TIER2)):
-    f.write("\t<process host=\"T2_" + str(i) + "\" function=\"tier1\">\n")
-    f.write("\t\t<argument value=\"T2_" + str(i) + "\"/>\n")
+    f.write("\t<process host=\"Tier2_" + str(i) + "\" function=\"tier1\">\n")
+    f.write("\t\t<argument value=\"Tier2_" + str(i) + "\"/>\n")
     f.write("\t\t<argument value=\"" + str(int(float(CPU_TIER2[i])) / 1) + "\"/>\n")
     f.write("\t</process>\n")
     f.write("\n")
