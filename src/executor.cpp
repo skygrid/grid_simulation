@@ -140,7 +140,6 @@ int copy_from_tape_to_disk(DataInfo* data_info){
         // So we have new name of input file on the disk
         data_info->input_file_path = data_info->copy_from_tape_to_disk_name;
     }
-
     return 0;
 }
 

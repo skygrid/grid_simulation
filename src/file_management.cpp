@@ -14,6 +14,7 @@ map<std::string, long> storage_number_map;
 XBT_LOG_NEW_DEFAULT_CATEGORY(delete_unpopular_file, "messages specific for deletion");
 
 int initialize_file_labels(int argc, char* argv[]){
+    return 0;
     name_node = new map<string, FileData*>;
     unsigned int cur;
     char* local_name;
@@ -54,6 +55,7 @@ int initialize_file_labels(int argc, char* argv[]){
 
 /*When new file created*/
 int create_file_label(string& filename){
+    return 0;
     if (name_node->find(filename) != name_node->end())
         return 0;
     FileData *fileData = new FileData;
@@ -68,6 +70,7 @@ int create_file_label(string& filename){
 
 /* When file is used by someone*/
 void file_usage_counter(string& filename){
+    return;
     string type;
     unsigned long len = (int) strcspn(filename.c_str(), "10");
     type = filename.at(len);
@@ -84,6 +87,7 @@ void file_usage_counter(string& filename){
 
 
 int delete_unpopular_file(int argc, char* argv[]){
+    return 0;
     double sleep_time = xbt_str_parse_double(argv[1], "error");
 
     sleep_time = 15 * 86400;

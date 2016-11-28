@@ -265,7 +265,7 @@
 		<storage id="Tier2_16" typeId="TIER2_HDD16" attach="Tier2_16"/>
 
 
-		<host id="CERN" speed="1Gf" core="51">
+		<host id="CERN" speed="1Gf" core="54">
 			<mount storageId="CERN1" name="/CERN1"/>
 			<mount storageId="CERN0" name="/CERN0"/>
 			<mount storageId="CNAF1" name="/CNAF1"/>

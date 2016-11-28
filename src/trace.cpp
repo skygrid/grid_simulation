@@ -6,6 +6,7 @@
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
 
+XBT_LOG_NEW_DEFAULT_CATEGORY(ttrace, "messages specific for trace");
 
 msg_sem_t sem_link;
 
@@ -80,12 +81,13 @@ int set_0_all_routes(){
 }
 
 int tracer(int argc, char* argv[]){
-    return 0;
+    //return 0;
     double day = 86400;
 
     while (!global_queue->empty()){
 
         for(auto& storage_name: storage_number_map){
+            XBT_INFO(storage_name.first.c_str());
 
             const char* hostname = storage_name.first.substr(0, storage_name.first.size()-1).c_str();
             if (storage_name.first.back() == '1'){

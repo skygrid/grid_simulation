@@ -6,8 +6,8 @@ FILE_NAMES = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "RRCKI", "SARA"]
 true_indexes = np.sort(np.unique(inp_file, return_index=True)[1])
 
 for file_name in FILE_NAMES:
-    f_name_online = "platform/Content/" + file_name + "_content_online.txt"
-    f_name_nearline = "platform/Content/" + file_name + "_content_nearline.txt"
+    f_name_online = "platform/Content/Tier1/" + file_name + "_content_online.txt"
+    f_name_nearline = "platform/Content/Tier1/" + file_name + "_content_nearline.txt"
     f1 = open(f_name_online, "w")
     f2 = open(f_name_nearline, "w")
 

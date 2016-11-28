@@ -12,6 +12,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
 
 void check_files_availability(Job* jobInfo){
+    return;
     string input_file_path;
     msg_file_t file;
 
@@ -134,6 +135,32 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
 }
 
 
+vector<Job*>* matcher_tier2(long amountRequestedJob, const string host){
+    int amount_of_matched_jobs = 0;
+
+    vector<Job*>* jobBatch = new vector<Job*>;
+    std::list<Job*>* local_queue = global_queue;        //create_current_queue();
+
+    if (amountRequestedJob > local_queue->size()){
+        amountRequestedJob = local_queue->size();
+    }
+
+    for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob;) {
+        check_files_availability(*i);
+        if ((*i)->type == MCSIMULATION){
+            (*i)->startSchedulClock = MSG_get_clock();
+            (*i)->successExecuted = 0;
+            amount_of_matched_jobs++;
+            jobBatch->push_back(*i);
+
+            i = global_queue->erase(i);
+        } else i++;
+    }
+    return jobBatch;
+}
+
+
+
 list<Job*>* create_current_queue(){
     std::list<Job*>* local_queue = new list<Job*>;
 
@@ -145,3 +172,5 @@ list<Job*>* create_current_queue(){
 
     return local_queue;
 }
+
+

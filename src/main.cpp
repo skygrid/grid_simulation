@@ -56,16 +56,16 @@ int main(int argc, char *argv[]){
 
     // Clear info of name node
 
-    std::map<string, FileData*>::iterator file_itr = name_node->begin();
+    /*std::map<string, FileData*>::iterator file_itr = name_node->begin();
     while (file_itr != name_node->end()){
         delete (*file_itr).second;
         name_node->erase(file_itr);
         file_itr++;
-    }
+    }*/
 
     // delete global_queue and name_node
     delete global_queue;
-    delete name_node;
+    //delete name_node;
 
     auto t2 = std::chrono::high_resolution_clock::now();
     XBT_INFO("Real time of simulation: %d seconds", std::chrono::duration_cast<std::chrono::seconds>(t2-t1).count());

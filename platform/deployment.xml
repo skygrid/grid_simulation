@@ -8,7 +8,7 @@
 
 	<process host="CERN" function="tier1">
 		<argument value="CERN"/>
-		<argument value="51"/>
+		<argument value="1"/>
 	</process>
 
 	<process host="CNAF" function="tier1">
@@ -63,7 +63,7 @@
 	</process>
 
 
-	<!--<process host="Tier2_1" function="tier1">
+	<process host="Tier2_1" function="tier1">
 		<argument value="Tier2_1"/>
 		<argument value="4000"/>
 	</process>
@@ -141,6 +141,6 @@
 	<process host="Tier2_16" function="tier1">
 		<argument value="Tier2_16"/>
 		<argument value="6727"/>
-	</process> -->
+	</process>
 
 </platform>

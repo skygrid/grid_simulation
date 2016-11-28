@@ -61,7 +61,7 @@ list<Job*>* create_current_queue();
 
 vector<Job*>* matcher(long amountRequestedJob);
 vector<Job*>* matcher_DAM(long amountRequestedJob, const string host);
-
+vector<Job*>* matcher_tier2(long amountRequestedJob, const string host);
 
 int create_file_label(string& filename);
 void file_usage_counter(string& filename);
