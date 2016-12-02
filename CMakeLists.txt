@@ -12,6 +12,6 @@ target_link_libraries(CSim2Sim ${LIB_CSVPARSER})
 find_library(LIB_SIMGRID NAMES simgrid libsimgrid.so libprofiler.so.V123)
 target_link_libraries(CSim2Sim ${LIB_SIMGRID})
 
-target_link_libraries(CSim2Sim yaml-cpp)
+#target_link_libraries(CSim2Sim yaml-cpp)
 
 
