@@ -69,8 +69,8 @@ LIST_CONTENT.extend([CERN_CONTENT, CNAF_CONTENT, GRIDKA_CONTENT, IN2P3_CONTENT, 
 
 LIST_STORAGE_STRING = ["CERN1", "CNAF1", "GRIDKA1", "IN2P31", "PIC1", "RAL1", "SARA1", "RRCKI1"]
 LIST_NEARLINE_STRING = ["CERN0", "CNAF0", "GRIDKA0", "IN2P30", "PIC0", "RAL0", "SARA0", "RRCKI0"]
-LIST_OF_TIERS = ["CERN", "CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
-LIST_OF_TIER1S = ["CNAF", "GRIDKA", "IN2P3", "PIC", "RAL", "SARA", "RRCKI"]
+LIST_OF_TIERS = ["CERN-PROD", "INFN-T1", "FZK-LCG2", "IN2P3-CC", "pic", "RAL-LCG2", "NIKHEF-ELPROD", "NRC-KI-T1"]
+LIST_OF_TIER1S = ["INFN-T1", "FZK-LCG2", "IN2P3-CC", "pic", "RAL-LCG2", "NIKHEF-ELPROD", "NRC-KI-T1"]
 
 
 # NAMES OF LINKS CONVENTION (T0-T1 AND T1-T1)
@@ -147,7 +147,7 @@ f.write("\n")
 
 # DEFINING TIER0
 f.write("\n")
-f.write("\t\t<host id=\"CERN\" speed=\"1Gf\" core=\"" + str(CPU[0])  + "\">\n")
+f.write("\t\t<host id=\"CERN-PROD\" speed=\"1Gf\" core=\"" + str(CPU[0])  + "\">\n")
 for j in range(len(LIST_STORAGE_STRING)):
     f.write("\t\t\t<mount storageId=" + q + LIST_STORAGE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] + "1" + q + "/>\n")
     f.write("\t\t\t<mount storageId=" + q + LIST_NEARLINE_STRING[j] + q + " name=" + q+ "/" + LIST_OF_TIERS[j] +"0" + q + "/>\n")

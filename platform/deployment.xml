@@ -6,44 +6,44 @@
 		<argument value="scheduler"/>  <!-- Input mailbox -->
 	</process>
 
-	<process host="CERN" function="tier1">
-		<argument value="CERN"/>
-		<argument value="1"/>
+	<process host="CERN-PROD" function="tier1">
+		<argument value="CERN-PROD"/>
+		<argument value="5100"/>
 	</process>
 
-	<process host="CNAF" function="tier1">
-		<argument value="CNAF"/>
-		<argument value="28"/>
+	<process host="INFN-T1" function="tier1">
+		<argument value="INFN-T1"/>
+		<argument value="2808"/>
 	</process>
 
-	<process host="GRIDKA" function="tier1">
-		<argument value="GRIDKA"/>
-		<argument value="24"/>
+	<process host="FZK-LCG2" function="tier1">
+		<argument value="FZK-LCG2"/>
+		<argument value="2440"/>
 	</process>
 
-	<process host="IN2P3" function="tier1">
-		<argument value="IN2P3"/>
-		<argument value="23"/>
+	<process host="IN2P3-CC" function="tier1">
+		<argument value="IN2P3-CC"/>
+		<argument value="2300"/>
 	</process>
 
-	<process host="PIC" function="tier1">
-		<argument value="PIC"/>
-		<argument value="9"/>
+	<process host="pic" function="tier1">
+		<argument value="pic"/>
+		<argument value="949"/>
 	</process>
 
-	<process host="RAL" function="tier1">
-		<argument value="RAL"/>
-		<argument value="46"/>
+	<process host="RAL-LCG2" function="tier1">
+		<argument value="RAL-LCG2"/>
+		<argument value="4680"/>
 	</process>
 
-	<process host="SARA" function="tier1">
-		<argument value="SARA"/>
-		<argument value="17"/>
+	<process host="NIKHEF-ELPROD" function="tier1">
+		<argument value="NIKHEF-ELPROD"/>
+		<argument value="1708"/>
 	</process>
 
-	<process host="RRCKI" function="tier1">
-		<argument value="RRCKI"/>
-		<argument value="16"/>
+	<process host="NRC-KI-T1" function="tier1">
+		<argument value="NRC-KI-T1"/>
+		<argument value="1640"/>
 	</process>
 
 

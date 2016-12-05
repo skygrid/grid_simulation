@@ -229,23 +229,23 @@
 			<model_prop id="Bconnection" value="100000000000.2GBps"/>
 		</storage_type>
 
-		<storage id="CERN1" typeId="single_HDD0" attach="CERN"/>
-		<storage id="CNAF1" typeId="single_HDD1" attach="CNAF"/>
-		<storage id="GRIDKA1" typeId="single_HDD2" attach="GRIDKA"/>
-		<storage id="IN2P31" typeId="single_HDD3" attach="IN2P3"/>
-		<storage id="PIC1" typeId="single_HDD4" attach="PIC"/>
-		<storage id="RAL1" typeId="single_HDD5" attach="RAL"/>
-		<storage id="SARA1" typeId="single_HDD6" attach="SARA"/>
-		<storage id="RRCKI1" typeId="single_HDD7" attach="RRCKI"/>
+		<storage id="CERN1" typeId="single_HDD0" attach="CERN-PROD"/>
+		<storage id="CNAF1" typeId="single_HDD1" attach="INFN-T1"/>
+		<storage id="GRIDKA1" typeId="single_HDD2" attach="FZK-LCG2"/>
+		<storage id="IN2P31" typeId="single_HDD3" attach="IN2P3-CC"/>
+		<storage id="PIC1" typeId="single_HDD4" attach="pic"/>
+		<storage id="RAL1" typeId="single_HDD5" attach="RAL-LCG2"/>
+		<storage id="SARA1" typeId="single_HDD6" attach="NIKHEF-ELPROD"/>
+		<storage id="RRCKI1" typeId="single_HDD7" attach="NRC-KI-T1"/>
 
-		<storage id="CERN0" typeId="NEARLINE_HDD0" attach="CERN"/>
-		<storage id="CNAF0" typeId="NEARLINE_HDD1" attach="CNAF"/>
-		<storage id="GRIDKA0" typeId="NEARLINE_HDD2" attach="GRIDKA"/>
-		<storage id="IN2P30" typeId="NEARLINE_HDD3" attach="IN2P3"/>
-		<storage id="PIC0" typeId="NEARLINE_HDD4" attach="PIC"/>
-		<storage id="RAL0" typeId="NEARLINE_HDD5" attach="RAL"/>
-		<storage id="SARA0" typeId="NEARLINE_HDD6" attach="SARA"/>
-		<storage id="RRCKI0" typeId="NEARLINE_HDD7" attach="RRCKI"/>
+		<storage id="CERN0" typeId="NEARLINE_HDD0" attach="CERN-PROD"/>
+		<storage id="CNAF0" typeId="NEARLINE_HDD1" attach="INFN-T1"/>
+		<storage id="GRIDKA0" typeId="NEARLINE_HDD2" attach="FZK-LCG2"/>
+		<storage id="IN2P30" typeId="NEARLINE_HDD3" attach="IN2P3-CC"/>
+		<storage id="PIC0" typeId="NEARLINE_HDD4" attach="pic"/>
+		<storage id="RAL0" typeId="NEARLINE_HDD5" attach="RAL-LCG2"/>
+		<storage id="SARA0" typeId="NEARLINE_HDD6" attach="NIKHEF-ELPROD"/>
+		<storage id="RRCKI0" typeId="NEARLINE_HDD7" attach="NRC-KI-T1"/>
 
 		<storage id="Tier2_1" typeId="TIER2_HDD1" attach="Tier2_1"/>
 		<storage id="Tier2_2" typeId="TIER2_HDD2" attach="Tier2_2"/>
@@ -265,162 +265,162 @@
 		<storage id="Tier2_16" typeId="TIER2_HDD16" attach="Tier2_16"/>
 
 
-		<host id="CERN" speed="1Gf" core="54">
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
+		<host id="CERN" speed="1Gf" core="5100">
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
 		</host>
-		<host id="CNAF" speed="1Gf" core="28" >
+		<host id="INFN-T1" speed="1Gf" core="2808" >
 
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
-		</host>
-
-		<host id="GRIDKA" speed="1Gf" core="24" >
-
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
 		</host>
 
-		<host id="IN2P3" speed="1Gf" core="23" >
+		<host id="FZK-LCG2" speed="1Gf" core="2440" >
 
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
 		</host>
 
-		<host id="PIC" speed="1Gf" core="9" >
+		<host id="IN2P3-CC" speed="1Gf" core="2300" >
 
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
 		</host>
 
-		<host id="RAL" speed="1Gf" core="46" >
+		<host id="pic" speed="1Gf" core="949" >
 
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
 		</host>
 
-		<host id="SARA" speed="1Gf" core="17" >
+		<host id="RAL-LCG2" speed="1Gf" core="4680" >
 
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
 		</host>
 
-		<host id="RRCKI" speed="1Gf" core="16" >
+		<host id="NIKHEF-ELPROD" speed="1Gf" core="1708" >
 
-			<mount storageId="CERN1" name="/CERN1"/>
-			<mount storageId="CERN0" name="/CERN0"/>
-			<mount storageId="CNAF1" name="/CNAF1"/>
-			<mount storageId="CNAF0" name="/CNAF0"/>
-			<mount storageId="GRIDKA1" name="/GRIDKA1"/>
-			<mount storageId="GRIDKA0" name="/GRIDKA0"/>
-			<mount storageId="IN2P31" name="/IN2P31"/>
-			<mount storageId="IN2P30" name="/IN2P30"/>
-			<mount storageId="PIC1" name="/PIC1"/>
-			<mount storageId="PIC0" name="/PIC0"/>
-			<mount storageId="RAL1" name="/RAL1"/>
-			<mount storageId="RAL0" name="/RAL0"/>
-			<mount storageId="SARA1" name="/SARA1"/>
-			<mount storageId="SARA0" name="/SARA0"/>
-			<mount storageId="RRCKI1" name="/RRCKI1"/>
-			<mount storageId="RRCKI0" name="/RRCKI0"/>
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		</host>
+
+		<host id="NRC-KI-T1" speed="1Gf" core="1640" >
+
+			<mount storageId="CERN1" name="/CERN-PROD1"/>
+			<mount storageId="CERN0" name="/CERN-PROD0"/>
+			<mount storageId="CNAF1" name="/INFN-T11"/>
+			<mount storageId="CNAF0" name="/INFN-T10"/>
+			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
+			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
+			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
+			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
+			<mount storageId="PIC1" name="/pic1"/>
+			<mount storageId="PIC0" name="/pic0"/>
+			<mount storageId="RAL1" name="/RAL-LCG21"/>
+			<mount storageId="RAL0" name="/RAL-LCG20"/>
+			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
+			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
+			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
+			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
 		</host>
 
 
@@ -493,17 +493,17 @@
 
 
 		<link id="loopback" bandwidth="498MBps" latency="0us" sharing_policy="FATPIPE"/>
-		<link id="CERN-CNAF-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="CERN-PIC-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="CERN-RAL-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="CERN-SARA-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
+		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CERN-PIC-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CERN-RAL-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CERN-SARA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
 
-		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
-		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="0.1GBps" latency="0.0ms"/>
+		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
 
 		<!--TIER0-TIER2 LINKS-->
 		<link id="0-Tier2_1" bandwidth="10GBps" latency="0.0ms"/>
@@ -606,13 +606,13 @@
 		<route src="CERN" dst="CERN"><link_ctn id="loopback"/></route>
 
 		<!--routes between CERN and TIER1-->
-		<route src="CERN" dst="CNAF"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
-		<route src="CERN" dst="GRIDKA"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
-		<route src="CERN" dst="IN2P3"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
-		<route src="CERN" dst="PIC"><link_ctn id="CERN-PIC-LHCOPN-001"/></route>
-		<route src="CERN" dst="RAL"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
-		<route src="CERN" dst="SARA"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
-		<route src="CERN" dst="RRCKI"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
+		<route src="CERN" dst="INFN-T1"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
+		<route src="CERN" dst="FZK-LCG2"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
+		<route src="CERN" dst="IN2P3-CC"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
+		<route src="CERN" dst="pic"><link_ctn id="CERN-PIC-LHCOPN-001"/></route>
+		<route src="CERN" dst="RAL-LCG2"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
+		<route src="CERN" dst="NIKHEF-ELPROD"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
+		<route src="CERN" dst="NRC-KI-T1"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
 
 		<!--CERN-TIER2 ROUTES-->
 		<route src="CERN" dst="Tier2_1"><link_ctn id="0-Tier2_1"/></route>
