@@ -3,634 +3,867 @@
 <platform version="4">
 
 	<AS id="AS_BIG" routing="Full">
-		<storage_type id="single_HDD0" size="7600TB" model="linear_no_lat"
-				content="Content/Tier1/CERN_content_online.txt" content_type="txt_unix">
+
+
+		<!--Storage types of Tier0, Tier1s, Tier2s-->
+		<storage_type id="HDD0" size="7600000GB" model="linear_no_lat"
+				content="Content/Tier1/CERN-PROD-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD1" size="3150TB" model="linear_no_lat"
-				content="Content/Tier1/CNAF_content_online.txt" content_type="txt_unix">
+		<storage_type id="HDD1" size="2230000GB" model="linear_no_lat"
+				content="Content/Tier1/IN2P3-CC-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD2" size="2500TB" model="linear_no_lat"
-				content="Content/Tier1/GRIDKA_content_online.txt" content_type="txt_unix">
+		<storage_type id="HDD2" size="2500000GB" model="linear_no_lat"
+				content="Content/Tier1/FZK-LCG2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD3" size="2230TB" model="linear_no_lat"
-				content="Content/Tier1/IN2P3_content_online.txt" content_type="txt_unix">
+		<storage_type id="HDD3" size="3150000GB" model="linear_no_lat"
+				content="Content/Tier1/INFN-T1-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD4" size="969TB" model="linear_no_lat"
-				content="Content/Tier1/PIC_content_online.txt" content_type="txt_unix">
+		<storage_type id="HDD4" size="1743000GB" model="linear_no_lat"
+				content="Content/Tier1/NIKHEF-ELPROD-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD5" size="4050TB" model="linear_no_lat"
-				content="Content/Tier1/RAL_content_online.txt" content_type="txt_unix">
+		<storage_type id="HDD5" size="1260000GB" model="linear_no_lat"
+				content="Content/Tier1/NRC-KI-T1-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD6" size="1743TB" model="linear_no_lat"
-				content="Content/Tier1/SARA_content_online.txt" content_type="txt_unix">
+		<storage_type id="HDD6" size="969000GB" model="linear_no_lat"
+				content="Content/Tier1/pic-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="single_HDD7" size="1260TB" model="linear_no_lat"
-				content="Content/Tier1/RRCKI_content_online.txt" content_type="txt_unix">
+		<storage_type id="HDD7" size="4050000GB" model="linear_no_lat"
+				content="Content/Tier1/RAL-LCG2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="1000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD0" size="20600TB" model="linear_no_lat"
-				content="Content/Tier1/CERN_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD8" size="10GB" model="linear_no_lat"
+				content="Content/Tier1/368.0-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD1" size="7578TB" model="linear_no_lat"
-				content="Content/Tier1/CNAF_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD9" size="10GB" model="linear_no_lat"
+				content="Content/Tier1/635.0-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD2" size="4300TB" model="linear_no_lat"
-				content="Content/Tier1/GRIDKA_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD10" size="2000GB" model="linear_no_lat"
+				content="Content/Tier1/FR-IN2P3-LAPP-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD3" size="4360TB" model="linear_no_lat"
-				content="Content/Tier1/IN2P3_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD11" size="2000GB" model="linear_no_lat"
+				content="Content/Tier1/FR-IN2P3-LPC-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD4" size="1677TB" model="linear_no_lat"
-				content="Content/Tier1/PIC_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD12" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/DE-DESY-ATLAS-T2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD5" size="12630TB" model="linear_no_lat"
-				content="Content/Tier1/RAL_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD13" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/DE-DESY-RWTH-CMS-T2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD6" size="3019TB" model="linear_no_lat"
-				content="Content/Tier1/SARA_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD14" size="8000GB" model="linear_no_lat"
+				content="Content/Tier1/DE-DESY-LHCB-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="NEARLINE_HDD7" size="1677TB" model="linear_no_lat"
-				content="Content/Tier1/RRCKI_content_nearline.txt" content_type="txt_unix">
+		<storage_type id="HDD15" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/IL-HEPTier-2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-
-		<!--Storages types of tier2 storages-->
-		<storage_type id="TIER2_HDD1" size="300TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_1.txt" content_type="txt_unix">
+		<storage_type id="HDD16" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/IT-INFN-T2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD2" size="300TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_2.txt" content_type="txt_unix">
+		<storage_type id="HDD17" size="240000GB" model="linear_no_lat"
+				content="Content/Tier1/T2-LATINAMERICA-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD3" size="2TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_3.txt" content_type="txt_unix">
+		<storage_type id="HDD18" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD4" size="2TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_4.txt" content_type="txt_unix">
+		<storage_type id="HDD19" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/PL-TIER2-WLCG-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD5" size="8TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_5.txt" content_type="txt_unix">
+		<storage_type id="HDD20" size="360000GB" model="linear_no_lat"
+				content="Content/Tier1/RO-LCG-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD6" size="1TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_6.txt" content_type="txt_unix">
+		<storage_type id="HDD21" size="65000GB" model="linear_no_lat"
+				content="Content/Tier1/RU-RDIG-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD7" size="240TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_7.txt" content_type="txt_unix">
+		<storage_type id="HDD22" size="1000GB" model="linear_no_lat"
+				content="Content/Tier1/ES-LHCb-T2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD8" size="1TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_8.txt" content_type="txt_unix">
+		<storage_type id="HDD23" size="540000GB" model="linear_no_lat"
+				content="Content/Tier1/CH-CHIPP-CSCS-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD9" size="360TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_9.txt" content_type="txt_unix">
+		<storage_type id="HDD24" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/tt-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD10" size="65TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_10.txt" content_type="txt_unix">
+		<storage_type id="HDD25" size="300000GB" model="linear_no_lat"
+				content="Content/Tier1/UK-London-Tier2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD11" size="1TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_11.txt" content_type="txt_unix">
+		<storage_type id="HDD26" size="300000GB" model="linear_no_lat"
+				content="Content/Tier1/UK-NorthGrid-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD12" size="540TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_12.txt" content_type="txt_unix">
+		<storage_type id="HDD27" size="1000GB" model="linear_no_lat"
+				content="Content/Tier1/UK-ScotGrid-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD13" size="300TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_13.txt" content_type="txt_unix">
+		<storage_type id="HDD28" size="300000GB" model="linear_no_lat"
+				content="Content/Tier1/UK-SouthGrid-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD14" size="300TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_14.txt" content_type="txt_unix">
+
+
+		<storage_type id="TAPE0" size="20600000GB" model="linear_no_lat"
+				content="Content/Tier1/CERN-PROD-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD15" size="1TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_15.txt" content_type="txt_unix">
+		<storage_type id="TAPE1" size="4360000GB" model="linear_no_lat"
+				content="Content/Tier1/IN2P3-CC-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TIER2_HDD16" size="300TB" model="linear_no_lat"
-				content="Content/Tier2/Tier2_16.txt" content_type="txt_unix">
+		<storage_type id="TAPE2" size="4300000GB" model="linear_no_lat"
+				content="Content/Tier1/FZK-LCG2-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="100000000000.2GBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage id="CERN1" typeId="single_HDD0" attach="CERN-PROD"/>
-		<storage id="CNAF1" typeId="single_HDD1" attach="INFN-T1"/>
-		<storage id="GRIDKA1" typeId="single_HDD2" attach="FZK-LCG2"/>
-		<storage id="IN2P31" typeId="single_HDD3" attach="IN2P3-CC"/>
-		<storage id="PIC1" typeId="single_HDD4" attach="pic"/>
-		<storage id="RAL1" typeId="single_HDD5" attach="RAL-LCG2"/>
-		<storage id="SARA1" typeId="single_HDD6" attach="NIKHEF-ELPROD"/>
-		<storage id="RRCKI1" typeId="single_HDD7" attach="NRC-KI-T1"/>
+		<storage_type id="TAPE3" size="7578000GB" model="linear_no_lat"
+				content="Content/Tier1/INFN-T1-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
 
-		<storage id="CERN0" typeId="NEARLINE_HDD0" attach="CERN-PROD"/>
-		<storage id="CNAF0" typeId="NEARLINE_HDD1" attach="INFN-T1"/>
-		<storage id="GRIDKA0" typeId="NEARLINE_HDD2" attach="FZK-LCG2"/>
-		<storage id="IN2P30" typeId="NEARLINE_HDD3" attach="IN2P3-CC"/>
-		<storage id="PIC0" typeId="NEARLINE_HDD4" attach="pic"/>
-		<storage id="RAL0" typeId="NEARLINE_HDD5" attach="RAL-LCG2"/>
-		<storage id="SARA0" typeId="NEARLINE_HDD6" attach="NIKHEF-ELPROD"/>
-		<storage id="RRCKI0" typeId="NEARLINE_HDD7" attach="NRC-KI-T1"/>
+		<storage_type id="TAPE4" size="3019000GB" model="linear_no_lat"
+				content="Content/Tier1/NIKHEF-ELPROD-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
 
-		<storage id="Tier2_1" typeId="TIER2_HDD1" attach="Tier2_1"/>
-		<storage id="Tier2_2" typeId="TIER2_HDD2" attach="Tier2_2"/>
-		<storage id="Tier2_3" typeId="TIER2_HDD3" attach="Tier2_3"/>
-		<storage id="Tier2_4" typeId="TIER2_HDD4" attach="Tier2_4"/>
-		<storage id="Tier2_5" typeId="TIER2_HDD5" attach="Tier2_5"/>
-		<storage id="Tier2_6" typeId="TIER2_HDD6" attach="Tier2_6"/>
-		<storage id="Tier2_7" typeId="TIER2_HDD7" attach="Tier2_7"/>
-		<storage id="Tier2_8" typeId="TIER2_HDD8" attach="Tier2_8"/>
-		<storage id="Tier2_9" typeId="TIER2_HDD9" attach="Tier2_9"/>
-		<storage id="Tier2_10" typeId="TIER2_HDD10" attach="Tier2_10"/>
-		<storage id="Tier2_11" typeId="TIER2_HDD11" attach="Tier2_11"/>
-		<storage id="Tier2_12" typeId="TIER2_HDD12" attach="Tier2_12"/>
-		<storage id="Tier2_13" typeId="TIER2_HDD13" attach="Tier2_13"/>
-		<storage id="Tier2_14" typeId="TIER2_HDD14" attach="Tier2_14"/>
-		<storage id="Tier2_15" typeId="TIER2_HDD15" attach="Tier2_15"/>
-		<storage id="Tier2_16" typeId="TIER2_HDD16" attach="Tier2_16"/>
+		<storage_type id="TAPE5" size="1480000GB" model="linear_no_lat"
+				content="Content/Tier1/NRC-KI-T1-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE6" size="1677000GB" model="linear_no_lat"
+				content="Content/Tier1/pic-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE7" size="12630000GB" model="linear_no_lat"
+				content="Content/Tier1/RAL-LCG2-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE8" size="300000GB" model="linear_no_lat"
+				content="Content/Tier1/368.0-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE9" size="300000GB" model="linear_no_lat"
+				content="Content/Tier1/635.0-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE10" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/FR-IN2P3-LAPP-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE11" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/FR-IN2P3-LPC-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE12" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/DE-DESY-ATLAS-T2-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE13" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/DE-DESY-RWTH-CMS-T2-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE14" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/DE-DESY-LHCB-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE15" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/IL-HEPTier-2-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE16" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/IT-INFN-T2-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE17" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/T2-LATINAMERICA-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE18" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE19" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/PL-TIER2-WLCG-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE20" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/RO-LCG-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE21" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/RU-RDIG-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE22" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/ES-LHCb-T2-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE23" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/CH-CHIPP-CSCS-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE24" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/tt-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE25" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/UK-London-Tier2-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE26" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/UK-NorthGrid-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE27" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/UK-ScotGrid-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
+
+		<storage_type id="TAPE28" size="0GB" model="linear_no_lat"
+				content="Content/Tier1/UK-SouthGrid-TAPE.txt" content_type="txt_unix">
+			<model_prop id="Bwrite" value="500MBps"/>
+			<model_prop id="Bread" value="118MBps"/>
+			<model_prop id="Bconnection" value="10000GBps"/>
+		</storage_type>
 
 
-		<host id="CERN" speed="1Gf" core="5100">
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+
+		<!--Storages of Tier0, Tier1s, Tier2s-->
+		<storage id="CERN-PROD-DISK" typeId="HDD0" attach="CERN-PROD"/>
+		<storage id="IN2P3-CC-DISK" typeId="HDD1" attach="IN2P3-CC"/>
+		<storage id="FZK-LCG2-DISK" typeId="HDD2" attach="FZK-LCG2"/>
+		<storage id="INFN-T1-DISK" typeId="HDD3" attach="INFN-T1"/>
+		<storage id="NIKHEF-ELPROD-DISK" typeId="HDD4" attach="NIKHEF-ELPROD"/>
+		<storage id="NRC-KI-T1-DISK" typeId="HDD5" attach="NRC-KI-T1"/>
+		<storage id="pic-DISK" typeId="HDD6" attach="pic"/>
+		<storage id="RAL-LCG2-DISK" typeId="HDD7" attach="RAL-LCG2"/>
+		<storage id="368.0-DISK" typeId="HDD8" attach="368.0"/>
+		<storage id="635.0-DISK" typeId="HDD9" attach="635.0"/>
+		<storage id="FR-IN2P3-LAPP-DISK" typeId="HDD10" attach="FR-IN2P3-LAPP"/>
+		<storage id="FR-IN2P3-LPC-DISK" typeId="HDD11" attach="FR-IN2P3-LPC"/>
+		<storage id="DE-DESY-ATLAS-T2-DISK" typeId="HDD12" attach="DE-DESY-ATLAS-T2"/>
+		<storage id="DE-DESY-RWTH-CMS-T2-DISK" typeId="HDD13" attach="DE-DESY-RWTH-CMS-T2"/>
+		<storage id="DE-DESY-LHCB-DISK" typeId="HDD14" attach="DE-DESY-LHCB"/>
+		<storage id="IL-HEPTier-2-DISK" typeId="HDD15" attach="IL-HEPTier-2"/>
+		<storage id="IT-INFN-T2-DISK" typeId="HDD16" attach="IT-INFN-T2"/>
+		<storage id="T2-LATINAMERICA-DISK" typeId="HDD17" attach="T2-LATINAMERICA"/>
+		<storage id="-DISK" typeId="HDD18" attach=""/>
+		<storage id="PL-TIER2-WLCG-DISK" typeId="HDD19" attach="PL-TIER2-WLCG"/>
+		<storage id="RO-LCG-DISK" typeId="HDD20" attach="RO-LCG"/>
+		<storage id="RU-RDIG-DISK" typeId="HDD21" attach="RU-RDIG"/>
+		<storage id="ES-LHCb-T2-DISK" typeId="HDD22" attach="ES-LHCb-T2"/>
+		<storage id="CH-CHIPP-CSCS-DISK" typeId="HDD23" attach="CH-CHIPP-CSCS"/>
+		<storage id="tt-DISK" typeId="HDD24" attach="tt"/>
+		<storage id="UK-London-Tier2-DISK" typeId="HDD25" attach="UK-London-Tier2"/>
+		<storage id="UK-NorthGrid-DISK" typeId="HDD26" attach="UK-NorthGrid"/>
+		<storage id="UK-ScotGrid-DISK" typeId="HDD27" attach="UK-ScotGrid"/>
+		<storage id="UK-SouthGrid-DISK" typeId="HDD28" attach="UK-SouthGrid"/>
+		<storage id="CERN-PROD-TAPE" typeId="TAPE0" attach="CERN-PROD"/>
+		<storage id="IN2P3-CC-TAPE" typeId="TAPE1" attach="IN2P3-CC"/>
+		<storage id="FZK-LCG2-TAPE" typeId="TAPE2" attach="FZK-LCG2"/>
+		<storage id="INFN-T1-TAPE" typeId="TAPE3" attach="INFN-T1"/>
+		<storage id="NIKHEF-ELPROD-TAPE" typeId="TAPE4" attach="NIKHEF-ELPROD"/>
+		<storage id="NRC-KI-T1-TAPE" typeId="TAPE5" attach="NRC-KI-T1"/>
+		<storage id="pic-TAPE" typeId="TAPE6" attach="pic"/>
+		<storage id="RAL-LCG2-TAPE" typeId="TAPE7" attach="RAL-LCG2"/>
+		<storage id="368.0-TAPE" typeId="TAPE8" attach="368.0"/>
+		<storage id="635.0-TAPE" typeId="TAPE9" attach="635.0"/>
+		<storage id="FR-IN2P3-LAPP-TAPE" typeId="TAPE10" attach="FR-IN2P3-LAPP"/>
+		<storage id="FR-IN2P3-LPC-TAPE" typeId="TAPE11" attach="FR-IN2P3-LPC"/>
+		<storage id="DE-DESY-ATLAS-T2-TAPE" typeId="TAPE12" attach="DE-DESY-ATLAS-T2"/>
+		<storage id="DE-DESY-RWTH-CMS-T2-TAPE" typeId="TAPE13" attach="DE-DESY-RWTH-CMS-T2"/>
+		<storage id="DE-DESY-LHCB-TAPE" typeId="TAPE14" attach="DE-DESY-LHCB"/>
+		<storage id="IL-HEPTier-2-TAPE" typeId="TAPE15" attach="IL-HEPTier-2"/>
+		<storage id="IT-INFN-T2-TAPE" typeId="TAPE16" attach="IT-INFN-T2"/>
+		<storage id="T2-LATINAMERICA-TAPE" typeId="TAPE17" attach="T2-LATINAMERICA"/>
+		<storage id="-TAPE" typeId="TAPE18" attach=""/>
+		<storage id="PL-TIER2-WLCG-TAPE" typeId="TAPE19" attach="PL-TIER2-WLCG"/>
+		<storage id="RO-LCG-TAPE" typeId="TAPE20" attach="RO-LCG"/>
+		<storage id="RU-RDIG-TAPE" typeId="TAPE21" attach="RU-RDIG"/>
+		<storage id="ES-LHCb-T2-TAPE" typeId="TAPE22" attach="ES-LHCb-T2"/>
+		<storage id="CH-CHIPP-CSCS-TAPE" typeId="TAPE23" attach="CH-CHIPP-CSCS"/>
+		<storage id="tt-TAPE" typeId="TAPE24" attach="tt"/>
+		<storage id="UK-London-Tier2-TAPE" typeId="TAPE25" attach="UK-London-Tier2"/>
+		<storage id="UK-NorthGrid-TAPE" typeId="TAPE26" attach="UK-NorthGrid"/>
+		<storage id="UK-ScotGrid-TAPE" typeId="TAPE27" attach="UK-ScotGrid"/>
+		<storage id="UK-SouthGrid-TAPE" typeId="TAPE28" attach="UK-SouthGrid"/>
+
+
+		<!--HOSTS Tier0, Tier1s, Tier2s-->
+		<host id="CERN-PROD" speed="1Gf" core="5238">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
-		<host id="INFN-T1" speed="1Gf" core="2808" >
 
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		<host id="IN2P3-CC" speed="1Gf" core="2241">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
 
-		<host id="FZK-LCG2" speed="1Gf" core="2440" >
-
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		<host id="FZK-LCG2" speed="1Gf" core="1862">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
 
-		<host id="IN2P3-CC" speed="1Gf" core="2300" >
-
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		<host id="INFN-T1" speed="1Gf" core="2574">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
 
-		<host id="pic" speed="1Gf" core="949" >
-
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		<host id="NIKHEF-ELPROD" speed="1Gf" core="1097">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
 
-		<host id="RAL-LCG2" speed="1Gf" core="4680" >
-
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		<host id="NRC-KI-T1" speed="1Gf" core="1058">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
 
-		<host id="NIKHEF-ELPROD" speed="1Gf" core="1708" >
-
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		<host id="pic" speed="1Gf" core="782">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
 
-		<host id="NRC-KI-T1" speed="1Gf" core="1640" >
+		<host id="RAL-LCG2" speed="1Gf" core="4680">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+		</host>
 
-			<mount storageId="CERN1" name="/CERN-PROD1"/>
-			<mount storageId="CERN0" name="/CERN-PROD0"/>
-			<mount storageId="CNAF1" name="/INFN-T11"/>
-			<mount storageId="CNAF0" name="/INFN-T10"/>
-			<mount storageId="GRIDKA1" name="/FZK-LCG21"/>
-			<mount storageId="GRIDKA0" name="/FZK-LCG20"/>
-			<mount storageId="IN2P31" name="/IN2P3-CC1"/>
-			<mount storageId="IN2P30" name="/IN2P3-CC0"/>
-			<mount storageId="PIC1" name="/pic1"/>
-			<mount storageId="PIC0" name="/pic0"/>
-			<mount storageId="RAL1" name="/RAL-LCG21"/>
-			<mount storageId="RAL0" name="/RAL-LCG20"/>
-			<mount storageId="SARA1" name="/NIKHEF-ELPROD1"/>
-			<mount storageId="SARA0" name="/NIKHEF-ELPROD0"/>
-			<mount storageId="RRCKI1" name="/NRC-KI-T11"/>
-			<mount storageId="RRCKI0" name="/NRC-KI-T10"/>
+		<host id="368.0" speed="1Gf" core="0">
+			<mount storageId="368.0-DISK" name="/368.0-DISK"/>
+			<mount storageId="368.0-TAPE" name="/368.0-TAPE"/>
+		</host>
+
+		<host id="635.0" speed="1Gf" core="0">
+			<mount storageId="635.0-DISK" name="/635.0-DISK"/>
+			<mount storageId="635.0-TAPE" name="/635.0-TAPE"/>
+		</host>
+
+		<host id="FR-IN2P3-LAPP" speed="1Gf" core="453">
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+		</host>
+
+		<host id="FR-IN2P3-LPC" speed="1Gf" core="165">
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+		</host>
+
+		<host id="DE-DESY-ATLAS-T2" speed="1Gf" core="0">
+			<mount storageId="DE-DESY-ATLAS-T2-DISK" name="/DE-DESY-ATLAS-T2-DISK"/>
+			<mount storageId="DE-DESY-ATLAS-T2-TAPE" name="/DE-DESY-ATLAS-T2-TAPE"/>
+		</host>
+
+		<host id="DE-DESY-RWTH-CMS-T2" speed="1Gf" core="0">
+			<mount storageId="DE-DESY-RWTH-CMS-T2-DISK" name="/DE-DESY-RWTH-CMS-T2-DISK"/>
+			<mount storageId="DE-DESY-RWTH-CMS-T2-TAPE" name="/DE-DESY-RWTH-CMS-T2-TAPE"/>
+		</host>
+
+		<host id="DE-DESY-LHCB" speed="1Gf" core="278">
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+		</host>
+
+		<host id="IL-HEPTier-2" speed="1Gf" core="0">
+			<mount storageId="IL-HEPTier-2-DISK" name="/IL-HEPTier-2-DISK"/>
+			<mount storageId="IL-HEPTier-2-TAPE" name="/IL-HEPTier-2-TAPE"/>
+		</host>
+
+		<host id="IT-INFN-T2" speed="1Gf" core="1308">
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+		</host>
+
+		<host id="T2-LATINAMERICA" speed="1Gf" core="374">
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+		</host>
+
+		<host id="" speed="1Gf" core="0">
+			<mount storageId="-DISK" name="/-DISK"/>
+			<mount storageId="-TAPE" name="/-TAPE"/>
+		</host>
+
+		<host id="PL-TIER2-WLCG" speed="1Gf" core="137">
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+		</host>
+
+		<host id="RO-LCG" speed="1Gf" core="701">
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+		</host>
+
+		<host id="RU-RDIG" speed="1Gf" core="79">
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+		</host>
+
+		<host id="ES-LHCb-T2" speed="1Gf" core="545">
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+		</host>
+
+		<host id="CH-CHIPP-CSCS" speed="1Gf" core="1131">
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+		</host>
+
+		<host id="tt" speed="1Gf" core="0">
+			<mount storageId="tt-DISK" name="/tt-DISK"/>
+			<mount storageId="tt-TAPE" name="/tt-TAPE"/>
+		</host>
+
+		<host id="UK-London-Tier2" speed="1Gf" core="215">
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+		</host>
+
+		<host id="UK-NorthGrid" speed="1Gf" core="650">
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+		</host>
+
+		<host id="UK-ScotGrid" speed="1Gf" core="179">
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+		</host>
+
+		<host id="UK-SouthGrid" speed="1Gf" core="611">
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 
 
-<!--DEFINING THE LAYER OF TIER2 -->
-		<host id="Tier2_1" speed="1Gf" core="4000">
-			<mount storageId="Tier2_1" name="/Tier2_1"/>
-		</host>
-
-		<host id="Tier2_2" speed="1Gf" core="6838">
-			<mount storageId="Tier2_2" name="/Tier2_2"/>
-		</host>
-
-		<host id="Tier2_3" speed="1Gf" core="5100">
-			<mount storageId="Tier2_3" name="/Tier2_3"/>
-		</host>
-
-		<host id="Tier2_4" speed="1Gf" core="2014">
-			<mount storageId="Tier2_4" name="/Tier2_4"/>
-		</host>
-
-		<host id="Tier2_5" speed="1Gf" core="4500">
-			<mount storageId="Tier2_5" name="/Tier2_5"/>
-		</host>
-
-		<host id="Tier2_6" speed="1Gf" core="15800">
-			<mount storageId="Tier2_6" name="/Tier2_6"/>
-		</host>
-
-		<host id="Tier2_7" speed="1Gf" core="5530">
-			<mount storageId="Tier2_7" name="/Tier2_7"/>
-		</host>
-
-		<host id="Tier2_8" speed="1Gf" core="3900">
-			<mount storageId="Tier2_8" name="/Tier2_8"/>
-		</host>
-
-		<host id="Tier2_9" speed="1Gf" core="6300">
-			<mount storageId="Tier2_9" name="/Tier2_9"/>
-		</host>
-
-		<host id="Tier2_10" speed="1Gf" core="899">
-			<mount storageId="Tier2_10" name="/Tier2_10"/>
-		</host>
-
-		<host id="Tier2_11" speed="1Gf" core="5265">
-			<mount storageId="Tier2_11" name="/Tier2_11"/>
-		</host>
-
-		<host id="Tier2_12" speed="1Gf" core="10000">
-			<mount storageId="Tier2_12" name="/Tier2_12"/>
-		</host>
-
-		<host id="Tier2_13" speed="1Gf" core="2273">
-			<mount storageId="Tier2_13" name="/Tier2_13"/>
-		</host>
-
-		<host id="Tier2_14" speed="1Gf" core="7577">
-			<mount storageId="Tier2_14" name="/Tier2_14"/>
-		</host>
-
-		<host id="Tier2_15" speed="1Gf" core="1903">
-			<mount storageId="Tier2_15" name="/Tier2_15"/>
-		</host>
-
-		<host id="Tier2_16" speed="1Gf" core="6727">
-			<mount storageId="Tier2_16" name="/Tier2_16"/>
-		</host>
-
-
-
+		<!--LINKS of Tier0, Tier1s, Tier2s-->
 		<link id="loopback" bandwidth="498MBps" latency="0us" sharing_policy="FATPIPE"/>
-		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="CERN-PIC-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="CERN-RAL-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="CERN-SARA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CERN-CNAF-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="CERN-GRIDKA-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="CERN-IN2P3-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="CERN-PIC-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="CERN-RAL-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="CERN-SARA-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="CERN-RRCK1-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
 
-		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
-		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="10.0GBps" latency="0.0ms"/>
+		<link id="CNAF-GRIDKA-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="GRIDKA-IN2P3-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
+		<link id="GRIDKA-SARA-LHCOPN-001" bandwidth="10.0GBps" latency="0ms"/>
 
 		<!--TIER0-TIER2 LINKS-->
-		<link id="0-Tier2_1" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_2" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_3" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_4" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_5" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_6" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_7" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_8" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_9" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_10" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_11" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_12" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_13" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_14" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_15" bandwidth="10GBps" latency="0.0ms"/>
-		<link id="0-Tier2_16" bandwidth="10GBps" latency="0.0ms"/>
 		<!--routes between TIER1-TIER1-->
 
 		<!--DIRECT 3 ROUTES-->
-		<route src="CNAF" dst="GRIDKA"><link_ctn id="CNAF-GRIDKA-LHCOPN-001"/></route>
-		<route src="GRIDKA" dst="IN2P3"><link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/></route>
-		<route src="GRIDKA" dst="SARA"><link_ctn id="GRIDKA-SARA-LHCOPN-001"/></route>
+		<route src="INFN-T1" dst="FZK-LCG2"><link_ctn id="CNAF-GRIDKA-LHCOPN-001"/></route>
+		<route src="FZK-LCG2" dst="IN2P3-CC"><link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/></route>
+		<route src="FZK-LCG2" dst="NIKHEF-ELPROD"><link_ctn id="GRIDKA-SARA-LHCOPN-001"/></route>
 		<!--3 ROUTES THRU GRIDKA-->
-		<route src="CNAF" dst="IN2P3">
+		<route src="INFN-T1" dst="IN2P3-CC">
 			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
 			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
 		</route>
-		<route src="CNAF" dst="SARA">
+		<route src="INFN-T1" dst="NIKHEF-ELPROD">
 			<link_ctn id="CNAF-GRIDKA-LHCOPN-001"/>
 			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
 		</route>
-		<route src="IN2P3" dst="SARA">
+		<route src="IN2P3-CC" dst="NIKHEF-ELPROD">
 			<link_ctn id="GRIDKA-IN2P3-LHCOPN-001"/>
 			<link_ctn id="GRIDKA-SARA-LHCOPN-001"/>
 		</route>
 		<!--ROUTES THRU CERN-->
-		<route src="CNAF" dst="PIC">
+		<route src="INFN-T1" dst="pic">
 			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
 			<link_ctn id="CERN-PIC-LHCOPN-001"/>
 		</route>
-		<route src="CNAF" dst="RAL">
+		<route src="INFN-T1" dst="RAL-LCG2">
 			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
 			<link_ctn id="CERN-RAL-LHCOPN-001"/>
 		</route>
-		<route src="CNAF" dst="RRCKI">
+		<route src="INFN-T1" dst="NRC-KI-T1">
 			<link_ctn id="CERN-CNAF-LHCOPN-001"/>
 			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
 		</route>
-		<route src="GRIDKA" dst="PIC">
+		<route src="FZK-LCG2" dst="pic">
 			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
 			<link_ctn id="CERN-PIC-LHCOPN-001"/>
 		</route>
-		<route src="GRIDKA" dst="RAL">
+		<route src="FZK-LCG2" dst="RAL-LCG2">
 			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
 			<link_ctn id="CERN-RAL-LHCOPN-001"/>
 		</route>
-		<route src="GRIDKA" dst="RRCKI">
+		<route src="FZK-LCG2" dst="NRC-KI-T1">
 			<link_ctn id="CERN-GRIDKA-LHCOPN-001"/>
 			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
 		</route>
-		<route src="IN2P3" dst="PIC">
+		<route src="IN2P3-CC" dst="pic">
 			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
 			<link_ctn id="CERN-PIC-LHCOPN-001"/>
 		</route>
-		<route src="IN2P3" dst="RAL">
+		<route src="IN2P3-CC" dst="RAL-LCG2">
 			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
 			<link_ctn id="CERN-RAL-LHCOPN-001"/>
 		</route>
-		<route src="IN2P3" dst="RRCKI">
+		<route src="IN2P3-CC" dst="NRC-KI-T1">
 			<link_ctn id="CERN-IN2P3-LHCOPN-001"/>
 			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
 		</route>
-		<route src="PIC" dst="RAL">
+		<route src="pic" dst="RAL-LCG2">
 			<link_ctn id="CERN-PIC-LHCOPN-001"/>
 			<link_ctn id="CERN-RAL-LHCOPN-001"/>
 		</route>
-		<route src="PIC" dst="SARA">
+		<route src="pic" dst="NIKHEF-ELPROD">
 			<link_ctn id="CERN-PIC-LHCOPN-001"/>
 			<link_ctn id="CERN-SARA-LHCOPN-001"/>
 		</route>
-		<route src="PIC" dst="RRCKI">
+		<route src="pic" dst="NRC-KI-T1">
 			<link_ctn id="CERN-PIC-LHCOPN-001"/>
 			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
 		</route>
-		<route src="RAL" dst="SARA">
+		<route src="RAL-LCG2" dst="NIKHEF-ELPROD">
 			<link_ctn id="CERN-RAL-LHCOPN-001"/>
 			<link_ctn id="CERN-SARA-LHCOPN-001"/>
 		</route>
-		<route src="RAL" dst="RRCKI">
+		<route src="RAL-LCG2" dst="NRC-KI-T1">
 			<link_ctn id="CERN-RAL-LHCOPN-001"/>
 			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
 		</route>
-		<route src="SARA" dst="RRCKI">
+		<route src="NIKHEF-ELPROD" dst="NRC-KI-T1">
 			<link_ctn id="CERN-SARA-LHCOPN-001"/>
 			<link_ctn id="CERN-RRCK1-LHCOPN-001"/>
 		</route>
 
-		<route src="CERN" dst="CERN"><link_ctn id="loopback"/></route>
+		<route src="CERN-PROD" dst="CERN-PROD"><link_ctn id="loopback"/></route>
 
 		<!--routes between CERN and TIER1-->
-		<route src="CERN" dst="INFN-T1"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
-		<route src="CERN" dst="FZK-LCG2"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
-		<route src="CERN" dst="IN2P3-CC"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
-		<route src="CERN" dst="pic"><link_ctn id="CERN-PIC-LHCOPN-001"/></route>
-		<route src="CERN" dst="RAL-LCG2"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
-		<route src="CERN" dst="NIKHEF-ELPROD"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
-		<route src="CERN" dst="NRC-KI-T1"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
-
-		<!--CERN-TIER2 ROUTES-->
-		<route src="CERN" dst="Tier2_1"><link_ctn id="0-Tier2_1"/></route>
-		<route src="CERN" dst="Tier2_2"><link_ctn id="0-Tier2_2"/></route>
-		<route src="CERN" dst="Tier2_3"><link_ctn id="0-Tier2_3"/></route>
-		<route src="CERN" dst="Tier2_4"><link_ctn id="0-Tier2_4"/></route>
-		<route src="CERN" dst="Tier2_5"><link_ctn id="0-Tier2_5"/></route>
-		<route src="CERN" dst="Tier2_6"><link_ctn id="0-Tier2_6"/></route>
-		<route src="CERN" dst="Tier2_7"><link_ctn id="0-Tier2_7"/></route>
-		<route src="CERN" dst="Tier2_8"><link_ctn id="0-Tier2_8"/></route>
-		<route src="CERN" dst="Tier2_9"><link_ctn id="0-Tier2_9"/></route>
-		<route src="CERN" dst="Tier2_10"><link_ctn id="0-Tier2_10"/></route>
-		<route src="CERN" dst="Tier2_11"><link_ctn id="0-Tier2_11"/></route>
-		<route src="CERN" dst="Tier2_12"><link_ctn id="0-Tier2_12"/></route>
-		<route src="CERN" dst="Tier2_13"><link_ctn id="0-Tier2_13"/></route>
-		<route src="CERN" dst="Tier2_14"><link_ctn id="0-Tier2_14"/></route>
-		<route src="CERN" dst="Tier2_15"><link_ctn id="0-Tier2_15"/></route>
-		<route src="CERN" dst="Tier2_16"><link_ctn id="0-Tier2_16"/></route>
+		<route src="CERN-PROD" dst="IN2P3-CC"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
+		<route src="CERN-PROD" dst="FZK-LCG2"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
+		<route src="CERN-PROD" dst="INFN-T1"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
+		<route src="CERN-PROD" dst="NIKHEF-ELPROD"><link_ctn id="CERN-PIC-LHCOPN-001"/></route>
+		<route src="CERN-PROD" dst="NRC-KI-T1"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
+		<route src="CERN-PROD" dst="pic"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
+		<route src="CERN-PROD" dst="RAL-LCG2"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
+		<route src="CERN-PROD" dst="368.0"><link_ctn id="0-Tier2_8"/></route>
+		<route src="CERN-PROD" dst="635.0"><link_ctn id="0-Tier2_9"/></route>
+		<route src="CERN-PROD" dst="FR-IN2P3-LAPP"><link_ctn id="0-Tier2_10"/></route>
+		<route src="CERN-PROD" dst="FR-IN2P3-LPC"><link_ctn id="0-Tier2_11"/></route>
+		<route src="CERN-PROD" dst="DE-DESY-ATLAS-T2"><link_ctn id="0-Tier2_12"/></route>
+		<route src="CERN-PROD" dst="DE-DESY-RWTH-CMS-T2"><link_ctn id="0-Tier2_13"/></route>
+		<route src="CERN-PROD" dst="DE-DESY-LHCB"><link_ctn id="0-Tier2_14"/></route>
+		<route src="CERN-PROD" dst="IL-HEPTier-2"><link_ctn id="0-Tier2_15"/></route>
+		<route src="CERN-PROD" dst="IT-INFN-T2"><link_ctn id="0-Tier2_16"/></route>
+		<route src="CERN-PROD" dst="T2-LATINAMERICA"><link_ctn id="0-Tier2_17"/></route>
+		<route src="CERN-PROD" dst=""><link_ctn id="0-Tier2_18"/></route>
+		<route src="CERN-PROD" dst="PL-TIER2-WLCG"><link_ctn id="0-Tier2_19"/></route>
+		<route src="CERN-PROD" dst="RO-LCG"><link_ctn id="0-Tier2_20"/></route>
+		<route src="CERN-PROD" dst="RU-RDIG"><link_ctn id="0-Tier2_21"/></route>
+		<route src="CERN-PROD" dst="ES-LHCb-T2"><link_ctn id="0-Tier2_22"/></route>
+		<route src="CERN-PROD" dst="CH-CHIPP-CSCS"><link_ctn id="0-Tier2_23"/></route>
+		<route src="CERN-PROD" dst="tt"><link_ctn id="0-Tier2_24"/></route>
+		<route src="CERN-PROD" dst="UK-London-Tier2"><link_ctn id="0-Tier2_25"/></route>
+		<route src="CERN-PROD" dst="UK-NorthGrid"><link_ctn id="0-Tier2_26"/></route>
+		<route src="CERN-PROD" dst="UK-ScotGrid"><link_ctn id="0-Tier2_27"/></route>
+		<route src="CERN-PROD" dst="UK-SouthGrid"><link_ctn id="0-Tier2_28"/></route>
 
 	</AS>
 </platform>

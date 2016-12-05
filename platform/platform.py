@@ -94,6 +94,21 @@ NAMES_TIER2, CPU_TIER2, STORAGE_TIER2 = np.loadtxt("tier2/tier2.csv", skiprows=1
 for i in range(1, len(NAMES_TIER2)+1):
 	LIST_CONTENT_TIER2.append("Tier2_" + str(i) + ".txt")
 
+
+
+
+
+
+
+
+
+
+rtype = np.dtype([('hepspec', np.float32), ('disk', np.float32), ('tape', np.float32),  ('names', np.str, 35)])
+
+HEPSPEC, DISK_ALL, TAPE_ALL, CPU_ALL, TIER_ALL = np.loadtxt("lhcb_capacities.csv", skiprows=1, dtype=(np.str), usecols=(3, 4, 5, 6, 7), delimiter=",", unpack=True)
+
+
+
 f = open("platform.xml", "w")
 f.write("<?xml version='1.0'?>\n")
 f.write("<!DOCTYPE platform SYSTEM \"http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd\">\n")
@@ -170,8 +185,10 @@ f.write("\n\n")
 ###################################################################
 f.write("<!--DEFINING THE LAYER OF TIER2 -->\n")
 
-for i in range(1, len(NAMES_TIER2)+1):
-    f.write("\t\t<host id=\"" + "Tier2_" + str(i)  + "\" speed=\"1Gf\" core=\"" + str((CPU_TIER2[i-1])) + "\">\n")
+TIER2 = TIER_ALL[9:]
+CPU2 = CPU_ALL[9:]
+for i in range(TIER2):
+    f.write("\t\t<host id=\"" + TIER2[i] + str(i)  + "\" speed=\"1Gf\" core=\"" + str((CPU2[i])) + "\">\n")
     # MOUNT TIERS STORAGE
     # f.write("\n")
     f.write("\t\t\t<mount storageId=" + q + "Tier2_" + str(i) + q + " name=" + q+ "/" + "Tier2_" + str(i) + q + "/>\n")
