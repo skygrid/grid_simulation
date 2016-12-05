@@ -4,7 +4,6 @@
 
 	<AS id="AS_BIG" routing="Full">
 
-
 		<!--Storage types of Tier0, Tier1s, Tier2s-->
 		<storage_type id="HDD0" size="7600000GB" model="linear_no_lat"
 				content="Content/Tier1/CERN-PROD-DISK.txt" content_type="txt_unix">
@@ -835,7 +834,7 @@
 
 		<route src="CERN-PROD" dst="CERN-PROD"><link_ctn id="loopback"/></route>
 
-		<!--routes between CERN and TIER1-->
+		<!--routes between CERN and TIER1 and TIER2-->
 		<route src="CERN-PROD" dst="IN2P3-CC"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
 		<route src="CERN-PROD" dst="FZK-LCG2"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
 		<route src="CERN-PROD" dst="INFN-T1"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
@@ -843,27 +842,27 @@
 		<route src="CERN-PROD" dst="NRC-KI-T1"><link_ctn id="CERN-RAL-LHCOPN-001"/></route>
 		<route src="CERN-PROD" dst="pic"><link_ctn id="CERN-SARA-LHCOPN-001"/></route>
 		<route src="CERN-PROD" dst="RAL-LCG2"><link_ctn id="CERN-RRCK1-LHCOPN-001"/></route>
-		<route src="CERN-PROD" dst="368.0"><link_ctn id="0-Tier2_8"/></route>
-		<route src="CERN-PROD" dst="635.0"><link_ctn id="0-Tier2_9"/></route>
-		<route src="CERN-PROD" dst="FR-IN2P3-LAPP"><link_ctn id="0-Tier2_10"/></route>
-		<route src="CERN-PROD" dst="FR-IN2P3-LPC"><link_ctn id="0-Tier2_11"/></route>
-		<route src="CERN-PROD" dst="DE-DESY-ATLAS-T2"><link_ctn id="0-Tier2_12"/></route>
-		<route src="CERN-PROD" dst="DE-DESY-RWTH-CMS-T2"><link_ctn id="0-Tier2_13"/></route>
-		<route src="CERN-PROD" dst="DE-DESY-LHCB"><link_ctn id="0-Tier2_14"/></route>
-		<route src="CERN-PROD" dst="IL-HEPTier-2"><link_ctn id="0-Tier2_15"/></route>
-		<route src="CERN-PROD" dst="IT-INFN-T2"><link_ctn id="0-Tier2_16"/></route>
-		<route src="CERN-PROD" dst="T2-LATINAMERICA"><link_ctn id="0-Tier2_17"/></route>
-		<route src="CERN-PROD" dst=""><link_ctn id="0-Tier2_18"/></route>
-		<route src="CERN-PROD" dst="PL-TIER2-WLCG"><link_ctn id="0-Tier2_19"/></route>
-		<route src="CERN-PROD" dst="RO-LCG"><link_ctn id="0-Tier2_20"/></route>
-		<route src="CERN-PROD" dst="RU-RDIG"><link_ctn id="0-Tier2_21"/></route>
-		<route src="CERN-PROD" dst="ES-LHCb-T2"><link_ctn id="0-Tier2_22"/></route>
-		<route src="CERN-PROD" dst="CH-CHIPP-CSCS"><link_ctn id="0-Tier2_23"/></route>
-		<route src="CERN-PROD" dst="tt"><link_ctn id="0-Tier2_24"/></route>
-		<route src="CERN-PROD" dst="UK-London-Tier2"><link_ctn id="0-Tier2_25"/></route>
-		<route src="CERN-PROD" dst="UK-NorthGrid"><link_ctn id="0-Tier2_26"/></route>
-		<route src="CERN-PROD" dst="UK-ScotGrid"><link_ctn id="0-Tier2_27"/></route>
-		<route src="CERN-PROD" dst="UK-SouthGrid"><link_ctn id="0-Tier2_28"/></route>
+		<route src="CERN-PROD" dst="368.0"><link_ctn id="0-Tier2_0"/></route>
+		<route src="CERN-PROD" dst="635.0"><link_ctn id="0-Tier2_1"/></route>
+		<route src="CERN-PROD" dst="FR-IN2P3-LAPP"><link_ctn id="0-Tier2_2"/></route>
+		<route src="CERN-PROD" dst="FR-IN2P3-LPC"><link_ctn id="0-Tier2_3"/></route>
+		<route src="CERN-PROD" dst="DE-DESY-ATLAS-T2"><link_ctn id="0-Tier2_4"/></route>
+		<route src="CERN-PROD" dst="DE-DESY-RWTH-CMS-T2"><link_ctn id="0-Tier2_5"/></route>
+		<route src="CERN-PROD" dst="DE-DESY-LHCB"><link_ctn id="0-Tier2_6"/></route>
+		<route src="CERN-PROD" dst="IL-HEPTier-2"><link_ctn id="0-Tier2_7"/></route>
+		<route src="CERN-PROD" dst="IT-INFN-T2"><link_ctn id="0-Tier2_8"/></route>
+		<route src="CERN-PROD" dst="T2-LATINAMERICA"><link_ctn id="0-Tier2_9"/></route>
+		<route src="CERN-PROD" dst=""><link_ctn id="0-Tier2_10"/></route>
+		<route src="CERN-PROD" dst="PL-TIER2-WLCG"><link_ctn id="0-Tier2_11"/></route>
+		<route src="CERN-PROD" dst="RO-LCG"><link_ctn id="0-Tier2_12"/></route>
+		<route src="CERN-PROD" dst="RU-RDIG"><link_ctn id="0-Tier2_13"/></route>
+		<route src="CERN-PROD" dst="ES-LHCb-T2"><link_ctn id="0-Tier2_14"/></route>
+		<route src="CERN-PROD" dst="CH-CHIPP-CSCS"><link_ctn id="0-Tier2_15"/></route>
+		<route src="CERN-PROD" dst="tt"><link_ctn id="0-Tier2_16"/></route>
+		<route src="CERN-PROD" dst="UK-London-Tier2"><link_ctn id="0-Tier2_17"/></route>
+		<route src="CERN-PROD" dst="UK-NorthGrid"><link_ctn id="0-Tier2_18"/></route>
+		<route src="CERN-PROD" dst="UK-ScotGrid"><link_ctn id="0-Tier2_19"/></route>
+		<route src="CERN-PROD" dst="UK-SouthGrid"><link_ctn id="0-Tier2_20"/></route>
 
 	</AS>
 </platform>

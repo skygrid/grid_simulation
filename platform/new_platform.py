@@ -31,7 +31,7 @@ f.write("<?xml version='1.0'?>\n")
 f.write("<!DOCTYPE platform SYSTEM \"http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd\">\n")
 f.write("<platform version=\"4\">\n")
 f.write("\n")
-f.write("\t<AS id=\"AS_BIG\" routing=\"Full\">\n\n\n")
+f.write("\t<AS id=\"AS_BIG\" routing=\"Full\">\n\n")
 
 # DISKS TIER0, TIER1, TIER2
 f.write("\t\t<!--Storage types of Tier0, Tier1s, Tier2s-->\n")
@@ -119,13 +119,13 @@ f.write("<link_ctn id=\"loopback" + "\"/>")
 f.write("</route>\n\n")
 
 # routs between AS and TIER1
-f.write("\t\t<!--routes between CERN and TIER1-->\n")
+f.write("\t\t<!--routes between CERN and TIER1 and TIER2-->\n")
 
 for i in range(1, len(CPU_ALL)):
     # routes between CERN and TIER1S
     f.write("\t\t<route src=\"CERN-PROD\" dst=\"" + TIER_ALL[i] + "\">")
     if tier_name[i] == "Tier 2":
-        f.write("<link_ctn id=\"" + "0-Tier2_" + str(i) + "\"/>")
+        f.write("<link_ctn id=\"" + "0-Tier2_" + str(i-8) + "\"/>")
     else:
         f.write("<link_ctn id=\"" + LINK_NAMES10[i-1] + "\"/>")
     f.write("</route>\n")
@@ -134,4 +134,58 @@ f.write("\n")
 
 f.write("\t</AS>\n")
 f.write("</platform>\n")
+f.close()
+
+
+
+#################################################################################
+#                             DEPLOYMENT FILE                                   #
+#                             DEPLOYMENT FILE                                   #
+#################################################################################
+f = open("deployment.xml", "w")
+f.write("<?xml version='1.0'?>\n")
+f.write("<!DOCTYPE platform SYSTEM \"http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd\">\n")
+f.write("<platform version=\"4\">\n")
+f.write("\n")
+f.write("\t<process host=\"CERN-PROD\" function=\"scheduler\">\n")
+f.write("\t\t<argument value=\"scheduler\"/>  <!-- Input mailbox -->\n")
+f.write("\t</process>\n")
+f.write("\n")
+
+for i in range(0, len(TIER_ALL)):
+    f.write("\t<process host=\"" + TIER_ALL[i] + "\" function=\"tier1\">\n")
+    f.write("\t\t<argument value=\"" + TIER_ALL[i] + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(int(CPU_ALL[i] )) + "\"/>\n")
+    f.write("\t</process>\n")
+    f.write("\n")
+f.write("\n")
+
+"""for i in range(0, len(LIST_OF_TIERS)):
+    f.write("\t<process host=\"" + LIST_OF_TIERS[i] + "\" function=\"evil\">\n")
+    f.write("\t\t<argument value=\"" + str(randint(0, 10000)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(randint(30, 75)) + "\"/>\n")
+    f.write("\t\t<argument value=\"" + str(randint(100, 200)) + "\"/>\n")
+    f.write("\t</process>\n")
+    f.write("\n")vim
+f.write("\n\n")"""
+
+# Additional processes for killing process, data popularity and tracing
+f.write("\t<process host=\"CERN-PROD\" function=\"killer\">\n")
+f.write("\t</process>\n\n")
+
+f.write("\t<process host=\"CERN-PROD\" function=\"initialize\">\n")
+f.write("\t\t<argument value=\"518400\"/>\n")
+f.write("\t</process>\n\n")
+
+f.write("\t<process host=\"CERN-PROD\" function=\"delete_unpop_file\">\n")
+f.write("\t\t<argument value=\"518400\"/>\n")
+f.write("\t</process>\n\n")
+
+f.write("\t<process host=\"CERN-PROD\" function=\"tracer\">\n")
+f.write("\t\t<argument value=\"518400\"/>\n")
+f.write("\t</process>\n\n\n")
+####################################################################################
+
+
+#####################################################################################
 f.close()
