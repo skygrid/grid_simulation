@@ -4,7 +4,8 @@ CSim2Sim
 Makefile
 CMakeFiles/
 Debug/
-Trash/
+trash/
+walltime/
 
 *.py[cod]
 target/
