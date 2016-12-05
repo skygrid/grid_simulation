@@ -1,7 +1,4 @@
-# LHCb grid simulation
-
-## Build status
-[![Build Status](https://travis-ci.org/skygrid/grid_simulation.svg?branch=master)](https://travis-ci.org/skygrid/grid_simulation)
+# LHCb grid simulation [![Build Status](https://travis-ci.org/skygrid/grid_simulation.svg?branch=master)](https://travis-ci.org/skygrid/grid_simulation)
 
 ## Goals and problems 
 Developing smarter algorithms for

@@ -32,64 +32,24 @@ typedef enum {
 } jobType;
 
 
-class Job{
-public:
-    string name;
-    double submissionTime;
-    jobType type;
-    double compSize;
-    string inputFileName;
-    double inputSize;
-    int NRep;
-    string dataLocHost1;
-    string dataLocHost2;
-    string dataLocHost3;
-    string dataLocHost4;
-    string dataLocHost5;
-    string dataLocHost6;
-    string dataLocHost7;
-    string dataLocHost8;
-    string dataLocHost9;
-    string dataLocHost10;
-
-    string storageType1;
-    string storageType2;
-    string storageType3;
-    string storageType4;
-    string storageType5;
-    string storageType6;
-    string storageType7;
-    string storageType8;
-    string storageType9;
-    string storageType10;
-
-    int outputNumber;
-    string outputHost1;
-    string outputHost2;
-    string outputHost3;
-    string outputHost4;
-    string outputHost5;
-    string outputHost6;
-    string outputHost7;
-    string outputHost8;
-    string outputHost9;
-    string outputHost10;
-
-
-    char* downloadSite;
-    string outputName;
-    double outputFileSize;
-
-
-    int scheduled;
-    double startClock;
-    double startSchedulClock;
-    double stExecClock;
-    double endExecClock;
-    int successExecuted;
-    string tier;
-
-
+struct Job{
+    long JobId;
+    double EndExecTime;
+    std::string Federation;
+    std::vector<std::string> InputFiles;
+    std::string JobGroup;
+    std::string JobType;
+    long LocalJobID;
+    std::vector<std::string> OutputFiles;
+    std::string RescheduleTime;
+    std::string Site;
+    double StartExecTime;
+    std::string Status;
+    long SubmissionTime;
+    float SystemPriority;
+    double TotalCPUTime; // in seconds
+    float UserPriority;
+    double WallClockTime;
 };
 
 class DataInfo{

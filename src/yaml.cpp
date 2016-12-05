@@ -5,28 +5,11 @@
 #include <iostream>
 #include <yaml-cpp/yaml.h>
 #include <cstring>
+#include <boost/algorithm/string.hpp>
+#include "messages.h"
 
 using std::cout;
 
-struct Job{
-    long JobId;
-    double EndExecTime;
-    std::string Federation;
-    std::vector<std::string> InputFiles;
-    std::string JobGroup;
-    std::string JobType;
-    long LocalJobID;
-    std::vector<std::string> OutputFiles;
-    std::string RescheduleTime;
-    std::string Site;
-    double StartExecTime;
-    std::string Status;
-    long SubmissionTime;
-    float SystemPriority;
-    double TotalCPUTime; // in seconds
-    float UserPriority;
-    double WallClockTime;
-};
 namespace YAML {
     template<>
     struct convert<Job> {
@@ -74,4 +57,16 @@ int parse_input_data() {
     }
 
     return 0;
+}
+
+
+static jobType charToEnum(string sval)
+{
+
+    for (int enumInt = USER; enumInt != LAST; enumInt++)
+        if (boost::iequals(sval, typesStr[enumInt])){
+            jobType type = static_cast<jobType>(enumInt);
+            return type;
+        }
+    return UNKNOWN;
 }
