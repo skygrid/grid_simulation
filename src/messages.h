@@ -52,6 +52,21 @@ struct Job{
     double WallClockTime;
 };
 
+struct InputFile{
+    std::string name;
+    long events;
+    std::vector<std::string> BKKPath;
+    std::string DataQuality;
+    std::string Replica;
+    double RunNumber;
+    double Size;
+    std::vector<std::string> Storages;
+};
+
+
+
+
+
 class DataInfo{
 public:
     string input_file_path;

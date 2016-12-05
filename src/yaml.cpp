@@ -40,11 +40,41 @@ namespace YAML {
             return true;
         }
     };
+    template <>
+    struct convert<InputFile> {
+
+        static bool decode(const Node& node, InputFile& job) {
+            if(!node.IsMap()) {
+                return false;
+            }
+            std::string::size_type sz;
+            cout << node["'#events'"];
+            job.events = std::stol(node["#events"].as<std::string>(), &sz);
+            job.BKKPath = node["BKKPath"].as<std::vector<std::string>>();
+            job.DataQuality = node["DataQuality"].as<std::string>();
+            job.Replica = node["Replica"].as<std::string>();
+            job.RunNumber = node["RunNumber"].as<double>();
+            job.Size = node["Size"].as<double>();
+            job.Storages = node["Storages"].as<std::vector<std::string>>();
+            return true;
+        }
+    };
 }
 
+int parse_input_data(){
+    YAML::Node root = YAML::LoadFile("/home/ken/ClionProjects/yaml/input_data.yaml");
+    std::vector<InputFile*> v;
+    for (auto it = root.begin(); it != root.end(); ++it) {
+        InputFile* id = new InputFile;
+        *id = it->second.as<InputFile>();
+        std::string key = it->first.as<std::string>();
+        id->name = key;
+        v.push_back(id);
+    }
+    return 0;
+}
 
-
-int parse_input_data() {
+int parse_jobs() {
     YAML::Node root = YAML::LoadFile("/home/ken/ClionProjects/yaml/job.yaml");
 
     std::vector<Job*> v;
