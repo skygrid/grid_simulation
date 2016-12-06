@@ -50,6 +50,8 @@ struct Job{
     double TotalCPUTime; // in seconds
     float UserPriority;
     double WallClockTime;
+    int successExecuted;
+    double startSchedulClock;
 };
 
 struct InputFile{

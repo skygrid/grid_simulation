@@ -12,7 +12,7 @@ int writeToFile(FILE* fpy, Job* jobInfo)
 {
     const char* typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
                         "MCSIMULATION", "TEST", NULL};
-    fprintf(fpy, "%s,%d,%f,%f,%f,%f,%s,%s\n", jobInfo->name.c_str(), jobInfo->successExecuted, jobInfo->submissionTime, jobInfo->startSchedulClock, jobInfo->stExecClock, jobInfo->endExecClock, jobInfo->tier.c_str(), typesStr[jobInfo->type]);
+    fprintf(fpy, "%lu,%d,%f,%f,%f,%f,%s,%s\n", jobInfo->JobId, jobInfo->successExecuted, jobInfo->SubmissionTime, jobInfo->startSchedulClock, jobInfo->StartExecTime, jobInfo->EndExecTime, jobInfo->Federation.c_str(), jobInfo->JobType.c_str()); //typesStr[jobInfo->type]
     return(0);
 }
 
