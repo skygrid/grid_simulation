@@ -22,9 +22,9 @@ LINK_NAMES10_BW11.extend([str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)
 rtype = np.dtype([('t', np.str, 15), ('hepspec', np.float32), ('disk', np.str, 20), ('tape', np.str, 20), ('cpu', np.float32), ('names', np.str, 35)])
 
 
-tier_name, HEPSPEC, DISK_ALL, TAPE_ALL, CPU_ALL, TIER_ALL = np.loadtxt("lhcb_capacities.csv", skiprows=1, dtype=(rtype), usecols=(0, 3, 4, 5, 6, 7), delimiter=",", unpack=True)
-
-tier2_count = np.where(tier_name == "TIER")[0].size
+tier_name, HEPSPEC, DISK_ALL, TAPE_ALL, CPU_ALL, TIER_ALL = np.loadtxt("../InputData/capacities_lhcb.csv", skiprows=1, dtype=(rtype), usecols=(0, 3, 4, 5, 6, 7), delimiter=";", unpack=True)
+print len(tier_name)
+tier2_count = np.where(tier_name == "Tier 2")[0].size
 
 f = open("platform.xml", "w")
 f.write("<?xml version='1.0'?>\n")
@@ -37,7 +37,7 @@ f.write("\t<AS id=\"AS_BIG\" routing=\"Full\">\n\n")
 f.write("\t\t<!--Storage types of Tier0, Tier1s, Tier2s-->\n")
 for i in range(len(DISK_ALL)):
     f.write("\t\t<storage_type id=" + quo + "HDD" + str(i) + quo + " size=" + quo + str(int(float((DISK_ALL[i])))) + "GB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
-    f.write("\t\t\t\tcontent=" + quo + "Content/Tier1/" + str(TIER_ALL[i]) + "-DISK.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
+    f.write("\t\t\t\tcontent=" + quo + "InputData/SEs/" + str(TIER_ALL[i]) + "-DISK.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "10000GBps" + quo + "/>\n")
@@ -48,7 +48,7 @@ f.write("\n\n")
 
 for i in range(len(TAPE_ALL)):
     f.write("\t\t<storage_type id=" + quo + "TAPE" + str(i) + quo + " size=" + quo + str(int(float(TAPE_ALL[i]))) + "GB" + quo + " model=" + quo + "linear_no_lat" + quo + "\n")
-    f.write("\t\t\t\tcontent=" + quo + "Content/Tier1/" + str(TIER_ALL[i]) + "-TAPE.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
+    f.write("\t\t\t\tcontent=" + quo + "InputData/SEs/" + str(TIER_ALL[i]) + "-TAPE.txt" + quo + " content_type=" + quo + "txt_unix" + quo + ">\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bwrite" + quo + " value=" + quo + "500MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bread" + quo + " value=" + quo + "118MBps" + quo + "/>\n")
     f.write("\t\t\t<model_prop id=" + quo + "Bconnection" + quo + " value=" + quo + "10000GBps" + quo + "/>\n")
@@ -102,7 +102,7 @@ f.write("\n")
 f.write("\t\t<!--TIER0-TIER2 LINKS-->\n")
 for i in range(1, tier2_count+1):
     f.write("\t\t<link id=" + quo + "0-Tier2_" + str(i) + quo + " bandwidth=\"1G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
-f.write("")
+f.write("\n")
 
 #######################################################################################################################################
 n = 0
@@ -125,7 +125,7 @@ for i in range(1, len(CPU_ALL)):
     # routes between CERN and TIER1S
     f.write("\t\t<route src=\"CERN-PROD\" dst=\"" + TIER_ALL[i] + "\">")
     if tier_name[i] == "Tier 2":
-        f.write("<link_ctn id=\"" + "0-Tier2_" + str(i-8) + "\"/>")
+        f.write("<link_ctn id=\"" + "0-Tier2_" + str(i-7) + "\"/>")
     else:
         f.write("<link_ctn id=\"" + LINK_NAMES10[i-1] + "\"/>")
     f.write("</route>\n")
@@ -188,4 +188,5 @@ f.write("\t</process>\n\n\n")
 
 
 #####################################################################################
+f.write("</platform>")
 f.close()

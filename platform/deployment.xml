@@ -46,14 +46,14 @@
 		<argument value="4680"/>
 	</process>
 
-	<process host="368.0" function="tier1">
-		<argument value="368.0"/>
-		<argument value="0"/>
+	<process host="FR-IN2P3-CPPM" function="tier1">
+		<argument value="FR-IN2P3-CPPM"/>
+		<argument value="368"/>
 	</process>
 
-	<process host="635.0" function="tier1">
-		<argument value="635.0"/>
-		<argument value="0"/>
+	<process host="FR-GRIF" function="tier1">
+		<argument value="FR-GRIF"/>
+		<argument value="635"/>
 	</process>
 
 	<process host="FR-IN2P3-LAPP" function="tier1">
@@ -96,11 +96,6 @@
 		<argument value="374"/>
 	</process>
 
-	<process host="" function="tier1">
-		<argument value=""/>
-		<argument value="0"/>
-	</process>
-
 	<process host="PL-TIER2-WLCG" function="tier1">
 		<argument value="PL-TIER2-WLCG"/>
 		<argument value="137"/>
@@ -124,11 +119,6 @@
 	<process host="CH-CHIPP-CSCS" function="tier1">
 		<argument value="CH-CHIPP-CSCS"/>
 		<argument value="1131"/>
-	</process>
-
-	<process host="tt" function="tier1">
-		<argument value="tt"/>
-		<argument value="0"/>
 	</process>
 
 	<process host="UK-London-Tier2" function="tier1">
@@ -168,3 +158,4 @@
 	</process>
 
 
+</platform>
