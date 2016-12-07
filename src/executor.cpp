@@ -19,6 +19,7 @@ void minusOneActiveCore();
 
 int my_on_exit(void* ignored1, void *ignored2);
 int copy_tape_disk_process(int argc, char* argv[]);
+int download_read_file_process(int argc, char* argv[]);
 
 extern map<std::string, double> cumulative_input_site;
 extern map<std::string, double> cumulative_output_site;
@@ -111,6 +112,7 @@ int copy_tape_disk_process(int argc, char* argv[]){
     file_usage_counter(tapeFileName);
 
     MSG_file_rcopy(file, MSG_host_by_name(remoteHostName.c_str()), diskFileName.c_str());
+    inputInfo->storage = diskStorageName;
     MSG_file_close(file);
 
     create_file_label(diskFileName);
@@ -121,6 +123,61 @@ int copy_tape_disk_process(int argc, char* argv[]){
     return 0;
 }
 
+
+static int download_read_file_process(int argc, char* argv[]){
+    InputAndJobInfo* data = (InputAndJobInfo*) MSG_process_get_data(MSG_process_self());
+    InputInfo* inputInfo = data->inputInfo;
+    Job* job = data->job;
+
+    std::string host_name = MSG_host_get_name(MSG_host_self());
+    std::string storage_name = host_name + "-DISK";
+    std::string fullInputPath = "/" + inputInfo->storage + inputInfo->localInputFilePath;
+    std::string fullNewPath = "/" + storage_name + inputInfo->localInputFilePath;
+    msg_file_t file;
+
+    if (inputInfo->storage.compare(storage_name) != 0){
+
+        // DOWNLOADING FILE FROM ANOTHER TIER
+        file = MSG_file_open(fullInputPath.c_str(), NULL);
+
+        file_usage_counter(fullInputPath);
+
+        plusLinkCounter(inputInfo->hostName, host_name);
+        msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), fullNewPath.c_str());
+        create_file_label(fullNewPath);
+
+        //tracing number of dataset
+        dataset_number_change(storage_name, 1);
+        cumulative_input_per_site(host_name, (double) MSG_file_get_size(file));
+
+        if (error == MSG_OK){
+            tracer_traffic(inputInfo->hostName, host_name, (double) MSG_file_get_size(file));
+            //tracer_storage(host_name, dataInfo->storage_type.c_str());
+        } else{
+            minusLinkCounter(inputInfo->hostName, host_name);
+            minusOneActiveCore();
+            job->StartExecTime = 0;
+            job->EndExecTime = 0;
+            writeToFile(fp, job);
+            MSG_file_close(file);
+            MSG_process_kill(MSG_process_self());
+        }
+        minusLinkCounter(inputInfo->hostName, host_name);
+        MSG_file_close(file);
+        inputInfo->storage = storage_name;
+    }
+
+    //Now I have data, I open and read it
+
+    msg_file_t i_data = MSG_file_open(fullInputPath.c_str(), NULL);
+    file_usage_counter(fullInputPath);
+    MSG_file_read(i_data, (sg_size_t) MSG_file_get_size(i_data));
+    MSG_file_close(i_data);
+
+    delete data;
+    delete inputInfo;
+}
+
 int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 
 
@@ -129,7 +186,7 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
         InputInfo* inputInfo = inputInfoVector->at(i);
 
         if (!inputInfo->storageType){
-            MSG_process_create("copydisk", copy_tape_disk_process, inputInfo, MSG_host_self());
+            MSG_process_create("copytodisk", copy_tape_disk_process, inputInfo, MSG_host_self());
         }
     }
 
@@ -137,99 +194,58 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 }
 
 
-void download_or_read_file(Job* jobInfo, DataInfo* dataInfo){
-
-    string host_name = MSG_host_get_name(MSG_host_self());
-    string storage_name = host_name + "1";
-    double clock = MSG_get_clock();
-    msg_file_t file;
-    if (dataInfo->destination_name.compare(host_name)){
-
-        // DOWNLOADING FILE FROM ANOTHER TIER
-        file = MSG_file_open(dataInfo->input_file_path.c_str(), NULL);
-
-        file_usage_counter(dataInfo->input_file_path);
-
-        plusLinkCounter(dataInfo->destination_name, host_name);
-        msg_error_t error = MSG_file_rcopy(file, MSG_host_self(), dataInfo->copy_file_path.c_str());
-        create_file_label(dataInfo->copy_file_path);
-
-        //tracing number of dataset
-        dataset_number_change(storage_name, 1);
-        cumulative_input_per_site(host_name, (double) MSG_file_get_size(file));
-
-        if (error == MSG_OK){
-            tracer_traffic(dataInfo->destination_name, host_name, (double) MSG_file_get_size(file));
-            //tracer_storage(host_name, dataInfo->storage_type.c_str());
-        } else{
-            minusLinkCounter(dataInfo->destination_name, host_name);
-            minusOneActiveCore();
-            jobInfo->stExecClock = 0;
-            jobInfo->endExecClock = 0;
-            writeToFile(fp, jobInfo);
-            MSG_file_close(file);
-            MSG_process_kill(MSG_process_self());
-        }
-        minusLinkCounter(dataInfo->destination_name, host_name);
-        msg_file_t d_file = MSG_file_open(dataInfo->copy_file_path.c_str(), NULL);
-        file_usage_counter(dataInfo->copy_file_path);
-        MSG_file_read(d_file, (sg_size_t) jobInfo->inputSize);
-
-        MSG_file_close(file);
-        MSG_file_close(d_file);
+void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVector){
+    size_t size = inputInfoVector->size();
+    for (size_t i = 0; i < size; ++i) {
+        InputAndJobInfo* data = new InputAndJobInfo;
+        data->job = jobInfo;
+        data->inputInfo = inputInfoVector->at(i);
+        MSG_process_create("reader", download_read_file_process, data, MSG_host_self());
     }
-
-    //If I have data, I open and read it
-
-    msg_file_t i_data = MSG_file_open(dataInfo->input_file_path.c_str(), NULL);
-    file_usage_counter(dataInfo->input_file_path);
-    MSG_file_read(i_data, (sg_size_t) jobInfo->inputSize);
-    MSG_file_close(i_data);
-
-    delete dataInfo;
+    return;
 }
 
 
 int task_executor(Job* jobInfo){
     string host_name = string(MSG_host_get_name(MSG_host_self()));
-    string storage_name = host_name + "1";
-    string outputFilePath;
+    string storage_name = host_name + "-DISK";
     msg_task_t task;
     msg_file_t outFile;
 
-    outputFilePath = "/" + host_name + "1" + "/" + jobInfo->outputName;
-
     // CREATING AND EXECUTION OF TASK
-    task = MSG_task_create(jobInfo->name.c_str(), jobInfo->compSize, 0, NULL);
-    jobInfo->stExecClock = MSG_get_clock();
+    task = MSG_task_create(std::to_string(jobInfo->JobId).c_str(), jobInfo->TotalCPUTime, 0, NULL);
+    jobInfo->StartExecTime = MSG_get_clock();
     addActiveCoreT();
     msg_error_t b = MSG_task_execute(task);
     subActiveCoreT();
-    jobInfo->endExecClock = MSG_get_clock();
+    jobInfo->EndExecTime = MSG_get_clock();
     minusOneActiveCore();
     jobInfo->successExecuted = 1;
     jobInfo->tier = host_name;
 
     //Anomalies of tier host
     if (b == MSG_OK){
-        XBT_INFO("%s has successfully executed", jobInfo->name.c_str());
+        XBT_INFO("%zd has successfully executed", jobInfo->JobId);
         MSG_task_destroy(task);
         task = NULL;
     }else{
-        XBT_INFO("Error has occurred while executing %s", MSG_task_get_name(task));
+        XBT_INFO("Error has occurred while executing %zd", jobInfo->JobId);
         MSG_task_destroy(task);
         task = NULL;
     }
 
-    //Write output to file
-    outFile = MSG_file_open(outputFilePath.c_str(), NULL);
-    MSG_file_write(outFile, (sg_size_t) (jobInfo->outputFileSize));
-    create_file_label(outputFilePath);
-    MSG_file_close(outFile);
+    //Create and write outputs file
+    size_t outputAmount = jobInfo->OutputFiles.size();
+    for (size_t i = 0; i < outputAmount; ++i) {
+        std::string outputFilePath = "/" + storage_name + jobInfo->OutputFiles.at(i);
+        outFile = MSG_file_open(outputFilePath.c_str(), NULL);
+        MSG_file_write(outFile, (sg_size_t) FILES_DATABASE->at(jobInfo->OutputFiles.at(i))->Size);
+        create_file_label(outputFilePath);
+        MSG_file_close(outFile);
 
-    // tracing: one new file
-    dataset_number_change(storage_name, 1);
-
+        // tracing: one new file
+        dataset_number_change(storage_name, 1);
+    }
     writeToFile(fp, jobInfo);
     return 0;
 }

@@ -53,6 +53,7 @@ struct Job{
     double WallClockTime;
     int successExecuted;
     double startSchedulClock;
+    std::string tier;
 };
 
 struct InputFile{
@@ -72,7 +73,13 @@ struct InputInfo{
     std::string fullCopyFilePath;
     std::string fullCopyFromTapeToDiskName;
     std::string storage;
+    std::string hostName;
     bool storageType;
+};
+
+struct InputAndJobInfo{
+    InputInfo* inputInfo;
+    Job* job;
 };
 
 class ReplicatorData{
