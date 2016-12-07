@@ -68,10 +68,10 @@ struct InputFile{
 
 
 struct InputInfo{
-    std::string fullInputFilePath;
+    std::string localInputFilePath;
     std::string fullCopyFilePath;
     std::string fullCopyFromTapeToDiskName;
-    std::string destinationName;
+    std::string storage;
     bool storageType;
 };
 

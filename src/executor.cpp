@@ -18,6 +18,7 @@ void plusOneActiveCore();
 void minusOneActiveCore();
 
 int my_on_exit(void* ignored1, void *ignored2);
+int copy_tape_disk_process(int argc, char* argv[]);
 
 extern map<std::string, double> cumulative_input_site;
 extern map<std::string, double> cumulative_output_site;
@@ -87,38 +88,51 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
         }
 
         InputInfo* inputInfo = new InputInfo;
-        inputInfo->fullInputFilePath = "/" + storage + inputFiles.at(i);
+        inputInfo->localInputFilePath = inputFiles.at(i);
+        inputInfo->storage = storage;
         inputInfo->storageType = disk;
         fullPathVector->push_back(inputInfo);
     }
 
     return fullPathVector;
-
 }
 
+int copy_tape_disk_process(int argc, char* argv[]){
 
-int copy_from_tape_to_disk(DataInfo* data_info){
-    msg_file_t file;
+    InputInfo* inputInfo = (InputInfo*) MSG_process_get_data(MSG_process_self());
+    std::string remoteHostName = inputInfo->storage;
+    remoteHostName.erase(remoteHostName.length()-4);
 
-    // Open, copy and close file    "0" means TAPE
-    if (!data_info->storage_type.compare("0")){
-        file = MSG_file_open(data_info->input_file_path.c_str(), NULL);
+    std::string diskStorageName = remoteHostName + "-" + "DISK";
+    std::string tapeFileName = "/" + inputInfo->storage + inputInfo->localInputFilePath;
+    std::string diskFileName = "/" + diskStorageName + inputInfo->localInputFilePath;
 
-        file_usage_counter(data_info->input_file_path);
+    msg_file_t file = MSG_file_open(tapeFileName.c_str(), NULL);;
+    file_usage_counter(tapeFileName);
 
-        MSG_file_rcopy(file, MSG_host_by_name(data_info->destination_name.c_str()), data_info->copy_from_tape_to_disk_name.c_str());
-        create_file_label(data_info->copy_from_tape_to_disk_name);
-        MSG_file_close(file);
+    MSG_file_rcopy(file, MSG_host_by_name(remoteHostName.c_str()), diskFileName.c_str());
+    MSG_file_close(file);
 
-        // trace storage and dataset amount to disk space
-        // tracer_storage(data_info->destination_name, data_info->storage_type.c_str());
-        string storage_name = data_info->destination_name + "1";
-        dataset_number_change(storage_name, 1);
+    create_file_label(diskFileName);
+
+    //trace
+    dataset_number_change(diskStorageName, 1);
+
+    return 0;
+}
+
+int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 
 
-        // So we have new name of input file on the disk
-        data_info->input_file_path = data_info->copy_from_tape_to_disk_name;
+    size_t fileAmount = inputInfoVector->size();
+    for (size_t i = 0; i < fileAmount; ++i) {
+        InputInfo* inputInfo = inputInfoVector->at(i);
+
+        if (!inputInfo->storageType){
+            MSG_process_create("copydisk", copy_tape_disk_process, inputInfo, MSG_host_self());
+        }
     }
+
     return 0;
 }
 
