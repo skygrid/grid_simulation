@@ -2,7 +2,7 @@
 // Created by ken on 28.07.16.
 //
 #include <simgrid/msg.h>
-#include "messages.h"
+#include "my_structures.h"
 #include "myfunc_list.h"
 #include <string>
 
@@ -13,19 +13,21 @@ int data_replicator(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]){
 
     Job* replica = (Job*) MSG_process_get_data(MSG_process_self());
-    int replica_number = replica->outputNumber;
+    size_t output_files = replica->OutputFiles.size();
 
-    string outputLocations[] = {replica->outputHost1, replica->outputHost2, replica->outputHost3, replica->outputHost4, replica->outputHost5,
-                               replica->outputHost6, replica->outputHost7, replica->outputHost8, replica->outputHost9, replica->outputHost10};
+    for (size_t k = 0; k < output_files; ++k) {
 
-    for (int i = 0; i < replica_number; ++i) {
+        const vector<std::string>& replica_locations = FILES_DATABASE->at(replica->OutputFiles.at(k))->Storages;
 
-        UploadData* data = new UploadData;
-        data->filename = replica->outputName;
-        data->dest = outputLocations[i];
+        for (size_t i = 0; i < replica_locations.size(); ++i) {
+            UploadData* data = new UploadData;
+            data->filename = replica->OutputFiles.at(k);
+            data->dest = replica_locations.at(i);
 
-        MSG_process_create("upload", uploader, data, MSG_host_self());
+            MSG_process_create("upload", uploader, data, MSG_host_self());
+        }
     }
+
 
     MSG_process_sleep(1.1);
     delete replica;

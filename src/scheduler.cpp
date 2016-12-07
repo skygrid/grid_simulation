@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <simgrid/msg.h>
-#include "messages.h"
+#include "my_structures.h"
 #include "myfunc_list.h"
 #include <vector>
 

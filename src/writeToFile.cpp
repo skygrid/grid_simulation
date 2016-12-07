@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include "messages.h"
+#include "my_structures.h"
 #include "myfunc_list.h"
 #define str(x) #x
 

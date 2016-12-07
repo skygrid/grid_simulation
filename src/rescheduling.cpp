@@ -2,7 +2,7 @@
 // Created by ken on 09.08.16.
 //
 #include <simgrid/msg.h>
-#include "messages.h"
+#include "my_structures.h"
 
 int* jobQueueReschedulingHelper;
 Job* jobQueueHelperx;

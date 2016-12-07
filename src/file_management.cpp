@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include "myfunc_list.h"
-#include "messages.h"
+#include "my_structures.h"
 
 map<string, FileData*>* name_node;
 map<std::string, long> storage_number_map;

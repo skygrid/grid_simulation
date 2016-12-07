@@ -2,12 +2,15 @@
 // Created by ken on 11.08.16.
 //
 #include <simgrid/msg.h>
-#include "messages.h"
+#include <string>
+#include <vector>
+#include "my_structures.h"
 #include "myfunc_list.h"
 
-DataInfo* get_input_file_path(Job* job);
-int copy_from_tape_to_disk(DataInfo* data_info);
-void download_or_read_file(Job* jobInfo, DataInfo* dataInfo);
+
+std::vector<InputInfo*>* get_input_file_path(Job* job);
+int copy_from_tape_to_disk(InputInfo* data_info);
+void download_or_read_file(Job* jobInfo, InputInfo* dataInfo);
 int task_executor(Job* jobInfo);
 
 
@@ -43,79 +46,55 @@ int executor(int argc, char* argv[]){
     return 0;
 }
 
-DataInfo* get_input_file_path(Job* jobInfo){
-
-    /*Where should I download data
-     *return input_file_path and host_name (where data is located)
-     */
-    check_files_availability(jobInfo);
-    string host_name = string(MSG_host_get_name(MSG_host_self()));
-
-    string input_file_path;
-    string copy_file_path;
-    string copy_from_tape_to_disk_name;
-    string dest;
-    string storageType;
-
-    string dataLocations[] = {jobInfo->dataLocHost1, jobInfo->dataLocHost2, jobInfo->dataLocHost3, jobInfo->dataLocHost4,
-                             jobInfo->dataLocHost5, jobInfo->dataLocHost6, jobInfo->dataLocHost7, jobInfo->dataLocHost8,
-                             jobInfo->dataLocHost9, jobInfo->dataLocHost10};
-    string storageTypes[] = {jobInfo->storageType1, jobInfo->storageType2, jobInfo->storageType3, jobInfo->storageType4,
-                            jobInfo->storageType5, jobInfo->storageType6, jobInfo->storageType7, jobInfo->storageType8,
-                            jobInfo->storageType9, jobInfo->storageType10};
 
 
-    int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
+std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
 
-    // Checks does tier have data on the own storage
-    for (int i = 0; i < n; ++i) {
-        if (!dataLocations[i].compare(host_name) & !storageTypes[i].compare("1")){
-            input_file_path = "/" + dataLocations[i] + storageTypes[i] + "/" + jobInfo->inputFileName;
-            copy_file_path = "/" + dataLocations[i] + "1" + "/" + jobInfo->inputFileName;
-            dest = host_name;
-            storageType = storageTypes[i];
-            break;
-        }
-        // If tier doesn't have storage on the own, find available data on another tier
-        if (i == (n-1)){
-            for (int j = 0; j < n; ++j) {
-                if (dataLocations[j].compare("0") && storageTypes[j].compare("0")){
-                    storageType = storageTypes[j];
-                    dest = dataLocations[j];
+    std::vector<InputInfo*>* fullPathVector = new std::vector<InputInfo*>; // return type
+    std::string hostName = string(MSG_host_get_name(MSG_host_self()));
 
-                    input_file_path = "/" + dest + storageType + "/" + jobInfo->inputFileName;
-                    copy_file_path = "/" + host_name + "1" + "/" + jobInfo->inputFileName;
-                    copy_from_tape_to_disk_name = "/" + dest + "1" + "/" + jobInfo->inputFileName;
-                    break;
-                }
+    std::string storage; // From which storage I should download data
 
-                // Find input data at tape
-                if (j == (n-1)){
-                    for (int k = 0; k < n; ++k) {
-                        if (dataLocations[k].compare("0")){
-                            storageType = storageTypes[k];
-                            dest = dataLocations[k];
+    std::vector<std::string> const& inputFiles = jobInfo->InputFiles;
 
-                            input_file_path = "/" + dest + storageType + "/" + jobInfo->inputFileName;
-                            copy_file_path = "/" + host_name + "1" + "/" + jobInfo->inputFileName;
-                            copy_from_tape_to_disk_name = "/" + dest + "1" + "/" + jobInfo->inputFileName;
-                            break;
-                        }
-                    }
-                }
+    for (size_t i = 0; i < inputFiles.size(); ++i) {
+        std::vector<std::string> const& fileStorages = (FILES_DATABASE->at(inputFiles.at(i)))->Storages;
+
+        bool disk = false;
+        bool tape = false;
+        for (size_t j = 0; j < fileStorages.size(); ++j) {
+            size_t len_stor = fileStorages.at(i).size();
+            const char *last_four = &fileStorages.at(i).c_str()[len_stor-4];
+
+            if (!strncmp(hostName.c_str(), fileStorages.at(i).c_str(), hostName.size()) && !strcmp(last_four, "DISK")){
+                storage = fileStorages.at(i);
+                disk = true;
+                break;
+            }
+            else if (!strcmp(last_four, "DISK")){
+                storage = fileStorages.at(i);
+                disk = true;
+                continue;
+            }
+            else if (!strncmp(hostName.c_str(), fileStorages.at(i).c_str(), hostName.size()) && !strcmp(last_four, "TAPE") && !disk) {
+                storage = fileStorages.at(i);
+                tape = true;
+            }
+            else if (!disk && !tape){
+                storage = fileStorages.at(i);
+                tape = true;
             }
         }
+
+        InputInfo* inputInfo = new InputInfo;
+        inputInfo->fullInputFilePath = "/" + storage + inputFiles.at(i);
+        inputInfo->storageType = disk;
+        fullPathVector->push_back(inputInfo);
     }
 
-    DataInfo* data_info = new DataInfo;
-    data_info->destination_name = dest;
-    data_info->input_file_path = input_file_path;
-    data_info->copy_from_tape_to_disk_name = copy_from_tape_to_disk_name;
-    data_info->copy_file_path = copy_file_path;
-    data_info->storage_type = storageType;
-    return data_info;
-}
+    return fullPathVector;
 
+}
 
 
 int copy_from_tape_to_disk(DataInfo* data_info){

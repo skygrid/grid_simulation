@@ -4,7 +4,7 @@
 
 #include <simgrid/msg.h>
 #include <chrono>
-#include "messages.h"
+#include "my_structures.h"
 #include "myfunc_list.h"
 
 int scheduler(int argc, char *argv[]);
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]){
     }*/
 
     // delete global_queue and name_node
-    delete global_queue;
+    delete GLOBAL_QUEUE;
     //delete name_node;
 
     auto t2 = std::chrono::high_resolution_clock::now();

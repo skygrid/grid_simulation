@@ -5,23 +5,18 @@ using namespace std;
 #include <simgrid/msg.h>
 #include <vector>
 #include "myfunc_list.h"
-#include "messages.h"
+#include "my_structures.h"
 
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
 
 void check_files_availability(Job* jobInfo){
-    return;
-    string input_file_path;
+    /*string input_file_path;
     msg_file_t file;
 
-    string* dataLocations[] = {&jobInfo->dataLocHost1, &jobInfo->dataLocHost2, &jobInfo->dataLocHost3, &jobInfo->dataLocHost4,
-                               &jobInfo->dataLocHost5, &jobInfo->dataLocHost6, &jobInfo->dataLocHost7, &jobInfo->dataLocHost8,
-                               &jobInfo->dataLocHost9, &jobInfo->dataLocHost10};
-    string* storageTypes[] = {&jobInfo->storageType1, &jobInfo->storageType2, &jobInfo->storageType3, &jobInfo->storageType4,
-                             &jobInfo->storageType5, &jobInfo->storageType6, &jobInfo->storageType7, &jobInfo->storageType8,
-                             &jobInfo->storageType9, &jobInfo->storageType10};
+
+    jobInfo->InputFiles =
 
     int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
 
@@ -38,7 +33,7 @@ void check_files_availability(Job* jobInfo){
         if (MSG_file_get_size(file) == 0){
             *dataLocations[i] = "0";
         }
-        MSG_file_close(file);
+        MSG_file_close(file);*/
     }
 }
 
@@ -48,7 +43,7 @@ vector<Job*>* matcher(long amountRequestedJob){
 
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = global_queue; // create_current_queue();
+    std::list<Job*>* local_queue = GLOBAL_QUEUE; // create_current_queue();
 
     if (local_queue->size() < amountRequestedJob){
         amountRequestedJob = local_queue->size();
@@ -56,14 +51,14 @@ vector<Job*>* matcher(long amountRequestedJob){
 
     for (auto i = local_queue->begin(); i != local_queue->end() && amount_of_matched_jobs < amountRequestedJob ;) {
         (*i)->startSchedulClock = MSG_get_clock();
-        (*i)->stExecClock = 0;
-        (*i)->endExecClock = 0;
+        (*i)->StartExecTime = 0;
+        (*i)->EndExecTime = 0;
         (*i)->successExecuted = 0;
 
         jobBatch->push_back(*i);
         amount_of_matched_jobs++;
 
-        i = global_queue->erase(i);
+        i = GLOBAL_QUEUE->erase(i);
     }
     //delete local_queue;
     return jobBatch;
@@ -139,7 +134,7 @@ vector<Job*>* matcher_tier2(long amountRequestedJob, const string host){
     int amount_of_matched_jobs = 0;
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = global_queue;        //create_current_queue();
+    std::list<Job*>* local_queue = GLOBAL_QUEUE;        //create_current_queue();
 
     if (amountRequestedJob > local_queue->size()){
         amountRequestedJob = local_queue->size();
@@ -153,7 +148,7 @@ vector<Job*>* matcher_tier2(long amountRequestedJob, const string host){
             amount_of_matched_jobs++;
             jobBatch->push_back(*i);
 
-            i = global_queue->erase(i);
+            i = GLOBAL_QUEUE->erase(i);
         } else i++;
     }
     return jobBatch;
@@ -164,8 +159,8 @@ vector<Job*>* matcher_tier2(long amountRequestedJob, const string host){
 list<Job*>* create_current_queue(){
     std::list<Job*>* local_queue = new list<Job*>;
 
-    for (auto it = global_queue->begin(); it != global_queue->end(); ++it) {
-        if ((*it) && ((*it)->submissionTime < MSG_get_clock())){
+    for (auto it = GLOBAL_QUEUE->begin(); it != GLOBAL_QUEUE->end(); ++it) {
+        if ((*it) && ((*it)->SubmissionTime < MSG_get_clock())){
             local_queue->push_back(*it);
         }else break;
     }

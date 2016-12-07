@@ -39,6 +39,7 @@ struct Job{
     std::vector<std::string> InputFiles;
     std::string JobGroup;
     std::string JobType;
+    jobType type;
     long LocalJobID;
     std::vector<std::string> OutputFiles;
     std::string RescheduleTime;
@@ -66,18 +67,12 @@ struct InputFile{
 };
 
 
-
-
-
-class DataInfo{
-public:
-    string input_file_path;
-    string copy_file_path;
-    string copy_from_tape_to_disk_name;
-    string destination_name;
-    string storage_type;
-    DataInfo(){};
-
+struct InputInfo{
+    std::string fullInputFilePath;
+    std::string fullCopyFilePath;
+    std::string fullCopyFromTapeToDiskName;
+    std::string destinationName;
+    bool storageType;
 };
 
 class ReplicatorData{

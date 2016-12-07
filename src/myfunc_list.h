@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-#include "messages.h"
+#include "my_structures.h"
 #include <vector>
 #include <string>
 #include <map>
@@ -22,7 +22,9 @@ extern map<std::string, double > cumulative_output_site;
 
 void dataset_number_change(const string& storage_name, int change);
 
-extern list<Job*>* global_queue;
+extern std::map<std::string, InputFile*>* FILES_DATABASE;
+extern std::list<Job*>* GLOBAL_QUEUE;
+
 extern map<string, FileData*>* name_node;
 extern FILE* fp;
 extern msg_sem_t sem_link;

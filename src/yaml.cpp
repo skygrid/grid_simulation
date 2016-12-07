@@ -6,9 +6,14 @@
 #include <yaml-cpp/yaml.h>
 #include <cstring>
 #include <boost/algorithm/string.hpp>
-#include "messages.h"
+#include "my_structures.h"
 
-using std::cout;
+jobType charToEnum(string sval);
+std::list<Job*>* GLOBAL_QUEUE;
+std::map<std::string, InputFile*>* FILES_DATABASE;
+
+string typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
+                     "MCSIMULATION", "TEST"};
 
 namespace YAML {
     template<>
@@ -61,34 +66,37 @@ namespace YAML {
     };
 }
 
-int parse_input_data(){
-    YAML::Node root = YAML::LoadFile("/home/ken/ClionProjects/yaml/input_data.yaml");
-    std::vector<InputFile*> v;
+static int parse_input_data(){
+
+    FILES_DATABASE = new map<std::string, InputFile*>;
+    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/bkk.yml");
+
     for (auto it = root.begin(); it != root.end(); ++it) {
-        InputFile* id = new InputFile;
-        *id = it->second.as<InputFile>();
+        InputFile* infl = new InputFile;
+        *infl = it->second.as<InputFile>();
         std::string key = it->first.as<std::string>();
-        id->name = key;
-        v.push_back(id);
+        infl->name = key;
+        FILES_DATABASE->insert(make_pair(key, infl));
     }
     return 0;
 }
 
-int parse_jobs() {
-    YAML::Node root = YAML::LoadFile("/home/ken/ClionProjects/yaml/job.yaml");
+static int parse_jobs() {
 
-    std::vector<Job*> v;
+    GLOBAL_QUEUE = new std::list<Job*>;
+    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/jobs.yml");
+
     for (auto it = root.begin(); it != root.end(); ++it) {
         Job* job = new Job;
         *job = it->second.as<Job>();
         long key = it->first.as<long>();
         job->JobId = key;
-        v.push_back(job);
+        job->type = charToEnum(job->JobType);
+        GLOBAL_QUEUE->push_back(job);
     }
 
     return 0;
 }
-
 
 static jobType charToEnum(string sval)
 {
@@ -99,4 +107,10 @@ static jobType charToEnum(string sval)
             return type;
         }
     return UNKNOWN;
+}
+
+int input(){
+    parse_jobs();
+    parse_input_data();
+    return 0;
 }

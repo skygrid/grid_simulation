@@ -2,7 +2,7 @@
 // Created by ken on 29.07.16.
 //
 #include <simgrid/msg.h>
-#include "messages.h"
+#include "my_structures.h"
 #include "myfunc_list.h"
 
 using namespace std;
@@ -23,7 +23,7 @@ int job_requester(int argc, char* argv[]){
                 xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "corruptedCore"), "error");
 
         MSG_sem_acquire(sem_requester);
-        if (global_queue->empty()){
+        if (GLOBAL_QUEUE->empty()){
             MSG_sem_release(sem_requester);
             break;
         }
