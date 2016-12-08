@@ -8,7 +8,9 @@
 #include <boost/algorithm/string.hpp>
 #include "my_structures.h"
 
-jobType charToEnum(string sval);
+XBT_LOG_NEW_DEFAULT_CATEGORY(yaml, "messages specific for yaml");
+
+static jobType charToEnum(string sval);
 std::list<Job*>* GLOBAL_QUEUE;
 std::map<std::string, InputFile*>* FILES_DATABASE;
 
@@ -48,19 +50,23 @@ namespace YAML {
     template <>
     struct convert<InputFile> {
 
-        static bool decode(const Node& node, InputFile& job) {
+        static bool decode(const Node& node, InputFile& input) {
             if(!node.IsMap()) {
                 return false;
             }
             std::string::size_type sz;
-            cout << node["'#events'"];
-            job.events = std::stol(node["#events"].as<std::string>(), &sz);
-            job.BKKPath = node["BKKPath"].as<std::vector<std::string>>();
-            job.DataQuality = node["DataQuality"].as<std::string>();
-            job.Replica = node["Replica"].as<std::string>();
-            job.RunNumber = node["RunNumber"].as<double>();
-            job.Size = node["Size"].as<double>();
-            job.Storages = node["Storages"].as<std::vector<std::string>>();
+            input.events = node["#events"].as<std::string>();
+            input.BKKPath = node["BKKPath"].as<std::vector<std::string>>();
+            input.DataQuality = node["DataQuality"].as<std::string>();
+            input.Replica = node["Replica"].as<std::string>();
+            input.RunNumber = node["RunNumber"].as<std::string>();
+
+            if (node["Size"].as<std::string>().compare("None") != 0){
+                input.Size = node["Size"].as<double>();
+            } else input.Size = 0;
+
+
+            input.Storages = node["Storages"].as<std::vector<std::string>>();
             return true;
         }
     };
@@ -69,7 +75,7 @@ namespace YAML {
 static int parse_input_data(){
 
     FILES_DATABASE = new map<std::string, InputFile*>;
-    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/bkk.yml");
+    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/little_data.yml");
 
     for (auto it = root.begin(); it != root.end(); ++it) {
         InputFile* infl = new InputFile;
@@ -84,7 +90,7 @@ static int parse_input_data(){
 static int parse_jobs() {
 
     GLOBAL_QUEUE = new std::list<Job*>;
-    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/jobs.yml");
+    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/little_jobs.yml");
 
     for (auto it = root.begin(); it != root.end(); ++it) {
         Job* job = new Job;

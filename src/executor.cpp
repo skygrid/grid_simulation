@@ -9,8 +9,8 @@
 
 
 std::vector<InputInfo*>* get_input_file_path(Job* job);
-int copy_from_tape_to_disk(InputInfo* data_info);
-void download_or_read_file(Job* jobInfo, InputInfo* dataInfo);
+int copy_from_tape_to_disk(std::vector<InputInfo*>* data_info);
+void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* dataInfo);
 int task_executor(Job* jobInfo);
 
 
@@ -19,7 +19,7 @@ void minusOneActiveCore();
 
 int my_on_exit(void* ignored1, void *ignored2);
 int copy_tape_disk_process(int argc, char* argv[]);
-int download_read_file_process(int argc, char* argv[]);
+static int download_read_file_process(int argc, char* argv[]);
 
 extern map<std::string, double> cumulative_input_site;
 extern map<std::string, double> cumulative_output_site;
@@ -36,9 +36,9 @@ int executor(int argc, char* argv[]){
         case MCSIMULATION:
             break;
         default:
-            DataInfo* dataInfo = get_input_file_path(job);
-            copy_from_tape_to_disk(dataInfo);
-            download_or_read_file(job, dataInfo);
+            std::vector<InputInfo*>* fullPathVector = get_input_file_path(job);
+            copy_from_tape_to_disk(fullPathVector);
+            download_or_read_file(job, fullPathVector);
             break;
     }
     task_executor(job);
@@ -60,6 +60,9 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
     std::vector<std::string> const& inputFiles = jobInfo->InputFiles;
 
     for (size_t i = 0; i < inputFiles.size(); ++i) {
+        for (auto&x : *FILES_DATABASE) {
+            XBT_INFO(x.first.c_str());
+        }
         std::vector<std::string> const& fileStorages = (FILES_DATABASE->at(inputFiles.at(i)))->Storages;
 
         bool disk = false;

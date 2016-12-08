@@ -89,105 +89,84 @@
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD12" size="0GB" model="linear_no_lat"
-				content="InputData/SEs/DE-DESY-ATLAS-T2-DISK.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="500MBps"/>
-			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="10000GBps"/>
-		</storage_type>
-
-		<storage_type id="HDD13" size="0GB" model="linear_no_lat"
-				content="InputData/SEs/DE-DESY-RWTH-CMS-T2-DISK.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="500MBps"/>
-			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="10000GBps"/>
-		</storage_type>
-
-		<storage_type id="HDD14" size="8000GB" model="linear_no_lat"
+		<storage_type id="HDD12" size="8000GB" model="linear_no_lat"
 				content="InputData/SEs/DE-DESY-LHCB-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD15" size="0GB" model="linear_no_lat"
-				content="InputData/SEs/IL-HEPTier-2-DISK.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="500MBps"/>
-			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="10000GBps"/>
-		</storage_type>
-
-		<storage_type id="HDD16" size="0GB" model="linear_no_lat"
+		<storage_type id="HDD13" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/IT-INFN-T2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD17" size="240000GB" model="linear_no_lat"
+		<storage_type id="HDD14" size="240000GB" model="linear_no_lat"
 				content="InputData/SEs/T2-LATINAMERICA-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD18" size="0GB" model="linear_no_lat"
+		<storage_type id="HDD15" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/PL-TIER2-WLCG-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD19" size="360000GB" model="linear_no_lat"
+		<storage_type id="HDD16" size="360000GB" model="linear_no_lat"
 				content="InputData/SEs/RO-LCG-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD20" size="65000GB" model="linear_no_lat"
+		<storage_type id="HDD17" size="65000GB" model="linear_no_lat"
 				content="InputData/SEs/RU-RDIG-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD21" size="1000GB" model="linear_no_lat"
+		<storage_type id="HDD18" size="1000GB" model="linear_no_lat"
 				content="InputData/SEs/ES-LHCb-T2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD22" size="540000GB" model="linear_no_lat"
+		<storage_type id="HDD19" size="540000GB" model="linear_no_lat"
 				content="InputData/SEs/CH-CHIPP-CSCS-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD23" size="300000GB" model="linear_no_lat"
+		<storage_type id="HDD20" size="300000GB" model="linear_no_lat"
 				content="InputData/SEs/UK-London-Tier2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD24" size="300000GB" model="linear_no_lat"
+		<storage_type id="HDD21" size="300000GB" model="linear_no_lat"
 				content="InputData/SEs/UK-NorthGrid-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD25" size="1000GB" model="linear_no_lat"
+		<storage_type id="HDD22" size="1000GB" model="linear_no_lat"
 				content="InputData/SEs/UK-ScotGrid-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD26" size="300000GB" model="linear_no_lat"
+		<storage_type id="HDD23" size="300000GB" model="linear_no_lat"
 				content="InputData/SEs/UK-SouthGrid-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
@@ -281,104 +260,83 @@
 		</storage_type>
 
 		<storage_type id="TAPE12" size="0GB" model="linear_no_lat"
-				content="InputData/SEs/DE-DESY-ATLAS-T2-TAPE.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="500MBps"/>
-			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="10000GBps"/>
-		</storage_type>
-
-		<storage_type id="TAPE13" size="0GB" model="linear_no_lat"
-				content="InputData/SEs/DE-DESY-RWTH-CMS-T2-TAPE.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="500MBps"/>
-			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="10000GBps"/>
-		</storage_type>
-
-		<storage_type id="TAPE14" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/DE-DESY-LHCB-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE15" size="0GB" model="linear_no_lat"
-				content="InputData/SEs/IL-HEPTier-2-TAPE.txt" content_type="txt_unix">
-			<model_prop id="Bwrite" value="500MBps"/>
-			<model_prop id="Bread" value="118MBps"/>
-			<model_prop id="Bconnection" value="10000GBps"/>
-		</storage_type>
-
-		<storage_type id="TAPE16" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE13" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/IT-INFN-T2-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE17" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE14" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/T2-LATINAMERICA-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE18" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE15" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/PL-TIER2-WLCG-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE19" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE16" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/RO-LCG-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE20" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE17" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/RU-RDIG-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE21" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE18" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/ES-LHCb-T2-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE22" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE19" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/CH-CHIPP-CSCS-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE23" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE20" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/UK-London-Tier2-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE24" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE21" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/UK-NorthGrid-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE25" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE22" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/UK-ScotGrid-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE26" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE23" size="0GB" model="linear_no_lat"
 				content="InputData/SEs/UK-SouthGrid-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
@@ -400,21 +358,18 @@
 		<storage id="FR-GRIF-DISK" typeId="HDD9" attach="FR-GRIF"/>
 		<storage id="FR-IN2P3-LAPP-DISK" typeId="HDD10" attach="FR-IN2P3-LAPP"/>
 		<storage id="FR-IN2P3-LPC-DISK" typeId="HDD11" attach="FR-IN2P3-LPC"/>
-		<storage id="DE-DESY-ATLAS-T2-DISK" typeId="HDD12" attach="DE-DESY-ATLAS-T2"/>
-		<storage id="DE-DESY-RWTH-CMS-T2-DISK" typeId="HDD13" attach="DE-DESY-RWTH-CMS-T2"/>
-		<storage id="DE-DESY-LHCB-DISK" typeId="HDD14" attach="DE-DESY-LHCB"/>
-		<storage id="IL-HEPTier-2-DISK" typeId="HDD15" attach="IL-HEPTier-2"/>
-		<storage id="IT-INFN-T2-DISK" typeId="HDD16" attach="IT-INFN-T2"/>
-		<storage id="T2-LATINAMERICA-DISK" typeId="HDD17" attach="T2-LATINAMERICA"/>
-		<storage id="PL-TIER2-WLCG-DISK" typeId="HDD18" attach="PL-TIER2-WLCG"/>
-		<storage id="RO-LCG-DISK" typeId="HDD19" attach="RO-LCG"/>
-		<storage id="RU-RDIG-DISK" typeId="HDD20" attach="RU-RDIG"/>
-		<storage id="ES-LHCb-T2-DISK" typeId="HDD21" attach="ES-LHCb-T2"/>
-		<storage id="CH-CHIPP-CSCS-DISK" typeId="HDD22" attach="CH-CHIPP-CSCS"/>
-		<storage id="UK-London-Tier2-DISK" typeId="HDD23" attach="UK-London-Tier2"/>
-		<storage id="UK-NorthGrid-DISK" typeId="HDD24" attach="UK-NorthGrid"/>
-		<storage id="UK-ScotGrid-DISK" typeId="HDD25" attach="UK-ScotGrid"/>
-		<storage id="UK-SouthGrid-DISK" typeId="HDD26" attach="UK-SouthGrid"/>
+		<storage id="DE-DESY-LHCB-DISK" typeId="HDD12" attach="DE-DESY-LHCB"/>
+		<storage id="IT-INFN-T2-DISK" typeId="HDD13" attach="IT-INFN-T2"/>
+		<storage id="T2-LATINAMERICA-DISK" typeId="HDD14" attach="T2-LATINAMERICA"/>
+		<storage id="PL-TIER2-WLCG-DISK" typeId="HDD15" attach="PL-TIER2-WLCG"/>
+		<storage id="RO-LCG-DISK" typeId="HDD16" attach="RO-LCG"/>
+		<storage id="RU-RDIG-DISK" typeId="HDD17" attach="RU-RDIG"/>
+		<storage id="ES-LHCb-T2-DISK" typeId="HDD18" attach="ES-LHCb-T2"/>
+		<storage id="CH-CHIPP-CSCS-DISK" typeId="HDD19" attach="CH-CHIPP-CSCS"/>
+		<storage id="UK-London-Tier2-DISK" typeId="HDD20" attach="UK-London-Tier2"/>
+		<storage id="UK-NorthGrid-DISK" typeId="HDD21" attach="UK-NorthGrid"/>
+		<storage id="UK-ScotGrid-DISK" typeId="HDD22" attach="UK-ScotGrid"/>
+		<storage id="UK-SouthGrid-DISK" typeId="HDD23" attach="UK-SouthGrid"/>
 		<storage id="CERN-PROD-TAPE" typeId="TAPE0" attach="CERN-PROD"/>
 		<storage id="IN2P3-CC-TAPE" typeId="TAPE1" attach="IN2P3-CC"/>
 		<storage id="FZK-LCG2-TAPE" typeId="TAPE2" attach="FZK-LCG2"/>
@@ -427,21 +382,18 @@
 		<storage id="FR-GRIF-TAPE" typeId="TAPE9" attach="FR-GRIF"/>
 		<storage id="FR-IN2P3-LAPP-TAPE" typeId="TAPE10" attach="FR-IN2P3-LAPP"/>
 		<storage id="FR-IN2P3-LPC-TAPE" typeId="TAPE11" attach="FR-IN2P3-LPC"/>
-		<storage id="DE-DESY-ATLAS-T2-TAPE" typeId="TAPE12" attach="DE-DESY-ATLAS-T2"/>
-		<storage id="DE-DESY-RWTH-CMS-T2-TAPE" typeId="TAPE13" attach="DE-DESY-RWTH-CMS-T2"/>
-		<storage id="DE-DESY-LHCB-TAPE" typeId="TAPE14" attach="DE-DESY-LHCB"/>
-		<storage id="IL-HEPTier-2-TAPE" typeId="TAPE15" attach="IL-HEPTier-2"/>
-		<storage id="IT-INFN-T2-TAPE" typeId="TAPE16" attach="IT-INFN-T2"/>
-		<storage id="T2-LATINAMERICA-TAPE" typeId="TAPE17" attach="T2-LATINAMERICA"/>
-		<storage id="PL-TIER2-WLCG-TAPE" typeId="TAPE18" attach="PL-TIER2-WLCG"/>
-		<storage id="RO-LCG-TAPE" typeId="TAPE19" attach="RO-LCG"/>
-		<storage id="RU-RDIG-TAPE" typeId="TAPE20" attach="RU-RDIG"/>
-		<storage id="ES-LHCb-T2-TAPE" typeId="TAPE21" attach="ES-LHCb-T2"/>
-		<storage id="CH-CHIPP-CSCS-TAPE" typeId="TAPE22" attach="CH-CHIPP-CSCS"/>
-		<storage id="UK-London-Tier2-TAPE" typeId="TAPE23" attach="UK-London-Tier2"/>
-		<storage id="UK-NorthGrid-TAPE" typeId="TAPE24" attach="UK-NorthGrid"/>
-		<storage id="UK-ScotGrid-TAPE" typeId="TAPE25" attach="UK-ScotGrid"/>
-		<storage id="UK-SouthGrid-TAPE" typeId="TAPE26" attach="UK-SouthGrid"/>
+		<storage id="DE-DESY-LHCB-TAPE" typeId="TAPE12" attach="DE-DESY-LHCB"/>
+		<storage id="IT-INFN-T2-TAPE" typeId="TAPE13" attach="IT-INFN-T2"/>
+		<storage id="T2-LATINAMERICA-TAPE" typeId="TAPE14" attach="T2-LATINAMERICA"/>
+		<storage id="PL-TIER2-WLCG-TAPE" typeId="TAPE15" attach="PL-TIER2-WLCG"/>
+		<storage id="RO-LCG-TAPE" typeId="TAPE16" attach="RO-LCG"/>
+		<storage id="RU-RDIG-TAPE" typeId="TAPE17" attach="RU-RDIG"/>
+		<storage id="ES-LHCb-T2-TAPE" typeId="TAPE18" attach="ES-LHCb-T2"/>
+		<storage id="CH-CHIPP-CSCS-TAPE" typeId="TAPE19" attach="CH-CHIPP-CSCS"/>
+		<storage id="UK-London-Tier2-TAPE" typeId="TAPE20" attach="UK-London-Tier2"/>
+		<storage id="UK-NorthGrid-TAPE" typeId="TAPE21" attach="UK-NorthGrid"/>
+		<storage id="UK-ScotGrid-TAPE" typeId="TAPE22" attach="UK-ScotGrid"/>
+		<storage id="UK-SouthGrid-TAPE" typeId="TAPE23" attach="UK-SouthGrid"/>
 
 
 		<!--HOSTS Tier0, Tier1s, Tier2s-->
@@ -540,7 +492,7 @@
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 		</host>
 
-		<host id="NRC-KI-T1" speed="1Gf" core="1058">
+		<host id="NRC-KI-T1" speed="1Gf" core="1">
 			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
 			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
 			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
@@ -617,24 +569,9 @@
 			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
 		</host>
 
-		<host id="DE-DESY-ATLAS-T2" speed="1Gf" core="0">
-			<mount storageId="DE-DESY-ATLAS-T2-DISK" name="/DE-DESY-ATLAS-T2-DISK"/>
-			<mount storageId="DE-DESY-ATLAS-T2-TAPE" name="/DE-DESY-ATLAS-T2-TAPE"/>
-		</host>
-
-		<host id="DE-DESY-RWTH-CMS-T2" speed="1Gf" core="0">
-			<mount storageId="DE-DESY-RWTH-CMS-T2-DISK" name="/DE-DESY-RWTH-CMS-T2-DISK"/>
-			<mount storageId="DE-DESY-RWTH-CMS-T2-TAPE" name="/DE-DESY-RWTH-CMS-T2-TAPE"/>
-		</host>
-
 		<host id="DE-DESY-LHCB" speed="1Gf" core="278">
 			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
 			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
-		</host>
-
-		<host id="IL-HEPTier-2" speed="1Gf" core="0">
-			<mount storageId="IL-HEPTier-2-DISK" name="/IL-HEPTier-2-DISK"/>
-			<mount storageId="IL-HEPTier-2-TAPE" name="/IL-HEPTier-2-TAPE"/>
 		</host>
 
 		<host id="IT-INFN-T2" speed="1Gf" core="1308">
@@ -725,9 +662,6 @@
 		<link id="0-Tier2_14" bandwidth="1GBps" latency="0ms"/>
 		<link id="0-Tier2_15" bandwidth="1GBps" latency="0ms"/>
 		<link id="0-Tier2_16" bandwidth="1GBps" latency="0ms"/>
-		<link id="0-Tier2_17" bandwidth="1GBps" latency="0ms"/>
-		<link id="0-Tier2_18" bandwidth="1GBps" latency="0ms"/>
-		<link id="0-Tier2_19" bandwidth="1GBps" latency="0ms"/>
 
 		<!--routes between TIER1-TIER1-->
 
@@ -824,21 +758,18 @@
 		<route src="CERN-PROD" dst="FR-GRIF"><link_ctn id="0-Tier2_2"/></route>
 		<route src="CERN-PROD" dst="FR-IN2P3-LAPP"><link_ctn id="0-Tier2_3"/></route>
 		<route src="CERN-PROD" dst="FR-IN2P3-LPC"><link_ctn id="0-Tier2_4"/></route>
-		<route src="CERN-PROD" dst="DE-DESY-ATLAS-T2"><link_ctn id="0-Tier2_5"/></route>
-		<route src="CERN-PROD" dst="DE-DESY-RWTH-CMS-T2"><link_ctn id="0-Tier2_6"/></route>
-		<route src="CERN-PROD" dst="DE-DESY-LHCB"><link_ctn id="0-Tier2_7"/></route>
-		<route src="CERN-PROD" dst="IL-HEPTier-2"><link_ctn id="0-Tier2_8"/></route>
-		<route src="CERN-PROD" dst="IT-INFN-T2"><link_ctn id="0-Tier2_9"/></route>
-		<route src="CERN-PROD" dst="T2-LATINAMERICA"><link_ctn id="0-Tier2_10"/></route>
-		<route src="CERN-PROD" dst="PL-TIER2-WLCG"><link_ctn id="0-Tier2_11"/></route>
-		<route src="CERN-PROD" dst="RO-LCG"><link_ctn id="0-Tier2_12"/></route>
-		<route src="CERN-PROD" dst="RU-RDIG"><link_ctn id="0-Tier2_13"/></route>
-		<route src="CERN-PROD" dst="ES-LHCb-T2"><link_ctn id="0-Tier2_14"/></route>
-		<route src="CERN-PROD" dst="CH-CHIPP-CSCS"><link_ctn id="0-Tier2_15"/></route>
-		<route src="CERN-PROD" dst="UK-London-Tier2"><link_ctn id="0-Tier2_16"/></route>
-		<route src="CERN-PROD" dst="UK-NorthGrid"><link_ctn id="0-Tier2_17"/></route>
-		<route src="CERN-PROD" dst="UK-ScotGrid"><link_ctn id="0-Tier2_18"/></route>
-		<route src="CERN-PROD" dst="UK-SouthGrid"><link_ctn id="0-Tier2_19"/></route>
+		<route src="CERN-PROD" dst="DE-DESY-LHCB"><link_ctn id="0-Tier2_5"/></route>
+		<route src="CERN-PROD" dst="IT-INFN-T2"><link_ctn id="0-Tier2_6"/></route>
+		<route src="CERN-PROD" dst="T2-LATINAMERICA"><link_ctn id="0-Tier2_7"/></route>
+		<route src="CERN-PROD" dst="PL-TIER2-WLCG"><link_ctn id="0-Tier2_8"/></route>
+		<route src="CERN-PROD" dst="RO-LCG"><link_ctn id="0-Tier2_9"/></route>
+		<route src="CERN-PROD" dst="RU-RDIG"><link_ctn id="0-Tier2_10"/></route>
+		<route src="CERN-PROD" dst="ES-LHCb-T2"><link_ctn id="0-Tier2_11"/></route>
+		<route src="CERN-PROD" dst="CH-CHIPP-CSCS"><link_ctn id="0-Tier2_12"/></route>
+		<route src="CERN-PROD" dst="UK-London-Tier2"><link_ctn id="0-Tier2_13"/></route>
+		<route src="CERN-PROD" dst="UK-NorthGrid"><link_ctn id="0-Tier2_14"/></route>
+		<route src="CERN-PROD" dst="UK-ScotGrid"><link_ctn id="0-Tier2_15"/></route>
+		<route src="CERN-PROD" dst="UK-SouthGrid"><link_ctn id="0-Tier2_16"/></route>
 
 	</AS>
 </platform>

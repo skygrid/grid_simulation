@@ -58,11 +58,11 @@ struct Job{
 
 struct InputFile{
     std::string name;
-    long events;
+    std::string events;
     std::vector<std::string> BKKPath;
     std::string DataQuality;
     std::string Replica;
-    double RunNumber;
+    std::string RunNumber;
     double Size;
     std::vector<std::string> Storages;
 };

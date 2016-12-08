@@ -113,7 +113,7 @@ int delete_unpopular_file(int argc, char* argv[]){
                 name_node->erase(filename);
             }
         }
-        if (global_queue->empty()){
+        if (GLOBAL_QUEUE->empty()){
             break;
         }
     }

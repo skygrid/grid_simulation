@@ -12,7 +12,7 @@ msg_sem_t sem_link;
 
 int declare_trace_variables(){
     string variable_name;
-    string hosts[8] = {"CERN", "CNAF", "IN2P3", "RRCKI", "PIC", "RAL", "GRIDKA", "SARA"};
+    std::string hosts[8] = {"CERN-PROD", "INFN-T1", "IN2P3-CC", "NRC-KI-T1", "pic", "RAL-LCG2", "FZK-LCG2", "NIKHEF-ELPROD"};
 
     //Declare storage variables for tracing
     for (int i = 0; i < 8; ++i) {
@@ -41,12 +41,12 @@ int declare_trace_variables(){
 
 int set_0_all_routes(){
 
-    string storage_variable;
+    std::string storage_variable;
 
     sem_link = MSG_sem_init(1);
-    string hosts[8] = {"CERN", "CNAF", "IN2P3", "RRCKI", "PIC", "RAL", "GRIDKA", "SARA"};
-    TRACE_link_srcdst_variable_set("CERN", "CERN", "directUserAmount", 0);
-    TRACE_link_srcdst_variable_set("CERN", "CERN", "indirectUserAmount", 0);
+    std::string hosts[8] = {"CERN-PROD", "INFN-T1", "IN2P3-CC", "NRC-KI-T1", "pic", "RAL-LCG2", "FZK-LCG2", "NIKHEF-ELPROD"};
+    TRACE_link_srcdst_variable_set("CERN-PROD", "CERN-PROD", "directUserAmount", 0);
+    TRACE_link_srcdst_variable_set("CERN-PROD", "CERN-PROD", "indirectUserAmount", 0);
     for (int i = 0; i < 8; ++i) {
 
         //Set all variables of hosts to initial value
@@ -69,13 +69,14 @@ int set_0_all_routes(){
         }
 
         //Set all variables of storage to initial value
+        std::string s[] = {"-TAPE", "-DISK"};
         for (int k = 0; k < 2; ++k) {
-            storage_variable = hosts[i] + to_string(k);
+            storage_variable = hosts[i] + s[k];
             msg_storage_t storage = MSG_storage_get_by_name(storage_variable.c_str());
-            TRACE_host_variable_set("CERN", storage_variable.c_str(), MSG_storage_get_used_size(storage));
+            TRACE_host_variable_set("CERN-PROD", storage_variable.c_str(), MSG_storage_get_used_size(storage));
         }
-        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnDisk", dataset_number(hosts[i], "1"));
-        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnTape", dataset_number(hosts[i], "0"));
+        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnDisk", dataset_number(hosts[i], "-DISK"));
+        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnTape", dataset_number(hosts[i], "-TAPE"));
     }
     return 0;
 }
@@ -84,7 +85,7 @@ int tracer(int argc, char* argv[]){
     //return 0;
     double day = 86400;
 
-    while (!global_queue->empty()){
+    while (!GLOBAL_QUEUE->empty()){
 
         for(auto& storage_name: storage_number_map){
             XBT_INFO(storage_name.first.c_str());

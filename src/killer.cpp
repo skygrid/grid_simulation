@@ -22,7 +22,7 @@ int killer(int argc, char* argv[]){
     msg_task_t scheduler_task = NULL;
 
     while (TRUE){
-        if (global_queue->empty()){
+        if (GLOBAL_QUEUE->empty()){
             MSG_process_sleep(100.);
 
             // Kill tier0 and tier1s
@@ -48,7 +48,7 @@ int killer(int argc, char* argv[]){
 
 int die_or_not(){
     MSG_sem_acquire(sem_requester);
-    if (global_queue->empty()){
+    if (GLOBAL_QUEUE->empty()){
         MSG_process_kill(MSG_process_self());
         MSG_sem_release(sem_requester);
     }

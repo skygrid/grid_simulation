@@ -35,7 +35,20 @@ void check_files_availability(Job* jobInfo){
         }
         MSG_file_close(file);*/
     }
+
+
+std::vector<Job*> matcher_callibration(long amountRequestJob)
+{
+    //return
 }
+
+
+
+
+
+
+
+
 
 vector<Job*>* matcher(long amountRequestedJob){
 
@@ -66,10 +79,10 @@ vector<Job*>* matcher(long amountRequestedJob){
 
 vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
 
-    int amount_of_matched_jobs = 0;
+    /*int amount_of_matched_jobs = 0;
 
     vector<Job*>* jobBatch = new vector<Job*>;
-    std::list<Job*>* local_queue = global_queue;        //create_current_queue();
+    std::list<Job*>* local_queue = GLOBAL_QUEUE;        //create_current_queue();
 
     if (amountRequestedJob > local_queue->size()){
         amountRequestedJob = local_queue->size();
@@ -85,7 +98,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
             amount_of_matched_jobs++;
             jobBatch->push_back(*i);
 
-            i = global_queue->erase(i);
+            i = GLOBAL_QUEUE->erase(i);
             continue;
         }
         string dataLocations[] = {(*i)->dataLocHost1, (*i)->dataLocHost2, (*i)->dataLocHost3, (*i)->dataLocHost4,
@@ -95,7 +108,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
                                  (*i)->storageType5, (*i)->storageType6, (*i)->storageType7, (*i)->storageType8,
                                  (*i)->storageType9, (*i)->storageType10};
 
-        int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
+        int n = (int) (*i)->InputFiles;
 
         for (int j = 0; j < n; ++j) {
             if ((!dataLocations[j].compare(host) && !storage_types[j].compare("1"))){
@@ -103,7 +116,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
                 jobBatch->push_back(*i);
 
                 amount_of_matched_jobs++;
-                i = global_queue->erase(i);
+                i = GLOBAL_QUEUE->erase(i);
                 break;
             }
         }
@@ -126,7 +139,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
         delete batch;
     }
     //delete local_queue;
-    return jobBatch;
+    return jobBatch;*/
 }
 
 
