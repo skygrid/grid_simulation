@@ -60,33 +60,31 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
     std::vector<std::string> const& inputFiles = jobInfo->InputFiles;
 
     for (size_t i = 0; i < inputFiles.size(); ++i) {
-        for (auto&x : *FILES_DATABASE) {
-            XBT_INFO(x.first.c_str());
-        }
+        XBT_INFO(inputFiles.at(i).c_str());
         std::vector<std::string> const& fileStorages = (FILES_DATABASE->at(inputFiles.at(i)))->Storages;
 
         bool disk = false;
         bool tape = false;
         for (size_t j = 0; j < fileStorages.size(); ++j) {
-            size_t len_stor = fileStorages.at(i).size();
-            const char *last_four = &fileStorages.at(i).c_str()[len_stor-4];
+            size_t len_stor = fileStorages.at(j).size();
+            const char *last_four = &fileStorages.at(j).c_str()[len_stor-4];
 
-            if (!strncmp(hostName.c_str(), fileStorages.at(i).c_str(), hostName.size()) && !strcmp(last_four, "DISK")){
-                storage = fileStorages.at(i);
+            if (!strncmp(hostName.c_str(), fileStorages.at(j).c_str(), hostName.size()) && !strcmp(last_four, "DISK")){
+                storage = fileStorages.at(j);
                 disk = true;
                 break;
             }
             else if (!strcmp(last_four, "DISK")){
-                storage = fileStorages.at(i);
+                storage = fileStorages.at(j);
                 disk = true;
                 continue;
             }
-            else if (!strncmp(hostName.c_str(), fileStorages.at(i).c_str(), hostName.size()) && !strcmp(last_four, "TAPE") && !disk) {
-                storage = fileStorages.at(i);
+            else if (!strncmp(hostName.c_str(), fileStorages.at(j).c_str(), hostName.size()) && !strcmp(last_four, "TAPE") && !disk) {
+                storage = fileStorages.at(j);
                 tape = true;
             }
             else if (!disk && !tape){
-                storage = fileStorages.at(i);
+                storage = fileStorages.at(j);
                 tape = true;
             }
         }
