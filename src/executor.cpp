@@ -60,7 +60,6 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
     std::vector<std::string> const& inputFiles = jobInfo->InputFiles;
 
     for (size_t i = 0; i < inputFiles.size(); ++i) {
-        XBT_INFO(inputFiles.at(i).c_str());
         std::vector<std::string> const& fileStorages = (FILES_DATABASE->at(inputFiles.at(i)))->Storages;
 
         bool disk = false;
@@ -93,9 +92,9 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
         inputInfo->localInputFilePath = inputFiles.at(i);
         inputInfo->storage = storage;
         inputInfo->storageType = disk;
+        inputInfo->hostName = storage.erase(storage.length()-5);
         fullPathVector->push_back(inputInfo);
     }
-
     return fullPathVector;
 }
 
@@ -126,6 +125,7 @@ int copy_tape_disk_process(int argc, char* argv[]){
 
 
 static int download_read_file_process(int argc, char* argv[]){
+
     InputAndJobInfo* data = (InputAndJobInfo*) MSG_process_get_data(MSG_process_self());
     InputInfo* inputInfo = data->inputInfo;
     Job* job = data->job;
@@ -159,7 +159,7 @@ static int download_read_file_process(int argc, char* argv[]){
             minusOneActiveCore();
             job->StartExecTime = 0;
             job->EndExecTime = 0;
-            writeToFile(fp, job);
+            writeToFile(job);
             MSG_file_close(file);
             MSG_process_kill(MSG_process_self());
         }
@@ -169,7 +169,6 @@ static int download_read_file_process(int argc, char* argv[]){
     }
 
     //Now I have data, I open and read it
-
     msg_file_t i_data = MSG_file_open(fullInputPath.c_str(), NULL);
     file_usage_counter(fullInputPath);
     MSG_file_read(i_data, (sg_size_t) MSG_file_get_size(i_data));
@@ -177,6 +176,7 @@ static int download_read_file_process(int argc, char* argv[]){
 
     delete data;
     delete inputInfo;
+    return 0;
 }
 
 int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
@@ -197,6 +197,7 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 
 void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVector){
     size_t size = inputInfoVector->size();
+    size = 1;
     for (size_t i = 0; i < size; ++i) {
         InputAndJobInfo* data = new InputAndJobInfo;
         data->job = jobInfo;
@@ -214,7 +215,10 @@ int task_executor(Job* jobInfo){
     msg_file_t outFile;
 
     // CREATING AND EXECUTION OF TASK
-    task = MSG_task_create(std::to_string(jobInfo->JobId).c_str(), jobInfo->TotalCPUTime, 0, NULL);
+
+    //task = MSG_task_create(std::to_string(jobInfo->JobId).c_str(), jobInfo->TotalCPUTime, 1, NULL);
+    task = MSG_task_create("kotok", 1e11, 1000, NULL);
+
     jobInfo->StartExecTime = MSG_get_clock();
     addActiveCoreT();
     msg_error_t b = MSG_task_execute(task);
@@ -240,14 +244,14 @@ int task_executor(Job* jobInfo){
     for (size_t i = 0; i < outputAmount; ++i) {
         std::string outputFilePath = "/" + storage_name + jobInfo->OutputFiles.at(i);
         outFile = MSG_file_open(outputFilePath.c_str(), NULL);
-        MSG_file_write(outFile, (sg_size_t) FILES_DATABASE->at(jobInfo->OutputFiles.at(i))->Size);
+        MSG_file_write(outFile, 1000000000);//(sg_size_t) FILES_DATABASE->at(jobInfo->OutputFiles.at(i))->Size);
         create_file_label(outputFilePath);
         MSG_file_close(outFile);
 
         // tracing: one new file
         dataset_number_change(storage_name, 1);
     }
-    writeToFile(fp, jobInfo);
+    writeToFile(jobInfo);
     return 0;
 }
 
@@ -277,7 +281,7 @@ void minusOneActiveCore(){
 
 int my_on_exit(void* ignored1, void *ignored2){
     Job* jobInfo = (Job*) MSG_process_get_data(MSG_process_self());
-    writeToFile(fp, jobInfo);
+    writeToFile(jobInfo);
     return 0;
 }
 

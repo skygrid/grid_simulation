@@ -15,7 +15,7 @@ int delete_unpopular_file(int argc, char* argv[]);
 int killer(int argc, char* argv[]);
 int tracer(int argc, char* argv[]);
 
-FILE* fp;
+
 msg_sem_t sem_requester;
 
 char* path_to_output;
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
     msg_error_t res = MSG_main();
     XBT_INFO("Simulation time %f", MSG_get_clock());
 
-    fclose(fp);
+    fclose(FP);
     MSG_sem_destroy(sem_requester);
     MSG_sem_destroy(sem_link);
 

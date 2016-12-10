@@ -9,13 +9,10 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(killer, "messages specific for killer");
 
 int killer(int argc, char* argv[]){
-    int tier2_amount = 16;
-    string hosts[8] = {"CERN", "CNAF", "IN2P3", "RRCKI", "PIC", "RAL", "GRIDKA", "SARA"};
-
-    string tier2s[16];
-    for (int i = 1; i < tier2_amount+1; ++i) {
-        tier2s[i-1] = "Tier2_" + to_string(i);
-    }
+    std::string hosts[8] = {"CERN-PROD", "INFN-T1", "IN2P3-CC", "NRC-KI-T1", "pic", "RAL-LCG2", "FZK-LCG2", "NIKHEF-ELPROD"};
+    std::string tier2s[] = {"FR-IN2P3-CPPM", "FR-GRIF", "FR-IN2P3-LAPP", "UK-SouthGrid",
+      "FR-IN2P3-LPC", "DE-DESY-LHCB", "IT-INFN-T2", "T2-LATINAMERICA", "PL-TIER2-WLCG",
+    "RO-LCG", "RU-RDIG", "ES-LHCb-T2", "CH-CHIPP-CSCS", "UK-London-Tier2", "UK-NorthGrid", "UK-ScotGrid"};
 
     double timeout = 1000;
     msg_task_t task = NULL;
@@ -28,13 +25,15 @@ int killer(int argc, char* argv[]){
             // Kill tier0 and tier1s
             for (int i = 0; i < 8; ++i) {
                 task = MSG_task_create("finalize", 0, MESSAGES_SIZE, NULL);
-                MSG_task_send(task, hosts[i].c_str());
+                //MSG_task_send(task, hosts[i].c_str());
+                MSG_task_dsend(task, hosts[i].c_str(), xbt_free_f);
             }
 
             // kill tier2s
-            for (int j = 1; j < tier2_amount+1; ++j) {
+            for (int j = 0; j < 15; ++j) {
                 task = MSG_task_create("finalize", 0, MESSAGES_SIZE, NULL);
-                MSG_task_send(task, tier2s[j-1].c_str());
+                //MSG_task_send(task, tier2s[j-1].c_str());
+                MSG_task_dsend(task, tier2s[j-1].c_str(), xbt_free_f);
             }
 
             scheduler_task = MSG_task_create("finalize", 0, MESSAGES_SIZE, NULL);

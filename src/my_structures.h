@@ -46,7 +46,7 @@ struct Job{
     std::string Site;
     double StartExecTime;
     std::string Status;
-    long SubmissionTime;
+    double SubmissionTime;
     float SystemPriority;
     double TotalCPUTime; // in seconds
     float UserPriority;

@@ -26,7 +26,7 @@ extern std::map<std::string, InputFile*>* FILES_DATABASE;
 extern std::list<Job*>* GLOBAL_QUEUE;
 
 extern map<string, FileData*>* name_node;
-extern FILE* fp;
+extern FILE* FP;
 extern msg_sem_t sem_link;
 extern msg_sem_t sem_requester;
 extern string current_model;
@@ -35,7 +35,7 @@ extern char* path_to_output;
 
 int data_replicator(int argc, char* argv[]);
 int job_requester();
-int writeToFile(FILE* fpx, Job* jobInfo);
+int writeToFile(Job* jobInfo);
 int clearFile();
 int writeAnomaly(double clock);
 int set_0_all_routes();

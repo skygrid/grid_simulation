@@ -11,25 +11,24 @@ int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
 
 int data_replicator(int argc, char* argv[]){
-
     Job* replica = (Job*) MSG_process_get_data(MSG_process_self());
-    size_t output_files = replica->OutputFiles.size();
-
-    for (size_t k = 0; k < output_files; ++k) {
-
-        const vector<std::string>& replica_locations = FILES_DATABASE->at(replica->OutputFiles.at(k))->Storages;
-
-        for (size_t i = 0; i < replica_locations.size(); ++i) {
-            UploadData* data = new UploadData;
-            data->filename = replica->OutputFiles.at(k);
-            data->dest = replica_locations.at(i);
-
-            MSG_process_create("upload", uploader, data, MSG_host_self());
-        }
-    }
-
-
-    MSG_process_sleep(1.1);
+//    size_t output_files = replica->OutputFiles.size();
+//
+//    for (size_t k = 0; k < output_files; ++k) {
+//
+//        const vector<std::string>& replica_locations = FILES_DATABASE->at(replica->OutputFiles.at(k))->Storages;
+//
+//        for (size_t i = 0; i < replica_locations.size(); ++i) {
+//            UploadData* data = new UploadData;
+//            data->filename = replica->OutputFiles.at(k);
+//            data->dest = replica_locations.at(i);
+//
+//            MSG_process_create("upload", uploader, data, MSG_host_self());
+//        }
+//    }
+//
+//
+//    MSG_process_sleep(1.1);
     delete replica;
     return 0;
 }
