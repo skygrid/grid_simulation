@@ -44,7 +44,7 @@ namespace YAML {
                 job.TotalCPUTime = node["TotalCPUTime(s)"].as<double>();
                 job.UserPriority = node["UserPriority"].as<float>();
                 job.WallClockTime = node["WallClockTime(s)"].as<double>();
-            }catch (YAML::BadConversion badConversion){
+            }catch (YAML::BadConversion& badConversion){
                 return false;
             }
             return true;
@@ -57,19 +57,24 @@ namespace YAML {
             if(!node.IsMap()) {
                 return false;
             }
-            std::string::size_type sz;
-            input.events = node["#events"].as<std::string>();
-            input.BKKPath = node["BKKPath"].as<std::vector<std::string>>();
-            input.DataQuality = node["DataQuality"].as<std::string>();
-            input.Replica = node["Replica"].as<std::string>();
-            input.RunNumber = node["RunNumber"].as<std::string>();
+            try {
+                std::string::size_type sz;
+                input.events = node["#events"].as<std::string>();
+                input.BKKPath = node["BKKPath"].as<std::vector<std::string>>();
+                input.DataQuality = node["DataQuality"].as<std::string>();
+                input.Replica = node["Replica"].as<std::string>();
+                input.RunNumber = node["RunNumber"].as<std::string>();
 
-            if (node["Size"].as<std::string>().compare("None") != 0){
-                input.Size = node["Size"].as<double>();
-            } else input.Size = 0;
+                if (node["Size"].as<std::string>().compare("None") != 0){
+                    input.Size = node["Size"].as<double>();
+                } else input.Size = 0;
 
+                input.Storages = node["Storages"].as<std::vector<std::string>>();
 
-            input.Storages = node["Storages"].as<std::vector<std::string>>();
+            }catch (YAML::BadConversion& badConversion){
+                return false;
+            }
+
             return true;
         }
     };
@@ -81,11 +86,19 @@ static int parse_input_data(){
     YAML::Node root = YAML::LoadFile("InputData/bkk.yml");
 
     for (auto it = root.begin(); it != root.end(); ++it) {
-        InputFile* infl = new InputFile;
-        *infl = it->second.as<InputFile>();
-        std::string key = it->first.as<std::string>();
-        infl->name = key;
-        FILES_DATABASE->insert(make_pair(key, infl));
+        try {
+            InputFile* infl = new InputFile;
+            *infl = it->second.as<InputFile>();
+            std::string key = it->first.as<std::string>();
+            infl->name = key;
+            FILES_DATABASE->insert(make_pair(key, infl));
+        }catch (YAML::TypedBadConversion<InputFile>& badConversion){
+            XBT_INFO("INVALID INPUT DATA:YAML");
+        }catch (YAML::InvalidNode& node){
+            XBT_INFO("INVALID NODE:YAML");
+        }
+
+
     }
     return 0;
 }
