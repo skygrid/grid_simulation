@@ -27,23 +27,26 @@ namespace YAML {
             }
             std::string::size_type sz;
 
-            job.EndExecTime = node["EndExecTime"].as<double>();
-            job.Federation = node["Federation"].as<std::string>();
-            job.InputFiles = node["InputFiles"].as<std::vector<std::string>>();
-            job.JobGroup = node["JobGroup"].as<std::string>();
-            job.JobType = node["JobType"].as<std::string>();
-            job.LocalJobID = std::stol(node["LocalJobID"].as<std::string>(), &sz);
-            job.OutputFiles = node["OutputFiles"].as<std::vector<std::string>>();
-            job.RescheduleTime = node["RescheduleTime"].as<std::string>();
-            job.Site = node["Site"].as<std::string>();
-            job.StartExecTime = node["StartExecTime"].as<double>();
-            job.Status = node["Status"].as<std::string>();
-            job.SubmissionTime = std::stol(node["SubmissionTime"].as<std::string>(), &sz);
-            job.SystemPriority = node["SystemPriority"].as<float>();
-            job.TotalCPUTime = node["TotalCPUTime(s)"].as<double>();
-            job.UserPriority = node["UserPriority"].as<float>();
-            job.WallClockTime = node["WallClockTime(s)"].as<double>();
-
+            try {
+                job.EndExecTime = node["EndExecTime"].as<double>();
+                job.Federation = node["Federation"].as<std::string>();
+                job.InputFiles = node["InputFiles"].as<std::vector<std::string>>();
+                job.JobGroup = node["JobGroup"].as<std::string>();
+                job.JobType = node["JobType"].as<std::string>();
+                job.LocalJobID = node["LocalJobID"].as<std::string>();
+                job.OutputFiles = node["OutputFiles"].as<std::vector<std::string>>();
+                job.RescheduleTime = node["RescheduleTime"].as<std::string>();
+                job.Site = node["Site"].as<std::string>();
+                job.StartExecTime = node["StartExecTime"].as<double>();
+                job.Status = node["Status"].as<std::string>();
+                job.SubmissionTime = std::stol(node["SubmissionTime"].as<std::string>(), &sz);
+                job.SystemPriority = node["SystemPriority"].as<float>();
+                job.TotalCPUTime = node["TotalCPUTime(s)"].as<double>();
+                job.UserPriority = node["UserPriority"].as<float>();
+                job.WallClockTime = node["WallClockTime(s)"].as<double>();
+            }catch (YAML::BadConversion badConversion){
+                return false;
+            }
             return true;
         }
     };
@@ -75,7 +78,7 @@ namespace YAML {
 static int parse_input_data(){
 
     FILES_DATABASE = new map<std::string, InputFile*>;
-    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/little_data.yml");
+    YAML::Node root = YAML::LoadFile("InputData/bkk.yml");
 
     for (auto it = root.begin(); it != root.end(); ++it) {
         InputFile* infl = new InputFile;
@@ -90,15 +93,22 @@ static int parse_input_data(){
 static int parse_jobs() {
 
     GLOBAL_QUEUE = new std::list<Job*>;
-    YAML::Node root = YAML::LoadFile("/home/ken/LHCb/grid_simulation/InputData/little_jobs.yml");
+    YAML::Node root = YAML::LoadFile("InputData/jobs.yml");
 
     for (auto it = root.begin(); it != root.end(); ++it) {
-        Job* job = new Job;
-        *job = it->second.as<Job>();
-        long key = it->first.as<long>();
-        job->JobId = key;
-        job->type = charToEnum(job->JobType);
-        GLOBAL_QUEUE->push_back(job);
+        try {
+            Job* job = new Job;
+            *job = it->second.as<Job>();
+            long key = it->first.as<long>();
+            job->JobId = key;
+            job->type = charToEnum(job->JobType);
+            GLOBAL_QUEUE->push_back(job);
+        }catch(YAML::TypedBadConversion<Job>& badConversion) {
+            XBT_INFO("INVALID JOB");
+        }catch (YAML::InvalidNode& node){
+            XBT_INFO("INVALID NODE");
+        }
+
     }
 
     return 0;

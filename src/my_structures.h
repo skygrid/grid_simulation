@@ -40,7 +40,7 @@ struct Job{
     std::string JobGroup;
     std::string JobType;
     jobType type;
-    long LocalJobID;
+    std::string LocalJobID;
     std::vector<std::string> OutputFiles;
     std::string RescheduleTime;
     std::string Site;
