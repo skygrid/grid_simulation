@@ -197,7 +197,6 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 
 void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVector){
     size_t size = inputInfoVector->size();
-    size = 1;
     for (size_t i = 0; i < size; ++i) {
         InputAndJobInfo* data = new InputAndJobInfo;
         data->job = jobInfo;
@@ -244,7 +243,7 @@ int task_executor(Job* jobInfo){
     for (size_t i = 0; i < outputAmount; ++i) {
         std::string outputFilePath = "/" + storage_name + jobInfo->OutputFiles.at(i);
         outFile = MSG_file_open(outputFilePath.c_str(), NULL);
-        MSG_file_write(outFile, 1000000000);//(sg_size_t) FILES_DATABASE->at(jobInfo->OutputFiles.at(i))->Size);
+        MSG_file_write(outFile, (sg_size_t) FILES_DATABASE->at(jobInfo->OutputFiles.at(i))->Size);
         create_file_label(outputFilePath);
         MSG_file_close(outFile);
 
