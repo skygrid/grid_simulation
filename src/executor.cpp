@@ -61,7 +61,15 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
     std::vector<std::string> const& inputFiles = jobInfo->InputFiles;
 
     for (size_t i = 0; i < inputFiles.size(); ++i) {
-        std::vector<std::string> const& fileStorages = (FILES_DATABASE->at(inputFiles.at(i)))->Storages;
+        InputFile* infl;
+
+        try {
+            infl = FILES_DATABASE->at(inputFiles.at(i));
+        }catch (const std::out_of_range& e){
+            continue;
+        }
+
+        std::vector<std::string> const& fileStorages = infl->Storages;
 
         std::string storage;
         bool disk = false;
