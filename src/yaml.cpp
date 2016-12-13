@@ -83,7 +83,7 @@ namespace YAML {
 static int parse_input_data(){
 
     FILES_DATABASE = new map<std::string, InputFile*>;
-    YAML::Node root = YAML::LoadFile("InputData/little_data.yml");
+    YAML::Node root = YAML::LoadFile("InputData/bkk.yml");
 
     for (auto it = root.begin(); it != root.end(); ++it) {
         try {
@@ -106,8 +106,8 @@ static int parse_input_data(){
 static int parse_jobs() {
 
     GLOBAL_QUEUE = new std::list<Job*>;
-    YAML::Node root = YAML::LoadFile("InputData/little_jobs.yml");
-
+    YAML::Node root = YAML::LoadFile("InputData/jobs.yml");
+    int i = 0;
     for (auto it = root.begin(); it != root.end(); ++it) {
         try {
             Job* job = new Job;
@@ -117,9 +117,9 @@ static int parse_jobs() {
             job->type = charToEnum(job->JobType);
             GLOBAL_QUEUE->push_back(job);
         }catch(YAML::TypedBadConversion<Job>& badConversion) {
-            XBT_INFO("INVALID JOB");
+            //XBT_INFO("INVALID JOB");
         }catch (YAML::InvalidNode& node){
-            XBT_INFO("INVALID NODE");
+            //XBT_INFO("INVALID NODE %s", it->first.as<std::string>().c_str());
         }
 
     }

@@ -24,6 +24,8 @@ static int download_read_file_process(int argc, char* argv[]);
 extern map<std::string, double> cumulative_input_site;
 extern map<std::string, double> cumulative_output_site;
 
+static msg_bar_t barrier;
+
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
@@ -37,6 +39,7 @@ int executor(int argc, char* argv[]){
             break;
         default:
             std::vector<InputInfo*>* fullPathVector = get_input_file_path(job);
+            barrier = MSG_barrier_init((unsigned int) fullPathVector->size());
             copy_from_tape_to_disk(fullPathVector);
             download_or_read_file(job, fullPathVector);
             break;
@@ -55,15 +58,15 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
     std::vector<InputInfo*>* fullPathVector = new std::vector<InputInfo*>; // return type
     std::string hostName = string(MSG_host_get_name(MSG_host_self()));
 
-    std::string storage; // From which storage I should download data
-
     std::vector<std::string> const& inputFiles = jobInfo->InputFiles;
 
     for (size_t i = 0; i < inputFiles.size(); ++i) {
         std::vector<std::string> const& fileStorages = (FILES_DATABASE->at(inputFiles.at(i)))->Storages;
 
+        std::string storage;
         bool disk = false;
         bool tape = false;
+
         for (size_t j = 0; j < fileStorages.size(); ++j) {
             size_t len_stor = fileStorages.at(j).size();
             const char *last_four = &fileStorages.at(j).c_str()[len_stor-4];
@@ -88,12 +91,14 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
             }
         }
 
-        InputInfo* inputInfo = new InputInfo;
-        inputInfo->localInputFilePath = inputFiles.at(i);
-        inputInfo->storage = storage;
-        inputInfo->storageType = disk;
-        inputInfo->hostName = storage.erase(storage.length()-5);
-        fullPathVector->push_back(inputInfo);
+        if (!storage.empty()){
+            InputInfo* inputInfo = new InputInfo;
+            inputInfo->localInputFilePath = inputFiles.at(i);
+            inputInfo->storage = storage;
+            inputInfo->storageType = disk;
+            inputInfo->hostName = storage.erase(storage.length()-5);
+            fullPathVector->push_back(inputInfo);
+        }
     }
     return fullPathVector;
 }
@@ -173,7 +178,7 @@ static int download_read_file_process(int argc, char* argv[]){
     file_usage_counter(fullInputPath);
     MSG_file_read(i_data, (sg_size_t) MSG_file_get_size(i_data));
     MSG_file_close(i_data);
-
+    MSG_barrier_wait(barrier);
     delete data;
     delete inputInfo;
     return 0;
@@ -186,7 +191,7 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
     for (size_t i = 0; i < fileAmount; ++i) {
         InputInfo* inputInfo = inputInfoVector->at(i);
 
-        if (!inputInfo->storageType){
+        if (!inputInfo->storageType && (!inputInfo->storage.empty())){
             MSG_process_create("copytodisk", copy_tape_disk_process, inputInfo, MSG_host_self());
         }
     }
@@ -201,7 +206,10 @@ void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVecto
         InputAndJobInfo* data = new InputAndJobInfo;
         data->job = jobInfo;
         data->inputInfo = inputInfoVector->at(i);
-        MSG_process_create("reader", download_read_file_process, data, MSG_host_self());
+
+        if (!inputInfoVector->at(i)->storage.empty()){
+            MSG_process_create("reader", download_read_file_process, data, MSG_host_self());
+        }
     }
     return;
 }
@@ -283,4 +291,5 @@ int my_on_exit(void* ignored1, void *ignored2){
     writeToFile(jobInfo);
     return 0;
 }
+
 
