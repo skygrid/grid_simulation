@@ -257,9 +257,17 @@ int task_executor(Job* jobInfo){
     //Create and write outputs file
     size_t outputAmount = jobInfo->OutputFiles.size();
     for (size_t i = 0; i < outputAmount; ++i) {
+
+        InputFile* infl;
+        try {
+            infl = FILES_DATABASE->at(jobInfo->OutputFiles.at(i));
+        }catch (const std::out_of_range& e){
+            continue;
+        }
+
         std::string outputFilePath = "/" + storage_name + jobInfo->OutputFiles.at(i);
         outFile = MSG_file_open(outputFilePath.c_str(), NULL);
-        MSG_file_write(outFile, (sg_size_t) FILES_DATABASE->at(jobInfo->OutputFiles.at(i))->Size);
+        MSG_file_write(outFile, (sg_size_t) infl->Size);
         create_file_label(outputFilePath);
         MSG_file_close(outFile);
 
