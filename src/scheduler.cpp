@@ -29,9 +29,9 @@ int scheduler(int argc, char* argv[]){
 
             //XBT_INFO("Get job request from %s", MSG_host_get_name(MSG_task_get_source(task)));
             JobBatchRequest* batchRequest = (JobBatchRequest*) MSG_task_get_data(task);
-            vector<Job*>* batch;
+            std::vector<Job*>* batch;
 
-            string request_host = MSG_host_get_name(MSG_task_get_source(task));
+            std::string request_host = MSG_host_get_name(MSG_task_get_source(task));
             // Tier2 matcher
             int tier2 = !strncmp(request_host.c_str(), "Tier2", 5); // is tier2 or not
 
@@ -39,7 +39,8 @@ int scheduler(int argc, char* argv[]){
                 batch = matcher_tier2(batchRequest->coreAmount, request_host);
             }
             else if (!current_model.compare("simple")){
-                batch = matcher(batchRequest->coreAmount);
+                //batch = matcher(batchRequest->coreAmount);
+                batch = matcher_calibration(batchRequest->coreAmount, request_host);
             }else {
                 batch = matcher_DAM(batchRequest->coreAmount, request_host);
             }

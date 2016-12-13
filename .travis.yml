@@ -27,6 +27,8 @@ before_install:
   - sudo make
   - sudo make install
   - cd ..
+
+  - git clone
   
   - wget -O csvparser.zip https://sourceforge.net/projects/cccsvparser/files/2016-03-28/CsvParser_2016_03_28.zip/download
   - unzip csvparser.zip

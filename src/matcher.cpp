@@ -10,47 +10,41 @@ using namespace std;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
+std::vector<Job*>* matcher_calibration(long amountRequestedJob, const std::string& hostname)
+{
+    int amount_of_matched_jobs = 0;
+    double clock = MSG_get_clock();
 
-void check_files_availability(Job* jobInfo){
-    /*string input_file_path;
-    msg_file_t file;
+    std::vector<Job*>* jobBatch = new std::vector<Job*>;
+    std::list<Job*>* local_queue = GLOBAL_QUEUE;
 
-
-    jobInfo->InputFiles =
-
-    int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
-
-    for (int i = 0; i < n; ++i) {
-        if (!(*dataLocations[i]).compare("0")){
-            continue;
-        }
-
-        input_file_path = "/" + *dataLocations[i] + *storageTypes[i] + "/" + jobInfo->inputFileName;
-        if (!input_file_path.compare("/CNAF1/dataset66")){
-            XBT_INFO("sigein");
-        }
-        file = MSG_file_open(input_file_path.c_str(), NULL);
-        if (MSG_file_get_size(file) == 0){
-            *dataLocations[i] = "0";
-        }
-        MSG_file_close(file);*/
+    if (local_queue->size() < amountRequestedJob){
+        amountRequestedJob = local_queue->size();
     }
 
+    for (auto job = local_queue->begin(); job != local_queue->end() && amount_of_matched_jobs < amountRequestedJob && (*job)->SubmissionTime < clock;) {
 
-std::vector<Job*> matcher_callibration(long amountRequestJob)
-{
-    //return
+        auto job_ptr = *job;
+        if (job_ptr->Federation.compare(hostname)){
+            job_ptr->startSchedulClock = MSG_get_clock();
+            job_ptr->StartExecTime = 0;
+            job_ptr->EndExecTime = 0;
+            job_ptr->successExecuted = 0;
+
+            jobBatch->push_back(*job);
+            amount_of_matched_jobs++;
+
+            job = GLOBAL_QUEUE->erase(job);
+        } else{
+            job++;
+        }
+    }
+
+    return jobBatch;
 }
 
 
-
-
-
-
-
-
-
-vector<Job*>* matcher(long amountRequestedJob){
+std::vector<Job*>* matcher(long amountRequestedJob){
 
     int amount_of_matched_jobs = 0;
 
@@ -77,7 +71,7 @@ vector<Job*>* matcher(long amountRequestedJob){
     return jobBatch;
 }
 
-vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
+std::vector<Job*>* matcher_DAM(long amountRequestedJob, const string& host){
 
     /*int amount_of_matched_jobs = 0;
 
@@ -142,8 +136,7 @@ vector<Job*>* matcher_DAM(long amountRequestedJob, const string host){
     return jobBatch;*/
 }
 
-
-vector<Job*>* matcher_tier2(long amountRequestedJob, const string host){
+std::vector<Job*>* matcher_tier2(long amountRequestedJob, const string& host){
     int amount_of_matched_jobs = 0;
 
     vector<Job*>* jobBatch = new vector<Job*>;
@@ -167,9 +160,7 @@ vector<Job*>* matcher_tier2(long amountRequestedJob, const string host){
     return jobBatch;
 }
 
-
-
-list<Job*>* create_current_queue(){
+std::list<Job*>* create_current_queue(){
     std::list<Job*>* local_queue = new list<Job*>;
 
     for (auto it = GLOBAL_QUEUE->begin(); it != GLOBAL_QUEUE->end(); ++it) {
@@ -181,4 +172,28 @@ list<Job*>* create_current_queue(){
     return local_queue;
 }
 
+void check_files_availability(Job* jobInfo){
+    /*string input_file_path;
+    msg_file_t file;
+
+
+    jobInfo->InputFiles =
+
+    int n = (int) sizeof(dataLocations) / sizeof(dataLocations[0]);
+
+    for (int i = 0; i < n; ++i) {
+        if (!(*dataLocations[i]).compare("0")){
+            continue;
+        }
+
+        input_file_path = "/" + *dataLocations[i] + *storageTypes[i] + "/" + jobInfo->inputFileName;
+        if (!input_file_path.compare("/CNAF1/dataset66")){
+            XBT_INFO("sigein");
+        }
+        file = MSG_file_open(input_file_path.c_str(), NULL);
+        if (MSG_file_get_size(file) == 0){
+            *dataLocations[i] = "0";
+        }
+        MSG_file_close(file);*/
+}
 

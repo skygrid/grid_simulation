@@ -98,7 +98,6 @@ static int parse_input_data(){
             XBT_INFO("INVALID NODE:YAML");
         }
 
-
     }
     return 0;
 }
