@@ -90,8 +90,8 @@ int tracer(int argc, char* argv[]){
         for(auto& storage_name: storage_number_map){
             XBT_INFO(storage_name.first.c_str());
 
-            const char* hostname = storage_name.first.substr(0, storage_name.first.size()-1).c_str();
-            if (storage_name.first.back() == '1'){
+            const char* hostname = storage_name.first.substr(0, storage_name.first.size()-5).c_str();
+            if (storage_name.first.back() == 'K'){
                 TRACE_host_variable_set(hostname, "datasetOnDisk", storage_name.second);
             }else{
                 TRACE_host_variable_set(hostname, "datasetOnTape", storage_name.second);

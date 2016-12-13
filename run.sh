@@ -4,7 +4,7 @@ make
 sudo ./CSim2Sim platform/platform.xml \
 platform/deployment.xml \
 trash/out.txt \
-simple\
+simple \
 --cfg=contexts/nthreads:1 \
 --cfg=tracing:yes \
 --cfg=tracing/platform:yes \
