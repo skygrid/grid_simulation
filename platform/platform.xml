@@ -1776,6 +1776,144 @@
 		<link id="7-Tier2_16" bandwidth="1GBps" latency="0ms"/>
 
 
+		<!--TIER2-TIER2 LINKS-->
+		<link id="Tier2_1-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_1-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_2-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_2-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_3-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_3-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_4-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_4-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_5-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_5-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_6-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_6-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_7-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_7-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_8-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_8-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_8-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_8-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_8-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_8-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_8-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_8-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_9-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_9-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_9-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_9-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_9-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_9-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_9-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_10-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_10-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_10-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_10-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_10-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_10-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_11-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_11-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_11-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_11-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_11-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_12-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_12-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_12-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_12-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_13-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_13-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_13-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_14-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="Tier2_14-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="Tier2_15-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+
+
 		<!--routes between TIER1-TIER1-->
 
 		<!--DIRECT 3 ROUTES-->
@@ -2004,6 +2142,143 @@
 		<route src="RAL-LCG2" dst="UK-NorthGrid"><link_ctn id="7-Tier2_14"/></route>
 		<route src="RAL-LCG2" dst="UK-ScotGrid"><link_ctn id="7-Tier2_15"/></route>
 		<route src="RAL-LCG2" dst="UK-SouthGrid"><link_ctn id="7-Tier2_16"/></route>
+
+		<!--routes between TIER2s and TIER2s -->
+		<route src="FR-IN2P3-CPPM" dst="FR-GRIF"><link_ctn id="Tier2_1-Tier2_2"/></route>
+		<route src="FR-IN2P3-CPPM" dst="FR-IN2P3-LAPP"><link_ctn id="Tier2_1-Tier2_3"/></route>
+		<route src="FR-IN2P3-CPPM" dst="FR-IN2P3-LPC"><link_ctn id="Tier2_1-Tier2_4"/></route>
+		<route src="FR-IN2P3-CPPM" dst="DE-DESY-LHCB"><link_ctn id="Tier2_1-Tier2_5"/></route>
+		<route src="FR-IN2P3-CPPM" dst="IT-INFN-T2"><link_ctn id="Tier2_1-Tier2_6"/></route>
+		<route src="FR-IN2P3-CPPM" dst="T2-LATINAMERICA"><link_ctn id="Tier2_1-Tier2_7"/></route>
+		<route src="FR-IN2P3-CPPM" dst="PL-TIER2-WLCG"><link_ctn id="Tier2_1-Tier2_8"/></route>
+		<route src="FR-IN2P3-CPPM" dst="RO-LCG"><link_ctn id="Tier2_1-Tier2_9"/></route>
+		<route src="FR-IN2P3-CPPM" dst="RU-RDIG"><link_ctn id="Tier2_1-Tier2_10"/></route>
+		<route src="FR-IN2P3-CPPM" dst="ES-LHCb-T2"><link_ctn id="Tier2_1-Tier2_11"/></route>
+		<route src="FR-IN2P3-CPPM" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_1-Tier2_12"/></route>
+		<route src="FR-IN2P3-CPPM" dst="UK-London-Tier2"><link_ctn id="Tier2_1-Tier2_13"/></route>
+		<route src="FR-IN2P3-CPPM" dst="UK-NorthGrid"><link_ctn id="Tier2_1-Tier2_14"/></route>
+		<route src="FR-IN2P3-CPPM" dst="UK-ScotGrid"><link_ctn id="Tier2_1-Tier2_15"/></route>
+		<route src="FR-IN2P3-CPPM" dst="UK-SouthGrid"><link_ctn id="Tier2_1-Tier2_16"/></route>
+
+		<route src="FR-GRIF" dst="FR-IN2P3-LAPP"><link_ctn id="Tier2_2-Tier2_3"/></route>
+		<route src="FR-GRIF" dst="FR-IN2P3-LPC"><link_ctn id="Tier2_2-Tier2_4"/></route>
+		<route src="FR-GRIF" dst="DE-DESY-LHCB"><link_ctn id="Tier2_2-Tier2_5"/></route>
+		<route src="FR-GRIF" dst="IT-INFN-T2"><link_ctn id="Tier2_2-Tier2_6"/></route>
+		<route src="FR-GRIF" dst="T2-LATINAMERICA"><link_ctn id="Tier2_2-Tier2_7"/></route>
+		<route src="FR-GRIF" dst="PL-TIER2-WLCG"><link_ctn id="Tier2_2-Tier2_8"/></route>
+		<route src="FR-GRIF" dst="RO-LCG"><link_ctn id="Tier2_2-Tier2_9"/></route>
+		<route src="FR-GRIF" dst="RU-RDIG"><link_ctn id="Tier2_2-Tier2_10"/></route>
+		<route src="FR-GRIF" dst="ES-LHCb-T2"><link_ctn id="Tier2_2-Tier2_11"/></route>
+		<route src="FR-GRIF" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_2-Tier2_12"/></route>
+		<route src="FR-GRIF" dst="UK-London-Tier2"><link_ctn id="Tier2_2-Tier2_13"/></route>
+		<route src="FR-GRIF" dst="UK-NorthGrid"><link_ctn id="Tier2_2-Tier2_14"/></route>
+		<route src="FR-GRIF" dst="UK-ScotGrid"><link_ctn id="Tier2_2-Tier2_15"/></route>
+		<route src="FR-GRIF" dst="UK-SouthGrid"><link_ctn id="Tier2_2-Tier2_16"/></route>
+
+		<route src="FR-IN2P3-LAPP" dst="FR-IN2P3-LPC"><link_ctn id="Tier2_3-Tier2_4"/></route>
+		<route src="FR-IN2P3-LAPP" dst="DE-DESY-LHCB"><link_ctn id="Tier2_3-Tier2_5"/></route>
+		<route src="FR-IN2P3-LAPP" dst="IT-INFN-T2"><link_ctn id="Tier2_3-Tier2_6"/></route>
+		<route src="FR-IN2P3-LAPP" dst="T2-LATINAMERICA"><link_ctn id="Tier2_3-Tier2_7"/></route>
+		<route src="FR-IN2P3-LAPP" dst="PL-TIER2-WLCG"><link_ctn id="Tier2_3-Tier2_8"/></route>
+		<route src="FR-IN2P3-LAPP" dst="RO-LCG"><link_ctn id="Tier2_3-Tier2_9"/></route>
+		<route src="FR-IN2P3-LAPP" dst="RU-RDIG"><link_ctn id="Tier2_3-Tier2_10"/></route>
+		<route src="FR-IN2P3-LAPP" dst="ES-LHCb-T2"><link_ctn id="Tier2_3-Tier2_11"/></route>
+		<route src="FR-IN2P3-LAPP" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_3-Tier2_12"/></route>
+		<route src="FR-IN2P3-LAPP" dst="UK-London-Tier2"><link_ctn id="Tier2_3-Tier2_13"/></route>
+		<route src="FR-IN2P3-LAPP" dst="UK-NorthGrid"><link_ctn id="Tier2_3-Tier2_14"/></route>
+		<route src="FR-IN2P3-LAPP" dst="UK-ScotGrid"><link_ctn id="Tier2_3-Tier2_15"/></route>
+		<route src="FR-IN2P3-LAPP" dst="UK-SouthGrid"><link_ctn id="Tier2_3-Tier2_16"/></route>
+
+		<route src="FR-IN2P3-LPC" dst="DE-DESY-LHCB"><link_ctn id="Tier2_4-Tier2_5"/></route>
+		<route src="FR-IN2P3-LPC" dst="IT-INFN-T2"><link_ctn id="Tier2_4-Tier2_6"/></route>
+		<route src="FR-IN2P3-LPC" dst="T2-LATINAMERICA"><link_ctn id="Tier2_4-Tier2_7"/></route>
+		<route src="FR-IN2P3-LPC" dst="PL-TIER2-WLCG"><link_ctn id="Tier2_4-Tier2_8"/></route>
+		<route src="FR-IN2P3-LPC" dst="RO-LCG"><link_ctn id="Tier2_4-Tier2_9"/></route>
+		<route src="FR-IN2P3-LPC" dst="RU-RDIG"><link_ctn id="Tier2_4-Tier2_10"/></route>
+		<route src="FR-IN2P3-LPC" dst="ES-LHCb-T2"><link_ctn id="Tier2_4-Tier2_11"/></route>
+		<route src="FR-IN2P3-LPC" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_4-Tier2_12"/></route>
+		<route src="FR-IN2P3-LPC" dst="UK-London-Tier2"><link_ctn id="Tier2_4-Tier2_13"/></route>
+		<route src="FR-IN2P3-LPC" dst="UK-NorthGrid"><link_ctn id="Tier2_4-Tier2_14"/></route>
+		<route src="FR-IN2P3-LPC" dst="UK-ScotGrid"><link_ctn id="Tier2_4-Tier2_15"/></route>
+		<route src="FR-IN2P3-LPC" dst="UK-SouthGrid"><link_ctn id="Tier2_4-Tier2_16"/></route>
+
+		<route src="DE-DESY-LHCB" dst="IT-INFN-T2"><link_ctn id="Tier2_5-Tier2_6"/></route>
+		<route src="DE-DESY-LHCB" dst="T2-LATINAMERICA"><link_ctn id="Tier2_5-Tier2_7"/></route>
+		<route src="DE-DESY-LHCB" dst="PL-TIER2-WLCG"><link_ctn id="Tier2_5-Tier2_8"/></route>
+		<route src="DE-DESY-LHCB" dst="RO-LCG"><link_ctn id="Tier2_5-Tier2_9"/></route>
+		<route src="DE-DESY-LHCB" dst="RU-RDIG"><link_ctn id="Tier2_5-Tier2_10"/></route>
+		<route src="DE-DESY-LHCB" dst="ES-LHCb-T2"><link_ctn id="Tier2_5-Tier2_11"/></route>
+		<route src="DE-DESY-LHCB" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_5-Tier2_12"/></route>
+		<route src="DE-DESY-LHCB" dst="UK-London-Tier2"><link_ctn id="Tier2_5-Tier2_13"/></route>
+		<route src="DE-DESY-LHCB" dst="UK-NorthGrid"><link_ctn id="Tier2_5-Tier2_14"/></route>
+		<route src="DE-DESY-LHCB" dst="UK-ScotGrid"><link_ctn id="Tier2_5-Tier2_15"/></route>
+		<route src="DE-DESY-LHCB" dst="UK-SouthGrid"><link_ctn id="Tier2_5-Tier2_16"/></route>
+
+		<route src="IT-INFN-T2" dst="T2-LATINAMERICA"><link_ctn id="Tier2_6-Tier2_7"/></route>
+		<route src="IT-INFN-T2" dst="PL-TIER2-WLCG"><link_ctn id="Tier2_6-Tier2_8"/></route>
+		<route src="IT-INFN-T2" dst="RO-LCG"><link_ctn id="Tier2_6-Tier2_9"/></route>
+		<route src="IT-INFN-T2" dst="RU-RDIG"><link_ctn id="Tier2_6-Tier2_10"/></route>
+		<route src="IT-INFN-T2" dst="ES-LHCb-T2"><link_ctn id="Tier2_6-Tier2_11"/></route>
+		<route src="IT-INFN-T2" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_6-Tier2_12"/></route>
+		<route src="IT-INFN-T2" dst="UK-London-Tier2"><link_ctn id="Tier2_6-Tier2_13"/></route>
+		<route src="IT-INFN-T2" dst="UK-NorthGrid"><link_ctn id="Tier2_6-Tier2_14"/></route>
+		<route src="IT-INFN-T2" dst="UK-ScotGrid"><link_ctn id="Tier2_6-Tier2_15"/></route>
+		<route src="IT-INFN-T2" dst="UK-SouthGrid"><link_ctn id="Tier2_6-Tier2_16"/></route>
+
+		<route src="T2-LATINAMERICA" dst="PL-TIER2-WLCG"><link_ctn id="Tier2_7-Tier2_8"/></route>
+		<route src="T2-LATINAMERICA" dst="RO-LCG"><link_ctn id="Tier2_7-Tier2_9"/></route>
+		<route src="T2-LATINAMERICA" dst="RU-RDIG"><link_ctn id="Tier2_7-Tier2_10"/></route>
+		<route src="T2-LATINAMERICA" dst="ES-LHCb-T2"><link_ctn id="Tier2_7-Tier2_11"/></route>
+		<route src="T2-LATINAMERICA" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_7-Tier2_12"/></route>
+		<route src="T2-LATINAMERICA" dst="UK-London-Tier2"><link_ctn id="Tier2_7-Tier2_13"/></route>
+		<route src="T2-LATINAMERICA" dst="UK-NorthGrid"><link_ctn id="Tier2_7-Tier2_14"/></route>
+		<route src="T2-LATINAMERICA" dst="UK-ScotGrid"><link_ctn id="Tier2_7-Tier2_15"/></route>
+		<route src="T2-LATINAMERICA" dst="UK-SouthGrid"><link_ctn id="Tier2_7-Tier2_16"/></route>
+
+		<route src="PL-TIER2-WLCG" dst="RO-LCG"><link_ctn id="Tier2_8-Tier2_9"/></route>
+		<route src="PL-TIER2-WLCG" dst="RU-RDIG"><link_ctn id="Tier2_8-Tier2_10"/></route>
+		<route src="PL-TIER2-WLCG" dst="ES-LHCb-T2"><link_ctn id="Tier2_8-Tier2_11"/></route>
+		<route src="PL-TIER2-WLCG" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_8-Tier2_12"/></route>
+		<route src="PL-TIER2-WLCG" dst="UK-London-Tier2"><link_ctn id="Tier2_8-Tier2_13"/></route>
+		<route src="PL-TIER2-WLCG" dst="UK-NorthGrid"><link_ctn id="Tier2_8-Tier2_14"/></route>
+		<route src="PL-TIER2-WLCG" dst="UK-ScotGrid"><link_ctn id="Tier2_8-Tier2_15"/></route>
+		<route src="PL-TIER2-WLCG" dst="UK-SouthGrid"><link_ctn id="Tier2_8-Tier2_16"/></route>
+
+		<route src="RO-LCG" dst="RU-RDIG"><link_ctn id="Tier2_9-Tier2_10"/></route>
+		<route src="RO-LCG" dst="ES-LHCb-T2"><link_ctn id="Tier2_9-Tier2_11"/></route>
+		<route src="RO-LCG" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_9-Tier2_12"/></route>
+		<route src="RO-LCG" dst="UK-London-Tier2"><link_ctn id="Tier2_9-Tier2_13"/></route>
+		<route src="RO-LCG" dst="UK-NorthGrid"><link_ctn id="Tier2_9-Tier2_14"/></route>
+		<route src="RO-LCG" dst="UK-ScotGrid"><link_ctn id="Tier2_9-Tier2_15"/></route>
+		<route src="RO-LCG" dst="UK-SouthGrid"><link_ctn id="Tier2_9-Tier2_16"/></route>
+
+		<route src="RU-RDIG" dst="ES-LHCb-T2"><link_ctn id="Tier2_10-Tier2_11"/></route>
+		<route src="RU-RDIG" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_10-Tier2_12"/></route>
+		<route src="RU-RDIG" dst="UK-London-Tier2"><link_ctn id="Tier2_10-Tier2_13"/></route>
+		<route src="RU-RDIG" dst="UK-NorthGrid"><link_ctn id="Tier2_10-Tier2_14"/></route>
+		<route src="RU-RDIG" dst="UK-ScotGrid"><link_ctn id="Tier2_10-Tier2_15"/></route>
+		<route src="RU-RDIG" dst="UK-SouthGrid"><link_ctn id="Tier2_10-Tier2_16"/></route>
+
+		<route src="ES-LHCb-T2" dst="CH-CHIPP-CSCS"><link_ctn id="Tier2_11-Tier2_12"/></route>
+		<route src="ES-LHCb-T2" dst="UK-London-Tier2"><link_ctn id="Tier2_11-Tier2_13"/></route>
+		<route src="ES-LHCb-T2" dst="UK-NorthGrid"><link_ctn id="Tier2_11-Tier2_14"/></route>
+		<route src="ES-LHCb-T2" dst="UK-ScotGrid"><link_ctn id="Tier2_11-Tier2_15"/></route>
+		<route src="ES-LHCb-T2" dst="UK-SouthGrid"><link_ctn id="Tier2_11-Tier2_16"/></route>
+
+		<route src="CH-CHIPP-CSCS" dst="UK-London-Tier2"><link_ctn id="Tier2_12-Tier2_13"/></route>
+		<route src="CH-CHIPP-CSCS" dst="UK-NorthGrid"><link_ctn id="Tier2_12-Tier2_14"/></route>
+		<route src="CH-CHIPP-CSCS" dst="UK-ScotGrid"><link_ctn id="Tier2_12-Tier2_15"/></route>
+		<route src="CH-CHIPP-CSCS" dst="UK-SouthGrid"><link_ctn id="Tier2_12-Tier2_16"/></route>
+
+		<route src="UK-London-Tier2" dst="UK-NorthGrid"><link_ctn id="Tier2_13-Tier2_14"/></route>
+		<route src="UK-London-Tier2" dst="UK-ScotGrid"><link_ctn id="Tier2_13-Tier2_15"/></route>
+		<route src="UK-London-Tier2" dst="UK-SouthGrid"><link_ctn id="Tier2_13-Tier2_16"/></route>
+
+		<route src="UK-NorthGrid" dst="UK-ScotGrid"><link_ctn id="Tier2_14-Tier2_15"/></route>
+		<route src="UK-NorthGrid" dst="UK-SouthGrid"><link_ctn id="Tier2_14-Tier2_16"/></route>
+
+		<route src="UK-ScotGrid" dst="UK-SouthGrid"><link_ctn id="Tier2_15-Tier2_16"/></route>
+
 
 	</AS>
 </platform>

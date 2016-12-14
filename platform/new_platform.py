@@ -111,6 +111,13 @@ for i in range(1, 8):
     f.write("\n")
 f.write("\n")
 
+f.write("\t\t<!--TIER2-TIER2 LINKS-->\n")
+for i in range(1, tier2_count+1):
+    for j in range(i + 1, tier2_count+1):
+        f.write("\t\t<link id=" + quo + "Tier2_" + str(i) + "-Tier2_" + str(j) + quo + " bandwidth=\"1G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
+    f.write("\n")
+f.write("\n")
+
 
 #######################################################################################################################################
 n = 0
@@ -145,6 +152,14 @@ for i in range(1, 8):
     for j in range(8, len(CPU_ALL)):
         f.write("\t\t<route src=\"" + TIER_ALL[i] + "\"" + " dst=\"" + TIER_ALL[j] + "\">")
         f.write("<link_ctn id=\"" + str(i) + "-Tier2_" + str(j-7) + "\"/>")
+        f.write("</route>\n")
+    f.write("\n")
+
+f.write("\t\t<!--routes between TIER2s and TIER2s -->\n")
+for i in range(8, len(CPU_ALL)):
+    for j in range(i + 1, len(CPU_ALL)):
+        f.write("\t\t<route src=\"" + TIER_ALL[i] + "\"" + " dst=\"" + TIER_ALL[j] + "\">")
+        f.write("<link_ctn id=\"" + "Tier2_" + str(i-7) + "-Tier2_" + str(j-7) + "\"/>")
         f.write("</route>\n")
     f.write("\n")
 
