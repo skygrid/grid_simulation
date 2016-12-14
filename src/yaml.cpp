@@ -39,7 +39,7 @@ namespace YAML {
                 job.Site = node["Site"].as<std::string>();
                 job.StartExecTime = node["StartExecTime"].as<double>();
                 job.Status = node["Status"].as<std::string>();
-                job.SubmissionTime = std::stol(node["SubmissionTime"].as<std::string>(), &sz);
+                job.SubmissionTime = std::stol(node["SubmissionTime"].as<std::string>(), &sz) - ;
                 job.SystemPriority = node["SystemPriority"].as<float>();
                 job.TotalCPUTime = node["TotalCPUTime(s)"].as<double>();
                 job.UserPriority = node["UserPriority"].as<float>();

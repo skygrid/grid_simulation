@@ -2,9 +2,9 @@
 // Created by ken on 28.07.16.
 //
 #include <simgrid/msg.h>
+#include <string>
 #include "my_structures.h"
 #include "myfunc_list.h"
-#include <string>
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
 int uploader(int argc, char* argv[]);
@@ -12,35 +12,39 @@ int data_replicator(int argc, char* argv[]);
 
 int data_replicator(int argc, char* argv[]){
     Job* replica = (Job*) MSG_process_get_data(MSG_process_self());
-//    size_t output_files = replica->OutputFiles.size();
-//
-//    for (size_t k = 0; k < output_files; ++k) {
-//
-//        const vector<std::string>& replica_locations = FILES_DATABASE->at(replica->OutputFiles.at(k))->Storages;
-//
-//        for (size_t i = 0; i < replica_locations.size(); ++i) {
-//            UploadData* data = new UploadData;
-//            data->filename = replica->OutputFiles.at(k);
-//            data->dest = replica_locations.at(i);
-//
-//            MSG_process_create("upload", uploader, data, MSG_host_self());
-//        }
-//    }
-//
-//
-//    MSG_process_sleep(1.1);
+    size_t output_files = replica->OutputFiles.size();
+
+    for (size_t k = 0; k < output_files; ++k) {
+
+        InputFile* infl;
+        try {
+            infl = FILES_DATABASE->at(replica->OutputFiles.at(k));
+        }catch (std::out_of_range& e){
+            continue;
+        }
+
+        const std::vector<std::string>& replica_locations = infl->Storages;
+
+        for (size_t i = 0; i < replica_locations.size(); ++i) {
+            UploadData* data = new UploadData;
+            data->filename = replica->OutputFiles.at(k);
+            data->dest = replica_locations.at(i);
+
+            MSG_process_create("upload", uploader, data, MSG_host_self());
+        }
+    }
+
+    MSG_process_sleep(1.1);
     delete replica;
     return 0;
 }
 
-
-
 int uploader(int argc, char* argv[]){
-    string host_name = MSG_host_get_name(MSG_host_self());
-    string curFilePath;
-    string pathAtDest;
-    string destHostName;
-    string stor_type;
+    std::string host_name = MSG_host_get_name(MSG_host_self());
+    std::string curFilePath;
+    std::string pathAtDest;
+    std::string destHostName;
+    std::string stor_type;
 
     msg_file_t file = NULL;
 

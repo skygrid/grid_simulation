@@ -73,13 +73,9 @@ f.write("\t\t<!--HOSTS Tier0, Tier1s, Tier2s-->\n")
 for i in range(len(TIER_ALL)):
     f.write("\t\t<host id=\"" + TIER_ALL[i] + "\" speed=\"1Gf\" core=\"" + str((int(CPU_ALL[i]))) + "\">\n")
 
-    if tier_name[i] == "Tier 2":
-        f.write("\t\t\t<mount storageId=" + q + TIER_ALL[i] + "-DISK" + q + " name=" + q+ "/" + TIER_ALL[i] + "-DISK" + q + "/>\n")
-        f.write("\t\t\t<mount storageId=" + q + TIER_ALL[i] + "-TAPE" + q + " name=" + q+ "/" + TIER_ALL[i] + "-TAPE" + q + "/>\n")
-    else:
-        for j in range(8):
-            f.write("\t\t\t<mount storageId=" + q + TIER_ALL[j] + "-DISK" + q + " name=" + q+ "/" + TIER_ALL[j] + "-DISK" + q + "/>\n")
-            f.write("\t\t\t<mount storageId=" + q + TIER_ALL[j] + "-TAPE" + q + " name=" + q+ "/" + TIER_ALL[j] + "-TAPE" + q + "/>\n")
+    for j in range(len(TIER_ALL)):
+        f.write("\t\t\t<mount storageId=" + q + TIER_ALL[j] + "-DISK" + q + " name=" + q+ "/" + TIER_ALL[j] + "-DISK" + q + "/>\n")
+        f.write("\t\t\t<mount storageId=" + q + TIER_ALL[j] + "-TAPE" + q + " name=" + q+ "/" + TIER_ALL[j] + "-TAPE" + q + "/>\n")
 
     f.write("\t\t</host>\n\n")
 f.write("\n\n")
@@ -104,6 +100,18 @@ for i in range(1, tier2_count+1):
     f.write("\t\t<link id=" + quo + "0-Tier2_" + str(i) + quo + " bandwidth=\"1G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
 f.write("\n")
 
+
+
+#TIER1-TIER2 LINKS
+
+f.write("\t\t<!--TIER1-TIER2 LINKS-->\n")
+for i in range(1, 8):
+    for j in range(1, tier2_count+1):
+        f.write("\t\t<link id=" + quo + str(i) + "-Tier2_" + str(j) + quo + " bandwidth=\"1G" + "Bps\"" + " latency=\"" + str(LATENCY) + "ms\"/>\n")
+    f.write("\n")
+f.write("\n")
+
+
 #######################################################################################################################################
 n = 0
 
@@ -119,7 +127,7 @@ f.write("<link_ctn id=\"loopback" + "\"/>")
 f.write("</route>\n\n")
 
 # routs between AS and TIER1
-f.write("\t\t<!--routes between CERN and TIER1 and TIER2-->\n")
+f.write("\t\t<!--routes between CERN and TIER1; CERN and TIER2-->\n")
 
 for i in range(1, len(CPU_ALL)):
     # routes between CERN and TIER1S
@@ -129,14 +137,20 @@ for i in range(1, len(CPU_ALL)):
     else:
         f.write("<link_ctn id=\"" + LINK_NAMES10[i-1] + "\"/>")
     f.write("</route>\n")
-f.write("\n")
+f.write("\n\n")
 
+f.write("\t\t<!--routes between TIER1s and TIER2s -->\n")
+
+for i in range(1, 8):
+    for j in range(8, len(CPU_ALL)):
+        f.write("\t\t<route src=\"" + TIER_ALL[i] + "\"" + " dst=\"" + TIER_ALL[j] + "\">")
+        f.write("<link_ctn id=\"" + str(i) + "-Tier2_" + str(j-7) + "\"/>")
+        f.write("</route>\n")
+    f.write("\n")
 
 f.write("\t</AS>\n")
 f.write("</platform>\n")
 f.close()
-
-
 
 #################################################################################
 #                             DEPLOYMENT FILE                                   #

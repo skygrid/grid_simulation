@@ -414,6 +414,38 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="IN2P3-CC" speed="1Gf" core="2241">
@@ -433,6 +465,38 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="FZK-LCG2" speed="1Gf" core="1862">
@@ -452,6 +516,38 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="INFN-T1" speed="1Gf" core="2574">
@@ -471,6 +567,38 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="NIKHEF-ELPROD" speed="1Gf" core="1097">
@@ -490,9 +618,41 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
-		<host id="NRC-KI-T1" speed="1Gf" core="1">
+		<host id="NRC-KI-T1" speed="1Gf" core="1058">
 			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
 			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
 			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
@@ -509,6 +669,38 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="pic" speed="1Gf" core="782">
@@ -528,6 +720,38 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="RAL-LCG2" speed="1Gf" core="4680">
@@ -547,84 +771,852 @@
 			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
 			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
 			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="FR-IN2P3-CPPM" speed="1Gf" core="368">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
 			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
 			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="FR-GRIF" speed="1Gf" core="635">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
 			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
 			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="FR-IN2P3-LAPP" speed="1Gf" core="453">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
 			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
 			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="FR-IN2P3-LPC" speed="1Gf" core="165">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
 			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
 			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="DE-DESY-LHCB" speed="1Gf" core="278">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
 			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
 			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="IT-INFN-T2" speed="1Gf" core="1308">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
 			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
 			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="T2-LATINAMERICA" speed="1Gf" core="374">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
 			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
 			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="PL-TIER2-WLCG" speed="1Gf" core="137">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
 			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
 			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="RO-LCG" speed="1Gf" core="701">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
 			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
 			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="RU-RDIG" speed="1Gf" core="79">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
 			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
 			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="ES-LHCb-T2" speed="1Gf" core="545">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
 			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
 			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="CH-CHIPP-CSCS" speed="1Gf" core="1131">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
 			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
 			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="UK-London-Tier2" speed="1Gf" core="215">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
 			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
 			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="UK-NorthGrid" speed="1Gf" core="650">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
 			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
 			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="UK-ScotGrid" speed="1Gf" core="179">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
 			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
 			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
+			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
+			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
 
 		<host id="UK-SouthGrid" speed="1Gf" core="611">
+			<mount storageId="CERN-PROD-DISK" name="/CERN-PROD-DISK"/>
+			<mount storageId="CERN-PROD-TAPE" name="/CERN-PROD-TAPE"/>
+			<mount storageId="IN2P3-CC-DISK" name="/IN2P3-CC-DISK"/>
+			<mount storageId="IN2P3-CC-TAPE" name="/IN2P3-CC-TAPE"/>
+			<mount storageId="FZK-LCG2-DISK" name="/FZK-LCG2-DISK"/>
+			<mount storageId="FZK-LCG2-TAPE" name="/FZK-LCG2-TAPE"/>
+			<mount storageId="INFN-T1-DISK" name="/INFN-T1-DISK"/>
+			<mount storageId="INFN-T1-TAPE" name="/INFN-T1-TAPE"/>
+			<mount storageId="NIKHEF-ELPROD-DISK" name="/NIKHEF-ELPROD-DISK"/>
+			<mount storageId="NIKHEF-ELPROD-TAPE" name="/NIKHEF-ELPROD-TAPE"/>
+			<mount storageId="NRC-KI-T1-DISK" name="/NRC-KI-T1-DISK"/>
+			<mount storageId="NRC-KI-T1-TAPE" name="/NRC-KI-T1-TAPE"/>
+			<mount storageId="pic-DISK" name="/pic-DISK"/>
+			<mount storageId="pic-TAPE" name="/pic-TAPE"/>
+			<mount storageId="RAL-LCG2-DISK" name="/RAL-LCG2-DISK"/>
+			<mount storageId="RAL-LCG2-TAPE" name="/RAL-LCG2-TAPE"/>
+			<mount storageId="FR-IN2P3-CPPM-DISK" name="/FR-IN2P3-CPPM-DISK"/>
+			<mount storageId="FR-IN2P3-CPPM-TAPE" name="/FR-IN2P3-CPPM-TAPE"/>
+			<mount storageId="FR-GRIF-DISK" name="/FR-GRIF-DISK"/>
+			<mount storageId="FR-GRIF-TAPE" name="/FR-GRIF-TAPE"/>
+			<mount storageId="FR-IN2P3-LAPP-DISK" name="/FR-IN2P3-LAPP-DISK"/>
+			<mount storageId="FR-IN2P3-LAPP-TAPE" name="/FR-IN2P3-LAPP-TAPE"/>
+			<mount storageId="FR-IN2P3-LPC-DISK" name="/FR-IN2P3-LPC-DISK"/>
+			<mount storageId="FR-IN2P3-LPC-TAPE" name="/FR-IN2P3-LPC-TAPE"/>
+			<mount storageId="DE-DESY-LHCB-DISK" name="/DE-DESY-LHCB-DISK"/>
+			<mount storageId="DE-DESY-LHCB-TAPE" name="/DE-DESY-LHCB-TAPE"/>
+			<mount storageId="IT-INFN-T2-DISK" name="/IT-INFN-T2-DISK"/>
+			<mount storageId="IT-INFN-T2-TAPE" name="/IT-INFN-T2-TAPE"/>
+			<mount storageId="T2-LATINAMERICA-DISK" name="/T2-LATINAMERICA-DISK"/>
+			<mount storageId="T2-LATINAMERICA-TAPE" name="/T2-LATINAMERICA-TAPE"/>
+			<mount storageId="PL-TIER2-WLCG-DISK" name="/PL-TIER2-WLCG-DISK"/>
+			<mount storageId="PL-TIER2-WLCG-TAPE" name="/PL-TIER2-WLCG-TAPE"/>
+			<mount storageId="RO-LCG-DISK" name="/RO-LCG-DISK"/>
+			<mount storageId="RO-LCG-TAPE" name="/RO-LCG-TAPE"/>
+			<mount storageId="RU-RDIG-DISK" name="/RU-RDIG-DISK"/>
+			<mount storageId="RU-RDIG-TAPE" name="/RU-RDIG-TAPE"/>
+			<mount storageId="ES-LHCb-T2-DISK" name="/ES-LHCb-T2-DISK"/>
+			<mount storageId="ES-LHCb-T2-TAPE" name="/ES-LHCb-T2-TAPE"/>
+			<mount storageId="CH-CHIPP-CSCS-DISK" name="/CH-CHIPP-CSCS-DISK"/>
+			<mount storageId="CH-CHIPP-CSCS-TAPE" name="/CH-CHIPP-CSCS-TAPE"/>
+			<mount storageId="UK-London-Tier2-DISK" name="/UK-London-Tier2-DISK"/>
+			<mount storageId="UK-London-Tier2-TAPE" name="/UK-London-Tier2-TAPE"/>
+			<mount storageId="UK-NorthGrid-DISK" name="/UK-NorthGrid-DISK"/>
+			<mount storageId="UK-NorthGrid-TAPE" name="/UK-NorthGrid-TAPE"/>
+			<mount storageId="UK-ScotGrid-DISK" name="/UK-ScotGrid-DISK"/>
+			<mount storageId="UK-ScotGrid-TAPE" name="/UK-ScotGrid-TAPE"/>
 			<mount storageId="UK-SouthGrid-DISK" name="/UK-SouthGrid-DISK"/>
 			<mount storageId="UK-SouthGrid-TAPE" name="/UK-SouthGrid-TAPE"/>
 		</host>
@@ -662,6 +1654,127 @@
 		<link id="0-Tier2_14" bandwidth="1GBps" latency="0ms"/>
 		<link id="0-Tier2_15" bandwidth="1GBps" latency="0ms"/>
 		<link id="0-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<!--TIER1-TIER2 LINKS-->
+		<link id="1-Tier2_1" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="1-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="2-Tier2_1" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="2-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="3-Tier2_1" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="3-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="4-Tier2_1" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="4-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="5-Tier2_1" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="5-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="6-Tier2_1" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="6-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
+		<link id="7-Tier2_1" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_2" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_3" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_4" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_5" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_6" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_7" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_8" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_9" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_10" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_11" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_12" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_13" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_14" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_15" bandwidth="1GBps" latency="0ms"/>
+		<link id="7-Tier2_16" bandwidth="1GBps" latency="0ms"/>
+
 
 		<!--routes between TIER1-TIER1-->
 
@@ -746,7 +1859,7 @@
 
 		<route src="CERN-PROD" dst="CERN-PROD"><link_ctn id="loopback"/></route>
 
-		<!--routes between CERN and TIER1 and TIER2-->
+		<!--routes between CERN and TIER1; CERN and TIER2-->
 		<route src="CERN-PROD" dst="IN2P3-CC"><link_ctn id="CERN-CNAF-LHCOPN-001"/></route>
 		<route src="CERN-PROD" dst="FZK-LCG2"><link_ctn id="CERN-GRIDKA-LHCOPN-001"/></route>
 		<route src="CERN-PROD" dst="INFN-T1"><link_ctn id="CERN-IN2P3-LHCOPN-001"/></route>
@@ -770,6 +1883,127 @@
 		<route src="CERN-PROD" dst="UK-NorthGrid"><link_ctn id="0-Tier2_14"/></route>
 		<route src="CERN-PROD" dst="UK-ScotGrid"><link_ctn id="0-Tier2_15"/></route>
 		<route src="CERN-PROD" dst="UK-SouthGrid"><link_ctn id="0-Tier2_16"/></route>
+
+
+		<!--routes between TIER1s and TIER2s -->
+		<route src="IN2P3-CC" dst="FR-IN2P3-CPPM"><link_ctn id="1-Tier2_1"/></route>
+		<route src="IN2P3-CC" dst="FR-GRIF"><link_ctn id="1-Tier2_2"/></route>
+		<route src="IN2P3-CC" dst="FR-IN2P3-LAPP"><link_ctn id="1-Tier2_3"/></route>
+		<route src="IN2P3-CC" dst="FR-IN2P3-LPC"><link_ctn id="1-Tier2_4"/></route>
+		<route src="IN2P3-CC" dst="DE-DESY-LHCB"><link_ctn id="1-Tier2_5"/></route>
+		<route src="IN2P3-CC" dst="IT-INFN-T2"><link_ctn id="1-Tier2_6"/></route>
+		<route src="IN2P3-CC" dst="T2-LATINAMERICA"><link_ctn id="1-Tier2_7"/></route>
+		<route src="IN2P3-CC" dst="PL-TIER2-WLCG"><link_ctn id="1-Tier2_8"/></route>
+		<route src="IN2P3-CC" dst="RO-LCG"><link_ctn id="1-Tier2_9"/></route>
+		<route src="IN2P3-CC" dst="RU-RDIG"><link_ctn id="1-Tier2_10"/></route>
+		<route src="IN2P3-CC" dst="ES-LHCb-T2"><link_ctn id="1-Tier2_11"/></route>
+		<route src="IN2P3-CC" dst="CH-CHIPP-CSCS"><link_ctn id="1-Tier2_12"/></route>
+		<route src="IN2P3-CC" dst="UK-London-Tier2"><link_ctn id="1-Tier2_13"/></route>
+		<route src="IN2P3-CC" dst="UK-NorthGrid"><link_ctn id="1-Tier2_14"/></route>
+		<route src="IN2P3-CC" dst="UK-ScotGrid"><link_ctn id="1-Tier2_15"/></route>
+		<route src="IN2P3-CC" dst="UK-SouthGrid"><link_ctn id="1-Tier2_16"/></route>
+
+		<route src="FZK-LCG2" dst="FR-IN2P3-CPPM"><link_ctn id="2-Tier2_1"/></route>
+		<route src="FZK-LCG2" dst="FR-GRIF"><link_ctn id="2-Tier2_2"/></route>
+		<route src="FZK-LCG2" dst="FR-IN2P3-LAPP"><link_ctn id="2-Tier2_3"/></route>
+		<route src="FZK-LCG2" dst="FR-IN2P3-LPC"><link_ctn id="2-Tier2_4"/></route>
+		<route src="FZK-LCG2" dst="DE-DESY-LHCB"><link_ctn id="2-Tier2_5"/></route>
+		<route src="FZK-LCG2" dst="IT-INFN-T2"><link_ctn id="2-Tier2_6"/></route>
+		<route src="FZK-LCG2" dst="T2-LATINAMERICA"><link_ctn id="2-Tier2_7"/></route>
+		<route src="FZK-LCG2" dst="PL-TIER2-WLCG"><link_ctn id="2-Tier2_8"/></route>
+		<route src="FZK-LCG2" dst="RO-LCG"><link_ctn id="2-Tier2_9"/></route>
+		<route src="FZK-LCG2" dst="RU-RDIG"><link_ctn id="2-Tier2_10"/></route>
+		<route src="FZK-LCG2" dst="ES-LHCb-T2"><link_ctn id="2-Tier2_11"/></route>
+		<route src="FZK-LCG2" dst="CH-CHIPP-CSCS"><link_ctn id="2-Tier2_12"/></route>
+		<route src="FZK-LCG2" dst="UK-London-Tier2"><link_ctn id="2-Tier2_13"/></route>
+		<route src="FZK-LCG2" dst="UK-NorthGrid"><link_ctn id="2-Tier2_14"/></route>
+		<route src="FZK-LCG2" dst="UK-ScotGrid"><link_ctn id="2-Tier2_15"/></route>
+		<route src="FZK-LCG2" dst="UK-SouthGrid"><link_ctn id="2-Tier2_16"/></route>
+
+		<route src="INFN-T1" dst="FR-IN2P3-CPPM"><link_ctn id="3-Tier2_1"/></route>
+		<route src="INFN-T1" dst="FR-GRIF"><link_ctn id="3-Tier2_2"/></route>
+		<route src="INFN-T1" dst="FR-IN2P3-LAPP"><link_ctn id="3-Tier2_3"/></route>
+		<route src="INFN-T1" dst="FR-IN2P3-LPC"><link_ctn id="3-Tier2_4"/></route>
+		<route src="INFN-T1" dst="DE-DESY-LHCB"><link_ctn id="3-Tier2_5"/></route>
+		<route src="INFN-T1" dst="IT-INFN-T2"><link_ctn id="3-Tier2_6"/></route>
+		<route src="INFN-T1" dst="T2-LATINAMERICA"><link_ctn id="3-Tier2_7"/></route>
+		<route src="INFN-T1" dst="PL-TIER2-WLCG"><link_ctn id="3-Tier2_8"/></route>
+		<route src="INFN-T1" dst="RO-LCG"><link_ctn id="3-Tier2_9"/></route>
+		<route src="INFN-T1" dst="RU-RDIG"><link_ctn id="3-Tier2_10"/></route>
+		<route src="INFN-T1" dst="ES-LHCb-T2"><link_ctn id="3-Tier2_11"/></route>
+		<route src="INFN-T1" dst="CH-CHIPP-CSCS"><link_ctn id="3-Tier2_12"/></route>
+		<route src="INFN-T1" dst="UK-London-Tier2"><link_ctn id="3-Tier2_13"/></route>
+		<route src="INFN-T1" dst="UK-NorthGrid"><link_ctn id="3-Tier2_14"/></route>
+		<route src="INFN-T1" dst="UK-ScotGrid"><link_ctn id="3-Tier2_15"/></route>
+		<route src="INFN-T1" dst="UK-SouthGrid"><link_ctn id="3-Tier2_16"/></route>
+
+		<route src="NIKHEF-ELPROD" dst="FR-IN2P3-CPPM"><link_ctn id="4-Tier2_1"/></route>
+		<route src="NIKHEF-ELPROD" dst="FR-GRIF"><link_ctn id="4-Tier2_2"/></route>
+		<route src="NIKHEF-ELPROD" dst="FR-IN2P3-LAPP"><link_ctn id="4-Tier2_3"/></route>
+		<route src="NIKHEF-ELPROD" dst="FR-IN2P3-LPC"><link_ctn id="4-Tier2_4"/></route>
+		<route src="NIKHEF-ELPROD" dst="DE-DESY-LHCB"><link_ctn id="4-Tier2_5"/></route>
+		<route src="NIKHEF-ELPROD" dst="IT-INFN-T2"><link_ctn id="4-Tier2_6"/></route>
+		<route src="NIKHEF-ELPROD" dst="T2-LATINAMERICA"><link_ctn id="4-Tier2_7"/></route>
+		<route src="NIKHEF-ELPROD" dst="PL-TIER2-WLCG"><link_ctn id="4-Tier2_8"/></route>
+		<route src="NIKHEF-ELPROD" dst="RO-LCG"><link_ctn id="4-Tier2_9"/></route>
+		<route src="NIKHEF-ELPROD" dst="RU-RDIG"><link_ctn id="4-Tier2_10"/></route>
+		<route src="NIKHEF-ELPROD" dst="ES-LHCb-T2"><link_ctn id="4-Tier2_11"/></route>
+		<route src="NIKHEF-ELPROD" dst="CH-CHIPP-CSCS"><link_ctn id="4-Tier2_12"/></route>
+		<route src="NIKHEF-ELPROD" dst="UK-London-Tier2"><link_ctn id="4-Tier2_13"/></route>
+		<route src="NIKHEF-ELPROD" dst="UK-NorthGrid"><link_ctn id="4-Tier2_14"/></route>
+		<route src="NIKHEF-ELPROD" dst="UK-ScotGrid"><link_ctn id="4-Tier2_15"/></route>
+		<route src="NIKHEF-ELPROD" dst="UK-SouthGrid"><link_ctn id="4-Tier2_16"/></route>
+
+		<route src="NRC-KI-T1" dst="FR-IN2P3-CPPM"><link_ctn id="5-Tier2_1"/></route>
+		<route src="NRC-KI-T1" dst="FR-GRIF"><link_ctn id="5-Tier2_2"/></route>
+		<route src="NRC-KI-T1" dst="FR-IN2P3-LAPP"><link_ctn id="5-Tier2_3"/></route>
+		<route src="NRC-KI-T1" dst="FR-IN2P3-LPC"><link_ctn id="5-Tier2_4"/></route>
+		<route src="NRC-KI-T1" dst="DE-DESY-LHCB"><link_ctn id="5-Tier2_5"/></route>
+		<route src="NRC-KI-T1" dst="IT-INFN-T2"><link_ctn id="5-Tier2_6"/></route>
+		<route src="NRC-KI-T1" dst="T2-LATINAMERICA"><link_ctn id="5-Tier2_7"/></route>
+		<route src="NRC-KI-T1" dst="PL-TIER2-WLCG"><link_ctn id="5-Tier2_8"/></route>
+		<route src="NRC-KI-T1" dst="RO-LCG"><link_ctn id="5-Tier2_9"/></route>
+		<route src="NRC-KI-T1" dst="RU-RDIG"><link_ctn id="5-Tier2_10"/></route>
+		<route src="NRC-KI-T1" dst="ES-LHCb-T2"><link_ctn id="5-Tier2_11"/></route>
+		<route src="NRC-KI-T1" dst="CH-CHIPP-CSCS"><link_ctn id="5-Tier2_12"/></route>
+		<route src="NRC-KI-T1" dst="UK-London-Tier2"><link_ctn id="5-Tier2_13"/></route>
+		<route src="NRC-KI-T1" dst="UK-NorthGrid"><link_ctn id="5-Tier2_14"/></route>
+		<route src="NRC-KI-T1" dst="UK-ScotGrid"><link_ctn id="5-Tier2_15"/></route>
+		<route src="NRC-KI-T1" dst="UK-SouthGrid"><link_ctn id="5-Tier2_16"/></route>
+
+		<route src="pic" dst="FR-IN2P3-CPPM"><link_ctn id="6-Tier2_1"/></route>
+		<route src="pic" dst="FR-GRIF"><link_ctn id="6-Tier2_2"/></route>
+		<route src="pic" dst="FR-IN2P3-LAPP"><link_ctn id="6-Tier2_3"/></route>
+		<route src="pic" dst="FR-IN2P3-LPC"><link_ctn id="6-Tier2_4"/></route>
+		<route src="pic" dst="DE-DESY-LHCB"><link_ctn id="6-Tier2_5"/></route>
+		<route src="pic" dst="IT-INFN-T2"><link_ctn id="6-Tier2_6"/></route>
+		<route src="pic" dst="T2-LATINAMERICA"><link_ctn id="6-Tier2_7"/></route>
+		<route src="pic" dst="PL-TIER2-WLCG"><link_ctn id="6-Tier2_8"/></route>
+		<route src="pic" dst="RO-LCG"><link_ctn id="6-Tier2_9"/></route>
+		<route src="pic" dst="RU-RDIG"><link_ctn id="6-Tier2_10"/></route>
+		<route src="pic" dst="ES-LHCb-T2"><link_ctn id="6-Tier2_11"/></route>
+		<route src="pic" dst="CH-CHIPP-CSCS"><link_ctn id="6-Tier2_12"/></route>
+		<route src="pic" dst="UK-London-Tier2"><link_ctn id="6-Tier2_13"/></route>
+		<route src="pic" dst="UK-NorthGrid"><link_ctn id="6-Tier2_14"/></route>
+		<route src="pic" dst="UK-ScotGrid"><link_ctn id="6-Tier2_15"/></route>
+		<route src="pic" dst="UK-SouthGrid"><link_ctn id="6-Tier2_16"/></route>
+
+		<route src="RAL-LCG2" dst="FR-IN2P3-CPPM"><link_ctn id="7-Tier2_1"/></route>
+		<route src="RAL-LCG2" dst="FR-GRIF"><link_ctn id="7-Tier2_2"/></route>
+		<route src="RAL-LCG2" dst="FR-IN2P3-LAPP"><link_ctn id="7-Tier2_3"/></route>
+		<route src="RAL-LCG2" dst="FR-IN2P3-LPC"><link_ctn id="7-Tier2_4"/></route>
+		<route src="RAL-LCG2" dst="DE-DESY-LHCB"><link_ctn id="7-Tier2_5"/></route>
+		<route src="RAL-LCG2" dst="IT-INFN-T2"><link_ctn id="7-Tier2_6"/></route>
+		<route src="RAL-LCG2" dst="T2-LATINAMERICA"><link_ctn id="7-Tier2_7"/></route>
+		<route src="RAL-LCG2" dst="PL-TIER2-WLCG"><link_ctn id="7-Tier2_8"/></route>
+		<route src="RAL-LCG2" dst="RO-LCG"><link_ctn id="7-Tier2_9"/></route>
+		<route src="RAL-LCG2" dst="RU-RDIG"><link_ctn id="7-Tier2_10"/></route>
+		<route src="RAL-LCG2" dst="ES-LHCb-T2"><link_ctn id="7-Tier2_11"/></route>
+		<route src="RAL-LCG2" dst="CH-CHIPP-CSCS"><link_ctn id="7-Tier2_12"/></route>
+		<route src="RAL-LCG2" dst="UK-London-Tier2"><link_ctn id="7-Tier2_13"/></route>
+		<route src="RAL-LCG2" dst="UK-NorthGrid"><link_ctn id="7-Tier2_14"/></route>
+		<route src="RAL-LCG2" dst="UK-ScotGrid"><link_ctn id="7-Tier2_15"/></route>
+		<route src="RAL-LCG2" dst="UK-SouthGrid"><link_ctn id="7-Tier2_16"/></route>
 
 	</AS>
 </platform>
