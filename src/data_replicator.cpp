@@ -50,30 +50,14 @@ int uploader(int argc, char* argv[]){
 
     UploadData* data = (UploadData*) MSG_process_get_data(MSG_process_self());
 
-    //Copy to own tape
-    if (!data->dest.compare("+")){
-
-        curFilePath = "/" + host_name + "1/" + data->filename;
-        pathAtDest = "/" + host_name + "0/" + data->filename;
-        file = MSG_file_open(curFilePath.c_str(), NULL);
-        MSG_file_rcopy(file, MSG_host_self(), pathAtDest.c_str());
-
-        destHostName = host_name;
-        stor_type = "0";
-
-        // tracing
-        dataset_number_change(destHostName+"0", 1);
-
-    }else{
-        destHostName = data->dest;
-        destHostName.pop_back(); // CERN1 --> CERN
-        stor_type = data->dest.back();
-    }
+    destHostName = data->dest;
+    destHostName.erase(destHostName.length()-5);
+    stor_type = data->dest.back();
 
     if (destHostName.compare(host_name)) {
 
-        curFilePath = "/" + host_name + "1/" + data->filename;
-        pathAtDest = "/" + data->dest + "/" + data->filename;
+        curFilePath = "/" + host_name + "-DISK" + data->filename;
+        pathAtDest = "/" + data->dest + data->filename;
 
         file = MSG_file_open(curFilePath.c_str(), NULL);
         msg_host_t dest = MSG_host_by_name(destHostName.c_str());
@@ -81,10 +65,10 @@ int uploader(int argc, char* argv[]){
         //plusLinkCounter(MSG_host_get_name(MSG_host_self()), destHostName);
 
         msg_error_t a = MSG_file_rcopy(file, dest, pathAtDest.c_str());
-        if (!atoi(stor_type.c_str())) create_file_label(pathAtDest);
+        //if (!atoi(stor_type.c_str())) create_file_label(pathAtDest);
 
         //trace number of datasets and output traffic from site
-        dataset_number_change(destHostName + stor_type, 1);
+        dataset_number_change(data->dest, 1);
         cumulative_output_per_site(host_name, (double) MSG_file_get_size(file));
 
         if (a == MSG_OK) {
