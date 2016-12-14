@@ -25,7 +25,7 @@ std::vector<Job*>* matcher_calibration(long amountRequestedJob, const std::strin
     for (auto job = local_queue->begin(); job != local_queue->end() && amount_of_matched_jobs < amountRequestedJob && (*job)->SubmissionTime < clock;) {
 
         auto job_ptr = *job;
-        if (job_ptr->Federation.compare(hostname)){
+        if (job_ptr->Federation.compare(hostname) == 0){
             job_ptr->startSchedulClock = MSG_get_clock();
             job_ptr->StartExecTime = 0;
             job_ptr->EndExecTime = 0;
