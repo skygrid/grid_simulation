@@ -43,7 +43,7 @@ before_install:
 #  - gem install coveralls-lcov
 
 script:
-  - sudo ./run.sh
+  - ./run.sh
 
 #after_success:
 #  - lcov --directory . --capture --output-file coverage.info
