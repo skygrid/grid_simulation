@@ -39,8 +39,8 @@ int scheduler(int argc, char* argv[]){
                 batch = matcher_tier2(batchRequest->coreAmount, request_host);
             }
             else if (!current_model.compare("simple")){
-                //batch = matcher(batchRequest->coreAmount);
-                batch = matcher_calibration(batchRequest->coreAmount, request_host);
+                batch = matcher(batchRequest->coreAmount);
+                //batch = matcher_calibration(batchRequest->coreAmount, request_host);
             }else {
                 batch = matcher_DAM(batchRequest->coreAmount, request_host);
             }

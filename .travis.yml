@@ -28,7 +28,15 @@ before_install:
   - sudo make install
   - cd ..
 
-  - git clone
+  - git clone https://github.com/jbeder/yaml-cpp yaml-cpp
+  - cd yaml-cpp
+  - mkdir build
+  - cd build
+  - sudo cmake -DBUILD_SHARED_LIBS=ON ..
+  - sudo make
+  - sudo make install
+  - cd ../..
+
   
   - wget -O csvparser.zip https://sourceforge.net/projects/cccsvparser/files/2016-03-28/CsvParser_2016_03_28.zip/download
   - unzip csvparser.zip

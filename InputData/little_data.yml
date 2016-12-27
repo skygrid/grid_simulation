@@ -1,24 +1,8 @@
-/lhcb/data/2016/RAW/TURBO/LHCb/COLLISION16/184181/184181_0000001213.raw:
+/x.raw:
   '#events': 9464.0
   BKKPath: []
   DataQuality: OK
   Replica: 'No'
   RunNumber: 182924.0
   Size: 183107687.0
-  Storages: [CERN-PROD-DISK]
-/lhcb/LHCb/Collision16/RDST/00053882/0002/00053882_00021531_1.rdst:
-  '#events': 9494.0
-  BKKPath: []
-  DataQuality: OK
-  Replica: 'No'
-  RunNumber: 182924.0
-  Size: 191053560.0
-  Storages: [IN2P3-CC-DISK]
-/lhcb/LHCb/Collision16/RDST/00053882/0002/00053882_00020249_1.rdst:
-  '#events': 7466.0
-  BKKPath: []
-  DataQuality: OK
-  Replica: 'No'
-  RunNumber: 182924.0
-  Size: 144042868.0
-  Storages: [NRC-KI-T1-DISK]
+  Storages: [PL-TIER2-WLCG-DISK]

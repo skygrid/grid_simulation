@@ -267,7 +267,9 @@ int task_executor(Job* jobInfo){
 
         std::string outputFilePath = "/" + storage_name + jobInfo->OutputFiles.at(i);
         outFile = MSG_file_open(outputFilePath.c_str(), NULL);
+        XBT_INFO("%zd", MSG_storage_get_size(MSG_storage_get_by_name("PL-TIER2-WLCG-DISK")));
         MSG_file_write(outFile, (sg_size_t) infl->Size);
+        XBT_INFO("xx");
         create_file_label(outputFilePath);
         MSG_file_close(outFile);
 

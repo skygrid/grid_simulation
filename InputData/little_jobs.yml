@@ -1,18 +1,15 @@
 141647523:
   EndExecTime: 1475285643.0
-  Federation: IN2P3-CC
+  Federation: PL-TIER2-WLCG
   InputFiles:
-  - /lhcb/data/2016/RAW/TURBO/LHCb/COLLISION16/184181/184181_0000001213.raw
-  - /lhcb/LHCb/Collision16/RDST/00053882/0002/00053882_00021531_1.rdst
-  - /lhcb/LHCb/Collision16/RDST/00053882/0002/00053882_00020249_1.rdst
+  - /wx
   JobGroup: 53935.0
-  JobType: Merge
+  JobType: MCSimulation
   LocalJobID: 16773779.0
   OutputFiles:
-  - /lhcb/LHCb/Collision16/EW.DST/00053935/0000/00053935_00004783_1.ew.dst
-  - /lhcb/LHCb/Collision16/LOG/00053935/0000/00004783/DaVinci_00053935_00004783_1.log
+  - /x.raw
   RescheduleTime: None
-  Site: IN2P3-CC
+  Site: PL-TIER2-WLCG
   StartExecTime: 1475270095.0
   Status: Done
   SubmissionTime: 1475269223.0

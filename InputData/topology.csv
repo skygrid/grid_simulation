@@ -1,0 +1,65 @@
+Tier;Federation;FederationAccountingName;Site;DiracSite
+Tier 0;CH-CERN;CERN-PROD;CERN-PROD;LCG.CERN.ch
+Tier 1;FR-CCIN2P3;IN2P3-CC;IN2P3-CC;LCG.IN2P3.fr
+Tier 1;DE-KIT;FZK-LCG2;FZK-LCG2;LCG.GRIDKA.de
+Tier 1;IT-INFN-CNAF;INFN-T1;INFN-T1;LCG.CNAF.it
+Tier 1;NL-T1;NIKHEF-ELPROD;NIKHEF-ELPROD;LCG.NIKHEF.nl
+Tier 1;NL-T1;NIKHEF-ELPROD;SARA-MATRIX;LCG.SARA.nl
+Tier 1;NRC-KI-T1;NRC-KI-T1;RRC-KI-T1;LCG.RRCKI.ru
+Tier 1;ES-PIC;pic;pic;LCG.PIC.es
+Tier 1;UK-T1-RAL;RAL-LCG2;RAL-LCG2;LCG.RAL.uk
+Tier 2;CPPM, Marseille;FR-IN2P3-CPPM;IN2P3-CPPM;LCG.CPPM.fr
+Tier 2;GRIF, Paris;FR-GRIF;GRIF;LCG.LLR.fr
+Tier 2;GRIF, Paris;FR-GRIF;GRIF;LCG.LAL.fr
+Tier 2;GRIF, Paris;FR-GRIF;GRIF;LCG.LPNHE.fr
+Tier 2;LAPP, Annecy;FR-IN2P3-LAPP;IN2P3-LAPP;LCG.LAPP.fr
+Tier 2;LPC, Clermont-Ferrand;FR-IN2P3-LPC;IN2P3-LPC;LCG.LPC.fr
+Tier 2;ATLAS Federation DESY;DE-DESY-ATLAS-T2;DESY-HH;LCG.DESYHH.de
+Tier 2;CMS Federation DESY RWTH Aachen;DE-DESY-RWTH-CMS-T2;DESY-HH;LCG.DESYHH.de
+Tier 2;ATLAS Federation DESY;DE-DESY-ATLAS-T2;DESY-ZN;LCG.DESYZN.de
+Tier 2;CMS Federation DESY RWTH Aachen;DE-DESY-RWTH-CMS-T2;DESY-ZN;LCG.DESYZN.de
+Tier 2;LHCb Federation DESY;DE-DESY-LHCB;DESY-ZN;LCG.DESYZN.de
+Tier 2;IL-HEP Tier-2 Federation;IL-HEPTier-2;IL-TAU-HEP;LCG.TAU.il
+Tier 2;IL-HEP Tier-2 Federation;IL-HEPTier-2;TECHNION-HEP;LCG.Haifa.il
+Tier 2;IL-HEP Tier-2 Federation;IL-HEPTier-2;WEIZMANN-LCG2;LCG.WEIZMANN.il
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-BARI;LCG.Bari.it
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-CATANIA;LCG.Catania.it
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-FRASCATI;LCG.Frascati.it
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-LNL-2;LCG.Legnaro.it
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-NAPOLI-ATLAS;LCG.NapoliRECAS.it
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-NAPOLI-ATLAS;LCG.NAPOLI-ATLAS.it
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-PISA;LCG.Pisa.it
+Tier 2;INFN T2 Federation;IT-INFN-T2;INFN-TORINO;LCG.Torino.it
+Tier 2;Latin America Federation;T2-LATINAMERICA;CBPF;LCG.CBPF.br
+Tier 2;Latin America Federation;T2-LATINAMERICA;SAMPA;LCG.SAMPA.br
+Tier 2;Polish Tier-2 Federation;PL-TIER2-WLCG;CYFRONET-LCG2;LCG.Krakow.pl
+Tier 2;Polish Tier-2 Federation;PL-TIER2-WLCG;ICM;LCG.ICM.pl
+Tier 2;Polish Tier-2 Federation;PL-TIER2-WLCG;PSNC;LCG.PSNC.pl
+Tier 2;Romanian Tier-2 Federation;RO-LCG;RO-07-NIPNE;LCG.NIPNE-07.ro
+Tier 2;Romanian Tier-2 Federation;RO-LCG;RO-11-NIPNE;LCG.NIPNE-11.ro
+Tier 2;Russian Data-Intensive GRID;RU-RDIG;ITEP;LCG.ITEP.ru
+Tier 2;Russian Data-Intensive GRID;RU-RDIG;JINR-LCG2;LCG.JINR.ru
+Tier 2;Russian Data-Intensive GRID;RU-RDIG;RRC-KI;LCG.KIAE.ru
+Tier 2;Russian Data-Intensive GRID;RU-RDIG;RU-Protvino-IHEP;LCG.IHEP.su
+Tier 2;Russian Data-Intensive GRID;RU-RDIG;RU-SPbSU;LCG.SPBU.ru
+Tier 2;Russian Data-Intensive GRID;RU-RDIG;Ru-Troitsk-INR-LCG2;LCG.INR.ru
+Tier 2;Russian Data-Intensive GRID;RU-RDIG;ru-PNPI;LCG.PNPI.ru
+Tier 2;LHCb Federation;ES-LHCb-T2;UB-LCG2;LCG.Barcelona.es
+Tier 2;LHCb Federation;ES-LHCb-T2;USC-LCG2;LCG.USC.es
+Tier 2;CHIPP;CH-CHIPP-CSCS;CSCS-LCG2;LCG.CSCS.ch
+Tier 2;London Tier 2;UK-London-Tier2;UKI-LT2-Brunel;LCG.UKI-LT2-Brunel.uk
+Tier 2;London Tier 2;UK-London-Tier2;UKI-LT2-IC-HEP;LCG.UKI-LT2-IC-HEP.uk
+Tier 2;London Tier 2;UK-London-Tier2;UKI-LT2-QMUL;LCG.UKI-LT2-QMUL.uk
+Tier 2;London Tier 2;UK-London-Tier2;UKI-LT2-RHUL;LCG.UKI-LT2-RHUL.uk
+Tier 2;NorthGrid;UK-NorthGrid;UKI-NORTHGRID-LANCS-HEP;LCG.Lancashire.uk
+Tier 2;NorthGrid;UK-NorthGrid;UKI-NORTHGRID-LIV-HEP;LCG.Liverpool.uk
+Tier 2;NorthGrid;UK-NorthGrid;UKI-NORTHGRID-MAN-HEP;LCG.Manchester.uk
+Tier 2;NorthGrid;UK-NorthGrid;UKI-NORTHGRID-SHEF-HEP;LCG.Sheffield.uk
+Tier 2;ScotGrid;UK-ScotGrid;UKI-SCOTGRID-DURHAM;LCG.Durham.uk
+Tier 2;ScotGrid;UK-ScotGrid;UKI-SCOTGRID-ECDF;LCG.ECDF.uk
+Tier 2;ScotGrid;UK-ScotGrid;UKI-SCOTGRID-GLASGOW;LCG.Glasgow.uk
+Tier 2;SouthGrid;UK-SouthGrid;UKI-SOUTHGRID-BHAM-HEP;LCG.BHAM-HEP.uk
+Tier 2;SouthGrid;UK-SouthGrid;UKI-SOUTHGRID-BRIS-HEP;LCG.Bristol.uk
+Tier 2;SouthGrid;UK-SouthGrid;UKI-SOUTHGRID-CAM-HEP;LCG.Cambridge.uk
+Tier 2;SouthGrid;UK-SouthGrid;UKI-SOUTHGRID-OX-HEP;LCG.Oxford.uk
+Tier 2;SouthGrid;UK-SouthGrid;UKI-SOUTHGRID-RALPP;LCG.RAL-HEP.uk
