@@ -37,23 +37,14 @@ before_install:
   - sudo make install
   - cd ../..
 
-  - wget -O csvparser.zip https://sourceforge.net/projects/cccsvparser/files/2016-03-28/CsvParser_2016_03_28.zip/download
-  - unzip csvparser.zip
-  - cd CsvParser
-  - mkdir lib
-  - gcc -Iinclude src/csvparser.c -fPIC -shared -o lib/libcsvparser.so
-  - sudo cp lib/libcsvparser.so /usr/lib
-  - sudo cp include/csvparser.h /usr/include
-  - cd ..
-
-install:
-  - sudo apt install -y lcov
-  - gem install coveralls-lcov
+#install:
+#  - sudo apt install -y lcov
+#  - gem install coveralls-lcov
 
 script:
-  - sudo ./run.sh --enable-gcov
+  - sudo ./run.sh
 
-after_success:
-  - lcov --directory . --capture --output-file coverage.info
-  - lcov --remove coverage.info 'tests/*' '/usr/*' --output-file coverage.info
-  - lcov --list coverage.info
+#after_success:
+#  - lcov --directory . --capture --output-file coverage.info
+#  - lcov --remove coverage.info 'tests/*' '/usr/*' --output-file coverage.info
+#  - lcov --list coverage.info
