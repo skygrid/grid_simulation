@@ -37,7 +37,6 @@ before_install:
   - sudo make install
   - cd ../..
 
-  
   - wget -O csvparser.zip https://sourceforge.net/projects/cccsvparser/files/2016-03-28/CsvParser_2016_03_28.zip/download
   - unzip csvparser.zip
   - cd CsvParser
@@ -52,7 +51,6 @@ install:
   - gem install coveralls-lcov
 
 script:
-  - sudo cmake -DCMAKE_CXX_COMPILER=$COMPILER . && sudo make
   - sudo ./run.sh --enable-gcov
 
 after_success:

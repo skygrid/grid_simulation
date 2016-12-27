@@ -16,7 +16,6 @@ int executor(int argc, char* argv[]);
 
 // MAIN TIER1 FUNCTION
 int tier1(int argc, char* argv[]){
-
     // LAUNCH PROCESS
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"), xbt_free_f);
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup("0"), xbt_free_f);
