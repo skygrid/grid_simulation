@@ -20,7 +20,7 @@ After installation of SimGrid, clone this project and run in command line
 ```
 cmake . 
 make .
-./CSim2Sim platform/platform.xml platform/deployment.xml trash/out.txt DAM --cfg=contexts/nthreads:2 --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
+./CSim2Sim --cfg=contexts/nthreads:2 --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
 ```
 
 ## Job workflow
