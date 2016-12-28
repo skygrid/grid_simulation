@@ -16,6 +16,7 @@ using namespace std;
 
 int input();
 
+
 extern std::map<std::string, long> storage_number_map; // name of storage and amount of files st_num_map;
 extern std::map<std::string, double > cumulative_input_site;
 extern std::map<std::string, double > cumulative_output_site;
@@ -29,9 +30,12 @@ extern std::map<string, FileData*>* name_node;
 extern FILE* FP;
 extern msg_sem_t sem_link;
 extern msg_sem_t sem_requester;
-extern std::string current_model;
 
-extern char* path_to_output;
+// Config variables
+extern std::string current_model;
+extern std::string path_to_output;
+extern std::string jobs_file;
+extern std::string input_files_file;
 
 int data_replicator(int argc, char* argv[]);
 int job_requester();

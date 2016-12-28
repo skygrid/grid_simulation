@@ -25,7 +25,7 @@ int writeToFile(Job* jobInfo)
 
 int clearFile()
 {
-    FP = fopen (path_to_output, "w");
+    FP = fopen (path_to_output.c_str(), "w");
     fprintf(FP, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec, Tier, Type\n");
     //fclose(FP);
     //fp1 = fopen("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "w");

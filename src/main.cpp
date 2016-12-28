@@ -19,8 +19,11 @@ int tracer(int argc, char* argv[]);
 
 msg_sem_t sem_requester;
 
-char* path_to_output;
-string current_model;
+// Config variables
+std::string path_to_output;
+std::string current_model;
+std::string jobs_file;
+std::string input_files_file;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this msg example");
 
@@ -29,11 +32,11 @@ int main(int argc, char *argv[]){
     YAML::Node config = YAML::LoadFile("config.yml");
 
     const std::string model = config["model"].as<std::string>();
-    const std::string platform = config["model"].as<std::string>();
-    const std::string deployment = config["model"].as<std::string>();
-    const std::string out_txt = config["out.txt"].as<std::string>();
-    const std::string jobs = config["model"].as<std::string>();
-    const std::string input = config["model"].as<std::string>();
+    const std::string platform = config["platform"].as<std::string>();
+    const std::string deployment = config["deployment"].as<std::string>();
+    path_to_output = config["out.txt"].as<std::string>();
+    jobs_file = config["jobs"].as<std::string>();
+    input_files_file = config["input"].as<std::string>();
 
     auto t1 = std::chrono::high_resolution_clock::now();
 
@@ -54,7 +57,6 @@ int main(int argc, char *argv[]){
     MSG_function_register("initialize", initialize_file_labels);
     MSG_function_register("delete_unpop_file", delete_unpopular_file);
     MSG_launch_application(deployment.c_str());
-    path_to_output = (char*) out_txt.c_str();
     current_model = (char*) model.c_str();
 
     msg_error_t res = MSG_main();
@@ -82,11 +84,4 @@ int main(int argc, char *argv[]){
 
 
     return res != MSG_OK;
-}
-
-int parse_config(){
-
-
-
-    return 0;
 }
