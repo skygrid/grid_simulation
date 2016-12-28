@@ -1,10 +1,7 @@
 #!/bin/bash
 cmake .
 make
-sudo ./CSim2Sim platform/platform.xml \
-platform/deployment.xml \
-out.txt \
-simple \
+sudo ./CSim2Sim \
 --cfg=contexts/nthreads:1 \
 --cfg=tracing:yes \
 --cfg=tracing/platform:yes \
