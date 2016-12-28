@@ -3,6 +3,7 @@
 //
 
 #include <simgrid/msg.h>
+#include <yaml-cpp/yaml.h>
 #include <chrono>
 #include "my_structures.h"
 #include "myfunc_list.h"
@@ -25,11 +26,20 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this m
 
 int main(int argc, char *argv[]){
 
+    YAML::Node config = YAML::LoadFile("config.yml");
+
+    const std::string model = config["model"].as<std::string>();
+    const std::string platform = config["model"].as<std::string>();
+    const std::string deployment = config["model"].as<std::string>();
+    const std::string out_txt = config["out.txt"].as<std::string>();
+    const std::string jobs = config["model"].as<std::string>();
+    const std::string input = config["model"].as<std::string>();
+
     auto t1 = std::chrono::high_resolution_clock::now();
 
     MSG_init(&argc, argv);
 
-    MSG_create_environment(argv[1]);
+    MSG_create_environment(platform.c_str());
 
     declare_trace_variables();
 
@@ -43,9 +53,9 @@ int main(int argc, char *argv[]){
 
     MSG_function_register("initialize", initialize_file_labels);
     MSG_function_register("delete_unpop_file", delete_unpopular_file);
-    MSG_launch_application(argv[2]);
-    path_to_output = argv[3];
-    current_model = argv[4];
+    MSG_launch_application(deployment.c_str());
+    path_to_output = (char*) out_txt.c_str();
+    current_model = (char*) model.c_str();
 
     msg_error_t res = MSG_main();
     XBT_INFO("Simulation time %f", MSG_get_clock());
@@ -72,4 +82,11 @@ int main(int argc, char *argv[]){
 
 
     return res != MSG_OK;
+}
+
+int parse_config(){
+
+
+
+    return 0;
 }

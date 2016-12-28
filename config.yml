@@ -1,0 +1,6 @@
+platform: platform/platform.xml
+deployment: platform/deployment.xml
+out.txt: trash/out.txt
+model: simple
+jobs: InputData/little_jobs.yml
+input: InputData/little_data.yml
