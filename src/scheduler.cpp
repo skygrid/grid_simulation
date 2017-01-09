@@ -14,6 +14,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
 int scheduler(int argc, char* argv[]){
     input();
+    XBT_INFO("length of queus is %zd", GLOBAL_QUEUE->size());
     string mailbox = "scheduler";
     msg_task_t task = NULL; msg_task_t taskB = NULL;
 

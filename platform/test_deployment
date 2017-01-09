@@ -1,0 +1,146 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+
+    <process host="CERN-PROD" function="scheduler">
+        <argument value="scheduler"/>  <!-- Input mailbox -->
+    </process>
+
+    <process host="CERN-PROD" function="tier1">
+        <argument value="CERN-PROD"/>
+        <argument value="5238"/>
+    </process>
+
+    <process host="IN2P3-CC" function="tier1">
+        <argument value="IN2P3-CC"/>
+        <argument value="2241"/>
+    </process>
+
+    <process host="FZK-LCG2" function="tier1">
+        <argument value="FZK-LCG2"/>
+        <argument value="1862"/>
+    </process>
+
+    <process host="INFN-T1" function="tier1">
+        <argument value="INFN-T1"/>
+        <argument value="2574"/>
+    </process>
+
+    <process host="NIKHEF-ELPROD" function="tier1">
+        <argument value="NIKHEF-ELPROD"/>
+        <argument value="1097"/>
+    </process>
+
+    <process host="NRC-KI-T1" function="tier1">
+        <argument value="NRC-KI-T1"/>
+        <argument value="1058"/>
+    </process>
+
+    <process host="pic" function="tier1">
+        <argument value="pic"/>
+        <argument value="782"/>
+    </process>
+
+    <process host="RAL-LCG2" function="tier1">
+        <argument value="RAL-LCG2"/>
+        <argument value="4680"/>
+    </process>
+
+    <process host="FR-IN2P3-CPPM" function="tier1">
+        <argument value="FR-IN2P3-CPPM"/>
+        <argument value="368"/>
+    </process>
+
+    <process host="FR-GRIF" function="tier1">
+        <argument value="FR-GRIF"/>
+        <argument value="635"/>
+    </process>
+
+    <process host="FR-IN2P3-LAPP" function="tier1">
+        <argument value="FR-IN2P3-LAPP"/>
+        <argument value="453"/>
+    </process>
+
+    <process host="FR-IN2P3-LPC" function="tier1">
+        <argument value="FR-IN2P3-LPC"/>
+        <argument value="165"/>
+    </process>
+
+    <process host="DE-DESY-LHCB" function="tier1">
+        <argument value="DE-DESY-LHCB"/>
+        <argument value="278"/>
+    </process>
+
+    <process host="IT-INFN-T2" function="tier1">
+        <argument value="IT-INFN-T2"/>
+        <argument value="1308"/>
+    </process>
+
+    <process host="T2-LATINAMERICA" function="tier1">
+        <argument value="T2-LATINAMERICA"/>
+        <argument value="374"/>
+    </process>
+
+    <process host="PL-TIER2-WLCG" function="tier1">
+        <argument value="PL-TIER2-WLCG"/>
+        <argument value="137"/>
+    </process>
+
+    <process host="RO-LCG" function="tier1">
+        <argument value="RO-LCG"/>
+        <argument value="701"/>
+    </process>
+
+    <process host="RU-RDIG" function="tier1">
+        <argument value="RU-RDIG"/>
+        <argument value="79"/>
+    </process>
+
+    <process host="ES-LHCb-T2" function="tier1">
+        <argument value="ES-LHCb-T2"/>
+        <argument value="545"/>
+    </process>
+
+    <process host="CH-CHIPP-CSCS" function="tier1">
+        <argument value="CH-CHIPP-CSCS"/>
+        <argument value="1131"/>
+    </process>
+
+    <process host="UK-London-Tier2" function="tier1">
+        <argument value="UK-London-Tier2"/>
+        <argument value="215"/>
+    </process>
+
+    <process host="UK-NorthGrid" function="tier1">
+        <argument value="UK-NorthGrid"/>
+        <argument value="650"/>
+    </process>
+
+    <process host="UK-ScotGrid" function="tier1">
+        <argument value="UK-ScotGrid"/>
+        <argument value="179"/>
+    </process>
+
+    <process host="UK-SouthGrid" function="tier1">
+        <argument value="UK-SouthGrid"/>
+        <argument value="611"/>
+    </process>
+
+
+    <process host="CERN-PROD" function="killer">
+    </process>
+
+    <process host="CERN-PROD" function="initialize">
+        <argument value="518400"/>
+    </process>
+
+    <process host="CERN-PROD" function="delete_unpop_file">
+        <argument value="518400"/>
+    </process>
+
+    <process host="CERN-PROD" function="tracer">
+        <argument value="518400"/>
+    </process>
+
+
+</platform>
