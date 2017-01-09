@@ -22,7 +22,7 @@ LINK_NAMES10_BW11.extend([str(bandwidth)+"G", str(bandwidth)+"G", str(bandwidth)
 rtype = np.dtype([('t', np.str, 15), ('hepspec', np.float32), ('disk', np.str, 20), ('tape', np.str, 20), ('cpu', np.float32), ('names', np.str, 35)])
 
 
-tier_name, HEPSPEC, DISK_ALL, TAPE_ALL, CPU_ALL, TIER_ALL = np.loadtxt("../InputData/capacities_lhcb.csv", skiprows=1, dtype=(rtype), usecols=(0, 3, 4, 5, 6, 7), delimiter=";", unpack=True)
+tier_name, HEPSPEC, DISK_ALL, TAPE_ALL, CPU_ALL, TIER_ALL = np.loadtxt("lhcb_capacities.csv", skiprows=1, dtype=(rtype), usecols=(0, 3, 4, 5, 6, 7), delimiter=";", unpack=True)
 print len(tier_name)
 tier2_count = np.where(tier_name == "Tier 2")[0].size
 

@@ -96,7 +96,7 @@
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD13" size="0GB" model="linear_no_lat"
+		<storage_type id="HDD13" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/IT-INFN-T2-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
@@ -110,7 +110,7 @@
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="HDD15" size="0GB" model="linear_no_lat"
+		<storage_type id="HDD15" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/PL-TIER2-WLCG-DISK.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
@@ -231,112 +231,112 @@
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE8" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE8" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/FR-IN2P3-CPPM-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE9" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE9" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/FR-GRIF-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE10" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE10" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/FR-IN2P3-LAPP-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE11" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE11" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/FR-IN2P3-LPC-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE12" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE12" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/DE-DESY-LHCB-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE13" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE13" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/IT-INFN-T2-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE14" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE14" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/T2-LATINAMERICA-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE15" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE15" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/PL-TIER2-WLCG-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE16" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE16" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/RO-LCG-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE17" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE17" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/RU-RDIG-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE18" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE18" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/ES-LHCb-T2-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE19" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE19" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/CH-CHIPP-CSCS-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE20" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE20" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/UK-London-Tier2-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE21" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE21" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/UK-NorthGrid-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE22" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE22" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/UK-ScotGrid-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
 			<model_prop id="Bconnection" value="10000GBps"/>
 		</storage_type>
 
-		<storage_type id="TAPE23" size="0GB" model="linear_no_lat"
+		<storage_type id="TAPE23" size="10GB" model="linear_no_lat"
 				content="InputData/SEs/UK-SouthGrid-TAPE.txt" content_type="txt_unix">
 			<model_prop id="Bwrite" value="500MBps"/>
 			<model_prop id="Bread" value="118MBps"/>
