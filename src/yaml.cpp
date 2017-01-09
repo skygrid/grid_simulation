@@ -24,6 +24,7 @@ namespace YAML {
 
         static bool decode(const Node& node, Job& job) {
             if(!node.IsMap()) {
+                //XBT_INFO("xx");
                 return false;
             }
             std::string::size_type sz;
@@ -37,7 +38,7 @@ namespace YAML {
                 job.LocalJobID = node["LocalJobID"].as<std::string>();
                 job.OutputFiles = node["OutputFiles"].as<std::vector<std::string>>();
                 job.RescheduleTime = node["RescheduleTime"].as<std::string>();
-                job.Site = node["Site"].as<std::string>();
+                //job.Site = node["Site"].as<std::string>();
                 job.StartExecTime = node["StartExecTime"].as<double>();
                 job.Status = node["Status"].as<std::string>();
                 job.SubmissionTime = std::stol(node["SubmissionTime"].as<std::string>(), &sz) - 1475269223;
@@ -75,7 +76,6 @@ namespace YAML {
             }catch (YAML::BadConversion& badConversion){
                 return false;
             }
-
             return true;
         }
     };
@@ -98,16 +98,19 @@ static int parse_input_data(){
         }catch (YAML::InvalidNode& node){
             XBT_INFO("INVALID NODE:YAML");
         }
-
     }
     return 0;
 }
 
 static int parse_jobs() {
+    size_t num_bad_conversion = 0;
+    size_t invalid_node_num = 0;
+    size_t normal_node = 0;
 
     GLOBAL_QUEUE = new std::list<Job*>;
+    XBT_INFO(jobs_file.c_str());
     YAML::Node root = YAML::LoadFile(jobs_file);
-    int i = 0;
+
     for (auto it = root.begin(); it != root.end(); ++it) {
         try {
             Job* job = new Job;
@@ -116,13 +119,19 @@ static int parse_jobs() {
             job->JobId = key;
             job->type = charToEnum(job->JobType);
             GLOBAL_QUEUE->push_back(job);
+            ++normal_node;
         }catch(YAML::TypedBadConversion<Job>& badConversion) {
-            XBT_INFO("INVALID JOB");
-        }catch (YAML::InvalidNode& node){
+            num_bad_conversion++;
             XBT_INFO("INVALID NODE %s", it->first.as<std::string>().c_str());
+        }catch (YAML::InvalidNode& node){
+            //XBT_INFO("INVALID NODE %s", it->first.as<std::string>().c_str());
+            //XBT_INFO("INVALID NODE %zd", ++invalid_node_num);
+            invalid_node_num++;
         }
 
     }
+
+    XBT_INFO("Normal: %zd\tBadConversion: %zd\tInvalid_num: %zd", normal_node, num_bad_conversion, invalid_node_num);
 
     return 0;
 }

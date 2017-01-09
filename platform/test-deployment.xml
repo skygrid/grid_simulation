@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
+<platform version="4">
+
+	<process host="CERN-PROD" function="scheduler">
+		<argument value="scheduler"/>  <!-- Input mailbox -->
+	</process>
+
+	<process host="PL-TIER2-WLCG" function="tier1">
+		<argument value="PL-TIER2-WLCG"/>
+		<argument value="137"/>
+	</process>
+
+	<process host="CERN-PROD" function="killer">
+	</process>
+
+	<process host="CERN-PROD" function="initialize">
+		<argument value="518400"/>
+	</process>
+
+	<process host="CERN-PROD" function="delete_unpop_file">
+		<argument value="518400"/>
+	</process>
+
+	<process host="CERN-PROD" function="tracer">
+		<argument value="518400"/>
+	</process>
+
+
+</platform>
