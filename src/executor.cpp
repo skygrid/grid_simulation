@@ -231,8 +231,8 @@ int task_executor(Job* jobInfo){
 
     // CREATING AND EXECUTION OF TASK
 
-    //task = MSG_task_create(std::to_string(jobInfo->JobId).c_str(), jobInfo->TotalCPUTime, 1, NULL);
-    task = MSG_task_create("kotok", 1e11, 1000, NULL);
+    task = MSG_task_create(std::to_string(jobInfo->JobId).c_str(), jobInfo->TotalCPUTime, 1, NULL);
+    //task = MSG_task_create("kotok", 1e11, 1000, NULL);
 
     jobInfo->StartExecTime = MSG_get_clock();
     addActiveCoreT();
