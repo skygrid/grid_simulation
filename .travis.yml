@@ -36,6 +36,7 @@ before_install:
   - sudo cmake -DBUILD_SHARED_LIBS=ON ..
   - sudo make
   - sudo make install
+  - sudo ldconfig
   - cd ../..
 
 #install:

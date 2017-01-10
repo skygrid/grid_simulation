@@ -65,7 +65,6 @@ void plusOneCorruptedCore(){
     number++;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup(kot));
-    memset(kot, '\0', 50);
     MSG_sem_release(sem_link);
 }
 
@@ -77,7 +76,6 @@ void minusOneCorruptedCore(){
     number--;
     sprintf(kot, "%ld", number);
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup(kot));
-    memset(kot, '\0', 50);
     MSG_sem_release(sem_link);
 }
 
