@@ -23,7 +23,7 @@ before_install:
   - pip install --user cpp-coveralls
   - git clone https://github.com/simgrid/simgrid.git
   - cd simgrid
-  - git reset --hard 6c0e4dfbe49cab77339b690799f82d1b4a16e0b9
+  - git reset --hard 37f351e6ee37d1073e4f409cd802b7065e2c12d9
   - sudo cmake -Denable_documentation=OFF -Denable_coverage=OFF -Denable_java=OFF -Denable_model-checking=OFF -Denable_lua=OFF -Denable_compile_optimizations=OFF -Denable_smpi=OFF -Denable_smpi_MPICH3_testsuite=OFF -Denable_compile_warnings=OFF .
   - sudo make
   - sudo make install

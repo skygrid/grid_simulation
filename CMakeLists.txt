@@ -7,5 +7,4 @@ set(SOURCE_FILES src/main.cpp src/my_structures.h src/scheduler.cpp src/data_rep
 add_executable(CSim2Sim ${SOURCE_FILES})
 
 target_link_libraries(CSim2Sim yaml-cpp)
-find_library(LIB_SIMGRID NAMES simgrid libsimgrid.so libprofiler.so.V123)
-target_link_libraries(CSim2Sim ${LIB_SIMGRID})
+target_link_libraries(CSim2Sim simgrid)

@@ -286,7 +286,7 @@ void plusOneActiveCore(){
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number++;
     sprintf(kot, "%ld", number);
-    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot));
     MSG_sem_release(sem_link);
 }
 
@@ -297,7 +297,7 @@ void minusOneActiveCore(){
     number = xbt_str_parse_int(MSG_host_get_property_value(MSG_host_self(), "activeCore"), "error");
     number--;
     sprintf(kot, "%ld", number);
-    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot), xbt_free_f);
+    MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup(kot));
     MSG_sem_release(sem_link);
 }
 
