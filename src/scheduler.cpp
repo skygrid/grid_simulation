@@ -33,18 +33,20 @@ int scheduler(int argc, char* argv[]){
             std::vector<Job*>* batch;
 
             std::string request_host = MSG_host_get_name(MSG_task_get_source(task));
-            // Tier2 matcher
-            int tier2 = !strncmp(request_host.c_str(), "Tier2", 5); // is tier2 or not
 
-            if (tier2){
-                batch = matcher_tier2(batchRequest->coreAmount, request_host);
-            }
-            else if (!current_model.compare("simple")){
-                batch = matcher(batchRequest->coreAmount);
-                //batch = matcher_calibration(batchRequest->coreAmount, request_host);
-            }else {
-                batch = matcher_DAM(batchRequest->coreAmount, request_host);
-            }
+            batch = matcher_calibration(batchRequest->coreAmount, request_host);
+            // Tier2 matcher
+//            int tier2 = !strncmp(request_host.c_str(), "Tier2", 5); // is tier2 or not
+//
+//            if (tier2){
+//                batch = matcher_tier2(batchRequest->coreAmount, request_host);
+//            }
+//            else if (!current_model.compare("simple")){
+//                batch = matcher(batchRequest->coreAmount);
+//                //batch = matcher_calibration(batchRequest->coreAmount, request_host);
+//            }else {
+//                batch = matcher_DAM(batchRequest->coreAmount, request_host);
+//            }
 
             taskB = MSG_task_create("", batch->size(), MESSAGES_SIZE, batch);
             //Add new user to link

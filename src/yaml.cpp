@@ -12,8 +12,10 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(yaml, "messages specific for yaml");
 
 static jobType charToEnum(string sval);
+inline double find_first_date(YAML::Node& root);
 std::list<Job*>* GLOBAL_QUEUE;
 std::map<std::string, InputFile*>* FILES_DATABASE;
+double first_date;
 
 string typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECONSTRUCTION", "TURBO",  "MCRECONSTRUCTION", "WGPRODUCTION", "MCMERGE", "UNKNOWN",
                      "MCSIMULATION", "TEST"};
@@ -41,7 +43,7 @@ namespace YAML {
                 //job.Site = node["Site"].as<std::string>();
                 job.StartExecTime = node["StartExecTime"].as<double>();
                 job.Status = node["Status"].as<std::string>();
-                job.SubmissionTime = std::stol(node["SubmissionTime"].as<std::string>(), &sz) - 1475269223;
+                job.SubmissionTime = std::stol(node["SubmissionTime"].as<std::string>(), &sz) - first_date;
                 job.SystemPriority = node["SystemPriority"].as<float>();
                 job.TotalCPUTime = node["TotalCPUTime(s)"].as<double>() * 1000000000; // Gigaflops
                 job.UserPriority = node["UserPriority"].as<float>();
@@ -111,6 +113,8 @@ static int parse_jobs() {
     XBT_INFO(jobs_file.c_str());
     YAML::Node root = YAML::LoadFile(jobs_file);
 
+    first_date = find_first_date(root);
+
     for (auto it = root.begin(); it != root.end(); ++it) {
         try {
             Job* job = new Job;
@@ -122,13 +126,12 @@ static int parse_jobs() {
             ++normal_node;
         }catch(YAML::TypedBadConversion<Job>& badConversion) {
             num_bad_conversion++;
-            XBT_INFO("INVALID NODE %s", it->first.as<std::string>().c_str());
+            //XBT_INFO("INVALID NODE %s", it->first.as<std::string>().c_str());
         }catch (YAML::InvalidNode& node){
             //XBT_INFO("INVALID NODE %s", it->first.as<std::string>().c_str());
             //XBT_INFO("INVALID NODE %zd", ++invalid_node_num);
             invalid_node_num++;
         }
-
     }
 
     XBT_INFO("Normal: %zd\tBadConversion: %zd\tInvalid_num: %zd", normal_node, num_bad_conversion, invalid_node_num);
@@ -136,7 +139,11 @@ static int parse_jobs() {
     return 0;
 }
 
-static jobType charToEnum(string sval)
+inline double find_first_date(YAML::Node& root){
+    return root.begin()->second["SubmissionTime"].as<double>();
+}
+
+static jobType charToEnum(std::string sval)
 {
 
     for (int enumInt = USER; enumInt != LAST; enumInt++)
