@@ -11,16 +11,22 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(ttrace, "messages specific for trace");
 msg_sem_t sem_link;
 
 int declare_trace_variables(){
-    string variable_name;
-    std::string hosts[8] = {"CERN-PROD", "INFN-T1", "IN2P3-CC", "NRC-KI-T1", "pic", "RAL-LCG2", "FZK-LCG2", "NIKHEF-ELPROD"};
+
+    msg_host_t host;
+    unsigned int cursor;
+    xbt_dynar_t hosts_dynar = MSG_hosts_as_dynar();
 
     //Declare storage variables for tracing
-    for (int i = 0; i < 8; ++i) {
-        for (int j = 0; j < 2; ++j) {
-            variable_name = hosts[i] + to_string(j);
-            TRACE_host_variable_declare(variable_name.c_str());
+    std::string storage_name;
+    std::string storage_types[2] = {"-DISK", "-TAPE"};
+    xbt_dynar_foreach(hosts_dynar, cursor, host){
+        for (int i = 0; i < 2; ++i) {
+            storage_name = MSG_host_get_name(host) + storage_types[i];
+            TRACE_host_variable_declare(storage_name.c_str());
         }
     }
+
+    xbt_dynar_free(&hosts_dynar);
 
     TRACE_host_variable_declare("activeCore");
     TRACE_host_variable_declare("corruptedCore");
@@ -44,40 +50,55 @@ int set_0_all_routes(){
     std::string storage_variable;
 
     sem_link = MSG_sem_init(1);
-    std::string hosts[8] = {"CERN-PROD", "INFN-T1", "IN2P3-CC", "NRC-KI-T1", "pic", "RAL-LCG2", "FZK-LCG2", "NIKHEF-ELPROD"};
+
+    std::string host_name;
+    std::string dst_host_name;
+    const char* host_name_char_arr;
+    const char* dst_host_name_char_arr;
+
+    xbt_dynar_t hosts_dynar = MSG_hosts_as_dynar();
+    size_t tiers_amount = xbt_dynar_length(hosts_dynar);
+
     TRACE_link_srcdst_variable_set("CERN-PROD", "CERN-PROD", "directUserAmount", 0);
     TRACE_link_srcdst_variable_set("CERN-PROD", "CERN-PROD", "indirectUserAmount", 0);
-    for (int i = 0; i < 8; ++i) {
+
+    for (unsigned long i = 0; i < tiers_amount; ++i) {
+        host_name = MSG_host_get_name(xbt_dynar_get_as(hosts_dynar, i, msg_host_t));
+        host_name_char_arr = host_name.c_str();
 
         //Set all variables of hosts to initial value
-        TRACE_host_variable_set(hosts[i].c_str(), "activeCore", 0);
-        TRACE_host_variable_set(hosts[i].c_str(), "corruptedCore", 0);
+        TRACE_host_variable_set(host_name_char_arr, "activeCore", 0);
+        TRACE_host_variable_set(host_name_char_arr, "corruptedCore", 0);
 
-        TRACE_host_variable_set(hosts[i].c_str(), "inputData", 0);
-        TRACE_host_variable_set(hosts[i].c_str(), "outputData", 0);
-        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnDisk", 0);
-        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnTape", 0);
-
+        TRACE_host_variable_set(host_name_char_arr, "inputData", 0);
+        TRACE_host_variable_set(host_name_char_arr, "outputData", 0);
+        TRACE_host_variable_set(host_name_char_arr, "datasetOnDisk", 0);
+        TRACE_host_variable_set(host_name_char_arr, "datasetOnTape", 0);
 
         //Set all variables of links to initial value
-        for (int j = i+1; j < 8; ++j) {
+        for (unsigned long j = i+1; j < tiers_amount; ++j) {
+            dst_host_name = MSG_host_get_name(xbt_dynar_get_as(hosts_dynar, j, msg_host_t));
+            dst_host_name_char_arr = dst_host_name.c_str();
+
             MSG_sem_acquire(sem_link);
-            TRACE_link_srcdst_variable_set(hosts[i].c_str(), hosts[j].c_str(), "traffic", 0);
-            TRACE_link_srcdst_variable_set(hosts[i].c_str(), hosts[j].c_str(), "directUserAmount", 0);
-            TRACE_link_srcdst_variable_set(hosts[i].c_str(), hosts[j].c_str(), "indirectUserAmount", 0);
+            TRACE_link_srcdst_variable_set(host_name_char_arr, dst_host_name_char_arr, "traffic", 0);
+            TRACE_link_srcdst_variable_set(host_name_char_arr, dst_host_name_char_arr, "directUserAmount", 0);
+            TRACE_link_srcdst_variable_set(host_name_char_arr, dst_host_name_char_arr, "indirectUserAmount", 0);
             MSG_sem_release(sem_link);
         }
 
         //Set all variables of storage to initial value
         std::string s[] = {"-TAPE", "-DISK"};
         for (int k = 0; k < 2; ++k) {
-            storage_variable = hosts[i] + s[k];
+            storage_variable = host_name + s[k];
             msg_storage_t storage = MSG_storage_get_by_name(storage_variable.c_str());
             TRACE_host_variable_set("CERN-PROD", storage_variable.c_str(), MSG_storage_get_used_size(storage));
         }
-        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnDisk", dataset_number(hosts[i], "-DISK"));
-        TRACE_host_variable_set(hosts[i].c_str(), "datasetOnTape", dataset_number(hosts[i], "-TAPE"));
+        TRACE_host_variable_set(host_name_char_arr, "datasetOnDisk", dataset_number(host_name, "-DISK"));
+        TRACE_host_variable_set(host_name_char_arr, "datasetOnTape", dataset_number(host_name, "-TAPE"));
     }
+
+    xbt_dynar_free(&hosts_dynar);
     return 0;
 }
 

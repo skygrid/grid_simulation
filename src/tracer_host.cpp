@@ -5,6 +5,7 @@
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
 
+XBT_LOG_NEW_DEFAULT_CATEGORY(tracer_host, "messages specific for trace");
 
 int addActiveCoreT(){
     MSG_sem_acquire(sem_link);
