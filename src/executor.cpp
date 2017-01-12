@@ -10,7 +10,7 @@
 
 std::vector<InputInfo*>* get_input_file_path(Job* job);
 int copy_from_tape_to_disk(std::vector<InputInfo*>* data_info);
-void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* dataInfo);
+void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* dataInfo, msg_bar_t& barrier);
 int task_executor(Job* jobInfo);
 
 
@@ -24,7 +24,6 @@ static int download_read_file_process(int argc, char* argv[]);
 extern map<std::string, double> cumulative_input_site;
 extern map<std::string, double> cumulative_output_site;
 
-static msg_bar_t barrier;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
@@ -39,9 +38,9 @@ int executor(int argc, char* argv[]){
             break;
         default:
             std::vector<InputInfo*>* fullPathVector = get_input_file_path(job);
-            barrier = MSG_barrier_init((unsigned int) fullPathVector->size());
+            msg_bar_t barrier = MSG_barrier_init((unsigned int) fullPathVector->size());
             copy_from_tape_to_disk(fullPathVector);
-            download_or_read_file(job, fullPathVector);
+            download_or_read_file(job, fullPathVector, barrier);
             break;
     }
     task_executor(job);
@@ -142,6 +141,7 @@ static int download_read_file_process(int argc, char* argv[]){
     InputAndJobInfo* data = (InputAndJobInfo*) MSG_process_get_data(MSG_process_self());
     InputInfo* inputInfo = data->inputInfo;
     Job* job = data->job;
+    msg_bar_t barrier = data->barrier;
 
     std::string host_name = MSG_host_get_name(MSG_host_self());
     std::string storage_name = host_name + "-DISK";
@@ -208,12 +208,13 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 }
 
 
-void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVector){
+void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVector, msg_bar_t& barrier){
     size_t size = inputInfoVector->size();
     for (size_t i = 0; i < size; ++i) {
         InputAndJobInfo* data = new InputAndJobInfo;
         data->job = jobInfo;
         data->inputInfo = inputInfoVector->at(i);
+        data->barrier = barrier;
 
         if (!inputInfoVector->at(i)->storage.empty()){
             MSG_process_create("reader", download_read_file_process, data, MSG_host_self());

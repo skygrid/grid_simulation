@@ -4,7 +4,7 @@
   InputFiles:
   - /wx
   JobGroup: 53935.0
-  JobType: MCSimulation
+  JobType: Turbo
   LocalJobID: 16773779.0
   OutputFiles:
   - /x.raw

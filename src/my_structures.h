@@ -80,6 +80,7 @@ struct InputInfo{
 struct InputAndJobInfo{
     InputInfo* inputInfo;
     Job* job;
+    msg_bar_t barrier;
 };
 
 class ReplicatorData{
