@@ -38,9 +38,10 @@ int executor(int argc, char* argv[]){
             break;
         default:
             std::vector<InputInfo*>* fullPathVector = get_input_file_path(job);
-            msg_bar_t barrier = MSG_barrier_init((unsigned int) fullPathVector->size());
+            msg_bar_t barrier = MSG_barrier_init((unsigned int) fullPathVector->size() + 1);
             copy_from_tape_to_disk(fullPathVector);
             download_or_read_file(job, fullPathVector, barrier);
+            MSG_barrier_wait(barrier);
             break;
     }
     task_executor(job);

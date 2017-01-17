@@ -7,4 +7,4 @@ sudo ./CSim2Sim \
 --cfg=tracing/platform:yes \
 --cfg=tracing/filename:trace \
 --cfg=maxmin/concurrency_limit:200000 \
---cfg=storage/max_file_descriptors:220000 \
+--cfg=storage/max_file_descriptors:220000

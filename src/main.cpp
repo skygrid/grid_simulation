@@ -80,7 +80,7 @@ int main(int argc, char *argv[]){
     //delete name_node;
 
     auto t2 = std::chrono::high_resolution_clock::now();
-    XBT_INFO("Real time of simulation: %d seconds", std::chrono::duration_cast<std::chrono::seconds>(t2-t1).count());
+    XBT_INFO("Real time of simulation: %ld seconds", std::chrono::duration_cast<std::chrono::seconds>(t2-t1).count());
 
 
     return res != MSG_OK;
