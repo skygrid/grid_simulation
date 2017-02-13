@@ -21,23 +21,17 @@ RUN git clone https://github.com/simgrid/simgrid.git
 WORKDIR "/simgrid"
 RUN cmake -Denable_documentation=OFF -Denable_coverage=OFF -Denable_java=OFF -Denable_model-checking=OFF \
     -Denable_lua=OFF -Denable_compile_optimizations=OFF -Denable_smpi=OFF -Denable_smpi_MPICH3_testsuite=OFF -Denable_compile_warnings=OFF .
-RUN sudo sync; sudo make
-RUN sudo make install
+RUN sudo sync; sudo make; sudo make install;
+RUN cd lib && sudo cp * /usr/lib; cd ../include && sudo cp -a * /usr/include
 
-# Install parser with wget
-RUN mkdir -p ~/Downloads
-WORKDIR "~/Downloads"
-RUN wget -O csvparser.zip https://sourceforge.net/projects/cccsvparser/files/2016-03-28/CsvParser_2016_03_28.zip/download
-RUN unzip csvparser.zip
-WORKDIR "~/Downloads/csvparser"
-mkdir -p lib
-RUN -Iinclude src/csvparser.c -fPIC -shared -o lib/libcsvparser.so
-RUN sudo cp lib/libcsvparser.so /usr/lib
-RUN include/csvparser.h /usr/include
-
-# LHCb grid simulation project 
+# Install yaml-cpp parser
+RUN git clone https://github.com/jbeder/yaml-cpp.git
+WORKDIR "/yaml-cpp"
+RUN mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=ON .. && cd .. && make && make install
+ 
+# LHCb grid simulation project
+WORKDIR "/"
+RUN git clone https://github.com/skygrid/grid_simulation.git
+ WORKDIR "/grid_simulation"
 RUN sudo sysctl -w vm.max_map_count=500000
-RUN mkdir -p ~/LHCb/grid_simulation
-COPY ./* ~/LHCb/grid_simulation/
-WORKDIR "~/LHCb/grid_simulation"
 CMD ["./run.sh"]
