@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cmake .
 make
 sudo ./CSim2Sim \
