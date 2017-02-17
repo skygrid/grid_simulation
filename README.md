@@ -14,9 +14,7 @@ Developing smarter algorithms for
 
 ## Job workflow
 
-Information about jobs are contained in __input.csv__.
-
-Topology of grid (cores, links and storages infrastructure) is contained in __Platform__ folder.
+![Alt text](https://pp.vk.me/c638316/v638316287/23a2c/Z2Zl5Qtk9eg.jpg "Simulation process")
 
 ## Installation process
 
