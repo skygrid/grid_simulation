@@ -23,6 +23,95 @@ class JobTimePlots(object):
         self.real_out_data = real_out_data
 
 
+    def _base_plotter(self, sim_array, real_array, sim_object_names, real_object_names, title, xlabel, ylabel):
+        """
+        Base plotter for other plots.
+
+        Parameters
+        ----------
+        sim_array : array-like
+            Simulation data to plot.
+        real_array : array-like
+            Real data to plot.
+        sim_object_names : array-like
+            List of object names. Simulation data will be split between these objects and plotted separately.
+            If None, the data will not be split.
+        real_object_names : array-like
+            List of object names. Real data will be split between these objects and plotted separately.
+            If None, the data will not be split.
+        title : string
+            Title of the figure.
+        xlabel : string
+            Label of X-axis of the figure.
+        ylabel : string
+            Label of Y-axis of the figure.
+        """
+
+        if sim_object_names == None or real_object_names == None:
+
+            min_val = min(sim_array.min(), real_array.min())
+            max_val = max(sim_array.max(), real_array.max())
+
+            bins = numpy.linspace(min_val, max_val, 101)
+
+            plt.figure(figsize=(12, 8))
+            plt.hist((real_array), bins=bins, histtype='stepfilled', linewidth=2, label='Real', color='r', alpha=0.5)
+            plt.hist((sim_array), bins=bins, histtype='stepfilled', linewidth=2, label='Simulation', color='b', alpha=0.5)
+
+            plt.title(title, size=20)
+            plt.xlabel(xlabel, size=20)
+            plt.ylabel(ylabel, size=20)
+            plt.xticks(size=20)
+            plt.yticks(size=20)
+            plt.grid(b=1)
+            plt.legend(loc='best', prop={'size':15})
+            plt.show()
+
+
+        else:
+
+            unique_object_names = numpy.unique(list(sim_object_names) + list(real_object_names))
+
+            for one_object in unique_object_names:
+
+                plt.figure(figsize=(12, 8))
+
+                sim_obj_array = (sim_array)[sim_object_names == one_object]
+                real_obj_array = (real_array)[real_object_names == one_object]
+
+                min_val = min(sim_obj_array.min(), real_obj_array.min())
+                max_val = max(sim_obj_array.max(), real_obj_array.max())
+
+                bins = numpy.linspace(min_val, max_val, 101)
+
+                plt.hist(real_obj_array,
+                         bins=bins,
+                         label='Real',
+                         normed=False,
+                         alpha=0.5,
+                         color='r',
+                         histtype='stepfilled',
+                         linewidth=2)
+
+                plt.hist(sim_obj_array,
+                         bins=bins,
+                         label='Simulation',
+                         normed=False,
+                         alpha=0.5,
+                         color='b',
+                         histtype='stepfilled',
+                         linewidth=2)
+
+                plt.title(one_object + ' ' + title, size=20)
+                plt.xlabel(xlabel, size=20)
+                plt.ylabel(ylabel, size=20)
+                plt.xticks(size=20)
+                plt.yticks(size=20)
+                plt.grid(b=1)
+                plt.legend(prop={'size':15}, loc='best')
+                plt.show()
+
+
     def job_exec_time(self):
         """
         Generates job execution time plot.
@@ -34,23 +123,13 @@ class JobTimePlots(object):
         real_exec_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.StartExecTime.values.astype(numpy.float)
         real_exec_time = real_exec_time / 1000.
 
-        min_val = min(sim_exec_time.min(), real_exec_time.min())
-        max_val = max(sim_exec_time.max(), real_exec_time.max())
-
-        bins = numpy.linspace(min_val, max_val, 101)
-
-        plt.figure(figsize=(12, 8))
-        plt.hist((real_exec_time), bins=bins, histtype='stepfilled', linewidth=2, label='Real', color='r', alpha=0.5)
-        plt.hist((sim_exec_time), bins=bins, histtype='stepfilled', linewidth=2, label='Simulation', color='b', alpha=0.5)
-
-        plt.title('Job Execution Time Distribution', size=20)
-        plt.xlabel('Job Execution Time, ks', size=20)
-        plt.ylabel('Number of jobs', size=20)
-        plt.xticks(size=20)
-        plt.yticks(size=20)
-        plt.grid(b=1)
-        plt.legend(loc='best', prop={'size':15})
-        plt.show()
+        self._base_plotter(sim_array=sim_exec_time,
+                           real_array=real_exec_time,
+                           sim_object_names=None,
+                           real_object_names=None,
+                           title='Job Execution Time Distribution',
+                           xlabel='Job Execution Time, ks',
+                           ylabel='Number of jobs')
 
 
     def job_exec_time_by_jobtype(self):
@@ -60,52 +139,21 @@ class JobTimePlots(object):
         """
 
         sim_exec_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.TimestartExec.values
+        sim_exec_time = sim_exec_time / 1000.
         sim_job_types = self.sim_out_data.Type.values
 
         real_exec_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.StartExecTime.values.astype(numpy.float)
+        real_exec_time = real_exec_time / 1000.
         real_job_types = self.real_out_data.JobType.values
 
-        unique_job_types = numpy.unique(list(sim_job_types) + list(real_job_types))
 
-
-        for job_type in unique_job_types:
-
-            plt.figure(figsize=(12, 8))
-
-            sim_job_time = (sim_exec_time)[sim_job_types == job_type] / 1000.
-            real_job_time = (real_exec_time)[real_job_types == job_type] / 1000.
-
-            min_val = min(sim_job_time.min(), real_job_time.min())
-            max_val = max(sim_job_time.max(), real_job_time.max())
-
-            bins = numpy.linspace(min_val, max_val, 101)
-
-            plt.hist(sim_job_time,
-                     bins=bins,
-                     label='Simulation',
-                     normed=False,
-                     alpha=0.5,
-                     color='b',
-                     histtype='stepfilled',
-                     linewidth=2)
-
-            plt.hist(real_job_time,
-                     bins=bins,
-                     label='Real',
-                     normed=False,
-                     alpha=0.5,
-                     color='r',
-                     histtype='stepfilled',
-                     linewidth=2)
-
-            plt.title(job_type + ' Job Execution Time Distribution', size=20)
-            plt.xlabel('Job Execution Time, ks', size=20)
-            plt.ylabel('Number of jobs', size=20)
-            plt.xticks(size=20)
-            plt.yticks(size=20)
-            plt.grid(b=1)
-            plt.legend(prop={'size':15}, loc='best')
-            plt.show()
+        self._base_plotter(sim_array=sim_exec_time,
+                           real_array=real_exec_time,
+                           sim_object_names=sim_job_types,
+                           real_object_names=real_job_types,
+                           title='Job Execution Time Distribution',
+                           xlabel='Job Execution Time, ks',
+                           ylabel='Number of jobs')
 
 
     def job_wait_time(self):
@@ -120,24 +168,13 @@ class JobTimePlots(object):
         real_wait_time = self.real_out_data.StartExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
         real_wait_time = numpy.log10(real_wait_time)
 
-
-        min_val = min(sim_wait_time.min(), real_wait_time.min())
-        max_val = max(sim_wait_time.max(), real_wait_time.max())
-
-        bins = numpy.linspace(min_val, max_val, 101)
-
-        plt.figure(figsize=(12, 8))
-        plt.hist((real_wait_time), bins=bins, histtype='stepfilled', linewidth=2, label='Real', color='r', alpha=0.5)
-        plt.hist((sim_wait_time), bins=bins, histtype='stepfilled', linewidth=2, label='Simulation', color='b', alpha=0.5)
-
-        plt.title('Job Wait Time Distribution', size=20)
-        plt.xlabel('Job Wait Time, log10(s)', size=20)
-        plt.ylabel('Number of jobs', size=20)
-        plt.xticks(size=20)
-        plt.yticks(size=20)
-        plt.grid(b=1)
-        plt.legend(loc='best', prop={'size':15})
-        plt.show()
+        self._base_plotter(sim_array=sim_wait_time,
+                           real_array=real_wait_time,
+                           sim_object_names=None,
+                           real_object_names=None,
+                           title='Job Wait Time Distribution',
+                           xlabel='Job Wait Time, log10(s)',
+                           ylabel='Number of jobs')
 
 
     def job_wait_time_by_jobtype(self):
@@ -148,55 +185,21 @@ class JobTimePlots(object):
 
 
         sim_wait_time = self.sim_out_data.TimestartExec.values - self.sim_out_data.Timestart.values
+        sim_wait_time = numpy.log10(sim_wait_time)
         sim_job_types = self.sim_out_data.Type.values
 
         real_wait_time = self.real_out_data.StartExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
+        real_wait_time = numpy.log10(real_wait_time)
         real_job_types = self.real_out_data.JobType.values
 
-        unique_job_types = numpy.unique(list(sim_job_types) + list(real_job_types))
 
-
-
-        for job_type in unique_job_types:
-
-            plt.figure(figsize=(12, 8))
-
-            sim_job_time = (sim_wait_time)[sim_job_types == job_type]
-            sim_job_time = numpy.log10(sim_job_time)
-            real_job_time = (real_wait_time)[real_job_types == job_type]
-            real_job_time = numpy.log10(real_job_time)
-
-            min_val = min(sim_job_time.min(), real_job_time.min())
-            max_val = max(sim_job_time.max(), real_job_time.max())
-
-            bins = numpy.linspace(min_val, max_val, 101)
-
-            plt.hist(sim_job_time,
-                     bins=bins,
-                     label='Simulation',
-                     normed=False,
-                     alpha=0.5,
-                     color='b',
-                     histtype='stepfilled',
-                     linewidth=2)
-
-            plt.hist(real_job_time,
-                     bins=bins,
-                     label='Real',
-                     normed=False,
-                     alpha=0.5,
-                     color='r',
-                     histtype='stepfilled',
-                     linewidth=2)
-
-            plt.title(job_type + ' Job Wait Time Distribution', size=20)
-            plt.xlabel('Job Wait Time, log10(s)', size=20)
-            plt.ylabel('Number of jobs', size=20)
-            plt.xticks(size=20)
-            plt.yticks(size=20)
-            plt.grid(b=1)
-            plt.legend(prop={'size':15}, loc='best')
-            plt.show()
+        self._base_plotter(sim_array=sim_wait_time,
+                           real_array=real_wait_time,
+                           sim_object_names=sim_job_types,
+                           real_object_names=real_job_types,
+                           title='Job Wait Time Distribution',
+                           xlabel='Job Wait Time, log10(s)',
+                           ylabel='Number of jobs')
 
 
     def job_life_time(self):
@@ -210,23 +213,14 @@ class JobTimePlots(object):
         real_life_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
         real_life_time = numpy.log10(real_life_time)
 
-        min_val = min(sim_life_time.min(), real_life_time.min())
-        max_val = max(sim_life_time.max(), real_life_time.max())
 
-        bins = numpy.linspace(min_val, max_val, 101)
-
-        plt.figure(figsize=(12, 8))
-        plt.hist((real_life_time), bins=bins, histtype='stepfilled', linewidth=2, label='Real', color='r', alpha=0.5)
-        plt.hist((sim_life_time), bins=bins, histtype='stepfilled', linewidth=2, label='Simulation', color='b', alpha=0.5)
-
-        plt.title('Job Life Time Distribution', size=20)
-        plt.xlabel('Job Life Time, log10(s)', size=20)
-        plt.ylabel('Number of jobs', size=20)
-        plt.xticks(size=20)
-        plt.yticks(size=20)
-        plt.grid(b=1)
-        plt.legend(loc='best', prop={'size':15})
-        plt.show()
+        self._base_plotter(sim_array=sim_life_time,
+                           real_array=real_life_time,
+                           sim_object_names=None,
+                           real_object_names=None,
+                           title='Job Life Time Distribution',
+                           xlabel='Job Life Time, log10(s)',
+                           ylabel='Number of jobs')
 
 
     def job_life_time_by_jobtype(self):
@@ -237,54 +231,20 @@ class JobTimePlots(object):
 
 
         sim_life_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.Timestart.values
+        sim_life_time = numpy.log10(sim_life_time)
         sim_job_types = self.sim_out_data.Type.values
 
         real_life_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
+        real_life_time = numpy.log10(real_life_time)
         real_job_types = self.real_out_data.JobType.values
 
-        unique_job_types = numpy.unique(list(sim_job_types) + list(real_job_types))
-
-
-        for job_type in unique_job_types:
-
-            plt.figure(figsize=(12, 8))
-
-            sim_job_time = (sim_life_time)[sim_job_types == job_type]
-            sim_job_time = numpy.log10(sim_job_time)
-            real_job_time = (real_life_time)[real_job_types == job_type]
-            real_job_time = numpy.log10(real_job_time)
-
-            min_val = min(sim_job_time.min(), real_job_time.min())
-            max_val = max(sim_job_time.max(), real_job_time.max())
-
-            bins = numpy.linspace(min_val, max_val, 101)
-
-            plt.hist(sim_job_time,
-                     bins=bins,
-                     label='Simulation',
-                     normed=False,
-                     alpha=0.5,
-                     color='b',
-                     histtype='stepfilled',
-                     linewidth=2)
-
-            plt.hist(real_job_time,
-                     bins=bins,
-                     label='Real',
-                     normed=False,
-                     alpha=0.5,
-                     color='r',
-                     histtype='stepfilled',
-                     linewidth=2)
-
-            plt.title(job_type + ' Job Life Time Distribution', size=20)
-            plt.xlabel('Job Life Time, log10(s)', size=20)
-            plt.ylabel('Number of jobs', size=20)
-            plt.xticks(size=20)
-            plt.yticks(size=20)
-            plt.grid(b=1)
-            plt.legend(prop={'size':15}, loc='best')
-            plt.show()
+        self._base_plotter(sim_array=sim_life_time,
+                           real_array=real_life_time,
+                           sim_object_names=sim_job_types,
+                           real_object_names=real_job_types,
+                           title='Job Life Time Distribution',
+                           xlabel='Job Life Time, log10(s)',
+                           ylabel='Number of jobs')
 
 
     def job_cpu_time(self):
@@ -292,30 +252,18 @@ class JobTimePlots(object):
         Generates job cpu time plot.
         """
 
-
         sim_cpu_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.TimestartExec.values
         sim_cpu_time = sim_cpu_time / 1000.
         real_cpu_time = self.real_out_data.TotalCPUTime.values.astype(numpy.float)
         real_cpu_time = real_cpu_time / 1000.
 
-
-        min_val = min(sim_cpu_time.min(), real_cpu_time.min())
-        max_val = max(sim_cpu_time.max(), real_cpu_time.max())
-
-        bins = numpy.linspace(min_val, max_val, 101)
-
-        plt.figure(figsize=(12, 8))
-        plt.hist((real_cpu_time), bins=bins, histtype='stepfilled', linewidth=2, label='Real', color='r', alpha=0.5)
-        plt.hist((sim_cpu_time), bins=bins, histtype='stepfilled', linewidth=2, label='Simulation', color='b', alpha=0.5)
-
-        plt.title('Job CPU Time Distribution', size=20)
-        plt.xlabel('Job CPU Time, ks', size=20)
-        plt.ylabel('Number of jobs', size=20)
-        plt.xticks(size=20)
-        plt.yticks(size=20)
-        plt.grid(b=1)
-        plt.legend(loc='best', prop={'size':15})
-        plt.show()
+        self._base_plotter(sim_array=sim_cpu_time,
+                           real_array=real_cpu_time,
+                           sim_object_names=None,
+                           real_object_names=None,
+                           title='Job CPU Time Distribution',
+                           xlabel='Job CPU Time, ks',
+                           ylabel='Number of jobs')
 
 
 ############################################ Traffic Plots #############################################################
@@ -426,10 +374,81 @@ class TrafficPlots(object):
 
         self.sim_trace_data = sim_trace_data
 
+
+    def _base_plotter(self, object_names, variable_name, labels, title, xlabel, ylabel, var_miltiplier, cumulative=True):
+        """
+        Base plotter for other plots.
+
+        Parameters
+        ----------
+        object_names : array-like
+            List of object names for which curves will be plotted.
+        variable_name : string
+            Name of a variable which will be Y-axis of the plot. X-axis is time.
+        labels : array-like
+            List of labels for the objects.
+        title : string
+            Title of the figure.
+        xlabel : string
+            Label of X-axis of the figure.
+        ylabel : string
+            Label of Y-axis of the figure.
+        var_miltiplier :
+            Multiplier of the plotted variable.
+        cumulative : boolean
+            If True, cumulative plot will be generated.
+        """
+
+        if len(object_names) == 0:
+            print "No data to plot."
+            return
+
+        object_variable_arr = []
+
+        time_min = 0
+        time_max = self.sim_trace_data.icol(4).values.max()
+
+
+        for one_object in object_names:
+
+            object_data = self.sim_trace_data[(self.sim_trace_data.Object.values == one_object)*\
+                                            (self.sim_trace_data.Variable.values == variable_name)]
+
+            object_time = object_data.EndObservTime.values
+            object_variable = object_data.VarValue.values * var_miltiplier
+
+            time_bins, variable_bins, bin_size = binned_max(object_time, object_variable, 100, time_min, time_max)
+            time_bins = time_bins / 86400.# days
+
+
+            if cumulative:
+                object_variable_arr.append(variable_bins)
+            else:
+                variable_bins_diff = 1. * rolling_diff(variable_bins, start_val='auto') / bin_size
+                object_variable_arr.append(variable_bins_diff)
+
+
+        colors = cm.Set1(numpy.linspace(0, 1, len(object_names)))
+
+        if labels == 'None':
+            labels = object_names
+
+        plt.figure(num=None, figsize=(12, 8), dpi=300, facecolor='w', edgecolor='k')
+        plt.stackplot(time_bins, object_variable_arr, alpha=1, colors=colors, edgecolor='0')
+        plt.title(title, fontsize=25)
+        plt.xlabel(xlabel, fontsize=25)
+        plt.ylabel(ylabel, fontsize=25)
+        plt.xlim(time_bins.min(), time_bins.max())
+        plt.xticks(fontsize=25)
+        plt.yticks(fontsize=25)
+        plt.grid(linewidth=1)
+        plt.legend(labels, prop={'size':16}, framealpha=0.5, ncol=4, loc='upper center', bbox_to_anchor=(0.5, -0.15),
+                  fancybox=True)
+        plt.show()
+
     def lhcopn_cumulative_data_transfer(self):
         """
         Generates LHCOPN cumulative data transfer plots by links.
-        :return:
         """
 
 
@@ -455,49 +474,18 @@ class TrafficPlots(object):
                                 "GRIDKA-IN2P3",
                                 "GRIDKA-SARA"]
 
-        variable_name = 'traffic'
-
-        link_traffic_arr = []
-
-        time_min = 0
-        time_max = self.sim_trace_data.icol(4).values.max()
-
-
-        for link in tier_0_1_links:
-
-            link_data = self.sim_trace_data[(self.sim_trace_data.Object.values == link)*\
-                                            (self.sim_trace_data.Variable.values == variable_name)]
-
-            link_time = link_data.EndObservTime.values
-            link_traffic = link_data.VarValue.values / 10.**12 # TB
-
-            time_bins, traffic_bins, _ = binned_max(link_time, link_traffic, 100, time_min, time_max)
-            time_bins = time_bins / 86400.# days
-
-            link_traffic_arr.append(traffic_bins)
-
-
-
-        colors = cm.Set1(numpy.linspace(0, 1, len(tier_0_1_links)))
-        labels = tier_0_1_links_short
-
-        plt.figure(num=None, figsize=(12, 8), dpi=300, facecolor='w', edgecolor='k')
-        plt.stackplot(time_bins, link_traffic_arr, alpha=1, colors=colors, edgecolor='0')
-        plt.title("LHCOPN Cumulative Data Transfer by Link", fontsize=25)
-        plt.xlabel('Time, days', fontsize=25)
-        plt.ylabel('TB', fontsize=25)
-        plt.xlim(time_bins.min(), time_bins.max())
-        plt.xticks(fontsize=25)
-        plt.yticks(fontsize=25)
-        plt.grid(linewidth=1)
-        plt.legend(labels, prop={'size':16}, framealpha=0.5, ncol=4, loc='upper center', bbox_to_anchor=(0.5, -0.15),
-                  fancybox=True)
-        plt.show()
+        self._base_plotter(object_names = tier_0_1_links,
+                           variable_name='traffic',
+                           labels = tier_0_1_links_short,
+                           title = "LHCOPN Cumulative Data Transfer by Link",
+                           xlabel = 'Time, days',
+                           ylabel = 'TB',
+                           var_miltiplier = 1. / 10.**12,
+                           cumulative=True)
 
     def lhcopn_data_transfer_rate(self):
         """
         Generates LHCOPN data transfer rate plots by links.
-        :return:
         """
 
         tier_0_1_links = ["CERN-CNAF-LHCOPN-001",
@@ -522,43 +510,96 @@ class TrafficPlots(object):
                                 "GRIDKA-IN2P3",
                                 "GRIDKA-SARA"]
 
-        variable_name = 'traffic'
+        self._base_plotter(object_names = tier_0_1_links,
+                           variable_name='traffic',
+                           labels = tier_0_1_links_short,
+                           title = "LHCOPN Data Transfer Rate by Link",
+                           xlabel = 'Time, days',
+                           ylabel = 'GB / s',
+                           var_miltiplier = 1. / 10.**9,
+                           cumulative=False)
 
-        link_traffic_arr = []
+    def total_cumulative_data_transfer(self):
+        """
+        Generates total cumulative data transfer.
+        """
 
-        time_min = 0
-        time_max = self.sim_trace_data.icol(4).values.max()
+        variable_name='traffic'
+        object_names = numpy.unique(self.sim_trace_data[self.sim_trace_data.Variable == variable_name].Object.values)
 
+        self._base_plotter(object_names=object_names,
+                           variable_name=variable_name,
+                           labels = 'None',
+                           title = "Cumulative Data Transfer by Link",
+                           xlabel = 'Time, days',
+                           ylabel = 'TB',
+                           var_miltiplier = 1. / 10.**12,
+                           cumulative=True)
 
-        for link in tier_0_1_links:
+    def input_cumulative_data_transfer(self):
+        """
+        Generates input cumulative data transfer.
+        """
 
-            link_data = self.sim_trace_data[(self.sim_trace_data.Object.values == link)*\
-                                            (self.sim_trace_data.Variable.values == variable_name)]
+        variable_name='inputData'
+        object_names = numpy.unique(self.sim_trace_data[self.sim_trace_data.Variable == variable_name].Object.values)
 
-            link_time = link_data.EndObservTime.values
-            link_traffic = link_data.VarValue.values / 10.**9 # TB
+        self._base_plotter(object_names=object_names,
+                           variable_name=variable_name,
+                           labels = 'None',
+                           title = "Input Cumulative Data Transfer by Link",
+                           xlabel = 'Time, days',
+                           ylabel = 'TB',
+                           var_miltiplier = 1. / 10.**12,
+                           cumulative=True)
 
-            time_bins, traffic_bins, bin_size = binned_max(link_time, link_traffic, 100, time_min, time_max)
-            time_bins = time_bins / 86400.# days
+    def output_cumulative_data_transfer(self):
+        """
+        Generates output cumulative data transfer.
+        """
 
-            traffic_bins_diff = 1. * rolling_diff(traffic_bins, start_val='auto') / bin_size
+        variable_name='outputData'
+        object_names = numpy.unique(self.sim_trace_data[self.sim_trace_data.Variable == variable_name].Object.values)
 
-            link_traffic_arr.append(traffic_bins_diff)
+        self._base_plotter(object_names=object_names,
+                           variable_name=variable_name,
+                           labels = 'None',
+                           title = "Output Cumulative Data Transfer by Link",
+                           xlabel = 'Time, days',
+                           ylabel = 'TB',
+                           var_miltiplier = 1. / 10.**12,
+                           cumulative=True)
 
+    def number_of_datasets_ondisk(self):
+        """
+        Generates number of datasets on disk.
+        """
 
+        variable_name='datasetOnDisk'
+        object_names = numpy.unique(self.sim_trace_data[self.sim_trace_data.Variable == variable_name].Object.values)
 
-        colors = cm.Set1(numpy.linspace(0, 1, len(tier_0_1_links)))
-        labels = tier_0_1_links_short
+        self._base_plotter(object_names=object_names,
+                           variable_name=variable_name,
+                           labels = 'None',
+                           title = "Number of Datasets on Disk",
+                           xlabel = 'Time, days',
+                           ylabel = 'Number',
+                           var_miltiplier = 1.,
+                           cumulative=True)
 
-        plt.figure(num=None, figsize=(12, 8), dpi=300, facecolor='w', edgecolor='k')
-        plt.stackplot(time_bins, link_traffic_arr, alpha=1, colors=colors, edgecolor='0')
-        plt.title("LHCOPN Data Transfer Rate by Link", fontsize=25)
-        plt.xlabel('Time, days', fontsize=25)
-        plt.ylabel('GB / s', fontsize=25)
-        plt.xlim(time_bins.min(), time_bins.max())
-        plt.xticks(fontsize=25)
-        plt.yticks(fontsize=25)
-        plt.grid(linewidth=1)
-        plt.legend(labels, prop={'size':16}, framealpha=0.5, ncol=4, loc='upper center', bbox_to_anchor=(0.5, -0.15),
-                  fancybox=True)
-        plt.show()
+    def number_of_datasets_ontape(self):
+        """
+        Generates number of datasets on tape.
+        """
+
+        variable_name='datasetOnTape'
+        object_names = numpy.unique(self.sim_trace_data[self.sim_trace_data.Variable == variable_name].Object.values)
+
+        self._base_plotter(object_names=object_names,
+                           variable_name=variable_name,
+                           labels = 'None',
+                           title = "Number of Datasets on Tape",
+                           xlabel = 'Time, days',
+                           ylabel = 'Number',
+                           var_miltiplier = 1.,
+                           cumulative=True)
