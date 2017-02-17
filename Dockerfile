@@ -12,9 +12,7 @@ RUN apt-get update && apt-get install -y \
             libboost-dev \
             libboost-all-dev \
             doxygen \
-			unzip \
-            python3 \
-			wget 
+            python3 
 
 # Install SimGrid
 RUN git clone https://github.com/simgrid/simgrid.git
@@ -32,6 +30,6 @@ RUN mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=ON .. && cd .. && make 
 # LHCb grid simulation project
 WORKDIR "/"
 RUN git clone https://github.com/skygrid/grid_simulation.git
- WORKDIR "/grid_simulation"
+WORKDIR "/grid_simulation"
 RUN sudo sysctl -w vm.max_map_count=500000
 CMD ["./run.sh"]
