@@ -667,3 +667,20 @@ class TrafficPlots(object):
                            ylabel = 'Number',
                            var_miltiplier = 1.,
                            cumulative=True)
+
+    def number_of_active_cores(self):
+        """
+        Generates number of active cores.
+        """
+
+        variable_name='activeCore'
+        object_names = numpy.unique(self.sim_trace_data[self.sim_trace_data.Variable == variable_name].Object.values)
+
+        self._base_plotter(object_names=object_names,
+                           variable_name=variable_name,
+                           labels = 'None',
+                           title = "Number of Active Cores",
+                           xlabel = 'Time, days',
+                           ylabel = 'Number',
+                           var_miltiplier = 1.,
+                           cumulative=True)
