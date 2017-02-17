@@ -45,12 +45,12 @@ docker pull kenenbek/grid_simulation
 
 Or you can build grid_simulation image based on `Dockerfile` on your own:
 ```
-docker build -t grid_simulation .
+docker build -t <name of simulation> .
 ```
 
 This image has a `CMD` instruction which starts an execution of `run.sh` file:
 ```
-docker run -v /data:/grid_simulation
+docker run -v /data:/grid_simulation <name of simulation>
 ```
 
 ## Output
