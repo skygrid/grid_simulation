@@ -29,6 +29,44 @@ Information about jobs are contained in __input.csv__.
 
 Topology of grid (cores, links and storages infrastructure) is contained in __Platform__ folder.
 
+## Docker
+
+If you feel free with Docker you can play around with grid_simulation in container.
+
+You just need to pull images DockerHub repository:
+```
+docker pull kenenbek/grid_simulation
+```
+
+Or you can build grid_simulation image based on `Dockerfile` on your own:
+```
+docker build -t grid_simulation .
+```
+
+This image has a `CMD` instruction which starts an execution of `run.sh` file:
+```
+docker run -v /data:/grid_simulation
+```
+
+In the wake of simulation you should look for `jobs.csv` and `trace.csv` files.
+The first one contains all relevant information about job execution process:
+```
++-----------+------+---------------+--------------+-----------+------------+-----------+--------------+
+| JobId     | Done | Submission(s) | Schedule (s) | Start (s) | Finish (s) | Tier name | JobType      |
++-----------+------+---------------+--------------+-----------+------------+-----------+--------------+
+| 141647523 | 1    | 0             | 10.5645      | 56.2571   | 14974.7336 | CERN-PROD | MCSimulation |
++-----------+------+---------------+--------------+-----------+------------+-----------+--------------+
+```
+
+The second one does information about resource(CPU-cores, network, etc.) usage:
+```
++---------------------+----------+-----------+-----------+----------+--------------+
+| Resource name       | Variable | Start     | End       | Duration | Value        |
++---------------------+----------+-----------+-----------+----------+--------------+
+| CERN-RAL-LHCOPN-001 | traffic  | 17483.121 | 17535.824 | 52.702   | 342164520177 |
++---------------------+----------+-----------+-----------+----------+--------------+
+```
+
 ## Also
 
 You could check [presentation](https://github.com/skygrid/grid_simulation/blob/master/results/work.pdf) about LHCb simulation and
