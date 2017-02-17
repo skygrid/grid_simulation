@@ -12,6 +12,12 @@ Developing smarter algorithms for
 2. Networks
 3. Storages
 
+## Job workflow
+
+Information about jobs are contained in __input.csv__.
+
+Topology of grid (cores, links and storages infrastructure) is contained in __Platform__ folder.
+
 ## Installation process
 
 In this project we use two additional libraries. [SimGrid framework](https://github.com/simgrid/simgrid) is used for the purposes of simulation flow and [YAML cpp](https://github.com/jbeder/yaml-cpp) is used for parsing input files containing information about jobs and datasets.
@@ -22,13 +28,14 @@ cmake .
 make .
 ./CSim2Sim --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
 ```
-
-## Job workflow
-
-Information about jobs are contained in __input.csv__.
-
-Topology of grid (cores, links and storages infrastructure) is contained in __Platform__ folder.
-
+Change `config.yml` to customize paths to the following files:
+```
+platform: platform/platform.xml  ## Contains grid topology
+deployment: platform/test-deployment.xml ## Defines `behaviour` of sites 
+out.txt: out.txt  ## Jobs metrics are written here 
+jobs: InputData/little_jobs.yml ## Queue of waiting jobs
+input: InputData/little_data.yml ## Datasets stored in all tiers 
+```
 ## Docker
 
 If you feel free with Docker you can play around with grid_simulation in container.
