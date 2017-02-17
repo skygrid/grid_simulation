@@ -30,11 +30,11 @@ make .
 ```
 Change `config.yml` to customize paths to the following files:
 ```
-platform: platform/platform.xml  ## Contains grid topology
-deployment: platform/test-deployment.xml ## Defines `behaviour` of sites 
-out.txt: out.txt  ## Jobs metrics are written here 
-jobs: InputData/little_jobs.yml ## Queue of waiting jobs
-input: InputData/little_data.yml ## Datasets stored in all tiers 
+platform: platform/platform.xml           ## Contains grid topology
+deployment: platform/test-deployment.xml  ## Defines `behaviour` of sites 
+out.txt: out.txt                          ## Jobs metrics are written here 
+jobs: InputData/little_jobs.yml           ## Queue of waiting jobs
+input: InputData/little_data.yml          ## Datasets stored in all tiers 
 ```
 ## Docker
 
