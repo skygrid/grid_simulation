@@ -112,7 +112,7 @@ class JobTimePlots(object):
                 plt.show()
 
 
-    def job_exec_time(self):
+    def job_exec_time(self, by_job_type=False):
         """
         Generates job execution time plot.
         Job execution time = job end execution time - job start execution time
@@ -120,43 +120,30 @@ class JobTimePlots(object):
 
         sim_exec_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.TimestartExec.values
         sim_exec_time = sim_exec_time / 1000.
+
         real_exec_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.StartExecTime.values.astype(numpy.float)
         real_exec_time = real_exec_time / 1000.
 
-        self._base_plotter(sim_array=sim_exec_time,
-                           real_array=real_exec_time,
-                           sim_object_names=None,
-                           real_object_names=None,
-                           title='Job Execution Time Distribution',
-                           xlabel='Job Execution Time, ks',
-                           ylabel='Number of jobs')
-
-
-    def job_exec_time_by_jobtype(self):
-        """
-        Generates job execution time plots by the job types.
-        Job execution time = job end execution time - job start execution time
-        """
-
-        sim_exec_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.TimestartExec.values
-        sim_exec_time = sim_exec_time / 1000.
         sim_job_types = self.sim_out_data.Type.values
-
-        real_exec_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.StartExecTime.values.astype(numpy.float)
-        real_exec_time = real_exec_time / 1000.
         real_job_types = self.real_out_data.JobType.values
 
+        if by_job_type:
+            sim_object_names = sim_job_types
+            real_object_names = real_job_types
+        else:
+            sim_object_names = None
+            real_object_names = None
 
         self._base_plotter(sim_array=sim_exec_time,
                            real_array=real_exec_time,
-                           sim_object_names=sim_job_types,
-                           real_object_names=real_job_types,
+                           sim_object_names=sim_object_names,
+                           real_object_names=real_object_names,
                            title='Job Execution Time Distribution',
                            xlabel='Job Execution Time, ks',
                            ylabel='Number of jobs')
 
 
-    def job_wait_time(self):
+    def job_wait_time(self, by_job_type=False):
         """
         Generates job wait time plot.
         Job wait time = job start execution time - job submission time
@@ -168,41 +155,26 @@ class JobTimePlots(object):
         real_wait_time = self.real_out_data.StartExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
         real_wait_time = numpy.log10(real_wait_time)
 
-        self._base_plotter(sim_array=sim_wait_time,
-                           real_array=real_wait_time,
-                           sim_object_names=None,
-                           real_object_names=None,
-                           title='Job Wait Time Distribution',
-                           xlabel='Job Wait Time, log10(s)',
-                           ylabel='Number of jobs')
-
-
-    def job_wait_time_by_jobtype(self):
-        """
-        Generates job wait time plots by the job types.
-        Job wait time = job start execution time - job submission time
-        """
-
-
-        sim_wait_time = self.sim_out_data.TimestartExec.values - self.sim_out_data.Timestart.values
-        sim_wait_time = numpy.log10(sim_wait_time)
         sim_job_types = self.sim_out_data.Type.values
-
-        real_wait_time = self.real_out_data.StartExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
-        real_wait_time = numpy.log10(real_wait_time)
         real_job_types = self.real_out_data.JobType.values
 
+        if by_job_type:
+            sim_object_names = sim_job_types
+            real_object_names = real_job_types
+        else:
+            sim_object_names = None
+            real_object_names = None
 
         self._base_plotter(sim_array=sim_wait_time,
                            real_array=real_wait_time,
-                           sim_object_names=sim_job_types,
-                           real_object_names=real_job_types,
+                           sim_object_names=sim_object_names,
+                           real_object_names=real_object_names,
                            title='Job Wait Time Distribution',
                            xlabel='Job Wait Time, log10(s)',
                            ylabel='Number of jobs')
 
 
-    def job_life_time(self):
+    def job_life_time(self, by_job_type=False):
         """
         Generates job life time plot.
         Job life time = job end execution time - job submission time
@@ -210,59 +182,151 @@ class JobTimePlots(object):
 
         sim_life_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.Timestart.values
         sim_life_time = numpy.log10(sim_life_time)
+
         real_life_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
         real_life_time = numpy.log10(real_life_time)
 
-
-        self._base_plotter(sim_array=sim_life_time,
-                           real_array=real_life_time,
-                           sim_object_names=None,
-                           real_object_names=None,
-                           title='Job Life Time Distribution',
-                           xlabel='Job Life Time, log10(s)',
-                           ylabel='Number of jobs')
-
-
-    def job_life_time_by_jobtype(self):
-        """
-        Generates job life time plots by the job types.
-        Job life time = job end execution time - job submission time
-        """
-
-
-        sim_life_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.Timestart.values
-        sim_life_time = numpy.log10(sim_life_time)
         sim_job_types = self.sim_out_data.Type.values
-
-        real_life_time = self.real_out_data.EndExecTime.values.astype(numpy.float) - self.real_out_data.SubmissionTime.values.astype(numpy.float)
-        real_life_time = numpy.log10(real_life_time)
         real_job_types = self.real_out_data.JobType.values
 
+        if by_job_type:
+            sim_object_names = sim_job_types
+            real_object_names = real_job_types
+        else:
+            sim_object_names = None
+            real_object_names = None
+
+
         self._base_plotter(sim_array=sim_life_time,
                            real_array=real_life_time,
-                           sim_object_names=sim_job_types,
-                           real_object_names=real_job_types,
+                           sim_object_names=sim_object_names,
+                           real_object_names=real_object_names,
                            title='Job Life Time Distribution',
                            xlabel='Job Life Time, log10(s)',
                            ylabel='Number of jobs')
 
 
-    def job_cpu_time(self):
+    def job_cpu_time(self, by_job_type=False):
         """
         Generates job cpu time plot.
         """
 
         sim_cpu_time = self.sim_out_data.TimeEndExec.values - self.sim_out_data.TimestartExec.values
         sim_cpu_time = sim_cpu_time / 1000.
+
         real_cpu_time = self.real_out_data.TotalCPUTime.values.astype(numpy.float)
         real_cpu_time = real_cpu_time / 1000.
 
+        sim_job_types = self.sim_out_data.Type.values
+        real_job_types = self.real_out_data.JobType.values
+
+        if by_job_type:
+            sim_object_names = sim_job_types
+            real_object_names = real_job_types
+        else:
+            sim_object_names = None
+            real_object_names = None
+
         self._base_plotter(sim_array=sim_cpu_time,
                            real_array=real_cpu_time,
-                           sim_object_names=None,
-                           real_object_names=None,
+                           sim_object_names=sim_object_names,
+                           real_object_names=real_object_names,
                            title='Job CPU Time Distribution',
                            xlabel='Job CPU Time, ks',
+                           ylabel='Number of jobs')
+
+
+    def job_submission_time(self, by_job_type=False):
+        """
+        Generates job submission time plot.
+        """
+
+        sim_time = self.sim_out_data.Timestart.values
+        sim_time = sim_time - sim_time.min()
+        sim_time = sim_time / 1000.
+
+        real_time = self.real_out_data.SubmissionTime.values.astype(numpy.float)
+        real_time = real_time - real_time.min()
+        real_time = real_time / 1000.
+
+        sim_job_types = self.sim_out_data.Type.values
+        real_job_types = self.real_out_data.JobType.values
+
+        if by_job_type:
+            sim_object_names = sim_job_types
+            real_object_names = real_job_types
+        else:
+            sim_object_names = None
+            real_object_names = None
+
+        self._base_plotter(sim_array=sim_time,
+                           real_array=real_time,
+                           sim_object_names=sim_object_names,
+                           real_object_names=real_object_names,
+                           title='Job Submission Time Distribution',
+                           xlabel='Job Submission Time, ks',
+                           ylabel='Number of jobs')
+
+    def job_start_exec_time(self, by_job_type=False):
+        """
+        Generates job start execution time plot.
+        """
+
+        sim_time = self.sim_out_data.TimestartExec.values
+        sim_time = sim_time - sim_time.min()
+        sim_time = sim_time / 1000.
+
+        real_time = self.real_out_data.StartExecTime.values.astype(numpy.float)
+        real_time = real_time - real_time.min()
+        real_time = real_time / 1000.
+
+        sim_job_types = self.sim_out_data.Type.values
+        real_job_types = self.real_out_data.JobType.values
+
+        if by_job_type:
+            sim_object_names = sim_job_types
+            real_object_names = real_job_types
+        else:
+            sim_object_names = None
+            real_object_names = None
+
+        self._base_plotter(sim_array=sim_time,
+                           real_array=real_time,
+                           sim_object_names=sim_object_names,
+                           real_object_names=real_object_names,
+                           title='Job Start Execution Time Distribution',
+                           xlabel='Job Start Execution Time, ks',
+                           ylabel='Number of jobs')
+
+    def job_end_exec_time(self, by_job_type=False):
+        """
+        Generates job end execution time plot.
+        """
+
+        sim_time = self.sim_out_data.TimeEndExec.values
+        sim_time = sim_time - sim_time.min()
+        sim_time = sim_time / 1000.
+
+        real_time = self.real_out_data.EndExecTime.values.astype(numpy.float)
+        real_time = real_time - real_time.min()
+        real_time = real_time / 1000.
+
+        sim_job_types = self.sim_out_data.Type.values
+        real_job_types = self.real_out_data.JobType.values
+
+        if by_job_type:
+            sim_object_names = sim_job_types
+            real_object_names = real_job_types
+        else:
+            sim_object_names = None
+            real_object_names = None
+
+        self._base_plotter(sim_array=sim_time,
+                           real_array=real_time,
+                           sim_object_names=sim_object_names,
+                           real_object_names=real_object_names,
+                           title='Job End Execution Time Distribution',
+                           xlabel='Job End Execution Time, ks',
                            ylabel='Number of jobs')
 
 
