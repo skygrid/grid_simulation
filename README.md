@@ -53,6 +53,8 @@ This image has a `CMD` instruction which starts an execution of `run.sh` file:
 docker run -v /data:/grid_simulation
 ```
 
+## Output
+
 In the wake of simulation you should look for `jobs.csv` and `trace.csv` files.
 The first one contains all relevant information about job execution process:
 ```
