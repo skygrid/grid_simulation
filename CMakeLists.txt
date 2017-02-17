@@ -10,6 +10,6 @@ include_directories(/home/kenenbek/SimGrid/include)
 link_directories(/home/kenenbek/SimGrid/lib)
 #set(HEADER_FILES)
 
-target_link_libraries(CSim2Sim yaml-cpp)
+target_link_libraries(CSim2Sim /usr/local/lib/libyaml-cpp.so)
 #target_link_libraries(CSim2Sim /home/kenenbek/SimGrid/lib/libsimgrid.so)
 target_link_libraries(CSim2Sim simgrid)
