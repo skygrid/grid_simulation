@@ -14,13 +14,13 @@ Developing smarter algorithms for
 
 ## Installation process
 
-We use [SimGrid framework](https://github.com/simgrid/simgrid). You should install it.
-After installation of SimGrid, clone this project and run in command line
+In this project we use two additional libraries. [SimGrid framework](https://github.com/simgrid/simgrid) is used for the purposes of simulation flow and [YAML cpp](https://github.com/jbeder/yaml-cpp) is used for parsing input files containing information about jobs and datasets.
+After installation of SimGrid and YAML-cpp, clone this project and run in command line
 
 ```
 cmake . 
 make .
-./CSim2Sim --cfg=contexts/nthreads:2 --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
+./CSim2Sim --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
 ```
 
 ## Job workflow
