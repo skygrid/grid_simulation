@@ -24,7 +24,7 @@ After installation of SimGrid and YAML-cpp, clone this project and run in comman
 ```
 cmake . 
 make .
-./CSim2Sim --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
+./CSim2Sim --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:<path to trace file> --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
 ```
 Change `config.yml` to customize paths to the following files:
 ```
@@ -52,6 +52,33 @@ This image has a `CMD` instruction which starts an execution of `run.sh` file:
 ```
 docker run -v /data:/grid_simulation <name of simulation>
 ```
+
+## Cern OpenStack Instructions Using Docker
+1. Create instance on [openstack.cern.ch](https://openstack.cern.ch). Use one of the Ubuntu 14+ images. These images are available on [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/).
+
+2. Log in your instance and run the command:
+
+    ```bash
+    sudo apt-get update
+    ```
+
+3. Install Docker using the [instructions](https://docs.docker.com/engine/installation/linux/ubuntulinux/). If your are non-root user, run the following commands:
+
+    ```bash
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo service docker restart
+    ```
+
+    Verify the installation by running:
+
+    ```bash
+    sudo docker run hello-world
+    sudo docker ps -a
+    ```
+
+    These commands should work without errors.
+
 
 ## Output
 
