@@ -19,11 +19,17 @@ Developing smarter algorithms for
 ## Installation process
 
 In this project we use two additional libraries. [SimGrid framework](https://github.com/simgrid/simgrid) is used for the purposes of simulation flow and [YAML cpp](https://github.com/jbeder/yaml-cpp) is used for parsing input files containing information about jobs and datasets.
-After installation of SimGrid and YAML-cpp, clone this project and run in command line
+After installation of SimGrid and YAML-cpp, clone this project:
+```
+git clone https://github.com/skygrid/grid_simulation.git
+```
+and run in the command line:
 
 ```
-cmake . 
-make .
+mkdir build
+cd build
+cmake .. 
+make
 ./CSim2Sim --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:<path to trace file> --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
 ```
 Change `config.yml` to customize paths to the following files:
