@@ -14,6 +14,10 @@ int angel(int argc, char* argv[]);
 
 
 int evil(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Creates break downs at @amountCorruptCore at @sleepTime moment.
+	*/
     double sleepTime = xbt_str_parse_double(argv[1], "error");
     MSG_process_sleep(sleepTime);
     int i = 0;
@@ -45,6 +49,10 @@ int evil(int argc, char* argv[]){
 }
 
 int angel(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Repairs cores broken by evil
+	*/
     int* amountCorruptCore = (int*) MSG_process_get_data(MSG_process_self());
     for (int i = 0; i <= *amountCorruptCore; ++i) {
         subCorruptedCoreT();
@@ -58,6 +66,10 @@ int angel(int argc, char* argv[]){
 
 
 void plusOneCorruptedCore(){
+	/**
+		@type function
+		Increases the number of corrupred (broken) cores by one.
+	*/
     MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
@@ -69,6 +81,10 @@ void plusOneCorruptedCore(){
 }
 
 void minusOneCorruptedCore(){
+	/**
+		@type function
+		Decreases the number of corrupted cores by one.
+	*/
     MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
