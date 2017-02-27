@@ -27,6 +27,16 @@ std::string input_files_file;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(msg_app_masterworker, "Messages specific for this msg example");
 
+/**
+	This function starts and ends simulation workflow.
+	`main` accepts following arguments:
+	@--cfg=tracing:yes  enables tracing functionality of simgrid
+	@--cfg=tracing/platform:yes  enables platform tracing functionality of simgrid
+	@--cfg=tracing/filename:<path to trace file>  defines path to file simgrid writes to
+	@--cfg=maxmin/concurrency_limit:100000	maximum number of simultaneously running processes in simulation 
+	@--cfg=storage/max_file_descriptors:220000"	 maximum number of simultaneously open (and not closed) file descriptors
+	
+*/
 int main(int argc, char *argv[]){
 
     YAML::Node config = YAML::LoadFile("config.yml");
