@@ -8,12 +8,19 @@
 #include "myfunc_list.h"
 #include "my_structures.h"
 
-map<string, FileData*>* name_node;
-map<std::string, long> storage_number_map;
+std::map<string, FileData*>* name_node;
+std::map<std::string, long> storage_number_map;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(delete_unpopular_file, "messages specific for deletion");
 
 int initialize_file_labels(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Takes all available files (datasets) on all storages (disks and tapes) and label them.
+		To label means -- create a `label` object associated with dataset
+		 where information about file (date of creation, date of all accesses to file, etc.) can be stored. 
+		 
+	*/
     return 0;
     name_node = new map<string, FileData*>;
     unsigned int cur;
@@ -55,6 +62,10 @@ int initialize_file_labels(int argc, char* argv[]){
 
 /*When new file created*/
 int create_file_label(string& filename){
+	/**
+		@type function
+		Creation of auxiliary object `FileData` associated with absolute filepath. 
+	*/
     return 0;
     if (name_node->find(filename) != name_node->end())
         return 0;
@@ -70,6 +81,11 @@ int create_file_label(string& filename){
 
 /* When file is used by someone*/
 void file_usage_counter(string& filename){
+	/**
+		@type
+		When someone accesses a dataset this `function` adds the time of access to file's label object
+		 and increases counter of file usages by one.
+	*/
     return;
     string type;
     unsigned long len = (int) strcspn(filename.c_str(), "10");
@@ -87,6 +103,10 @@ void file_usage_counter(string& filename){
 
 
 int delete_unpopular_file(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Every @sleep_time secs delete files which have not been accessed at last @delete_time secs.
+	*/
     return 0;
     double sleep_time = xbt_str_parse_double(argv[1], "error");
 
