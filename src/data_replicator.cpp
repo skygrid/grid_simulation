@@ -1,16 +1,24 @@
 //
 // Created by ken on 28.07.16.
+// Puprose: data replication
 //
+
 #include <simgrid/msg.h>
 #include <string>
 #include "my_structures.h"
 #include "myfunc_list.h"
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(datareplica, "Messages specific for creating replicas");
+
 int uploader(int argc, char* argv[]);
 int data_replicator(int argc, char* argv[]);
 
 int data_replicator(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Launches `uploader` processes to replicate output files. 
+	*/
+
     Job* replica = (Job*) MSG_process_get_data(MSG_process_self());
     size_t output_files = replica->OutputFiles.size();
 
@@ -40,6 +48,11 @@ int data_replicator(int argc, char* argv[]){
 }
 
 int uploader(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Uploads output files to another hosts.
+	*/
+
     std::string host_name = MSG_host_get_name(MSG_host_self());
     std::string curFilePath;
     std::string pathAtDest;

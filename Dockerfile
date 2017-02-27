@@ -1,4 +1,3 @@
-#################################################
 # Dockerfile to build LHCb-simulation container #
 # Based on Ubuntu xenial                        #  
 #################################################
@@ -12,6 +11,7 @@ RUN apt-get update && apt-get install -y \
             libboost-dev \
             libboost-all-dev \
             doxygen \
+            vim \
             python3 
 
 # Install SimGrid
@@ -23,9 +23,10 @@ RUN sudo sync; sudo make; sudo make install;
 RUN cd lib && sudo cp * /usr/lib; cd ../include && sudo cp -a * /usr/include
 
 # Install yaml-cpp parser
+WORKDIR "/"
 RUN git clone https://github.com/jbeder/yaml-cpp.git
 WORKDIR "/yaml-cpp"
-RUN mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=ON .. && cd .. && make && make install
+RUN mkdir build; cd build; cmake -DBUILD_SHARED_LIBS=ON .. && make && make install
  
 # LHCb grid simulation project
 WORKDIR "/"
@@ -33,3 +34,4 @@ RUN git clone https://github.com/skygrid/grid_simulation.git
 WORKDIR "/grid_simulation"
 RUN sudo sysctl -w vm.max_map_count=500000
 CMD ["./run.sh"]
+
