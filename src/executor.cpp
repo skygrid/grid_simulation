@@ -28,6 +28,15 @@ extern map<std::string, double> cumulative_output_site;
 XBT_LOG_NEW_DEFAULT_CATEGORY(executor, "messages specific for executor");
 
 int executor(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Simulates a job execution workflow on host:
+			1) Downloading input data
+			2) Reading data
+			3) Execute task
+			4) Write to output files
+			5) Replicate output files
+	*/
     //MSG_process_on_exit(my_on_exit, NULL);
 
     plusOneActiveCore();
@@ -54,6 +63,16 @@ int executor(int argc, char* argv[]){
 
 
 std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
+	/**
+		@type function
+		Looks for an appropriate locations of datasets to download from.
+		Data locations have priorities as follows: 
+			own disk, other hosts' disk, own tape, other hosts' tape 
+		Input files path takes a form <host-name>-<storage-type>/<path-to-file>
+		@jobInfo is a pointer to a job object.
+		@return std::vector of found paths. 
+		
+	*/
 
     std::vector<InputInfo*>* fullPathVector = new std::vector<InputInfo*>; // return type
     std::string hostName = string(MSG_host_get_name(MSG_host_self()));
@@ -112,6 +131,12 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
 }
 
 int copy_tape_disk_process(int argc, char* argv[]){
+	
+	/**
+		@type simgrid process
+		If data needed for a host is located on tape storage, then 
+		this function (process) copies data from a tape to disk.
+	*/
 
     InputInfo* inputInfo = (InputInfo*) MSG_process_get_data(MSG_process_self());
     std::string remoteHostName = inputInfo->storage;
@@ -138,6 +163,11 @@ int copy_tape_disk_process(int argc, char* argv[]){
 
 
 static int download_read_file_process(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		1) Creates a process which start downloading file from host that has a dataset.
+		2) Read downloaded dataset.
+	*/
 
     InputAndJobInfo* data = (InputAndJobInfo*) MSG_process_get_data(MSG_process_self());
     InputInfo* inputInfo = data->inputInfo;
@@ -194,7 +224,13 @@ static int download_read_file_process(int argc, char* argv[]){
 }
 
 int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
-
+	/**
+		@type function
+		@inputInfoVector is a size `n` std::vector of `InputInfo*` objects
+		 which consists info about input datasets (filenames and locations).
+		If there is a need in copying files from tape to disk
+		 this function launches k <= n processes which do this. 
+	*/
 
     size_t fileAmount = inputInfoVector->size();
     for (size_t i = 0; i < fileAmount; ++i) {
@@ -210,6 +246,14 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 
 
 void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVector, msg_bar_t& barrier){
+	/**
+		@type function
+		@inputInfoVector is a size `n` std::vector of `InputInfo*` objects
+		 which consists info about input datasets (filenames and locations).
+		If there is a need in downloading files from another hosts' to own disk
+		 this function launches k <= n processes which do this. 
+	*/	
+
     size_t size = inputInfoVector->size();
     for (size_t i = 0; i < size; ++i) {
         InputAndJobInfo* data = new InputAndJobInfo;
@@ -226,6 +270,11 @@ void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVecto
 
 
 int task_executor(Job* jobInfo){
+	/**
+		@type simgrid process
+		Simulates only execution of single job. 
+		@jobInfo is job descriptor that has all relevant information about task. 
+	*/
     string host_name = string(MSG_host_get_name(MSG_host_self()));
     string storage_name = host_name + "-DISK";
     msg_task_t task;
@@ -282,6 +331,11 @@ int task_executor(Job* jobInfo){
 
 
 void plusOneActiveCore(){
+	/**
+		@type function
+		Increases the number of running cores by one unit when
+		job is started to be executed
+	*/
     MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
@@ -293,6 +347,11 @@ void plusOneActiveCore(){
 }
 
 void minusOneActiveCore(){
+	/**
+		@type function
+		Decreases the number of running cores by one unit when 
+		job is finished to be executed
+	*/
     MSG_sem_acquire(sem_link);
     char kot[50];
     long number;
@@ -305,6 +364,11 @@ void minusOneActiveCore(){
 
 
 int my_on_exit(void* ignored1, void *ignored2){
+	/**
+		@type function
+		Purpose: what to do if anomaly has happened 
+		Now: write to file about it.
+	*/
     Job* jobInfo = (Job*) MSG_process_get_data(MSG_process_self());
     writeToFile(jobInfo);
     return 0;
