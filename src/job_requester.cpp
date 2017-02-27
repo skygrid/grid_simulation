@@ -5,13 +5,18 @@
 #include "my_structures.h"
 #include "myfunc_list.h"
 
-using namespace std;
+
 XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
-
 int job_requester(int argc, char* argv[]){
-    string host_name = MSG_host_get_name(MSG_host_self());
-    string CERN = "CERN";
+	/**
+		@type simgrid process (run on all tiers)
+		Every @timeout checks an amount of free cores.
+		If this amount is bigger than some quantity then this process sends a job request
+		 to scheduler to get new batch of jobs. 		 
+	*/
+    std::string host_name = MSG_host_get_name(MSG_host_self());
+    std::string CERN = "CERN";
     msg_task_t task = NULL;
     double timeout = 1000;
     long freeCoreAmount;
