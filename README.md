@@ -12,23 +12,34 @@ Developing smarter algorithms for
 2. Networks
 3. Storages
 
-## Installation process
-
-We use [SimGrid framework](https://github.com/simgrid/simgrid). You should install it.
-After installation of SimGrid, clone this project and run in command line
-
-```
-cmake . 
-make .
-./CSim2Sim --cfg=contexts/nthreads:2 --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:/home/ken/LHCb/grid_simulation/trash/trace --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
-```
-
 ## Job workflow
 
-Information about jobs are contained in __input.csv__.
+![Alt text](https://pp.vk.me/c638316/v638316287/23a2c/Z2Zl5Qtk9eg.jpg "Simulation process")
 
-Topology of grid (cores, links and storages infrastructure) is contained in __Platform__ folder.
+## Installation process
 
+In this project we use two additional libraries. [SimGrid framework](https://github.com/simgrid/simgrid) is used for the purposes of simulation flow and [YAML cpp](https://github.com/jbeder/yaml-cpp) is used for parsing input files containing information about jobs and datasets.
+After installation of SimGrid and YAML-cpp, clone this project:
+```
+git clone https://github.com/skygrid/grid_simulation.git
+```
+and run in the command line:
+
+```
+mkdir build
+cd build
+cmake .. 
+make
+./CSim2Sim --cfg=tracing:yes --cfg=tracing/platform:yes --cfg=tracing/filename:<path to trace file> --cfg=maxmin/concurrency_limit:100000 --cfg=storage/max_file_descriptors:220000"
+```
+Change `config.yml` to customize paths to the following files:
+```
+platform: platform/platform.xml           ## Contains grid topology
+deployment: platform/test-deployment.xml  ## Defines `behaviour` of sites 
+out.txt: out.txt                          ## Jobs metrics are written here 
+jobs: InputData/little_jobs.yml           ## Queue of waiting jobs
+input: InputData/little_data.yml          ## Datasets stored in all tiers 
+```
 ## Docker
 
 If you feel free with Docker you can play around with grid_simulation in container.
@@ -40,13 +51,42 @@ docker pull kenenbek/grid_simulation
 
 Or you can build grid_simulation image based on `Dockerfile` on your own:
 ```
-docker build -t grid_simulation .
+docker build -t <name of simulation> .
 ```
 
 This image has a `CMD` instruction which starts an execution of `run.sh` file:
 ```
-docker run -v /data:/grid_simulation
+docker run -v /data:/grid_simulation <name of simulation>
 ```
+
+## Cern OpenStack Instructions Using Docker
+1. Create instance on [openstack.cern.ch](https://openstack.cern.ch). Use one of the Ubuntu 14+ images. These images are available on [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/).
+
+2. Log in your instance and run the command:
+
+    ```bash
+    sudo apt-get update
+    ```
+
+3. Install Docker using the [instructions](https://docs.docker.com/engine/installation/linux/ubuntulinux/). If your are non-root user, run the following commands:
+
+    ```bash
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo service docker restart
+    ```
+
+    Verify the installation by running:
+
+    ```bash
+    sudo docker run hello-world
+    sudo docker ps -a
+    ```
+
+    These commands should work without errors.
+
+
+## Output
 
 In the wake of simulation you should look for `jobs.csv` and `trace.csv` files.
 The first one contains all relevant information about job execution process:
