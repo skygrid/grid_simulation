@@ -1,5 +1,6 @@
 //
 // Created by ken on 24.05.16.
+// Purpose: scheduler function
 //
 
 #include <stdio.h>
@@ -13,6 +14,14 @@ using namespace std;
 XBT_LOG_NEW_DEFAULT_CATEGORY(scheduler, "messages specific for scheduler");
 
 int scheduler(int argc, char* argv[]){
+	/**
+		This function describes scheduler process. 
+		Main goal of scheduler is to listen "scheduler" mailbox 
+		and wait for job requests from other hosts.
+		After accepting job request, scheduler call `matching` function and get a vector of job.
+		And as a result, it sends a batch of jobs to requesting host. 
+		Scheduler process can live anywhere.
+	*/
     input();
     XBT_INFO("length of queus is %zd", GLOBAL_QUEUE->size());
     string mailbox = "scheduler";
