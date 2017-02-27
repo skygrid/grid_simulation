@@ -1,6 +1,8 @@
 //
 // Created by ken on 11.09.16.
+// Each function here corresponds to matching strategy applied in scheduler
 //
+
 using namespace std;
 #include <simgrid/msg.h>
 #include <vector>
@@ -44,6 +46,12 @@ std::vector<Job*>* matcher_calibration(long amountRequestedJob, const std::strin
 
 
 std::vector<Job*>* matcher(long amountRequestedJob){
+	/**
+		This matching function describes strategy when :
+		scheduler takes jobs from a queue according to their position in it (FIFO).
+		@amountRequestedJob parameters tells how much jobs will be taken from the queue.
+		@return a vector (batch) of jobs
+	*/
 
     int amount_of_matched_jobs = 0;
 
@@ -71,6 +79,15 @@ std::vector<Job*>* matcher(long amountRequestedJob){
 }
 
 std::vector<Job*>* matcher_DAM(long amountRequestedJob, const string& host){
+	/**
+		This matching function describes strategy when :
+		scheduler takes job from a queue when job meets two conditons:
+			1) Host requesting a job has input data for this job
+			2) The earliest jobs take priority over latest ones
+		@amountRequestedJob parameter tells how much jobs will be taken from the queue.
+		@host parameter is name of host jobs will be sent to.
+		@return a vector (batch) of jobs
+	*/
 
     /*int amount_of_matched_jobs = 0;
 
@@ -136,6 +153,14 @@ std::vector<Job*>* matcher_DAM(long amountRequestedJob, const string& host){
 }
 
 std::vector<Job*>* matcher_tier2(long amountRequestedJob, const string& host){
+	/**
+		This matching function describes strategy for TIER-2 hosts. 
+		Only `MCSIMULATION` jobs are sent to TIER2. 
+		@amountRequestedJob parameter tells how much jobs will be taken from the queue.
+		@host parameter is name of host jobs will be sent to.
+		@return a vector (batch) of jobs
+	*/
+		
     int amount_of_matched_jobs = 0;
 
     vector<Job*>* jobBatch = new vector<Job*>;
@@ -160,6 +185,10 @@ std::vector<Job*>* matcher_tier2(long amountRequestedJob, const string& host){
 }
 
 std::list<Job*>* create_current_queue(){
+	/** In the current realization of program, jobs (from all workflow) are stored in the `jobs.yml`.
+		This function creates a queue which contains only jobs have pushed by now.
+		@return std::list of Job pointers. 
+	*/
     std::list<Job*>* local_queue = new list<Job*>;
 
     for (auto it = GLOBAL_QUEUE->begin(); it != GLOBAL_QUEUE->end(); ++it) {
