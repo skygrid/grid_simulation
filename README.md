@@ -46,12 +46,12 @@ If you feel free with Docker you can play around with grid_simulation in contain
 
 You just need to pull images DockerHub repository:
 ```
-docker pull kenenbek/grid_simulation
+docker pull kenenbek/grid_simulation:february
 ```
 
 Or you can build grid_simulation image based on `Dockerfile` on your own:
 ```
-docker build -t <name of simulation> .
+docker build -t <container name> .
 ```
 
 This image has a `CMD` instruction which starts an execution of `run.sh` file:
