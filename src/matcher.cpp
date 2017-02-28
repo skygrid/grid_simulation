@@ -14,6 +14,11 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(matcher, "messages specific for matcher");
 
 std::vector<Job*>* matcher_calibration(long amountRequestedJob, const std::string& hostname)
 {
+	/**
+		@type function
+		Match jobs according to historical base.
+		(Because we know where job will be running and when it will be scheduled)
+	*/
     int amount_of_matched_jobs = 0;
     double clock = MSG_get_clock();
 
@@ -156,7 +161,7 @@ std::vector<Job*>* matcher_tier2(long amountRequestedJob, const string& host){
 	/**
 		This matching function describes strategy for TIER-2 hosts. 
 		Only `MCSIMULATION` jobs are sent to TIER2. 
-		@amountRequestedJob parameter tells how much jobs will be taken from the queue.
+		@amountRequestedJob parameter tells how much jobs should be taken from the queue.
 		@host parameter is name of host jobs will be sent to.
 		@return a vector (batch) of jobs
 	*/

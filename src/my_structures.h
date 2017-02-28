@@ -16,6 +16,10 @@ using namespace std;
 
 
 typedef enum {
+	/**
+		@type enum
+		Defines all job types
+	*/
     USER,
     DATASTRIPPING,
     MERGE,
@@ -33,6 +37,12 @@ typedef enum {
 
 
 struct Job{
+	/**
+		@type struct
+		Job object (plain old data).
+		Information about jobs stored in `jobs.yml` 
+		will be cast to Job object.
+	*/
     long JobId;
     double EndExecTime;
     std::string Federation;
@@ -57,6 +67,11 @@ struct Job{
 };
 
 struct InputFile{
+	/**
+		@type struct
+		Information about input files stored in `bkk.yml`
+		will be cast to this object.
+	*/
     std::string name;
     std::string events;
     std::vector<std::string> BKKPath;
@@ -69,6 +84,15 @@ struct InputFile{
 
 
 struct InputInfo{
+	/**
+		@type struct
+		Contains information needed when tier start copy file.
+		@localInputFilePath -- experiment.dst
+		@fullCopyFilePath -- /RRCKI-DISK/experiment.dst
+		@fullCopyFromTapeToDiskName -- /CERN-PROD-DISK/experiment.dst
+		@storage -- TAPE or DISK
+		@hostName -- RRCKI-DISK
+	*/
     std::string localInputFilePath;
     std::string fullCopyFilePath;
     std::string fullCopyFromTapeToDiskName;
@@ -78,12 +102,20 @@ struct InputInfo{
 };
 
 struct InputAndJobInfo{
+	/**
+		@type struct
+		Combines job and inputinfo pointers.
+	*/
     InputInfo* inputInfo;
     Job* job;
     msg_bar_t barrier;
 };
 
 class ReplicatorData{
+	/**
+		@type struct
+		Info needed for starting output files replication.
+	*/
 public:
     int replicaAmount;
     string fileName;
@@ -96,6 +128,10 @@ public:
 };
 
 class UploadData{
+	/**
+		@type struct 
+		Info needed for data replication of single file.
+	*/
 public:
     string filename;
     int numberOfReplica;
@@ -105,18 +141,27 @@ public:
 };
 
 
-
 class JobBatchRequest{
+	/**
+		@type struct 
+		Amount of jobs host wants to get.
+	*/
 public:
     long coreAmount;
     JobBatchRequest(){}
 };
 
 class FileData{
+	/**
+		@type 
+		Contains file attributes:
+		 time of creation
+		 all times when file was accessed
+	*/
 public:
     int number_used;
-    string used;
-    vector<double>* clocks;
+    std::string used;
+    std::vector<double>* clocks;
 
     ~FileData(){
         delete clocks;

@@ -11,8 +11,8 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 int job_requester(int argc, char* argv[]){
 	/**
 		@type simgrid process (run on all tiers)
-		Every @timeout checks an amount of free cores.
-		If this amount is bigger than some quantity then this process sends a job request
+		Every @timeout checks amount of free (non running) cores.
+		If this amount is greater than some N then it sends a job request
 		 to scheduler to get new batch of jobs. 		 
 	*/
     std::string host_name = MSG_host_get_name(MSG_host_self());

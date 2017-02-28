@@ -9,6 +9,10 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(killer, "messages specific for killer");
 
 int killer(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Kills all proccesses on tiers at the end of simulation
+	*/
     const std::string hosts[8] = {"CERN-PROD", "INFN-T1", "IN2P3-CC", "NRC-KI-T1", "pic", "RAL-LCG2", "FZK-LCG2", "NIKHEF-ELPROD"};
     const std::string tier2s[] = {"FR-IN2P3-CPPM", "FR-GRIF", "FR-IN2P3-LAPP", "UK-SouthGrid",
       "FR-IN2P3-LPC", "DE-DESY-LHCB", "IT-INFN-T2", "T2-LATINAMERICA", "PL-TIER2-WLCG",
@@ -47,6 +51,11 @@ int killer(int argc, char* argv[]){
 }
 
 int die_or_not(){
+	/**
+		@type function
+		Checks amount of jobs in the queue.
+		If queue is empty --> simulation should be killed. 
+	*/
     MSG_sem_acquire(sem_requester);
     if (GLOBAL_QUEUE->empty()){
         MSG_process_kill(MSG_process_self());
