@@ -8,8 +8,13 @@
 #define str(x) #x
 FILE * FP;
 
-int writeToFile(Job* jobInfo)
-{
+int writeToFile(Job* jobInfo){
+	/**
+		@type function
+		Write to output file information about job's metricas
+		(time of pushing into queue, scheduling, starting of execution, anomalies, etc.)
+		@jobInfo job object which fields contains neccesary information.
+	*/
     MSG_sem_acquire(sem_link);
     static size_t n = 0;
     if (n == 0) clearFile();
@@ -25,6 +30,10 @@ int writeToFile(Job* jobInfo)
 
 int clearFile()
 {
+	/**
+		@type function
+		Simply clear file where metricas about jobs will be written.
+	*/
     FP = fopen (path_to_output.c_str(), "w");
     fprintf(FP, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec, Tier, Type\n");
     //fclose(FP);
@@ -36,6 +45,11 @@ int clearFile()
 
 int writeAnomaly(double clock)
 {
+	/**
+		@type function
+		@clock time when anomaly occurred
+		Writes to anomaly.txt file info about anomalies have occurred in simulation. 
+	*/
     /*FILE * fp;
     fp = fopen ("/home/ken/PycharmProjects/GridAnalysis/anomaly.txt", "a");
     fprintf(fp, "%f\n", clock);

@@ -21,6 +21,10 @@ string typesStr[] = {"USER", "DATASTRIPPING", "MERGE", "MCStripping", "DATARECON
                      "MCSIMULATION", "TEST"};
 
 namespace YAML {
+	/**
+		Jobs from 'jobs.yml' will be cast to cpp object 
+		by decode(const Node& node, Job& job) function. 
+	*/
     template<>
     struct convert<Job> {
 
@@ -56,6 +60,10 @@ namespace YAML {
     };
     template <>
     struct convert<InputFile> {
+    /**
+		Input datasets from 'bkk.yml' will be cast to cpp object 
+		by decode(const Node& node, InputFile& input) function.
+	*/
 
         static bool decode(const Node& node, InputFile& input) {
             if(!node.IsMap()) {
@@ -84,6 +92,10 @@ namespace YAML {
 }
 
 static int parse_input_data(){
+	/**
+		Parse `bkk` file and store Inputfile object into 
+		FILES_DATABASE.
+	*/
 
     FILES_DATABASE = new map<std::string, InputFile*>;
     YAML::Node root = YAML::LoadFile(input_files_file);
@@ -105,6 +117,9 @@ static int parse_input_data(){
 }
 
 static int parse_jobs() {
+	/**
+		Parses 'jobs.yml', cast to cpp object and push into job_queue.		
+	*/
     size_t num_bad_conversion = 0;
     size_t invalid_node_num = 0;
     size_t normal_node = 0;
@@ -145,6 +160,10 @@ inline double find_first_date(YAML::Node& root){
 
 static jobType charToEnum(std::string sval)
 {
+	/**
+		takes string @sval and cast it to job TYPE (Reconctruction, Monte-Carlo, etc.).
+		@return enum jobType		
+	*/
 
     for (int enumInt = USER; enumInt != LAST; enumInt++)
         if (boost::iequals(sval, typesStr[enumInt])){
@@ -155,6 +174,9 @@ static jobType charToEnum(std::string sval)
 }
 
 int input(){
+	/**
+		Starts parsing 'jobs.yml' and ''
+	*/
     parse_jobs();
     parse_input_data();
     return 0;
