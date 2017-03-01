@@ -10,8 +10,9 @@ map<std::string, double > cumulative_output_site;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(dataset, "messages specific for dataset");
 
-int tracer_storage(string& hostname, string storage_type){
-    string storage_name = hostname + storage_type;
+int tracer_storage(std::string& hostname, std::string storage_type){
+	
+    std::string storage_name = hostname + storage_type;
     msg_storage_t st = MSG_storage_get_by_name(storage_name.c_str());
 
     TRACE_host_variable_set("CERN", storage_name.c_str(), MSG_storage_get_used_size(st));
@@ -19,21 +20,21 @@ int tracer_storage(string& hostname, string storage_type){
     return 0;
 }
 
-void cumulative_input_per_site(const string& host_name, double size){
+void cumulative_input_per_site(const std::string& host_name, double size){
     MSG_sem_acquire(sem_link);
     cumulative_input_site[host_name] += size;
     MSG_sem_release(sem_link);
     return;
 }
 
-void cumulative_output_per_site(const string& host_name, double size){
+void cumulative_output_per_site(const std::string& host_name, double size){
     MSG_sem_acquire(sem_link);
     cumulative_output_site[host_name] += size;
     MSG_sem_release(sem_link);
     return;
 }
 
-void dataset_number_change(const string& storage_name, int change){
+void dataset_number_change(const std::string& storage_name, int change){
     /*
      * -1 delete file
      * +1 add file*/
@@ -53,7 +54,7 @@ void dataset_number_change(const string& storage_name, int change){
 }
 
 
-int addDatasetAmountT(string& host_name, string type){
+int addDatasetAmountT(std::string& host_name, std::string type){
 
     MSG_sem_acquire(sem_link);
     // O -- Tape
@@ -69,7 +70,7 @@ int addDatasetAmountT(string& host_name, string type){
     return 0;
 }
 
-int minusDatasetAmountT(string& host_name, string type){
+int minusDatasetAmountT(std::string& host_name, std::string type){
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!type.compare("0")){
@@ -85,9 +86,9 @@ int minusDatasetAmountT(string& host_name, string type){
 }
 
 // Returns a number of dataset on a given storage
-long dataset_number(string& host_name, string storage_type){
+long dataset_number(std::string& host_name, std::string storage_type){
 
-    string storage_name = host_name + storage_type;
+    std::string storage_name = host_name + storage_type;
     msg_storage_t st = MSG_storage_get_by_name(storage_name.c_str());
 
     xbt_dict_cursor_t cursor = NULL;
@@ -105,8 +106,4 @@ long dataset_number(string& host_name, string storage_type){
     return amount;
 
 }
-
-
-
-
 

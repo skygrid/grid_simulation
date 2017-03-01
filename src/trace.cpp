@@ -11,6 +11,12 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(ttrace, "messages specific for trace");
 msg_sem_t sem_link;
 
 int declare_trace_variables(){
+	/**
+		@type function
+		Declares variables which simgrid will trace
+		(active cores, broken cores, traffic via link, input traffic to host, 
+		output traffic from host, number of datasets on tapes and disks)	
+	*/
 
     msg_host_t host;
     unsigned int cursor;
@@ -46,6 +52,10 @@ int declare_trace_variables(){
 }
 
 int set_0_all_routes(){
+	/**
+		@type function
+		Initializes variables by start value
+	*/
 
     std::string storage_variable;
 
@@ -103,6 +113,10 @@ int set_0_all_routes(){
 }
 
 int tracer(int argc, char* argv[]){
+	/**
+		@type simgrid process
+		Writes amount of dataset on each host (disk and tape)  to trace file every @day.
+	*/
     //return 0;
     double day = 86400;
 
