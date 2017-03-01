@@ -1,7 +1,15 @@
 <?xml version='1.0'?>
 <!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
 <platform version="4">
-
+<!--
+	Contains info about LHCb grid topology.
+	Defines:
+		 - storages types (capacity, write/read speed, file catalogue), storages (tape or disk) based on storage type
+		 - hosts (name, attached/mounted storages, number of cores, speed of core in flops)
+		 - links (name, latency, bandwidth)
+		 - routes (source, destination, link connecting src and dst)
+		 Refer to http://simgrid.gforge.inria.fr/simgrid/3.14/doc/platform.html for full documentation.
+-->
 	<AS id="AS_BIG" routing="Full">
 
 		<!--Storage types of Tier0, Tier1s, Tier2s-->

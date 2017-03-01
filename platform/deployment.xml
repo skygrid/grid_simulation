@@ -1,3 +1,15 @@
+<!--
+	Deployment file defines places (hosts) where simgrid process will live.
+	For example:
+	
+		<process host="CERN-PROD" function="scheduler">
+			<argument value="scheduler"/> 
+		</process>
+		
+		Tells that scheduler process lives in the CERN-PROD host.
+		This proccess will have argv[0] equals to "scheduler".
+-->
+
 <?xml version='1.0'?>
 <!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
 <platform version="4">

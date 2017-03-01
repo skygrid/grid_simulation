@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+
+"""
+Generates platform.xml and deployment.xml files based on lhcb_capacities.csv file.
+
+"""
+
 import numpy as np
 import sys
 
