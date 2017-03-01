@@ -11,7 +11,7 @@ FILE * FP;
 int writeToFile(Job* jobInfo){
 	/**
 		@type function
-		Write to output file information about job's metricas
+		Writes to output file information about job's metricas
 		(time of pushing into queue, scheduling, starting of execution, anomalies, etc.)
 		@jobInfo job object which fields contains neccesary information.
 	*/
@@ -32,7 +32,7 @@ int clearFile()
 {
 	/**
 		@type function
-		Simply clear file where metricas about jobs will be written.
+		Simply clears file where metricas about jobs will be written.
 	*/
     FP = fopen (path_to_output.c_str(), "w");
     fprintf(FP, "%s", "JobName, Success, Time start, time schedule, Time start Exec, Time End Exec, Tier, Type\n");

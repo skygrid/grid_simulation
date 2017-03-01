@@ -50,7 +50,7 @@ int data_replicator(int argc, char* argv[]){
 int uploader(int argc, char* argv[]){
 	/**
 		@type simgrid process
-		Uploads output files to another hosts.
+		Uploads output file to another host.
 	*/
 
     std::string host_name = MSG_host_get_name(MSG_host_self());
