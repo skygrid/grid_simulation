@@ -1,7 +1,6 @@
 //
 // Created by ken on 02.12.16.
 //
-
 #include <iostream>
 #include <yaml-cpp/yaml.h>
 #include <cstring>
