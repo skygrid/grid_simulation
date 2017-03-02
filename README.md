@@ -56,7 +56,7 @@ docker build -t <container name> .
 
 This image has a `CMD` instruction which starts an execution of `run.sh` file:
 ```
-docker run -v <your local directory>:/grid_simulation:february <container name>
+docker run -v <your local directory>:/grid_simulation <container name>
 ```
 
 ## Cern OpenStack Instructions Using Docker
