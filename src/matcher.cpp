@@ -18,6 +18,12 @@ std::vector<Job*>* matcher_calibration(long amountRequestedJob, const std::strin
 		@type function
 		Match jobs according to historical base.
 		(Because we know where job will be running and when it will be scheduled)
+
+        Parameters:
+        -----------
+        @amountRequestedJob -- how many jobs tier requested
+        @hostname -- name of tier which requested a job batch
+        @return job batch
 	*/
     int amount_of_matched_jobs = 0;
     double clock = MSG_get_clock();
@@ -54,7 +60,11 @@ std::vector<Job*>* matcher(long amountRequestedJob){
 	/**
 		This matching function describes strategy when :
 		scheduler takes jobs from a queue according to their position in it (FIFO).
-		@amountRequestedJob parameters tells how much jobs will be taken from the queue.
+		
+        Parameters:
+        -----------
+        @amountRequestedJob -- how many jobs tier requested
+        @amountRequestedJob parameters tells how much jobs will be taken from the queue.
 		@return a vector (batch) of jobs
 	*/
 
@@ -89,14 +99,18 @@ std::vector<Job*>* matcher_DAM(long amountRequestedJob, const string& host){
 		scheduler takes job from a queue when job meets two conditons:
 			1) Host requesting a job has input data for this job
 			2) The earliest jobs take priority over latest ones
-		@amountRequestedJob parameter tells how much jobs will be taken from the queue.
+		
+        Parameters:
+        -----------
+        @amountRequestedJob -- how many jobs tier requested
+        @amountRequestedJob parameter tells how much jobs will be taken from the queue.
 		@host parameter is name of host jobs will be sent to.
 		@return a vector (batch) of jobs
 	*/
 
     /*int amount_of_matched_jobs = 0;
 
-    vector<Job*>* jobBatch = new vector<Job*>;
+    std::vector<Job*>* jobBatch = new vector<Job*>;
     std::list<Job*>* local_queue = GLOBAL_QUEUE;        //create_current_queue();
 
     if (amountRequestedJob > local_queue->size()){
@@ -116,12 +130,13 @@ std::vector<Job*>* matcher_DAM(long amountRequestedJob, const string& host){
             i = GLOBAL_QUEUE->erase(i);
             continue;
         }
-        string dataLocations[] = {(*i)->dataLocHost1, (*i)->dataLocHost2, (*i)->dataLocHost3, (*i)->dataLocHost4,
-                                  (*i)->dataLocHost5, (*i)->dataLocHost6, (*i)->dataLocHost7, (*i)->dataLocHost8,
-                                  (*i)->dataLocHost9, (*i)->dataLocHost10};
-        string storage_types[] = {(*i)->storageType1, (*i)->storageType2, (*i)->storageType3, (*i)->storageType4,
-                                 (*i)->storageType5, (*i)->storageType6, (*i)->storageType7, (*i)->storageType8,
-                                 (*i)->storageType9, (*i)->storageType10};
+        auto k = *i;
+        string dataLocations[] = {k->dataLocHost1, k->dataLocHost2, k->dataLocHost3, k->dataLocHost4,
+                                  k->dataLocHost5, k->dataLocHost6, k->dataLocHost7, k->dataLocHost8,
+                                  k->dataLocHost9, k->dataLocHost10};
+        string storage_types[] = {k->storageType1, k->storageType2, k->storageType3, k->storageType4,
+                                 k->storageType5, k->storageType6, k->storageType7, k->storageType8,
+                                 k->storageType9, k->storageType10};
 
         int n = (int) (*i)->InputFiles;
 
@@ -161,8 +176,11 @@ std::vector<Job*>* matcher_tier2(long amountRequestedJob, const string& host){
 	/**
 		This matching function describes strategy for TIER-2 hosts. 
 		Only `MCSIMULATION` jobs are sent to TIER2. 
-		@amountRequestedJob parameter tells how much jobs should be taken from the queue.
-		@host parameter is name of host jobs will be sent to.
+		
+        Parameters:
+        -----------
+        @amountRequestedJob -- how many jobs tier requested
+		@host parameter is name of host which requested jobs.
 		@return a vector (batch) of jobs
 	*/
 		

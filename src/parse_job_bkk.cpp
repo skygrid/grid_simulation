@@ -10,7 +10,7 @@
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(yaml, "messages specific for yaml");
 
-static jobType charToEnum(string sval);
+static jobType charToEnum(std::string sval);
 inline double find_first_date(YAML::Node& root);
 std::list<Job*>* GLOBAL_QUEUE;
 std::map<std::string, InputFile*>* FILES_DATABASE;
@@ -94,9 +94,13 @@ static int parse_input_data(){
 	/**
 		Parse `bkk` file and store Inputfile object into 
 		FILES_DATABASE.
+
+        Parameters:
+        -----------
+        None
 	*/
 
-    FILES_DATABASE = new map<std::string, InputFile*>;
+    FILES_DATABASE = new std::map<std::string, InputFile*>;
     YAML::Node root = YAML::LoadFile(input_files_file);
 
     for (auto it = root.begin(); it != root.end(); ++it) {
@@ -117,7 +121,11 @@ static int parse_input_data(){
 
 static int parse_jobs() {
 	/**
-		Parses 'jobs.yml', cast to cpp object and push into job_queue.		
+		Parses 'jobs.yml', cast to cpp object and push into job_queue.
+        
+        Parameters:
+        -----------
+        None		
 	*/
     size_t num_bad_conversion = 0;
     size_t invalid_node_num = 0;
@@ -157,11 +165,14 @@ inline double find_first_date(YAML::Node& root){
     return root.begin()->second["SubmissionTime"].as<double>();
 }
 
-static jobType charToEnum(std::string sval)
+static jobType charToEnum(std::string& sval)
 {
 	/**
 		takes string @sval and cast it to job TYPE (Reconctruction, Monte-Carlo, etc.).
-		@return enum jobType		
+		Parameters:
+        -----------
+        @sval -- string representation of type
+        @return enum jobType		
 	*/
 
     for (int enumInt = USER; enumInt != LAST; enumInt++)
@@ -174,7 +185,7 @@ static jobType charToEnum(std::string sval)
 
 int input(){
 	/**
-		Starts parsing 'jobs.yml' and ''
+		Starts parsing 'jobs.yml' and 'bkk.yml'
 	*/
     parse_jobs();
     parse_input_data();

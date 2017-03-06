@@ -20,6 +20,10 @@ int tier1(int argc, char* argv[]){
     	This function create two simgrid process:
     		1) tier1_executor
     		2) job_requester
+        
+        Simgrid process parameters:
+        ---------------------------
+        None    
     */
     MSG_host_set_property_value(MSG_host_self(), "activeCore", xbt_strdup("0"));
     MSG_host_set_property_value(MSG_host_self(), "corruptedCore", xbt_strdup("0"));
@@ -34,6 +38,10 @@ int executorLauncher(int agrc, char* argv[]){
 	/*
 		Receives a `n` size job batch  from `scheduler` process.
 		Create `n` `executor` processes.
+
+        Simgrid process parameters:
+        ---------------------------
+        None
 	*/
     msg_task_t task = NULL;
     const char* tierMailbox = MSG_host_get_name(MSG_host_self());

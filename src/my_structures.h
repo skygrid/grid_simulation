@@ -86,7 +86,7 @@ struct InputFile{
 struct InputInfo{
 	/**
 		@type struct
-		Contains information needed when tier start copy file.
+		Contains information needed when tier starts to copy file.
 		@localInputFilePath -- experiment.dst
 		@fullCopyFilePath -- /RRCKI-DISK/experiment.dst
 		@fullCopyFromTapeToDiskName -- /CERN-PROD-DISK/experiment.dst

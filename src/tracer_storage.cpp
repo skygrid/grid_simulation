@@ -5,12 +5,20 @@
 #include <simgrid/msg.h>
 #include "myfunc_list.h"
 
-map<std::string, double > cumulative_input_site;
-map<std::string, double > cumulative_output_site;
+std::map<std::string, double > cumulative_input_site;
+std::map<std::string, double > cumulative_output_site;
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(dataset, "messages specific for dataset");
 
-int tracer_storage(std::string& hostname, std::string storage_type){
+int tracer_storage(std::string& hostname, std::string& storage_type){
+    /**
+        Adds used size of @storage_name to trace file. 
+
+        Parameters:
+        -----------
+        @hostname -- host name
+        @storage_type -- TAPE or DISK
+    */
 	
     std::string storage_name = hostname + storage_type;
     msg_storage_t st = MSG_storage_get_by_name(storage_name.c_str());
@@ -21,6 +29,14 @@ int tracer_storage(std::string& hostname, std::string storage_type){
 }
 
 void cumulative_input_per_site(const std::string& host_name, double size){
+    /**
+        Add @size to cumulative input traffic of site.
+
+        Parameters:
+        -----------
+        @host_name -- name of host which downloads file
+        @size -- size of downloaded file
+    */
     MSG_sem_acquire(sem_link);
     cumulative_input_site[host_name] += size;
     MSG_sem_release(sem_link);
@@ -28,6 +44,14 @@ void cumulative_input_per_site(const std::string& host_name, double size){
 }
 
 void cumulative_output_per_site(const std::string& host_name, double size){
+    /**
+        Add @size to cumulative output traffic of site.
+        
+        Parameters:
+        -----------
+        @host_name -- name of host which uploads file
+        @size -- file size
+    */
     MSG_sem_acquire(sem_link);
     cumulative_output_site[host_name] += size;
     MSG_sem_release(sem_link);
@@ -35,16 +59,24 @@ void cumulative_output_per_site(const std::string& host_name, double size){
 }
 
 void dataset_number_change(const std::string& storage_name, int change){
-    /*
-     * -1 delete file
-     * +1 add file*/
+    /**
+        Changes number of datasets on @storage_name.
+        * -1 -- delete file
+        * +1 -- add file
+
+        Parameters:
+        -----------
+        @storage_name -- name of storage
+        @change -- number of new datasets (or deleted datasets)
+    */
+    
     MSG_sem_acquire(sem_link);
     switch (change){
         case 1:
-            storage_number_map[storage_name]++;
+            ++storage_number_map[storage_name];
             break;
         case -1:
-            storage_number_map[storage_name]--;
+            --storage_number_map[storage_name];
             break;
         default:
             break;
@@ -54,8 +86,15 @@ void dataset_number_change(const std::string& storage_name, int change){
 }
 
 
-int addDatasetAmountT(std::string& host_name, std::string type){
+int addDatasetAmountT(std::string& host_name, std::string& type){
+    /**
+        Increases number of datasets on @host_name by one.
 
+        Parameters:
+        ----------
+        @host_name -- name of host
+        @type -- DISK or TAPE
+    */
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!type.compare("0")){
@@ -71,6 +110,14 @@ int addDatasetAmountT(std::string& host_name, std::string type){
 }
 
 int minusDatasetAmountT(std::string& host_name, std::string type){
+    /**
+        Decreases number of datasets on @host_name by one.
+         
+        Parameters:
+        ----------
+        @host_name -- name of host
+        @type -- DISK or TAPE
+    */
     MSG_sem_acquire(sem_link);
     // O -- Tape
     if (!type.compare("0")){
@@ -85,9 +132,15 @@ int minusDatasetAmountT(std::string& host_name, std::string type){
 
 }
 
-// Returns a number of dataset on a given storage
-long dataset_number(std::string& host_name, std::string storage_type){
-
+long dataset_number(std::string& host_name, std::string& storage_type){
+    /**
+        Returns a number of dataset on a given storage.
+         
+        Parameters:
+        ----------
+        @host_name -- name of host
+        @storage_type -- DISK or TAPE
+    */
     std::string storage_name = host_name + storage_type;
     msg_storage_t st = MSG_storage_get_by_name(storage_name.c_str());
 
@@ -104,6 +157,5 @@ long dataset_number(std::string& host_name, std::string storage_type){
     xbt_dict_free(&storage_content);
     xbt_dict_cursor_free(&cursor);
     return amount;
-
 }
 

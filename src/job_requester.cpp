@@ -13,7 +13,11 @@ int job_requester(int argc, char* argv[]){
 		@type simgrid process (run on all tiers)
 		Every @timeout checks amount of free (non running) cores.
 		If this amount is greater than some N then it sends a job request
-		 to scheduler to get new batch of jobs. 		 
+		 to scheduler to get new batch of jobs. 
+
+         Simgrid process parameters:
+         --------------------------
+         None		 
 	*/
     std::string host_name = MSG_host_get_name(MSG_host_self());
     std::string CERN = "CERN";

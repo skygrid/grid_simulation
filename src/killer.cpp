@@ -12,6 +12,10 @@ int killer(int argc, char* argv[]){
 	/**
 		@type simgrid process
 		Kills all proccesses on tiers at the end of simulation
+
+        Simgrid process parameters:
+        --------------------------
+        None
 	*/
     const std::string hosts[8] = {"CERN-PROD", "INFN-T1", "IN2P3-CC", "NRC-KI-T1", "pic", "RAL-LCG2", "FZK-LCG2", "NIKHEF-ELPROD"};
     const std::string tier2s[] = {"FR-IN2P3-CPPM", "FR-GRIF", "FR-IN2P3-LAPP", "UK-SouthGrid",

@@ -51,7 +51,7 @@ int tracer_traffic(std::string& src, std::string& dst, double size){
 }
 
 
-int minusLinkCounter(string& src, string& dst){
+int minusLinkCounter(std::string& src, std::string& dst){
 	/**
 		@type function
 			Decreases by one the number of "users" who transfer data from @src and @dst hosts.

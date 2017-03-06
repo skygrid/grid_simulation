@@ -36,6 +36,10 @@ int executor(int argc, char* argv[]){
 			3) Execute task
 			4) Write to output files
 			5) Replicate output files
+
+        Simgrid process parameters
+        --------------------------
+        Job* job contains information about job parameters (size, name, type, etc.)
 	*/
     //MSG_process_on_exit(my_on_exit, NULL);
 
@@ -68,9 +72,12 @@ std::vector<InputInfo*>* get_input_file_path(Job* jobInfo){
 		Looks for an appropriate locations of datasets to download from.
 		Data locations have priorities as follows: 
 			own disk, other hosts' disk, own tape, other hosts' tape 
-		Input files path takes a form <host-name>-<storage-type>/<path-to-file>
-		@jobInfo is a pointer to a job object.
-		@return std::vector of found paths. 
+		Input files path takes a form /<host-name>-<storage-type>/<path-to-file>
+		
+        Parameters
+        --------------------------
+        @jobInfo is a pointer to a job object.
+		@return std::vector of file paths. 
 		
 	*/
 
@@ -136,6 +143,11 @@ int copy_tape_disk_process(int argc, char* argv[]){
 		@type simgrid process
 		If data needed for a host is located on tape storage, then 
 		this function (process) copies data from a tape to disk.
+
+        Simgrid process parameters
+        --------------------------
+        InputInfo* inputInfo contains information about how to copy file
+        (destination name, filepaths, etc.)
 	*/
 
     InputInfo* inputInfo = (InputInfo*) MSG_process_get_data(MSG_process_self());
@@ -167,6 +179,11 @@ static int download_read_file_process(int argc, char* argv[]){
 		@type simgrid process
 		1) Creates a process which start downloading file from host that has a dataset.
 		2) Read downloaded dataset.
+
+        Simgrid process parameters
+        --------------------------
+        InputAndJobInfo* data is poiter to object which contains information
+        about file will be read and job descriptor.
 	*/
 
     InputAndJobInfo* data = (InputAndJobInfo*) MSG_process_get_data(MSG_process_self());
@@ -226,10 +243,14 @@ static int download_read_file_process(int argc, char* argv[]){
 int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 	/**
 		@type function
-		@inputInfoVector is a size `n` std::vector of `InputInfo*` objects
-		 which consists info about input datasets (filenames and locations).
+		@inputInfoVector is a size of `n` std::vector of `InputInfo*` objects
+		 which contains info about input datasets (filenames and locations).
 		If there is a need in copying files from tape to disk
-		 this function launches k <= n processes which do this. 
+		 this function will launch k <= n processes which will do copying.
+
+         Parameters
+        -----------
+        std::vector<InputInfo*>* inputInfoVector
 	*/
 
     size_t fileAmount = inputInfoVector->size();
@@ -248,10 +269,15 @@ int copy_from_tape_to_disk(std::vector<InputInfo*>* inputInfoVector){
 void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVector, msg_bar_t& barrier){
 	/**
 		@type function
-		@inputInfoVector is a size `n` std::vector of `InputInfo*` objects
-		 which consists info about input datasets (filenames and locations).
-		If there is a need in downloading files from another hosts' to own disk
-		 this function launches k <= n processes which do this. 
+        If there is a need in downloading files from another hosts' to own disk
+         this function will launch k <= n processes which do downloading (and reading).
+
+        Parameters
+        ----------
+        Job* jobInfo -- is job descriptor
+        std::vector<InputInfo*>* inputInfoVector -- is a size `n` std::vector of `InputInfo*` objects
+         which contains info about input datasets (filenames and locations).
+        msg_bar_t& barrier -- is needed for syncronization threads
 	*/	
 
     size_t size = inputInfoVector->size();
@@ -272,7 +298,10 @@ void download_or_read_file(Job* jobInfo, std::vector<InputInfo*>* inputInfoVecto
 int task_executor(Job* jobInfo){
 	/**
 		@type simgrid process
-		Simulates only execution of single job. 
+		Simulates job execution. 
+
+        Parameters
+        -----------
 		@jobInfo is job descriptor that has all relevant information about task. 
 	*/
     string host_name = string(MSG_host_get_name(MSG_host_self()));
@@ -333,8 +362,8 @@ int task_executor(Job* jobInfo){
 void plusOneActiveCore(){
 	/**
 		@type function
-		Increases the number of running cores by one unit when
-		job is started to be executed
+		Increases the number of running cores by one when
+		job starts to be executed
 	*/
     MSG_sem_acquire(sem_link);
     char kot[50];
@@ -350,7 +379,7 @@ void minusOneActiveCore(){
 	/**
 		@type function
 		Decreases the number of running cores by one unit when 
-		job is finished to be executed
+		job finishes to be executed.
 	*/
     MSG_sem_acquire(sem_link);
     char kot[50];

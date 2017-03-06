@@ -17,6 +17,11 @@ int data_replicator(int argc, char* argv[]){
 	/**
 		@type simgrid process
 		Launches `uploader` processes to replicate output files. 
+
+		Simgrid process parameters
+		--------------------------
+		Job* replica (job descriptor) -- contains all information about
+		job parameters (type, size, etc.)
 	*/
 
     Job* replica = (Job*) MSG_process_get_data(MSG_process_self());
@@ -51,6 +56,12 @@ int uploader(int argc, char* argv[]){
 	/**
 		@type simgrid process
 		Uploads output file to another host.
+
+		Simgrid process parameters
+		--------------------------
+		UploadData* data -- pointer to object 
+		which contains inforamation about how to replicate output file.
+		(destination host, filename, etc.)
 	*/
 
     std::string host_name = MSG_host_get_name(MSG_host_self());

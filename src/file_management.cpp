@@ -22,7 +22,7 @@ int initialize_file_labels(int argc, char* argv[]){
 		 
 	*/
     return 0;
-    name_node = new map<string, FileData*>;
+    name_node = new std::map<string, FileData*>;
     unsigned int cur;
     char* local_name;
     size_t data_size;
@@ -61,10 +61,14 @@ int initialize_file_labels(int argc, char* argv[]){
 }
 
 /*When new file created*/
-int create_file_label(string& filename){
+int create_file_label(std::string& filename){
 	/**
 		@type function
-		Creation of auxiliary object `FileData` associated with absolute filepath. 
+		Creation of auxiliary object `FileData` associated with absolute filepath.
+
+        Parameters:
+        ----------
+        @filename -- label will be created for this name 
 	*/
     return 0;
     if (name_node->find(filename) != name_node->end())
@@ -80,14 +84,18 @@ int create_file_label(string& filename){
 }
 
 /* When file is used by someone*/
-void file_usage_counter(string& filename){
+void file_usage_counter(std::string& filename){
 	/**
-		@type
-		When someone accesses a dataset this `function` adds the time of access to file's label object
+		@type function
+		Adds time of access(create, read, write) to file's label object
 		 and increases counter of file usages by one.
+
+        Parameters:
+        ----------
+        @filename -- filename 
 	*/
     return;
-    string type;
+    std::string type;
     unsigned long len = (int) strcspn(filename.c_str(), "10");
     type = filename.at(len);
     if (!type.compare("0")){
@@ -105,7 +113,12 @@ void file_usage_counter(string& filename){
 int delete_unpopular_file(int argc, char* argv[]){
 	/**
 		@type simgrid process
-		Every @sleep_time secs delete files which have not been accessed at last @delete_time secs.
+		Every @sleep_time secs deletes files
+         which have not been accessed at last @delete_time secs.
+
+        Simgrid process parameters:
+        --------------------------
+        @argv[1] -- time (in secs) between file deletions
 	*/
     return 0;
     double sleep_time = xbt_str_parse_double(argv[1], "error");
@@ -115,7 +128,7 @@ int delete_unpopular_file(int argc, char* argv[]){
     while (TRUE){
 
         MSG_process_sleep(sleep_time);
-        string filename;
+        std::string filename;
         double current_time = MSG_get_clock();
 
         for (auto &file_map: *name_node) {
