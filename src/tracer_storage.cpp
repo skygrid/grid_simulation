@@ -132,7 +132,7 @@ int minusDatasetAmountT(std::string& host_name, std::string type){
 
 }
 
-long dataset_number(std::string& host_name, std::string& storage_type){
+long dataset_number(std::string& host_name, std::string storage_type){
     /**
         Returns a number of dataset on a given storage.
          

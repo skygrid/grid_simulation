@@ -6,6 +6,7 @@ CMakeFiles/
 Debug/
 trash/
 walltime/
+build/
 cmake-build-debug/
 
 *.py[cod]

@@ -10,7 +10,7 @@
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(yaml, "messages specific for yaml");
 
-static jobType charToEnum(std::string sval);
+static jobType charToEnum(std::string& sval);
 inline double find_first_date(YAML::Node& root);
 std::list<Job*>* GLOBAL_QUEUE;
 std::map<std::string, InputFile*>* FILES_DATABASE;
