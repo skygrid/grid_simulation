@@ -37,7 +37,7 @@ int subActiveCoreT(){
 
 int addCorruptedCoreT(){
 	/**
-		@type function
+	    @type function
 		Increases number of broken cores by one on host which calls this function.
 		Then writes value to trace file.			
 	*/

@@ -12,8 +12,8 @@ msg_sem_t sem_link;
 
 int declare_trace_variables(){
 	/**
-		@type function
-		Declares variables which simgrid will trace
+	   @type function
+	    Declares variables which simgrid will trace
 		(active cores, broken cores, traffic via link, input traffic to host, 
 		output traffic from host, number of datasets on tapes and disks)
 
@@ -115,7 +115,7 @@ int set_0_all_routes(){
 
 int tracer(int argc, char* argv[]){
 	/**
-		@type simgrid process
+	   @type simgrid process
 		Writes amount of dataset on each host (disk and tape)  to trace file every @day.
 
         Simgrid process parameters:

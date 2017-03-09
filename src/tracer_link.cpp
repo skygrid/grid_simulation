@@ -12,9 +12,9 @@ char* get_opposite_direction(char* direction);
 
 int plusLinkCounter(std::string& src, std::string& dst){
 	/**
-		@type function
-			Increases by one the number of "users" who transfer data from @src and @dst hosts.
-			Writes number to trace file.		
+	@type function
+	   Increases by one the number of "users" who transfer data from @src and @dst hosts.
+	   Writes number to trace file.		
 	*/
     MSG_sem_acquire(sem_link);
     /*char* transit = NULL;
@@ -39,10 +39,10 @@ int plusLinkCounter(std::string& src, std::string& dst){
 
 int tracer_traffic(std::string& src, std::string& dst, double size){
 	/**
-		@type function
-			Adds @size bytes to link's cumulative sum of transferred data between
-			@dst and @src. 
-			Writes value to trace file. 		
+	   @type function
+		Adds @size bytes to link's cumulative sum of transferred data between
+		@dst and @src. 
+		Writes value to trace file. 		
 	*/
     MSG_sem_acquire(sem_link);
     TRACE_link_srcdst_variable_add(src.c_str(), dst.c_str(), "traffic", size);
@@ -53,9 +53,9 @@ int tracer_traffic(std::string& src, std::string& dst, double size){
 
 int minusLinkCounter(std::string& src, std::string& dst){
 	/**
-		@type function
-			Decreases by one the number of "users" who transfer data from @src and @dst hosts.
-			Writes number to trace file.		
+	   @type function
+		Decreases by one the number of "users" who transfer data from @src and @dst hosts.
+		Writes number to trace file.		
 	*/
     MSG_sem_acquire(sem_link);
 

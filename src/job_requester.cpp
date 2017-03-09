@@ -10,7 +10,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(job_requester, "messages specific for cm");
 
 int job_requester(int argc, char* argv[]){
 	/**
-		@type simgrid process (run on all tiers)
+	   @type simgrid process (run on all tiers)
 		Every @timeout checks amount of free (non running) cores.
 		If this amount is greater than some N then it sends a job request
 		 to scheduler to get new batch of jobs. 
