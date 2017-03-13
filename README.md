@@ -88,7 +88,7 @@ docker run -v <your local directory>:/grid_simulation <container name>
 
 ## Output
 
-In the wake of simulation you should look for `jobs.csv` and `trace.csv` files.
+In the wake of simulation you should look for `out.txt` and `trace.csv` (located in `simgridoutput directory`) files.
 The first one contains all relevant information about job execution process:
 ```
 +-----------+------+---------------+--------------+-----------+------------+-----------+--------------+

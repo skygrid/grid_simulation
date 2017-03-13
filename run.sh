@@ -9,3 +9,5 @@ sudo ./CSim2Sim \
 --cfg=maxmin/concurrency_limit:200000 \
 --cfg=storage/max_file_descriptors:220000
 cp out.txt trace simgridoutput/
+cd simgridoutput/
+python clear_trace.py trace
