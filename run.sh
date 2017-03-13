@@ -10,4 +10,4 @@ sudo ./CSim2Sim \
 --cfg=storage/max_file_descriptors:220000
 cp out.txt trace simgridoutput/
 cd simgridoutput/
-python clear_trace.py trace
+# python clear_trace.py trace
