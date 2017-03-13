@@ -54,10 +54,18 @@ Or you can build grid_simulation image based on `Dockerfile` on your own:
 docker build -t <container name> .
 ```
 
-This image has a `CMD` instruction which starts an execution of `run.sh` file:
+This image contains all necessary software to run a simulation. For this, clone this repository. This creates **/grid_simulation** directory with scripts and input data of the simulation:
+
 ```
-docker run -v <your local directory>:/grid_simulation <container name>
+git clone https://github.com/skygrid/grid_simulation.git
 ```
+
+The docker image has a `CMD` instruction which starts an execution of `run.sh` file. This file is in your **/grid_simulation** directory. To run the simuation use the command:
+```
+docker run -v $(pwd)/grid_simulation:/grid_simulation <container name>
+```
+
+Results of the simulation are in your **/grid_simulation** directory.
 
 ## Cern OpenStack Instructions Using Docker
 1. Create instance on [openstack.cern.ch](https://openstack.cern.ch). Use one of the Ubuntu 14+ images. These images are available on [cloud-images.ubuntu.com](http://cloud-images.ubuntu.com/).
